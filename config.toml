@@ -1,0 +1,87 @@
+baseurl = "https://fatmakahveci.com"
+title = "Fatma Kahveci"
+languageCode = "en-us"
+paginate = "10" # Number of posts per page
+theme = "mainroad"
+disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Disqus shortname
+
+[Author]
+  name = "Fatma Kahveci"
+  bio = ""
+  # avatar = "img/avatar.png"
+
+[Params]
+  description = "Fatma Kahveci's Personal Blog" # Description of your site
+  opengraph = true
+  twitter_cards = false
+  readmore = true # Show "Read more" button in list if true
+  schema = true
+  # toc = true # Enable Table of Contents
+  googleAnalytics = "UA-49025750-1"
+  # authorbox = true
+  pager = true
+  post_meta = ["author", "date", "categories"] # Order of post meta information
+  mathjax = true # Enable MathJax
+  mathjaxPath = "https://cdn.mathjax.org/mathjax/latest/MathJax.js" # Specify MathJax path
+  mathjaxConfig = "TeX-AMS-MML_SVG" # MathJax config
+  highlightColor = "#27AE60" # Override highlight color
+  customCSS = ["css/custom.css"] # Include custom CSS files
+  customJS = ["js/custom.js"] # Include custom JS files
+  mainSections = ["bioinformatics"]
+  googleFontsLink = "https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&display=swap"
+
+[Params.style.vars]
+  fontFamilyPrimary = "'Life Savers', cursive"
+
+[Params.widgets.social]
+  twitter = "cheburashkaF"
+  instagram = "fatmakhv"
+  linkedin = "fatma-kahveci"
+  github = "fatmakahveci"
+  spotify = "fatmaths"
+  # gitlab = "username"
+  # bitbucket = "username"
+  # email = "example@example.com"
+  # facebook = "username"
+  # telegram = "username"
+
+[menu]
+  
+  [[menu.main]]
+    identifier = "coding"
+    name = "Coding"
+    url = "/coding/"
+    weight = -90
+
+  [[menu.main]]
+    identifier = "bioinformatics"
+    name = "Bioinformatics"
+    url = "/bioinformatics/"
+    weight = -110
+
+  [[menu.main]]
+    identifier = "travel"
+    name = "Travel"
+    url = "/travel/"
+    weight = -100
+
+  [[menu.main]]
+    identifier = "blog_post"
+    name = "Blog post"
+    url = "/post/"
+    weight = -90
+
+[Params.logo]
+  subtitle = "" # Logo subtitle
+
+[Params.sidebar]
+  home = "right"   # Configure layout for home page
+  list = "right"   # Configure layout for list pages
+  single = "right" # Configure layout for single pages
+  # Enable widgets in given order
+  widgets = [ "social", "taglist"]
+  # widgets = [ "recent", "categories", "taglist"]
+
+[Params.widgets]
+  recent_num = 5 # Set the number of articles in the "Recent articles" widget
+  tags_counter = true # Enable counter for each tag in "Tags" widget (disabled by default)
