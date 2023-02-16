@@ -7,9 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "belgium"
-  - "brugge"
-  - "brussels"
 ---
 
 ## Brugge

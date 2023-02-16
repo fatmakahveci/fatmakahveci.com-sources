@@ -8,7 +8,8 @@ categories:
 tags:
   - "python"
   - "coding"
-  - "software"
+  - "algorithms"
+  - "data structures"
 ---
 
 - Beautiful is better than ugly.

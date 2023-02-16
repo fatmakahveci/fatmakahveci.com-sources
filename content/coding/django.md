@@ -9,7 +9,8 @@ tags:
   - "python"
   - "coding"
   - "django"
-  - "web framework"
+  - "algorithms"
+  - "data structures"
 ---
 
 ![header](/img/django_header.png)
@@ -475,12 +476,6 @@ class HomePageView(TemplateView):
 #### Built-in tag reference
 
 - Visit [Django's documentation](https://docs.djangoproject.com/en/4.1/ref/templates/builtins/)
-
----
-
-## 4. URL Dispatcher
-
-
 
 ---
 

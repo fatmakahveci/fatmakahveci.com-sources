@@ -6,49 +6,44 @@ date: 03-11-2021
 categories:
   - "blog_posts"
 tags:
-  - "post"
   - "reading"
 ---
 
-# 1. Limitless
+## [1. Limitless](https://www.limitlessbook.com)
 
-## Seven LIES (Limited Ideas Entertaining)
+### Seven LIES (Limited Ideas Entertaining)
 
-### 1. ~~Intelligence is fixed.~~ Intelligence is fluid.
+#### 1. ~~Intelligence is fixed.~~ Intelligence is fluid
 
 - "This is something I'm not good at yet."
 
-### 2. ~~We only use 10 percent of our brains.~~ We use our brains as a whole.
+#### 2. ~~We only use 10 percent of our brains.~~ We use our brains as a whole
 
 - "I am learning to use my whole brain in the best way possible."
 
-### 3. ~~Mistakes are failures.~~ Mistakes are a sign that you are trying something new.
+#### 3. ~~Mistakes are failures.~~ Mistakes are a sign that you are trying something new
 
 - There is no such thing as a failure. Only failure to learn.
 
-### 4. ~~Knowledge is power.~~ Knowledge only has the potential to be power.
+#### 4. ~~Knowledge is power.~~ Knowledge only has the potential to be power
 
 - Knowledge x Action = Power
 
-### 5. ~~Learning new things is very difficult.~~ Sometimes it is hard to learn new things.
+#### 5. ~~Learning new things is very difficult.~~ Sometimes it is hard to learn new things
 
 - When you learn how to learn, the challenge of learning can be fun.
 
-### 6. ~~The criticism of other people matters.~~ People will criticize you no matter what you do.
+#### 6. ~~The criticism of other people matters.~~ People will criticize you no matter what you do
 
 - It is not your job to like, love, or respect me. It is mine.
 
-### 7. ~~Genius is born.~~ Genius leaves clues. There is always a method behind what looks like magic.
+#### 7. ~~Genius is born.~~ Genius leaves clues. There is always a method behind what looks like magic
 
 - Genius is not born; it is made through deep practice.
 
 ---
 
-_Limitless:_ https://www.limitlessbook.com
-
----
-
-# 2. Atomic Habits
+## [2. Atomic Habits](https://jamesclear.com/atomic-habits)
 
 - The backbone is the four-step model of habits are cue, craving, response, and reward.
 
@@ -68,53 +63,53 @@ _Limitless:_ https://www.limitlessbook.com
 
 ---
 
-## Your Habits Can Compound For You or Against You
+### Your Habits Can Compound For You or Against You
 
-### Positive Compounding
+#### Positive Compounding
 
 - Productivity compounds:
-    - Automating an old task
-    - Mastering a new skill
+  - Automating an old task
+  - Mastering a new skill
 - Knowledge compounds:
-    - Learning one new idea
+  - Learning one new idea
 - Relationships compounds:
-    - Being a little bit nicer in each interaction
+  - Being a little bit nicer in each interaction
 
-### Negative Compounding
+#### Negative Compounding
 
 - Stress compounds:
-    - The frustration of a traffic jam
-    - The weight of parenting responsibilities
-    - The worry of making ends meet
-    - The strain of slightly high blood pressure
+  - The frustration of a traffic jam
+  - The weight of parenting responsibilities
+  - The worry of making ends meet
+  - The strain of slightly high blood pressure
 - Negative thoughts compounds:
-    + The more you think yourself as worthless, stupid, or ugly, the more you condition yourself to interpret life that way.
-    + Once you fall into the habit of seeing people as angry, unjust, or selfish, you see those kind of people everywhere.
+  - The more you think yourself as worthless, stupid, or ugly, the more you condition yourself to interpret life that way.
+  - Once you fall into the habit of seeing people as angry, unjust, or selfish, you see those kind of people everywhere.
 - Outrage compounds:
-    + Riots, protests, and mass movements are rarely result of single event. Instead, a long series of microagressions.
+  - Riots, protests, and mass movements are rarely result of single event. Instead, a long series of microagressions.
 
 ---
 
 - The San Antonio Spurs is one of the most successful teams in NBA history:
-    + "When nothing seems to help, I go and look at a stonecutter hammering away at his rock, perhaps a hundred times without as much as a crack showing in it. Yet at the hundred and first blow it will split in two, and I know it was not the last blow that did it-but all that had gone before."
+  - "When nothing seems to help, I go and look at a stonecutter hammering away at his rock, perhaps a hundred times without as much as a crack showing in it. Yet at the hundred and first blow it will split in two, and I know it was not the last blow that did it-but all that had gone before."
 
-#### The Plateau of Latent Potential
+##### The Plateau of Latent Potential
 
 - All big things come from small beginnings.
 
-#### Forget About Goals, Focus on Systems Instead
+##### Forget About Goals, Focus on Systems Instead
 
 - Three-time Super Bowl winner Bill Walsh: "The score takes care of itself."
 
 - Problem #1: Winners and losers have the same goals.
 - Problem #2: Achieving a goal is only a momentary change.
-   - You need to solve the problems at the systems level.
-   - Fix the inputs and the outputs will fix themselves.
+  - You need to solve the problems at the systems level.
+  - Fix the inputs and the outputs will fix themselves.
 - Problem #3: Goals restrict your happiness.
-   - Goals create an "either-or" conflict: either you succeed or failed.
-   - You can be satisfied anytime your system is running.
+  - Goals create an "either-or" conflict: either you succeed or failed.
+  - You can be satisfied anytime your system is running.
 - Problem #4: Goals are at odds with long-term progress.
-   - True long-term thinking is goal-less thinking. It is not about any single accomplishment.
+  - True long-term thinking is goal-less thinking. It is not about any single accomplishment.
 
 #### A System of Atomic Habits
 
@@ -122,7 +117,7 @@ _Limitless:_ https://www.limitlessbook.com
 
 - The most powerful outcomes of any compounding process are delayed. You need to be patient.
 
-### 2. How Your Habits Shape Your Identity (and Vice Versa)
+#### 2. How Your Habits Shape Your Identity (and Vice Versa)
 
 - Changing our habits is challenging for two reasons:
 
@@ -148,18 +143,10 @@ _Limitless:_ https://www.limitlessbook.com
 
 ---
 
-_Atomic Habits:_ https://jamesclear.com/atomic-habits
-
----
-
-# 3. Deep Work
+## [3. Deep Work](https://www.calnewport.com/books/deep-work)
 
 - A deep life is a good life.
 
 ---
 
-_Deep Work:_ https://www.calnewport.com/books/deep-work
-
----
-
-Updated by *Fatma* on November 03, 2021
+Updated by _Fatma_ on November 03, 2021.

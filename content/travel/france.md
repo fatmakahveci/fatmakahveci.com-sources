@@ -7,11 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "france"
-  - "toulouse"
-  - "carcassonne"
-  - "bordeaux"
-  - "paris"
 ---
 
 ## Toulouse (La Ville Rose)

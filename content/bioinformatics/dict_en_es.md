@@ -6,11 +6,7 @@ date: 09-06-2020
 categories:
   - "Bioinformatics"
 tags:
-  - "en-es"
-  - "dictionary"
   - "bioinformatics"
-  - "diccionario"
-  - "bioinformática"
 comments: true
 ---
 

@@ -6,9 +6,6 @@ date: 17-11-2022
 categories:
   - "Bioinformatics"
 tags:
-  - "bacterial strain identification"
-  - "bacteria"
-  - "strain"
   - "bioinformatics"
 ---
 

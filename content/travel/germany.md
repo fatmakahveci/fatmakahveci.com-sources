@@ -7,11 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "germany"
-  - "berlin"
-  - "cologne"
-  - "dusseldorf"
-  - "munich"
 ---
 
 ## Berlin

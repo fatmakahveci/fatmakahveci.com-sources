@@ -7,9 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "russia"
-  - "moscow"
-  - "saint petersburg"
 ---
 
 ## Moscow

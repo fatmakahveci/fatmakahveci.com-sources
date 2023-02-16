@@ -7,11 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "england"
-  - "london"
-  - "kent"
-  - "cambridge"
-  - "oxford"
 ---
 
 ## Cambridge

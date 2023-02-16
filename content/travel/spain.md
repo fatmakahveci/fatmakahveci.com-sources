@@ -7,12 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "spain"
-  - "cordoba"
-  - "granada"
-  - "madrid"
-  - "malaga"
-  - "sevilla"
 ---
 
 ## Cordoba

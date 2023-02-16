@@ -6,8 +6,6 @@ date: 11-06-2020
 categories:
   - "Bioinformatics"
 tags:
-  - "newbies"
-  - "bioinformatician"
   - "bioinformatics"
 ---
 

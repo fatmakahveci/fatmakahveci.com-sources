@@ -7,9 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "usa"
-  - "los angeles"
-  - "new york"
 ---
 
 ## Los Angeles

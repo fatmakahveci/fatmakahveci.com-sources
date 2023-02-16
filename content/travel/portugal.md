@@ -7,8 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "portugal"
-  - "lisboa"
 ---
 
 ## Lisboa

@@ -7,17 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "italy"
-  - "florence"
-  - "naples"
-  - "pisa"
-  - "pompei"
-  - "positano"
-  - "rome"
-  - "siena"
-  - "turin"
-  - "vatican city"
-  - "venice"
 ---
 
 ## Florence

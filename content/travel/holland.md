@@ -7,9 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "holland"
-  - "amsterdam"
-  - "lisse"
 ---
 
 ## Amsterdam

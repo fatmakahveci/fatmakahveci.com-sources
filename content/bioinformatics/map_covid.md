@@ -6,8 +6,7 @@ date: 11-06-2020
 categories:
   - "Bioinformatics"
 tags:
-  - "covid19"
-  - "turkey"
+  - "bioinformatics"
 ---
 
 {{< maps >}}

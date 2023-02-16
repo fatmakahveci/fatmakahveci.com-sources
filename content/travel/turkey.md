@@ -7,18 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "turkey"
-  - "ankara"
-  - "antalya"
-  - "balikesir"
-  - "canakkale"
-  - "cappadocia"
-  - "eskisehir"
-  - "istanbul"
-  - "izmir"
-  - "mugla"
-  - "sinop"
-  - "trabzon"
 ---
 
 ## Ankara

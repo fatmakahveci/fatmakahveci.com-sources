@@ -8,14 +8,8 @@ categories:
 tags:
   - "python"
   - "coding"
-  - "software"
-  - "algorithm"
-  - "binary tree"
-  - "tree traversal"
-  - "dfs"
-  - "bfs"
-  - "depth-first search"
-  - "breadth-first search"
+  - "algorithms"
+  - "data structures"
 ---
 
 ![binary_tree_traversal](/img/binary_tree_traversal.png)

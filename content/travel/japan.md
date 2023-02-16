@@ -7,8 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "japan"
-  - "tokyo"
 ---
 
 ## Tokyo

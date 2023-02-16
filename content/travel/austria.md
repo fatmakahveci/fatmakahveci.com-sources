@@ -7,8 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "austria"
-  - "vienna"
 ---
 
 ## Vienna

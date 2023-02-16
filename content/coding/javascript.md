@@ -8,6 +8,8 @@ categories:
 tags:
   - "javascript"
   - "coding"
+  - "algorithms"
+  - "data structures"
 ---
 
 ![header](/img/javascript_header.png)

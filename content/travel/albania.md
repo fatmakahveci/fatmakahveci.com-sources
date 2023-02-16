@@ -7,10 +7,6 @@ categories:
   - "Travel"
 tags:
   - "travel"
-  - "albania"
-  - "tirana"
-  - "durres"
-  - "berat"
 ---
 
 ## Tirana

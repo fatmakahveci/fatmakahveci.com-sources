@@ -16,12 +16,30 @@
     </item>
     
     <item>
+      <title>Covid19</title>
+      <link>https://fatmakahveci.com/bioinformatics/map_covid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/bioinformatics/map_covid/</guid>
+      <description>Here is the number of samples for each city in Turkey.</description>
+    </item>
+    
+    <item>
       <title>English-Spanish Bioinformatics Dictionary</title>
       <link>https://fatmakahveci.com/bioinformatics/dict_en_es/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/bioinformatics/dict_en_es/</guid>
       <description>Here is an English-Spanish bioinformatics dictionary.</description>
+    </item>
+    
+    <item>
+      <title>English-Turkish Bioinformatics Dictionary</title>
+      <link>https://fatmakahveci.com/bioinformatics/dict_en_tr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/bioinformatics/dict_en_tr/</guid>
+      <description>Here is an English-Turkish bioinformatics dictionary.</description>
     </item>
     
     <item>

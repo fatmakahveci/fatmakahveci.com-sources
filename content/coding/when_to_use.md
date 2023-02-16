@@ -8,11 +8,8 @@ categories:
 tags:
   - "python"
   - "coding"
-  - "software"
-  - "algorithm"
-  - "data structure"
-  - "python"
-  - "runtime"
+  - "algorithms"
+  - "data structures"
 ---
 
 ## Algorithms

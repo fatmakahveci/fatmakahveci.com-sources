@@ -6,8 +6,6 @@ date: 11-06-2020
 categories:
   - "Bioinformatics"
 tags:
-  - "bacteria"
-  - "gene transfer"
   - "bioinformatics"
 ---
 Bacterial gene transfer differs from eukaryotes. Bacteria can transfer their genes both vertically and horizontally.
