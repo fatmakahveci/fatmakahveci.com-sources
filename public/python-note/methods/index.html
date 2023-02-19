@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Methods">
 <meta itemprop="description" content="Methods">
 
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="233">
 <meta itemprop="keywords" content="python,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -123,7 +123,95 @@
 	</span>
 </div></div>
 		</header><div class="content post__content clearfix">
-			
+			<h2 id="instance-methods">Instance methods</h2>
+<ul>
+<li>The basic no-frills method</li>
+<li>It takes one parameter, <code>self</code>.
+<ul>
+<li><code>self</code> points to and instance of <code>&lt;Class&gt;</code> when the method is called.</li>
+<li>You can freely access attributes and other methods on the same object with <code>self</code>.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pizza</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, ingredients):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>ingredients <span style="color:#f92672">=</span> ingredients
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __repr__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Pizza(</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>ingredients<span style="color:#e6db74">!r}</span><span style="color:#e6db74">)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Pizza([<span style="color:#e6db74">&#39;cheese&#39;</span>, <span style="color:#e6db74">&#39;tomatoes&#39;</span>]) <span style="color:#75715e"># Pizza([&#39;cheese&#39;, &#39;tomatoes&#39;])</span>
+</span></span></code></pre></div><h2 id="magic-methods">Magic methods</h2>
+<ul>
+<li><code>def __str__(self):</code> is a magic method.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> __add__(self, other):
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>pay <span style="color:#f92672">+</span> other<span style="color:#f92672">.</span>pay
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> __len__(self):
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">return</span> len(self<span style="color:#f92672">.</span>name)
+</span></span></code></pre></div><h2 id="special-methods">Special Methods</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> hypot
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Vector</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self, x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>x <span style="color:#f92672">=</span> x
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>y <span style="color:#f92672">=</span> y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __repr__(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Vector(</span><span style="color:#e6db74">%r</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%r</span><span style="color:#e6db74">)&#39;</span> <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>x, self<span style="color:#f92672">.</span>y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __abs__(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> hypot(self<span style="color:#f92672">.</span>x, self<span style="color:#f92672">.</span>y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __bool__(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>(bool(abs(self)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __add__(self, other):
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>x <span style="color:#f92672">+</span> other<span style="color:#f92672">.</span>x
+</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>y <span style="color:#f92672">+</span> other<span style="color:#f92672">.</span>y
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Vector(x, y)
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __mul__(self, scalar):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Vector(self<span style="color:#f92672">.</span>x <span style="color:#f92672">*</span> scalar, self<span style="color:#f92672">.</span>y <span style="color:#f92672">*</span> scalar)
+</span></span></code></pre></div><ul>
+<li>They are called by the Python interpreter.</li>
+<li>If <code>my_object</code> is an instance of a user-defined class, then Python calls the <code>__len__</code> instance method you implemented.
+<ul>
+<li>Do not write <code>my_object.__len__()</code></li>
+<li>Write <code>len(my_object)</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="static-methods">Static methods</h2>
+<ul>
+<li>It takes neither a <code>self</code> nor a <code>cls</code> parameter.</li>
+<li>It can neither modify object state nor class state.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> math
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pizza</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, radius, ingredients):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>radius <span style="color:#f92672">=</span> radius
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>ingredients <span style="color:#f92672">=</span> ingredients
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __repr__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Pizza(</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>radius<span style="color:#e6db74">!r}</span><span style="color:#e6db74">, &#39;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>ingredients<span style="color:#e6db74">!r}</span><span style="color:#e6db74">)&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">area</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>circle_area(self<span style="color:#f92672">.</span>radius)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@staticmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">circle_area</span>(r):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> r <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>pi
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p <span style="color:#f92672">=</span> Pizza(<span style="color:#ae81ff">4</span>, [<span style="color:#e6db74">&#39;mozzarella&#39;</span>, <span style="color:#e6db74">&#39;tomatoes&#39;</span>])
+</span></span><span style="display:flex;"><span>p <span style="color:#75715e"># Pizza(4, [&#39;mozzarella&#39;, &#39;tomatoes&#39;])</span>
+</span></span><span style="display:flex;"><span>p<span style="color:#f92672">.</span>area() <span style="color:#75715e"># 50.26548245743669</span>
+</span></span><span style="display:flex;"><span>Pizza<span style="color:#f92672">.</span>circle_area(<span style="color:#ae81ff">4</span>) <span style="color:#75715e"># 50.26548245743669</span>
+</span></span></code></pre></div>
 		</div>
 		<footer class="post__footer">
 			
@@ -298,16 +386,16 @@
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="algorithm">algorithm (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms (130)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms (129)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bfs/" title="bfs">bfs (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bioinformatics/" title="bioinformatics">bioinformatics (6)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding (132)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures (130)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding (131)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures (129)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dfs/" title="dfs">dfs (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="django">django (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="javascript">javascript (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (130)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (129)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/reading/" title="reading">reading (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="software">software (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/travel/" title="travel">travel (23)</a>

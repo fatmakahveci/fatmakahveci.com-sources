@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Hashing">
 <meta itemprop="description" content="Hashing">
 
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="707">
 <meta itemprop="keywords" content="python,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -123,7 +123,192 @@
 	</span>
 </div></div>
 		</header><div class="content post__content clearfix">
-			
+			<h2 id="hash-table">Hash table</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HashTable</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __init__(self, elements):
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>bucket_size <span style="color:#f92672">=</span> len(elements)
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>buckets <span style="color:#f92672">=</span> [[] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>bucket_size)]
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>_assign_buckets(elements)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_assign_buckets</span>(self, elements):
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>buckets <span style="color:#f92672">=</span> [<span style="color:#66d9ef">None</span>] <span style="color:#f92672">*</span> self<span style="color:#f92672">.</span>bucket_size
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> key,value <span style="color:#f92672">in</span> elements:
+</span></span><span style="display:flex;"><span>   hashed_value <span style="color:#f92672">=</span> hash(key)
+</span></span><span style="display:flex;"><span>   index <span style="color:#f92672">=</span> hashed_value <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>bucket_size
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e"># looks for an empty bucket to store the data</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">while</span> self<span style="color:#f92672">.</span>buckets[index] <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;The key </span><span style="color:#e6db74">{</span>key<span style="color:#e6db74">}</span><span style="color:#e6db74"> collided with </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>buckets[index]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    index <span style="color:#f92672">=</span> (index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>bucket_size
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   self<span style="color:#f92672">.</span>buckets[index] <span style="color:#f92672">=</span> ((key, value))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_value</span>(self, input_key):
+</span></span><span style="display:flex;"><span>  hashed_value <span style="color:#f92672">=</span> hash(input_key)
+</span></span><span style="display:flex;"><span>  index <span style="color:#f92672">=</span> hashed_value <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>bucket_size
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> self<span style="color:#f92672">.</span>buckets[index] <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>   key,value <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>buckets[index]
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">if</span> key <span style="color:#f92672">==</span> input_key:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (value)
+</span></span><span style="display:flex;"><span>   index <span style="color:#f92672">=</span> (index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>bucket_size
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> capitals <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#39;France&#39;</span>, <span style="color:#e6db74">&#39;Paris&#39;</span>),
+</span></span><span style="display:flex;"><span>     (<span style="color:#e6db74">&#39;United States&#39;</span>, <span style="color:#e6db74">&#39;Washington&#39;</span>),
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#39;Italy&#39;</span>, <span style="color:#e6db74">&#39;Rome&#39;</span>),
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#39;Canada&#39;</span>, <span style="color:#e6db74">&#39;Ottowa&#39;</span>), 
+</span></span><span style="display:flex;"><span> ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> hashtable <span style="color:#f92672">=</span> HashTable(capitals)
+</span></span><span style="display:flex;"><span> print(hashtable)
+</span></span><span style="display:flex;"><span> print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;The capital of Italy is </span><span style="color:#e6db74">{</span>hashtable<span style="color:#f92672">.</span>get_value(<span style="color:#e6db74">&#39;Italy&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Inside class HashTable...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># separate chaining ? </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># def _assign_buckets(self, elements):</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  for key, value in elements:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   hashed_value = hash(key)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   index = hashed_value % self.bucket_size</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># self.buckets[index].append((key, value))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># def get_value(self, input_key):</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  hashed_value = hash(input_key)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  index = hashed_value % self.bucket_size</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  bucket = self.buckets[index]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  for key, value in bucket:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   if key == input_key:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    return (value)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  return None</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##</span>
+</span></span></code></pre></div><h2 id="hashmap-dictionary-map-hash-table-associative-array">Hashmap (Dictionary, Map, Hash Table, Associative Array)</h2>
+<ul>
+<li>A hashmap is a set of key-value pairs.</li>
+<li>It maps keys to values for highly efficient lookup.
+<ul>
+<li><code>O(1)</code> for add, delete, or get.</li>
+<li>If collisions occur too much, the worst case runtime is <code>O(N)</code>. Otherwise, <code>O(1)</code>.</li>
+<li>A balanced binary tree implementation gives us an <code>O(logN)</code> lookup time.
+<ul>
+<li>It uses less space.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Each key is unique.</li>
+<li>Use <code>dict</code> in python.</li>
+</ul>
+<p><img src="/img/hashmap.png" alt="hashmap"></p>
+<h3 id="insertion-of-a-key-and-value">Insertion of a key and value</h3>
+<ul>
+<li>
+<p>Compute the key&rsquo;s hash code, usually <code>int</code> or <code>long</code>.</p>
+</li>
+<li>
+<p>Map the hash code to an index in the array.</p>
+<ul>
+<li>i.e. <code>hash(key) % array_length</code></li>
+<li>There is a linked list of keys and values at this index.
+<ul>
+<li>We can have multiple keys with the same hash code <em>or</em></li>
+<li>Two different hash codes that map to the same index.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Store the key and value in this index.</p>
+</li>
+</ul>
+<h3 id="retrieve-the-value-pair-by-the-key">Retrieve the value pair by the key</h3>
+<ul>
+<li>Compute <code>hash(key)</code> and index from <code>hash(key)</code>.</li>
+<li>Search through the linked list for the value with this key.</li>
+</ul>
+<hr>
+<p><img src="/img/hash_map_cost.png" alt="hash_map_cost"></p>
+<hr>
+<h3 id="hashing">Hashing</h3>
+<ul>
+<li>
+<p>An object is hashable if it has a hash value which never changes during its lifetime.</p>
+<ul>
+<li>atomic immutable types</li>
+<li>str</li>
+<li>bytes</li>
+<li>numeric types</li>
+<li>a frozen set, by definition</li>
+<li>a tuple, if all its items are hashable</li>
+</ul>
+</li>
+<li>
+<p>Hashable objects which compare equal must have the same hash value.</p>
+</li>
+</ul>
+<h3 id="collision-resolution">Collision resolution</h3>
+<h4 id="1-separate-chaining">1. Separate chaining</h4>
+<ul>
+<li><em>Chaining</em> represents a hash table as an array of <code>m</code> linked lists(&ldquo;buckets&rdquo;).</li>
+<li>The _i_th list contains all the items that hash to the value of <code>i</code>.</li>
+<li>Search, insertion, and deletion are reduced to the linked list problems.</li>
+<li>If <code>n</code> keys are distributed uniformly, each list will contain <code>n/m</code> elements.</li>
+<li><strong>Sequential probing:</strong> Inserting an item into the next open cell in the table.</li>
+</ul>
+<h4 id="2-open-addressing">2. Open addressing</h4>
+<ul>
+<li>If the bucket you should use is busy, you just keep searching for a new bucket to be used.</li>
+<li>It maintains the hash table as a simple array of elements (not buckets).</li>
+<li>Required changes:
+<ul>
+<li>How to assign buckets to new elements</li>
+<li>How to retrieve values for a key</li>
+</ul>
+</li>
+<li>The main problem:
+<ul>
+<li>You have to handle the deletions of elements in your table.
+<ul>
+<li>To delete an element you have to replace its bucket with a dummy value, which indicates to the interpreter that it has to be considered deleted for new insertion but occupied for retrieval purposes.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="problems-with-hashing-solutions">Problems with hashing solutions</h3>
+<ul>
+<li>Is a given document unique within a large corpus?
+<ul>
+<li>Compare <code>H(document)</code> with the rest of the corpus to check for a collision.</li>
+</ul>
+</li>
+<li>Is part of this document plagiarized?
+<ul>
+<li>Build a hash table of substrings of length <code>w</code> in all the documents in the corpus.</li>
+</ul>
+</li>
+<li>How can I convince to you that a file isn&rsquo;t changed?</li>
+</ul>
+<h2 id="minwise-hashing">Minwise hashing</h2>
+<ol>
+<li>Compute the hash code $h(w_i)$ of every word in $D_1$ and select the code with the smallest hash code.</li>
+<li>Compute the hash code $h(w_i)$ of every word in $D_2$ and select the code with the smallest hash code.</li>
+<li>Compare the <code>k</code> smallest with <a href="/img/jaccard_similarity.md">Jaccard similarity</a>.</li>
+</ol>
+<h2 id="perfect-hashing">Perfect hashing</h2>
+<ul>
+<li>It guarantees zero collision.</li>
+<li>It makes use of 2-level hashgin.
+<ul>
+<li>The first level is similar to hashing by chaining.</li>
+<li>The second level chain is replaced with a hash table.</li>
+</ul>
+</li>
+</ul>
+
 		</div>
 		<footer class="post__footer">
 			
@@ -298,16 +483,16 @@
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="algorithm">algorithm (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms (130)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms (129)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bfs/" title="bfs">bfs (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bioinformatics/" title="bioinformatics">bioinformatics (6)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding (132)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures (130)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding (131)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures (129)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dfs/" title="dfs">dfs (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="django">django (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="javascript">javascript (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (130)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (129)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/reading/" title="reading">reading (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="software">software (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/travel/" title="travel">travel (23)</a>

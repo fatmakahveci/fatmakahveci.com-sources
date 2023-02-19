@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Object serialization">
 <meta itemprop="description" content="Object serialization">
 
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="349">
 <meta itemprop="keywords" content="python,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -123,7 +123,74 @@
 	</span>
 </div></div>
 		</header><div class="content post__content clearfix">
-			
+			<h2 id="serialization">Serialization</h2>
+<ul>
+<li>Serialization refers to the process of converting an object in memory to a byte stream that can be stored on disk or sent over a network.</li>
+<li>Later on, this character stream can then be retrieved and de-serialized back to a Python object.</li>
+<li>Pickling is not to be confused with compression!
+<ul>
+<li><em>Pickling</em> is the conversion of an object from one representation (data in Random Access Memory (RAM)) to another (text on disk).</li>
+<li><em>Compression</em> is the process of encoding data with fewer bits, in order to save disk space.</li>
+</ul>
+</li>
+</ul>
+<h2 id="marshal">Marshal</h2>
+<ul>
+<li>Serializing a data means converting it into a string of bytes and later reconstructing it from such a string.</li>
+<li>If the data is composed entirely of fundamental Python objects, the fastest way to serialize the data is by using marshal module.</li>
+<li>It contains functions that can read and write Python values in a binary format.</li>
+<li>It supports reading and writing the &ldquo;pseudo-compiled&rdquo; code for Python modules of .pyc files.</li>
+<li>It doesn&rsquo;t support all Python object types.</li>
+<li>The following types are supported: booleans, integers, floating point numbers, complex numbers, strings, bytes, bytearrays, tuples, lists, sets, frozensets, dictionaries, and code objects, where it should be understood that tuples, lists, sets, frozensets and dictionaries are only supported as long as the values contained therein are themselves supported.</li>
+</ul>
+<p><a href="https://www.geeksforgeeks.org/marshal-internal-python-object-serialization/">Ref</a></p>
+<h2 id="pickle">pickle</h2>
+<ul>
+<li>
+<p>It is used for implementing binary protocols for serializing and de-serializing a Python object structure.</p>
+<ul>
+<li>Pickling: It is a process where a Python object hierarchy is converted into a byte stream.</li>
+<li>Unpickling: It is the inverse of Pickling process where a byte stream is converted into an object hierarchy.</li>
+</ul>
+</li>
+<li>
+<p>Module Interface</p>
+<ul>
+<li>dumps() – This function is called to serialize an object hierarchy.</li>
+<li>loads() – This function is called to de-serialize a data stream.</li>
+</ul>
+</li>
+<li>
+<p>For user defined classes, pickle should be preferred rather than marshal for object serialization.</p>
+</li>
+<li>
+<p>When (not) to use it</p>
+</li>
+<li>
+<p>How to compress pickled objects</p>
+</li>
+<li>
+<p>Multiprocessing</p>
+</li>
+</ul>
+<p><a href="https://www.datacamp.com/community/tutorials/pickle-python-tutorial">Ref</a>, <a href="https://www.geeksforgeeks.org/pickle-python-object-serialization/?ref=rp">Ref</a></p>
+<h2 id="json">JSON</h2>
+<ul>
+<li>It works with standard JSON files.</li>
+<li>The JSON module and XML are a good choice if we want to interoperability among different languages.</li>
+<li>Types are only
+<ul>
+<li><code>null</code></li>
+<li><code>boolean</code></li>
+<li><code>numeric</code></li>
+<li><code>string</code></li>
+<li><code>array</code></li>
+<li><code>object</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://www.geeksforgeeks.org/modules-available-for-serialization-and-deserialization-in-python/?ref=rp">Ref</a></p>
+
 		</div>
 		<footer class="post__footer">
 			
@@ -298,16 +365,16 @@
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="algorithm">algorithm (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms (130)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms (129)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bfs/" title="bfs">bfs (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bioinformatics/" title="bioinformatics">bioinformatics (6)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding (132)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures (130)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding (131)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures (129)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dfs/" title="dfs">dfs (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="django">django (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="javascript">javascript (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (130)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (129)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/reading/" title="reading">reading (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="software">software (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/travel/" title="travel">travel (23)</a>

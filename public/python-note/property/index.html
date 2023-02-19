@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Property">
 <meta itemprop="description" content="Property">
 
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="117">
 <meta itemprop="keywords" content="python,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -123,7 +123,52 @@
 	</span>
 </div></div>
 		</header><div class="content post__content clearfix">
-			
+			<h2 id="property">@property</h2>
+<ul>
+<li>A pythonic way for getter and setter</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Using @property decorator</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Celsius</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, temperature<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>temperature <span style="color:#f92672">=</span> temperature
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">to_fahrenheit</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (self<span style="color:#f92672">.</span>temperature <span style="color:#f92672">*</span> <span style="color:#ae81ff">1.8</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">32</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">temperature</span>(self):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Getting value...&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_temperature
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@temperature.setter</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">temperature</span>(self, value):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Setting value...&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> value <span style="color:#f92672">&lt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">273.15</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;Temperature below -273 is not possible&#34;</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_temperature <span style="color:#f92672">=</span> value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># create an object</span>
+</span></span><span style="display:flex;"><span>human <span style="color:#f92672">=</span> Celsius(<span style="color:#ae81ff">37</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(human<span style="color:#f92672">.</span>temperature)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(human<span style="color:#f92672">.</span>to_fahrenheit())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>coldest_thing <span style="color:#f92672">=</span> Celsius(<span style="color:#f92672">-</span><span style="color:#ae81ff">300</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Setting value...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Getting value...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 37</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Getting value...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 98.60000000000001</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Setting value...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Traceback (most recent call last):</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   File &#34;&#34;, line 29, in </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   File &#34;&#34;, line 4, in __init__</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   File &#34;&#34;, line 18, in temperature</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ValueError: Temperature below -273 is not possible</span>
+</span></span></code></pre></div>
 		</div>
 		<footer class="post__footer">
 			
@@ -298,16 +343,16 @@
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="algorithm">algorithm (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms (130)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms (129)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bfs/" title="bfs">bfs (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bioinformatics/" title="bioinformatics">bioinformatics (6)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding (132)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures (130)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding (131)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures (129)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dfs/" title="dfs">dfs (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="django">django (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="javascript">javascript (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (130)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python (129)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/reading/" title="reading">reading (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="software">software (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/travel/" title="travel">travel (23)</a>
