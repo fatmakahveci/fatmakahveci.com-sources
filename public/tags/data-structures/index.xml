@@ -439,6 +439,15 @@
     </item>
     
     <item>
+      <title>Graph</title>
+      <link>https://fatmakahveci.com/python-note/graph/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/graph/</guid>
+      <description>Graph</description>
+    </item>
+    
+    <item>
       <title>GUI</title>
       <link>https://fatmakahveci.com/python-note/gui/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -448,12 +457,48 @@
     </item>
     
     <item>
+      <title>Hashing</title>
+      <link>https://fatmakahveci.com/python-note/hashing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/hashing/</guid>
+      <description>Hashing</description>
+    </item>
+    
+    <item>
+      <title>Heap</title>
+      <link>https://fatmakahveci.com/python-note/heap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/heap/</guid>
+      <description>Heap</description>
+    </item>
+    
+    <item>
       <title>Horizontal bar chart</title>
       <link>https://fatmakahveci.com/python-note/horizontal_bar_chart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/python-note/horizontal_bar_chart/</guid>
       <description>Horizontal bar chart</description>
+    </item>
+    
+    <item>
+      <title>import</title>
+      <link>https://fatmakahveci.com/python-note/import/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/import/</guid>
+      <description>import</description>
+    </item>
+    
+    <item>
+      <title>Inheritance</title>
+      <link>https://fatmakahveci.com/python-note/inheritance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/inheritance/</guid>
+      <description>Inheritance</description>
     </item>
     
     <item>
@@ -538,6 +583,15 @@
     </item>
     
     <item>
+      <title>Knapsack</title>
+      <link>https://fatmakahveci.com/python-note/knapsack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/knapsack/</guid>
+      <description>Knapsack</description>
+    </item>
+    
+    <item>
       <title>Lambda</title>
       <link>https://fatmakahveci.com/python-note/lambda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -580,6 +634,15 @@
       
       <guid>https://fatmakahveci.com/python-note/memory_management/</guid>
       <description>Memory management</description>
+    </item>
+    
+    <item>
+      <title>Methods</title>
+      <link>https://fatmakahveci.com/python-note/methods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/methods/</guid>
+      <description>Methods</description>
     </item>
     
     <item>
@@ -637,6 +700,24 @@
     </item>
     
     <item>
+      <title>numpy</title>
+      <link>https://fatmakahveci.com/python-note/numpy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/numpy/</guid>
+      <description>numpy</description>
+    </item>
+    
+    <item>
+      <title>Object serialization</title>
+      <link>https://fatmakahveci.com/python-note/object_serialization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/object_serialization/</guid>
+      <description>Object serialization</description>
+    </item>
+    
+    <item>
       <title>Object-Oriented Programming (OOP)</title>
       <link>https://fatmakahveci.com/python-note/oop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -688,6 +769,24 @@
       
       <guid>https://fatmakahveci.com/python-note/os/</guid>
       <description>os (operating system)</description>
+    </item>
+    
+    <item>
+      <title>package</title>
+      <link>https://fatmakahveci.com/python-note/package/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/package/</guid>
+      <description>package</description>
+    </item>
+    
+    <item>
+      <title>Parallel programming</title>
+      <link>https://fatmakahveci.com/python-note/parallel_programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/parallel_programming/</guid>
+      <description>Parallel programming</description>
     </item>
     
     <item>
@@ -745,6 +844,15 @@
     </item>
     
     <item>
+      <title>Property</title>
+      <link>https://fatmakahveci.com/python-note/property/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/property/</guid>
+      <description>Property</description>
+    </item>
+    
+    <item>
       <title>python</title>
       <link>https://fatmakahveci.com/python-note/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -760,6 +868,15 @@
       
       <guid>https://fatmakahveci.com/python-note/libraries/</guid>
       <description>Python libraries and frameworks</description>
+    </item>
+    
+    <item>
+      <title>Queue</title>
+      <link>https://fatmakahveci.com/python-note/queue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/queue/</guid>
+      <description>Queue</description>
     </item>
     
     <item>
@@ -799,12 +916,30 @@
     </item>
     
     <item>
+      <title>Regex</title>
+      <link>https://fatmakahveci.com/python-note/regex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/regex/</guid>
+      <description>Regex</description>
+    </item>
+    
+    <item>
       <title>return statement</title>
       <link>https://fatmakahveci.com/python-note/return_statement/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/python-note/return_statement/</guid>
       <description>return statement</description>
+    </item>
+    
+    <item>
+      <title>Scientific computing</title>
+      <link>https://fatmakahveci.com/python-note/scientific_computing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/scientific_computing/</guid>
+      <description>Scientific computing</description>
     </item>
     
     <item>
@@ -844,6 +979,15 @@
     </item>
     
     <item>
+      <title>Sorting</title>
+      <link>https://fatmakahveci.com/python-note/sorting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/sorting/</guid>
+      <description>Sorting</description>
+    </item>
+    
+    <item>
       <title>Stack</title>
       <link>https://fatmakahveci.com/python-note/stack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -871,6 +1015,15 @@
     </item>
     
     <item>
+      <title>Strings</title>
+      <link>https://fatmakahveci.com/python-note/strings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/strings/</guid>
+      <description>Strings</description>
+    </item>
+    
+    <item>
       <title>sys</title>
       <link>https://fatmakahveci.com/python-note/sys/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -895,6 +1048,15 @@
       
       <guid>https://fatmakahveci.com/python-note/tempfile/</guid>
       <description>tempfile</description>
+    </item>
+    
+    <item>
+      <title>Text</title>
+      <link>https://fatmakahveci.com/python-note/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/test/</guid>
+      <description>Text</description>
     </item>
     
     <item>
