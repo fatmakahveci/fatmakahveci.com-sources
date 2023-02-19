@@ -90,8 +90,8 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
     weight = -2
 
   [[menu.main]]
-    identifier = "reading_notes"
-    name = "reading_notes"
+    identifier = "reading"
+    name = "reading"
     url = "/reading note/"
     weight = -1
 
