@@ -1,0 +1,16 @@
+---
+title: Jaccard Similarity
+description: Jaccard Similarity
+summary: "Jaccard Similarity"
+date: 18-02-2023
+categories:
+  - "Coding"
+tags:
+  - "python"
+  - "coding"
+  - "algorithms"
+  - "data structures"
+---
+
+- It measures range from 0 to 1, a probability that the two documents are similar.
+- $J(D_1,D_2) = \frac{|D_1 \cap D_2|}{|D_1 \cup D_2|}$

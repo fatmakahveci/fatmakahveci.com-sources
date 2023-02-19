@@ -27,7 +27,7 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
   highlightColor = "#27AE60" # Override highlight color
   customCSS = ["css/custom.css"] # Include custom CSS files
   customJS = ["js/custom.js"] # Include custom JS files
-  mainSections = ["bioinformatics"]
+  mainSections = ["python note"]
   googleFontsLink = "https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&display=swap"
 
 [Params.style.vars]
@@ -46,30 +46,54 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
   # telegram = "username"
 
 [menu]
-  
+
+  [[menu.main]]
+    identifier = "go"
+    name = "go"
+    url = "/go note/"
+    weight = -8
+
+  [[menu.main]]
+    identifier = "django"
+    name = "django"
+    url = "/django note/"
+    weight = -7
+
+  [[menu.main]]
+    identifier = "python"
+    name = "python"
+    url = "/python note/"
+    weight = -6
+
   [[menu.main]]
     identifier = "coding"
-    name = "Coding"
-    url = "/coding/"
-    weight = -90
-
+    name = "coding"
+    url = "/coding note/"
+    weight = -5
+  
+  [[menu.main]]
+    identifier = "js"
+    name = "js"
+    url = "/javascript note/"
+    weight = -4
+  
   [[menu.main]]
     identifier = "bioinformatics"
     name = "Bioinformatics"
-    url = "/bioinformatics/"
-    weight = -110
+    url = "/bioinformatics note/"
+    weight = -3
 
   [[menu.main]]
     identifier = "travel"
     name = "Travel"
-    url = "/travel/"
-    weight = -100
+    url = "/travel note/"
+    weight = -2
 
   [[menu.main]]
-    identifier = "blog_post"
-    name = "Blog post"
-    url = "/post/"
-    weight = -90
+    identifier = "reading_notes"
+    name = "reading_notes"
+    url = "/reading note/"
+    weight = -1
 
 [Params.logo]
   subtitle = "" # Logo subtitle

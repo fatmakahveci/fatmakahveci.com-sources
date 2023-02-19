@@ -8,10 +8,10 @@
     <language>en-us</language><atom:link href="https://fatmakahveci.com/tags/django/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Django for beginners</title>
-      <link>https://fatmakahveci.com/coding/django/</link>
+      <link>https://fatmakahveci.com/django-note/django/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fatmakahveci.com/coding/django/</guid>
+      <guid>https://fatmakahveci.com/django-note/django/</guid>
       <description>Django for beginners</description>
     </item>
     

@@ -1,0 +1,23 @@
+---
+title: Recursion
+description: Recursion
+summary: "Recursion"
+date: 18-02-2023
+categories:
+  - "Coding"
+tags:
+  - "python"
+  - "coding"
+  - "algorithms"
+  - "data structures"
+---
+
+- Recursion really isn't a strong Python feature due to the inherent recursion limit.
+
+```python
+def sum(items):
+  head, *tail = items
+  return head + sum(tail) if tail else head
+```
+
+- Storing partial results would have done absolutely no good for such recursive algorithms as quicksort, backtracking, and DFS because all the recursive calls made in these algorithms have distinct parameter values. It doesn't pay to store something you will use once and never refer to again.

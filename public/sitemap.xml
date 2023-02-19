@@ -2,114 +2,340 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fatmakahveci.com/travel/albania/</loc>
+    <loc>https://fatmakahveci.com/python-note/activating_a_conda_environment_in_your_dockerfile/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/albania/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/algorithms/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/austria/</loc>
+    <loc>https://fatmakahveci.com/coding-note/apache_hbase/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/bioinformatics/bacterial_strain_identification/</loc>
+    <loc>https://fatmakahveci.com/python-note/args_kwargs/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/belgium/</loc>
+    <loc>https://fatmakahveci.com/python-note/atexit/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/coding/binary_tree_traversal/</loc>
+    <loc>https://fatmakahveci.com/travel-note/austria/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/bioinformatics-note/bacterial_strain_identification/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/belgium/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/binary_tree_traversal/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/bioinformatics/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/categories/bioinformatics/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/bioinformatics/</loc>
+    <loc>https://fatmakahveci.com/bioinformatics-note/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/categories/blog_posts/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/python-note/buffers/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/built-in_functions/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/callable_types/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/callback_function/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/categories/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/class/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/closure/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/coding/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/categories/coding/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/coding/</loc>
+    <loc>https://fatmakahveci.com/coding-note/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/bioinformatics/map_covid/</loc>
+    <loc>https://fatmakahveci.com/python-note/collections/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/czechia/</loc>
+    <loc>https://fatmakahveci.com/python-note/combinatorial_search/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/complete_binary_tree/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/comprehensions/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/concurrency/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/concurrency/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/conda/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/context_manager/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/conventions/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/copy/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/bioinformatics-note/map_covid/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/czechia/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/data_classes/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/data-structures/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/denmark/</loc>
+    <loc>https://fatmakahveci.com/coding-note/database/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/datetime/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/decorator/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/denmark/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/descriptor/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/design_patterns/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/dictionary/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/distributed_computing_frameworks/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/django/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/coding/django/</loc>
+    <loc>https://fatmakahveci.com/django-note/django/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/england/</loc>
+    <loc>https://fatmakahveci.com/django-note/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/bioinformatics/dict_en_es/</loc>
+    <loc>https://fatmakahveci.com/python-note/docopt/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/bioinformatics/dict_en_tr/</loc>
+    <loc>https://fatmakahveci.com/python-note/docstrings/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/estonia/</loc>
+    <loc>https://fatmakahveci.com/coding-note/dog_pile_effect/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/duck_typing/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/dynamic_programming/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/efficiency/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/encapsulation/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/england/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/bioinformatics-note/dict_en_es/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/bioinformatics-note/dict_en_tr/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/estonia/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/exceptions/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/f-strings/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/france/</loc>
+    <loc>https://fatmakahveci.com/python-note/fibonacci/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/bioinformatics/gene_transfer_in_bacteria/</loc>
+    <loc>https://fatmakahveci.com/python-note/files/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/germany/</loc>
+    <loc>https://fatmakahveci.com/python-note/finite_state_machine/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/holland/</loc>
+    <loc>https://fatmakahveci.com/travel-note/france/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/italy/</loc>
+    <loc>https://fatmakahveci.com/python-note/functions/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/japan/</loc>
+    <loc>https://fatmakahveci.com/python-note/functools/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/garbage_collection/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/bioinformatics-note/gene_transfer_in_bacteria/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/generator/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/germany/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/glob/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/go/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/go-note/go/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/go-note/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/google_bigtable/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/gui/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/holland/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/horizontal_bar_chart/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/inspect/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/intenum/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/ipython/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/italy/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/iterator/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/itertools/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/jaccard_similarity/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/japan/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/javascript/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/coding/javascript/</loc>
+    <loc>https://fatmakahveci.com/javascript-note/javascript/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/latvia/</loc>
+    <loc>https://fatmakahveci.com/javascript-note/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/poland/</loc>
+    <loc>https://fatmakahveci.com/python-note/jupyter/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/portugal/</loc>
+    <loc>https://fatmakahveci.com/python-note/keyboard_controller/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/post/</loc>
+    <loc>https://fatmakahveci.com/python-note/lambda/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/latvia/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/linked_lists/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/loops/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/matplotlib/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/memory_management/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/microservice/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/modules/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/mongodb/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/namespace/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/naming_variables/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/network/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/oop/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/objects/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/operators/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/optimize_and_solve_technique/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/ordereddict/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/os/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/pep/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/pickle/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/pipenv/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/poland/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/polymorphism/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/portugal/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/primality_testing/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/procedural_programming/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/python/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/python-note/python/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/libraries/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/random/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/randomized_algorithms/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/tags/reading/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/post/reading/</loc>
+    <loc>https://fatmakahveci.com/reading-note/reading/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/russia/</loc>
+    <loc>https://fatmakahveci.com/reading-note/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/scotland/</loc>
+    <loc>https://fatmakahveci.com/coding-note/recurrence/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/bioinformatics/links_for_bioinformatics_newbies/</loc>
+    <loc>https://fatmakahveci.com/python-note/recursion/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/spain/</loc>
+    <loc>https://fatmakahveci.com/python-note/return_statement/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/sweden/</loc>
+    <loc>https://fatmakahveci.com/travel-note/russia/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/switzerland/</loc>
+    <loc>https://fatmakahveci.com/coding-note/scope/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/scotland/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/seaborn/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/sequences/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/problems/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/bioinformatics-note/links_for_bioinformatics_newbies/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/spain/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/stack/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/star_expressions/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/statsmodels/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/sweden/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/switzerland/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/sys/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/coding/zen_of_python/</loc>
+    <loc>https://fatmakahveci.com/python-note/tail_recursion/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/tempfile/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/big_o/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/zen_of_python/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/thread/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/time/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/travel/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/categories/travel/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/</loc>
+    <loc>https://fatmakahveci.com/travel-note/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/turkey/</loc>
+    <loc>https://fatmakahveci.com/python-note/trees/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/ukraine/</loc>
+    <loc>https://fatmakahveci.com/python-note/trie/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/travel/usa/</loc>
+    <loc>https://fatmakahveci.com/travel-note/turkey/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/coding/when_to_use/</loc>
+    <loc>https://fatmakahveci.com/python-note/typing/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/ukraine/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/underscores/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/unpacking/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/travel-note/usa/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/variables_and_argument_passing/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/vectors/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/python-note/walrus/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/when_to_use/</loc>
   </url>
 </urlset>

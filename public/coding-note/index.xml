@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coding notes on Fatma Kahveci</title>
+    <link>https://fatmakahveci.com/coding-note/</link>
+    <description>Recent content in Coding notes on Fatma Kahveci</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://fatmakahveci.com/coding-note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apache HBase</title>
+      <link>https://fatmakahveci.com/coding-note/apache_hbase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/apache_hbase/</guid>
+      <description>Apache HBase</description>
+    </item>
+    
+    <item>
+      <title>Binary tree traversal</title>
+      <link>https://fatmakahveci.com/coding-note/binary_tree_traversal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/binary_tree_traversal/</guid>
+      <description>Binary tree traversal</description>
+    </item>
+    
+    <item>
+      <title>Concurrency</title>
+      <link>https://fatmakahveci.com/coding-note/concurrency/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/concurrency/</guid>
+      <description>Concurrency</description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>https://fatmakahveci.com/coding-note/database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/database/</guid>
+      <description>Database</description>
+    </item>
+    
+    <item>
+      <title>Dog pile effect</title>
+      <link>https://fatmakahveci.com/coding-note/dog_pile_effect/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/dog_pile_effect/</guid>
+      <description>Dog pile effect</description>
+    </item>
+    
+    <item>
+      <title>Dynamic Programming (DP)</title>
+      <link>https://fatmakahveci.com/coding-note/dynamic_programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/dynamic_programming/</guid>
+      <description>Dynamic Programming (DP)</description>
+    </item>
+    
+    <item>
+      <title>Google BigTable</title>
+      <link>https://fatmakahveci.com/coding-note/google_bigtable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/google_bigtable/</guid>
+      <description>Google BigTable</description>
+    </item>
+    
+    <item>
+      <title>Jaccard Similarity</title>
+      <link>https://fatmakahveci.com/coding-note/jaccard_similarity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/jaccard_similarity/</guid>
+      <description>Jaccard Similarity</description>
+    </item>
+    
+    <item>
+      <title>MongoDB</title>
+      <link>https://fatmakahveci.com/coding-note/mongodb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/mongodb/</guid>
+      <description>MongoDB</description>
+    </item>
+    
+    <item>
+      <title>Naming variables</title>
+      <link>https://fatmakahveci.com/coding-note/naming_variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/naming_variables/</guid>
+      <description>Naming variables</description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://fatmakahveci.com/coding-note/network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/network/</guid>
+      <description>Network</description>
+    </item>
+    
+    <item>
+      <title>Optimize and solve technique</title>
+      <link>https://fatmakahveci.com/coding-note/optimize_and_solve_technique/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/optimize_and_solve_technique/</guid>
+      <description>Optimize and solve technique</description>
+    </item>
+    
+    <item>
+      <title>Procedural Programming</title>
+      <link>https://fatmakahveci.com/coding-note/procedural_programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/procedural_programming/</guid>
+      <description>Procedural Programming</description>
+    </item>
+    
+    <item>
+      <title>Randomized Algorithms</title>
+      <link>https://fatmakahveci.com/coding-note/randomized_algorithms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/randomized_algorithms/</guid>
+      <description>Randomized Algorithms</description>
+    </item>
+    
+    <item>
+      <title>Recurrence relations</title>
+      <link>https://fatmakahveci.com/coding-note/recurrence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/recurrence/</guid>
+      <description>Recurrence relations</description>
+    </item>
+    
+    <item>
+      <title>Scope</title>
+      <link>https://fatmakahveci.com/coding-note/scope/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/scope/</guid>
+      <description>Scope</description>
+    </item>
+    
+    <item>
+      <title>Some common problems</title>
+      <link>https://fatmakahveci.com/coding-note/problems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/problems/</guid>
+      <description>Some common problems</description>
+    </item>
+    
+    <item>
+      <title>The efficiency of algorithms</title>
+      <link>https://fatmakahveci.com/coding-note/big_o/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/big_o/</guid>
+      <description>The efficiency of algorithms</description>
+    </item>
+    
+    <item>
+      <title>Thread</title>
+      <link>https://fatmakahveci.com/coding-note/thread/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/thread/</guid>
+      <description>Thread</description>
+    </item>
+    
+    <item>
+      <title>When to use data structures and algorithms</title>
+      <link>https://fatmakahveci.com/coding-note/when_to_use/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/when_to_use/</guid>
+      <description>When to use data structures and algorithms</description>
+    </item>
+    
+  </channel>
+</rss>
