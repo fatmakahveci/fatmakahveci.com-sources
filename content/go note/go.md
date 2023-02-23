@@ -12,7 +12,7 @@ tags:
   - "data structures"
 ---
 
-![go](../img/go.png)
+![go](/img/go.png)
 
 - Go (Golang) is a feature-rich, compiled, strongly-typed and garbage-collected programming language born from Google.
 - Go is popularly used in network, system tools, database development, and block chain.
