@@ -12,7 +12,11 @@ tags:
   - "data structures"
 ---
 
-- Go (Golang) is a strongly-typed and garbage-collected programming language.
+![go](../img/go.png)
+
+- Go (Golang) is a feature-rich, compiled, strongly-typed and garbage-collected programming language born from Google.
+- Go is popularly used in network, system tools, database development, and block chain.
+- The main selling points of Go are being flexible as many dynamic script languages, memory saving, fast program warming-up, code execution speed, concurrent programming, cross-platform support, stable core design, stack management, active community, code readability, and fast compilation.
 - It has explicit support for concurrent programming that gets the most out of multicore and networked machines.
 - A Go file consists of the following parts:
   - Package declaration
@@ -20,40 +24,28 @@ tags:
   - Functions
   - Statements and expressions
 
+- Advantages of Go executables are
+  - small memory footprint,
+  - fast code execution, and
+  - short warm-up duration.
+
+- [Go's official website](https://go.dev/)
+- [Go's official documentation](https://go.dev/doc/)
+- [Libraries](https://github.com/avelino/awesome-go)
+
+- **Gophers** means Go programmers.
+- **gc** is abbreviation for Go compiler.
+
 ---
 
-## Packages
+## 1. Hello world
 
-- In Go, codes should be organized into packages by their functionalities.
-- A `package` is a directory containing `.go` file(s).
-- You should divide your code into multiple files for readability.
+### 1.1. Create a directory for the project
 
-### Naming
-
-- Package names should be unique, short (often simple nouns), singular, and lowercase. It provides context for its contents.
-- A Go package has both a name and a path. By convention, the last element of the package path is the package name.
-- You can abbreviate a package name if it is familiar to the programmer.
-- You can locally rename the package names to import multiple packages with the same name.
-
-```go
-package <package_name>
-
-import "<package_name>"
-
-// Single-line comment
-
-/* Multi-line
-   comment
- */
+```bash
+mkdir hello_world
+cd hello_world
 ```
-
-### Core packages
-
-- `math`, `net` (networking), `fmt` (formatted IO)
-
----
-
-## Hello world
 
 Programs start running in `package main`. The main packages are not importable.
 
@@ -63,45 +55,230 @@ package main
 
 import "fmt"
 
-func main() {
+func main() { // Many `{` can't be put on the next line because a syntax error occurs.
   fmt.Println("Hello World")
 }
 ```
 
-Run `go run main.go`
+### 1.1.1. Build and run
+
+- `go run` quickly runs a Go program without generating an executable binary. It is just a convenient way to run simple Go programs.
+
+- For large Go projects, use `go build` or `go install` to build then run executable binary files instead.
+  - `go build` compiles the packages, along with their dependencies, but it doesn't install the results.
+  - `go install` compiles and installs the packages.
+
+### 1.1.2. Other basic commands
+
+- `go fmt` formats source code with a consistent coding style.
+
+- `go vet` examines source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string. Vet uses heuristics that do not guarantee all reports are genuine problems, but it can find errors not caught by the compilers.
+
+- `go test` command to run tests and benchmarks.
+
+- `go.mod` manages dependencies without relying on external package managers.
+  - `go mod init [<module_path>]` generates a `go.mod` file.
+  - `go mod tidy` adds missing module dependencies into and remove unused dependencies from the `go.mod` file.
+
+- `go get` adds, upgrades, downgrades, or removes a single dependency.
+
+- `go help <subcommand>` views the help message for given `<subcommand>`.
 
 ---
 
-## Functions and Methods
+- `go doc` extracts and generates documentation.
+- It runs as a web server and presents the documentation as a web page.
+
+```bash
+# Install godoc
+go install golang.org/x/tools/cmd/godoc@latest
+
+godoc -http=:6060 &
+```
+
+Go to `http://localhost:6060/`
+
+```go
+go doc <package_name>
+go doc <package_name>.<function_name>
+```
+
+---
+
+## 2. Packages
+
+- Packages organizes codes.
+- A package must import another package to use the exported code elements.
+- In Go, codes should be organized into packages by their functionalities.
+- A `package` is a directory containing `.go` file(s).
+- You should divide your code into multiple files for readability.
+
+### 2.1. Naming
+
+- Package names should be unique, short (often simple nouns), singular, and lowercase. It provides context for its contents.
+- A Go package has both a name and a path. By convention, the last element of the package path is the package name.
+- You can abbreviate a package name if it is familiar to the programmer.
+- You can locally rename the package names to import multiple packages with the same name.
+
+```go
+package <package_name>
+
+import "<package_name>" // importing a single package
+
+// importing multiple packages (option 1)
+import "<package_name>"
+import "<package_name>"
+
+// importing multiple packages (option 2)
+import (
+  "<package_name>"
+  "<package_name>"
+)
+
+// package aliases
+import <package_alias> "<package_name>"
+<package_alias>.<function_name>() // instead of <package_name>.<function_name>()
+
+// Single-line comment
+
+/* Multi-line
+   comment
+   (Block comment)
+ */
+```
+
+### 2.2. Standard packages
+
+- Go comes with a `math`, `net` (networking), `fmt` (formatted IO), etc.
+
+[Ref](https://pkg.go.dev/std)
+
+### 2.3. Managing dependencies
+
+- Dependencies are external packages that your code utilizes. As you continue to work on the code, an upgrade or substitution of these dependencies may be required.
+- Go's dependency managers keep your Go applications secure and consistent as you work with the dependencies.
+- Go edits [go.mod](https://go.dev/doc/modules/gomod-ref) file to manage dependencies.
+- Each formal Go project supporting Go modules needs a `go.mod` file located in the root folder of that project.
+
+---
+
+## 3. Functions and Methods
 
 - Functions and methods can return multiple values.
 
-### Functions
+### 3.1. Functions
 
 ```go
 func <func_name>(<>) {
-  
+  // code
 }
 ```
 
-### Methods
+- Function closures (TODO)
+- Deferred function calls (TODO)
+
+### 3.2. Methods
+
+- There is no class in Go, but you can define methods on types.
+- A method is a function with a special reciever argument.
 
 ```go
-func (<>) <func_name> (<>) {
+func (<receiver>) <func_name> (<>) {
+  // code
+}
+```
 
+#### 3.2.1. Methods on struct and non-struct types
+
+```go
+package main
+
+import (
+  "fmt"
+  "math"
+)
+
+// 1*: Methods on struct
+type Vertex struct {
+  X, Y float64
+}
+
+func (v Vertex) Abs() float64 {
+  return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+//
+
+// 2*: Methods on non-struct types
+type MyFloat float64
+
+func (f MyFloat) Abs() float64 {
+  if f < 0 {
+    return float64(-f)
+  }
+  return float64(f)
+}
+//
+
+func main() {
+  // 1*
+  v := Vertex{3, 4}
+  fmt.Println(v.Abs())
+
+  // 2*
+  f := MyFloat(-math.Sqrt2)
+  fmt.Println(f.Abs())
+}
+```
+
+- A method declaration is restricted to having a receiver whose type is defined within the same package.
+
+#### 3.2.2. Pointer receivers
+
+- You can declare methods with pointer receivers.
+
+```go
+func (<*Type>) <func_name> (<>) { // Type cannot itself be a pointer.
+  // code
+}
+```
+
+- Pointer receivers are more common than value receivers since methods often need to modify their receiver.
+
+#### 3.2.3. Methods and pointer indirection
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+  X, Y float64
+}
+
+func (v *Vertex) Scale(f float64) {
+  v.X = v.X * f
+  v.Y = v.Y * f
+}
+
+func ScaleFunc(v *Vertex, f float64) {
+  v.X = v.X * f
+  v.Y = v.Y * f
+}
+
+func main() {
+  v1 := Vertex{3, 4}
+  v1.Scale(2)
+  ScaleFunc(&v1, 2) // v1 := {12 16}
+
+  v2 := &Vertex{3, 4}
+  v2.Scale(2)
+  ScaleFunc(v2, 2) // v2 := &{12 16}
 }
 ```
 
 ---
 
-## Variables
-
-- **Variable types:**
-  - Signed integers: `int`, `int8`, `int16`, `int32`, `int64`
-  - Unsigned integers: `uint`, `unit8`, `unit16`, `unit32`, `unit64`
-  - Floating numbers: `float32`, `float64`
-  - `string`
-  - `bool`
+## 4. Variables
 
 - `:=` can only be used in functions. Variable declaration and assignment must be in the same line.
 - `var` can be used inside and outside of functions.
@@ -142,26 +319,125 @@ fmt.Printf("%v\n", text) // Hello, world!
 fmt.Printf("%#v\n", text) // "Hello, world!" // Go-syntax
 fmt.Printf("%v%%\n", num) // 1.2%
 fmt.Printf("%T\n", i) // float64
-
-// Formatting integers
-var i int = 1
-fmt.Printf("%d\n", 1) // Base 10
-// @TODO
-
-// Formatting floating numbers
-// @TODO
 ```
 
----
-
-## Types
+### 4.1. Types
 
 - Go doesn't restrict where you define the types, so keep types closer to the location used.
 - Keeping the core types grouped at the top is often a good practice.
 
----
+- Type embedding (TODO)
+- Type deduction (TODO)
 
-## Arrays
+- The number in the type name represents how many bits a value of that type will occupy in memory at run time.
+  - e.g. `uint8` occupies 8 bits in memory.
+
+#### 4.1.1. Integer types
+
+- Signed integers: `int`, `int8`, `int16`, `int32` (`rune`), `int64`
+- Unsigned integers: `uint`, `unit8` (`byte`), `unit16`, `unit32`, `unit64`, `uintptr`
+
+```go
+// Formatting integers
+var i int = 1
+fmt.Printf("%d\n", 1) // Base 10
+```
+
+#### 4.1.2. Floating-point types
+
+- `float32`, `float64`
+- In memory, all floating-point numeric values in Go are stored in IEEE-754 format.
+
+```go
+// Formatting floating numbers
+```
+
+#### 4.1.3. Complex types
+
+- `complex64`, `complex128`
+
+#### 4.1.4. Boolean type
+
+- `bool` can be either `true` or `false`.
+
+#### 4.1.5. String type
+
+- `string`
+
+#### 4.1.6. Error type
+
+- `error`
+
+#### 4.1.7. Pointer types
+
+- A pointer can point to a variable of any type including a pointer.
+
+##### 4.1.7.1. Declaring a pointer of type `T`
+
+```go
+var <pointer_name> *T
+```
+
+- i.e. a pointer of type `int` can be declared as `var p *int`
+
+##### 4.1.7.2. Initialization of a pointer
+
+```go
+var <pointer_name> *<data_type> = &<address_value>
+```
+
+- If you take a pointer of type `T`, the address of the variable that you will give to a pointer will be only of type `T`, not any other type.
+- If you use `var`, there is no need to specify the type during the declaration. The type of a pointer variable is inferred by the compiler.
+  - `var ptr = &x`
+- You can use `:=` to declare and initialize the pointers.
+  - `ptr := &x`
+- The default value of a pointer is always `nil`.
+
+##### 4.1.7.3. Dereferencing or indirecting operator (*)
+
+- It accesses the value stored in the variable that the pointer points to.
+
+```go
+var x = 1
+var ptr = &x
+// x = 1, &x = 0xAFFFF, ptr = 0xAFFFF, *ptr = 1
+*ptr = 2
+// x = 2, &x = 0xAFFFF, ptr = 0xAFFFF, *ptr = 2
+```
+
+##### 4.1.7.4. Creating a pointer using the built-in new function
+
+- It takes a type as an argument, allocates memory space to accommodate a value of that type, and returns a pointer to it.
+
+```go
+ptr := new(int)
+*ptr = 1
+// ptr = 0xAFFFF, *ptr = 1
+```
+
+##### 4.1.7.5. Pointer to pointer
+
+```go
+var x = 1 // x = 1, &x = 0xAFFFF
+var ptr = &x // ptr = 0xAFFFF, &ptr = 0xAAAAA
+var ptr_ptr = &p // ptr_ptr = 0xAAAAA, *ptr_ptr = 0xAFFFF, **ptr_ptr = 1
+```
+
+##### 4.1.7.6. No pointer arithmetic in Go
+
+- Go doesn't support arithmetic operations on pointers except comparing two pointers of same type for equality.
+
+```go
+var x = 1
+var ptr = &x
+// var ptr2 = ptr + 1 // compiler error
+var ptr2 = &x
+if ptr1 == ptr2 {}
+```
+
+#### 4.1.8. Array types
+
+- `[n]<type>` := an array of `n` values of type `<type>`
 
 ```go
 // [length] length is defined
@@ -170,46 +446,267 @@ var arr = [2]int{1,2} // var array_name = [length]datatype{values}
 arr := [2]int{1,2} // array_name := [length]datatype{values} // length is defined
 ```
 
----
+#### 4.1.9. Slice types
 
-## Maps
+- `[]<type>` := a dynamically sized sequence of values of type `<type>`
 
-- .
+#### 4.1.10. Map types
 
----
+- `map[K][V]` := a collection of key-value pairs with keys of type `K` and values of type `V`
 
-## Conditionals
+#### 4.1.11. Struct types
 
-Syntax      = { Production } .
-Production  = production_name "=" [ Expression ] "." .
-Expression  = Term { "|" Term } .
-Term        = Factor { Factor } .
-Factor      = production_name | token [ "…" token ] | Group | Option | Repetition .
-Group       = "(" Expression ")" .
-Option      = "[" Expression "]" .
-Repetition  = "{" Expression "}" .
+- `struct{...}` := a composite type that groups together zero or more values of different types into a single object.
 
----
+#### 4.1.12. Interface types
 
-## `godoc`
+- `interface{...}` := A set of method signatures, but it is also a type.
+- A value of interface type can hold any value that implements those methods.
 
-- It extracts and generates documentation.
-- It runs as a web server and presents the documentation as a web page.
+- Go supports polymorphism, value boxing, and reflection through interfaces.
 
-```bash
-# Install godoc
-go install golang.org/x/tools/cmd/godoc@latest
-
-godoc -http=:6060 &
+```go
+type Human interface { // Human is a type that has a Think() method.
+  Think() string // takes no args, returns a string
+}
 ```
 
-Go to `http://localhost:6060/`
+- Go doesn't have `implements` keyword. A type implements an interface by implementing its methods.
+
+```go
+package main
+
+import "fmt"
+
+type I interface {
+  M()
+}
+
+type T struct {
+  S string
+}
+
+func (t T) M() {
+  fmt.Println(t.S)
+}
+
+func main() {
+  var i I = T{"hello"}
+  i.M()
+}
+```
+
+**1. Explicit interfaces:**
+
+**2. Implicit interfaces:**
+
+**3. Empty interface:**
 
 ---
 
-## Clockwise/Spiral rule
+## 5. Keywords
 
-It is a technique to parse any C declaration. There are three steps:
+- Keywords are reserved to prevent them from being used as identifiers.
+- Go has only 25 keywords:
+  1. Declaring code elements: `const`, `func`, `import`, `package`, `type`, `var`
+  2. As parts in composite types: `chan`, `interface`, `map`, `struct`
+  3. Controling flow of code: `select`, `case`, `else`, `goto`, `switch`, `fallthrough`, `if`, `range`, `continue`, `for`, `return`  `break`, `default`
+  4. Modifying function calls: `defer`, `go`
+
+---
+
+## 6. Identifiers
+
+- An identifier is a token which must be composed of
+  - Unicode letters,
+  - Unicode digits and `_`, and
+  - start with either an Unicode letter or `_`.
+- `_` := blank identifier
+
+- All names of types, variables, constants, labels, package names and package import names are identifiers.
+- Keywords cannot be used as identifiers.
+
+- _Exported identifiers_ start with an upper case letter, similar to `public` in many other languages.
+- _Non-exported identifiers_ do not start with an upper case letter, similar to `private` in many other languages.
+
+---
+
+## 7. Flow control statements
+
+### 7.1. Basic control flow
+
+#### 7.1.1. for
+
+```go
+// 1 + 2 + 3
+sum := 0
+for i := 1; i < 3; i++ {
+  sum += i
+} // sum := 1 + 2 + 3 = 6
+```
+
+- `for <init>; <condition>; <post> {}`
+  - _init:_ executed before the first iteration. `i := 0`
+  - _condition:_ evaluated before every iteration. `i <= 3`
+  - _post:_ executed at the end of every iteration. `i++`
+
+- There are no parantheses surrounding the statement.
+- `{}` is always required.
+- _init_ and _post_ are optional:
+  - `for ;<condition>; {}` OR
+  - `for <condition> {}`.
+- `for {}` is an infinite loop.
+
+#### 7.1.2. if-else
+
+```go
+if number < 0 {
+  fmt.Println("number is negative")
+}
+```
+
+```go
+if <init>; <condition> {
+  // code
+} else {
+  // code
+}
+```
+
+- No parantheses surrounding the statement are required.
+- `{}` is always required.
+
+#### 7.1.3. switch-case
+
+```go
+```
+
+### 7.2. Control flow for specific types in Go
+
+#### 7.2.1. for-range
+
+For container types
+
+```go
+```
+
+#### 7.2.2. type-switch
+
+For interface types
+
+```go
+```
+
+#### 7.2.3. select-case
+
+For channel types
+
+```go
+```
+
+## 7.3. Jump statements
+
+### 7.3.1. break
+
+```go
+```
+
+### 7.3.2. continue
+
+```go
+```
+
+### 7.3.3. goto
+
+```go
+```
+
+### 7.3.4. fallthrough
+
+```go
+```
+
+---
+
+## 8. Memory management
+
+### 8.1. Garbage collection
+
+### 8.2. How to avoid memory leaking
+
+---
+
+## 9. Concurrency
+
+### 9.1. Goroutine
+
+```go
+package main
+
+import (
+ "fmt"
+ "sync"
+ "time"
+)
+
+func main() {
+ var wg sync.WaitGroup
+ wg.Add(1)
+
+ go func() {
+  count("sheep")
+  wg.Done()
+ }()
+
+ wg.Wait()
+}
+
+func count(thing string) {
+ for i := 1; i <= 5; i++ {
+  fmt.Println(i, thing)
+  time.Sleep(time.Millisecond * 500)
+ }
+}
+```
+
+### 9.2. Channels and select mechanisms
+
+- to do synchronizations between goroutines.
+
+---
+
+## 10. Iterators
+
+---
+
+## 11. Queues
+
+---
+
+## 12. Sets
+
+---
+
+## 13. Trees
+
+---
+
+## 14. Conditionals
+
+- Syntax      = { Production } .
+- Production  = production_name "=" [ Expression ] "." .
+- Expression  = Term { "|" Term } .
+- Term        = Factor { Factor } .
+- Factor      = production_name | token [ "…" token ] | Group | Option | Repetition .
+- Group       = "(" Expression ")" .
+- Option      = "[" Expression "]" .
+- Repetition  = "{" Expression "}" .
+
+---
+
+## 15. Clockwise/Spiral rule
+
+It is a technique to parse any `C` declaration. There are three steps:
 
 1. Starting with the unknown element, move in a spiral/clockwise direction; when encountering the following replace them with the corresponding English statements:
 
@@ -263,4 +760,4 @@ It is a technique to parse any C declaration. There are three steps:
 
 ---
 
-Updated by _Fatma_ on February 16, 2023.
+Updated by _Fatma_ on February 22, 2023.
