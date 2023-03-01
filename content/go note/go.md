@@ -164,23 +164,58 @@ import <package_alias> "<package_name>"
 
 ## 3. Functions and Methods
 
-- Functions and methods can return multiple values.
-
 ### 3.1. Functions
 
+- Functions can take zero or more arguments.
+- `x int, y int` can be written as `x, y int` if the types are the same.
+
+- The type comes after the variable name. i.e. `func <function_name>(<variable_name> <type>)`
+
 ```go
-func <func_name>(<>) {
-  // code
+//
+func <function_name>(<args>) {
 }
 ```
 
-- Function closures (TODO)
-- Deferred function calls (TODO)
+- A function can return any number of values.
+
+```go
+func swap(x, y string) (string, string) {
+  return y, x
+}
+```
+
+- _Naked return_ is a return statement without arguments that returns the named return values. It harms readability in long functions.
+
+```go
+func divide(sum int) (x int) {
+  x = sum / 2
+  return // returns x
+}
+```
+
+#### 3.1.1. Function closures
+
+- .
+
+#### 3.1.2. Defer
+
+- `defer` will move the execution of the statement to the very end inside a function.
+
+- Multiple `defer` statements are allowed.
+- Deferred function calls are pushed onto a stack so they follow the LIFO order.
+
+```go
+defer fmt.Println("Second")
+defer fmt.Println("First")
+// Output: First Second
+```
 
 ### 3.2. Methods
 
 - There is no class in Go, but you can define methods on types.
 - A method is a function with a special reciever argument.
+- A method can return any number of values.
 
 ```go
 func (<receiver>) <func_name> (<>) {
@@ -280,7 +315,7 @@ func main() {
 
 ## 4. Variables
 
-- `:=` can only be used in functions. Variable declaration and assignment must be in the same line.
+- Short variable declarations (`:=`) can only be used in functions. Variable declaration and assignment must be in the same line.
 - `var` can be used inside and outside of functions.
 
 ```go
@@ -294,6 +329,11 @@ name := "Bob" // <variable_name> := <value> // type is inferred //
 var name string
 var number int
 var isNumber bool
+
+// zero values := variables declared without an explicit initial value are given their zero value.
+// - 0 for numerics
+// - false for booleans
+// - "" for strings
 
 // assign after the initialization
 var name string
@@ -332,7 +372,23 @@ fmt.Printf("%T\n", i) // float64
 - The number in the type name represents how many bits a value of that type will occupy in memory at run time.
   - e.g. `uint8` occupies 8 bits in memory.
 
+- Type conversions
+  - `<type>(<value>)` converts `<value>` to `<type>`.
+
+```go
+var i int = 1
+var f float64 = float64(i)`
+```
+
+- Type inference
+
+```go
+c := 3 + 4i // c := complex128
+```
+
 #### 4.1.1. Integer types
+
+- If you don't have a specific purpose, you should use `int` to create an integer value.
 
 - Signed integers: `int`, `int8`, `int16`, `int32` (`rune`), `int64`
 - Unsigned integers: `uint`, `unit8` (`byte`), `unit16`, `unit32`, `unit64`, `uintptr`
@@ -379,6 +435,15 @@ var <pointer_name> *T
 ```
 
 - i.e. a pointer of type `int` can be declared as `var p *int`
+
+- Struct fields can be accessed through a struct pointer.
+
+```go
+v := Vertex{1, 2}
+p := &v
+p.X = 3
+// v := {1 3}
+```
 
 ##### 4.1.7.2. Initialization of a pointer
 
@@ -456,7 +521,47 @@ arr := [2]int{1,2} // array_name := [length]datatype{values} // length is define
 
 #### 4.1.11. Struct types
 
-- `struct{...}` := a composite type that groups together zero or more values of different types into a single object.
+- A struct is a composite type that groups together zero or more values of different types into a single object.
+- Each field is often composed of a name and a type. It can be accessed as `<struct_name>.<field_name>`.
+
+```go
+struct {
+  name            string // the same types can be merged. i.e. `name, surname string`
+  surname         string
+  number_of_items int
+}
+```
+
+##### 4.1.11.1. Struct tags
+
+- A struct tag is additional meta data information inserted into struct fields.
+- Generally, they provide how a field is encoded or decoded from a format.
+- They are used in popular packages such as `encoding/json`, etc.
+
+```go
+import "encoding/json"
+
+type User struct {
+  // When you encode and decode a struct to JSON, keys are given below.
+  FirstName string `json:"first_name"` // key := first_name
+  Email string // key := Email
+}
+```
+
+##### 4.1.11.2. Struct literals
+
+```go
+type Vertex struct {
+  X, Y int
+}
+
+var (
+  v1 = Vertex{1, 2}  // has type Vertex
+  v2 = Vertex{X: 1}  // Y:0 is implicit
+  v3 = Vertex{}      // X:0 and Y:0
+  p  = &Vertex{1, 2} // has type *Vertex
+)
+```
 
 #### 4.1.12. Interface types
 
@@ -576,10 +681,32 @@ if <init>; <condition> {
 - No parantheses surrounding the statement are required.
 - `{}` is always required.
 
-#### 7.1.3. switch-case
+- `if` with a `:=` can execute the short statement before the execution.
 
 ```go
+// threshold variable is in the scope of the `if` statement.
+if threshold := 1; x < threshold {
+  return x
+}
 ```
+
+#### 7.1.3. switch-case
+
+- Shorter way of `if-else` statements
+- It evaluates cases from top to bottom.
+- It only runs the first case corresponds to the desired condition, not the followings.
+- Cases doesn't need to be constants, and the values doesn't need to be integers.
+
+```go
+switch time.Now().Weekday() { // import "time"
+  case time.Saturday, time.Sunday: // use `,` for multiple cases
+    fmt.Println("It's the weekend")
+  default:
+    fmt.Println("It's a weekday")
+}
+```
+
+- `switch {}` is the same as `switch true`.
 
 ### 7.2. Control flow for specific types in Go
 
