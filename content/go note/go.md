@@ -492,13 +492,10 @@ fmt.Printf("%T\n", i) // float64
 - Go doesn't restrict where you define the types, so keep types closer to the location used.
 - Keeping the core types grouped at the top is often a good practice.
 
-- Type embedding (TODO)
-- Type deduction (TODO)
-
 - The number in the type name represents how many bits a value of that type will occupy in memory at run time.
   - e.g. `uint8` occupies 8 bits in memory.
 
-- Type conversions
+- _Type conversion_
   - `<type>(<value>)` converts `<value>` to `<type>`.
 
 ```go
@@ -506,7 +503,7 @@ var i int = 1
 var f float64 = float64(i)`
 ```
 
-- Type inference
+- _Type inference_
 
 ```go
 c := 3 + 4i // c := complex128
@@ -564,8 +561,10 @@ fmt.Printf("%d\n", 1) // Base 10
 
 #### 4.1.2. Floating-point types
 
-- `float32`, `float64`
 - In memory, all floating-point numeric values in Go are stored in IEEE-754 format.
+
+- `float32` occupies 32 bits in memory.
+- `float64` occupies 64 bits in memory.
 
 ```go
 // Formatting floating numbers
@@ -814,9 +813,48 @@ func main() {
 }
 ```
 
+- _Embedding interface_
+
+```go
+type i1 interface {
+    m1()
+}
+
+type i2 interface {
+    m2()
+}
+
+type I interface { // embedded interface
+    i1
+    i2 
+}
+```
+
 ---
 
-## 5. Keywords
+## 5. Operators and punctuations
+
+```text
+Precedence        Operator
+    5             *  /  %  <<  >>  &  &^
+    4             +  -  |  ^
+    3             ==  !=  <  <=  >  >=
+    2             &&
+    1             ||
+```
+
+- `+`, `-`, `*` (MULTIPLY, POINTER), `/`, `%`
+- `&` (AND, ADDRESS), `|`, `^` (XOR), `<<` (LEFT SHIFT), `>>` (RIGHT SHIFT), `&^` (AND NOT)
+- `+=`, `-=`, `*=`, `/=`, `%=`
+- `&=`, `|=`, `^=`, `<<=`, `>>=`, `&^=`
+- `&&` (AND), `||` (OR), `<-` (RECEIVE A VALUE FROM THE CHANNEL), `++`, `--`
+- `==`, `=`, `!` (NOT), `<`, `>`, `~`
+- `!=`, `<=`, `>=`, `...`, `:=`
+- `(`, `)`, `[`, `]`, `{`, `}`, `.`, `,`, `:`, `;`
+
+---
+
+## 6. Keywords
 
 - Keywords are reserved to prevent them from being used as identifiers.
 - Go has only 25 keywords:
@@ -827,7 +865,7 @@ func main() {
 
 ---
 
-## 6. Identifiers
+## 7. Identifiers
 
 - An identifier is a token which must be composed of
   - Unicode letters,
@@ -843,11 +881,11 @@ func main() {
 
 ---
 
-## 7. Flow control statements
+## 8. Flow control statements
 
-### 7.1. Basic control flow
+### 8.1. Basic control flow
 
-#### 7.1.1. for
+#### 8.1.1. for
 
 ```go
 // 1 + 2 + 3
@@ -869,7 +907,7 @@ for i := 1; i < 3; i++ {
   - `for <condition> {}`.
 - `for {}` is an infinite loop.
 
-#### 7.1.2. if-else
+#### 8.1.2. if-else
 
 ```go
 if number < 0 {
@@ -897,7 +935,7 @@ if threshold := 1; x < threshold {
 }
 ```
 
-#### 7.1.3. switch-case
+#### 8.1.3. switch-case
 
 - Shorter way of `if-else` statements
 - It evaluates cases from top to bottom.
@@ -915,80 +953,80 @@ switch time.Now().Weekday() { // import "time"
 
 - `switch {}` is the same as `switch true`.
 
-### 7.2. Control flow for specific types in Go
+### 8.2. Control flow for specific types in Go
 
-#### 7.2.1. for-range
+#### 8.2.1. for-range
 
 For container types
 
 ```go
 ```
 
-#### 7.2.2. type-switch
+#### 8.2.2. type-switch
 
 For interface types
 
 ```go
 ```
 
-#### 7.2.3. select-case
+#### 8.2.3. select-case
 
 For channel types
 
 ```go
 ```
 
-## 7.3. Jump statements
+## 8.3. Jump statements
 
-### 7.3.1. break
-
-```go
-```
-
-### 7.3.2. continue
+### 8.3.1. break
 
 ```go
 ```
 
-### 7.3.3. goto
+### 8.3.2. continue
 
 ```go
 ```
 
-### 7.3.4. fallthrough
+### 8.3.3. goto
+
+```go
+```
+
+### 8.3.4. fallthrough
 
 ```go
 ```
 
 ---
 
-## 8. Memory management
+## 9. Memory management
 
-### 8.1. Memory allocation
+### 9.1. Memory allocation
 
 - Memory allocation and deallocation happens automatically.
 - Autonomous implementation of memory usage patterns such as memory pooling, preallocation, etc. avoids making a system call for each memory allocation.
 - Whether if an object will be stack or heap allocated is decided by the compiler.
 
-#### 8.1.1. `new()` and `make()`
+#### 9.1.1. `new()` and `make()`
 
 - Both will allocate and get a memory address.
 - `new()` is not initialized. It is so you cannot put any data initially.
 - `make()` is more common. It is initialized and non-zeroed storage so you can put data initially.
 
-### 8.2. Garbage collection (GC)
+### 9.2. Garbage collection (GC)
 
 - It happens automatically.
 - It allows automatic memory management to make code cleaner and avoid memory leak.
 - Out of scope or `nil`
 
-### 8.3. Escape analysis
+### 9.3. Escape analysis
 
 ---
 
-## 9. Concurrency
+## 10. Concurrency
 
-### 9.1. Goroutine
+### 10.1. Goroutine
 
 ```go
 package main
@@ -1019,29 +1057,29 @@ func count(thing string) {
 }
 ```
 
-### 9.2. Channels and select mechanisms
+### 10.2. Channels and select mechanisms
 
 - to do synchronizations between goroutines.
 
 ---
 
-## 10. Iterators
+## 11. Iterators
 
 ---
 
-## 11. Queues
+## 12. Queues
 
 ---
 
-## 12. Sets
+## 13. Sets
 
 ---
 
-## 13. Trees
+## 14. Trees
 
 ---
 
-## 14. Conditionals
+## 15. Conditionals
 
 - Syntax      = { Production } .
 - Production  = production_name "=" [ Expression ] "." .
@@ -1054,7 +1092,7 @@ func count(thing string) {
 
 ---
 
-## 15. Clockwise/Spiral rule
+## 16. Clockwise/Spiral rule
 
 It is a technique to parse any `C` declaration. There are three steps:
 
@@ -1110,4 +1148,4 @@ It is a technique to parse any `C` declaration. There are three steps:
 
 ---
 
-Updated by _Fatma_ on February 22, 2023.
+Updated by _Fatma_ on March 02, 2023.
