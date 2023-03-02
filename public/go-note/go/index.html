@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Go for beginners">
 <meta itemprop="description" content="Go for beginners">
 
-<meta itemprop="wordCount" content="3819">
+<meta itemprop="wordCount" content="3945">
 <meta itemprop="keywords" content="go,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -607,19 +607,13 @@
 <p>Keeping the core types grouped at the top is often a good practice.</p>
 </li>
 <li>
-<p>Type embedding (TODO)</p>
-</li>
-<li>
-<p>Type deduction (TODO)</p>
-</li>
-<li>
 <p>The number in the type name represents how many bits a value of that type will occupy in memory at run time.</p>
 <ul>
 <li>e.g. <code>uint8</code> occupies 8 bits in memory.</li>
 </ul>
 </li>
 <li>
-<p>Type conversions</p>
+<p><em>Type conversion</em></p>
 <ul>
 <li><code>&lt;type&gt;(&lt;value&gt;)</code> converts <code>&lt;value&gt;</code> to <code>&lt;type&gt;</code>.</li>
 </ul>
@@ -628,7 +622,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span> = float64(<span style="color:#a6e22e">i</span>)<span style="color:#960050;background-color:#1e0010">`</span>
 </span></span></code></pre></div><ul>
-<li>Type inference</li>
+<li><em>Type inference</em></li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">4i</span> <span style="color:#75715e">// c := complex128
 </span></span></span></code></pre></div><ul>
@@ -681,8 +675,15 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%d\n&#34;</span>, <span style="color:#ae81ff">1</span>) <span style="color:#75715e">// Base 10
 </span></span></span></code></pre></div><h4 id="412-floating-point-types">4.1.2. Floating-point types</h4>
 <ul>
-<li><code>float32</code>, <code>float64</code></li>
-<li>In memory, all floating-point numeric values in Go are stored in IEEE-754 format.</li>
+<li>
+<p>In memory, all floating-point numeric values in Go are stored in IEEE-754 format.</p>
+</li>
+<li>
+<p><code>float32</code> occupies 32 bits in memory.</p>
+</li>
+<li>
+<p><code>float64</code> occupies 64 bits in memory.</p>
+</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Formatting floating numbers
 </span></span></span></code></pre></div><h4 id="413-complex-types">4.1.3. Complex types</h4>
@@ -903,8 +904,41 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">printInfo</span>(<span style="color:#a6e22e">s</span>)
 </span></span><span style="display:flex;"><span>  } 
 </span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><em>Embedding interface</em></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">i1</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">m1</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">i2</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">m2</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">I</span> <span style="color:#66d9ef">interface</span> { <span style="color:#75715e">// embedded interface
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">i1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">i2</span> 
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><hr>
-<h2 id="5-keywords">5. Keywords</h2>
+<h2 id="5-operators-and-punctuations">5. Operators and punctuations</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Precedence        Operator
+</span></span><span style="display:flex;"><span>    5             *  /  %  &lt;&lt;  &gt;&gt;  &amp;  &amp;^
+</span></span><span style="display:flex;"><span>    4             +  -  |  ^
+</span></span><span style="display:flex;"><span>    3             ==  !=  &lt;  &lt;=  &gt;  &gt;=
+</span></span><span style="display:flex;"><span>    2             &amp;&amp;
+</span></span><span style="display:flex;"><span>    1             ||
+</span></span></code></pre></div><ul>
+<li><code>+</code>, <code>-</code>, <code>*</code> (MULTIPLY, POINTER), <code>/</code>, <code>%</code></li>
+<li><code>&amp;</code> (AND, ADDRESS), <code>|</code>, <code>^</code> (XOR), <code>&lt;&lt;</code> (LEFT SHIFT), <code>&gt;&gt;</code> (RIGHT SHIFT), <code>&amp;^</code> (AND NOT)</li>
+<li><code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code></li>
+<li><code>&amp;=</code>, <code>|=</code>, <code>^=</code>, <code>&lt;&lt;=</code>, <code>&gt;&gt;=</code>, <code>&amp;^=</code></li>
+<li><code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>&lt;-</code> (RECEIVE A VALUE FROM THE CHANNEL), <code>++</code>, <code>--</code></li>
+<li><code>==</code>, <code>=</code>, <code>!</code> (NOT), <code>&lt;</code>, <code>&gt;</code>, <code>~</code></li>
+<li><code>!=</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>...</code>, <code>:=</code></li>
+<li><code>(</code>, <code>)</code>, <code>[</code>, <code>]</code>, <code>{</code>, <code>}</code>, <code>.</code>, <code>,</code>, <code>:</code>, <code>;</code></li>
+</ul>
+<hr>
+<h2 id="6-keywords">6. Keywords</h2>
 <ul>
 <li>Keywords are reserved to prevent them from being used as identifiers.</li>
 <li>Go has only 25 keywords:
@@ -917,7 +951,7 @@
 </li>
 </ul>
 <hr>
-<h2 id="6-identifiers">6. Identifiers</h2>
+<h2 id="7-identifiers">7. Identifiers</h2>
 <ul>
 <li>
 <p>An identifier is a token which must be composed of</p>
@@ -944,9 +978,9 @@
 </li>
 </ul>
 <hr>
-<h2 id="7-flow-control-statements">7. Flow control statements</h2>
-<h3 id="71-basic-control-flow">7.1. Basic control flow</h3>
-<h4 id="711-for">7.1.1. for</h4>
+<h2 id="8-flow-control-statements">8. Flow control statements</h2>
+<h3 id="81-basic-control-flow">8.1. Basic control flow</h3>
+<h4 id="811-for">8.1.1. for</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 1 + 2 + 3
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
@@ -978,7 +1012,7 @@
 <p><code>for {}</code> is an infinite loop.</p>
 </li>
 </ul>
-<h4 id="712-if-else">7.1.2. if-else</h4>
+<h4 id="812-if-else">8.1.2. if-else</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">number</span> &lt; <span style="color:#ae81ff">0</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;number is negative&#34;</span>)
 </span></span><span style="display:flex;"><span>}
@@ -1002,7 +1036,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">threshold</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">x</span> &lt; <span style="color:#a6e22e">threshold</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h4 id="713-switch-case">7.1.3. switch-case</h4>
+</span></span></code></pre></div><h4 id="813-switch-case">8.1.3. switch-case</h4>
 <ul>
 <li>Shorter way of <code>if-else</code> statements</li>
 <li>It evaluates cases from top to bottom.</li>
@@ -1018,42 +1052,42 @@
 </span></span></code></pre></div><ul>
 <li><code>switch {}</code> is the same as <code>switch true</code>.</li>
 </ul>
-<h3 id="72-control-flow-for-specific-types-in-go">7.2. Control flow for specific types in Go</h3>
-<h4 id="721-for-range">7.2.1. for-range</h4>
+<h3 id="82-control-flow-for-specific-types-in-go">8.2. Control flow for specific types in Go</h3>
+<h4 id="821-for-range">8.2.1. for-range</h4>
 <p>For container types</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h4 id="722-type-switch">7.2.2. type-switch</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h4 id="822-type-switch">8.2.2. type-switch</h4>
 <p>For interface types</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h4 id="723-select-case">7.2.3. select-case</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h4 id="823-select-case">8.2.3. select-case</h4>
 <p>For channel types</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h2 id="73-jump-statements">7.3. Jump statements</h2>
-<h3 id="731-break">7.3.1. break</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h3 id="732-continue">7.3.2. continue</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h3 id="733-goto">7.3.3. goto</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h3 id="734-fallthrough">7.3.4. fallthrough</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h2 id="83-jump-statements">8.3. Jump statements</h2>
+<h3 id="831-break">8.3.1. break</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h3 id="832-continue">8.3.2. continue</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h3 id="833-goto">8.3.3. goto</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h3 id="834-fallthrough">8.3.4. fallthrough</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><hr>
-<h2 id="8-memory-management">8. Memory management</h2>
-<h3 id="81-memory-allocation">8.1. Memory allocation</h3>
+<h2 id="9-memory-management">9. Memory management</h2>
+<h3 id="91-memory-allocation">9.1. Memory allocation</h3>
 <ul>
 <li>Memory allocation and deallocation happens automatically.</li>
 <li>Autonomous implementation of memory usage patterns such as memory pooling, preallocation, etc. avoids making a system call for each memory allocation.</li>
 <li>Whether if an object will be stack or heap allocated is decided by the compiler.</li>
 </ul>
-<h4 id="811-new-and-make">8.1.1. <code>new()</code> and <code>make()</code></h4>
+<h4 id="911-new-and-make">9.1.1. <code>new()</code> and <code>make()</code></h4>
 <ul>
 <li>Both will allocate and get a memory address.</li>
 <li><code>new()</code> is not initialized. It is so you cannot put any data initially.</li>
 <li><code>make()</code> is more common. It is initialized and non-zeroed storage so you can put data initially.</li>
 </ul>
-<h3 id="82-garbage-collection-gc">8.2. Garbage collection (GC)</h3>
+<h3 id="92-garbage-collection-gc">9.2. Garbage collection (GC)</h3>
 <ul>
 <li>It happens automatically.</li>
 <li>It allows automatic memory management to make code cleaner and avoid memory leak.</li>
 <li>Out of scope or <code>nil</code></li>
 </ul>
-<h3 id="83-escape-analysis">8.3. Escape analysis</h3>
+<h3 id="93-escape-analysis">9.3. Escape analysis</h3>
 <hr>
-<h2 id="9-concurrency">9. Concurrency</h2>
-<h3 id="91-goroutine">9.1. Goroutine</h3>
+<h2 id="10-concurrency">10. Concurrency</h2>
+<h3 id="101-goroutine">10.1. Goroutine</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
@@ -1080,20 +1114,20 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">500</span>)
 </span></span><span style="display:flex;"><span> }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="92-channels-and-select-mechanisms">9.2. Channels and select mechanisms</h3>
+</span></span></code></pre></div><h3 id="102-channels-and-select-mechanisms">10.2. Channels and select mechanisms</h3>
 <ul>
 <li>to do synchronizations between goroutines.</li>
 </ul>
 <hr>
-<h2 id="10-iterators">10. Iterators</h2>
+<h2 id="11-iterators">11. Iterators</h2>
 <hr>
-<h2 id="11-queues">11. Queues</h2>
+<h2 id="12-queues">12. Queues</h2>
 <hr>
-<h2 id="12-sets">12. Sets</h2>
+<h2 id="13-sets">13. Sets</h2>
 <hr>
-<h2 id="13-trees">13. Trees</h2>
+<h2 id="14-trees">14. Trees</h2>
 <hr>
-<h2 id="14-conditionals">14. Conditionals</h2>
+<h2 id="15-conditionals">15. Conditionals</h2>
 <ul>
 <li>Syntax      = { Production } .</li>
 <li>Production  = production_name &ldquo;=&rdquo; [ Expression ] &ldquo;.&rdquo; .</li>
@@ -1105,7 +1139,7 @@
 <li>Repetition  = &ldquo;{&rdquo; Expression &ldquo;}&rdquo; .</li>
 </ul>
 <hr>
-<h2 id="15-clockwisespiral-rule">15. Clockwise/Spiral rule</h2>
+<h2 id="16-clockwisespiral-rule">16. Clockwise/Spiral rule</h2>
 <p>It is a technique to parse any <code>C</code> declaration. There are three steps:</p>
 <ol>
 <li>
@@ -1152,7 +1186,7 @@
 </span></span><span style="display:flex;"><span>   |                  +--------+      |
 </span></span><span style="display:flex;"><span>   +----------------------------------+
 </span></span></code></pre></div><hr>
-<p>Updated by <em>Fatma</em> on February 22, 2023.</p>
+<p>Updated by <em>Fatma</em> on March 02, 2023.</p>
 
 		</div>
 		<footer class="post__footer">
