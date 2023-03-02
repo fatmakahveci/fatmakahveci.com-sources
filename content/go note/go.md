@@ -2,7 +2,7 @@
 title: Go for beginners
 description: Go for beginners
 summary: "Go for beginners"
-date: 16-02-2023
+date: 02-03-2023
 categories:
   - "Coding"
 tags:
@@ -40,7 +40,31 @@ tags:
 
 ## 1. Hello world
 
-### 1.1. Create a directory for the project
+### 1.1. Download and install Go
+
+- Visit the [Go](https://go.dev/doc/install)'s download page.
+- You can test the installation:
+
+```bash
+go version
+```
+
+- You can use the following IDEs:
+  - [JetBrains GoLand](https://www.jetbrains.com/go/download/#section=mac)
+  - [Visual Studio Code](https://code.visualstudio.com/Download)
+  - [Atom](https://github.blog/2022-06-08-sunsetting-atom/)
+  - [Sublime Text](https://www.sublimetext.com/)
+
+#### 1.1.1. Directories
+
+- `$GOPATH` and `$GOROOT` are environment variables that define a certain arrangement and organization for the Go source code.
+  - Go code belongs to `$GOPATH` workspace directory comprised of 3 subdirectories:
+    - `src` holds the source code.
+    - `pkg` holds package objects.
+    - `bin` holds compiled commands.
+  - `$GOROOT` is for compiler and tools that come from go installation and is used to find the standard libraries.
+
+### 1.2. Create a directory for the project
 
 ```bash
 mkdir hello_world
@@ -60,7 +84,7 @@ func main() { // Many `{` can't be put on the next line because a syntax error o
 }
 ```
 
-### 1.1.1. Build and run
+### 1.2.1. Build and run
 
 - `go run` quickly runs a Go program without generating an executable binary. It is just a convenient way to run simple Go programs.
 
@@ -68,7 +92,7 @@ func main() { // Many `{` can't be put on the next line because a syntax error o
   - `go build` compiles the packages, along with their dependencies, but it doesn't install the results.
   - `go install` compiles and installs the packages.
 
-### 1.1.2. Other basic commands
+### 1.2.2. Other basic commands
 
 - `go fmt` formats source code with a consistent coding style.
 
@@ -172,33 +196,135 @@ import <package_alias> "<package_name>"
 - The type comes after the variable name. i.e. `func <function_name>(<variable_name> <type>)`
 
 ```go
-//
+// Declaring a function
 func <function_name>(<args>) {
 }
+
+// Calling a function
+<function_name>(<args>)
 ```
 
 - A function can return any number of values.
+- You can use _blank identifier_ (`_`) to ignore a declared but not used variable.
 
 ```go
-func swap(x, y string) (string, string) {
-  return y, x
+package main
+ 
+import "fmt"
+
+func main() {
+    num, _ := returnTwoNumbers()
+    fmt.Println(num)
+}
+ 
+func returnTwoNumbers() (int, int) {
+    return 1, 2
 }
 ```
 
 - _Naked return_ is a return statement without arguments that returns the named return values. It harms readability in long functions.
 
 ```go
+package main
+ 
+import "fmt"
+
+func main() {
+    num := divide(2)
+    fmt.Println(num)
+}
+ 
 func divide(sum int) (x int) {
   x = sum / 2
   return // returns x
 }
 ```
 
-#### 3.1.1. Function closures
+#### 3.1.1. Call-by-value and call-by-reference
 
-- .
+```go
+package main
 
-#### 3.1.2. Defer
+import "fmt"
+
+// Call-by-value
+func increaseByValue(num int) {
+  num = num + 1
+}
+
+// Call-by-reference
+func increaseByReference(num *int) {
+  *num = *num + 1
+}
+
+func main() {
+  var x int = 3
+  fmt.Printf("x = %d (before by value)\n", x) // x = 3
+  increaseByValue(x)
+  fmt.Printf("x = %d (by value)\n", x) // x = 3
+
+  x = 3
+  fmt.Printf("x = %d (before by reference)\n", x) // x = 3
+  increaseByReference(&x)
+  fmt.Printf("x = %d (by reference)\n", x) // x = 4
+}
+```
+
+#### 3.1.2. Anonymous functions
+
+- You can assign a function to a variable or even invoke it immediately. Below `getSum` is an example.
+
+```go
+package main
+ 
+import "fmt"
+ 
+func main() {
+  getSum := func(num1, num2 int) (int) {
+    return num1 + num2
+  }
+  fmt.Printf("1 + 2 = %d", getSum(1, 2))
+}
+```
+
+##### 3.1.2.1. Immediate invocation of a function
+
+```go
+func(word string) {
+  fmt.Printf("Hello, %s", word)
+} ("World") // prints "Hello World"
+```
+
+#### 3.1.3. Function closures
+
+- A `first class function` can be assigned to variables, passed as an argument and can be returned from another function.
+
+- A closure is a nested function that helps us access the outer function's variables even after the outer function is closed.
+
+```go
+package main
+
+import "fmt"
+
+func adder() func(int) int { // function returning another function
+ sum := 0
+ return func(x int) int {
+  sum += x
+  return sum
+ }
+}
+
+func main() {
+ pos, neg := adder(), adder() // Each closure is bound to its own sum variable.
+ for i := 1; i < 4; i++ {
+  // pos: 1 3 6
+  // neg: -2 -6 -12
+  fmt.Println(pos(i), neg(-2*i))
+ }
+}
+```
+
+#### 3.1.4. Defer
 
 - `defer` will move the execution of the statement to the very end inside a function.
 
@@ -214,7 +340,7 @@ defer fmt.Println("First")
 ### 3.2. Methods
 
 - There is no class in Go, but you can define methods on types.
-- A method is a function with a special reciever argument.
+- A method is a function with a special receiver argument.
 - A method can return any number of values.
 
 ```go
@@ -775,9 +901,25 @@ For channel types
 
 ## 8. Memory management
 
-### 8.1. Garbage collection
+### 8.1. Memory allocation
 
-### 8.2. How to avoid memory leaking
+- Memory allocation and deallocation happens automatically.
+- Autonomous implementation of memory usage patterns such as memory pooling, preallocation, etc. avoids making a system call for each memory allocation.
+- Whether if an object will be stack or heap allocated is decided by the compiler.
+
+#### 8.1.1. `new()` and `make()`
+
+- Both will allocate and get a memory address.
+- `new()` is not initialized. It is so you cannot put any data initially.
+- `make()` is more common. It is initialized and non-zeroed storage so you can put data initially.
+
+### 8.2. Garbage collection (GC)
+
+- It happens automatically.
+- It allows automatic memory management to make code cleaner and avoid memory leak.
+- Out of scope or `nil`
+
+### 8.3. Escape analysis
 
 ---
 
