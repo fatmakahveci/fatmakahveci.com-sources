@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Go for beginners">
 <meta itemprop="description" content="Go for beginners">
 
-<meta itemprop="wordCount" content="3597">
+<meta itemprop="wordCount" content="3819">
 <meta itemprop="keywords" content="go,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -129,7 +129,7 @@
 <p>Go (Golang) is a feature-rich, compiled, strongly-typed and garbage-collected programming language born from Google.</p>
 </li>
 <li>
-<p>Go is popularly used in network, system tools, database development, and block chain.</p>
+<p>Go is the contemporary programming language of cloud computing. It is also popularly used in network, system tools, database development, and block chain.</p>
 </li>
 <li>
 <p>The main selling points of Go are being flexible as many dynamic script languages, memory saving, fast program warming-up, code execution speed, concurrent programming, cross-platform support, stable core design, stack management, active community, code readability, and fast compilation.</p>
@@ -631,7 +631,40 @@
 <li>Type inference</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">4i</span> <span style="color:#75715e">// c := complex128
-</span></span></span></code></pre></div><h4 id="411-integer-types">4.1.1. Integer types</h4>
+</span></span></span></code></pre></div><ul>
+<li>A <em>type assertion</em> provides access to an interface value&rsquo;s underlying concrete value.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">interface</span>{} = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">tr</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span>.(<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">tr</span>) <span style="color:#75715e">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> 
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">tr</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span>.(<span style="color:#66d9ef">int</span>) <span style="color:#75715e">// &lt;value&gt;, &lt;isAssertionSucceed&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">tr</span>, <span style="color:#a6e22e">ok</span>) <span style="color:#75715e">// 1 true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> 
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">fa</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span>.(<span style="color:#66d9ef">float32</span>)
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">fa</span>, <span style="color:#a6e22e">ok</span>) <span style="color:#75715e">// 0 false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">fa</span> = <span style="color:#a6e22e">i</span>.(<span style="color:#66d9ef">float32</span>) <span style="color:#75715e">// panic will be triggered because i doesn&#39;t hold a float32
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">fa</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>A <em>type switch</em> permits several type assertions in series.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span>.(<span style="color:#66d9ef">type</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">T</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// here v has type T
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">S</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// here v has type S
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">default</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// no match; here v has the same type as i
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h4 id="411-integer-types">4.1.1. Integer types</h4>
 <ul>
 <li>
 <p>If you don&rsquo;t have a specific purpose, you should use <code>int</code> to create an integer value.</p>
@@ -800,45 +833,77 @@
 </span></span></code></pre></div><h4 id="4112-interface-types">4.1.12. Interface types</h4>
 <ul>
 <li>
-<p><code>interface{...}</code> := A set of method signatures, but it is also a type.</p>
+<p><code>interface{...}</code> is a set of method signatures, but it is also a type.</p>
+</li>
+<li>
+<p>Interfaces are concerned with what a type can do, not the value it holds.</p>
 </li>
 <li>
 <p>A value of interface type can hold any value that implements those methods.</p>
 </li>
 <li>
+<p>Naming convention for interface types is made with an <code>-er</code> suffix: i.e. a talker is anything that talks.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">talker</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">talk</span>() <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>
 <p>Go supports polymorphism, value boxing, and reflection through interfaces.</p>
+</li>
+<li>
+<p>Interfaces are declared with a set of methods that a type must satisfy.</p>
 </li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Human</span> <span style="color:#66d9ef">interface</span> { <span style="color:#75715e">// Human is a type that has a Think() method.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Think</span>() <span style="color:#66d9ef">string</span> <span style="color:#75715e">// takes no args, returns a string
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Talk</span>() <span style="color:#66d9ef">string</span> <span style="color:#75715e">// takes no args, returns a string
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span></code></pre></div><ul>
 <li>Go doesn&rsquo;t have <code>implements</code> keyword. A type implements an interface by implementing its methods.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;math&#34;</span>
+</span></span><span style="display:flex;"><span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">I</span> <span style="color:#66d9ef">interface</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">M</span>()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">shape</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">area</span>() <span style="color:#66d9ef">float64</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">struct</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">S</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">square</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">length</span> <span style="color:#66d9ef">float64</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#a6e22e">T</span>) <span style="color:#a6e22e">M</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">S</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">circle</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">radius</span> <span style="color:#66d9ef">float64</span>
 </span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#a6e22e">square</span>) <span style="color:#a6e22e">area</span>() <span style="color:#66d9ef">float64</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">length</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#a6e22e">circle</span>) <span style="color:#a6e22e">area</span>() <span style="color:#66d9ef">float64</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pi</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">radius</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">radius</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">printInfo</span>(<span style="color:#a6e22e">s</span> <span style="color:#a6e22e">shape</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Area(%T) = %.1f\n&#34;</span>, <span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">area</span>()) <span style="color:#75715e">// Area(main.square) = 4.0 \n Area(main.circle) = 12.6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#a6e22e">I</span> = <span style="color:#a6e22e">T</span>{<span style="color:#e6db74">&#34;hello&#34;</span>}
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">M</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">shapes</span> <span style="color:#f92672">:=</span> []<span style="color:#a6e22e">shape</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">square</span>{<span style="color:#a6e22e">length</span>: <span style="color:#ae81ff">2.0</span>},
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">circle</span>{<span style="color:#a6e22e">radius</span>: <span style="color:#ae81ff">2.0</span>},
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>,<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">shapes</span> { <span style="color:#75715e">// key, value
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">printInfo</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>  } 
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><strong>1. Explicit interfaces:</strong></p>
-<p><strong>2. Implicit interfaces:</strong></p>
-<p><strong>3. Empty interface:</strong></p>
-<hr>
+</span></span></code></pre></div><hr>
 <h2 id="5-keywords">5. Keywords</h2>
 <ul>
 <li>Keywords are reserved to prevent them from being used as identifiers.</li>

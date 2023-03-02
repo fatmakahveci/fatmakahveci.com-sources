@@ -15,7 +15,7 @@ tags:
 ![go](/img/go.png)
 
 - Go (Golang) is a feature-rich, compiled, strongly-typed and garbage-collected programming language born from Google.
-- Go is popularly used in network, system tools, database development, and block chain.
+- Go is the contemporary programming language of cloud computing. It is also popularly used in network, system tools, database development, and block chain.
 - The main selling points of Go are being flexible as many dynamic script languages, memory saving, fast program warming-up, code execution speed, concurrent programming, cross-platform support, stable core design, stack management, active community, code readability, and fast compilation.
 - It has explicit support for concurrent programming that gets the most out of multicore and networked machines.
 - A Go file consists of the following parts:
@@ -512,6 +512,43 @@ var f float64 = float64(i)`
 c := 3 + 4i // c := complex128
 ```
 
+- A _type assertion_ provides access to an interface value's underlying concrete value.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+ var i interface{} = 1
+
+ tr := i.(int)
+ fmt.Println(tr) // 1
+ 
+ tr, ok := i.(int) // <value>, <isAssertionSucceed>
+ fmt.Println(tr, ok) // 1 true
+ 
+ fa, ok := i.(float32)
+ fmt.Println(fa, ok) // 0 false
+
+ fa = i.(float32) // panic will be triggered because i doesn't hold a float32
+ fmt.Println(fa)
+}
+```
+
+- A _type switch_ permits several type assertions in series.
+
+```go
+switch v := i.(type) {
+  case T:
+    // here v has type T
+  case S:
+    // here v has type S
+  default:
+    // no match; here v has the same type as i
+}
+```
+
 #### 4.1.1. Integer types
 
 - If you don't have a specific purpose, you should use `int` to create an integer value.
@@ -709,14 +746,25 @@ var (
 
 #### 4.1.12. Interface types
 
-- `interface{...}` := A set of method signatures, but it is also a type.
+- `interface{...}` is a set of method signatures, but it is also a type.
+- Interfaces are concerned with what a type can do, not the value it holds.
 - A value of interface type can hold any value that implements those methods.
+
+- Naming convention for interface types is made with an `-er` suffix: i.e. a talker is anything that talks.
+
+```go
+type talker interface {
+  talk() string
+}
+```
 
 - Go supports polymorphism, value boxing, and reflection through interfaces.
 
+- Interfaces are declared with a set of methods that a type must satisfy.
+
 ```go
 type Human interface { // Human is a type that has a Think() method.
-  Think() string // takes no args, returns a string
+  Talk() string // takes no args, returns a string
 }
 ```
 
@@ -725,31 +773,46 @@ type Human interface { // Human is a type that has a Think() method.
 ```go
 package main
 
-import "fmt"
+import (
+  "fmt"
+  "math"
+)
 
-type I interface {
-  M()
+type shape interface {
+  area() float64
 }
 
-type T struct {
-  S string
+type square struct {
+  length float64
 }
 
-func (t T) M() {
-  fmt.Println(t.S)
+type circle struct {
+  radius float64
+}
+
+func (s square) area() float64 {
+  return s.length * s.length
+}
+
+func (c circle) area() float64 {
+  return math.Pi * c.radius * c.radius
+}
+
+func printInfo(s shape) {
+  fmt.Printf("Area(%T) = %.1f\n", s, s.area()) // Area(main.square) = 4.0 \n Area(main.circle) = 12.6
 }
 
 func main() {
-  var i I = T{"hello"}
-  i.M()
+  shapes := []shape{
+    square{length: 2.0},
+    circle{radius: 2.0},
+  }
+
+  for _,s := range shapes { // key, value
+    printInfo(s)
+  } 
 }
 ```
-
-**1. Explicit interfaces:**
-
-**2. Implicit interfaces:**
-
-**3. Empty interface:**
 
 ---
 
