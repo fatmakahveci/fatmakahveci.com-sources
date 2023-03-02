@@ -503,17 +503,35 @@ if ptr1 == ptr2 {}
 #### 4.1.8. Array types
 
 - `[n]<type>` := an array of `n` values of type `<type>`
+- Arrays are values in Go. An array variable denotes the entire array. It is not a pointer to the first element. Assigning or passing an array value makes a copy of its contents.
+- Passing a pointer to the array avoids copying, but it is a pointer to an array, not an array.
 
 ```go
 // [length] length is defined
 // [...] length is inferred
-var arr = [2]int{1,2} // var array_name = [length]datatype{values}
-arr := [2]int{1,2} // array_name := [length]datatype{values} // length is defined
+var arr = [2]int{1,2} // var <array_name> = [<array_length>]<data_type>{<values>}
+arr := [2]int{1,2} // <array_name> := [<array_length>]<data_type>{<values>} // length is defined
+var arr [2]string // var <array_name> [<array_length>]<data_type>
+arr[0] = "Go"
 ```
 
 #### 4.1.9. Slice types
 
-- `[]<type>` := a dynamically sized sequence of values of type `<type>`
+- `[]<type>` := a dynamically-sized flexible sequence of values of specific type `<type>`
+- A slice has no specific length, unlike an array.
+
+```go
+var sli []int = {1,2} // similar to an array literal but no element count
+sli[lo:hi] // It includes the first, but it excludes the last element.
+```
+
+- A built-in function `make` can create a slice:
+  - `func make([]<type>, <length>, <capacity>) []<type>`
+
+```go
+var s []byte
+s = make([]byte, 5, 5) // s := []byte{0, 0, 0, 0, 0}
+```
 
 #### 4.1.10. Map types
 
