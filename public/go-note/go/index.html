@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Go for beginners">
 <meta itemprop="description" content="Go for beginners">
 
-<meta itemprop="wordCount" content="3607">
+<meta itemprop="wordCount" content="3597">
 <meta itemprop="keywords" content="go,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -548,8 +548,20 @@
 </span></span></code></pre></div><hr>
 <h2 id="4-variables">4. Variables</h2>
 <ul>
-<li>Short variable declarations (<code>:=</code>) can only be used in functions. Variable declaration and assignment must be in the same line.</li>
-<li><code>var</code> can be used inside and outside of functions.</li>
+<li>
+<p>Short variable declarations (<code>:=</code>) can only be used in functions. Variable declaration and assignment must be in the same line.</p>
+</li>
+<li>
+<p><code>var</code> can be used inside and outside of functions.</p>
+</li>
+<li>
+<p>Variables declared without an explicit initial value are given their <code>zero value</code>.</p>
+<ul>
+<li><code>0</code> for numerics</li>
+<li><code>false</code> for booleans</li>
+<li><code>&quot;&quot;</code> for strings</li>
+</ul>
+</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// initialized value
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span> = <span style="color:#e6db74">&#34;Bob&#34;</span> <span style="color:#75715e">// var &lt;variable_name&gt; &lt;type&gt; = &lt;value&gt; // type is given
@@ -562,11 +574,6 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">number</span> <span style="color:#66d9ef">int</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">isNumber</span> <span style="color:#66d9ef">bool</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// zero values := variables declared without an explicit initial value are given their zero value.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// - 0 for numerics
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// - false for booleans
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// - &#34;&#34; for strings
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// assign after the initialization
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Bob&#34;</span>
