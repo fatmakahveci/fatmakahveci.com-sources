@@ -444,6 +444,11 @@ func main() {
 - Short variable declarations (`:=`) can only be used in functions. Variable declaration and assignment must be in the same line.
 - `var` can be used inside and outside of functions.
 
+- Variables declared without an explicit initial value are given their `zero value`.
+  - `0` for numerics
+  - `false` for booleans
+  - `""` for strings
+
 ```go
 // initialized value
 var name string = "Bob" // var <variable_name> <type> = <value> // type is given
@@ -455,11 +460,6 @@ name := "Bob" // <variable_name> := <value> // type is inferred //
 var name string
 var number int
 var isNumber bool
-
-// zero values := variables declared without an explicit initial value are given their zero value.
-// - 0 for numerics
-// - false for booleans
-// - "" for strings
 
 // assign after the initialization
 var name string
