@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Go for beginners">
 <meta itemprop="description" content="Go for beginners">
 
-<meta itemprop="wordCount" content="4146">
+<meta itemprop="wordCount" content="4253">
 <meta itemprop="keywords" content="go,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -766,9 +766,40 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span></code></pre></div><h4 id="414-boolean-type">4.1.4. Boolean type</h4>
 <ul>
-<li><code>bool</code> can be either <code>true</code> or <code>false</code>.</li>
+<li>A <code>bool</code> requires 1 byte (8 bits) of memory and represents a Boolean value of <code>true</code> or <code>false</code>.</li>
+<li>Its zero value is <code>false</code>.</li>
 </ul>
-<h4 id="415-string-type">4.1.5. String type</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;strconv&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">// Boolean operators
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">b</span>) <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">b</span>) <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span> &lt; <span style="color:#a6e22e">b</span>)  <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span> &gt; <span style="color:#a6e22e">b</span>)  <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">b</span>) <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">b</span>) <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">// Convert string into bool
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">flagBool</span> <span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">flagString</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;False&#34;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">flagBool</span>, <span style="color:#a6e22e">_</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">ParseBool</span>(<span style="color:#a6e22e">flagString</span>)
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;String: %T, bool: %T\n&#34;</span>, <span style="color:#a6e22e">flagString</span>, <span style="color:#a6e22e">flagBool</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">// Convert bool into string
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fString</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">fBool</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">fString</span> = <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">FormatBool</span>(<span style="color:#a6e22e">fBool</span>)
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;String: %T, bool: %T&#34;</span>, <span style="color:#a6e22e">fString</span>, <span style="color:#a6e22e">fBool</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="415-string-type">4.1.5. String type</h4>
 <ul>
 <li><code>string</code></li>
 </ul>

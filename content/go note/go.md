@@ -657,7 +657,41 @@ func main() {
 
 #### 4.1.4. Boolean type
 
-- `bool` can be either `true` or `false`.
+- A `bool` requires 1 byte (8 bits) of memory and represents a Boolean value of `true` or `false`.
+- Its zero value is `false`.
+
+```go
+package main
+
+import (
+ "fmt"
+ "strconv"
+)
+
+func main() {
+ // Boolean operators
+ a := 1
+ b := 2
+ fmt.Println(a == b) // false
+ fmt.Println(a != b) // true
+ fmt.Println(a < b)  // true
+ fmt.Println(a > b)  // false
+ fmt.Println(a >= b) // false
+ fmt.Println(a <= b) // true
+
+ // Convert string into bool
+ var flagBool bool
+ flagString := "False"
+ flagBool, _ = strconv.ParseBool(flagString)
+ fmt.Printf("String: %T, bool: %T\n", flagString, flagBool)
+
+ // Convert bool into string
+ var fString string
+ fBool := false
+ fString = strconv.FormatBool(fBool)
+ fmt.Printf("String: %T, bool: %T", fString, fBool)
+}
+```
 
 #### 4.1.5. String type
 
