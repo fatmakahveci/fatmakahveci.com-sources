@@ -77,7 +77,9 @@ Programs start running in `package main`. The main packages are not importable.
 // file: main.go
 package main
 
-import "fmt"
+import (
+  "fmt"
+)
 
 func main() { // Many `{` can't be put on the next line because a syntax error occurs.
   fmt.Println("Hello World")
@@ -184,7 +186,9 @@ import <package_alias> "<package_name>"
 ```go
 package main
 
-import "fmt"
+import (
+  "fmt"
+)
 
 func main() {
   fmt.Print("Hello", "world") // Helloworld
@@ -204,7 +208,9 @@ func main() {
 ```go
 package main
 
-import "fmt"
+import (
+  "fmt"
+)
 
 func main() {
   firstName := "Bob"
@@ -219,7 +225,9 @@ func main() {
 ```go
 package main
 
-import "fmt"
+import (
+  "fmt"
+)
 
 func main() {
   fmt.Println("What is your name?")
@@ -264,7 +272,9 @@ func <function_name>(<args>) {
 ```go
 package main
  
-import "fmt"
+import (
+  "fmt"
+)
 
 func main() {
     num, _ := returnTwoNumbers()
@@ -281,7 +291,9 @@ func returnTwoNumbers() (int, int) {
 ```go
 package main
  
-import "fmt"
+import (
+  "fmt"
+)
 
 func main() {
     num := divide(2)
@@ -299,7 +311,9 @@ func divide(sum int) (x int) {
 ```go
 package main
 
-import "fmt"
+import (
+  "fmt"
+)
 
 // Call-by-value
 func increaseByValue(num int) {
@@ -331,8 +345,10 @@ func main() {
 ```go
 package main
  
-import "fmt"
- 
+import (
+  "fmt"
+)
+
 func main() {
   getSum := func(num1, num2 int) (int) {
     return num1 + num2
@@ -358,7 +374,9 @@ func(word string) {
 ```go
 package main
 
-import "fmt"
+import (
+  "fmt"
+)
 
 func adder() func(int) int { // function returning another function
  sum := 0
@@ -464,7 +482,9 @@ func (<*Type>) <func_name> (<>) { // Type cannot itself be a pointer.
 ```go
 package main
 
-import "fmt"
+import (
+  "fmt"
+)
 
 type Vertex struct {
   X, Y float64
@@ -568,7 +588,9 @@ c := 3 + 4i // c := complex128
 ```go
 package main
 
-import "fmt"
+import (
+  "fmt"
+)
 
 func main() {
  var i interface{} = 1
@@ -644,7 +666,9 @@ func main() {
 ```go
 package main
 
-import "fmt"
+import (
+  "fmt"
+)
 
 func main() {
   var c complex128 = complex(3, 4) // (3+4i)
@@ -695,7 +719,39 @@ func main() {
 
 #### 4.1.5. String type
 
-- `string`
+- A `string` is an **immutable** sequence of bytes.
+- It usually contain human-readable text.
+- Text strings are conventionally interpreted as UTF-8-encoded.
+
+```go
+package main
+
+import (
+ "fmt"
+)
+
+func main() {
+ s1 := "Hello world"
+ fmt.Println(len(s1))      // 11
+ fmt.Println(s1[0], s1[3]) // 72 108
+
+ // substrings
+ fmt.Println(s1[1:5]) // ello
+ fmt.Println(s1[:5])  // Hello
+ fmt.Println(s1[7:])  // orld
+ fmt.Println(s1[:])   // Hello world
+
+ // s2 holds new string by `+=`
+ s2 := "Hello"
+ t := s2
+ s2 += "world"
+ fmt.Println(s2) // Helloworld
+ fmt.Println(t)  // Hello
+
+ // Compile error: cannot assign to s2[0] due to in place modification attempt
+ s2[0] = 'L'
+}
+```
 
 #### 4.1.6. Error type
 
@@ -834,7 +890,9 @@ struct {
 - They are used in popular packages such as `encoding/json`, etc.
 
 ```go
-import "encoding/json"
+import (
+  "encoding/json"
+)
 
 type User struct {
   // When you encode and decode a struct to JSON, keys are given below.
