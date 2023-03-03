@@ -177,6 +177,60 @@ import <package_alias> "<package_name>"
 
 [Ref](https://pkg.go.dev/std)
 
+#### 2.2.1. The `fmt` package
+
+##### 2.2.1.1. Printing: `Print` and `Println`
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Print("Hello", "world") // Helloworld
+  fmt.Print("Hello", "world\n") // Hello world\n
+
+  fmt.Println("Hello", "world") // Hello world\n
+  fmt.Println("Hello world") // Hello world\n
+}
+```
+
+- For the details read the documentation: [printing](https://pkg.go.dev/fmt#hdr-Printing)
+
+##### 2.2.1.2. Formatting: `fmt.Sprint()` and `fmt.Sprintln()`
+
+- They format strings without printing.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  firstName := "Bob"
+  secondName := "Alice"
+
+  name := fmt.Sprintln(firstName, secondName) // name declared but not used
+}
+```
+
+##### 2.2.1.3. Getting user input `fmt.Scan()`
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("What is your name?")
+
+  var name string
+  
+  fmt.Scan(&name) // &
+  fmt.Printf("Nice to meet you %v.\n", name)
+}
+```
+
 ### 2.3. Managing dependencies
 
 - Dependencies are external packages that your code utilizes. As you continue to work on the code, an upgrade or substitution of these dependencies may be required.
@@ -561,18 +615,45 @@ fmt.Printf("%d\n", 1) // Base 10
 
 #### 4.1.2. Floating-point types
 
-- In memory, all floating-point numeric values in Go are stored in IEEE-754 format.
+- In memory, all floating-point numeric values in Go are stored in IEEE-754 format implemented by all modern CPUs.
 
-- `float32` occupies 32 bits in memory.
-- `float64` occupies 64 bits in memory.
+- **default:** `float64` occupies 64 bits in memory and provides about 15 digits of precision.
+- `float32` occupies 32 bits in memory and provides about 6 digits of precision.
 
 ```go
-// Formatting floating numbers
+package main
+
+import (
+  "fmt"
+  "math"
+)
+func main() {
+  fmt.Println(math.MaxFloat32) // the limit for float32 // 3.4028234663852886e+38
+  fmt.Println(math.MaxFloat64) // the limit for float64 // 1.7976931348623157e+308
+}
 ```
 
 #### 4.1.3. Complex types
 
-- `complex64`, `complex128`
+- `complex64`: Components are `float32`.
+- `complex128`: Components are `float64`.
+
+- Their equality can be checked by `==` and `!=`.
+- `math/cmplx` package is available to work with complex numbers.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  var c complex128 = complex(3, 4) // (3+4i)
+  fmt.Println(c)
+  re := real(c) // real part
+  im := imag(c) // imaginary part
+  fmt.Println(re, im) // 3 4
+}
+```
 
 #### 4.1.4. Boolean type
 
