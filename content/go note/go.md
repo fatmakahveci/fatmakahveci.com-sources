@@ -755,7 +755,28 @@ func main() {
 
 #### 4.1.6. Error type
 
-- `error`
+- `error` is a built-in interface type.
+
+```go
+// error interface declaration
+type error interface {
+    Error() string
+}
+```
+
+- An error is anything that implements the `Error()` method, which returns an error message as a string. `nil` means that no error has occurred.
+
+- In Go built-in errors don't contain stack traces. Also, a conventional try-and-catch block for error handling is not provided in Go. Instead, an error is returned when something unexpected happens.
+
+```go
+type DivZero struct{}
+
+func (myerr *DivZero) Error() string{
+  return "Cannot divide by 0!"
+}
+```
+
+- For more details visit "[Effective Error Handling in Golang](https://earthly.dev/blog/golang-errors/)".
 
 #### 4.1.7. Pointer types
 
