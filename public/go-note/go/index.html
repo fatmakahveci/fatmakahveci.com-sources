@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Go for beginners">
 <meta itemprop="description" content="Go for beginners">
 
-<meta itemprop="wordCount" content="4466">
+<meta itemprop="wordCount" content="4666">
 <meta itemprop="keywords" content="go,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -957,7 +957,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">arr</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#34;Go&#34;</span>
 </span></span></code></pre></div><h4 id="419-slice-types">4.1.9. Slice types</h4>
 <ul>
-<li><code>[]&lt;type&gt;</code> := a dynamically-sized flexible sequence of values of specific type <code>&lt;type&gt;</code></li>
+<li><code>[]&lt;type&gt;</code> is a dynamically-sized flexible sequence of values of specific type <code>&lt;type&gt;</code></li>
 <li>A slice has no specific length, unlike an array.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">sli</span> []<span style="color:#66d9ef">int</span> = {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>} <span style="color:#75715e">// similar to an array literal but no element count
@@ -973,7 +973,47 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">s</span> = make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// s := []byte{0, 0, 0, 0, 0}
 </span></span></span></code></pre></div><h4 id="4110-map-types">4.1.10. Map types</h4>
 <ul>
-<li><code>map[K][V]</code> := a collection of key-value pairs with keys of type <code>K</code> and values of type <code>V</code></li>
+<li><code>map[K][V]</code> is a collection of key-value pairs with distinct keys of type <code>K</code> and values of type <code>V</code>.
+<ul>
+<li>The key type <code>K</code> must be comparable using <code>==</code>.</li>
+</ul>
+</li>
+<li>A map is a reference to a hash table. It is a dynamic data structure that grows as values are added.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">numberOfCats</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>) <span style="color:#75715e">// creating a map via built-in `make()`
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">numberOfCats</span>[<span style="color:#e6db74">&#34;Bob&#34;</span>] = <span style="color:#ae81ff">3</span>              <span style="color:#75715e">// accessing an element
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">numberOfCats</span>[<span style="color:#e6db74">&#34;Alice&#34;</span>] = <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">numberOfCats</span>) <span style="color:#75715e">// map[Alice:2 Bob:3]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#75715e">// equals to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">numberOfCats</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>{ <span style="color:#75715e">// creating a map via map literals
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#e6db74">&#34;Bob&#34;</span>:   <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Alice&#34;</span>: <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">numberOfCats</span>) <span style="color:#75715e">// map[Alice:2 Bob:3]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">// enumerating key/value pairs
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">numberOfCats</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%s\t%d\n&#34;</span>, <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">num</span>)
+</span></span><span style="display:flex;"><span> } <span style="color:#75715e">// Bob 3\nAlice 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span> delete(<span style="color:#a6e22e">numberOfCats</span>, <span style="color:#e6db74">&#34;Alice&#34;</span>) <span style="color:#75715e">// removes an element
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">numberOfCats</span>)     <span style="color:#75715e">// map[Bob:3]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><ul>
+<li>
+<p>All of these operations are safe even if the element isn&rsquo;t in the map; a map lookup using a key that isn&rsquo;t present returns the zero value for its type.</p>
+</li>
+<li>
+<p>A map element is not a variable and we cannot take its address. One reason that we can&rsquo;t take the address of a map element is that growing a map might cause rehashing of existing elements into new storage locations, thus potentially invalidating the address.</p>
+</li>
+<li>
+<p>We must write a loop to test the equality of two maps.</p>
+</li>
 </ul>
 <h4 id="4111-struct-types">4.1.11. Struct types</h4>
 <ul>

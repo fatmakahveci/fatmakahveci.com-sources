@@ -871,7 +871,7 @@ arr[0] = "Go"
 
 #### 4.1.9. Slice types
 
-- `[]<type>` := a dynamically-sized flexible sequence of values of specific type `<type>`
+- `[]<type>` is a dynamically-sized flexible sequence of values of specific type `<type>`
 - A slice has no specific length, unlike an array.
 
 ```go
@@ -889,7 +889,42 @@ s = make([]byte, 5, 5) // s := []byte{0, 0, 0, 0, 0}
 
 #### 4.1.10. Map types
 
-- `map[K][V]` := a collection of key-value pairs with keys of type `K` and values of type `V`
+- `map[K][V]` is a collection of key-value pairs with distinct keys of type `K` and values of type `V`.
+  - The key type `K` must be comparable using `==`.
+- A map is a reference to a hash table. It is a dynamic data structure that grows as values are added.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+ numberOfCats := make(map[string]int) // creating a map via built-in `make()`
+ numberOfCats["Bob"] = 3              // accessing an element
+ numberOfCats["Alice"] = 2
+ fmt.Println(numberOfCats) // map[Alice:2 Bob:3]
+ // equals to
+ numberOfCats = map[string]int{ // creating a map via map literals
+  "Bob":   3,
+  "Alice": 2,
+ }
+ fmt.Println(numberOfCats) // map[Alice:2 Bob:3]
+
+ // enumerating key/value pairs
+ for name, num := range numberOfCats {
+  fmt.Printf("%s\t%d\n", name, num)
+ } // Bob 3\nAlice 2
+
+ delete(numberOfCats, "Alice") // removes an element
+ fmt.Println(numberOfCats)     // map[Bob:3]
+}
+```
+
+- All of these operations are safe even if the element isn't in the map; a map lookup using a key that isn't present returns the zero value for its type.
+
+- A map element is not a variable and we cannot take its address. One reason that we can't take the address of a map element is that growing a map might cause rehashing of existing elements into new storage locations, thus potentially invalidating the address.
+
+- We must write a loop to test the equality of two maps.
 
 #### 4.1.11. Struct types
 
