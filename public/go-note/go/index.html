@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Go for beginners">
 <meta itemprop="description" content="Go for beginners">
 
-<meta itemprop="wordCount" content="4373">
+<meta itemprop="wordCount" content="4466">
 <meta itemprop="keywords" content="go,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -858,7 +858,27 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h4 id="416-error-type">4.1.6. Error type</h4>
 <ul>
-<li><code>error</code></li>
+<li><code>error</code> is a built-in interface type.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// error interface declaration
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#66d9ef">error</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Error</span>() <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>
+<p>An error is anything that implements the <code>Error()</code> method, which returns an error message as a string. <code>nil</code> means that no error has occurred.</p>
+</li>
+<li>
+<p>In Go built-in errors don&rsquo;t contain stack traces. Also, a conventional try-and-catch block for error handling is not provided in Go. Instead, an error is returned when something unexpected happens.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">DivZero</span> <span style="color:#66d9ef">struct</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">myerr</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">DivZero</span>) <span style="color:#a6e22e">Error</span>() <span style="color:#66d9ef">string</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Cannot divide by 0!&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>For more details visit &ldquo;<a href="https://earthly.dev/blog/golang-errors/">Effective Error Handling in Golang</a>&rdquo;.</li>
 </ul>
 <h4 id="417-pointer-types">4.1.7. Pointer types</h4>
 <ul>
