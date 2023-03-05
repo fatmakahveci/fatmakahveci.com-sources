@@ -1182,6 +1182,16 @@ switch time.Now().Weekday() { // import "time"
 
 - `switch {}` is the same as `switch true`.
 
+- `switch` with a `:=` can execute the short statement before the execution.
+
+```go
+// day variable is in the scope of the `switch` statement.
+switch day := "Sunday" ; day {
+case "Sunday":
+  fmt.Println("Enjoy!")
+}
+```
+
 ### 8.2. Control flow for specific types in Go
 
 #### 8.2.1. for-range
