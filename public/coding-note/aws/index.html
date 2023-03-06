@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="AWS cloud practitioner essentials">
 <meta itemprop="description" content="AWS cloud practitioner essentials">
 
-<meta itemprop="wordCount" content="382">
+<meta itemprop="wordCount" content="2969">
 <meta itemprop="keywords" content="go,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -123,7 +123,7 @@
 	</span>
 </div></div>
 		</header><div class="content post__content clearfix">
-			<p><img src="../img/aws.png" alt="aws"></p>
+			<p><img src="/img/aws.png" alt="aws"></p>
 <h2 id="cloud-computing">Cloud computing</h2>
 <ul>
 <li><em>Cloud computing</em> is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing.</li>
@@ -177,6 +177,498 @@
 <li>It gives the flexibility to scale serverless applications automatically.</li>
 <li>Serverless computing can adjust the applications&rsquo; capacity by modifying the units of consumptions, such as throughput and memory.</li>
 <li>You cannot see or access the underlying infrastructure or instances.</li>
+</ul>
+<hr>
+<h2 id="module-1-introduction-to-amazon-web-services">Module 1: Introduction to Amazon Web Services</h2>
+<h3 id="11-purposes-of-the-module">1.1. Purposes of the module</h3>
+<ul>
+<li>Summarize the benefits of AWS</li>
+<li>Describe differences between on-demand delivery and cloud deployments</li>
+<li>Summarize the pay-as-you-go pricing model (Key value: Pay for what you need.)</li>
+</ul>
+<h3 id="12-a-client-server-model">1.2. A client-server model</h3>
+<ul>
+<li>Most of the modern computing uses a basic client-server model.</li>
+<li>A client can be a web browser or desktop application that a person interacts with to make requests to computer servers.</li>
+<li>A server can be services such as Amazon Elastic Compute Cloud (Amazon EC2), a type of virtual server. It evaluates the details of a request and fulfills it by returning the information to the client.</li>
+</ul>
+<hr>
+<h2 id="module-2-compute-in-the-cloud">Module 2: Compute in the Cloud</h2>
+<h3 id="21-purposes-of-the-module">2.1. Purposes of the module</h3>
+<ul>
+<li>Describe the benefits of Amazon Elastic Compute Cloud (Amazon EC2) at a basic level</li>
+<li>Identify the different Amazon EC2 instance types</li>
+<li>Differentiate between the various billing options for Amazon EC2</li>
+<li>Describe the benefits of Amazon EC2 Auto Scaling</li>
+<li>Summarize the benefits of Elastic Load Balancing</li>
+<li>Give an example of the uses for Elastic Load Balancing</li>
+<li>Summarize the differences between Amazon Simple Notification Service (Amazon SNS) and Amazon Simple Queue Services (Amazon SQS)</li>
+<li>Summarize additional AWS compute options</li>
+</ul>
+<h3 id="22-amazon-elastic-compute-cloud-amazon-ec2">2.2. Amazon Elastic Compute Cloud (Amazon EC2)</h3>
+<ul>
+<li>A web service that provides secure and resizable compute capacity to support virtually any workload in the cloud as Amazon EC2 instances.</li>
+<li>Payment
+<ul>
+<li>for running instances, not stopped or terminated instances.</li>
+<li>for the compute time you use when an instance is running, not when it is stopped or terminated.</li>
+<li>for server capacity that you need or want.</li>
+</ul>
+</li>
+<li><strong>Multitenancy:</strong> Sharing underlying hardware between virtual machines. It is managed by AWS.</li>
+<li><strong>Hypervisor:</strong>
+<ul>
+<li>It is responsible for multitenancy.</li>
+<li>It isolates instances from each other as they share resources from the host. (the host with multiple other instances)</li>
+</ul>
+</li>
+<li>Instances are resizable. You can give more memory / more CPU.</li>
+<li><strong>Vertical scaling:</strong> Making instances bigger or smaller.</li>
+<li>You can control the networking aspect of EC2.</li>
+<li>Compute-as-a-Service (CaaS)</li>
+<li>EC2 configurations
+<ul>
+<li>Windows</li>
+<li>Linux</li>
+<li>Internal business app</li>
+<li>Web app</li>
+<li>DB</li>
+<li>Third-party software</li>
+</ul>
+</li>
+</ul>
+<h4 id="221-how-ec2-works">2.2.1. How EC2 Works</h4>
+<h5 id="2211-launch">2.2.1.1. Launch</h5>
+<ul>
+<li>Launch an instance. Select a template with basic configurations for your instance.</li>
+<li>Configurations:
+<ul>
+<li>OS</li>
+<li>App server</li>
+<li>Applications</li>
+<li>Instance type (specific hardware configuration of your instance)</li>
+<li>Security settings to control the network traffic that can flow into and out of your instance.</li>
+</ul>
+</li>
+</ul>
+<h5 id="2212-connect">2.2.1.2. Connect</h5>
+<ul>
+<li>Connect to the instance.</li>
+<li>Your apps have methods to connect directly to the instance and exchange data.</li>
+<li>Users can also connect to the instance by logging in and accessing the computer desktop.</li>
+</ul>
+<h5 id="221-use">2.2.1. Use</h5>
+<ul>
+<li>You can run commands to:
+<ul>
+<li>install software</li>
+<li>add storage</li>
+<li>copy and organize files, etc.</li>
+</ul>
+</li>
+</ul>
+<h4 id="222-pricing">2.2.2. Pricing</h4>
+<h5 id="2221-on-demand">2.2.2.1. On-demand</h5>
+<ul>
+<li>Ideal for short-term, irregular workloads that cannot be interrupted.</li>
+<li>No upfront costs or minimum contracts apply.</li>
+<li>The instances run continuously until you stop them, and you pay for only the compute time you use.</li>
+<li>Sample use cases for On-Demand Instances include developing and testing applications and running applications that have unpredictable usage patterns.</li>
+<li>On-Demand Instances are not recommended for workloads that last a year or longer.</li>
+</ul>
+<h5 id="2222-saving-plans">2.2.2.2. Saving Plans</h5>
+<ul>
+<li>Amazon EC2 Savings Plans enable you to reduce your compute costs by committing to a consistent amount of compute usage for a 1-year or 3-year term.</li>
+<li>Any usage up to the commitment is charged at the discounted Savings Plan rate (for example, $10 an hour). Any usage beyond the commitment is charged at regular On-Demand rates.</li>
+</ul>
+<h5 id="2223-reserved-instances">2.2.2.3. Reserved Instances</h5>
+<ul>
+<li>Reserved Instances are a billing discount applied to the use of On-Demand Instances in your account.</li>
+<li>You can purchase Standard Reserved and Convertible Reserved Instances for a 1-year or 3-year term, and Scheduled Reserved Instances for a 1-year term.</li>
+<li>At the end of a Reserved Instance term, you can continue using the Amazon EC2 instance without interruption. However, you are charged On-Demand rates until you do one of the following:
+<ul>
+<li>Terminate the instance.</li>
+<li>Purchase a new Reserved Instance that matches the instance attributes (instance type, Region, tenancy, and platform).</li>
+</ul>
+</li>
+</ul>
+<h5 id="2224-spot-instances">2.2.2.4. Spot Instances</h5>
+<ul>
+<li>Spot Instances are ideal for workloads with flexible start and end times, or that can withstand interruptions.</li>
+<li>Spot Instances use unused Amazon EC2 computing capacity.</li>
+<li>Suppose that you have a background processing job that can start and stop as needed (such as the data processing job for a customer survey). You want to start and stop the processing job without affecting the overall operations of your business. If you make a Spot request and Amazon EC2 capacity is available, your Spot Instance launches. However, if you make a Spot request and Amazon EC2 capacity is unavailable, the request is not successful until capacity becomes available. The unavailable capacity might delay the launch of your background processing job.</li>
+<li>After you have launched a Spot Instance, if capacity is no longer available or demand for Spot Instances increases, your instance may be interrupted. This might not pose any issues for your background processing job. However, in the earlier example of developing and testing applications, you would most likely want to avoid unexpected interruptions. Therefore, choose a different EC2 instance type that is ideal for those tasks.</li>
+</ul>
+<h5 id="2225-dedicated-hosts">2.2.2.5. Dedicated Hosts</h5>
+<ul>
+<li>Dedicated Hosts are physical servers with Amazon EC2 instance capacity that is fully dedicated to your use.</li>
+<li>You can use your existing per-socket, per-core, or per-VM software licenses to help maintain license compliance. You can purchase On-Demand Dedicated Hosts and Dedicated Hosts Reservations. Of all the Amazon EC2 options that were covered, Dedicated Hosts are the most expensive.</li>
+</ul>
+<h4 id="223-ec-instance-types">2.2.3. EC Instance types</h4>
+<ul>
+<li>Each instance type is grouped under an instance family and optimized for different tasks.</li>
+<li>When selecting an instance type, consider the specific needs of your workloads and applications.</li>
+<li>EC2 instance families:
+<ul>
+<li>General purpose
+<ul>
+<li>It provides <em>a balance</em> of compute, memory, and networking resources.</li>
+</ul>
+</li>
+<li>Compute optimized
+<ul>
+<li>It is ideal for compute-bound applications that benefit from high-performance processors.</li>
+<li>i.e., high-performance web servers, compute-intensive applications servers, and dedicated gaming servers.</li>
+</ul>
+</li>
+<li>Memory optimized
+<ul>
+<li>It is ideal for processing large datasets in memory.</li>
+<li>i.e., In case that you have a workload that requires large amounts of data to be preloaded before running an application.</li>
+</ul>
+</li>
+<li>Accelerated computing
+<ul>
+<li>It uses hardware accelerators, or coprocessors, to perform some functions more efficiently than is possible in software running on CPUs.</li>
+<li>i.e., floating-point number calculations, graphics processing, and data pattern matching.</li>
+</ul>
+</li>
+<li>Storage optimized
+<ul>
+<li>It is ideal for workloads that require high, sequential read and write access to large datasets on local storage.</li>
+<li>In computing, the term input/output operations per second (IOPS) is a metric that measures the performance of a storage device. It indicates how many different input or output operations a device can perform in one second. Storage optimized instances are designed to deliver tens of thousands of low-latency, random IOPS to applications.</li>
+<li>i.e., distributed file systems, data warehousing applications, and high-frequency online transaction processing (OLTP) systems.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="224-scaling-ec2">2.2.4. Scaling EC2</h4>
+<ul>
+<li><em>Scalability</em> involves beginning with only the resources you need and designing your architecture to automatically respond to changing demand by scaling out or in.</li>
+</ul>
+<h5 id="2241-amazon-ec2-auto-scaling">2.2.4.1. Amazon EC2 Auto Scaling</h5>
+<ul>
+<li>
+<p>It enables you to automatically add or remove Amazon EC2 instances in response to changing application demand so you maintain a greater sense of application availability.</p>
+</li>
+<li>
+<p>Two approaches:</p>
+<ol>
+<li><em>Dynamic scaling</em> responds to changing demand.</li>
+<li><em>Predictive scaling</em> automatically schedules the right number of EC2 instances based on predicted demand.</li>
+</ol>
+</li>
+<li>
+<p>To scale faster, you can use dynamic scaling and predictive scaling together.</p>
+<ul>
+<li>When you create an Auto Scaling group, you can set the <em>minimum capacity</em> which is the number of Amazon EC2 instances that launch immediately after you have created the Auto Scaling group.</li>
+<li>If you do not specify the desired number of Amazon EC2 instances in an Auto Scaling group, the <em>desired capacity</em> defaults to your minimum capacity.</li>
+<li>The third configuration that you can set in an Auto Scaling group is the <em>maximum capacity</em>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="messaging-and-queuing">Messaging and queuing</h2>
+<h3 id="monolithic-applications">Monolithic applications</h3>
+<ul>
+<li>Tightly coupled architecture</li>
+<li>In monolithic apps, if a single component fails, other components fail, and possibly the entire application fails.</li>
+<li>Applications are made of multiple components.</li>
+<li>The components communicate with each other to
+<ul>
+<li>transmit data</li>
+<li>fulfill requests</li>
+<li>keep the application running</li>
+</ul>
+</li>
+<li>The components might include
+<ul>
+<li>databases</li>
+<li>servers</li>
+<li>UI</li>
+<li>business logic, etc.</li>
+</ul>
+</li>
+</ul>
+<h3 id="microservices">Microservices</h3>
+<ul>
+<li>In a microservices approach, application components are loosely coupled.</li>
+<li>If a single component fails, the other components continue to work because they are communicating with each other.</li>
+<li>The loose coupling prevents the entire application from failing.</li>
+<li>When designing applications on AWS, you can take a microservices approach with services and components that fulfill different functions.</li>
+</ul>
+<h3 id="amazon-services-facilitate-application-integration">Amazon services facilitate application integration</h3>
+<h4 id="amazon-simple-notification-service-amazon-sns">Amazon Simple Notification Service (Amazon SNS)</h4>
+<ul>
+<li>
+<p>A channel for messages to be delivered.</p>
+</li>
+<li>
+<p>A publish/subscribe service</p>
+</li>
+<li>
+<p>Using Amazon SNS topics, a publisher publishes messages to subscribers. This is similar to the coffee shop; the cashier provides coffee orders to the barista who makes the drinks.</p>
+</li>
+<li>
+<p>In Amazon SNS, subscribers can be</p>
+<ul>
+<li>web servers</li>
+<li>email addresses</li>
+<li>AWS Lambda functions, etc.</li>
+</ul>
+</li>
+<li>
+<p>How it works:</p>
+<ol>
+<li>Publish updates from a single topic</li>
+<li>Publish updates from multiple topics
+<ul>
+<li>Instead of having a single newsletter for all topics, it has broken it up into three separate newsletters.</li>
+<li>Each newsletter is devoted to a specific topic.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="amazon-simple-queue-service-amazon-sqs">Amazon Simple Queue Service (Amazon SQS)</h4>
+<ul>
+<li>
+<p>Messages are placed until they are processed.</p>
+</li>
+<li>
+<p>You can send, store, and receive messages between software components, without losing messages or requiring other services to be available.</p>
+</li>
+<li>
+<p>In Amazon SQS, an application sends messages into a queue. A user or service retrieves a message from the queue, processes it, and then deletes it from the queue.</p>
+</li>
+<li>
+<p>SQS allows to</p>
+<ul>
+<li>send messages</li>
+<li>store messages</li>
+<li>receive messages</li>
+<li>between software components</li>
+<li>at any volume</li>
+</ul>
+</li>
+<li>
+<p>How it works:</p>
+<ol>
+<li>Fullfiling an order:
+- Think of cashier and barista as two separate components.
+- The process run smoothly unless components are coordinated.</li>
+<li>Orders in a queue</li>
+</ol>
+</li>
+</ul>
+<h2 id="directing-traffic-with-elastic-load-balancing">Directing traffic with elastic load balancing</h2>
+<ul>
+<li>
+<p><em>Elastic load balancing</em> is the AWS service that automatically distributes incoming application traffic across multiple resources, such as EC2 instances.</p>
+</li>
+<li>
+<p>A <em>load balancer</em> acts as a single point of contact for all incoming web traffic to your Auto Scaling group.</p>
+</li>
+<li>
+<p>Although Elastic Load Balancing and Amazon EC2 Auto Scaling are separate services, they work together to help ensure that applications running in Amazon EC2 can provide high performance and availability.</p>
+<ol>
+<li>Low-demand period</li>
+<li>High-demand period</li>
+</ol>
+</li>
+</ul>
+<h3 id="ec2">EC2</h3>
+<ul>
+<li>If you have applications that you want to run in Amazon EC2, you must do the following:
+<ol>
+<li>Provision instances (virtual servers)</li>
+<li>Upload your code</li>
+<li>Continue to manage the instances while your application is running</li>
+</ol>
+</li>
+</ul>
+<h3 id="aws-lambda">AWS Lambda</h3>
+<ul>
+<li>An AWS service for serverless computing is AWS Lambda.</li>
+<li>It allows you to upload your code into lambda function.</li>
+<li>Configure trigger, service waits for the trigger.</li>
+<li>When the trigger is detected, the code is automatically run in a managed environment.</li>
+<li>While using AWS Lambda, you pay only for the compute time that you consume.</li>
+<li>Charges apply only when your code is running.</li>
+<li>You can also run code for virtually any type of application or backend service, all with zero administration.</li>
+<li>For example, a simple Lambda function might involve automatically resizing uploaded images to the AWS Cloud. In this case, the function triggers when uploading a new image.</li>
+</ul>
+<h3 id="containers">Containers</h3>
+<ul>
+<li>A package for your code</li>
+<li>In AWS, you can also build and run containerized applications.</li>
+<li>Here the host is the instance.</li>
+</ul>
+<h4 id="amazons-container-orchestration-tools">Amazon&rsquo;s container orchestration tools</h4>
+<h5 id="amazon-elastic-container-service-ecs">Amazon Elastic Container Service (ECS)</h5>
+<h5 id="amazon-elastic-kubernetes-service-eks">Amazon Elastic Kubernetes Service (EKS)</h5>
+<h5 id="amazon-fargate">Amazon Fargate</h5>
+<ul>
+<li>AWS Fargate is a serverless compute engine for containers.</li>
+<li>It works with both Amazon ECS and Amazon EKS.</li>
+</ul>
+<hr>
+<h2 id="module-3-global-infrastructure-and-reliability">Module 3: Global Infrastructure and Reliability</h2>
+<h3 id="31-purposes-of-the-module">3.1. Purposes of the module</h3>
+<ul>
+<li>Summarize the benefits of the AWS Global Infrastructure</li>
+<li>Describe the basic concept of Availability Zones</li>
+<li>Describe the benefits of Amazon CloudFront and Edge locations</li>
+<li>Compare different methods for provisioning AWS services</li>
+</ul>
+<hr>
+<h2 id="module-4-networking">Module 4: Networking</h2>
+<h3 id="41-purposes-of-the-module">4.1. Purposes of the module</h3>
+<ul>
+<li>Describe the basic concepts of networking</li>
+<li>Describe the difference between public and private networking resources</li>
+<li>Explain a virtual private gateway using a real life scenario</li>
+<li>Explain a virtual private network (VPN) using a real life scenario</li>
+<li>Describe the benefit of AWS Direct Connect</li>
+<li>Describe the benefit of hybrid deployments</li>
+<li>Describe the layers of security used in an IT strategy</li>
+<li>Describe which services are used to interact with the AWS global network</li>
+</ul>
+<hr>
+<h2 id="module-5-storage-and-databases">Module 5: Storage and Databases</h2>
+<h3 id="51-purposes-of-the-module">5.1. Purposes of the module</h3>
+<ul>
+<li>Summarize the basic concept of storage and databases</li>
+<li>Describe benefits of Amazon Elastic Block Store (Amazon EBS)</li>
+<li>Describe benefits of Amazon Simple Storage Service (Amazon S3)</li>
+<li>Describe the benefits of Amazon Elastic File System (Amazon EFS)</li>
+<li>Summarize various storage solutions</li>
+<li>Describe the benefits of Amazon Relational Database Service (Amazon RDS)</li>
+<li>Describe the benefits of Amazon DynamoDB</li>
+<li>Summarize various database services</li>
+</ul>
+<h2 id="amazon-simple-storage-service-s3">Amazon Simple Storage Service (S3)</h2>
+<ul>
+<li>Object storage service
+<ul>
+<li>An object is uniquely identified.
+<ul>
+<li>data</li>
+<li>metadata
+<ul>
+<li>name-value pairs that describe the object</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>S3 buckets</code> are containers for objects stored in S3.</li>
+<li>Industry leading
+<ul>
+<li>Scalability</li>
+<li>Data availability</li>
+<li>Security
+<ul>
+<li>It secures from unauthorized access with
+<ul>
+<li>Encryption features</li>
+<li>Access management tools</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Durability (99.99%)
+<ul>
+<li>It automatically creates and stores copies of all S3 objects.</li>
+</ul>
+</li>
+<li>Performance</li>
+</ul>
+</li>
+<li>It stores and protects data use cases, such as website, mobile app, enterprise app, backup and restore, archive, IoT devices, and big data analytics.</li>
+<li>It can easily makes fluctuating demands by automatically scales storage resources up. No upfront investment. No resource procurement cycles.</li>
+<li>It blocks public access.</li>
+</ul>
+<hr>
+<h2 id="module-6-security">Module 6: Security</h2>
+<h3 id="61-purposes-of-the-module">6.1. Purposes of the module</h3>
+<ul>
+<li>Explain the benefits of the shared responsibility model</li>
+<li>Describe multi-factor authentication (MFA)</li>
+<li>Differentiate between the AWS Identity and Access Management (IAM) security levels</li>
+<li>Describe security policies at a basic level</li>
+<li>Explain the benefits of AWS Organizations</li>
+<li>Summarize the benefits of compliance with AWS</li>
+<li>Explain primary AWS security services at a basic level</li>
+</ul>
+<hr>
+<h2 id="module-7-monitoring-and-analytics">Module 7: Monitoring and Analytics</h2>
+<h3 id="purposes-of-the-module">Purposes of the module</h3>
+<ul>
+<li>Summarize approaches to monitoring your AWS environment</li>
+<li>Describe the benefits of Amazon CloudWatch</li>
+<li>Describe the benefits of AWS CloudTrail</li>
+<li>Describe the benefits of AWS Trusted Advisor</li>
+</ul>
+<hr>
+<h2 id="module-8-pricing-and-support">Module 8: Pricing and Support</h2>
+<h3 id="81-purposes-of-the-module">8.1. Purposes of the module</h3>
+<ul>
+<li>Understand AWS pricing and support models</li>
+<li>Describe the AWS Free Tier</li>
+<li>Describe key benefits of AWS Organizations and consolidated billing</li>
+<li>Explain the benefits of AWS Budgets</li>
+<li>Explain the benefits of AWS Cost Explorer</li>
+<li>Explain the primary benefits of the AWS Pricing Calculator</li>
+<li>Distinguish between the various AWS Support Plans</li>
+<li>Describe the benefits of AWS Marketplace</li>
+</ul>
+<hr>
+<h2 id="module-9-migration-and-innovation">Module 9: Migration and Innovation</h2>
+<h3 id="91-purposes-of-the-module">9.1. Purposes of the module</h3>
+<ul>
+<li>Understand migration and innovation in the AWS Cloud</li>
+<li>Summarize the AWS Cloud Adoption Framework (AWS CAF)</li>
+<li>Summarize six key factors of a cloud migration strategy</li>
+<li>Describe the benefits of various AWS data migration solutions, such as AWS Snowcone, AWS Snowball, and AWS Snowmobile</li>
+<li>Summarize the broad scope of innovative solutions that AWS offers</li>
+</ul>
+<hr>
+<h2 id="module-10-the-cloud-journey">Module 10: The Cloud Journey</h2>
+<h3 id="101-purposes-of-the-module">10.1. Purposes of the module</h3>
+<ul>
+<li>Summarize the five pillars of the AWS Well-Architected Framework</li>
+<li>Explain the six benefits of cloud computing</li>
+</ul>
+<hr>
+<h2 id="module-11-aws-certified-cloud-practitioner-basics">Module 11: AWS Certified Cloud Practitioner Basics</h2>
+<h3 id="111-purposes-of-the-module">11.1. Purposes of the module</h3>
+<ul>
+<li>Determine resources for preparing for the AWS Certified Cloud Practitioner examination</li>
+<li>Describe benefits of becoming AWS Certified</li>
+</ul>
+<hr>
+<h2 id="how-to-interact-with-aws">How to interact with AWS</h2>
+<ul>
+<li>
+<p>Instead of physically managing infrastructure, you logically manage it, through the AWS Application Programming Interface (AWS API).</p>
+</li>
+<li>
+<p>When you create, delete, or change any AWS resource, you will use API calls to AWS to do that.</p>
+</li>
+<li>
+<p><strong>AWS Management Console</strong> is a web application that comprises a broad collection of service consoles for managing AWS resources.</p>
+</li>
+<li>
+<p><strong>The AWS Command Line Interface (AWS CLI)</strong> is an open source tool that enables you to create and configure AWS services using commands in your command-line shell.</p>
+</li>
+<li>
+<p><strong>Integrated Development Environment (IDE)</strong> is to write, run, debug, and deploy applications on AWS using familiar Integrated Development Environments (IDE).</p>
+</li>
+<li>
+<p><strong>Software Development Kit (SDK)</strong> simplifies coding with language-specific abstracted APIs for AWS services.</p>
+</li>
 </ul>
 <hr>
 <h2 id="references">References</h2>
