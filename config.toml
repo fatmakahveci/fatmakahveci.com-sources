@@ -48,9 +48,9 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
 [menu]
 
   [[menu.main]]
-    identifier = "go"
-    name = "go"
-    url = "/go note/"
+    identifier = "python"
+    name = "python"
+    url = "/python note/"
     weight = -8
 
   [[menu.main]]
@@ -60,33 +60,33 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
     weight = -7
 
   [[menu.main]]
-    identifier = "python"
-    name = "python"
-    url = "/python note/"
-    weight = -6
-
-  [[menu.main]]
     identifier = "coding"
     name = "coding"
     url = "/coding note/"
-    weight = -5
+    weight = -6
   
   [[menu.main]]
     identifier = "js"
     name = "js"
     url = "/javascript note/"
-    weight = -4
+    weight = -5
   
   [[menu.main]]
     identifier = "bioinformatics"
     name = "Bioinformatics"
     url = "/bioinformatics note/"
-    weight = -3
+    weight = -4
 
   [[menu.main]]
     identifier = "travel"
     name = "Travel"
     url = "/travel note/"
+    weight = -3
+
+  [[menu.main]]
+    identifier = "go"
+    name = "go"
+    url = "/go note/"
     weight = -2
 
   [[menu.main]]
