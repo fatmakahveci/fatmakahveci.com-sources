@@ -550,6 +550,22 @@ func main() {
 }
 ```
 
+#### 3.2.5. Images
+
+- It defines the `Image` interface.
+
+```go
+package image
+
+type Image interface {
+    ColorModel() color.Model
+    Bounds() Rectangle
+    At(x, y int) color.Color
+}
+```
+
+- For more details on [Golang Image Processing:](https://golangdocs.com/golang-image-processing)
+
 ---
 
 ## 4. Variables
