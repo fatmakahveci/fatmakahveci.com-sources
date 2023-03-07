@@ -1,8 +1,8 @@
 ---
-title: REACT for beginners
-description: REACT for beginners
-summary: "REACT for beginners"
-date: 01-02-2023
+title: React for beginners
+description: React for beginners
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Coding"
 tags:
