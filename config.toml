@@ -51,20 +51,26 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
     identifier = "python"
     name = "python"
     url = "/python note/"
-    weight = -8
+    weight = -9
 
   [[menu.main]]
     identifier = "django"
     name = "django"
     url = "/django note/"
-    weight = -7
+    weight = -8
 
   [[menu.main]]
     identifier = "coding"
     name = "coding"
     url = "/coding note/"
-    weight = -6
+    weight = -7
   
+  [[menu.main]]
+    identifier = "react"
+    name = "react"
+    url = "/react note/"
+    weight = -6
+
   [[menu.main]]
     identifier = "js"
     name = "js"
