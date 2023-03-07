@@ -511,6 +511,45 @@ func main() {
 }
 ```
 
+#### 3.2.4. Readers
+
+- The `io.Reader` interface represents the read end of a stream of data.
+- Some implementations include:
+  - files,
+  - network connections,
+  - compressors,
+  - ciphers, etc.
+- It has `Read` method, `func (T) Read(b []byte) (n int, err error)`.
+  - It populates the given byte slice with data and returns the number of bytes populated and an error value.
+  - It returns an `io.EOF` error when the stream ends.
+
+```go
+package main
+
+import (
+  "fmt"
+  "io"
+  "strings"
+)
+
+func main() {
+  r := strings.NewReader("Hello world")
+
+  b := make([]byte, 8)
+  for { // while true
+    n, err := r.Read(b)
+    fmt.Printf("b[:n] = %q\n", b[:n])
+    if err == io.EOF {
+      break
+    }
+  }
+  // Output =>
+  // b[:n] = "Hello wo"
+  // b[:n] = "rld"
+  // b[:n] = ""
+}
+```
+
 ---
 
 ## 4. Variables
@@ -522,6 +561,7 @@ func main() {
   - `0` for numerics
   - `false` for booleans
   - `""` for strings
+  - `nil` for maps
 
 ```go
 // initialized value
