@@ -1404,9 +1404,54 @@ func main() {
 - Goroutines run in the same address space so access to shared memory must be synchronized.
 
 ```go
+// Create a goroutine `go <method_or_function_name>()`
 go f(x, y, z) // starts a new goroutine running `f(x, y, z)`
 // f, x, y, and z are evaluated in the current goroutine.
 // f is executed in the new goroutine.
+```
+
+- When a new goroutine is started, the goroutine call returns immediately. Unlike functions, the control does not wait for the goroutine to finish executing. The control returns immediately to the next line of code after the goroutine call and any return values from the goroutine are ignored.
+- The main goroutine should be running for any other goroutines to run. If the main goroutine terminates then the program will be terminated and no other goroutine will run.
+
+```go
+/* Output:
+  1-cat: Alba
+  2-cat: Ana
+  1-flower: Calafate
+  3-cat: Angelina
+  2-flower: Canelo
+  Time is up!
+ */
+
+package main
+
+import (  
+    "fmt"
+    "time"
+)
+
+func cat_names() {
+    cats := [3]string{"Alba", "Ana", "Angelina"}
+    for i, c := range cats {
+        time.Sleep(2 * time.Millisecond)
+        fmt.Printf("%d-cat: %s\n", i+1, c)
+    }
+}
+
+func flower_names() {  
+    flowers := [3]string{"Calafate", "Canelo", "Chauchau"}
+    for i, f := range flowers {
+        time.Sleep(5 * time.Millisecond)
+        fmt.Printf("%d-flower: %s\n", i+1, f)
+    }
+}
+
+func main() {  
+    go cat_names()
+    go flower_names()
+    time.Sleep(11 * time.Millisecond)
+    fmt.Println("Time is up!") // Chauchau cannot be printed!
+}
 ```
 
 ### 9.2. Channels
@@ -1423,7 +1468,23 @@ func main() {
 }
 ```
 
-### 9.2.1. select
+#### 9.2.1. Buffered channels
+
+- Channels can be buffered.
+
+#### 9.2.2. select
+
+- It lets a goroutine to wait on multiple communication operations.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  
+}
+```
 
 - For more details on [select](https://www.programiz.com/golang/select)
 
