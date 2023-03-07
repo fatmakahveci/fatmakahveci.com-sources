@@ -25,7 +25,7 @@ tags:
 2. Benefit from massive economies of scale - lower pay-as-you-go prices
 3. Stop guessing capacity - access as much or little capacity as you need
 4. Increase speed and agility - a click away IT resources
-5. Stop spending money running and maintaining data centers - focus on projects, not the infrastructure
+5. Stop spending money to run and maintain data centers - focus on projects, not the infrastructure
 6. Go global in minutes - low latency with easily deployed application in multiple regions
 
 ### Types of cloud computing
@@ -104,83 +104,37 @@ tags:
   - for the compute time you use when an instance is running, not when it is stopped or terminated.
   - for server capacity that you need or want.
 - **Multitenancy** shares underlying hardware between virtual machines. It is managed by AWS.
-- **Hypervisor** is responsible for multitenancy.  It isolates instances from each other as they share resources from the host. (the host with multiple other instances)
+- **Hypervisor** is responsible for multitenancy. It isolates instances from each other as they share resources from the host. (the host with multiple other instances)
 - Instances are resizable. You can give more memory / more CPU.
 - **Vertical scaling** makes instances bigger or smaller.
 - You can control the networking aspect of EC2.
 - Compute-as-a-Service (CaaS)
-- EC2 configurations
-  - Windows
-  - Linux
-  - Internal business app
-  - Web app
-  - DB
-  - Third-party software
 
 #### 2.2.1. How EC2 Works
 
-##### 2.2.1.1. Launch
+1. Launch
+   - Launch an instance. Select a template with basic configurations for your instance.
+   - Configurations:
+     - OS
+     - Application server/Applications
+     - Instance type (specific hardware configuration of your instance)
+     - Security settings to control the network traffic that can flow into and out of your instance.
 
-- Launch an instance. Select a template with basic configurations for your instance.
-- Configurations:
-  - OS
-  - App server
-  - Applications
-  - Instance type (specific hardware configuration of your instance)
-  - Security settings to control the network traffic that can flow into and out of your instance.
+2. Connect
+   - Connect to the instance.
+   - Your programs and applications have multiple methods to connect directly to the instance and exchange data.
+   - Users can also connect to the instance by logging in and accessing the computer desktop.
 
-##### 2.2.1.2. Connect
+3. Use
+   - You can run commands to install software, add storage, copy and organize files, etc.
 
-- Connect to the instance.
-- Your apps have methods to connect directly to the instance and exchange data.
-- Users can also connect to the instance by logging in and accessing the computer desktop.
-
-##### 2.2.1. Use
-
-- You can run commands to install software, add storage, copy and organize files, etc.
-
-#### 2.2.2. Pricing
-
-##### 2.2.2.1. On-demand
-
-- Ideal for short-term, irregular workloads that cannot be interrupted.
-- No upfront costs or minimum contracts apply.
-- The instances run continuously until you stop them, and you pay for only the compute time you use.
-- Sample use cases for On-Demand Instances include developing and testing applications and running applications that have unpredictable usage patterns.
-- On-Demand Instances are not recommended for workloads that last a year or longer.
-
-##### 2.2.2.2. Saving Plans
-
-- Amazon EC2 Savings Plans enable you to reduce your compute costs by committing to a consistent amount of compute usage for a 1-year or 3-year term.
-- Any usage up to the commitment is charged at the discounted Savings Plan rate (for example, $10 an hour). Any usage beyond the commitment is charged at regular On-Demand rates.
-
-##### 2.2.2.3. Reserved Instances
-
-- Reserved Instances are a billing discount applied to the use of On-Demand Instances in your account.
-- You can purchase Standard Reserved and Convertible Reserved Instances for a 1-year or 3-year term, and Scheduled Reserved Instances for a 1-year term.
-- At the end of a Reserved Instance term, you can continue using the Amazon EC2 instance without interruption. However, you are charged On-Demand rates until you do one of the following:
-  - Terminate the instance.
-  - Purchase a new Reserved Instance that matches the instance attributes (instance type, Region, tenancy, and platform).
-
-##### 2.2.2.4. Spot Instances
-
-- Spot Instances are ideal for workloads with flexible start and end times, or that can withstand interruptions.
-- Spot Instances use unused Amazon EC2 computing capacity.
-- Suppose that you have a background processing job that can start and stop as needed (such as the data processing job for a customer survey). You want to start and stop the processing job without affecting the overall operations of your business. If you make a Spot request and Amazon EC2 capacity is available, your Spot Instance launches. However, if you make a Spot request and Amazon EC2 capacity is unavailable, the request is not successful until capacity becomes available. The unavailable capacity might delay the launch of your background processing job.
-- After you have launched a Spot Instance, if capacity is no longer available or demand for Spot Instances increases, your instance may be interrupted. This might not pose any issues for your background processing job. However, in the earlier example of developing and testing applications, you would most likely want to avoid unexpected interruptions. Therefore, choose a different EC2 instance type that is ideal for those tasks.
-
-##### 2.2.2.5. Dedicated Hosts
-
-- Dedicated Hosts are physical servers with Amazon EC2 instance capacity that is fully dedicated to your use.
-- You can use your existing per-socket, per-core, or per-VM software licenses to help maintain license compliance. You can purchase On-Demand Dedicated Hosts and Dedicated Hosts Reservations. Of all the Amazon EC2 options that were covered, Dedicated Hosts are the most expensive.
-
-#### 2.2.3. EC Instance types
+#### 2.2.2. EC Instance types
 
 - Each instance type is grouped under an instance family and optimized for different tasks.
 - When selecting an instance type, consider the specific needs of your workloads and applications.
 - EC2 instance families:
   - General purpose
-    - It provides _a balance_ of compute, memory, and networking resources.
+    - It provides a balance of compute, memory, and networking resources.
   - Compute optimized
     - It is ideal for compute-bound applications that benefit from high-performance processors.
     - i.e., high-performance web servers, compute-intensive applications servers, and dedicated gaming servers.
@@ -194,6 +148,41 @@ tags:
     - It is ideal for workloads that require high, sequential read and write access to large datasets on local storage.
     - In computing, the term input/output operations per second (IOPS) is a metric that measures the performance of a storage device. It indicates how many different input or output operations a device can perform in one second. Storage optimized instances are designed to deliver tens of thousands of low-latency, random IOPS to applications.
     - i.e., distributed file systems, data warehousing applications, and high-frequency online transaction processing (OLTP) systems.
+
+#### 2.2.3. Pricing
+
+##### 2.2.3.1. On-demand
+
+- Ideal for short-term, irregular workloads that cannot be interrupted.
+- No upfront costs or minimum contracts apply.
+- The instances run continuously until you stop them, and you pay for only the compute time you use.
+- Sample use cases for _On-Demand Instances_ include developing and testing applications and running applications that have unpredictable usage patterns.
+- On-Demand Instances are not recommended for workloads that last a year or longer.
+
+##### 2.2.3.2. Saving Plans
+
+- _Amazon EC2 Savings Plans_ enable you to reduce your compute costs by committing to a consistent amount of compute usage for a 1-year or 3-year term.
+- Any usage up to the commitment is charged at the discounted _Savings Plan_ rate (for example, $10 an hour). Any usage beyond the commitment is charged at regular _On-Demand_ rates.
+
+##### 2.2.3.3. Reserved Instances
+
+- _Reserved Instances_ are a billing discount applied to the use of _On-Demand Instances_ in your account.
+- You can purchase _Standard Reserved_ and _Convertible Reserved Instances_ for a 1- or 3-year term, and _Scheduled Reserved Instances_ for a 1-year term.
+- At the end of a _Reserved Instance_ term, you can continue using the _Amazon EC2_ instance without interruption. However, you are charged _On-Demand_ rates until you do one of the following:
+  - Terminate the instance.
+  - Purchase a new _Reserved Instance_ that matches the instance attributes (instance type, Region, tenancy, and platform).
+
+##### 2.2.3.4. Spot Instances
+
+- _Spot Instances_ are ideal for workloads with flexible start and end times, or that can withstand interruptions.
+- _Spot Instances_ use unused _Amazon EC2_ computing capacity.
+- Suppose that you have a background processing job that can start and stop as needed (such as the data processing job for a customer survey). You want to start and stop the processing job without affecting the overall operations of your business. If you make a Spot request and _Amazon EC2_ capacity is available, your Spot Instance launches. However, if you make a Spot request and _Amazon EC2_ capacity is unavailable, the request is not successful until capacity becomes available. The unavailable capacity might delay the launch of your background processing job.
+- After you have launched a _Spot Instance_, if capacity is no longer available or demand for _Spot Instances_ increases, your instance may be interrupted. This might not pose any issues for your background processing job. However, in the earlier example of developing and testing applications, you would most likely want to avoid unexpected interruptions. Therefore, choose a different EC2 instance type that is ideal for those tasks.
+
+##### 2.2.3.5. Dedicated Hosts
+
+- Dedicated Hosts are physical servers with Amazon EC2 instance capacity that is fully dedicated to your use.
+- You can use your existing per-socket, per-core, or per-VM software licenses to help maintain license compliance. You can purchase On-Demand Dedicated Hosts and Dedicated Hosts Reservations. Of all the Amazon EC2 options that were covered, Dedicated Hosts are the most expensive.
 
 #### 2.2.4. Scaling EC2
 
