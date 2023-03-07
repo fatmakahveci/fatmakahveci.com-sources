@@ -1310,18 +1310,18 @@ package main
 import "fmt"
 
 func main() {
-  i := 1
-  for { // 1 2
+  for i:=1; i<=5; i++ { // 1 2
     if i == 3 {
       break
     }
     fmt.Printf("%d ", i)
-    i++
   }
 }
 ```
 
 ### 8.7. continue
+
+- `continue` skips the current iteration of the loop.
 
 ```go
 package main
@@ -1329,7 +1329,12 @@ package main
 import "fmt"
 
 func main() {
-  
+  for i:=1; i<=5; i++ { // 1 2 4 5
+    if i == 3 { // skips 3
+      continue
+    }
+    fmt.Printf("%d ", i)
+  }
 }
 ```
 
