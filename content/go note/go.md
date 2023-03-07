@@ -1209,8 +1209,6 @@ case "Sunday":
 
 #### 8.2.1. for-range
 
-For container types
-
 ```go
 package main
 
@@ -1223,8 +1221,6 @@ func main() {
 
 #### 8.2.2. type-switch
 
-For interface types
-
 ```go
 package main
 
@@ -1236,8 +1232,6 @@ func main() {
 ```
 
 #### 8.2.3. select-case
-
-For channel types
 
 ```go
 package main
