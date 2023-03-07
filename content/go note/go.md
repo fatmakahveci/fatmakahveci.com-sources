@@ -1433,7 +1433,7 @@ go f(x, y, z) // starts a new goroutine running `f(x, y, z)`
 // f is executed in the new goroutine.
 ```
 
-### 10.2. Channels and select mechanisms
+### 10.2. Channels
 
 - to do synchronizations between goroutines.
 
@@ -1446,6 +1446,8 @@ func main() {
   
 }
 ```
+
+### 10.2.1. select
 
 - For more details on [select](https://www.programiz.com/golang/select)
 
