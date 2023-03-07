@@ -1282,13 +1282,25 @@ func main() {
 
 #### 8.2.2. type-switch
 
+- It is `switch` with types.
+
 ```go
 package main
 
-import "fmt"
+import (
+  "fmt"
+)
 
 func main() {
-  
+  var I interface{} = "\"Hello\""
+  switch t := I.(type) {
+    case int:
+      fmt.Printf("%d is an %T.\n", I, t)
+    case string:
+      fmt.Printf("%s is an %T.\n", I, t)
+    default:
+      fmt.Println("Unknown")
+  }
 }
 ```
 
