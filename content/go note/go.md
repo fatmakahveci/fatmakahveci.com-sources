@@ -511,6 +511,61 @@ func main() {
 }
 ```
 
+#### 3.2.4. Readers
+
+- The `io.Reader` interface represents the read end of a stream of data.
+- Some implementations include:
+  - files,
+  - network connections,
+  - compressors,
+  - ciphers, etc.
+- It has `Read` method, `func (T) Read(b []byte) (n int, err error)`.
+  - It populates the given byte slice with data and returns the number of bytes populated and an error value.
+  - It returns an `io.EOF` error when the stream ends.
+
+```go
+package main
+
+import (
+  "fmt"
+  "io"
+  "strings"
+)
+
+func main() {
+  r := strings.NewReader("Hello world")
+
+  b := make([]byte, 8)
+  for { // while true
+    n, err := r.Read(b)
+    fmt.Printf("b[:n] = %q\n", b[:n])
+    if err == io.EOF {
+      break
+    }
+  }
+  // Output =>
+  // b[:n] = "Hello wo"
+  // b[:n] = "rld"
+  // b[:n] = ""
+}
+```
+
+#### 3.2.5. Images
+
+- It defines the `Image` interface.
+
+```go
+package image
+
+type Image interface {
+    ColorModel() color.Model
+    Bounds() Rectangle
+    At(x, y int) color.Color
+}
+```
+
+- For more details on [Golang Image Processing:](https://golangdocs.com/golang-image-processing)
+
 ---
 
 ## 4. Variables
@@ -522,6 +577,7 @@ func main() {
   - `0` for numerics
   - `false` for booleans
   - `""` for strings
+  - `nil` for maps
 
 ```go
 // initialized value
@@ -1125,9 +1181,7 @@ Precedence        Operator
 
 ## 8. Flow control statements
 
-### 8.1. Basic control flow
-
-#### 8.1.1. for
+### 8.1. for
 
 ```go
 // 1 + 2 + 3
@@ -1149,7 +1203,24 @@ for i := 1; i < 3; i++ {
   - `for <condition> {}`.
 - `for {}` is an infinite loop.
 
-#### 8.1.2. if-else
+### 8.2. for-range
+
+- It iterates over a slice or map.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  var pow = []int{1, 2, 4}
+  for i,num := range pow {
+    fmt.Printf("2^%d = %d\n", i, num) // 2^0 = 1\n2^1 = 2\n2^2 = 4
+  }
+}
+```
+
+### 8.3. if-else
 
 ```go
 if number < 0 {
@@ -1177,7 +1248,7 @@ if threshold := 1; x < threshold {
 }
 ```
 
-#### 8.1.3. switch-case
+### 8.4. switch-case
 
 - Shorter way of `if-else` statements
 - It evaluates cases from top to bottom.
@@ -1205,25 +1276,33 @@ case "Sunday":
 }
 ```
 
-### 8.2. Control flow for specific types in Go
+### 8.5. type-switch
 
-#### 8.2.1. for-range
-
-For container types
+- It is `switch` with types.
 
 ```go
 package main
 
-import "fmt"
+import (
+  "fmt"
+)
 
 func main() {
-
+  var I interface{} = "\"Hello\""
+  switch t := I.(type) {
+    case int:
+      fmt.Printf("%d is an %T.\n", I, t)
+    case string:
+      fmt.Printf("%s is an %T.\n", I, t)
+    default:
+      fmt.Println("Unknown")
+  }
 }
 ```
 
-#### 8.2.2. type-switch
+### 8.6. break
 
-For interface types
+- `break` terminates the loop when it is encountered.
 
 ```go
 package main
@@ -1231,13 +1310,18 @@ package main
 import "fmt"
 
 func main() {
-  
+  for i:=1; i<=5; i++ { // 1 2
+    if i == 3 {
+      break
+    }
+    fmt.Printf("%d ", i)
+  }
 }
 ```
 
-#### 8.2.3. select-case
+### 8.7. continue
 
-For channel types
+- `continue` skips the current iteration of the loop.
 
 ```go
 package main
@@ -1245,13 +1329,18 @@ package main
 import "fmt"
 
 func main() {
-  
+  for i:=1; i<=5; i++ { // 1 2 4 5
+    if i == 3 { // skips 3
+      continue
+    }
+    fmt.Printf("%d ", i)
+  }
 }
 ```
 
-## 8.3. Jump statements
+### 8.8. goto
 
-### 8.3.1. break
+- `goto` allows unconditional jump to a labeled statement **within the same function**.
 
 ```go
 package main
@@ -1259,43 +1348,45 @@ package main
 import "fmt"
 
 func main() {
-  
+  walk()
+  // First step
+  // Third step
+}
+
+func walk() {
+  fmt.Println("First step")
+
+  goto LASTSTEP
+
+  fmt.Println("Second step") // unreachable code
+
+  LASTSTEP:
+    fmt.Println("Third step")
 }
 ```
 
-### 8.3.2. continue
+### 8.9. fallthrough
+
+- `fallthrough` is used in `switch`.
+- It transfers the program control just after the statement is executed in the switch cases even if the expression does not match.
+- Don't put `fallthrough` in the last statement.
 
 ```go
 package main
-
+  
 import "fmt"
 
 func main() {
-  
-}
-```
-
-### 8.3.3. goto
-
-```go
-package main
-
-import "fmt"
-
-func main() {
-  
-}
-```
-
-### 8.3.4. fallthrough
-
-```go
-package main
-
-import "fmt"
-
-func main() {
-  
+  switch day := "T"; day {
+    case "M":
+      fmt.Println("Monday")
+      fallthrough
+    case "T":
+      fmt.Println("Tuesday") // Tuesday
+      fallthrough
+    case "W":
+      fmt.Println("Wednesday") // Wednesday
+    }
 }
 ```
 
@@ -1371,6 +1462,8 @@ func main() {
   
 }
 ```
+
+- For more details on [select](https://www.programiz.com/golang/select)
 
 ---
 
