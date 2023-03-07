@@ -1340,13 +1340,28 @@ func main() {
 
 ### 8.8. goto
 
+- `goto` allows unconditional jump to a labeled statement **within the same function**.
+
 ```go
 package main
 
 import "fmt"
 
 func main() {
-  
+  walk()
+  // First step
+  // Third step
+}
+
+func walk() {
+  fmt.Println("First step")
+
+  goto LASTSTEP
+
+  fmt.Println("Second step") // unreachable code
+
+  LASTSTEP:
+    fmt.Println("Third step")
 }
 ```
 
