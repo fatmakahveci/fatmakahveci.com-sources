@@ -103,12 +103,10 @@ tags:
   - for running instances, not stopped or terminated instances.
   - for the compute time you use when an instance is running, not when it is stopped or terminated.
   - for server capacity that you need or want.
-- **Multitenancy:** Sharing underlying hardware between virtual machines. It is managed by AWS.
-- **Hypervisor:**
-  - It is responsible for multitenancy.
-  - It isolates instances from each other as they share resources from the host. (the host with multiple other instances)
+- **Multitenancy** shares underlying hardware between virtual machines. It is managed by AWS.
+- **Hypervisor** is responsible for multitenancy.  It isolates instances from each other as they share resources from the host. (the host with multiple other instances)
 - Instances are resizable. You can give more memory / more CPU.
-- **Vertical scaling:** Making instances bigger or smaller.
+- **Vertical scaling** makes instances bigger or smaller.
 - You can control the networking aspect of EC2.
 - Compute-as-a-Service (CaaS)
 - EC2 configurations
@@ -139,10 +137,7 @@ tags:
 
 ##### 2.2.1. Use
 
-- You can run commands to:
-  - install software
-  - add storage
-  - copy and organize files, etc.
+- You can run commands to install software, add storage, copy and organize files, etc.
 
 #### 2.2.2. Pricing
 
@@ -207,12 +202,9 @@ tags:
 ##### 2.2.4.1. Amazon EC2 Auto Scaling
 
 - It enables you to automatically add or remove Amazon EC2 instances in response to changing application demand so you maintain a greater sense of application availability.
-
 - Two approaches:
-
     1. _Dynamic scaling_ responds to changing demand.
     2. _Predictive scaling_ automatically schedules the right number of EC2 instances based on predicted demand.
-
 - To scale faster, you can use dynamic scaling and predictive scaling together.
   - When you create an Auto Scaling group, you can set the _minimum capacity_ which is the number of Amazon EC2 instances that launch immediately after you have created the Auto Scaling group.
   - If you do not specify the desired number of Amazon EC2 instances in an Auto Scaling group, the _desired capacity_ defaults to your minimum capacity.
@@ -249,12 +241,10 @@ tags:
 - A channel for messages to be delivered.
 - A publish/subscribe service
 - Using Amazon SNS topics, a publisher publishes messages to subscribers. This is similar to the coffee shop; the cashier provides coffee orders to the barista who makes the drinks.
-
 - In Amazon SNS, subscribers can be
   - web servers
   - email addresses
   - AWS Lambda functions, etc.
-
 - How it works:
     1. Publish updates from a single topic
     2. Publish updates from multiple topics
@@ -266,14 +256,12 @@ tags:
 - Messages are placed until they are processed.
 - You can send, store, and receive messages between software components, without losing messages or requiring other services to be available.
 - In Amazon SQS, an application sends messages into a queue. A user or service retrieves a message from the queue, processes it, and then deletes it from the queue.
-
 - SQS allows to
   - send messages
   - store messages
   - receive messages
   - between software components
   - at any volume
-
 - How it works:
     1. Fullfiling an order:
       - Think of cashier and barista as two separate components.
@@ -285,7 +273,6 @@ tags:
 - _Elastic load balancing_ is the AWS service that automatically distributes incoming application traffic across multiple resources, such as EC2 instances.
 - A _load balancer_ acts as a single point of contact for all incoming web traffic to your Auto Scaling group.
 - Although Elastic Load Balancing and Amazon EC2 Auto Scaling are separate services, they work together to help ensure that applications running in Amazon EC2 can provide high performance and availability.
-
   1. Low-demand period
   2. High-demand period
 
