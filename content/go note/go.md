@@ -1181,9 +1181,7 @@ Precedence        Operator
 
 ## 8. Flow control statements
 
-### 8.1. Basic control flow
-
-#### 8.1.1. for
+### 8.1. for
 
 ```go
 // 1 + 2 + 3
@@ -1205,7 +1203,24 @@ for i := 1; i < 3; i++ {
   - `for <condition> {}`.
 - `for {}` is an infinite loop.
 
-#### 8.1.2. if-else
+### 8.2. for-range
+
+- It iterates over a slice or map.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  var pow = []int{1, 2, 4}
+  for i,num := range pow {
+    fmt.Printf("2^%d = %d\n", i, num) // 2^0 = 1\n2^1 = 2\n2^2 = 4
+  }
+}
+```
+
+### 8.3. if-else
 
 ```go
 if number < 0 {
@@ -1233,7 +1248,7 @@ if threshold := 1; x < threshold {
 }
 ```
 
-#### 8.1.3. switch-case
+### 8.4. switch-case
 
 - Shorter way of `if-else` statements
 - It evaluates cases from top to bottom.
@@ -1261,26 +1276,7 @@ case "Sunday":
 }
 ```
 
-### 8.2. Control flow for specific types in Go
-
-#### 8.2.1. for-range
-
-- It iterates over a slice or map.
-
-```go
-package main
-
-import "fmt"
-
-func main() {
-  var pow = []int{1, 2, 4}
-  for i,num := range pow {
-    fmt.Printf("2^%d = %d\n", i, num) // 2^0 = 1\n2^1 = 2\n2^2 = 4
-  }
-}
-```
-
-#### 8.2.2. type-switch
+### 8.5. type-switch
 
 - It is `switch` with types.
 
@@ -1304,7 +1300,7 @@ func main() {
 }
 ```
 
-#### 8.2.3. select-case
+### 8.6. break
 
 ```go
 package main
@@ -1316,9 +1312,7 @@ func main() {
 }
 ```
 
-## 8.3. Jump statements
-
-### 8.3.1. break
+### 8.7. continue
 
 ```go
 package main
@@ -1330,7 +1324,7 @@ func main() {
 }
 ```
 
-### 8.3.2. continue
+### 8.8. goto
 
 ```go
 package main
@@ -1342,19 +1336,7 @@ func main() {
 }
 ```
 
-### 8.3.3. goto
-
-```go
-package main
-
-import "fmt"
-
-func main() {
-  
-}
-```
-
-### 8.3.4. fallthrough
+### 8.9. fallthrough
 
 ```go
 package main
