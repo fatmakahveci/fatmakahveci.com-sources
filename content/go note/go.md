@@ -1392,64 +1392,69 @@ func main() {
 
 ---
 
-## 9. Memory management
+## 9. Concurrency
 
-### 9.1. Memory allocation
+- Concurrency is the ability to handle multiple tasks simultaneously to improve performance and responsiveness.
 
-- Memory allocation and deallocation happens automatically.
-- Autonomous implementation of memory usage patterns such as memory pooling, preallocation, etc. avoids making a system call for each memory allocation.
-- Whether if an object will be stack or heap allocated is decided by the compiler.
+### 9.1. Goroutine
 
-#### 9.1.1. `new()` and `make()`
-
-- Both will allocate and get a memory address.
-- `new()` is not initialized. It is so you cannot put any data initially.
-- `make()` is more common. It is initialized and non-zeroed storage so you can put data initially.
-
-### 9.2. Garbage collection (GC)
-
-- It happens automatically.
-- It allows automatic memory management to make code cleaner and avoid memory leak.
-- Out of scope or `nil`
-
-### 9.3. Escape analysis
-
----
-
-## 10. Concurrency
-
-### 10.1. Goroutine
+- Goroutine is the way of doing tasks concurrently in Go. It is a lightweight thread managed by the Go runtime.
+- It exists only in the virtual space of the Go runtime not in the OS.
+- Go Runtime scheduler manages its lifecycle. OS sees a single user level process requesting and running multiple threads.
+- Goroutines run in the same address space so access to shared memory must be synchronized.
 
 ```go
+// Create a goroutine `go <method_or_function_name>()`
+go f(x, y, z) // starts a new goroutine running `f(x, y, z)`
+// f, x, y, and z are evaluated in the current goroutine.
+// f is executed in the new goroutine.
+```
+
+- When a new goroutine is started, the goroutine call returns immediately. Unlike functions, the control does not wait for the goroutine to finish executing. The control returns immediately to the next line of code after the goroutine call and any return values from the goroutine are ignored.
+- The main goroutine should be running for any other goroutines to run. If the main goroutine terminates then the program will be terminated and no other goroutine will run.
+
+```go
+/* Output:
+  1-cat: Alba
+  2-cat: Ana
+  1-flower: Calafate
+  3-cat: Angelina
+  2-flower: Canelo
+  Time is up!
+ */
+
 package main
 
-import (
- "fmt"
- "sync"
- "time"
+import (  
+    "fmt"
+    "time"
 )
 
-func main() {
- var wg sync.WaitGroup
- wg.Add(1)
-
- go func() {
-  count("sheep")
-  wg.Done()
- }()
-
- wg.Wait()
+func cat_names() {
+    cats := [3]string{"Alba", "Ana", "Angelina"}
+    for i, c := range cats {
+        time.Sleep(2 * time.Millisecond)
+        fmt.Printf("%d-cat: %s\n", i+1, c)
+    }
 }
 
-func count(thing string) {
- for i := 1; i <= 5; i++ {
-  fmt.Println(i, thing)
-  time.Sleep(time.Millisecond * 500)
- }
+func flower_names() {  
+    flowers := [3]string{"Calafate", "Canelo", "Chauchau"}
+    for i, f := range flowers {
+        time.Sleep(5 * time.Millisecond)
+        fmt.Printf("%d-flower: %s\n", i+1, f)
+    }
+}
+
+func main() {  
+    go cat_names()
+    go flower_names()
+    time.Sleep(11 * time.Millisecond)
+    fmt.Println("Time is up!") // Chauchau cannot be printed!
 }
 ```
 
-### 10.2. Channels and select mechanisms
+### 9.2. Channels
 
 - to do synchronizations between goroutines.
 
@@ -1463,7 +1468,49 @@ func main() {
 }
 ```
 
+#### 9.2.1. Buffered channels
+
+- Channels can be buffered.
+
+#### 9.2.2. select
+
+- It lets a goroutine to wait on multiple communication operations.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  
+}
+```
+
 - For more details on [select](https://www.programiz.com/golang/select)
+
+---
+
+## 10. Memory management
+
+### 10.1. Memory allocation
+
+- Memory allocation and deallocation happens automatically.
+- Autonomous implementation of memory usage patterns such as memory pooling, preallocation, etc. avoids making a system call for each memory allocation.
+- Whether if an object will be stack or heap allocated is decided by the compiler.
+
+#### 10.1.1. `new()` and `make()`
+
+- Both will allocate and get a memory address.
+- `new()` is not initialized. It is so you cannot put any data initially.
+- `make()` is more common. It is initialized and non-zeroed storage so you can put data initially.
+
+### 10.2. Garbage collection (GC)
+
+- It happens automatically.
+- It allows automatic memory management to make code cleaner and avoid memory leak.
+- Out of scope or `nil`
+
+### 10.3. Escape analysis
 
 ---
 
