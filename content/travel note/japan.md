@@ -1,18 +1,14 @@
 ---
 title: Japan
 description: Tokyo
-summary: "Tokyo"
-date: 14-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Tokyo
+## 1. Tokyo
 
-### Top sights
-
-- []()
-
----
+### 1.1. Top sights

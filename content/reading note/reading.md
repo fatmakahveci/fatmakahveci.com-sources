@@ -1,8 +1,8 @@
 ---
 title: Reading
 description: Some of the influential parts from the books that I have read.
-summary: "Some of the influential parts from the books that I have read."
-date: 03-11-2021
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "blog_posts"
 tags:

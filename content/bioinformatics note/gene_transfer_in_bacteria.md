@@ -1,8 +1,8 @@
 ---
 title: Gene transfer mechanisms in bacteria
 description: Bacterial gene transfer differs from eukaryotes. Bacteria can transfer their genes both vertically and horizontally.
-summary: "Bacterial gene transfer differs from eukaryotes. Bacteria can transfer their genes both vertically and horizontally."
-date: 11-06-2020
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Bioinformatics"
 tags:
@@ -10,15 +10,15 @@ tags:
 ---
 Bacterial gene transfer differs from eukaryotes. Bacteria can transfer their genes both vertically and horizontally.
 
-# 1. Vertical Gene Transfer
+## 1. Vertical Gene Transfer
 
-Genetic material is passed on from parent to the offspring vertically. 
+Genetic material is passed on from parent to the offspring vertically.
 
 ![vertical_gene_transfer](/img/vertical_gene_transfer.png)
 
 ---
 
-# 2. Horizontal (Lateral) Gene Transfer
+## 2. Horizontal (Lateral) Gene Transfer
 
 Horizontal gene transfer (HGT or LGT) can be defined as the acquisition of a DNA fragment from elsewhere.
 

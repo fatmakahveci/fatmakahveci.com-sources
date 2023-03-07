@@ -1,8 +1,8 @@
 ---
 title: Complete binary tree
 description: Complete binary tree
-summary: "Complete binary tree"
-date: 17-02-2023
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Coding"
 tags:

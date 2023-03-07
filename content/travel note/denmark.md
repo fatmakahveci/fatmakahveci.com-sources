@@ -1,18 +1,14 @@
 ---
 title: Denmark
 description: Kopenhagen
-summary: "Kopenhagen"
-date: 14-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Copenhagen
+## 1. Copenhagen
 
-### Top sights
-
-- []()
-
----
+### 1.1. Top sights

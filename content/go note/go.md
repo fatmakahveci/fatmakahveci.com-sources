@@ -1,8 +1,8 @@
 ---
 title: Go for beginners
 description: Go for beginners
-summary: "Go for beginners"
-date: 06-03-2023
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Coding"
 tags:

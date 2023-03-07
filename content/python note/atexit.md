@@ -1,8 +1,8 @@
 ---
 title: atexit - Exit handlers
 description: atexit - Exit handlers
-summary: "atexit - Exit handlers"
-date: 16-02-2023
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Coding"
 tags:

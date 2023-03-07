@@ -1,26 +1,20 @@
 ---
 title: USA
 description: Los Angeles and New York
-summary: "Los Angeles and New York"
-date: 14-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Los Angeles
+## 1. Los Angeles
 
-### Top sights
-
-- []()
+### 1.1. Top sights
 
 ---
 
-## New York
+## 2. New York
 
-### Top sights
-
-- []()
-
----
+### 2.1. Top sights

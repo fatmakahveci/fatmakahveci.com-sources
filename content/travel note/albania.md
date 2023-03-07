@@ -1,17 +1,17 @@
 ---
 title: Albania
 description: Tirana, Durrës and Berat.
-summary: "Tirana, Durrës and Berat."
-date: 14-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Tirana
+## 1. Tirana
 
-### Top sights
+### 1.1. Top sights
 
 - [Blloku](https://goo.gl/maps/ndroGV2MWv1sTKSp9)
 - [Bunk'Art 2](https://g.page/Bunkart2?share)
@@ -22,11 +22,11 @@ tags:
 - [Skanderbeg Square (Sheshi Skënderbej)](https://g.page/taxipayless?share)
 - [Tirana Castle (Kalaja e Tiranës)](https://goo.gl/maps/zQezDGSJw7c94ZeWA)
 
-### Experiment
+### 1.2. Experiment
 
 - [Dajti Ekspres (Cable Car)](https://g.page/DajtiEkspres?share)
 
-### Eat & Drink
+### 1.3. Eat & Drink
 
 - [Artigiano at Vila (Artigiano Vila)](https://goo.gl/maps/Pe6VaZv9iVqpJGsy5)
 - [Ejona](https://g.page/ejonarestaurant?share)
@@ -38,29 +38,27 @@ tags:
 
 ---
 
-## Durrës
+## 2. Durrës
 
-### Top sights
+### 2.1. Top sights
 
 - [Beach of Durrës (Plazhi i Durrësit)](https://goo.gl/maps/Sr8pFoAH6sVVoPUa7)
 
 ---
 
-## Berat
+## 3. Berat
 
-### Top sights
+### 3.1. Top sights
 
 - [Berat Castle (Kalaja e Beratit)](https://g.page/berat-castle?share)
 - [Ethnographic Museum (Muzeu Etnografik)](https://goo.gl/maps/2CR61tNDF21eh81k9)
 - [Kisha Shen Triadha (Holy Trinity Church)](https://goo.gl/maps/qkuKSXBPRfpE4NGe9)
 - [Old Town](https://goo.gl/maps/BE3uQSVFt3Z836tGA)
 
-### The Best Place for Breathtaking Panoramic View of Berat
+### 3.2. The Best Place for Breathtaking Panoramic View of Berat
 
 - [Berat Viewing Platform](https://goo.gl/maps/HSf6oAt8FKnXsnHb8)
 
-### Eat & Drink
+### 3.3. Eat & Drink
 
 - [Byrektore Rozeta](https://goo.gl/maps/Nc93vaHfFeACLLjZ8)
-
----

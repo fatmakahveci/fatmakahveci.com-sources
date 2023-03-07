@@ -1,8 +1,8 @@
 ---
 title: Regex
 description: Regex
-summary: "Regex"
-date: 30-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Coding"
 tags:
@@ -38,8 +38,6 @@ result = regex_pattern.findall("Emma's luck numbers are 251 761 231 451")
 ```
 
 ---
-
-##
 
 - Any character except new line
 

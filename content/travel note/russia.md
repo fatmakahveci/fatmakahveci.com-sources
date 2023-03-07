@@ -1,26 +1,20 @@
 ---
 title: Russia
 description: Moscow and Saint Petersburg.
-summary: "Moscow and Saint Petersburg."
-date: 14-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Moscow
+## 1. Moscow
 
-### Top sights
-
-- []()
+### 1.1. Top sights
 
 ---
 
-## Saint Petersburg
+## 2. Saint Petersburg
 
-### Top sights
-
-- []()
-
----
+### 2.1. Top sights

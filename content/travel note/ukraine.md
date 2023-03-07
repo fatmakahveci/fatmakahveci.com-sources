@@ -1,17 +1,17 @@
 ---
 title: Ukraine
 description: Kiev
-summary: "Kiev"
-date: 14-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Kiev
+## 1. Kiev
 
-### Top sights
+### 1.1. Top sights
 
 - [Independence Square (Майдан Незалежності)](https://www.google.com/maps/place/Independence+Square,+Kyiv,+Ukrayna,+02000/@50.450893,30.5226522,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipMkLS9Avo180hh5Ne4nguWtZzuVymoBpkfhfzyS!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMkLS9Avo180hh5Ne4nguWtZzuVymoBpkfhfzyS%3Dw203-h152-k-no!7i2592!8i1944!4m5!3m4!1s0x40d4ce50f8b6e3c3:0xb528dc4d6dadc4f8!8m2!3d50.4505318!4d30.5229899)
 - [The Golden Gates (Музей Золоті ворота](https://www.google.com/maps/place/Alt%C4%B1n+Kap%C4%B1/@50.4488319,30.5133317,3a,78.6y,90t/data=!3m8!1e2!3m6!1sAF1QipMvILVwHGCSPAnbT_ry58PE097medZZDjqLpx5l!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMvILVwHGCSPAnbT_ry58PE097medZZDjqLpx5l%3Dw128-h86-k-no!7i1000!8i669!4m5!3m4!1s0x40d4ce59e3ab65a7:0x694b8565cab02eaf!8m2!3d50.4488319!4d30.5133317)
@@ -26,24 +26,24 @@ tags:
 - [Saint Andrew's Church (Андріївська церква)](https://www.google.com/maps/place/Aziz+Andreas+Kilisesi/@50.458696,30.518056,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipO3zY-p0cgu_DJmhABk-jGwIAkKEJfrO6xy9TwE!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipO3zY-p0cgu_DJmhABk-jGwIAkKEJfrO6xy9TwE%3Dw129-h86-k-no!7i2048!8i1360!4m5!3m4!1s0x40d4ce43925b6597:0xa40ae8f859121eaa!8m2!3d50.4590318!4d30.5179307)
 - [Pyrohiv Open-Air Museum (Національний музей народної архітектури та побуту України)](https://www.google.com/maps/place/National+Museum+of+Folk+Architecture+and+Life+of+Ukraine/@50.353418,30.503599,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipNdiTuJvJ_D36kDK2rdod8UVGH_UH3-8ia02dt2!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNdiTuJvJ_D36kDK2rdod8UVGH_UH3-8ia02dt2%3Dw203-h152-k-no!7i4128!8i3096!4m8!1m2!2m1!1sPyrohiv+Open-Air+Museum!3m4!1s0x40d4c62b50a33bb1:0x2d1663383a9ab8f6!8m2!3d50.353418!4d30.503599)
 
-### Experiment
+### 1.2. Experiment
 
 - [Kiev Funicular (Київський фунікулер)](https://www.google.com/maps/place/Kiev+Funicular/@50.4577176,30.5235093,3a,98y,90t/data=!3m8!1e2!3m6!1sAF1QipMK_denXMWgEwfMygfMlsjkAEBvVl-vI9XOWtvX!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMK_denXMWgEwfMygfMlsjkAEBvVl-vI9XOWtvX%3Dw203-h134-k-no!7i711!8i472!4m12!1m6!3m5!1s0x40d4ce4105c8ab8b:0x9321ce28c11b4c8f!2sKiev+Funicular!8m2!3d50.4577176!4d30.5235093!3m4!1s0x40d4ce4105c8ab8b:0x9321ce28c11b4c8f!8m2!3d50.4577176!4d30.5235093)
 
-### Main Street
+### 1.3. Main Street
 
 - [Khreschatyk Street (ХрещатиK)](https://www.google.com/maps/place/Khreschatyk+St,+Kyiv,+Ukrayna,+02000/@50.4498542,30.5223476,401m/data=!3m1!1e3!4m5!3m4!1s0x40d4ce56b2456d3b:0xd062ae171b57e947!8m2!3d50.4475854!4d30.5220257)
 
-### Souvenir Shopping
+### 1.4. Souvenir Shopping
 
 - [Andriivs'kyi descent(Андріївський узвіз)](https://www.google.com/maps/place/Andriivs'kyi+descent,+Kyiv,+Ukrayna,+02000/@50.4598069,30.5161398,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPC5MmsI3CrHVnH_4lU66PM7v5ej298G0S0zD1F!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPC5MmsI3CrHVnH_4lU66PM7v5ej298G0S0zD1F%3Dw203-h270-k-no!7i3024!8i4032!4m5!3m4!1s0x40d4ce43ccf910f1:0x86e14f4b5b274396!8m2!3d50.4598069!4d30.5161398)
 
-### The Best Place for Breathtaking Panoramic View
+### 1.5. The Best Place for Breathtaking Panoramic View
 
 - [Volodymyrska Hill(Володимирська Гірка)](https://www.google.com/maps/place/Volodymyrska+Hill/@50.4565251,30.5255203,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPVuRcISm13Bdk8y2YF2ZjEoUgHu_73hzvVREgm!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPVuRcISm13Bdk8y2YF2ZjEoUgHu_73hzvVREgm%3Dw203-h152-k-no!7i4160!8i3120!4m12!1m6!3m5!1s0x40d4ce458f2e3e89:0x60cb77771a7f9c19!2sVolodymyrska+Hill!8m2!3d50.4565251!4d30.5255203!3m4!1s0x40d4ce458f2e3e89:0x60cb77771a7f9c19!8m2!3d50.4565251!4d30.5255203)
 - [The Great Lavra Bell Tower (Велика лаврська дзвіниця)](https://www.google.com/maps/place/Great+Lavra+Bell+Tower/@50.4346689,30.555258,17.9z/data=!4m12!1m6!3m5!1s0x40d4cfa04a0c8e5b:0x3b40a2bcbca08807!2zTWHEn2FyYWxhciBNYW5hc3TEsXLEsQ!8m2!3d50.4346375!4d30.5572558!3m4!1s0x0:0x419897065fbbe0ad!8m2!3d50.4347845!4d30.5562394)
 
-### Eat & Drink
+### 1.6. Eat & Drink
 
 - [Kompot(Компот)](https://www.google.com/maps/place/Kompot/@50.459681,30.526814,937m/data=!3m1!1e3!4m8!1m2!2m1!1skompot!3m4!1s0x0:0x8f25b7cac31032de!8m2!3d50.4596812!4d30.5268136)
 - [Veterano Pizza](https://www.google.com/maps/place/Veterano+Pizza/@50.4517383,30.5198601,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipOZ0CN8rCVqgkO-wYPROEd22RMuqQP0xMp7pVMx!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOZ0CN8rCVqgkO-wYPROEd22RMuqQP0xMp7pVMx%3Dw203-h270-k-no!7i1536!8i2048!4m5!3m4!1s0x40d4ce5a8135482b:0xf1200a02ba705afd!8m2!3d50.451861!4d30.5199367)

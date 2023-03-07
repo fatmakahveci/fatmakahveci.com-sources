@@ -1,8 +1,8 @@
 ---
 title: Decorator
 description: Decorator
-summary: "Decorator"
-date: 18-02-2023
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Coding"
 tags:

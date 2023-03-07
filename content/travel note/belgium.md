@@ -1,17 +1,17 @@
 ---
 title: Belgium
 description: Brugge and Brussels.
-summary: "Brugge and Brussels."
-date: 16-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Brugge
+## 1. Brugge
 
-### Top sights
+### 1.1. Top sights
 
 - [Basilica of the Holy Blood (Basiliek van het Heilig Bloed)](https://goo.gl/maps/1KVbJJtCRSxk5ioU9)
 - [Beguinage "Ten Wijngaerde" (Begijnhof)](https://goo.gl/maps/BVnfh676rME5CMEb6)
@@ -22,20 +22,20 @@ tags:
 - [Minnewaterpark](https://goo.gl/maps/7kSo2kZ3xB4KRrHW9)
 - [Sint-Salvatorskathedraal](https://goo.gl/maps/fxjmGhL2ZxWAyeR18)
 
-### Main Street of Brugge
+### 1.2. Main Street of Brugge
 
 - [Market Square (Grote Markt)](https://goo.gl/maps/3VCWpzDGxFCnV4p48)
 
-### Eat & Drink
+### 1.3. Eat & Drink
 
 - French fries
 - Waffle
 
 ---
 
-## Brussels
+## 2. Brussels
 
-### Top sights
+### 2.1. Top sights
 
 - [Atomium](https://g.page/atomium-brussels?share)
 - [Autoworld](https://goo.gl/maps/gxKchJXcvW4yeqaW7)
@@ -57,5 +57,3 @@ tags:
 - [Royal Palace of Brussels (Palais de Bruxelles)](https://goo.gl/maps/5u9kv6KTXvMCAqkL9)
 - [St Michael and St Gudula Cathedral, Brussels (Cathédrale des Sts Michel et Gudule, Bruxelles)](https://goo.gl/maps/tv8utc2SRcwXBp4t6)
 - [Triumphal Arch (Monument du Cinquantenaire)](https://goo.gl/maps/jEDbsfn4mkqXBx659)
-
----

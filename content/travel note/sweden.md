@@ -1,18 +1,14 @@
 ---
 title: Sweden
 description: Malmo
-summary: "Malmo"
-date: 14-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Malmo
+## 1. Malmo
 
-### Top sights
-
-- []()
-
----
+### 1.1. Top sights

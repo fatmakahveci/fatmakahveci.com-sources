@@ -1,8 +1,8 @@
 ---
 title: Thread
 description: Thread
-summary: "Thread"
-date: 30-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Coding"
 tags:

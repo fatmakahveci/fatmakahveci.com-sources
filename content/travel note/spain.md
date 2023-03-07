@@ -1,50 +1,38 @@
 ---
 title: Spain
 description: Cordoba, Granada, Madrid, Malaga, and Sevilla.
-summary: "Cordoba, Granada, Madrid, Malaga, and Sevilla."
-date: 14-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Cordoba
+## 1. Cordoba
 
-### Top sights
-
-- []()
+### 1.1. Top sights
 
 ---
 
-## Granada
+## 2. Granada
 
-### Top sights
-
-- []()
+### 2.1. Top sights
 
 ---
 
-## Madrid
+## 3. Madrid
 
-### Top sights
-
-- []()
+### 3.1. Top sights
 
 ---
 
-## Malaga
+## 4. Malaga
 
-### Top sights
-
-- []()
+### 4.1. Top sights
 
 ---
 
-## Sevilla
+## 5. Sevilla
 
-### Top sights
-
-- []()
-
----
+### 5.1. Top sights

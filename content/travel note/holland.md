@@ -1,26 +1,22 @@
 ---
 title: Holland
 description: Amsterdam and Lisse.
-summary: "Amsterdam and Lisse."
-date: 14-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Amsterdam
+## 1. Amsterdam
 
-### Top sights
-
-- []()
+### 1.1. Top sights
 
 ---
 
-## Lisse
+## 2. Lisse
 
-### Top sights
+### 2.1. Top sights
 
 - [Keukenhof](https://goo.gl/maps/xnpDzfdoSrJgufFj9)
-
----

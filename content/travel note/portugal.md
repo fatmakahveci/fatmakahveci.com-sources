@@ -1,23 +1,23 @@
 ---
 title: Portugal
 description: Lisbon district
-summary: "Lisbon district"
-date: 01-03-2023
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-### Lisbon
+## 1. Lisbon
 
 ---
 
-### Ericeira
+## 2. Ericeira
 
 ---
 
-### Sintra
+## 3. Sintra
 
 - Park and National Palace of Pena
 - Castelo dos Mouros

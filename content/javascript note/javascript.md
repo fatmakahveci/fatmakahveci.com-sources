@@ -1,8 +1,8 @@
 ---
 title: JavaScript for beginners
 description: JavaScript for beginners
-summary: "JavaScript for beginners"
-date: 27-01-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Coding"
 tags:

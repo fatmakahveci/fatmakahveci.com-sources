@@ -1,8 +1,8 @@
 ---
 title: When to use data structures and algorithms
 description: When to use data structures and algorithms
-summary: "When to use data structures and algorithms"
-date: 30-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Coding"
 tags:
@@ -199,6 +199,18 @@ def reverse_tree(root):
 ## Dictionaries
 
 - To locate, insert, and delete a record associated any query with key `q`
+
+- `search(d,k)` returns a pointer to the element in `d` whose value is `k`, if one exists.
+- `insert(d,x)` adds `x` to `d`.
+- `delete(d,x)` removes `x` from `d`.
+- `max(d)` retrieves the item with the largest key.
+- `min(d)` retrieves the item with the smallest key.
+- `predecessor(d,x)` retrieves the item from `d` whose key is immediately before `x` in sorted order.
+- `successor(d,x)` retrieves the item from `d` whose key is immediately after `x` in sorted order.
+
+dictionary implementations := BST, hash table
+
+![list_cost](list_cost.png)
 
 ### Implementations
 
@@ -841,35 +853,6 @@ def reverse_tree(root):
 
 - Find a pointer to the predecessor of the item to be deleted (recursively).
 
-## Stacks
-
-- `LIFO` tends to happen in the course of executing recursive algorithms.
-- Use when retrieval order doesn't matter, such as when processing batch jobs.
-- `push(x,s)` inserts `x` at the top of `s`.
-- `pop(s)` returns and removes the top of `s`.
-
-## Queues
-
-- `FIFO`
-- Use when the order matters.
-- `enqueue(x,q)` inserts `x` at the back of `q`.
-- `deque(q)` returns and removes the front from `q`.
-- `BFS` in graphs.
-
-## Dictionaries
-
-- `search(d,k)` returns a pointer to the element in `d` whose value is `k`, if one exists.
-- `insert(d,x)` adds `x` to `d`.
-- `delete(d,x)` removes `x` from `d`.
-- `max(d)` retrieves the item with the largest key.
-- `min(d)` retrieves the item with the smallest key.
-- `predecessor(d,x)` retrieves the item from `d` whose key is immediately before `x` in sorted order.
-- `successor(d,x)` retrieves the item from `d` whose key is immediately after `x` in sorted order.
-
-dictionary implementations := BST, hash table
-
-![list_cost](list_cost.png)
-
 ## Binary Search Trees
 
 - Each node in a binary tree with a single key `x`
@@ -887,8 +870,6 @@ class BinarySearchTree:
 ```
 
 ![bst](bst.png)
-
-#### Searching
 
 #### Traversal
 

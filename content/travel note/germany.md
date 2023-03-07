@@ -1,42 +1,32 @@
 ---
 title: Germany
 description: Berlin, Cologne, Dusseldorf, and Munich.
-summary: "Berlin, Cologne, Dusseldorf, and Munich."
-date: 14-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Berlin
+## 1. Berlin
 
-### Top sights
-
-- []()
+### 1.1. Top sights
 
 ---
 
-## Cologne
+## 2. Cologne
 
-### Top sights
-
-- []()
+### 2.1. Top sights
 
 ---
 
-## Dusseldorf
+## 3. Dusseldorf
 
-### Top sights
-
-- []()
+### 3.1. Top sights
 
 ---
 
-## Munich
+## 4. Munich
 
-### Top sights
-
-- []()
-
----
+### 4.1. Top sights

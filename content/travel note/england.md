@@ -1,17 +1,17 @@
 ---
 title: England
 description: London, Cambridge, Oxford and Kent.
-summary: "London, Cambridge, Oxford and Kent."
-date: 13-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Cambridge
+## 1. Cambridge
 
-### Top sights
+### 1.1. Top sights
 
 - [Mathematical Bridge](https://www.google.com/maps/place/Mathematical+Bridge/@52.2039915,0.1152037,16.12z/data=!4m13!1m7!3m6!1s0x47d85d89f32a012d:0x63a320e1a35e3d21!2sCambridge!3b1!8m2!3d52.205337!4d0.121817!3m4!1s0x0:0x22f7ea16d56bec6a!8m2!3d52.2021922!4d0.1150683)
 - [University of Cambridge](https://www.google.com/maps/place/University+of+Cambridge/@52.2039915,0.1152037,16.12z/data=!4m13!1m7!3m6!1s0x47d85d89f32a012d:0x63a320e1a35e3d21!2sCambridge!3b1!8m2!3d52.205337!4d0.121817!3m4!1s0x47d8774ed42712a9:0x21ca80abf36db5bb!8m2!3d52.2042666!4d0.1149085)
@@ -21,18 +21,18 @@ tags:
 - [Great St Mary's, the University Church](https://www.google.com/maps/place/Great+St+Mary's,+the+University+Church,+Cambridge/@52.2068331,0.1169165,16.58z/data=!4m13!1m7!3m6!1s0x47d85d89f32a012d:0x63a320e1a35e3d21!2sCambridge!3b1!8m2!3d52.205337!4d0.121817!3m4!1s0x0:0x8e6bef904755f0c2!8m2!3d52.2054184!4d0.1182295)
 - [Cambridge Market Square](https://www.google.com/maps/place/Cambridge+Market+Square/@52.2065025,0.1164039,16.6z/data=!4m13!1m7!3m6!1s0x47d85d89f32a012d:0x63a320e1a35e3d21!2sCambridge!3b1!8m2!3d52.205337!4d0.121817!3m4!1s0x47d870bd9666169b:0xf50eb3302d5687a1!8m2!3d52.2053745!4d0.1190324)
 
-### Parks
+### 1.2. Parks
 
 - [The Backs](https://www.google.com/maps/place/The+Backs/@52.2042444,0.1130218,15z/data=!4m13!1m7!3m6!1s0x47d85d89f32a012d:0x63a320e1a35e3d21!2sCambridge!3b1!8m2!3d52.205337!4d0.121817!3m4!1s0x47d870b50da52025:0x9aca3d3782e7079e!8m2!3d52.2042444!4d0.1130218)
 - [Jesus Green](https://www.google.com/maps/place/Jesus+Green/@52.2093484,0.1161973,16.43z/data=!4m13!1m7!3m6!1s0x47d85d89f32a012d:0x63a320e1a35e3d21!2sCambridge!3b1!8m2!3d52.205337!4d0.121817!3m4!1s0x47d870952ddb593f:0x6c0a770654764ce1!8m2!3d52.2112073!4d0.1227936)
 - [Midsummer Common](https://www.google.com/maps/place/Midsummer+Common/@52.2098653,0.1251827,16.43z/data=!4m13!1m7!3m6!1s0x47d85d89f32a012d:0x63a320e1a35e3d21!2sCambridge!3b1!8m2!3d52.205337!4d0.121817!3m4!1s0x47d8709293f326bb:0x87908309e15af63d!8m2!3d52.2103177!4d0.1291323)
 - [Parker's Piece](https://www.google.com/maps/place/Parker's+Piece/@52.2070352,0.1182535,15.51z/data=!4m13!1m7!3m6!1s0x47d85d89f32a012d:0x63a320e1a35e3d21!2sCambridge!3b1!8m2!3d52.205337!4d0.121817!3m4!1s0x47d870909eb007ff:0x38d15812ac96ca14!8m2!3d52.2020711!4d0.1282394)
 
-### Experiment
+### 1.3. Experiment
 
 - [Eagle (Watson and Crick)](https://www.google.com/maps/place/Eagle/@52.2039725,0.1180993,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipP7nrmIHM6Qj9R5Kfz7pxcuYl1zhWzOmGW8_7_d!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipP7nrmIHM6Qj9R5Kfz7pxcuYl1zhWzOmGW8_7_d%3Dw114-h86-k-no!7i4032!8i3024!4m5!3m4!1s0x47d870bd057107b9:0x4c6d5abe78557cbe!8m2!3d52.2039831!4d0.118092)
 
-### Eat & Drink
+### 1.4. Eat & Drink
 
 - Coffee
   - [Bould Brothers Coffee](https://www.google.com/maps/place/Bould+Brothers+Coffee/@52.2065077,0.1163711,16.58z/data=!4m13!1m7!3m6!1s0x47d85d89f32a012d:0x63a320e1a35e3d21!2sCambridge!3b1!8m2!3d52.205337!4d0.121817!3m4!1s0x47d870be3f5b3a75:0x2e852bb0a49756be!8m2!3d52.2086252!4d0.1187139)
@@ -45,29 +45,25 @@ tags:
 
 ---
 
-## Kent
+## 2. Kent
 
-### Top sights
+### 2.1. Top sights
 
-- []()
-
-### Eat & Drink
+### 2.2. Eat & Drink
 
 - [Hattusa Sevenoaks](https://goo.gl/maps/LicWTGBDLAHsHfEv7)
 
 ---
 
-## Oxford
+## 3. Oxford
 
-### Top sights
-
-- []()
+### 3.1. Top sights
 
 ---
 
-## London
+## 4. London
 
-### Top sights
+### 4.1. Top sights
 
 - [British Museum](https://www.google.com/maps/place/British+Museum/@51.5187674,-0.1270438,2a,75y,322.44h,98.53t/data=!3m7!1e1!3m5!1s9CkB2pCsGju2TrvbEXOZyA!2e0!6s%2F%2Fgeo0.ggpht.com%2Fcbk%3Fpanoid%3D9CkB2pCsGju2TrvbEXOZyA%26output%3Dthumbnail%26cb_client%3Dmaps_sv.tactile.gps%26thumb%3D2%26w%3D203%26h%3D100%26yaw%3D322.43845%26pitch%3D-8.528722%26thumbfov%3D100!7i13312!8i6656!4m5!3m4!1s0x48761b323093d307:0x2fb199016d5642a7!8m2!3d51.5194133!4d-0.1269566)
 - [Tower of London](https://www.google.com/maps/place/Londra+Kalesi/@51.5081124,-0.0759493,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipOh3gGkmyNP6WTy4iQISgAZnCKU17OMD1Crq_Zr!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOh3gGkmyNP6WTy4iQISgAZnCKU17OMD1Crq_Zr%3Dw203-h114-k-no!7i4032!8i2268!4m7!3m6!1s0x48760349331f38dd:0xa8bf49dde1d56467!8m2!3d51.5081124!4d-0.0759493!14m1!1BCgIgAQ)
@@ -85,17 +81,15 @@ tags:
 - [The Wallace Collection](https://www.google.com/maps/place/The+Wallace+Collection/@51.517209,-0.1529885,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipOihUhORFEQLAf6EksLrz6kRpKDz7_Am-NLHw2-!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOihUhORFEQLAf6EksLrz6kRpKDz7_Am-NLHw2-%3Dw129-h86-k-no!7i3877!8i2584!4m12!1m6!3m5!1s0x4876054929181a85:0xd1af6c4f49b4bd0c!2sHyde+Park!8m2!3d51.5072682!4d-0.1657303!3m4!1s0x48761acd7d993b73:0xc11d6276bbfec573!8m2!3d51.5172689!4d-0.1530147)
 - [Madame Tussauds London](https://www.google.com/maps/place/Madame+Tussauds+London/@51.5226597,-0.1548625,3a,75.2y,90t/data=!3m8!1e2!3m6!1sAF1QipMSlPkC0IImxyG9gH-jaP66SSMg73Adn0Zl3v32!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMSlPkC0IImxyG9gH-jaP66SSMg73Adn0Zl3v32%3Dw151-h86-k-no!7i1079!8i613!4m12!1m6!3m5!1s0x4876054929181a85:0xd1af6c4f49b4bd0c!2sHyde+Park!8m2!3d51.5072682!4d-0.1657303!3m4!1s0x0:0x26fdced3c04033a4!8m2!3d51.5230169!4d-0.1543665)
 
-### Experiments
+### 4.2. Experiments
 
 - [Emirates Air Line Cable Car](https://www.google.com/maps/place/Emirates+Air+Line+-+Canning+Town+Station/@51.5037415,0.008774,16z/data=!4m8!1m2!2m1!1semirates+cable!3m4!1s0x47d8a93c09b3dc6d:0xae05509a0f3abc5!8m2!3d51.507913!4d0.0173191)
 - [London Eye](https://www.google.com/maps/place/London+Eye/@51.503324,-0.119543,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipM_9mBwkfiPtYlo9EihZTfe73qz3oOUNNHoCv6h!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipM_9mBwkfiPtYlo9EihZTfe73qz3oOUNNHoCv6h%3Dw203-h248-k-no!7i1080!8i1322!4m12!1m6!3m5!1s0x4876054929181a85:0xd1af6c4f49b4bd0c!2sHyde+Park!8m2!3d51.5072682!4d-0.1657303!3m4!1s0x0:0x4291f3172409ea92!8m2!3d51.5033266!4d-0.1195407)
 
-### Eat & Drink
+### 4.3. Eat & Drink
 
 - [Antepliler (Turkish Cuisine)](https://www.google.com/maps/place/Antepliler+Restaurant/@51.5404149,-0.0603978,12z/data=!4m9!1m2!2m1!1santepliler!3m5!1s0x48761bf4bebacedd:0xcf45eb5259836b15!8m2!3d51.579288!4d-0.0989705!15sCgphbnRlcGxpbGVyIgOIAQFaGAoKYW50ZXBsaWxlciIKYW50ZXBsaWxlcpIBEnR1cmtpc2hfcmVzdGF1cmFudA)
 - [Let'o (Russian Cafe)](https://www.google.com/maps/place/L'ETO+London/@51.4986801,-0.1569386,15z/data=!4m9!1m2!2m1!1sl'eto!3m5!1s0x0:0x96f55ee850a12700!8m2!3d51.4987902!4d-0.1570532!15sCgVsJ2V0byIDiAEBWg4KBWwgZXRvIgVsIGV0b5IBGG1lZGl0ZXJyYW5lYW5fcmVzdGF1cmFudA)
 - [Mestizo (Mexican Cuisine)](https://www.google.com/maps/place/Mestizo+Mexican+Restaurant/@51.5276231,-0.1386266,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipMb3EEzjJWQ0HWSgMMmKOrqSU7FDzuhHOL3T4Np!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMb3EEzjJWQ0HWSgMMmKOrqSU7FDzuhHOL3T4Np%3Dw203-h270-k-no!7i3024!8i4032!4m7!3m6!1s0x48761b27a577882f:0x2f6367bc67104dfa!8m2!3d51.5276228!4d-0.1388129!14m1!1BCgIgAQ)
 - [Olive and Lemon (Turkish Cuisine)](https://www.google.com/maps/place/olive+and+lemon+cafe%2Fbistro/@51.5404361,0.0008867,15z/data=!4m12!1m6!3m5!1s0x47d8a78a0da51ee1:0x45ccf860c39d70b5!2solive+and+lemon+cafe%2Fbistro!8m2!3d51.5405894!4d0.000627!3m4!1s0x47d8a78a0da51ee1:0x45ccf860c39d70b5!8m2!3d51.5405894!4d0.000627)
 - [Poppies Fish & Chips](https://www.google.com/maps/place/Poppies+Fish+%26+Chips/@51.5202977,-0.074039,12z/data=!4m9!1m2!2m1!1sfish+and+chips!3m5!1s0x48761cb68288b75f:0x5765082b2389d926!8m2!3d51.5202143!4d-0.0740094!15sCg5maXNoIGFuZCBjaGlwc1ogCg5maXNoIGFuZCBjaGlwcyIOZmlzaCBhbmQgY2hpcHOSARlmaXNoX2FuZF9jaGlwc19yZXN0YXVyYW50)
-
----

@@ -1,8 +1,8 @@
 ---
 title: Bacterial Strain Identification
 description: Here is an intro to bacterial strain identification.
-summary: "Here is an intro to bacterial strain identification."
-date: 17-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Bioinformatics"
 tags:

@@ -1,26 +1,20 @@
 ---
 title: Switzerland
 description: Schaffhausen and Zurich.
-summary: "Schaffhausen and Zurich."
-date: 14-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Schaffhausen
+## 1. Schaffhausen
 
-### Top sights
-
-- []()
+### 1.1. Top sights
 
 ---
 
-## Zurich
+## 2. Zurich
 
-### Top sights
-
-- []()
-
----
+### 2.1. Top sights

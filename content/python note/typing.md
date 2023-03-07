@@ -1,8 +1,8 @@
 ---
 title: typing - Support for type hints
 description: typing - Support for type hints
-summary: "typing - Support for type hints"
-date: 16-02-2023
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Coding"
 tags:

@@ -1,8 +1,8 @@
 ---
 title: Activating a Conda environment in your Dockerfile
 description: Activating a Conda environment in your Dockerfile
-summary: "Activating a Conda environment in your Dockerfile"
-date: 16-02-2023
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Coding"
 tags:

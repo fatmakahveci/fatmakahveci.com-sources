@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="When to use data structures and algorithms">
 <meta itemprop="description" content="When to use data structures and algorithms">
 
-<meta itemprop="wordCount" content="3588">
+<meta itemprop="wordCount" content="3520">
 <meta itemprop="keywords" content="python,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -339,8 +339,33 @@
 <hr>
 <h2 id="dictionaries">Dictionaries</h2>
 <ul>
-<li>To locate, insert, and delete a record associated any query with key <code>q</code></li>
+<li>
+<p>To locate, insert, and delete a record associated any query with key <code>q</code></p>
+</li>
+<li>
+<p><code>search(d,k)</code> returns a pointer to the element in <code>d</code> whose value is <code>k</code>, if one exists.</p>
+</li>
+<li>
+<p><code>insert(d,x)</code> adds <code>x</code> to <code>d</code>.</p>
+</li>
+<li>
+<p><code>delete(d,x)</code> removes <code>x</code> from <code>d</code>.</p>
+</li>
+<li>
+<p><code>max(d)</code> retrieves the item with the largest key.</p>
+</li>
+<li>
+<p><code>min(d)</code> retrieves the item with the smallest key.</p>
+</li>
+<li>
+<p><code>predecessor(d,x)</code> retrieves the item from <code>d</code> whose key is immediately before <code>x</code> in sorted order.</p>
+</li>
+<li>
+<p><code>successor(d,x)</code> retrieves the item from <code>d</code> whose key is immediately after <code>x</code> in sorted order.</p>
+</li>
 </ul>
+<p>dictionary implementations := BST, hash table</p>
+<p><img src="list_cost.png" alt="list_cost"></p>
 <h3 id="implementations">Implementations</h3>
 <h4 id="1-hash-table">1. Hash table</h4>
 <h5 id="birthday-paradox">Birthday paradox</h5>
@@ -1057,33 +1082,6 @@ b. <strong>Unranking:</strong> Which permutation is in position $m$ of the $n!$ 
 <ul>
 <li>Find a pointer to the predecessor of the item to be deleted (recursively).</li>
 </ul>
-<h2 id="stacks-1">Stacks</h2>
-<ul>
-<li><code>LIFO</code> tends to happen in the course of executing recursive algorithms.</li>
-<li>Use when retrieval order doesn&rsquo;t matter, such as when processing batch jobs.</li>
-<li><code>push(x,s)</code> inserts <code>x</code> at the top of <code>s</code>.</li>
-<li><code>pop(s)</code> returns and removes the top of <code>s</code>.</li>
-</ul>
-<h2 id="queues-1">Queues</h2>
-<ul>
-<li><code>FIFO</code></li>
-<li>Use when the order matters.</li>
-<li><code>enqueue(x,q)</code> inserts <code>x</code> at the back of <code>q</code>.</li>
-<li><code>deque(q)</code> returns and removes the front from <code>q</code>.</li>
-<li><code>BFS</code> in graphs.</li>
-</ul>
-<h2 id="dictionaries-1">Dictionaries</h2>
-<ul>
-<li><code>search(d,k)</code> returns a pointer to the element in <code>d</code> whose value is <code>k</code>, if one exists.</li>
-<li><code>insert(d,x)</code> adds <code>x</code> to <code>d</code>.</li>
-<li><code>delete(d,x)</code> removes <code>x</code> from <code>d</code>.</li>
-<li><code>max(d)</code> retrieves the item with the largest key.</li>
-<li><code>min(d)</code> retrieves the item with the smallest key.</li>
-<li><code>predecessor(d,x)</code> retrieves the item from <code>d</code> whose key is immediately before <code>x</code> in sorted order.</li>
-<li><code>successor(d,x)</code> retrieves the item from <code>d</code> whose key is immediately after <code>x</code> in sorted order.</li>
-</ul>
-<p>dictionary implementations := BST, hash table</p>
-<p><img src="list_cost.png" alt="list_cost"></p>
 <h2 id="binary-search-trees">Binary Search Trees</h2>
 <ul>
 <li>Each node in a binary tree with a single key <code>x</code>
@@ -1100,7 +1098,6 @@ b. <strong>Unranking:</strong> Which permutation is in position $m$ of the $n!$ 
 </span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>right_child <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
 </span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>data <span style="color:#f92672">=</span> data
 </span></span></code></pre></div><p><img src="bst.png" alt="bst"></p>
-<h4 id="searching-1">Searching</h4>
 <h4 id="traversal">Traversal</h4>
 <h4 id="insertion">Insertion</h4>
 <h4 id="deletion">Deletion</h4>

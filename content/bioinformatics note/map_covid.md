@@ -1,8 +1,8 @@
 ---
 title: Covid19
 description: Here is the number of samples for each city in Turkey.
-summary: "Here is the number of samples for each city in Turkey."
-date: 11-06-2020
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Bioinformatics"
 tags:

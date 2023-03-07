@@ -1,98 +1,74 @@
 ---
 title: Italy
 description: Florence, Naples, Pisa, Pompei, Positano, Rome, Siena, Turin, Vatican City, and Venice.
-summary: "Florence, Naples, Pisa, Pompei, Positano, Rome, Siena, Turin, Vatican City, and Venice."
-date: 14-11-2022
+summary: "Updated by Fatma, Mar 07, 2023."
+date: 07-03-2023
 categories:
   - "Travel"
 tags:
   - "travel"
 ---
 
-## Florence
+## 1. Florence
 
-### Top sights
-
-- []()
+### 1.1. Top sights
 
 ---
 
-## Naples
+## 2. Naples
 
-### Top sights
-
-- []()
+### 2.1. Top sights
 
 ---
 
-## Pisa
+## 3. Pisa
 
-### Top sights
-
-- []()
+### 3.1. Top sights
 
 ---
 
-## Pompei
+## 4. Pompei
 
-### Top sights
-
-- []()
+### 4.1. Top sights
 
 ---
 
-## Positano
+## 5. Positano
 
-### Top sights
-
-- []()
+### 5.1. Top sights
 
 ---
 
-## Rome
+## 6. Rome
 
-### Top sights
-
-- []()
-
-----
-
-## Rome
-
-### Top sights
-
-- []()
+### 6.1. Top sights
 
 ---
 
-## Siena
+## 7. Rome
 
-### Top sights
-
-- []()
+### 7.1. Top sights
 
 ---
 
-## Turin
+## 8. Siena
 
-### Top sights
-
-- []()
+### 8.1. Top sights
 
 ---
 
-### Vatican City
+## 9. Turin
 
-### Top sights
-
-- []()
+### 9.1. Top sights
 
 ---
 
-## Venice
+### 10. Vatican City
 
-### Top sights
-
-- []()
+### 10.1. Top sights
 
 ---
+
+## 11. Venice
+
+### 11.1. Top sights
