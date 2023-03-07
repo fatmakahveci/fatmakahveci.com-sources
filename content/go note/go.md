@@ -887,6 +887,19 @@ var s []byte
 s = make([]byte, 5, 5) // s := []byte{0, 0, 0, 0, 0}
 ```
 
+- Appending to a slice
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  var s[]int // []
+  s = append(s,1) // [1]
+}
+```
+
 #### 4.1.10. Map types
 
 - `map[K][V]` is a collection of key-value pairs with distinct keys of type `K` and values of type `V`.
@@ -1199,6 +1212,13 @@ case "Sunday":
 For container types
 
 ```go
+package main
+
+import "fmt"
+
+func main() {
+
+}
 ```
 
 #### 8.2.2. type-switch
@@ -1206,6 +1226,13 @@ For container types
 For interface types
 
 ```go
+package main
+
+import "fmt"
+
+func main() {
+  
+}
 ```
 
 #### 8.2.3. select-case
@@ -1213,6 +1240,13 @@ For interface types
 For channel types
 
 ```go
+package main
+
+import "fmt"
+
+func main() {
+  
+}
 ```
 
 ## 8.3. Jump statements
@@ -1220,21 +1254,49 @@ For channel types
 ### 8.3.1. break
 
 ```go
+package main
+
+import "fmt"
+
+func main() {
+  
+}
 ```
 
 ### 8.3.2. continue
 
 ```go
+package main
+
+import "fmt"
+
+func main() {
+  
+}
 ```
 
 ### 8.3.3. goto
 
 ```go
+package main
+
+import "fmt"
+
+func main() {
+  
+}
 ```
 
 ### 8.3.4. fallthrough
 
 ```go
+package main
+
+import "fmt"
+
+func main() {
+  
+}
 ```
 
 ---
@@ -1300,21 +1362,71 @@ func count(thing string) {
 
 - to do synchronizations between goroutines.
 
+```go
+package main
+
+import "fmt"
+
+func main() {
+  
+}
+```
+
 ---
 
 ## 11. Iterators
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  
+}
+```
 
 ---
 
 ## 12. Queues
 
+```go
+package main
+
+import "fmt"
+
+func main() {
+  
+}
+```
+
 ---
 
 ## 13. Sets
 
+```go
+package main
+
+import "fmt"
+
+func main() {
+  
+}
+```
+
 ---
 
 ## 14. Trees
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  
+}
+```
 
 ---
 
@@ -1387,4 +1499,4 @@ It is a technique to parse any `C` declaration. There are three steps:
 
 ---
 
-Updated by _Fatma_ on March 02, 2023.
+Updated by _Fatma_ on March 07, 2023.
