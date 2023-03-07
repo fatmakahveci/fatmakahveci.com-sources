@@ -1209,13 +1209,18 @@ case "Sunday":
 
 #### 8.2.1. for-range
 
+- It iterates over a slice or map.
+
 ```go
 package main
 
 import "fmt"
 
 func main() {
-
+  var pow = []int{1, 2, 4}
+  for i,num := range pow {
+    fmt.Printf("2^%d = %d\n", i, num) // 2^0 = 1\n2^1 = 2\n2^2 = 4
+  }
 }
 ```
 
