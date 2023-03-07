@@ -1421,6 +1421,8 @@ func main() {
 }
 ```
 
+- For more details on [select](https://www.programiz.com/golang/select)
+
 ---
 
 ## 11. Iterators
