@@ -1302,13 +1302,22 @@ func main() {
 
 ### 8.6. break
 
+- `break` terminates the loop when it is encountered.
+
 ```go
 package main
 
 import "fmt"
 
 func main() {
-  
+  i := 1
+  for { // 1 2
+    if i == 3 {
+      break
+    }
+    fmt.Printf("%d ", i)
+    i++
+  }
 }
 ```
 
