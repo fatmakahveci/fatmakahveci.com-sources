@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="AWS cloud practitioner essentials">
 <meta itemprop="description" content="AWS cloud practitioner essentials">
 
-<meta itemprop="wordCount" content="2969">
+<meta itemprop="wordCount" content="2968">
 <meta itemprop="keywords" content="go,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -215,15 +215,10 @@
 <li>for server capacity that you need or want.</li>
 </ul>
 </li>
-<li><strong>Multitenancy:</strong> Sharing underlying hardware between virtual machines. It is managed by AWS.</li>
-<li><strong>Hypervisor:</strong>
-<ul>
-<li>It is responsible for multitenancy.</li>
-<li>It isolates instances from each other as they share resources from the host. (the host with multiple other instances)</li>
-</ul>
-</li>
+<li><strong>Multitenancy</strong> shares underlying hardware between virtual machines. It is managed by AWS.</li>
+<li><strong>Hypervisor</strong> is responsible for multitenancy.  It isolates instances from each other as they share resources from the host. (the host with multiple other instances)</li>
 <li>Instances are resizable. You can give more memory / more CPU.</li>
-<li><strong>Vertical scaling:</strong> Making instances bigger or smaller.</li>
+<li><strong>Vertical scaling</strong> makes instances bigger or smaller.</li>
 <li>You can control the networking aspect of EC2.</li>
 <li>Compute-as-a-Service (CaaS)</li>
 <li>EC2 configurations
@@ -259,13 +254,7 @@
 </ul>
 <h5 id="221-use">2.2.1. Use</h5>
 <ul>
-<li>You can run commands to:
-<ul>
-<li>install software</li>
-<li>add storage</li>
-<li>copy and organize files, etc.</li>
-</ul>
-</li>
+<li>You can run commands to install software, add storage, copy and organize files, etc.</li>
 </ul>
 <h4 id="222-pricing">2.2.2. Pricing</h4>
 <h5 id="2221-on-demand">2.2.2.1. On-demand</h5>
@@ -349,18 +338,14 @@
 </ul>
 <h5 id="2241-amazon-ec2-auto-scaling">2.2.4.1. Amazon EC2 Auto Scaling</h5>
 <ul>
-<li>
-<p>It enables you to automatically add or remove Amazon EC2 instances in response to changing application demand so you maintain a greater sense of application availability.</p>
-</li>
-<li>
-<p>Two approaches:</p>
+<li>It enables you to automatically add or remove Amazon EC2 instances in response to changing application demand so you maintain a greater sense of application availability.</li>
+<li>Two approaches:
 <ol>
 <li><em>Dynamic scaling</em> responds to changing demand.</li>
 <li><em>Predictive scaling</em> automatically schedules the right number of EC2 instances based on predicted demand.</li>
 </ol>
 </li>
-<li>
-<p>To scale faster, you can use dynamic scaling and predictive scaling together.</p>
+<li>To scale faster, you can use dynamic scaling and predictive scaling together.
 <ul>
 <li>When you create an Auto Scaling group, you can set the <em>minimum capacity</em> which is the number of Amazon EC2 instances that launch immediately after you have created the Auto Scaling group.</li>
 <li>If you do not specify the desired number of Amazon EC2 instances in an Auto Scaling group, the <em>desired capacity</em> defaults to your minimum capacity.</li>
@@ -400,25 +385,17 @@
 <h3 id="amazon-services-facilitate-application-integration">Amazon services facilitate application integration</h3>
 <h4 id="amazon-simple-notification-service-amazon-sns">Amazon Simple Notification Service (Amazon SNS)</h4>
 <ul>
-<li>
-<p>A channel for messages to be delivered.</p>
-</li>
-<li>
-<p>A publish/subscribe service</p>
-</li>
-<li>
-<p>Using Amazon SNS topics, a publisher publishes messages to subscribers. This is similar to the coffee shop; the cashier provides coffee orders to the barista who makes the drinks.</p>
-</li>
-<li>
-<p>In Amazon SNS, subscribers can be</p>
+<li>A channel for messages to be delivered.</li>
+<li>A publish/subscribe service</li>
+<li>Using Amazon SNS topics, a publisher publishes messages to subscribers. This is similar to the coffee shop; the cashier provides coffee orders to the barista who makes the drinks.</li>
+<li>In Amazon SNS, subscribers can be
 <ul>
 <li>web servers</li>
 <li>email addresses</li>
 <li>AWS Lambda functions, etc.</li>
 </ul>
 </li>
-<li>
-<p>How it works:</p>
+<li>How it works:
 <ol>
 <li>Publish updates from a single topic</li>
 <li>Publish updates from multiple topics
@@ -432,17 +409,10 @@
 </ul>
 <h4 id="amazon-simple-queue-service-amazon-sqs">Amazon Simple Queue Service (Amazon SQS)</h4>
 <ul>
-<li>
-<p>Messages are placed until they are processed.</p>
-</li>
-<li>
-<p>You can send, store, and receive messages between software components, without losing messages or requiring other services to be available.</p>
-</li>
-<li>
-<p>In Amazon SQS, an application sends messages into a queue. A user or service retrieves a message from the queue, processes it, and then deletes it from the queue.</p>
-</li>
-<li>
-<p>SQS allows to</p>
+<li>Messages are placed until they are processed.</li>
+<li>You can send, store, and receive messages between software components, without losing messages or requiring other services to be available.</li>
+<li>In Amazon SQS, an application sends messages into a queue. A user or service retrieves a message from the queue, processes it, and then deletes it from the queue.</li>
+<li>SQS allows to
 <ul>
 <li>send messages</li>
 <li>store messages</li>
@@ -451,8 +421,7 @@
 <li>at any volume</li>
 </ul>
 </li>
-<li>
-<p>How it works:</p>
+<li>How it works:
 <ol>
 <li>Fullfiling an order:
 - Think of cashier and barista as two separate components.
@@ -463,14 +432,9 @@
 </ul>
 <h2 id="directing-traffic-with-elastic-load-balancing">Directing traffic with elastic load balancing</h2>
 <ul>
-<li>
-<p><em>Elastic load balancing</em> is the AWS service that automatically distributes incoming application traffic across multiple resources, such as EC2 instances.</p>
-</li>
-<li>
-<p>A <em>load balancer</em> acts as a single point of contact for all incoming web traffic to your Auto Scaling group.</p>
-</li>
-<li>
-<p>Although Elastic Load Balancing and Amazon EC2 Auto Scaling are separate services, they work together to help ensure that applications running in Amazon EC2 can provide high performance and availability.</p>
+<li><em>Elastic load balancing</em> is the AWS service that automatically distributes incoming application traffic across multiple resources, such as EC2 instances.</li>
+<li>A <em>load balancer</em> acts as a single point of contact for all incoming web traffic to your Auto Scaling group.</li>
+<li>Although Elastic Load Balancing and Amazon EC2 Auto Scaling are separate services, they work together to help ensure that applications running in Amazon EC2 can provide high performance and availability.
 <ol>
 <li>Low-demand period</li>
 <li>High-demand period</li>
