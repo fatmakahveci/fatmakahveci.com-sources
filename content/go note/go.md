@@ -1392,35 +1392,11 @@ func main() {
 
 ---
 
-## 9. Memory management
-
-### 9.1. Memory allocation
-
-- Memory allocation and deallocation happens automatically.
-- Autonomous implementation of memory usage patterns such as memory pooling, preallocation, etc. avoids making a system call for each memory allocation.
-- Whether if an object will be stack or heap allocated is decided by the compiler.
-
-#### 9.1.1. `new()` and `make()`
-
-- Both will allocate and get a memory address.
-- `new()` is not initialized. It is so you cannot put any data initially.
-- `make()` is more common. It is initialized and non-zeroed storage so you can put data initially.
-
-### 9.2. Garbage collection (GC)
-
-- It happens automatically.
-- It allows automatic memory management to make code cleaner and avoid memory leak.
-- Out of scope or `nil`
-
-### 9.3. Escape analysis
-
----
-
-## 10. Concurrency
+## 9. Concurrency
 
 - Concurrency is the ability to handle multiple tasks simultaneously to improve performance and responsiveness.
 
-### 10.1. Goroutine
+### 9.1. Goroutine
 
 - Goroutine is the way of doing tasks concurrently in Go. It is a lightweight thread managed by the Go runtime.
 - It exists only in the virtual space of the Go runtime not in the OS.
@@ -1433,7 +1409,7 @@ go f(x, y, z) // starts a new goroutine running `f(x, y, z)`
 // f is executed in the new goroutine.
 ```
 
-### 10.2. Channels
+### 9.2. Channels
 
 - to do synchronizations between goroutines.
 
@@ -1447,9 +1423,33 @@ func main() {
 }
 ```
 
-### 10.2.1. select
+### 9.2.1. select
 
 - For more details on [select](https://www.programiz.com/golang/select)
+
+---
+
+## 10. Memory management
+
+### 10.1. Memory allocation
+
+- Memory allocation and deallocation happens automatically.
+- Autonomous implementation of memory usage patterns such as memory pooling, preallocation, etc. avoids making a system call for each memory allocation.
+- Whether if an object will be stack or heap allocated is decided by the compiler.
+
+#### 10.1.1. `new()` and `make()`
+
+- Both will allocate and get a memory address.
+- `new()` is not initialized. It is so you cannot put any data initially.
+- `make()` is more common. It is initialized and non-zeroed storage so you can put data initially.
+
+### 10.2. Garbage collection (GC)
+
+- It happens automatically.
+- It allows automatic memory management to make code cleaner and avoid memory leak.
+- Out of scope or `nil`
+
+### 10.3. Escape analysis
 
 ---
 
