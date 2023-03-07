@@ -1367,13 +1367,26 @@ func walk() {
 
 ### 8.9. fallthrough
 
+- `fallthrough` is used in `switch`.
+- It transfers the program control just after the statement is executed in the switch cases even if the expression does not match.
+- Don't put `fallthrough` in the last statement.
+
 ```go
 package main
-
+  
 import "fmt"
 
 func main() {
-  
+  switch day := "T"; day {
+    case "M":
+      fmt.Println("Monday")
+      fallthrough
+    case "T":
+      fmt.Println("Tuesday") // Tuesday
+      fallthrough
+    case "W":
+      fmt.Println("Wednesday") // Wednesday
+    }
 }
 ```
 
