@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Go for beginners">
 <meta itemprop="description" content="Go for beginners">
 
-<meta itemprop="wordCount" content="5159">
+<meta itemprop="wordCount" content="5427">
 <meta itemprop="keywords" content="go,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -1463,58 +1463,81 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><hr>
-<h2 id="9-memory-management">9. Memory management</h2>
-<h3 id="91-memory-allocation">9.1. Memory allocation</h3>
+<h2 id="9-concurrency">9. Concurrency</h2>
 <ul>
-<li>Memory allocation and deallocation happens automatically.</li>
-<li>Autonomous implementation of memory usage patterns such as memory pooling, preallocation, etc. avoids making a system call for each memory allocation.</li>
-<li>Whether if an object will be stack or heap allocated is decided by the compiler.</li>
+<li>Concurrency is the ability to handle multiple tasks simultaneously to improve performance and responsiveness.</li>
 </ul>
-<h4 id="911-new-and-make">9.1.1. <code>new()</code> and <code>make()</code></h4>
+<h3 id="91-goroutine">9.1. Goroutine</h3>
 <ul>
-<li>Both will allocate and get a memory address.</li>
-<li><code>new()</code> is not initialized. It is so you cannot put any data initially.</li>
-<li><code>make()</code> is more common. It is initialized and non-zeroed storage so you can put data initially.</li>
+<li>Goroutine is the way of doing tasks concurrently in Go. It is a lightweight thread managed by the Go runtime.</li>
+<li>It exists only in the virtual space of the Go runtime not in the OS.</li>
+<li>Go Runtime scheduler manages its lifecycle. OS sees a single user level process requesting and running multiple threads.</li>
+<li>Goroutines run in the same address space so access to shared memory must be synchronized.</li>
 </ul>
-<h3 id="92-garbage-collection-gc">9.2. Garbage collection (GC)</h3>
-<ul>
-<li>It happens automatically.</li>
-<li>It allows automatic memory management to make code cleaner and avoid memory leak.</li>
-<li>Out of scope or <code>nil</code></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Create a goroutine `go &lt;method_or_function_name&gt;()`
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">z</span>) <span style="color:#75715e">// starts a new goroutine running `f(x, y, z)`
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// f, x, y, and z are evaluated in the current goroutine.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// f is executed in the new goroutine.
+</span></span></span></code></pre></div><ul>
+<li>When a new goroutine is started, the goroutine call returns immediately. Unlike functions, the control does not wait for the goroutine to finish executing. The control returns immediately to the next line of code after the goroutine call and any return values from the goroutine are ignored.</li>
+<li>The main goroutine should be running for any other goroutines to run. If the main goroutine terminates then the program will be terminated and no other goroutine will run.</li>
 </ul>
-<h3 id="93-escape-analysis">9.3. Escape analysis</h3>
-<hr>
-<h2 id="10-concurrency">10. Concurrency</h2>
-<h3 id="101-goroutine">10.1. Goroutine</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">/* Output:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  1-cat: Alba
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  2-cat: Ana
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  1-flower: Calafate
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  3-cat: Angelina
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  2-flower: Canelo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Time is up!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
-</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;sync&#34;</span>
-</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;time&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (  
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;time&#34;</span>
 </span></span><span style="display:flex;"><span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">wg</span> <span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">WaitGroup</span>
-</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">wg</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(<span style="color:#e6db74">&#34;sheep&#34;</span>)
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">wg</span>.<span style="color:#a6e22e">Done</span>()
-</span></span><span style="display:flex;"><span> }()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">wg</span>.<span style="color:#a6e22e">Wait</span>()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">cat_names</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cats</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">3</span>]<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;Alba&#34;</span>, <span style="color:#e6db74">&#34;Ana&#34;</span>, <span style="color:#e6db74">&#34;Angelina&#34;</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">cats</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%d-cat: %s\n&#34;</span>, <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">c</span>)
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">count</span>(<span style="color:#a6e22e">thing</span> <span style="color:#66d9ef">string</span>) {
-</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">thing</span>)
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">500</span>)
-</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flower_names</span>() {  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">flowers</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">3</span>]<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;Calafate&#34;</span>, <span style="color:#e6db74">&#34;Canelo&#34;</span>, <span style="color:#e6db74">&#34;Chauchau&#34;</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">flowers</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">5</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%d-flower: %s\n&#34;</span>, <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">f</span>)
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="102-channels-and-select-mechanisms">10.2. Channels and select mechanisms</h3>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">cat_names</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">flower_names</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">11</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Time is up!&#34;</span>) <span style="color:#75715e">// Chauchau cannot be printed!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h3 id="92-channels">9.2. Channels</h3>
 <ul>
 <li>to do synchronizations between goroutines.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="921-buffered-channels">9.2.1. Buffered channels</h4>
+<ul>
+<li>Channels can be buffered.</li>
+</ul>
+<h4 id="922-select">9.2.2. select</h4>
+<ul>
+<li>It lets a goroutine to wait on multiple communication operations.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
@@ -1526,6 +1549,27 @@
 </span></span></code></pre></div><ul>
 <li>For more details on <a href="https://www.programiz.com/golang/select">select</a></li>
 </ul>
+<hr>
+<h2 id="10-memory-management">10. Memory management</h2>
+<h3 id="101-memory-allocation">10.1. Memory allocation</h3>
+<ul>
+<li>Memory allocation and deallocation happens automatically.</li>
+<li>Autonomous implementation of memory usage patterns such as memory pooling, preallocation, etc. avoids making a system call for each memory allocation.</li>
+<li>Whether if an object will be stack or heap allocated is decided by the compiler.</li>
+</ul>
+<h4 id="1011-new-and-make">10.1.1. <code>new()</code> and <code>make()</code></h4>
+<ul>
+<li>Both will allocate and get a memory address.</li>
+<li><code>new()</code> is not initialized. It is so you cannot put any data initially.</li>
+<li><code>make()</code> is more common. It is initialized and non-zeroed storage so you can put data initially.</li>
+</ul>
+<h3 id="102-garbage-collection-gc">10.2. Garbage collection (GC)</h3>
+<ul>
+<li>It happens automatically.</li>
+<li>It allows automatic memory management to make code cleaner and avoid memory leak.</li>
+<li>Out of scope or <code>nil</code></li>
+</ul>
+<h3 id="103-escape-analysis">10.3. Escape analysis</h3>
 <hr>
 <h2 id="11-iterators">11. Iterators</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
