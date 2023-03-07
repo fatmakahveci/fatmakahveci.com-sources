@@ -1418,35 +1418,19 @@ func main() {
 
 ## 10. Concurrency
 
+- Concurrency is the ability to handle multiple tasks simultaneously to improve performance and responsiveness.
+
 ### 10.1. Goroutine
 
+- Goroutine is the way of doing tasks concurrently in Go. It is a lightweight thread managed by the Go runtime.
+- It exists only in the virtual space of the Go runtime not in the OS.
+- Go Runtime scheduler manages its lifecycle. OS sees a single user level process requesting and running multiple threads.
+- Goroutines run in the same address space so access to shared memory must be synchronized.
+
 ```go
-package main
-
-import (
- "fmt"
- "sync"
- "time"
-)
-
-func main() {
- var wg sync.WaitGroup
- wg.Add(1)
-
- go func() {
-  count("sheep")
-  wg.Done()
- }()
-
- wg.Wait()
-}
-
-func count(thing string) {
- for i := 1; i <= 5; i++ {
-  fmt.Println(i, thing)
-  time.Sleep(time.Millisecond * 500)
- }
-}
+go f(x, y, z) // starts a new goroutine running `f(x, y, z)`
+// f, x, y, and z are evaluated in the current goroutine.
+// f is executed in the new goroutine.
 ```
 
 ### 10.2. Channels and select mechanisms
