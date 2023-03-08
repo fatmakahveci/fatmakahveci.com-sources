@@ -1395,23 +1395,27 @@ func main() {
 ## 9. Concurrency
 
 - Concurrency is the ability to handle multiple tasks simultaneously to improve performance and responsiveness.
+- Goroutines and channels support communicating sequential processes, in which values are passed between independent activities (goroutines) and variables for most of the part confined to a single activity.
+- If goroutines are the activities of a concurrent program, channels are the connections between them.
 
 ### 9.1. Goroutine
 
 - Goroutine is the way of doing tasks concurrently in Go. It is a lightweight thread managed by the Go runtime.
 - It exists only in the virtual space of the Go runtime not in the OS.
 - Go Runtime scheduler manages its lifecycle. OS sees a single user level process requesting and running multiple threads.
+- The main goroutine should be running for any other goroutines to run. If the main goroutine terminates then the program will be terminated and no other goroutine will run.
 - Goroutines run in the same address space so access to shared memory must be synchronized.
+- When a new goroutine is started, the goroutine call returns immediately. Unlike functions, the control does not wait for the goroutine to finish executing. The control returns immediately to the next line of code after the goroutine call and any return values from the goroutine are ignored.
+
+- `go <method_or_function_name>()` creates a new goroutine that calls the given function or method, and doesn't wait.
 
 ```go
-// Create a goroutine `go <method_or_function_name>()`
 go f(x, y, z) // starts a new goroutine running `f(x, y, z)`
 // f, x, y, and z are evaluated in the current goroutine.
 // f is executed in the new goroutine.
 ```
 
-- When a new goroutine is started, the goroutine call returns immediately. Unlike functions, the control does not wait for the goroutine to finish executing. The control returns immediately to the next line of code after the goroutine call and any return values from the goroutine are ignored.
-- The main goroutine should be running for any other goroutines to run. If the main goroutine terminates then the program will be terminated and no other goroutine will run.
+- When a program starts, only the _main goroutine_ will be called.
 
 ```go
 /* Output:
