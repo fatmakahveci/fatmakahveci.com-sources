@@ -12,7 +12,12 @@ tags:
   - "data structures"
 ---
 
-- Concurrency means allowing more than one task being handled at the same time.
+- Concurrency is the ability to handle multiple tasks simultaneously to improve performance and responsiveness.
+- Concurrency examples:
+  - Web servers handle requests for millions of clients at once.
+  - Tablet and phone apps render animations in the UI while simultaneously performing computation and network requests in the background.
+  - It hides the latency of I/O operations.
+  - It exploits a modern computer’s many processors.
 - Simultaneous things in python, like different trains of thought:
   - thread
   - task
