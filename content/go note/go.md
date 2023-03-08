@@ -1636,7 +1636,3 @@ It is a technique to parse any `C` declaration. There are three steps:
      |                  +--------+      |
      +----------------------------------+
   ```
-
----
-
-Updated by _Fatma_ on March 07, 2023.
