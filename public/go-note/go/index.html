@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Go for beginners">
 <meta itemprop="description" content="Go for beginners">
 
-<meta itemprop="wordCount" content="5420">
+<meta itemprop="wordCount" content="5484">
 <meta itemprop="keywords" content="go,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -1473,21 +1473,38 @@
 <h2 id="9-concurrency">9. Concurrency</h2>
 <ul>
 <li>Concurrency is the ability to handle multiple tasks simultaneously to improve performance and responsiveness.</li>
+<li>Goroutines and channels support communicating sequential processes, in which values are passed between independent activities (goroutines) and variables for most of the part confined to a single activity.</li>
+<li>If goroutines are the activities of a concurrent program, channels are the connections between them.</li>
 </ul>
 <h3 id="91-goroutine">9.1. Goroutine</h3>
 <ul>
-<li>Goroutine is the way of doing tasks concurrently in Go. It is a lightweight thread managed by the Go runtime.</li>
-<li>It exists only in the virtual space of the Go runtime not in the OS.</li>
-<li>Go Runtime scheduler manages its lifecycle. OS sees a single user level process requesting and running multiple threads.</li>
-<li>Goroutines run in the same address space so access to shared memory must be synchronized.</li>
+<li>
+<p>Goroutine is the way of doing tasks concurrently in Go. It is a lightweight thread managed by the Go runtime.</p>
+</li>
+<li>
+<p>It exists only in the virtual space of the Go runtime not in the OS.</p>
+</li>
+<li>
+<p>Go Runtime scheduler manages its lifecycle. OS sees a single user level process requesting and running multiple threads.</p>
+</li>
+<li>
+<p>The main goroutine should be running for any other goroutines to run. If the main goroutine terminates then the program will be terminated and no other goroutine will run.</p>
+</li>
+<li>
+<p>Goroutines run in the same address space so access to shared memory must be synchronized.</p>
+</li>
+<li>
+<p>When a new goroutine is started, the goroutine call returns immediately. Unlike functions, the control does not wait for the goroutine to finish executing. The control returns immediately to the next line of code after the goroutine call and any return values from the goroutine are ignored.</p>
+</li>
+<li>
+<p><code>go &lt;method_or_function_name&gt;()</code> creates a new goroutine that calls the given function or method, and doesn&rsquo;t wait.</p>
+</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Create a goroutine `go &lt;method_or_function_name&gt;()`
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">z</span>) <span style="color:#75715e">// starts a new goroutine running `f(x, y, z)`
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">z</span>) <span style="color:#75715e">// starts a new goroutine running `f(x, y, z)`
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// f, x, y, and z are evaluated in the current goroutine.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// f is executed in the new goroutine.
 </span></span></span></code></pre></div><ul>
-<li>When a new goroutine is started, the goroutine call returns immediately. Unlike functions, the control does not wait for the goroutine to finish executing. The control returns immediately to the next line of code after the goroutine call and any return values from the goroutine are ignored.</li>
-<li>The main goroutine should be running for any other goroutines to run. If the main goroutine terminates then the program will be terminated and no other goroutine will run.</li>
+<li>When a program starts, only the <em>main goroutine</em> will be called.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">/* Output:
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">  1-cat: Alba
