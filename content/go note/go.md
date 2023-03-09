@@ -577,7 +577,7 @@ type Image interface {
   - `0` for numerics
   - `false` for booleans
   - `""` for strings
-  - `nil` for maps
+  - `nil` for maps and channels
 
 ```go
 // initialized value
@@ -1128,6 +1128,8 @@ type I interface { // embedded interface
 }
 ```
 
+- Go is statically-typed, thus you cannot have arrays containing values of different types. What it does offer is the empty interface `interface{}` type which allows you to get around some type restrictions that comes with a cost.
+
 ---
 
 ## 5. Operators and punctuations
@@ -1398,7 +1400,7 @@ func main() {
 - Goroutines and channels support communicating sequential processes, in which values are passed between independent activities (goroutines) and variables for most of the part confined to a single activity.
 - If goroutines are the activities of a concurrent program, channels are the connections between them.
 
-### 9.1. Goroutine
+### 9.1. Goroutines
 
 - Goroutine is the way of doing tasks concurrently in Go. It is a lightweight thread managed by the Go runtime.
 - It exists only in the virtual space of the Go runtime not in the OS.
@@ -1460,7 +1462,28 @@ func main() {
 
 ### 9.2. Channels
 
-- to do synchronizations between goroutines.
+- Channels are the pipes that connect concurrent goroutines.
+- Each channel is a conduit for values of a particular type, called the channel's element type. It is a reference to the data structure created by `make`.
+  - `ch := make(chan int)` // ch has type 'chan int'
+- `==` compares two channels of the same type.
+- `send`, `receive` and `close` are the main operations of channels.
+  - A `send` always happens before a `receive`.
+
+```go
+ch <- a // send transmits a value from goroutine to another
+
+a = <-ch // receive gets the value to another goroutine executing a corresponding receive expression
+<-ch // receive where the result is discarded.
+
+// close
+close(ch) // sets a flag indicating that no more values will ever be sent on this channel and subsequent attempts to send will panic.
+```
+
+#### 9.2.1. Unbuffered channels
+
+- By default, channels are unbuffered.
+- An unbuffered channel is created with `make`, and its capacity is zero.
+- It only accepts sends if there is a corresponding receive ready to receive the sent value.
 
 ```go
 package main
@@ -1468,17 +1491,19 @@ package main
 import "fmt"
 
 func main() {
-  
+  ch := make(chan int) // unbuffered channel
 }
 ```
 
-#### 9.2.1. Buffered channels
+#### 9.2.2. Pipelines
+
+- Channels can be used to connect goroutines together so that the output of one is the input to another.
+
+#### 9.2.3. Buffered channels
 
 - Channels can be buffered.
-
-#### 9.2.2. select
-
-- It lets a goroutine to wait on multiple communication operations.
+- A buffered channel is created with `make`, and its capacity is nonzero.
+- It accepts a limited number of values without a corresponding receiver for those values.
 
 ```go
 package main
@@ -1486,10 +1511,21 @@ package main
 import "fmt"
 
 func main() {
-  
+  /* Output := 
+     hello
+     world
+   */
+    messages := make(chan string, 2)
+    messages <- "hello"
+    messages <- "world"
+    fmt.Println(<-messages)
+    fmt.Println(<-messages)
 }
 ```
 
+#### 9.2.4. select
+
+- It lets a goroutine to wait on multiple communication operations.
 - For more details on [select](https://www.programiz.com/golang/select)
 
 ---
