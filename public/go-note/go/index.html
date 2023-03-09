@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Go for beginners">
 <meta itemprop="description" content="Go for beginners">
 
-<meta itemprop="wordCount" content="5821">
+<meta itemprop="wordCount" content="5874">
 <meta itemprop="keywords" content="go,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -1556,11 +1556,15 @@
 </ul>
 </li>
 <li><code>==</code> compares two channels of the same type.</li>
-<li><code>send</code>, <code>receive</code> and <code>close</code> are the main operations of channels.
+<li>Basic operations of channels:
 <ul>
+<li><code>send</code> sends the data to the channel, <code>&lt;channel_name&gt; &lt;- &lt;data&gt;</code>.</li>
+<li><code>receive</code> receives the data from the channel, <code>&lt;- &lt;channel_name&gt;</code>.</li>
+<li><code>close</code></li>
 <li>A <code>send</code> always happens before a <code>receive</code>.</li>
 </ul>
 </li>
+<li>Channels let concurrent processes synchronize by sending messages to each other instead of sharing memory.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">ch</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">a</span> <span style="color:#75715e">// send transmits a value from goroutine to another
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
@@ -1596,15 +1600,12 @@
 </span></span><span style="display:flex;"><span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">ch</span> <span style="color:#75715e">// receive x from the channel
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;x = %d\n&#34;</span>, <span style="color:#a6e22e">x</span>)
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h4 id="922-pipelines">9.2.2. Pipelines</h4>
-<ul>
-<li>Channels can be used to connect goroutines together so that the output of one is the input to another.</li>
-</ul>
-<h4 id="923-buffered-channels">9.2.3. Buffered channels</h4>
+</span></span></code></pre></div><h4 id="922-buffered-channels">9.2.2. Buffered channels</h4>
 <ul>
 <li>Channels can be buffered.</li>
 <li>A buffered channel is created with <code>make</code>, and its capacity is nonzero.</li>
 <li>It accepts a limited number of values without a corresponding receiver for those values.</li>
+<li>It only blocks the sending goroutine in case the buffer is full.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
@@ -1621,11 +1622,28 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">messages</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">messages</span>)
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h4 id="924-waitgroup">9.2.4. WaitGroup</h4>
-<h4 id="925-select">9.2.5. select</h4>
+</span></span></code></pre></div><ul>
+<li><code>WaitGroup</code> waits for multiple goroutines to finish. It should be passed into functions by a pointer, if it is done explicitly.</li>
+</ul>
+<h4 id="923-select">9.2.3. select</h4>
 <ul>
-<li>It lets a goroutine to wait on multiple communication operations.</li>
-<li>For more details on <a href="https://www.programiz.com/golang/select">select</a></li>
+<li>It executes a channel among many alternatives.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">select</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">firstChannel</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">secondChannel</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">thirdChannel</span>:
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>For more <a href="https://www.programiz.com/golang/select">details</a>.</li>
 </ul>
 <hr>
 <h2 id="10-memory-management">10. Memory management</h2>
