@@ -1482,16 +1482,30 @@ close(ch) // sets a flag indicating that no more values will ever be sent on thi
 #### 9.2.1. Unbuffered channels
 
 - By default, channels are unbuffered.
-- An unbuffered channel is created with `make`, and its capacity is zero.
-- It only accepts sends if there is a corresponding receive ready to receive the sent value.
+- It is a channel that initially has no capacity to store message inside it.
+- You need to fill the message to make the goroutine process unblocked by the channel.
+- It ensures that communication between goroutines is synchronized and that data is transferred reliably.
 
 ```go
 package main
 
-import "fmt"
+import (
+ "fmt"
+)
+
+func assign_x(ch chan int) {
+ x := 1
+ ch <- x // send x on the channel
+}
 
 func main() {
-  ch := make(chan int) // unbuffered channel
+ ch := make(chan int) // create the channel
+ defer close(ch) // close the channel at the end
+
+ go assign_x(ch)
+
+ x := <-ch // receive x from the channel
+ fmt.Printf("x = %d\n", x)
 }
 ```
 
@@ -1523,7 +1537,9 @@ func main() {
 }
 ```
 
-#### 9.2.4. select
+#### 9.2.4. WaitGroup
+
+#### 9.2.5. select
 
 - It lets a goroutine to wait on multiple communication operations.
 - For more details on [select](https://www.programiz.com/golang/select)

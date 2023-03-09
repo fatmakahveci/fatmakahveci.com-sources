@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Go for beginners">
 <meta itemprop="description" content="Go for beginners">
 
-<meta itemprop="wordCount" content="5759">
+<meta itemprop="wordCount" content="5821">
 <meta itemprop="keywords" content="go,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -1572,16 +1572,30 @@
 </span></span></span></code></pre></div><h4 id="921-unbuffered-channels">9.2.1. Unbuffered channels</h4>
 <ul>
 <li>By default, channels are unbuffered.</li>
-<li>An unbuffered channel is created with <code>make</code>, and its capacity is zero.</li>
-<li>It only accepts sends if there is a corresponding receive ready to receive the sent value.</li>
+<li>It is a channel that initially has no capacity to store message inside it.</li>
+<li>You need to fill the message to make the goroutine process unblocked by the channel.</li>
+<li>It ensures that communication between goroutines is synchronized and that data is transferred reliably.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">assign_x</span>(<span style="color:#a6e22e">ch</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">ch</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">x</span> <span style="color:#75715e">// send x on the channel
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ch</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>) <span style="color:#75715e">// unbuffered channel
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">ch</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>) <span style="color:#75715e">// create the channel
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#66d9ef">defer</span> close(<span style="color:#a6e22e">ch</span>) <span style="color:#75715e">// close the channel at the end
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">assign_x</span>(<span style="color:#a6e22e">ch</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">ch</span> <span style="color:#75715e">// receive x from the channel
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;x = %d\n&#34;</span>, <span style="color:#a6e22e">x</span>)
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h4 id="922-pipelines">9.2.2. Pipelines</h4>
 <ul>
 <li>Channels can be used to connect goroutines together so that the output of one is the input to another.</li>
@@ -1607,7 +1621,8 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">messages</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">messages</span>)
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h4 id="924-select">9.2.4. select</h4>
+</span></span></code></pre></div><h4 id="924-waitgroup">9.2.4. WaitGroup</h4>
+<h4 id="925-select">9.2.5. select</h4>
 <ul>
 <li>It lets a goroutine to wait on multiple communication operations.</li>
 <li>For more details on <a href="https://www.programiz.com/golang/select">select</a></li>
