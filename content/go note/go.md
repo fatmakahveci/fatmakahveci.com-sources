@@ -1466,8 +1466,12 @@ func main() {
 - Each channel is a conduit for values of a particular type, called the channel's element type. It is a reference to the data structure created by `make`.
   - `ch := make(chan int)` // ch has type 'chan int'
 - `==` compares two channels of the same type.
-- `send`, `receive` and `close` are the main operations of channels.
+- Basic operations of channels:
+  - `send` sends the data to the channel, `<channel_name> <- <data>`.
+  - `receive` receives the data from the channel, `<- <channel_name>`.
+  - `close`
   - A `send` always happens before a `receive`.
+- Channels let concurrent processes synchronize by sending messages to each other instead of sharing memory.
 
 ```go
 ch <- a // send transmits a value from goroutine to another
@@ -1509,15 +1513,12 @@ func main() {
 }
 ```
 
-#### 9.2.2. Pipelines
-
-- Channels can be used to connect goroutines together so that the output of one is the input to another.
-
-#### 9.2.3. Buffered channels
+#### 9.2.2. Buffered channels
 
 - Channels can be buffered.
 - A buffered channel is created with `make`, and its capacity is nonzero.
 - It accepts a limited number of values without a corresponding receiver for those values.
+- It only blocks the sending goroutine in case the buffer is full.
 
 ```go
 package main
@@ -1537,12 +1538,29 @@ func main() {
 }
 ```
 
-#### 9.2.4. WaitGroup
+- `WaitGroup` waits for multiple goroutines to finish. It should be passed into functions by a pointer, if it is done explicitly.
 
-#### 9.2.5. select
+#### 9.2.3. select
 
-- It lets a goroutine to wait on multiple communication operations.
-- For more details on [select](https://www.programiz.com/golang/select)
+- It executes a channel among many alternatives.
+
+```go
+package main
+
+import (
+  "fmt"
+)
+
+func main() {
+  select {
+    case firstChannel:
+    case secondChannel:
+    case thirdChannel:
+  }
+}
+```
+
+- For more [details](https://www.programiz.com/golang/select).
 
 ---
 
