@@ -1,13 +1,13 @@
 baseurl = "https://fatmakahveci.com"
 title = "Fatma Kahveci"
 languageCode = "en-us"
-paginate = "10" # Number of posts per page
+paginate = "15" # Number of posts per page
 theme = "mainroad"
 disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Disqus shortname
 
 [Author]
   name = "Fatma Kahveci"
-  bio = ""
+  # bio = "https://github.com/fatmakahveci"
   # avatar = "img/avatar.png"
 
 [Params]
@@ -24,14 +24,14 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
   mathjax = true # Enable MathJax
   mathjaxPath = "https://cdn.mathjax.org/mathjax/latest/MathJax.js" # Specify MathJax path
   mathjaxConfig = "TeX-AMS-MML_SVG" # MathJax config
-  highlightColor = "#27AE60" # Override highlight color
+  highlightColor = "#4a5fc1" # Override highlight color
   customCSS = ["css/custom.css"] # Include custom CSS files
   customJS = ["js/custom.js"] # Include custom JS files
   mainSections = ["python note"]
   googleFontsLink = "https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&display=swap"
 
 [Params.style.vars]
-  fontFamilyPrimary = "'Life Savers', cursive"
+  fontFamilyPrimary = "Montserrat, Arial"
 
 [Params.widgets.social]
   twitter = "cheburashkaF"
@@ -70,13 +70,13 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
     name = "react"
     url = "/react note/"
     weight = -6
-
-  [[menu.main]]
-    identifier = "js"
-    name = "js"
-    url = "/javascript note/"
-    weight = -5
   
+  [[menu.main]]
+    identifier = "go"
+    name = "go"
+    url = "/go note/"
+    weight = -5
+
   [[menu.main]]
     identifier = "bioinformatics"
     name = "Bioinformatics"
@@ -90,9 +90,9 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
     weight = -3
 
   [[menu.main]]
-    identifier = "go"
-    name = "go"
-    url = "/go note/"
+    identifier = "js"
+    name = "js"
+    url = "/javascript note/"
     weight = -2
 
   [[menu.main]]
@@ -109,8 +109,7 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
   list = "right"   # Configure layout for list pages
   single = "right" # Configure layout for single pages
   # Enable widgets in given order
-  widgets = [ "social", "taglist"]
-  # widgets = [ "recent", "categories", "taglist"]
+  widgets = [ "recent", "social","taglist" ] # "categories"
 
 [Params.widgets]
   recent_num = 5 # Set the number of articles in the "Recent articles" widget
