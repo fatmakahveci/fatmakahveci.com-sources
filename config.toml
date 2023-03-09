@@ -51,54 +51,48 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
     identifier = "python"
     name = "python"
     url = "/python note/"
-    weight = -9
+    weight = -8
 
   [[menu.main]]
     identifier = "django"
     name = "django"
     url = "/django note/"
-    weight = -8
+    weight = -7
 
   [[menu.main]]
     identifier = "coding"
     name = "coding"
     url = "/coding note/"
-    weight = -7
+    weight = -6
   
   [[menu.main]]
     identifier = "react"
     name = "react"
     url = "/react note/"
-    weight = -6
+    weight = -5
   
   [[menu.main]]
     identifier = "go"
     name = "go"
     url = "/go note/"
-    weight = -5
-
-  [[menu.main]]
-    identifier = "bioinformatics"
-    name = "Bioinformatics"
-    url = "/bioinformatics note/"
     weight = -4
-
-  [[menu.main]]
-    identifier = "travel"
-    name = "Travel"
-    url = "/travel note/"
-    weight = -3
 
   [[menu.main]]
     identifier = "js"
     name = "js"
     url = "/javascript note/"
+    weight = -3
+
+  [[menu.main]]
+    identifier = "bioinformatics"
+    name = "Bioinformatics"
+    url = "/bioinformatics note/"
     weight = -2
 
   [[menu.main]]
-    identifier = "reading"
-    name = "reading"
-    url = "/reading note/"
+    identifier = "travel"
+    name = "Travel"
+    url = "/travel note/"
     weight = -1
 
 [Params.logo]
@@ -112,5 +106,5 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
   widgets = [ "recent", "social","taglist" ] # "categories"
 
 [Params.widgets]
-  recent_num = 5 # Set the number of articles in the "Recent articles" widget
-  tags_counter = true # Enable counter for each tag in "Tags" widget (disabled by default)
+  recent_num = 10 # Set the number of articles in the "Recent articles" widget
+  # tags_counter = true # Enable counter for each tag in "Tags" widget (disabled by default)
