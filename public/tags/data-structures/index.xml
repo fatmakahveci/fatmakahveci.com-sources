@@ -52,6 +52,15 @@
     </item>
     
     <item>
+      <title>Bash for beginners</title>
+      <link>https://fatmakahveci.com/coding-note/bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/bash/</guid>
+      <description>Updated by Fatma, Mar 07, 2023.</description>
+    </item>
+    
+    <item>
       <title>Binary tree traversal</title>
       <link>https://fatmakahveci.com/coding-note/binary_tree_traversal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -210,15 +219,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/python-note/data_classes/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>Database</title>
-      <link>https://fatmakahveci.com/coding-note/database/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/database/</guid>
       <description>Updated by Fatma, Mar 07, 2023.</description>
     </item>
     
@@ -673,38 +673,11 @@
     </item>
     
     <item>
-      <title>MongoDB</title>
-      <link>https://fatmakahveci.com/coding-note/mongodb/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/mongodb/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
       <title>Namespace</title>
       <link>https://fatmakahveci.com/python-note/namespace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/python-note/namespace/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>Naming variables</title>
-      <link>https://fatmakahveci.com/coding-note/naming_variables/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/naming_variables/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>Network</title>
-      <link>https://fatmakahveci.com/coding-note/network/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/network/</guid>
       <description>Updated by Fatma, Mar 07, 2023.</description>
     </item>
     
@@ -840,15 +813,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/python-note/primality_testing/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>Procedural Programming</title>
-      <link>https://fatmakahveci.com/coding-note/procedural_programming/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/procedural_programming/</guid>
       <description>Updated by Fatma, Mar 07, 2023.</description>
     </item>
     

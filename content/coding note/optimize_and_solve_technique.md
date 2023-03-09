@@ -6,7 +6,6 @@ date: 07-03-2023
 categories:
   - "Coding"
 tags:
-  - "python"
   - "coding"
   - "algorithms"
   - "data structures"
@@ -64,9 +63,9 @@ tags:
 
 ## Best Conceivable Runtime (BCR)
 
-- __We can use the runtimes to get a hint for what we need to reduce.__
+- **We can use the runtimes to get a hint for what we need to reduce.**
 
-- __We shouldn't just think the common runtimes, such as O(N log N). It might be O(N^2 k), etc.__
+- **We shouldn't just think the common runtimes, such as O(N log N). It might be O(N^2 k), etc.**
 
 - There is no better way. i.e.
   - Compute the number of elements in two array
@@ -89,8 +88,8 @@ tags:
 
 ---
 
-- __Binary search runtime is O(log N).__
-- __We cannot search an array --even a sorted array-- in better than O(log N) time.__ 
-- __When we're done in terms of optimizing the runtime, we should think about the space complexity.__
+- **Binary search runtime is O(log N).**
+- **We cannot search an array --even a sorted array-- in better than O(log N) time.**
+- **When we're done in terms of optimizing the runtime, we should think about the space complexity.**
   - If we want to use less additional space, that probably means no additional space.
-- __Put everything into a hash table. O(N)__
+- **Put everything into a hash table. O(N)**

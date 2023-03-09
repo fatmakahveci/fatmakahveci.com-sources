@@ -6,10 +6,8 @@ date: 07-03-2023
 categories:
   - "Coding"
 tags:
-  - "python"
+  - "network"
   - "coding"
-  - "algorithms"
-  - "data structures"
 ---
 
 ## Hypertext Markup Language (HTML)

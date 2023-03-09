@@ -6,10 +6,10 @@ date: 07-03-2023
 categories:
   - "Coding"
 tags:
-  - "python"
+  - "nosql"
+  - "sql"
   - "coding"
-  - "algorithms"
-  - "data structures"
+  - "database"
 ---
 
 ## Database Management Systems (DBMS)

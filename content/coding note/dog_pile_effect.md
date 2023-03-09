@@ -6,13 +6,10 @@ date: 07-03-2023
 categories:
   - "Coding"
 tags:
-  - "python"
   - "coding"
   - "algorithms"
   - "data structures"
 ---
-
-## Explain what is Dogpile effect? How can you prevent this effect?
 
 The Dogpile effect occurs when cache expires and websites are hit by numerous requests the same time. It is triggered because we allowed more than one request to execute the expensive query.
 

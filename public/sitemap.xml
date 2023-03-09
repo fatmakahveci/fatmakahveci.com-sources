@@ -18,13 +18,23 @@
   </url><url>
     <loc>https://fatmakahveci.com/travel-note/austria/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/tags/aws/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/coding-note/aws/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/bioinformatics-note/bacterial_strain_identification/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/tags/bash/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/coding-note/bash/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/travel-note/belgium/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/bfs/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/big-oh-notation/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/bigtable/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/coding-note/binary_tree_traversal/</loc>
   </url><url>
@@ -64,6 +74,8 @@
   </url><url>
     <loc>https://fatmakahveci.com/python-note/comprehensions/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/tags/concurrency/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/coding-note/concurrency/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/concurrency/</loc>
@@ -83,6 +95,8 @@
     <loc>https://fatmakahveci.com/python-note/data_classes/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/data-structures/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/database/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/coding-note/database/</loc>
   </url><url>
@@ -232,13 +246,19 @@
   </url><url>
     <loc>https://fatmakahveci.com/python-note/modules/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/tags/mongodb/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/coding-note/mongodb/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/namespace/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/coding-note/naming_variables/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/tags/network/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/coding-note/network/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/nosql/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/numpy/</loc>
   </url><url>
@@ -333,6 +353,8 @@
     <loc>https://fatmakahveci.com/python-note/sorting/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/travel-note/spain/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/sql/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/stack/</loc>
   </url><url>

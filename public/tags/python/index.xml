@@ -16,15 +16,6 @@
     </item>
     
     <item>
-      <title>Apache HBase</title>
-      <link>https://fatmakahveci.com/coding-note/apache_hbase/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/apache_hbase/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
       <title>args and kwargs</title>
       <link>https://fatmakahveci.com/python-note/args_kwargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -143,15 +134,6 @@
     
     <item>
       <title>Concurrency</title>
-      <link>https://fatmakahveci.com/coding-note/concurrency/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/concurrency/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>Concurrency</title>
       <link>https://fatmakahveci.com/python-note/concurrency/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -201,15 +183,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/python-note/data_classes/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>Database</title>
-      <link>https://fatmakahveci.com/coding-note/database/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/database/</guid>
       <description>Updated by Fatma, Mar 07, 2023.</description>
     </item>
     
@@ -295,29 +268,11 @@
     </item>
     
     <item>
-      <title>Dog pile effect</title>
-      <link>https://fatmakahveci.com/coding-note/dog_pile_effect/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/dog_pile_effect/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
       <title>Duck typing</title>
       <link>https://fatmakahveci.com/python-note/duck_typing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/python-note/duck_typing/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>Dynamic Programming (DP)</title>
-      <link>https://fatmakahveci.com/coding-note/dynamic_programming/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/dynamic_programming/</guid>
       <description>Updated by Fatma, Mar 07, 2023.</description>
     </item>
     
@@ -430,15 +385,6 @@
     </item>
     
     <item>
-      <title>Google BigTable</title>
-      <link>https://fatmakahveci.com/coding-note/google_bigtable/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/google_bigtable/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
       <title>Graph</title>
       <link>https://fatmakahveci.com/python-note/graph/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -547,15 +493,6 @@
     </item>
     
     <item>
-      <title>Jaccard Similarity</title>
-      <link>https://fatmakahveci.com/coding-note/jaccard_similarity/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/jaccard_similarity/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
       <title>Jupyter</title>
       <link>https://fatmakahveci.com/python-note/jupyter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -655,38 +592,11 @@
     </item>
     
     <item>
-      <title>MongoDB</title>
-      <link>https://fatmakahveci.com/coding-note/mongodb/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/mongodb/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
       <title>Namespace</title>
       <link>https://fatmakahveci.com/python-note/namespace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/python-note/namespace/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>Naming variables</title>
-      <link>https://fatmakahveci.com/coding-note/naming_variables/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/naming_variables/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>Network</title>
-      <link>https://fatmakahveci.com/coding-note/network/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/network/</guid>
       <description>Updated by Fatma, Mar 07, 2023.</description>
     </item>
     
@@ -732,15 +642,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/python-note/operators/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>Optimize and solve technique</title>
-      <link>https://fatmakahveci.com/coding-note/optimize_and_solve_technique/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/optimize_and_solve_technique/</guid>
       <description>Updated by Fatma, Mar 07, 2023.</description>
     </item>
     
@@ -826,15 +727,6 @@
     </item>
     
     <item>
-      <title>Procedural Programming</title>
-      <link>https://fatmakahveci.com/coding-note/procedural_programming/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/procedural_programming/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
       <title>Property</title>
       <link>https://fatmakahveci.com/python-note/property/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -880,24 +772,6 @@
     </item>
     
     <item>
-      <title>Randomized Algorithms</title>
-      <link>https://fatmakahveci.com/coding-note/randomized_algorithms/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/randomized_algorithms/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>Recurrence relations</title>
-      <link>https://fatmakahveci.com/coding-note/recurrence/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/recurrence/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
       <title>Recursion</title>
       <link>https://fatmakahveci.com/python-note/recursion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -930,15 +804,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/python-note/scientific_computing/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>Scope</title>
-      <link>https://fatmakahveci.com/coding-note/scope/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/scope/</guid>
       <description>Updated by Fatma, Mar 07, 2023.</description>
     </item>
     
@@ -1051,29 +916,11 @@
     </item>
     
     <item>
-      <title>The efficiency of algorithms</title>
-      <link>https://fatmakahveci.com/coding-note/big_o/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/big_o/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
       <title>The Zen of python</title>
       <link>https://fatmakahveci.com/python-note/zen_of_python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/python-note/zen_of_python/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>Thread</title>
-      <link>https://fatmakahveci.com/coding-note/thread/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/thread/</guid>
       <description>Updated by Fatma, Mar 07, 2023.</description>
     </item>
     
@@ -1164,15 +1011,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/python-note/walrus/</guid>
-      <description>Updated by Fatma, Mar 07, 2023.</description>
-    </item>
-    
-    <item>
-      <title>When to use data structures and algorithms</title>
-      <link>https://fatmakahveci.com/coding-note/when_to_use/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fatmakahveci.com/coding-note/when_to_use/</guid>
       <description>Updated by Fatma, Mar 07, 2023.</description>
     </item>
     

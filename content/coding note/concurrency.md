@@ -6,7 +6,7 @@ date: 07-03-2023
 categories:
   - "Coding"
 tags:
-  - "python"
+  - "concurrency"
   - "coding"
   - "algorithms"
   - "data structures"

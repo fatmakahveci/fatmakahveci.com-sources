@@ -6,10 +6,9 @@ date: 07-03-2023
 categories:
   - "Coding"
 tags:
-  - "python"
+  - "mongodb"
   - "coding"
-  - "algorithms"
-  - "data structures"
+  - "database"
 ---
 
 - A document-oriented database, which aims to ease scaling out

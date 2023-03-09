@@ -6,10 +6,7 @@ date: 07-03-2023
 categories:
   - "Coding"
 tags:
-  - "python"
   - "coding"
-  - "algorithms"
-  - "data structures"
 ---
 
 ## 1. Camel Case
