@@ -23,7 +23,7 @@ tags:
 ### 1. Component
 
 - React composes complex UIs from small and isolated pieces of code called _components_.
-- We use components to tell React what we want to see on the screen. When our data changes, React will efficiently update and rerender our components.
+- We use components to tell React what we want to see on the screen. When our data changes, React will efficiently update and re-render our components.
 - A component is written as either as `.JSX` or `.JS` file. It is simply a JS class or function that returns back some HTML code.
 - A component file contains both logic and view written in `JS` and `HTML`, respectively.
 - A component name and file name is always written in `TitleCase`.
@@ -36,7 +36,7 @@ tags:
 - All React component classes that have a constructor should start with a super (props) call:
 
 ```javascript
-class <class_name> extends React.Component {
+class <className> extends React.Component {
   constructor(props) {
     super(props);
     // ...
@@ -101,12 +101,12 @@ function Photo({ person, size = 50 }) {
 - A state can change either due to
   - a response to an action performed by the user OR
   - en event triggered by the system.
-- Whenever the state changes, React rerenders the component to the browser.
+- Whenever the state changes, React re-renders the component to the browser.
 
 - The following lets you use local state within a function component.
 
 ```javascript
-const [<current_state>, <function_to_update_the_state>] = useState(`<initial_state>`);
+const [<currentState>, <functionToUpdateTheState>] = useState(`<initialState>`);
 ```
 
 #### `setState`
@@ -157,7 +157,7 @@ const element = (
 
 ### 1. `useState` hook
 
-`const [<current_state>, <function_to_update_the_state>] = useState(`<initial_state>`);` lets you use local state within a gunction component.
+`const [<currentState>, <functionToUpdateTheState>] = useState(<initialState>);` lets you use local state within a function component.
 
 ```javascript
 import React, { useState } from 'react';
@@ -194,7 +194,6 @@ const [state, dispatch] = useReducer(
 ### 3. `useEffect` hook
 
 - Fetching, subscriptions, or manually changing the DOM called "side effects (effects)" because they can affect other components and can't be done during rendering.
-
 - Runs on every update
 
 ```javascript
@@ -242,28 +241,6 @@ function <ComponentName> {
 - Calling `useEffect` runs the "effect" function after flushing the changes to the DOM.
   - Effects are declared inside the component so they have access to its props and state.
   - By default, React runs the effects after every render, including the first.
-
-```javascript
-import React, { useState } from 'react';
-
-function Example() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    document.title = `You clicked ${count} times`;
-  });
-
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-    );
-  }
-```
-
 - Just like `useState`, you can use multiple single effect in a component.
 
 ### 4. `useContext` hook
@@ -332,11 +309,105 @@ function MyComponent() {
 }
 ```
 
-### 5. `useLayoutEffect` hook
+### 5. `useMemo` hook
+
+- `const <cachedValue> = useMemo(<calculateValue>, [<dependencies>])` caches the result of a calculation between re-renders.
+- It takes two arguments that are dependencies and a function that computes the value you want to memoize.
+- It memoizes a value.
+- It can avoid unnecessary recomputing.
+- [Example code](https://www.youtube.com/watch?v=THL1OPn72vo)
 
 ### 6. `useCallback` hook
 
+- `const <cachedFunctionName> = useCallback(<functionName>, [<dependencies>])` caches a function definition between re-renders.
+- It takes two arguments that are dependencies and a function that you want to memoize.
+- It memoizes a function.
+- It can avoid re-rendering the child component every time the parent component is rendered.
+- [Example code](https://www.youtube.com/watch?v=_AyFP5s69N4)
+
 ### 7. `useRef` hook
+
+- `const <ref> = useRef(<initialValue>)` creates a reference value that's not needed for rendering.
+  - **Parameter:** `<initialValue>` can be a value of any type.
+  - **Return:** `<current>` is set to the `<initialValue>` initially, you can later change it.
+
+- Changing a ref doesn't trigger a re-render so refs are ideal for storing information that doesn't affect the visual output of your component.
+
+- **Example:** Focusing a text input
+
+```js
+import { useRef } from 'react';
+
+export default function Form() {
+  const inputRef = useRef(null);
+
+  function handleClick() {
+    inputRef.current.focus();
+  }
+
+  return (
+    <>
+      <input ref={inputRef} />
+      <button onClick={handleClick}>
+        Focus the input
+      </button>
+    </>
+  );
+}
+```
+
+### 8. `useImperativeHandle` hook
+
+- `useImperativeHandle(<ref>, <createHandle>, [<dependencies>])` exposes a value, state or function inside a child component to the parent component through `ref`.
+  - `<ref>` := ref passed down from the parent component
+  - `<createHandle>` := value to be exposed to the parent component
+- You can decide which properties the parent component can access so you can maintain the private scoping of the child component.
+- It is useful when you need a bidirectional data.
+- [Example code](https://www.youtube.com/watch?v=zpEyAOkytkU&list=PLZlA0Gpn_vH8EtggFGERCwMY5u5hOjf-h&index=12)
+
+### 9. `useLayoutEffect` hook
+
+- `useLayoutEffect(<setup>, [<dependencies>])` performs side effects.
+  - `<setup>` := function containing the side effect logic
+- It is a version of `useEffect` that fires before the browser repaints the screen. The main difference is the timing of when they are executed.
+- It is useful when measuring layout before the browser repaints the screen.
+
+### 10. `useDebugValue` hook
+
+- `useDebugValue(<value>, <format>)` adds a label to a custom hook.
+  - `<value>` := any value that you want to display
+  - `<format>` := an optional formatting function
+- It is also useful when deferring formatting of a debug value.
+
+### 11. `useDeferredValue` hook
+
+- `useDeferredValue(<value>)` defers updating a part of the UI.
+  - `<value>` := any value that you want to defer
+- It is also useful when showing stale content while fresh content is loading.
+
+### 12. `useTransition` hook
+
+- `const [<isPending>, <startTransition>] = useTransition()` updates the state without blocking the UI.
+  - `<isPending>` flag that tells you whether there is a pending transition.
+  - `<startTransition>` function that lets you mark a state update as a transition.
+- It is useful when marking a state update as a non-blocking transition.
+
+### 13. `useId` hook
+
+- `const <id> = useId()` generates unique IDs that can be passed to accessibility attributes.
+
+### 14. `useSyncExternalStore`
+
+- `const <snapshot> = useSyncExternalStore(<subscribe>, <getSnapshot>, <getServerSnapshot>)` subscribes to an external store.
+  - `<snapshot>` := function that takes a single callback argument and subscribes it to the store
+  - `<getSnapshot>` := function that returns a snapshot of the data in the store that’s needed by the component
+- It is useful when subscribing to an external store or a browser API, extracting the logic to a custom Hook, or adding support for server rendering.
+
+### 15. `useInsertionEffect`
+
+- `useInsertionEffect(<setup>, [<dependencies>])` is a version of `useEffect` that fires before any DOM mutations.
+  - `<setup>` := function with your Effect's logic.
+- It is useful when injecting dynamic styles from CSS-in-JS libraries.
 
 ---
 
@@ -497,7 +568,7 @@ root.render(<NumberList numbers={numbers} />);
 - Each _React element_ is a JS object that you can store in a variable or pass around in your program.
 - The only way to update the UI is to create a new element, and pass it to `root.render()`.
 
-```javascript
+```js
 const root = ReactDOM.createRoot(
   document.getElementById('root')
 );
@@ -512,5 +583,20 @@ function tick() {
   root.render(element);
 }
 
-setInterval(tick, 1000); // setInterval() calls tick function or runs some code after 1000
+setInterval(tick, 1000);
+```
+
+#### `setInterval`
+
+- `setInterval` executes a function at specific intervals. It helps in checking a condition regularly or fetching data every so often.
+- `clearInterval(<intervalName>)` stops the interval.
+
+---
+
+## Login, Registration, and Authentication
+
+- `fontawesome` will provide svgs as react components.
+
+```bash
+npm i --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
 ```

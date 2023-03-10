@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="React for beginners">
 <meta itemprop="description" content="React for beginners">
 
-<meta itemprop="wordCount" content="1662">
+<meta itemprop="wordCount" content="2203">
 <meta itemprop="keywords" content="react,user interface,coding,framework,frontend,web development," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -148,7 +148,7 @@
 <p>React composes complex UIs from small and isolated pieces of code called <em>components</em>.</p>
 </li>
 <li>
-<p>We use components to tell React what we want to see on the screen. When our data changes, React will efficiently update and rerender our components.</p>
+<p>We use components to tell React what we want to see on the screen. When our data changes, React will efficiently update and re-render our components.</p>
 </li>
 <li>
 <p>A component is written as either as <code>.JSX</code> or <code>.JS</code> file. It is simply a JS class or function that returns back some HTML code.</p>
@@ -178,7 +178,7 @@
 <p>All React component classes that have a constructor should start with a super (props) call:</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">class_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">className</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
@@ -251,13 +251,13 @@
 </ul>
 </li>
 <li>
-<p>Whenever the state changes, React rerenders the component to the browser.</p>
+<p>Whenever the state changes, React re-renders the component to the browser.</p>
 </li>
 <li>
 <p>The following lets you use local state within a function component.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> [<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">current_state</span><span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">function_to_update_the_state</span><span style="color:#f92672">&gt;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">`&lt;initial_state&gt;`</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> [<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">currentState</span><span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">functionToUpdateTheState</span><span style="color:#f92672">&gt;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">`&lt;initialState&gt;`</span>);
 </span></span></code></pre></div><h4 id="setstate"><code>setState</code></h4>
 <ul>
 <li>After building an initial state setup, we use <code>setState()</code> method to change the state object.</li>
@@ -302,7 +302,7 @@
 </li>
 </ul>
 <h3 id="1-usestate-hook">1. <code>useState</code> hook</h3>
-<p><code>const [&lt;current_state&gt;, &lt;function_to_update_the_state&gt;] = useState(</code>&lt;initial_state&gt;<code>);</code> lets you use local state within a gunction component.</p>
+<p><code>const [&lt;currentState&gt;, &lt;functionToUpdateTheState&gt;] = useState(&lt;initialState&gt;);</code> lets you use local state within a function component.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, { <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Example</span>() {
@@ -331,12 +331,8 @@
 </span></span><span style="display:flex;"><span>);
 </span></span></code></pre></div><h3 id="3-useeffect-hook">3. <code>useEffect</code> hook</h3>
 <ul>
-<li>
-<p>Fetching, subscriptions, or manually changing the DOM called &ldquo;side effects (effects)&rdquo; because they can affect other components and can&rsquo;t be done during rendering.</p>
-</li>
-<li>
-<p>Runs on every update</p>
-</li>
+<li>Fetching, subscriptions, or manually changing the DOM called &ldquo;side effects (effects)&rdquo; because they can affect other components and can&rsquo;t be done during rendering.</li>
+<li>Runs on every update</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
 </span></span><span style="display:flex;"><span>
@@ -378,26 +374,6 @@
 <li>By default, React runs the effects after every render, including the first.</li>
 </ul>
 </li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, { <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Example</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">count</span>, <span style="color:#a6e22e">setCount</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#ae81ff">0</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
-</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`You clicked </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">count</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> times`</span>;
-</span></span><span style="display:flex;"><span>  });
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">You</span> <span style="color:#a6e22e">clicked</span> {<span style="color:#a6e22e">count</span>} <span style="color:#a6e22e">times</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{() =&gt; <span style="color:#a6e22e">setCount</span>(<span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)}<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Click</span> <span style="color:#a6e22e">me</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
-</span></span><span style="display:flex;"><span>    );
-</span></span><span style="display:flex;"><span>  }
-</span></span></code></pre></div><ul>
 <li>Just like <code>useState</code>, you can use multiple single effect in a component.</li>
 </ul>
 <h3 id="4-usecontext-hook">4. <code>useContext</code> hook</h3>
@@ -456,9 +432,130 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Context.Consumer&gt;</span>
 </span></span><span style="display:flex;"><span>  );
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="5-uselayouteffect-hook">5. <code>useLayoutEffect</code> hook</h3>
+</span></span></code></pre></div><h3 id="5-usememo-hook">5. <code>useMemo</code> hook</h3>
+<ul>
+<li><code>const &lt;cachedValue&gt; = useMemo(&lt;calculateValue&gt;, [&lt;dependencies&gt;])</code> caches the result of a calculation between re-renders.</li>
+<li>It takes two arguments that are dependencies and a function that computes the value you want to memoize.</li>
+<li>It memoizes a value.</li>
+<li>It can avoid unnecessary recomputing.</li>
+<li><a href="https://www.youtube.com/watch?v=THL1OPn72vo">Example code</a></li>
+</ul>
 <h3 id="6-usecallback-hook">6. <code>useCallback</code> hook</h3>
+<ul>
+<li><code>const &lt;cachedFunctionName&gt; = useCallback(&lt;functionName&gt;, [&lt;dependencies&gt;])</code> caches a function definition between re-renders.</li>
+<li>It takes two arguments that are dependencies and a function that you want to memoize.</li>
+<li>It memoizes a function.</li>
+<li>It can avoid re-rendering the child component every time the parent component is rendered.</li>
+<li><a href="https://www.youtube.com/watch?v=_AyFP5s69N4">Example code</a></li>
+</ul>
 <h3 id="7-useref-hook">7. <code>useRef</code> hook</h3>
+<ul>
+<li>
+<p><code>const &lt;ref&gt; = useRef(&lt;initialValue&gt;)</code> creates a reference value that&rsquo;s not needed for rendering.</p>
+<ul>
+<li><strong>Parameter:</strong> <code>&lt;initialValue&gt;</code> can be a value of any type.</li>
+<li><strong>Return:</strong> <code>&lt;current&gt;</code> is set to the <code>&lt;initialValue&gt;</code> initially, you can later change it.</li>
+</ul>
+</li>
+<li>
+<p>Changing a ref doesn&rsquo;t trigger a re-render so refs are ideal for storing information that doesn&rsquo;t affect the visual output of your component.</p>
+</li>
+<li>
+<p><strong>Example:</strong> Focusing a text input</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useRef</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Form</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">inputRef</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRef</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleClick</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">inputRef</span>.<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">focus</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">inputRef</span>} <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleClick</span>}<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Focus</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">input</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="8-useimperativehandle-hook">8. <code>useImperativeHandle</code> hook</h3>
+<ul>
+<li><code>useImperativeHandle(&lt;ref&gt;, &lt;createHandle&gt;, [&lt;dependencies&gt;])</code> exposes a value, state or function inside a child component to the parent component through <code>ref</code>.
+<ul>
+<li><code>&lt;ref&gt;</code> := ref passed down from the parent component</li>
+<li><code>&lt;createHandle&gt;</code> := value to be exposed to the parent component</li>
+</ul>
+</li>
+<li>You can decide which properties the parent component can access so you can maintain the private scoping of the child component.</li>
+<li>It is useful when you need a bidirectional data.</li>
+<li><a href="https://www.youtube.com/watch?v=zpEyAOkytkU&amp;list=PLZlA0Gpn_vH8EtggFGERCwMY5u5hOjf-h&amp;index=12">Example code</a></li>
+</ul>
+<h3 id="9-uselayouteffect-hook">9. <code>useLayoutEffect</code> hook</h3>
+<ul>
+<li><code>useLayoutEffect(&lt;setup&gt;, [&lt;dependencies&gt;])</code> performs side effects.
+<ul>
+<li><code>&lt;setup&gt;</code> := function containing the side effect logic</li>
+</ul>
+</li>
+<li>It is a version of <code>useEffect</code> that fires before the browser repaints the screen. The main difference is the timing of when they are executed.</li>
+<li>It is useful when measuring layout before the browser repaints the screen.</li>
+</ul>
+<h3 id="10-usedebugvalue-hook">10. <code>useDebugValue</code> hook</h3>
+<ul>
+<li><code>useDebugValue(&lt;value&gt;, &lt;format&gt;)</code> adds a label to a custom hook.
+<ul>
+<li><code>&lt;value&gt;</code> := any value that you want to display</li>
+<li><code>&lt;format&gt;</code> := an optional formatting function</li>
+</ul>
+</li>
+<li>It is also useful when deferring formatting of a debug value.</li>
+</ul>
+<h3 id="11-usedeferredvalue-hook">11. <code>useDeferredValue</code> hook</h3>
+<ul>
+<li><code>useDeferredValue(&lt;value&gt;)</code> defers updating a part of the UI.
+<ul>
+<li><code>&lt;value&gt;</code> := any value that you want to defer</li>
+</ul>
+</li>
+<li>It is also useful when showing stale content while fresh content is loading.</li>
+</ul>
+<h3 id="12-usetransition-hook">12. <code>useTransition</code> hook</h3>
+<ul>
+<li><code>const [&lt;isPending&gt;, &lt;startTransition&gt;] = useTransition()</code> updates the state without blocking the UI.
+<ul>
+<li><code>&lt;isPending&gt;</code> flag that tells you whether there is a pending transition.</li>
+<li><code>&lt;startTransition&gt;</code> function that lets you mark a state update as a transition.</li>
+</ul>
+</li>
+<li>It is useful when marking a state update as a non-blocking transition.</li>
+</ul>
+<h3 id="13-useid-hook">13. <code>useId</code> hook</h3>
+<ul>
+<li><code>const &lt;id&gt; = useId()</code> generates unique IDs that can be passed to accessibility attributes.</li>
+</ul>
+<h3 id="14-usesyncexternalstore">14. <code>useSyncExternalStore</code></h3>
+<ul>
+<li><code>const &lt;snapshot&gt; = useSyncExternalStore(&lt;subscribe&gt;, &lt;getSnapshot&gt;, &lt;getServerSnapshot&gt;)</code> subscribes to an external store.
+<ul>
+<li><code>&lt;snapshot&gt;</code> := function that takes a single callback argument and subscribes it to the store</li>
+<li><code>&lt;getSnapshot&gt;</code> := function that returns a snapshot of the data in the store that’s needed by the component</li>
+</ul>
+</li>
+<li>It is useful when subscribing to an external store or a browser API, extracting the logic to a custom Hook, or adding support for server rendering.</li>
+</ul>
+<h3 id="15-useinsertioneffect">15. <code>useInsertionEffect</code></h3>
+<ul>
+<li><code>useInsertionEffect(&lt;setup&gt;, [&lt;dependencies&gt;])</code> is a version of <code>useEffect</code> that fires before any DOM mutations.
+<ul>
+<li><code>&lt;setup&gt;</code> := function with your Effect&rsquo;s logic.</li>
+</ul>
+</li>
+<li>It is useful when injecting dynamic styles from CSS-in-JS libraries.</li>
+</ul>
 <hr>
 <h2 id="axios-requests">axios requests</h2>
 <ul>
@@ -602,7 +699,7 @@
 <li>Each <em>React element</em> is a JS object that you can store in a variable or pass around in your program.</li>
 <li>The only way to update the UI is to create a new element, and pass it to <code>root.render()</code>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(
 </span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>)
 </span></span><span style="display:flex;"><span>);
 </span></span><span style="display:flex;"><span>
@@ -616,8 +713,19 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">element</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setInterval</span>(<span style="color:#a6e22e">tick</span>, <span style="color:#ae81ff">1000</span>); <span style="color:#75715e">// setInterval() calls tick function or runs some code after 1000
-</span></span></span></code></pre></div>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setInterval</span>(<span style="color:#a6e22e">tick</span>, <span style="color:#ae81ff">1000</span>);
+</span></span></code></pre></div><h4 id="setinterval"><code>setInterval</code></h4>
+<ul>
+<li><code>setInterval</code> executes a function at specific intervals. It helps in checking a condition regularly or fetching data every so often.</li>
+<li><code>clearInterval(&lt;intervalName&gt;)</code> stops the interval.</li>
+</ul>
+<hr>
+<h2 id="login-registration-and-authentication">Login, Registration, and Authentication</h2>
+<ul>
+<li><code>fontawesome</code> will provide svgs as react components.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm i --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
+</span></span></code></pre></div>
 		</div>
 		<footer class="post__footer">
 			
