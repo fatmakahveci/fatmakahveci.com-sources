@@ -1,6 +1,6 @@
 ---
 title: React for beginners
-description: React is a JS framework for developing SPAs (single-page applications).
+description: React for beginners
 summary: "Updated by Fatma, Mar 10, 2023."
 date: 10-03-2023
 categories:
