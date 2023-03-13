@@ -44,7 +44,7 @@ pip install django # `<version>` can be specified
 python -m django version # checks if it is installed
 
 # Do not forget to add `.` at the end.
-python django-admin startproject `<project_name>` .
+django-admin startproject `<project_name>` .
 
 ##
 python manage.py migrate # It doesn't matter now, but it avoids the warnings. Normally, it migrates the changes in db. Here, it created an SQLite database and migrated its built-in apps.
@@ -89,7 +89,7 @@ python manage.py startapp `<app_name>` # creates an app
 
 - You need to configure project to include the app. (`<project_name>`/settings.py)
 
-```code
+```python
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -125,9 +125,11 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blog_app.urls')), # new
+    path('', include('`<app_name>`.urls')), # new
 ]
 ```
+
+- Always add a name to urls.
 
 ```python
 # <app_name>/urls.py
@@ -479,10 +481,115 @@ class HomePageView(TemplateView):
 
 ---
 
-## Django Tips
+## User authentication in Django
 
-- Always add a name to urls.
+- Django's user authentication system handles
+  - user accounts
+  - groups
+  - permissions
+  - cookie-based user sessions
+
+- It handles both authentication and authorization.
+  - _Authentication_ verifies a user is who they claim to be.
+  - _Authorization_ determines what an authenticated user is allowed to do.
+
+- You can extend or substitute the default `User` model.
+
+### `django.contrib.auth`
+
+#### `User` model
+
+- [Detailed information](https://docs.djangoproject.com/en/4.1/ref/contrib/auth/#django.contrib.auth.models.User)
+
+```python
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
+
+user = User.objects.create_user('Bob', 'bob@example.com', 'password') # It is saved to the db.
+
+existing_user = User.objects.get(username='Bob') # gets the user named Bob.
+existing_.set_password('updated_password') # changes and saves.
+existing_.save()
+
+new_user = authenticate(username='Alice', password='password') # verifies a set of credentials.
+if new_user is not None:
+    # A backend authenticated the credentials
+else:
+    # No backend authenticated the credentials
+```
+
+#### Create a `superuser`
+
+```bash
+python manage.py createsuperuser --username=alice --email=alice@example.com
+```
 
 ---
 
-Updated by _Fatma_ on February 16, 2023. (*macOS)
+## Middleware in Django
+
+- Middleware in Django is a set of functions that run during request and response processes.
+- Each middleware component is responsible for a specific function.
+  - i.e. `AuthenticationMiddleware` associates users with requests using sessions.
+- Django ships with some built-in middleware, but you can also write your own middlewares.
+
+### How you activate middleware
+
+- Add a middleware component to the `MIDDLEWARE` list in your Django `settings.py` activate the middleware.
+
+```python
+# settings.py
+MIDDLEWARE = [
+  # add here
+]
+```
+
+- The order in `MIDDLEWARE` matters because a middleware can depend on other middleware.
+  - i.e. `AuthenticationMiddleware` stores the authenticated user in the session so it must run after `SessionMiddleware`.
+
+---
+
+## TL;DR
+
+### Cross Site Forgery Protection (CSRF)
+
+- A CSRF attack occurs when a malicious website contains a link, a form button or some JavaScript that is intended to perform some action on your website, using the credentials of a logged-in user who visits the malicious site in their browser.
+  - We see a notable example of this in many blogs that use Disqus as their commenting system. The user is required to first log in to Disqus to post a comment on it. This usage of a CDN is a legitimate instance of a cross-site request.
+- The simplest CSRF attack is simply to trick a user into making a `GET` request to a specific URL. It can be done by putting the URL into a deceptively named link.
+- A related _login CSRF_ attack occurs when an attacking site tricks a user's browser into logging into a site with someone else's credentials.
+
+### Cross-Origin Resource Sharing (CORS)
+
+- The single page app model requires setting up CORS because the frontend and the backend run on separate domains.
+- For more [details](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+
+### JSON Web Token (JWT)
+
+- It securely transmits information between parties.
+- Django uses JWTs for authentication and authorization.
+- JWTs remove the need to understand CSRF.
+- They are managed at the application level.
+  - Each application must implement storage, expiry and renewal of JWTs.
+
+### Dictionary
+
+- [Browser](https://developer.mozilla.org/en-US/docs/Glossary/Browser) is the most familiar type of user agent.
+- [Host](https://developer.mozilla.org/en-US/docs/Glossary/Host)
+- [Hyperlink](https://developer.mozilla.org/en-US/docs/Glossary/Hyperlink)
+- [HyperText Transfer Protocol (HTTP)](https://developer.mozilla.org/en-US/docs/Glossary/HTTP)
+- [Internet](https://developer.mozilla.org/en-US/docs/Glossary/Internet)
+- [IP Address](https://developer.mozilla.org/en-US/docs/Glossary/IP_Address)
+- [IPv4](https://developer.mozilla.org/en-US/docs/Glossary/IPv4)
+- [IPv6](https://developer.mozilla.org/en-US/docs/Glossary/IPv6)
+- [Origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin)
+- [Protocol](https://developer.mozilla.org/en-US/docs/Glossary/Protocol)
+- [Server](https://developer.mozilla.org/en-US/docs/Glossary/Server)
+- [Simple Mail Transfer Protocol (SMTP)](https://developer.mozilla.org/en-US/docs/Glossary/SMTP)
+- [Transmission Control Protocol (TCP)](https://developer.mozilla.org/en-US/docs/Glossary/TCP)
+- [Uniform Resource Locator (URL)](https://developer.mozilla.org/en-US/docs/Glossary/URL)
+- [Uniform Resource Identifier (URI)](https://developer.mozilla.org/en-US/docs/Glossary/URI)
+- [Uniform Resource Name (URN)](https://developer.mozilla.org/en-US/docs/Glossary/URN)
+- [User agent](https://developer.mozilla.org/en-US/docs/Glossary/User_agent)
+- [User Interface (UI)](https://developer.mozilla.org/en-US/docs/Glossary/UI)
+- [World Wide Web (WWW, W3, or the Web)](https://developer.mozilla.org/en-US/docs/Glossary/World_Wide_Web) is one of many applications built on top of the Internet.
+- [World Wide Web Consortium (W3C)](https://developer.mozilla.org/en-US/docs/Glossary/W3C)

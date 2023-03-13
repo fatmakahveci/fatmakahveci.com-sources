@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Django for beginners">
 <meta itemprop="description" content="Django for beginners">
 
-<meta itemprop="wordCount" content="1668">
+<meta itemprop="wordCount" content="2179">
 <meta itemprop="keywords" content="python,coding,django,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -158,7 +158,7 @@
 </span></span><span style="display:flex;"><span>python -m django version <span style="color:#75715e"># checks if it is installed</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Do not forget to add `.` at the end.</span>
-</span></span><span style="display:flex;"><span>python django-admin startproject <span style="color:#e6db74">`</span>&lt;project_name&gt;<span style="color:#e6db74">`</span> .
+</span></span><span style="display:flex;"><span>django-admin startproject <span style="color:#e6db74">`</span>&lt;project_name&gt;<span style="color:#e6db74">`</span> .
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">##</span>
 </span></span><span style="display:flex;"><span>python manage.py migrate <span style="color:#75715e"># It doesn&#39;t matter now, but it avoids the warnings. Normally, it migrates the changes in db. Here, it created an SQLite database and migrated its built-in apps.</span>
@@ -194,16 +194,16 @@
 </span></span></code></pre></div><ul>
 <li>You need to configure project to include the app. (<code>&lt;project_name&gt;</code>/settings.py)</li>
 </ul>
-<pre tabindex="0"><code class="language-code" data-lang="code">INSTALLED_APPS = [
-    &#34;django.contrib.admin&#34;,
-    &#34;django.contrib.auth&#34;,
-    &#34;django.contrib.contenttypes&#34;,
-    &#34;django.contrib.sessions&#34;,
-    &#34;django.contrib.messages&#34;,
-    &#34;django.contrib.staticfiles&#34;,
-    &#34;`&lt;app_name&gt;`&#34;,  # new
-]
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>INSTALLED_APPS <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;django.contrib.admin&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;django.contrib.auth&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;django.contrib.contenttypes&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;django.contrib.sessions&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;django.contrib.messages&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;django.contrib.staticfiles&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;`&lt;app_name&gt;`&#34;</span>,  <span style="color:#75715e"># new</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><ul>
 <li>An app can live anywhere on your <code>_Python path_</code>.</li>
 <li>Apps are pluggable so you can use an app in multiple projects.</li>
 </ul>
@@ -222,9 +222,12 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>urlpatterns <span style="color:#f92672">=</span> [
 </span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;admin/&#39;</span>, admin<span style="color:#f92672">.</span>site<span style="color:#f92672">.</span>urls),
-</span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;&#39;</span>, include(<span style="color:#e6db74">&#39;blog_app.urls&#39;</span>)), <span style="color:#75715e"># new</span>
+</span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;&#39;</span>, include(<span style="color:#e6db74">&#39;`&lt;app_name&gt;`.urls&#39;</span>)), <span style="color:#75715e"># new</span>
 </span></span><span style="display:flex;"><span>]
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;app_name&gt;/urls.py</span>
+</span></span></code></pre></div><ul>
+<li>Always add a name to urls.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;app_name&gt;/urls.py</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># add path to index &#39;&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.urls <span style="color:#f92672">import</span> path
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> views
@@ -533,12 +536,126 @@
 <li>Visit <a href="https://docs.djangoproject.com/en/4.1/ref/templates/builtins/">Django&rsquo;s documentation</a></li>
 </ul>
 <hr>
-<h2 id="django-tips">Django Tips</h2>
+<h2 id="user-authentication-in-django">User authentication in Django</h2>
 <ul>
-<li>Always add a name to urls.</li>
+<li>
+<p>Django&rsquo;s user authentication system handles</p>
+<ul>
+<li>user accounts</li>
+<li>groups</li>
+<li>permissions</li>
+<li>cookie-based user sessions</li>
+</ul>
+</li>
+<li>
+<p>It handles both authentication and authorization.</p>
+<ul>
+<li><em>Authentication</em> verifies a user is who they claim to be.</li>
+<li><em>Authorization</em> determines what an authenticated user is allowed to do.</li>
+</ul>
+</li>
+<li>
+<p>You can extend or substitute the default <code>User</code> model.</p>
+</li>
+</ul>
+<h3 id="djangocontribauth"><code>django.contrib.auth</code></h3>
+<h4 id="user-model"><code>User</code> model</h4>
+<ul>
+<li><a href="https://docs.djangoproject.com/en/4.1/ref/contrib/auth/#django.contrib.auth.models.User">Detailed information</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.contrib.auth.models <span style="color:#f92672">import</span> User
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.contrib.auth <span style="color:#f92672">import</span> authenticate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>user <span style="color:#f92672">=</span> User<span style="color:#f92672">.</span>objects<span style="color:#f92672">.</span>create_user(<span style="color:#e6db74">&#39;Bob&#39;</span>, <span style="color:#e6db74">&#39;bob@example.com&#39;</span>, <span style="color:#e6db74">&#39;password&#39;</span>) <span style="color:#75715e"># It is saved to the db.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>existing_user <span style="color:#f92672">=</span> User<span style="color:#f92672">.</span>objects<span style="color:#f92672">.</span>get(username<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Bob&#39;</span>) <span style="color:#75715e"># gets the user named Bob.</span>
+</span></span><span style="display:flex;"><span>existing_<span style="color:#f92672">.</span>set_password(<span style="color:#e6db74">&#39;updated_password&#39;</span>) <span style="color:#75715e"># changes and saves.</span>
+</span></span><span style="display:flex;"><span>existing_<span style="color:#f92672">.</span>save()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>new_user <span style="color:#f92672">=</span> authenticate(username<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Alice&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;password&#39;</span>) <span style="color:#75715e"># verifies a set of credentials.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> new_user <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># A backend authenticated the credentials</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># No backend authenticated the credentials</span>
+</span></span></code></pre></div><h4 id="create-a-superuser">Create a <code>superuser</code></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python manage.py createsuperuser --username<span style="color:#f92672">=</span>alice --email<span style="color:#f92672">=</span>alice@example.com
+</span></span></code></pre></div><hr>
+<h2 id="middleware-in-django">Middleware in Django</h2>
+<ul>
+<li>Middleware in Django is a set of functions that run during request and response processes.</li>
+<li>Each middleware component is responsible for a specific function.
+<ul>
+<li>i.e. <code>AuthenticationMiddleware</code> associates users with requests using sessions.</li>
+</ul>
+</li>
+<li>Django ships with some built-in middleware, but you can also write your own middlewares.</li>
+</ul>
+<h3 id="how-you-activate-middleware">How you activate middleware</h3>
+<ul>
+<li>Add a middleware component to the <code>MIDDLEWARE</code> list in your Django <code>settings.py</code> activate the middleware.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># settings.py</span>
+</span></span><span style="display:flex;"><span>MIDDLEWARE <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># add here</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><ul>
+<li>The order in <code>MIDDLEWARE</code> matters because a middleware can depend on other middleware.
+<ul>
+<li>i.e. <code>AuthenticationMiddleware</code> stores the authenticated user in the session so it must run after <code>SessionMiddleware</code>.</li>
+</ul>
+</li>
 </ul>
 <hr>
-<p>Updated by <em>Fatma</em> on February 16, 2023. (*macOS)</p>
+<h2 id="tldr">TL;DR</h2>
+<h3 id="cross-site-forgery-protection-csrf">Cross Site Forgery Protection (CSRF)</h3>
+<ul>
+<li>A CSRF attack occurs when a malicious website contains a link, a form button or some JavaScript that is intended to perform some action on your website, using the credentials of a logged-in user who visits the malicious site in their browser.
+<ul>
+<li>We see a notable example of this in many blogs that use Disqus as their commenting system. The user is required to first log in to Disqus to post a comment on it. This usage of a CDN is a legitimate instance of a cross-site request.</li>
+</ul>
+</li>
+<li>The simplest CSRF attack is simply to trick a user into making a <code>GET</code> request to a specific URL. It can be done by putting the URL into a deceptively named link.</li>
+<li>A related <em>login CSRF</em> attack occurs when an attacking site tricks a user&rsquo;s browser into logging into a site with someone else&rsquo;s credentials.</li>
+</ul>
+<h3 id="cross-origin-resource-sharing-cors">Cross-Origin Resource Sharing (CORS)</h3>
+<ul>
+<li>The single page app model requires setting up CORS because the frontend and the backend run on separate domains.</li>
+<li>For more <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">details</a></li>
+</ul>
+<h3 id="json-web-token-jwt">JSON Web Token (JWT)</h3>
+<ul>
+<li>It securely transmits information between parties.</li>
+<li>Django uses JWTs for authentication and authorization.</li>
+<li>JWTs remove the need to understand CSRF.</li>
+<li>They are managed at the application level.
+<ul>
+<li>Each application must implement storage, expiry and renewal of JWTs.</li>
+</ul>
+</li>
+</ul>
+<h3 id="dictionary">Dictionary</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Browser">Browser</a> is the most familiar type of user agent.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Host">Host</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Hyperlink">Hyperlink</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTTP">HyperText Transfer Protocol (HTTP)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Internet">Internet</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/IP_Address">IP Address</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/IPv4">IPv4</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/IPv6">IPv6</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Origin">Origin</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Protocol">Protocol</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Server">Server</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/SMTP">Simple Mail Transfer Protocol (SMTP)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/TCP">Transmission Control Protocol (TCP)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/URL">Uniform Resource Locator (URL)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/URI">Uniform Resource Identifier (URI)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/URN">Uniform Resource Name (URN)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/User_agent">User agent</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/UI">User Interface (UI)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/World_Wide_Web">World Wide Web (WWW, W3, or the Web)</a> is one of many applications built on top of the Internet.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/W3C">World Wide Web Consortium (W3C)</a></li>
+</ul>
 
 		</div>
 		<footer class="post__footer">
