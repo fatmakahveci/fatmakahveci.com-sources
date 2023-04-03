@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Fatma Kahveci</title>
+    <link>https://fatmakahveci.com/tags/python/</link>
+    <description>Recent content in python on Fatma Kahveci</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://fatmakahveci.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Activating a Conda environment in your Dockerfile</title>
+      <link>https://fatmakahveci.com/python-note/activating_a_conda_environment_in_your_dockerfile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/activating_a_conda_environment_in_your_dockerfile/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>args and kwargs</title>
+      <link>https://fatmakahveci.com/python-note/args_kwargs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/args_kwargs/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>atexit - Exit handlers</title>
+      <link>https://fatmakahveci.com/python-note/atexit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/atexit/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Binary tree traversal</title>
+      <link>https://fatmakahveci.com/coding-note/binary_tree_traversal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/binary_tree_traversal/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Buffers</title>
+      <link>https://fatmakahveci.com/python-note/buffers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/buffers/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Built-in functions</title>
+      <link>https://fatmakahveci.com/python-note/built-in_functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/built-in_functions/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Callable types</title>
+      <link>https://fatmakahveci.com/python-note/callable_types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/callable_types/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Callback function</title>
+      <link>https://fatmakahveci.com/python-note/callback_function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/callback_function/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Class</title>
+      <link>https://fatmakahveci.com/python-note/class/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/class/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Closure</title>
+      <link>https://fatmakahveci.com/python-note/closure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/closure/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Collections</title>
+      <link>https://fatmakahveci.com/python-note/collections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/collections/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Combinatorial search</title>
+      <link>https://fatmakahveci.com/python-note/combinatorial_search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/combinatorial_search/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Complete binary tree</title>
+      <link>https://fatmakahveci.com/python-note/complete_binary_tree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/complete_binary_tree/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Comprehensions</title>
+      <link>https://fatmakahveci.com/python-note/comprehensions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/comprehensions/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Concurrency</title>
+      <link>https://fatmakahveci.com/python-note/concurrency/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/concurrency/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Conda</title>
+      <link>https://fatmakahveci.com/python-note/conda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/conda/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Context Managers and the `with` statement</title>
+      <link>https://fatmakahveci.com/python-note/context_manager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/context_manager/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Conventions</title>
+      <link>https://fatmakahveci.com/python-note/conventions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/conventions/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Copy</title>
+      <link>https://fatmakahveci.com/python-note/copy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/copy/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Data classes</title>
+      <link>https://fatmakahveci.com/python-note/data_classes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/data_classes/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>datetime</title>
+      <link>https://fatmakahveci.com/python-note/datetime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/datetime/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Decorator</title>
+      <link>https://fatmakahveci.com/python-note/decorator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/decorator/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Descriptor</title>
+      <link>https://fatmakahveci.com/python-note/descriptor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/descriptor/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Design patterns</title>
+      <link>https://fatmakahveci.com/python-note/design_patterns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/design_patterns/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Dictionary</title>
+      <link>https://fatmakahveci.com/python-note/dictionary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/dictionary/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Distributed computing frameworks</title>
+      <link>https://fatmakahveci.com/python-note/distributed_computing_frameworks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/distributed_computing_frameworks/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Django for beginners</title>
+      <link>https://fatmakahveci.com/django-note/django/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/django-note/django/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Docopt</title>
+      <link>https://fatmakahveci.com/python-note/docopt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/docopt/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>docstrings</title>
+      <link>https://fatmakahveci.com/python-note/docstrings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/docstrings/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Duck typing</title>
+      <link>https://fatmakahveci.com/python-note/duck_typing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/duck_typing/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Efficiency</title>
+      <link>https://fatmakahveci.com/python-note/efficiency/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/efficiency/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Encapsulation</title>
+      <link>https://fatmakahveci.com/python-note/encapsulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/encapsulation/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Exceptions</title>
+      <link>https://fatmakahveci.com/python-note/exceptions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/exceptions/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>f-strings</title>
+      <link>https://fatmakahveci.com/python-note/f-strings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/f-strings/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Fibonacci</title>
+      <link>https://fatmakahveci.com/python-note/fibonacci/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/fibonacci/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Files</title>
+      <link>https://fatmakahveci.com/python-note/files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/files/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Finite State Machine (FSM)</title>
+      <link>https://fatmakahveci.com/python-note/finite_state_machine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/finite_state_machine/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Functions</title>
+      <link>https://fatmakahveci.com/python-note/functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/functions/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>functools</title>
+      <link>https://fatmakahveci.com/python-note/functools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/functools/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Garbage collection</title>
+      <link>https://fatmakahveci.com/python-note/garbage_collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/garbage_collection/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Generator</title>
+      <link>https://fatmakahveci.com/python-note/generator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/generator/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>glob</title>
+      <link>https://fatmakahveci.com/python-note/glob/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/glob/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Graph</title>
+      <link>https://fatmakahveci.com/python-note/graph/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/graph/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>GUI</title>
+      <link>https://fatmakahveci.com/python-note/gui/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/gui/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Hashing</title>
+      <link>https://fatmakahveci.com/python-note/hashing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/hashing/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Heap</title>
+      <link>https://fatmakahveci.com/python-note/heap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/heap/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Horizontal bar chart</title>
+      <link>https://fatmakahveci.com/python-note/horizontal_bar_chart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/horizontal_bar_chart/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>import</title>
+      <link>https://fatmakahveci.com/python-note/import/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/import/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Inheritance</title>
+      <link>https://fatmakahveci.com/python-note/inheritance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/inheritance/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>inspect</title>
+      <link>https://fatmakahveci.com/python-note/inspect/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/inspect/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>intenum</title>
+      <link>https://fatmakahveci.com/python-note/intenum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/intenum/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>IPython</title>
+      <link>https://fatmakahveci.com/python-note/ipython/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/ipython/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>iterator</title>
+      <link>https://fatmakahveci.com/python-note/iterator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/iterator/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>itertools</title>
+      <link>https://fatmakahveci.com/python-note/itertools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/itertools/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Jupyter</title>
+      <link>https://fatmakahveci.com/python-note/jupyter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/jupyter/</guid>
+      <description>Updated by Fatma, Mar 31, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Keyboard controller</title>
+      <link>https://fatmakahveci.com/python-note/keyboard_controller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/keyboard_controller/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Knapsack</title>
+      <link>https://fatmakahveci.com/python-note/knapsack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/knapsack/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Lambda</title>
+      <link>https://fatmakahveci.com/python-note/lambda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/lambda/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Linked Lists</title>
+      <link>https://fatmakahveci.com/python-note/linked_lists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/linked_lists/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Loops</title>
+      <link>https://fatmakahveci.com/python-note/loops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/loops/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>matplotlib</title>
+      <link>https://fatmakahveci.com/python-note/matplotlib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/matplotlib/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Memory management</title>
+      <link>https://fatmakahveci.com/python-note/memory_management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/memory_management/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Methods</title>
+      <link>https://fatmakahveci.com/python-note/methods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/methods/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Microservice</title>
+      <link>https://fatmakahveci.com/python-note/microservice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/microservice/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Modules</title>
+      <link>https://fatmakahveci.com/python-note/modules/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/modules/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Namespace</title>
+      <link>https://fatmakahveci.com/python-note/namespace/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/namespace/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>NumPy</title>
+      <link>https://fatmakahveci.com/python-note/numpy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/numpy/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Object serialization</title>
+      <link>https://fatmakahveci.com/python-note/object_serialization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/object_serialization/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Object-Oriented Programming (OOP)</title>
+      <link>https://fatmakahveci.com/python-note/oop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/oop/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Objects</title>
+      <link>https://fatmakahveci.com/python-note/objects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/objects/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Operators</title>
+      <link>https://fatmakahveci.com/python-note/operators/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/operators/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>OrderedDict</title>
+      <link>https://fatmakahveci.com/python-note/ordereddict/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/ordereddict/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>os (operating system)</title>
+      <link>https://fatmakahveci.com/python-note/os/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/os/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>package</title>
+      <link>https://fatmakahveci.com/python-note/package/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/package/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>pandas</title>
+      <link>https://fatmakahveci.com/python-note/pandas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/pandas/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Parallel programming</title>
+      <link>https://fatmakahveci.com/python-note/parallel_programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/parallel_programming/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Pep (Python Enhancement Proposals)</title>
+      <link>https://fatmakahveci.com/python-note/pep/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/pep/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Pipenv</title>
+      <link>https://fatmakahveci.com/python-note/pipenv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/pipenv/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Polymorphism</title>
+      <link>https://fatmakahveci.com/python-note/polymorphism/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/polymorphism/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Primality testing</title>
+      <link>https://fatmakahveci.com/python-note/primality_testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/primality_testing/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Property</title>
+      <link>https://fatmakahveci.com/python-note/property/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/property/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Pydash</title>
+      <link>https://fatmakahveci.com/python-note/pydash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/pydash/</guid>
+      <description>Updated by Fatma, Mar 29, 2023.</description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://fatmakahveci.com/python-note/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/python/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Python libraries and frameworks</title>
+      <link>https://fatmakahveci.com/python-note/libraries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/libraries/</guid>
+      <description>Updated by Fatma, Apr 03, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Queue</title>
+      <link>https://fatmakahveci.com/python-note/queue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/queue/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>random</title>
+      <link>https://fatmakahveci.com/python-note/random/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/random/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Recursion</title>
+      <link>https://fatmakahveci.com/python-note/recursion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/recursion/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Regex</title>
+      <link>https://fatmakahveci.com/python-note/regex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/regex/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>return statement</title>
+      <link>https://fatmakahveci.com/python-note/return_statement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/return_statement/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Scientific computing</title>
+      <link>https://fatmakahveci.com/python-note/scientific_computing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/scientific_computing/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>seaborn</title>
+      <link>https://fatmakahveci.com/python-note/seaborn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/seaborn/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Sequences</title>
+      <link>https://fatmakahveci.com/python-note/sequences/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/sequences/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Some common problems</title>
+      <link>https://fatmakahveci.com/coding-note/problems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/problems/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Sorting</title>
+      <link>https://fatmakahveci.com/python-note/sorting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/sorting/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Stack</title>
+      <link>https://fatmakahveci.com/python-note/stack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/stack/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Star expressions</title>
+      <link>https://fatmakahveci.com/python-note/star_expressions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/star_expressions/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>statsmodels</title>
+      <link>https://fatmakahveci.com/python-note/statsmodels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/statsmodels/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Strings</title>
+      <link>https://fatmakahveci.com/python-note/strings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/strings/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>sys</title>
+      <link>https://fatmakahveci.com/python-note/sys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/sys/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Tail Recursion</title>
+      <link>https://fatmakahveci.com/python-note/tail_recursion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/tail_recursion/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>tempfile</title>
+      <link>https://fatmakahveci.com/python-note/tempfile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/tempfile/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Text</title>
+      <link>https://fatmakahveci.com/python-note/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/test/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>The Zen of python</title>
+      <link>https://fatmakahveci.com/python-note/zen_of_python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/zen_of_python/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>time</title>
+      <link>https://fatmakahveci.com/python-note/time/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/time/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Tree traversal</title>
+      <link>https://fatmakahveci.com/python-note/tree_traversal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/tree_traversal/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Trees</title>
+      <link>https://fatmakahveci.com/python-note/trees/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/trees/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Trie</title>
+      <link>https://fatmakahveci.com/python-note/trie/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/trie/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>typing - Support for type hints</title>
+      <link>https://fatmakahveci.com/python-note/typing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/typing/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Underscores in Python</title>
+      <link>https://fatmakahveci.com/python-note/underscores/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/underscores/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Unpacking</title>
+      <link>https://fatmakahveci.com/python-note/unpacking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/unpacking/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Variables and Argument Passing</title>
+      <link>https://fatmakahveci.com/python-note/variables_and_argument_passing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/variables_and_argument_passing/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Vectors</title>
+      <link>https://fatmakahveci.com/python-note/vectors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/vectors/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Walrus</title>
+      <link>https://fatmakahveci.com/python-note/walrus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/python-note/walrus/</guid>
+      <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+  </channel>
+</rss>

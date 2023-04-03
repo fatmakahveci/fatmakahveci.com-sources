@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Bash for beginners - Fatma Kahveci</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Bash for beginners">
+		<meta property="og:title" content="Bash for beginners" />
+<meta property="og:description" content="Bash for beginners" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fatmakahveci.com/coding-note/bash/" /><meta property="article:section" content="coding note" />
+
+
+
+		<meta itemprop="name" content="Bash for beginners">
+<meta itemprop="description" content="Bash for beginners">
+
+<meta itemprop="wordCount" content="1154">
+<meta itemprop="keywords" content="bash,coding,algorithms,data structures," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&display=swap">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Fatma Kahveci" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Fatma Kahveci</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/python-note/">
+				
+				<span class="menu__text">python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/django-note/">
+				
+				<span class="menu__text">django</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/coding-note/">
+				
+				<span class="menu__text">coding</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/react-note/">
+				
+				<span class="menu__text">react</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/go-note/">
+				
+				<span class="menu__text">go</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/javascript-note/">
+				
+				<span class="menu__text">js</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/bioinformatics-note/">
+				
+				<span class="menu__text">Bioinformatics</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/travel-note/">
+				
+				<span class="menu__text">Travel</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Bash for beginners</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Fatma Kahveci</span>
+</div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/coding/" rel="category">Coding</a>
+	</span>
+</div></div>
+		</header><div class="content post__content clearfix">
+			<h2 id="basename">basename</h2>
+<ul>
+<li>It strips paths from filenames:
+<ul>
+<li><code>$ &gt;&gt; basename &lt;dir&gt;/&lt;file_name.ext&gt;</code>
+% &lt;file_name.ext&gt;</li>
+</ul>
+</li>
+<li>It can also strip a suffix (e.g., extension):
+<ul>
+<li><code>$ &gt;&gt; basename -s &lt;.ext&gt; &lt;dir&gt;/&lt;filename.ext&gt;</code>
+% &lt;file_name&gt;</li>
+</ul>
+</li>
+</ul>
+<h2 id="command-line-arguments">Command-Line Arguments</h2>
+<p><code>$ &gt;&gt; nano args.sh</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>echo <span style="color:#e6db74">&#34;script name: </span>$0<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;first arg: </span>$1<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p><code>$ &gt;&gt; bash args.sh arg1</code>
+% script name: args.sh
+% first arg: arg1</p>
+<ul>
+<li>You can define the number of args using <code>$#</code>. It does not count the script name, <code>$0</code> as an argument.</li>
+</ul>
+<p><code>$ &gt;&gt; nano args.sh</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$#<span style="color:#e6db74">&#34;</span> -lt <span style="color:#ae81ff">3</span> <span style="color:#f92672">]</span> <span style="color:#75715e"># are there less than 3 arguments? </span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;error: too few arguments, you provided </span>$#<span style="color:#e6db74">, 3 required&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;usage: script.sh arg1 arg2 arg3&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;script name: </span>$0<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;first arg: </span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;second arg: </span>$2<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;third arg: </span>$3<span style="color:#e6db74">&#34;</span> <span style="color:#960050;background-color:#1e0010">&#39;</span>
+</span></span></code></pre></div><p><code>$ &gt;&gt; bash args.sh arg1 arg2</code></p>
+<p>% error: too few arguments, you provided 2, 3 required
+% usage: script.sh arg1 arg2 arg3</p>
+<p><a href="https://data-skills.github.io/unix-and-bash/03-bash-scripts/index.html">https://data-skills.github.io/unix-and-bash/03-bash-scripts/index.html</a></p>
+<h2 id="conditionals">Conditionals</h2>
+<h3 id="if-else">if-else</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>set -e
+</span></span><span style="display:flex;"><span>set -u
+</span></span><span style="display:flex;"><span>set -o pipefail
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span>&lt;command&gt;<span style="color:#f92672">]</span> <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span>&lt;if_statement&gt;<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span>&lt;else_statement&gt;<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><h3 id="file-and-directory-test-expressions">File and directory test expressions</h3>
+<table>
+<thead>
+<tr>
+<th>File/directory expression</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-d dir</td>
+<td>dir is a directory</td>
+</tr>
+<tr>
+<td>-f file</td>
+<td>file is a file</td>
+</tr>
+<tr>
+<td>-e file</td>
+<td>file exists</td>
+</tr>
+<tr>
+<td>-h link</td>
+<td>link is a link</td>
+</tr>
+<tr>
+<td>-r file</td>
+<td>file is readable</td>
+</tr>
+<tr>
+<td>-w file</td>
+<td>file is writable</td>
+</tr>
+<tr>
+<td>-x file</td>
+<td>file is executable</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>set -e
+</span></span><span style="display:flex;"><span>set -u
+</span></span><span style="display:flex;"><span>set -o pipefail
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f &lt;file_name&gt; <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span> &lt;if_statement&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p><a href="https://data-skills.github.io/unix-and-bash/03-bash-scripts/index.html">https://data-skills.github.io/unix-and-bash/03-bash-scripts/index.html</a></p>
+<h2 id="curly-braces-in-bash">Curly Braces in Bash</h2>
+<h3 id="array-builder">Array Builder</h3>
+<ul>
+<li><code>{0..10}</code> := 0 1 2 3 4 5 6 7 8 9 10</li>
+<li><code>{10..0}</code> := 10 9 8 7 6 5 4 3 2 1 0</li>
+<li><code>{10..0..2}</code> := 10 8 6 4 2 0</li>
+<li><code>{a..z}</code> := a b c d e f g h i j k l m n o p q r s t u v w x y z</li>
+<li>You can use these in your scripts:
+<ul>
+<li>i.e. <code>$ &gt;&gt; touch {1..3}.txt</code> creates <em>1.txt, 2.txt, 3.txt</em> files.</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://www.linux.com/topic/desktop/all-about-curly-braces-bash/">https://www.linux.com/topic/desktop/all-about-curly-braces-bash/</a></p>
+<h2 id="exit-codes">Exit Codes</h2>
+<ul>
+<li><em>0</em> OK</li>
+<li><em>1</em> if minor problems (e.g., cannot access subdirectory)</li>
+<li><em>2</em> if serious trouble (e.g., cannot access command-line argument)</li>
+</ul>
+<h2 id="file-descriptors">File Descriptors</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>| File            | C identifier | File descriptor | Defaults to           |
+</span></span><span style="display:flex;"><span>| --------------- | ------------ | --------------- | --------------------- |
+</span></span><span style="display:flex;"><span>| Standard input  | stdin        | 0               | data fed into program |
+</span></span><span style="display:flex;"><span>| Standard output | stdout       | 1               | terminal              |
+</span></span><span style="display:flex;"><span>| Standard error  | stderr       | 2               | terminal              |
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>stdin (0) -&gt; program -&gt; stdout (1)
+</span></span><span style="display:flex;"><span>                     -&gt; stderr (2)
+</span></span></code></pre></div><p><a href="https://medium.com/@codenameyau/step-by-step-breakdown-of-dev-null-a0f516f53158">https://medium.com/@codenameyau/step-by-step-breakdown-of-dev-null-a0f516f53158</a></p>
+<h2 id="output">Output</h2>
+<ul>
+<li><code>&gt;/dev/null</code> redirects the command standard output to the null device that discards the information written to it.</li>
+<li><code>2&gt;&amp;1</code> redirects the standard error stream (2) to the standard output stream (1). Note that this takes the standard error stream and points it to same location as standard output at that moment. This is the reason for the order &gt;/some/where 2&gt;&amp;1 because one needs to first point stdout to somewhere and then point stderr to the same location if one wants to combine both streams in the end.</li>
+<li>To save errors to a file:
+<ul>
+<li><code>$ &gt;&gt; &lt;bash_command&gt; 2&gt; &lt;error_file.txt&gt;</code></li>
+</ul>
+</li>
+<li>To save output and error messages into the same file:
+<ul>
+<li><code>$ &gt;&gt; &lt;bash_command&gt; &gt; &lt;output_file_name&gt; 2&gt;&amp;1</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://askubuntu.com/questions/12098/what-does-outputting-to-dev-null-accomplish-in-bash-scripts">https://askubuntu.com/questions/12098/what-does-outputting-to-dev-null-accomplish-in-bash-scripts</a></p>
+<h2 id="a-robust-bash-header">A robust Bash header</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    set -e <span style="color:#75715e"># tells the script to terminate if any command exited with a nonzero exit status.</span>
+</span></span><span style="display:flex;"><span>    set -u <span style="color:#75715e"># tells the script not to run any command containing a reference to an unset variable name</span>
+</span></span><span style="display:flex;"><span>    set -o pipefail <span style="color:#75715e"># to cover one of the exceptions of `set -e`: if the last program terminates with a nonzero status, the pipe will not be terminated.</span>
+</span></span></code></pre></div><p><a href="https://data-skills.github.io/unix-and-bash/03-bash-scripts/index.html">https://data-skills.github.io/unix-and-bash/03-bash-scripts/index.html</a></p>
+<h2 id="shell">shell</h2>
+<ul>
+<li>UNIX provides different flavors of shells:
+<ul>
+<li>Bourne shell (sh)</li>
+<li>C shell (csh)</li>
+<li>TC shell (tcsh)</li>
+<li>Korn shell (ksh)</li>
+<li>Bourne Again shell (bash)</li>
+</ul>
+</li>
+<li><code>$ &gt;&gt; echo $SHELL</code> # prints the default shell.</li>
+<li><code>$ &gt;&gt; echo $0</code> # prints the current shell.</li>
+</ul>
+<h2 id="shuf">shuf</h2>
+<ul>
+<li><code>shuf --help</code> for detailed information.</li>
+<li>There are three ways to use the shuf command:</li>
+</ul>
+<h3 id="1-file-shuf">1. file shuf</h3>
+<ul>
+<li>It generates random permutations from input lines to standard output.</li>
+<li>If given a file or series of files, it will shuffle the lines and write the result to standard output.</li>
+<li><code>shuf &lt;file_name&gt;</code></li>
+<li>Pick a random line(s) from a file <code>shuf -n &lt;number_of_line(s)_to_be_selected&gt; &lt;file_name&gt;</code></li>
+</ul>
+<h3 id="2-list-shuf">2. list shuf</h3>
+<ul>
+<li><code>shuf -e &lt;space_separated_list&gt;</code></li>
+<li>Pick a random element(s) from a list <code>shuf -n &lt;number_of_element(s)_to_be_selected&gt; -e &lt;space_separated_list&gt;</code></li>
+</ul>
+<h3 id="3-range-shuf">3. range shuf</h3>
+<ul>
+<li><code>shuf -i &lt;start_index&gt;-&lt;end_index&gt;</code> # it shuffles the numbers between &lt;start_index&gt; &lt;end_index&gt;</li>
+<li><code>shuf -i &lt;start_index&gt;-&lt;end_index&gt; -n &lt;number_of_number(s)_to_be_selected&gt;</code> # it picks &lt;number_of_number(s)_to_be_selected&gt; number(s) between &lt;start_index&gt; &lt;end_index&gt;</li>
+</ul>
+<p><a href="https://shapeshed.com/unix-shuf/">https://shapeshed.com/unix-shuf/</a></p>
+<h2 id="variables">Variables</h2>
+<ul>
+<li>They don&rsquo;t have data types, but it is helpful to think as strings.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>results_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;dir&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">${</span>results_dir<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p><a href="https://data-skills.github.io/unix-and-bash/03-bash-scripts/index.html">https://data-skills.github.io/unix-and-bash/03-bash-scripts/index.html</a></p>
+<h2 id="writing-pipes">Writing Pipes</h2>
+<ul>
+<li>A pipeline is a sequence of one or more commands separated by one of the control operators &lsquo;|&rsquo; or &lsquo;|&amp;&rsquo;.</li>
+<li>If ‘|&amp;’ is used, the command’s standard error, in addition to its standard output, is connected to the next command’s standard input through the pipe; it is shorthand for 2&gt;&amp;1 |.</li>
+</ul>
+<p><a href="https://www.gnu.org/software/bash/manual/html_node/Pipelines.html">https://www.gnu.org/software/bash/manual/html_node/Pipelines.html</a></p>
+<h2 id="xargs">xargs</h2>
+<ul>
+<li>It reads data from standard input (stdin) and <strong>executes the command one or more times based on the input read.</strong>
+<code>$ &gt;&gt; xargs</code> # == <code>echo</code>.</li>
+</ul>
+<h3 id="xargs-with-another-command">xargs with another command</h3>
+<ul>
+<li>It is extremely useful when combined with other commands. e.g., <em>find</em> and <em>grep</em>.
+<code>$ &gt;&gt; xargs find . -name</code> # waits for the input until <code>Ctrl+D</code> tell xargs that we are done with the input.</li>
+<li>Any blanks and spaces in the input are treated as delimiters, while blank lines are ignored.</li>
+</ul>
+<h3 id="making-xargs-execute-command-multiple-times">Making xargs execute command multiple times</h3>
+<ul>
+<li><code>-L</code> parameter requires a number which it treats as the maximum line of non-blank lines that should be passed as input to the command in one time.
+<ul>
+<li><code>$ &gt;&gt; xargs find . -name -L 1</code> # to give all inputs as a single line in a way that <em>find</em> command accepts.</li>
+</ul>
+</li>
+<li><code>-n</code> parameter requires a number that would represent the number of arguments that you want xargs to pass per command line.</li>
+</ul>
+<h3 id="handling-filenames-with-spaces">Handling filenames with spaces</h3>
+<ul>
+<li><code>-d '&lt;delimiter&gt;'</code> changes the delimiter.</li>
+</ul>
+<h3 id="handling-filenames-with-newline-characters">Handling filenames with newline characters</h3>
+<ul>
+<li><code>$ &gt;&gt; find . -name &quot;&lt;wildcard&gt;&quot; -print0 | xargs -0 gedit</code></li>
+<li><code>print0</code> prints the full file name on the standard output. It allows file names that contain new lines.</li>
+</ul>
+<h3 id="finding-files-containing-a-specific-text">Finding files containing a specific text</h3>
+<ul>
+<li><code>$ &gt;&gt; find . -name &quot;&lt;wildcard&gt;&quot; | xargs grep &quot;&lt;searching_word&gt;&quot;</code></li>
+</ul>
+<h3 id="accepting-input-from-a-file">Accepting input from a file</h3>
+<ul>
+<li><code>-a</code> expects a file name.</li>
+<li><code>$ &gt;&gt; xargs -a &lt;input_file_name&gt; ls -lart</code></li>
+</ul>
+<h3 id="seeking-user-permission-before-executing-a-command">Seeking user permission before executing a command</h3>
+<ul>
+<li><code>-p</code> asks for the permission each time it runs the command.</li>
+</ul>
+<p><a href="https://www.howtoforge.com/tutorial/linux-xargs-command/">https://www.howtoforge.com/tutorial/linux-xargs-command/</a></p>
+<h2 id="yarn">yarn</h2>
+<ul>
+<li>MacOS installation: <code>brew install yarn</code></li>
+<li><code>yarn</code> is a more convenient, safer and faster package dependency manager that can be used instead of <code>npm</code> in <code>JS</code> projects.</li>
+<li>To use yarn in your current npm project, simply run yarn in your project directory.</li>
+<li>Switching to <code>yarn</code> by <code>npm</code> is easy because it works with the same <code>package.json</code> format.</li>
+<li>When you run the <code>yarn add &lt;package name&gt;</code> code to install packages in the project directory, it will create the <code>yarn.lock</code> file in the project directory.</li>
+<li><code>yarn create &lt;pkg_name&gt; &lt;dir_name_to_put_app_there&gt;</code></li>
+</ul>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/bash/" rel="tag">bash</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/coding/" rel="tag">coding</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/algorithms/" rel="tag">algorithms</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/data-structures/" rel="tag">data structures</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/coding-note/binary_tree_traversal/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Binary tree traversal</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/coding-note/aws/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">AWS cloud practitioner essentials</p>
+		</a>
+	</div>
+</nav>
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "www-fatmakahveci-com-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/python-note/activating_a_conda_environment_in_your_dockerfile/">Activating a Conda environment in your Dockerfile</a></li>
+			<li class="widget__item"><a class="widget__link" href="/python-note/args_kwargs/">args and kwargs</a></li>
+			<li class="widget__item"><a class="widget__link" href="/python-note/atexit/">atexit - Exit handlers</a></li>
+			<li class="widget__item"><a class="widget__link" href="/python-note/buffers/">Buffers</a></li>
+			<li class="widget__item"><a class="widget__link" href="/python-note/built-in_functions/">Built-in functions</a></li>
+			<li class="widget__item"><a class="widget__link" href="/python-note/callable_types/">Callable types</a></li>
+			<li class="widget__item"><a class="widget__link" href="/python-note/callback_function/">Callback function</a></li>
+			<li class="widget__item"><a class="widget__link" href="/python-note/class/">Class</a></li>
+			<li class="widget__item"><a class="widget__link" href="/python-note/closure/">Closure</a></li>
+			<li class="widget__item"><a class="widget__link" href="/python-note/collections/">Collections</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Spotify" rel="noopener noreferrer" href="https://open.spotify.com/playlist/2lY1JpIvZI8T1SG8RAaosw?si=CvDn8z0xQlaA9RtXUGM_2g" target="_blank">
+				
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+	 viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+<path id="SVGCleanerId_0" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+	c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+	c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+	c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+	c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+	c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+	 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+	c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+	C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+<g>
+	<path id="SVGCleanerId_0_1_" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+		c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+		c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+		c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+		c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+		c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+		 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+		c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+		C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+</g>
+<path style="fill:#2CC64D;" d="M219.68,195.296c-94.952,0-177.16,35.576-217.168,87.448C19.536,402.832,123.384,496,248,496
+	c90.016,0,169.208-48.624,212.664-120.872c1.392-6.856,2.168-13.84,2.168-20.952C462.832,266.424,353.976,195.296,219.68,195.296z
+	 M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96c-58.28-35.96-131.448-43.392-218.224-23.544
+	c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6c94.232-21.08,176.08-12.4,240.56,27.28
+	C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16c-6.192,8.68-17.368,12.392-26.04,6.192
+	c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4c-2.48-9.92,2.488-21.088,12.408-23.568
+	c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z"/>
+<path style="fill:#5AF27A;" d="M248,36.816c131.384,0,237.808,101.68,247.248,229.536C495.696,260.288,496,254.168,496,248
+	C496,111.6,385.648,0,248,0C111.608,0,0,111.6,0,248c0,6.184,0.304,12.328,0.76,18.408C10.272,138.512,117.808,36.816,248,36.816z"
+	/>
+<path style="fill:#1DAA59;" d="M326.192,483.216c14.488-33.36,32.688-83.248,35.872-88.056c3.736-7.432,2.488-17.352-6.184-21.072
+	c-64.488-39.68-146.328-48.36-240.56-27.28c-7.44,2.48-13.64,9.92-11.16,18.6c1.248,3.76,6.512,49.088,12.528,92.632
+	C154.832,482.048,199.848,496,248,496C275.304,496,301.568,491.464,326.192,483.216z"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+				<span>Spotify</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/cheburashkaF" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Instagram" rel="noopener noreferrer" href="https://www.instagram.com/fatmakhv" target="_blank">
+				<svg class="widget-social__link-icon icon icon-instagram" width="24" height="24" viewBox="0 0 256 256"><circle cx="193" cy="59" r="15"/><path fill-rule="evenodd" d="M101 0h54c41 0 58.4 3.9 74.5 17C256.2 37.5 256 74.8 256 97.7v60c0 26.7 0 60.4-26.5 81.4-16 13.4-33.5 16.9-74.5 16.9h-54c-41 0-57.5-3.5-74.5-16.9C1 218.9.5 186.3.1 160.5L0 155V97.7c0-23-.2-60.2 26.5-80.7C45 2 60 0 101 0zm4.9 23h44.3c45.8 0 58.3 3.5 70.3 17.5 11.8 13.2 12 30.1 12.5 62.9V156c.2 20.8.3 45.8-12.5 59.5-12 14-24.5 17.5-70.3 17.5h-44.3c-45.9 0-57.3-3.5-70.4-17.5-12.2-13-12.3-36.5-12.4-56.7v-55.6c.4-32.6.7-49.6 12.4-62.7C48 26.5 60 23 105.9 23zm19.6 144.5a42 42 0 1 0 0-84 42 42 0 0 0 0 84zm0 22.5a64.5 64.5 0 1 0 0-129 64.5 64.5 0 0 0 0 129z"/></svg>
+				<span>Instagram</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/fatma-kahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/fatmakahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="algorithm">algorithm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/aws/" title="aws">aws</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bash/" title="bash">bash</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bfs/" title="bfs">bfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/big-oh-notation/" title="big-oh-notation">big-oh-notation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bigtable/" title="bigtable">bigtable</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bioinformatician/" title="bioinformatician">bioinformatician</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bioinformatics/" title="bioinformatics">bioinformatics</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/concurrency/" title="concurrency">concurrency</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dfs/" title="dfs">dfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="django">django</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/framework/" title="framework">framework</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="javascript">javascript</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb/" title="mongodb">mongodb</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/network/" title="network">network</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nosql/" title="nosql">nosql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="react">react</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="software">software</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="sql">sql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/travel/" title="travel">travel</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tree-traversal/" title="tree traversal">tree traversal</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/user-interface/" title="user interface">user interface</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web-development/" title="web development">web development</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Fatma Kahveci.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG" async></script>
+</body>
+</html>

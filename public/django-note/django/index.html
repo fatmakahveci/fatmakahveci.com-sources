@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Django for beginners - Fatma Kahveci</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Django for beginners">
+		<meta property="og:title" content="Django for beginners" />
+<meta property="og:description" content="Django for beginners" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fatmakahveci.com/django-note/django/" /><meta property="article:section" content="django note" />
+
+
+
+		<meta itemprop="name" content="Django for beginners">
+<meta itemprop="description" content="Django for beginners">
+
+<meta itemprop="wordCount" content="2181">
+<meta itemprop="keywords" content="Python,coding,Django,algorithms,data structures," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&display=swap">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Fatma Kahveci" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Fatma Kahveci</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/coding-note/">
+				
+				<span class="menu__text">coding</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/python-note/">
+				
+				<span class="menu__text">python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/django-note/">
+				
+				<span class="menu__text">django</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/react-note/">
+				
+				<span class="menu__text">react</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/go-note/">
+				
+				<span class="menu__text">go</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/javascript-note/">
+				
+				<span class="menu__text">js</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/bash-note/">
+				
+				<span class="menu__text">bash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aws-note/">
+				
+				<span class="menu__text">aws</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/travel-note/">
+				
+				<span class="menu__text">Travel</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Django for beginners</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Fatma Kahveci</span>
+</div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/coding/" rel="category">Coding</a>
+	</span>
+</div></div>
+		</header><div class="content post__content clearfix">
+			<p><img src="/img/django_header.png" alt="header"></p>
+<h2 id="django-file-system">Django File System</h2>
+<ul>
+<li>Django is primarily composed of two components that are projects and apps.</li>
+<li>A dynamic web application involves working with Internet protocols, web server configuration, and data retrieval or storage.
+<ul>
+<li><code>storage + user access + python + HTML + CSS</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><img src="/img/django_file_system.png" alt="django_file_system"></p>
+<hr>
+<h2 id="hello-world">Hello World</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>deactivate <span style="color:#75715e"># makes sure you are not in an existing venv</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd <span style="color:#e6db74">`</span>&lt;dir_for_project&gt;<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>mkdir <span style="color:#e6db74">`</span>&lt;project_name&gt;<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>cd <span style="color:#e6db74">`</span>&lt;project_name&gt;<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>python -m venv <span style="color:#e6db74">`</span>&lt;venv_name&gt;<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>source <span style="color:#e6db74">`</span>&lt;venv_name&gt;/bin/activate<span style="color:#e6db74">`</span> <span style="color:#75715e"># venv should be activated</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (&lt;project_dir&gt;) $ &gt;&gt; # means venv is working.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pip install django <span style="color:#75715e"># `&lt;version&gt;` can be specified</span>
+</span></span><span style="display:flex;"><span>python -m django version <span style="color:#75715e"># checks if it is installed</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Do not forget to add `.` at the end.</span>
+</span></span><span style="display:flex;"><span>django-admin startproject <span style="color:#e6db74">`</span>&lt;project_name&gt;<span style="color:#e6db74">`</span> .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##</span>
+</span></span><span style="display:flex;"><span>python manage.py migrate <span style="color:#75715e"># It doesn&#39;t matter now, but it avoids the warnings. Normally, it migrates the changes in the db. Here, it created an SQLite database and migrated its built-in apps.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##</span>
+</span></span></code></pre></div><p>Now you have the following file structure:</p>
+<pre tabindex="0"><code class="language-code" data-lang="code">├── `&lt;project_name&gt;` # use like `&lt;project_name&gt;.urls` to import anything inside.
+│   ├── __init__.py
+|   ├── asgi.py # is an entry point for ASGI-compatible web servers.
+│   ├── settings.py # contains settings and configuration for the project.
+│   ├── urls.py # is a table of contents of the site.
+│   └── wsgi.py # is an entry point for WSGI-compatible web servers.
+├── db.sqlite3 # python manage.py migrate
+├── manage.py # interacts with the project.
+└── `&lt;venv_name&gt;`/
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export DJANGO_SETTINGS_MODULE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>&lt;project_name&gt;<span style="color:#e6db74">`</span>.settings
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>python manage.py runserver <span style="color:#75715e"># runs Django&#39;s local web server.</span>
+</span></span></code></pre></div><p>Go to <a href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a> in your browser.</p>
+<ul>
+<li>8080 is the default value, which is changeable.</li>
+<li><code>Ctrl+c</code> quits the running server.</li>
+</ul>
+<hr>
+<h2 id="create-an-app">Create an app</h2>
+<ul>
+<li>A project can contain multiple apps, where each app performs a single task.
+<ul>
+<li>i.e. stock management, customer management, etc.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python manage.py startapp <span style="color:#e6db74">`</span>&lt;app_name&gt;<span style="color:#e6db74">`</span> <span style="color:#75715e"># creates an app</span>
+</span></span></code></pre></div><ul>
+<li>You need to configure the project to include the app. (<code>&lt;project_name&gt;</code>/settings.py)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>INSTALLED_APPS <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;django.contrib.admin&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;django.contrib.auth&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;django.contrib.contenttypes&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;django.contrib.sessions&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;django.contrib.messages&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;django.contrib.staticfiles&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;`&lt;app_name&gt;`&#34;</span>,  <span style="color:#75715e"># new</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><ul>
+<li>An app can live anywhere on your <code>_Python path_</code>.</li>
+<li>Apps are pluggable so you can use an app in multiple projects.</li>
+</ul>
+<hr>
+<h2 id="display-a-hello-world-page">Display a Hello World Page</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;app_name&gt;/views.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.http <span style="color:#f92672">import</span> HttpResponse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The function name (here is &#34;home&#34;) doesn&#39;t matter to be evaluated by Django.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">home</span>(request):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> HttpResponse(<span style="color:#e6db74">&#34;Hello world!&#34;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;project_name&gt;/urls.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add path to your app</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.contrib <span style="color:#f92672">import</span> admin
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.urls <span style="color:#f92672">import</span> include, path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>urlpatterns <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;admin/&#39;</span>, admin<span style="color:#f92672">.</span>site<span style="color:#f92672">.</span>urls),
+</span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;&#39;</span>, include(<span style="color:#e6db74">&#39;`&lt;app_name&gt;`.urls&#39;</span>)), <span style="color:#75715e"># new</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><ul>
+<li>Always add a name to urls.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;app_name&gt;/urls.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add path to index &#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.urls <span style="color:#f92672">import</span> path
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> views
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>urlpatterns <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;&#39;</span>, views<span style="color:#f92672">.</span>home, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;home&#39;</span>)
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><hr>
+<h3 id="django-admin-vs-managepy"><code>django-admin</code> vs. <code>manage.py</code></h3>
+<h4 id="django-admin"><code>django-admin</code></h4>
+<ul>
+<li><code>django-admin</code> is to deal with multiple <code>settings</code> file.</li>
+</ul>
+<h4 id="managepy"><code>manage.py</code></h4>
+<ul>
+<li><code>manage.py</code> is to deal with a single <code>settings</code> file.</li>
+<li>It points to <code>settings.py</code>.</li>
+<li>It is specific to <code>venv</code>.</li>
+<li>It starts everything.</li>
+<li>You have to be in your projects folder to run it.</li>
+</ul>
+<hr>
+<h2 id="the-django-mvt-model-view-template-pattern">The Django MVT (model view template) pattern</h2>
+<pre tabindex="0"><code class="language-code" data-lang="code">user &lt;=&gt; django &lt;=&gt; url &lt;=&gt; view &lt;=&gt; model
+                                 &lt;=&gt; template
+</code></pre><p>The order, in which you create <em>Templates</em>, <em>Views</em>, and <em>URLs</em>, doesn&rsquo;t matter since all work together closely.</p>
+<p><strong>1. Model</strong> manages data and core business logic.</p>
+<p><strong>2. View</strong> describes which data is sent to the user.</p>
+<p><strong>3. Template</strong> presents the data as HTML.</p>
+<p><strong>4. URL dispatcher</strong> is equivalent to the controller in the MVC architecture.</p>
+<hr>
+<h2 id="1-model">1. Model</h2>
+<ul>
+<li>You can add a database to your project using the <code>&lt;app_name&gt;/models.py</code> file.</li>
+<li>Django creates a primary key automatically for each model, but you can also override this by specifying <code>primary_key=True</code> in one of your model fields.</li>
+<li>The default primary key is an <code>id</code> column, which consists of an automatically incremented integer.</li>
+<li>The Django object-relational mapper (ORM) is compatible with <code>MySQL</code>, <code>PostgreSQL</code>, <code>SQLite</code>, <code>Oracle</code>, and <code>MariaDB</code>.
+<ul>
+<li>You can define the DB in <code>settings.py</code>.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.db <span style="color:#f92672">import</span> models
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">Model_name</span><span style="color:#f92672">&gt;</span>(models<span style="color:#f92672">.</span>Model):
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span>field_name<span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>) <span style="color:#75715e"># &#34;models.CharField&#34; can be any other type of field given below(1+).</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># optional</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#f92672">&lt;</span>function_name<span style="color:#f92672">&gt;</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.&lt;</span>field_name<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">Model_name</span><span style="color:#f92672">&gt;</span>(models<span style="color:#f92672">.</span>Model):
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span>field_name<span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>ForeignKey(<span style="color:#f92672">&lt;</span>Model_name<span style="color:#f92672">&gt;</span>, on_delete<span style="color:#f92672">=</span>models<span style="color:#f92672">.</span>CASCADE) <span style="color:#75715e"># ForeignKey defines a relationship</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.&lt;</span>field_name<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><p>( <strong>Model Field Types (1+):</strong> <code>AutoField</code>, <code>BigAutoField</code>, <code>BigIntegerField</code>, <code>BinaryField</code>, <code>BooleanField</code>, <code>CharField</code>, <code>DateField</code>, <code>DateTimeField</code>, <code>DecimalField</code>, <code>DurationField</code>, <code>EmailField</code>, <code>FileField</code>, <code>FilePathField</code>, <code>FloatField</code>, <code>ImageField</code>, <code>IntegerField</code>, <code>GenericIpAddressField</code>, <code>NullBooleanField</code>, <code>PositiveIntegerField</code>, <code>PositiveSmallIntegerField</code>, <code>SlugField</code>, <code>SmallIntegerField</code>, <code>TextField</code>, <code>TimeField</code>, <code>URLField</code>, <code>ForeignKey</code>, <code>ManyToManyField</code>, <code>OneToOneField</code>. )</p>
+<ul>
+<li>
+<p>When you change something in your model, run <code>python manage.py makemigrations &lt;app_name&gt;</code> to create migrations for those changes.</p>
+</li>
+<li>
+<p><code>python manage.py migrate</code> applies those changes to the database. It reads <code>001_initial.py</code>. It creates SQL commands and runs them.</p>
+</li>
+<li>
+<p><code>$ python manage.py shell</code> is different than the UNIX shell.</p>
+</li>
+<li>
+<p><strong>Note:</strong> If you get kind of messed up, you can remove <code>&lt;file&gt;.sqlite</code> and run the migrations again.</p>
+</li>
+</ul>
+<hr>
+<h2 id="2-view">2. View</h2>
+<ul>
+<li>
+<p>Views determine what content is displayed on a given page.</p>
+</li>
+<li>
+<p>There are three ways to write a view in Django:</p>
+<ul>
+<li><strong>1. Function-based view</strong> takes an <code>HttpRequest</code> object and returns an <code>HttpResponse</code> object, both of which are defined in the <code>django.http</code> module.
+<ul>
+<li>An instance of the <code>HttpRequest</code> class
+<ul>
+<li>All the data coming in.</li>
+<li>Data you see in your browser debugger about what data was sent to the server, that all ends up somewhere in this object.</li>
+</ul>
+</li>
+<li>An instance of the <code>HttpResponse</code> class
+<ul>
+<li>Something that we create inside of our view. It might be simply text (HTML). (OR)</li>
+<li>You send it all back. It might be a redirect object, go to a different page.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>2. Class-based view</strong> allows for much greater code reusability and keeps things DRY (Don&rsquo;t Repeat Yourself). It inherits from the <code>View</code> class.</li>
+<li><strong>3. Generic class-based view</strong> handles common use cases, such as creating a new object, forms, list views, pagination, etc. They are built-in.</li>
+</ul>
+</li>
+<li>
+<p><strong>Django request/response cycle:</strong> <code>URL -&gt; View -&gt; Model -&gt; Template</code></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;app_name&gt;/views.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.http <span style="color:#f92672">import</span> HttpResponse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># When homePageView function is called, it returns &#34;Hello World!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">homePageView</span>(request):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> HttpResponse(<span style="color:#e6db74">&#34;Hello World!&#34;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;app_name&gt;/urls.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.urls <span style="color:#f92672">import</span> path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># We import our views.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;.views&#39; means views.py is in the current directory(&#39;.&#39;).</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> .views <span style="color:#f92672">import</span> homePageView
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># urlpattern has three parts:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># [</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   path = ( &lt;a python regex for the empty string&gt;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#            &lt;specify the view called homePageView&gt;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#            &lt;add an optional URL name of &#39;home&#39;&gt;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#          )</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ]</span>
+</span></span><span style="display:flex;"><span>urlpatterns <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  path <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;&#39;</span>, homePageView, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;home&#39;</span>),
+</span></span><span style="display:flex;"><span>] 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;project_name&gt;/urls.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.contrib <span style="color:#f92672">import</span> admin
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.urls <span style="color:#f92672">import</span> path, include
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># When a user visits the homepage at &#34;/&#34; they will first be routed to the `&lt;app_name&gt;` and then to the homePageView view</span>
+</span></span><span style="display:flex;"><span>urlpatterns <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;admin/&#39;</span>, admin<span style="color:#f92672">.</span>site<span style="color:#f92672">.</span>urls),
+</span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;&#39;</span>, include(<span style="color:#e6db74">&#39;&lt;app_name&gt;.urls&#39;</span>)),
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h3 id="url-routing">URL Routing</h3>
+<ul>
+<li>Django looks at the incoming request URL and uses <code>urls.py</code> to select a view.</li>
+<li>The view from <code>views.py</code>.
+<ul>
+<li>Handle incoming data in the request and copy it to the database through the model.</li>
+<li>Retrieve data to put on the page from the database through the model.</li>
+<li>Produce the HTML that will become the response and return it to the browser.</li>
+</ul>
+</li>
+</ul>
+<h3 id="a-view-without-any-python-code">A view without any Python code</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.views.generic <span style="color:#f92672">import</span> TemplateView
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>urlpatterns <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  path(<span style="color:#e6db74">&#39;&#39;</span>, TemplateView<span style="color:#f92672">.</span>as_view(template_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;views/main.html&#39;</span>))
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h3 id="a-view-with-python-code">A view with Python code</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># urls.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.urls <span style="color:#f92672">import</span> path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>urlpatterns <span style="color:#f92672">=</span> [path(<span style="color:#e6db74">&#39;&lt;func&gt;&#39;</span>, <span style="color:#f92672">&lt;</span>app<span style="color:#f92672">&gt;.&lt;</span>func<span style="color:#f92672">&gt;</span>)]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># views.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.http <span style="color:#f92672">import</span> HttpResponse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>(request):
+</span></span><span style="display:flex;"><span>    response <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;&lt;html&gt;&lt;body&gt;&lt;p&gt;This is the funky function sample&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;p&gt;This sample code is available at
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;a href=&#34;https://github.com/csev/dj4e-samples&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    https://github.com/csev/dj4e-samples&lt;/a&gt;&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/body&gt;&lt;/html&gt;&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> HttpResponse(response)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &lt;website&gt;/views/danger?guess=42</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &lt;key&gt;=&lt;value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">danger</span>(request):
+</span></span><span style="display:flex;"><span>  response <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;&lt;html&gt;&lt;body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;p&gt;Your guess was &#34;&#34;&#34;</span><span style="color:#f92672">+</span>request<span style="color:#f92672">.</span>GET[<span style="color:#e6db74">&#39;guess&#39;</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;&#34;&#34;&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/body&gt;&lt;/html&gt;&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> HttpResponse(response)
+</span></span></code></pre></div><h3 id="inside-django-views-and-html-escaping-in-django">Inside Django views and HTML escaping in Django</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.utils.html <span style="color:#f92672">import</span> escape
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">game</span>(request):
+</span></span><span style="display:flex;"><span>  response <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;&lt;html&gt;&lt;body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;p&gt;Your guess was &#34;&#34;&#34;</span><span style="color:#f92672">+</span>escape(request<span style="color:#f92672">.</span>GET[<span style="color:#e6db74">&#39;guess&#39;</span>])<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;&#34;&#34;&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/body&gt;&lt;/html&gt;&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> HttpResponse(response)
+</span></span></code></pre></div><hr>
+<h2 id="3-template">3. Template</h2>
+<ul>
+<li><code>Template = HTML + Django Template Language</code></li>
+<li>Template is a way to generate HTML dynamically.</li>
+<li>It contains the static parts and describes how dynamic content will be inserted.</li>
+<li>It is a text file, which can generate any text-based format, such as <code>HTML</code>, <code>XML</code>, <code>CSV</code>, etc.</li>
+<li>It contains <code>variables</code> and <code>tags</code>.</li>
+<li>If the template directory contains both <code>&lt;project_name&gt;</code> and <code>&lt;app_name&gt;</code>, the templates will be available for all apps.</li>
+<li>It is common to reuse the <code>&lt;name&gt;</code> of a template in several applications.
+<ul>
+<li><code>&lt;app&gt;/templates/&lt;app&gt;/&lt;name&gt;.html</code></li>
+</ul>
+</li>
+<li><code>{% load static %}</code> loads the static template tags of <code>django.contrib.staticfiles</code> application contained in the <code>INSTALLED_APPS</code> setting.
+<ul>
+<li>You can include the static files, such as <code>blog.css</code> with <code>{% static %}</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="url---view---template">URL -&gt; View -&gt; Template</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># urls.py</span>
+</span></span><span style="display:flex;"><span>path(<span style="color:#e6db74">&#39;game/&lt;slug:guess&gt;&#39;</span>, views<span style="color:#f92672">.</span>GameView<span style="color:#f92672">.</span>as_view())
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># views.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.shortcuts <span style="color:#f92672">import</span> render
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.views <span style="color:#f92672">import</span> View
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GameView</span>(View):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get</span>(self, request, guess):
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;guess&#39;</span> : int(guess)}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> render(request, <span style="color:#e6db74">&#39;tmpl/cond.html&#39;</span>, x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">loop</span>(request):
+</span></span><span style="display:flex;"><span>  f <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Apple&#39;</span>, <span style="color:#e6db74">&#39;Orange&#39;</span>]
+</span></span><span style="display:flex;"><span>  n <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;peanut&#39;</span>, <span style="color:#e6db74">&#39;cashew&#39;</span>]
+</span></span><span style="display:flex;"><span>  x <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;fruits&#39;</span> : f, <span style="color:#e6db74">&#39;nuts&#39;</span> : n, <span style="color:#e6db74">&#39;outer&#39;</span> : { <span style="color:#e6db74">&#39;inner&#39;</span>: <span style="color:#e6db74">&#39;42&#39;</span> } }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> render(request, <span style="color:#e6db74">&#39;tmpl/cond.html&#39;</span>, x)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- tmpl/cond.html --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">title</span>&gt;A conditional template&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">p</span>&gt;Your guess was {{ guess }}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>  {% if guess &lt; <span style="color:#f92672">42</span> <span style="color:#960050;background-color:#1e0010">%}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">p</span>&gt;Too low&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>  {% if guess &gt; 42 %}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;Too high&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>  {% else %}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;Just right&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>  {% endif %}
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">p</span>&gt;y: {{ outer.inner }}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- loop.html --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>{% for x in fruits %}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">li</span>&gt;{{ x }}&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>{% endfor %}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>{% if nuts %}
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">p</span>&gt;Number of nuts: {{ nuts|length }}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>{% else %}
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">p</span>&gt;No nuts.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>{% endif %}
+</span></span></code></pre></div><h3 id="django-template-language-dtl">Django Template Language (DTL)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">## Template Tags/Code</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Substitution</span>
+</span></span><span style="display:flex;"><span>{{ zap }}
+</span></span><span style="display:flex;"><span>{{ zap <span style="color:#f92672">|</span> safe }}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calling code</span>
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">%</span> url <span style="color:#e6db74">&#39;cat-detail&#39;</span> cat<span style="color:#f92672">.</span>id <span style="color:#f92672">%</span>}
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">%</span> author<span style="color:#f92672">.</span>get_absolute_url <span style="color:#f92672">%</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Logic</span>
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">%</span> <span style="color:#66d9ef">if</span> zap <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">%</span>}
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">%</span> endif <span style="color:#f92672">%</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Blocks</span>
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">%</span> block content <span style="color:#f92672">%</span>}
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">%</span> endblock <span style="color:#f92672">%</span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># terminal</span>
+</span></span><span style="display:flex;"><span>mkdir templates
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- templates/home.html --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span>&gt;Homepage&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;project_name&gt;/settings.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># update the given line below</span>
+</span></span><span style="display:flex;"><span>TEMPLATES <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;DIRS&#39;</span>: [os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(BASE_DIR, <span style="color:#e6db74">&#39;templates&#39;</span>)], <span style="color:#75715e"># new</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># &lt;app_name&gt;/views.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.views.generic <span style="color:#f92672">import</span> TemplateView
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HomePageView</span>(TemplateView):
+</span></span><span style="display:flex;"><span>  template_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;home.html&#39;</span>
+</span></span></code></pre></div><h3 id="adding-pagination">Adding pagination</h3>
+<ul>
+<li><em>Pagination</em> is a sequence of pages which are connected and have similar content. Splitting the list of posts across several pages, instead of a single page.</li>
+<li>You can define the number of posts per page.</li>
+<li>You have to create a template to display the paginator so that it can be included in any template that uses pagination.</li>
+</ul>
+<h3 id="built-in-template-tags-and-filters">Built-in template tags and filters</h3>
+<ul>
+<li>Template tags take the from of <code>{% &lt;template_tag&gt; %}</code>.</li>
+<li>You can create your custom template tags.</li>
+<li>template tag: <code>{% tag %}</code></li>
+<li>template variable: <code>{{ variable }}</code></li>
+<li>template filter: <code>{{ variable|filter}}</code></li>
+</ul>
+<h4 id="built-in-tag-reference">Built-in tag reference</h4>
+<ul>
+<li>Visit <a href="https://docs.djangoproject.com/en/4.1/ref/templates/builtins/">Django&rsquo;s documentation</a></li>
+</ul>
+<hr>
+<h2 id="user-authentication-in-django">User authentication in Django</h2>
+<ul>
+<li>
+<p>Django&rsquo;s user authentication system handles</p>
+<ul>
+<li>user accounts</li>
+<li>groups</li>
+<li>permissions</li>
+<li>cookie-based user sessions</li>
+</ul>
+</li>
+<li>
+<p>It handles both authentication and authorization.</p>
+<ul>
+<li><em>Authentication</em> verifies a user is who they claim to be.</li>
+<li><em>Authorization</em> determines what an authenticated user is allowed to do.</li>
+</ul>
+</li>
+<li>
+<p>You can extend or substitute the default <code>User</code> model.</p>
+</li>
+</ul>
+<h3 id="djangocontribauth"><code>django.contrib.auth</code></h3>
+<h4 id="user-model"><code>User</code> model</h4>
+<ul>
+<li><a href="https://docs.djangoproject.com/en/4.1/ref/contrib/auth/#django.contrib.auth.models.User">Detailed information</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.contrib.auth.models <span style="color:#f92672">import</span> User
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.contrib.auth <span style="color:#f92672">import</span> authenticate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>user <span style="color:#f92672">=</span> User<span style="color:#f92672">.</span>objects<span style="color:#f92672">.</span>create_user(<span style="color:#e6db74">&#39;Bob&#39;</span>, <span style="color:#e6db74">&#39;bob@example.com&#39;</span>, <span style="color:#e6db74">&#39;password&#39;</span>) <span style="color:#75715e"># It is saved to the db.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>existing_user <span style="color:#f92672">=</span> User<span style="color:#f92672">.</span>objects<span style="color:#f92672">.</span>get(username<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Bob&#39;</span>) <span style="color:#75715e"># gets the user named Bob.</span>
+</span></span><span style="display:flex;"><span>existing_<span style="color:#f92672">.</span>set_password(<span style="color:#e6db74">&#39;updated_password&#39;</span>) <span style="color:#75715e"># changes and saves.</span>
+</span></span><span style="display:flex;"><span>existing_<span style="color:#f92672">.</span>save()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>new_user <span style="color:#f92672">=</span> authenticate(username<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Alice&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;password&#39;</span>) <span style="color:#75715e"># verifies a set of credentials.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> new_user <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># A backend authenticated the credentials</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># No backend authenticated the credentials</span>
+</span></span></code></pre></div><h4 id="create-a-superuser">Create a <code>superuser</code></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python manage.py createsuperuser --username<span style="color:#f92672">=</span>alice --email<span style="color:#f92672">=</span>alice@example.com
+</span></span></code></pre></div><hr>
+<h2 id="middleware-in-django">Middleware in Django</h2>
+<ul>
+<li>Middleware in Django is a set of functions that run during request and response processes.</li>
+<li>Each middleware component is responsible for a specific function.
+<ul>
+<li>i.e. <code>AuthenticationMiddleware</code> associates users with requests using sessions.</li>
+</ul>
+</li>
+<li>Django ships with some built-in middleware, but you can also write your middleware.</li>
+</ul>
+<h3 id="how-you-activate-middleware">How you activate middleware</h3>
+<ul>
+<li>Add a middleware component to the <code>MIDDLEWARE</code> list in your Django <code>settings.py</code> to activate the middleware.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># settings.py</span>
+</span></span><span style="display:flex;"><span>MIDDLEWARE <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># add here</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><ul>
+<li>The order in <code>MIDDLEWARE</code> matters because a middleware can depend on other middleware.
+<ul>
+<li>i.e. <code>AuthenticationMiddleware</code> stores the authenticated user in the session so it must run after <code>SessionMiddleware</code>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="tldr">TL;DR</h2>
+<h3 id="cross-site-forgery-protection-csrf">Cross Site Forgery Protection (CSRF)</h3>
+<ul>
+<li>A CSRF attack occurs when a malicious website contains a link, a form button or some JavaScript that is intended to perform some action on your website, using the credentials of a logged-in user who visits the malicious site in their browser.
+<ul>
+<li>We see a notable example of this in many blogs that use Disqus as their commenting system. The user is required to first log in to Disqus to post a comment on it. This usage of a CDN is a legitimate instance of a cross-site request.</li>
+</ul>
+</li>
+<li>The simplest CSRF attack is simply to trick a user into making a <code>GET</code> request to a specific URL. It can be done by putting the URL into a deceptively named link.</li>
+<li>A related <em>login CSRF</em> attack occurs when an attacking site tricks a user&rsquo;s browser into logging into a site with someone else&rsquo;s credentials.</li>
+</ul>
+<h3 id="cross-origin-resource-sharing-cors">Cross-Origin Resource Sharing (CORS)</h3>
+<ul>
+<li>The single-page app model requires setting up CORS because the frontend and the backend run on separate domains.</li>
+<li>For more <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">details</a></li>
+</ul>
+<h3 id="json-web-token-jwt">JSON Web Token (JWT)</h3>
+<ul>
+<li>It securely transmits information between parties.</li>
+<li>Django uses JWTs for authentication and authorization.</li>
+<li>JWTs remove the need to understand CSRF.</li>
+<li>They are managed at the application level.
+<ul>
+<li>Each application must implement storage, expiry and renewal of JWTs.</li>
+</ul>
+</li>
+</ul>
+<h3 id="dictionary">Dictionary</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Browser">Browser</a> is the most familiar type of user agent.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Host">Host</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Hyperlink">Hyperlink</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTTP">HyperText Transfer Protocol (HTTP)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Internet">Internet</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/IP_Address">IP Address</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/IPv4">IPv4</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/IPv6">IPv6</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Origin">Origin</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Protocol">Protocol</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Server">Server</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/SMTP">Simple Mail Transfer Protocol (SMTP)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/TCP">Transmission Control Protocol (TCP)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/URL">Uniform Resource Locator (URL)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/URI">Uniform Resource Identifier (URI)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/URN">Uniform Resource Name (URN)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/User_agent">User agent</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/UI">User Interface (UI)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/World_Wide_Web">World Wide Web (WWW, W3, or the Web)</a> is one of many applications built on top of the Internet.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/W3C">World Wide Web Consortium (W3C)</a></li>
+</ul>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/coding/" rel="tag">coding</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/django/" rel="tag">Django</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/algorithms/" rel="tag">algorithms</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/data-structures/" rel="tag">data structures</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "www-fatmakahveci-com-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/coding-note/apache_hbase/">Apache HBase</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/binary_tree_traversal/">Binary tree traversal</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/concurrency/">Concurrency</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/database/">Database</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dog_pile_effect/">Dogpile effect</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dynamic_programming/">Dynamic Programming (DP)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/google_bigtable/">Google BigTable</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/jaccard_similarity/">Jaccard Similarity</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/mongodb/">MongoDB</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/naming_variables/">Naming variables</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Spotify" rel="noopener noreferrer" href="https://open.spotify.com/playlist/2lY1JpIvZI8T1SG8RAaosw?si=CvDn8z0xQlaA9RtXUGM_2g" target="_blank">
+				
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+	 viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+<path id="SVGCleanerId_0" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+	c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+	c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+	c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+	c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+	c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+	 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+	c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+	C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+<g>
+	<path id="SVGCleanerId_0_1_" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+		c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+		c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+		c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+		c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+		c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+		 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+		c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+		C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+</g>
+<path style="fill:#2CC64D;" d="M219.68,195.296c-94.952,0-177.16,35.576-217.168,87.448C19.536,402.832,123.384,496,248,496
+	c90.016,0,169.208-48.624,212.664-120.872c1.392-6.856,2.168-13.84,2.168-20.952C462.832,266.424,353.976,195.296,219.68,195.296z
+	 M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96c-58.28-35.96-131.448-43.392-218.224-23.544
+	c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6c94.232-21.08,176.08-12.4,240.56,27.28
+	C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16c-6.192,8.68-17.368,12.392-26.04,6.192
+	c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4c-2.48-9.92,2.488-21.088,12.408-23.568
+	c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z"/>
+<path style="fill:#5AF27A;" d="M248,36.816c131.384,0,237.808,101.68,247.248,229.536C495.696,260.288,496,254.168,496,248
+	C496,111.6,385.648,0,248,0C111.608,0,0,111.6,0,248c0,6.184,0.304,12.328,0.76,18.408C10.272,138.512,117.808,36.816,248,36.816z"
+	/>
+<path style="fill:#1DAA59;" d="M326.192,483.216c14.488-33.36,32.688-83.248,35.872-88.056c3.736-7.432,2.488-17.352-6.184-21.072
+	c-64.488-39.68-146.328-48.36-240.56-27.28c-7.44,2.48-13.64,9.92-11.16,18.6c1.248,3.76,6.512,49.088,12.528,92.632
+	C154.832,482.048,199.848,496,248,496C275.304,496,301.568,491.464,326.192,483.216z"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+				<span>Spotify</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/cheburashkaF" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Instagram" rel="noopener noreferrer" href="https://www.instagram.com/fatmakhv" target="_blank">
+				<svg class="widget-social__link-icon icon icon-instagram" width="24" height="24" viewBox="0 0 256 256"><circle cx="193" cy="59" r="15"/><path fill-rule="evenodd" d="M101 0h54c41 0 58.4 3.9 74.5 17C256.2 37.5 256 74.8 256 97.7v60c0 26.7 0 60.4-26.5 81.4-16 13.4-33.5 16.9-74.5 16.9h-54c-41 0-57.5-3.5-74.5-16.9C1 218.9.5 186.3.1 160.5L0 155V97.7c0-23-.2-60.2 26.5-80.7C45 2 60 0 101 0zm4.9 23h44.3c45.8 0 58.3 3.5 70.3 17.5 11.8 13.2 12 30.1 12.5 62.9V156c.2 20.8.3 45.8-12.5 59.5-12 14-24.5 17.5-70.3 17.5h-44.3c-45.9 0-57.3-3.5-70.4-17.5-12.2-13-12.3-36.5-12.4-56.7v-55.6c.4-32.6.7-49.6 12.4-62.7C48 26.5 60 23 105.9 23zm19.6 144.5a42 42 0 1 0 0-84 42 42 0 0 0 0 84zm0 22.5a64.5 64.5 0 1 0 0-129 64.5 64.5 0 0 0 0 129z"/></svg>
+				<span>Instagram</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/fatma-kahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/fatmakahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="algorithm">algorithm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/aws/" title="aws">aws</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bash/" title="bash">bash</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bfs/" title="bfs">bfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/big-oh-notation/" title="big-oh-notation">big-oh-notation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bigtable/" title="bigtable">bigtable</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cloud-computing/" title="cloud computing">cloud computing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/concurrency/" title="concurrency">concurrency</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dfs/" title="dfs">dfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="Django">Django</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/framework/" title="framework">framework</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="javascript">javascript</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb/" title="MongoDB">MongoDB</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/network/" title="network">network</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nosql/" title="nosql">nosql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/numpy/" title="NumPy">NumPy</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="react">react</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="Software">Software</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="sql">sql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/travel/" title="travel">travel</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tree-traversal/" title="tree traversal">tree traversal</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/user-interface/" title="user interface">user interface</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web-development/" title="web development">web development</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Fatma Kahveci.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG" async></script>
+</body>
+</html>

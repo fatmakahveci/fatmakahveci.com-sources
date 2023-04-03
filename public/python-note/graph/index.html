@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Graph - Fatma Kahveci</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Graph">
+		<meta property="og:title" content="Graph" />
+<meta property="og:description" content="Graph" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fatmakahveci.com/python-note/graph/" /><meta property="article:section" content="python note" />
+
+
+
+		<meta itemprop="name" content="Graph">
+<meta itemprop="description" content="Graph">
+
+<meta itemprop="wordCount" content="6151">
+<meta itemprop="keywords" content="Python,coding,algorithms,data structures," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&display=swap">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Fatma Kahveci" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Fatma Kahveci</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/coding-note/">
+				
+				<span class="menu__text">coding</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/python-note/">
+				
+				<span class="menu__text">python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/django-note/">
+				
+				<span class="menu__text">django</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/react-note/">
+				
+				<span class="menu__text">react</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/go-note/">
+				
+				<span class="menu__text">go</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/javascript-note/">
+				
+				<span class="menu__text">js</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/bash-note/">
+				
+				<span class="menu__text">bash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aws-note/">
+				
+				<span class="menu__text">aws</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/travel-note/">
+				
+				<span class="menu__text">Travel</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Graph</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Fatma Kahveci</span>
+</div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/coding/" rel="category">Coding</a>
+	</span>
+</div></div>
+		</header><div class="content post__content clearfix">
+			<ul>
+<li>Graphs are collections of vertices and edges.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Vertex</span>:
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __init__(self, key):
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>id <span style="color:#f92672">=</span> key
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>connected_to <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_neighbor</span>(self, n, w):
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>connected_to[n] <span style="color:#f92672">=</span> w
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_connections</span>(self):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>connected_to<span style="color:#f92672">.</span>keys()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_id</span>(self):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>id
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_weight</span>(self, n):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>connected_to[n]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> str(self<span style="color:#f92672">.</span>id)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Graph</span>:
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>master_list <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_vertex</span>(self, key):
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>size <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  vertex <span style="color:#f92672">=</span> Vertex(key)
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>master_list[key] <span style="color:#f92672">=</span> vertex
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> vertex
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_vertex</span>(self, n):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> n <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>master_list:
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>master_list[n]
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_edge</span>(self, u, v, weight<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> u <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>master_list:
+</span></span><span style="display:flex;"><span>   self<span style="color:#f92672">.</span>add_vertex(u)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> v <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>master_list:
+</span></span><span style="display:flex;"><span>   self<span style="color:#f92672">.</span>add_vertex(v)
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>master_list[u]<span style="color:#f92672">.</span>add_neighbor(self<span style="color:#f92672">.</span>add_vertex(v), weight)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_vertices</span>(self):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>master_list<span style="color:#f92672">.</span>keys()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __iter__(self):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> iter(self<span style="color:#f92672">.</span>master_list<span style="color:#f92672">.</span>values())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __contains__(self, n):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> n <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>master_list:
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span> graph <span style="color:#f92672">=</span> Graph()
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+</span></span><span style="display:flex;"><span>  graph<span style="color:#f92672">.</span>add_vertex(value)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> graph<span style="color:#f92672">.</span>add_edge(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span> vertex <span style="color:#f92672">in</span> graph:
+</span></span><span style="display:flex;"><span>  print(vertex)
+</span></span></code></pre></div><h2 id="the-categories-of-graph-problems">The categories of graph problems</h2>
+<ul>
+<li><strong>Existence:</strong> Problems that attempt to determine if a path, a vertex, or a set exists, particularly if there is a constraint.</li>
+<li><strong>Construction:</strong> Given a set of paths and vertices with a constraint, how to construct a graph.</li>
+<li><strong>Enumeration:</strong> Problems that attempt to determine how many vertices and edges exist, given a set of constraints.</li>
+<li><strong>Optimization:</strong> Problems that attempt to find the shortest path between two nodes.</li>
+</ul>
+<h2 id="articulation-points">Articulation points</h2>
+<ul>
+<li>An articulation point/cut vertex is any node in a graph whose removal increases the number of connected components.</li>
+<li>It often hints at the weak points, bottlenecks, and vulnerabilities.</li>
+</ul>
+<h2 id="breadth-first-search">Breadth-First Search</h2>
+<ul>
+<li><strong>Data structure:</strong> <em>Queue</em></li>
+<li><strong>Aim:</strong> Graph traversal</li>
+<li><strong>Runtime:</strong> $O(V+E)$</li>
+</ul>
+<p><strong>Algorithm:</strong></p>
+<ol>
+<li>Start from a node.</li>
+<li>Visit all its children.</li>
+<li>Move on to the grandchildren and continue this process until there is no unvisited vertex.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>graph <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;A&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;B&#39;</span> : [<span style="color:#e6db74">&#39;D&#39;</span>, <span style="color:#e6db74">&#39;E&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;C&#39;</span> : [<span style="color:#e6db74">&#39;F&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;D&#39;</span> : [],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;E&#39;</span> : [<span style="color:#e6db74">&#39;F&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;F&#39;</span> : []
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bfs</span>(graph, node):
+</span></span><span style="display:flex;"><span>    queue <span style="color:#f92672">=</span> [node]
+</span></span><span style="display:flex;"><span>    visited <span style="color:#f92672">=</span> [node]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> queue:
+</span></span><span style="display:flex;"><span>        popped_node <span style="color:#f92672">=</span> queue<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> neighbour <span style="color:#f92672">in</span> graph[popped_node]:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> neighbour <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>                queue<span style="color:#f92672">.</span>append(neighbour)
+</span></span><span style="display:flex;"><span>                visited<span style="color:#f92672">.</span>append(neighbour)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> visited
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>visited <span style="color:#f92672">=</span> bfs(graph, <span style="color:#e6db74">&#39;A&#39;</span>)
+</span></span><span style="display:flex;"><span>print(visited)
+</span></span></code></pre></div><h3 id="applications">Applications</h3>
+<h4 id="connected-components">Connected components</h4>
+<ul>
+<li>In connected graphs, there is a path between any two vertices.</li>
+<li>A connected component of an undirected graph is a maximal set of vertices such that there is a path between every pair of vertices.</li>
+</ul>
+<h4 id="two-coloring-graphs">Two-coloring graphs</h4>
+<ul>
+<li>The vertex colouring problem seeks to assign a label to each vertex of a graph such that no edge links any two vertices of the same colour.
+<ul>
+<li>The goal is to use as few colours as possible.</li>
+</ul>
+</li>
+<li>Scheduling applications
+<ul>
+<li>Register allocation in compilers</li>
+</ul>
+</li>
+</ul>
+<h2 id="bipartite-matching">Bipartite matching</h2>
+<ul>
+<li>
+<p>A matching in a graph $G = (V,E)$ is a subset of edges $E&rsquo; \subset E$ such that no two edges of $E&rsquo;$ share a vertex.</p>
+</li>
+<li>
+<p><a href="../../graph_types.md">Bipartite graph</a></p>
+</li>
+<li>
+<p>To solve bipartite matching, we constructed a special network flow graph such that the maximum flow corresponds to a matching having the largest number of edges.</p>
+</li>
+</ul>
+<h2 id="connected-components-1">Connected Components</h2>
+<ul>
+<li>We can use DFS to identify the connected components.</li>
+<li>Assign an integer value to each group to be able to tell them apart.</li>
+</ul>
+<p><strong>Algorithm:</strong></p>
+<ol>
+<li>Label each node using a number within the range [0,n), where n is the number of nodes.</li>
+<li>Start DFS at each visited node and mark all reachable nodes as being part of the same component.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Graph</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self, num_vertex: int):
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>num_vertex <span style="color:#f92672">=</span> num_vertex
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>adj_list <span style="color:#f92672">=</span> [[] <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(num_vertex)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_edge</span>(self, from_node: int, to_node: int) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>adj_list[from_node]<span style="color:#f92672">.</span>append(to_node)
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>adj_list[to_node]<span style="color:#f92672">.</span>append(from_node)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dfs</span>(self, node, component, visited):
+</span></span><span style="display:flex;"><span>    visited[node] <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    component<span style="color:#f92672">.</span>append(node)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> neighbour <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>adj_list[node]:
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> visited[neighbour] <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>dfs(neighbour, component, visited)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">connected_components</span>(self):
+</span></span><span style="display:flex;"><span>    all_components <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    visited <span style="color:#f92672">=</span> [ <span style="color:#66d9ef">False</span> <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>num_vertex) ]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>num_vertex):
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> visited[i] <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
+</span></span><span style="display:flex;"><span>        component <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>dfs(i, component, visited)
+</span></span><span style="display:flex;"><span>        all_components<span style="color:#f92672">.</span>append(component)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> all_components
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>  graph <span style="color:#f92672">=</span> Graph(<span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  graph<span style="color:#f92672">.</span>add_edge(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  graph<span style="color:#f92672">.</span>add_edge(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>  graph<span style="color:#f92672">.</span>add_edge(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  print(graph<span style="color:#f92672">.</span>connected_components())
+</span></span></code></pre></div><h2 id="connectivity">Connectivity</h2>
+<ul>
+<li>The smallest number of vertices whose deletion will disconnect the graph.</li>
+</ul>
+<h3 id="solution">Solution</h3>
+<ol>
+<li>Union find data structure</li>
+<li>Any search algorithm (DFS), etc.</li>
+</ol>
+<h2 id="cycle-detection">Cycle detection</h2>
+<h3 id="cycle-detection-in-a-directed-graph">Cycle detection in a directed graph</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> defaultdict
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Graph</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, order):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>graph <span style="color:#f92672">=</span> defaultdict(list)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>order <span style="color:#f92672">=</span> order
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">addEdge</span>(self, u, v):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>graph[u]<span style="color:#f92672">.</span>append(v)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_cyclic_helper</span>(self, node, visited, stack):
+</span></span><span style="display:flex;"><span>        visited[node] <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        stack[node] <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> neighbour <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>graph[node]:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> visited[neighbour] <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>is_cyclic_helper(neighbour, visited, stack):
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">elif</span> stack[neighbour] <span style="color:#f92672">==</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        stack[node] <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_cyclic</span>(self):
+</span></span><span style="display:flex;"><span>        visited <span style="color:#f92672">=</span> [ <span style="color:#66d9ef">False</span> <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>order) ]
+</span></span><span style="display:flex;"><span>        stack <span style="color:#f92672">=</span> [ <span style="color:#66d9ef">False</span> <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>order) ] <span style="color:#75715e"># may be needed for subgraphs</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>order): <span style="color:#75715e"># helpful for disconnected graphs</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> visited[node] <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>is_cyclic_helper(node, visited, stack):
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    graph <span style="color:#f92672">=</span> Graph(<span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    graph<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    graph<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    graph<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    graph<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    graph<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>    graph<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>    print(graph<span style="color:#f92672">.</span>is_cyclic())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># graph.addEdge(0, 1)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># graph.addEdge(0, 2)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># print(graph.is_cyclic())</span>
+</span></span></code></pre></div><h3 id="cycle-detection-in-an-undirected-graph">Cycle detection in an undirected graph</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> defaultdict
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Graph</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, order):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>graph <span style="color:#f92672">=</span> defaultdict(list)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>order <span style="color:#f92672">=</span> order
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">addEdge</span>(self, u, v):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>graph[u]<span style="color:#f92672">.</span>append(v)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>graph[v]<span style="color:#f92672">.</span>append(u)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_cyclic_helper</span>(self, node, visited, parent):
+</span></span><span style="display:flex;"><span>        visited[node] <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> neighbour <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>graph[node]:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> visited[neighbour] <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>is_cyclic_helper(neighbour, visited, node):
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">elif</span> parent <span style="color:#f92672">!=</span> neighbour:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_cyclic</span>(self):
+</span></span><span style="display:flex;"><span>        visited <span style="color:#f92672">=</span> [ <span style="color:#66d9ef">False</span> <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>order) ]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>order): <span style="color:#75715e"># helpful for disconnected graphs</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> visited[node] <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>is_cyclic_helper(node, visited, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    graph <span style="color:#f92672">=</span> Graph(<span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    graph<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    graph<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    graph<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    print(graph<span style="color:#f92672">.</span>is_cyclic())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># graph.addEdge(0, 1)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># graph.addEdge(0, 2)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># print(graph.is_cyclic())</span>
+</span></span></code></pre></div><h2 id="depth-first-search-dfs">Depth First Search (DFS)</h2>
+<ul>
+<li><strong>Data structure:</strong> <em>Stack</em>_</li>
+<li><strong>Aim:</strong> Graph traversal</li>
+<li><strong>Runtime:</strong> $O(V+E)$</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>graph <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;A&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#39;C&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;B&#39;</span> : [<span style="color:#e6db74">&#39;D&#39;</span>, <span style="color:#e6db74">&#39;E&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;C&#39;</span> : [<span style="color:#e6db74">&#39;F&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;D&#39;</span> : [],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;E&#39;</span> : [<span style="color:#e6db74">&#39;F&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;F&#39;</span> : []
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># preorder</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># def dfs_iterative(graph, node, visited):</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     stack = [node]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     while stack:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         popped_item = stack.pop()</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         if popped_item not in visited:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             visited.append(popped_item) # pre</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             for neighbour in graph[popped_item]:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#                 if neighbour not in visited:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#                     stack.append(neighbour)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     return visited</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># post-order</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dfs_iterative</span>(graph: Dict[int, int], start_node: int) <span style="color:#f92672">-&gt;</span> List[int]:
+</span></span><span style="display:flex;"><span>    stack <span style="color:#f92672">=</span> [start_node]
+</span></span><span style="display:flex;"><span>    visited <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> stack:
+</span></span><span style="display:flex;"><span>        popped_node <span style="color:#f92672">=</span> stack<span style="color:#f92672">.</span>pop()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> popped_node <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> neighbour <span style="color:#f92672">in</span> graph[popped_node]:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> neighbour <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>                    stack<span style="color:#f92672">.</span>append(neighbour)
+</span></span><span style="display:flex;"><span>            visited<span style="color:#f92672">.</span>append(popped_node)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> visited
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>visited <span style="color:#f92672">=</span> dfs_iterative(graph, <span style="color:#e6db74">&#39;A&#39;</span>)
+</span></span><span style="display:flex;"><span>print(visited)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># inorder bst traversal iterative</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># class Node:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     def __init__(self, val):</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         self.val = val</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         self.left = None</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         self.right = None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     def inorder_iterative_dfs(root):</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         if not root:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         stack = []</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         while True:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             if root:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#                 stack.append(root)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#                 root = root.left</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             else:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#                 if not stack:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#                     break</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#                 root = stack.pop()</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#                 print(root.val)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#                 root = root.right</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># root = Node(10)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># root.left = Node(0)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># root.left.left = Node(5)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># root.left.right = Node(6)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># root.right = Node(-10)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># root.right.right = Node(11)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Node.inorder_iterative_dfs(root)</span>
+</span></span></code></pre></div><h2 id="dfs-algorithm">DFS algorithm</h2>
+<ol>
+<li>Dig deep down into paths branching off of the starting point until it reaches a point where either there is no more edge forward or meets a previously visited vertex. We don&rsquo;t want to revisit it.</li>
+</ol>
+<h3 id="dfs-recursive">DFS recursive</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>graph <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;A&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#39;C&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;B&#39;</span> : [<span style="color:#e6db74">&#39;D&#39;</span>, <span style="color:#e6db74">&#39;E&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;C&#39;</span> : [<span style="color:#e6db74">&#39;F&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;D&#39;</span> : [],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;E&#39;</span> : [<span style="color:#e6db74">&#39;F&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;F&#39;</span> : [],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;G&#39;</span> : [<span style="color:#e6db74">&#39;H&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;H&#39;</span> : [],
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dfs</span>(graph, node, visited):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> node <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>        visited<span style="color:#f92672">.</span>append(node)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> neighbour <span style="color:#f92672">in</span> graph[node]:
+</span></span><span style="display:flex;"><span>            dfs(graph, neighbour, visited)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># to traverse whole graph</span>
+</span></span><span style="display:flex;"><span>visited <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> graph:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> node <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>        dfs(graph, node, visited)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(visited)
+</span></span></code></pre></div><h3 id="applications-of-arrival-and-departure-time-of-vertices">Applications of arrival and departure time of vertices</h3>
+<ol>
+<li>Topological sorting</li>
+<li>Finding 2/3–(edge or vertex)–connected components</li>
+<li>Finding bridges in graphs</li>
+<li>Finding biconnectivity in graphs</li>
+<li>Detecting cycle in directed graphs</li>
+<li>Tarjan&rsquo;s algorithm to find strongly connected components, etc.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> defaultdict
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List, Tuple
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Graph</span>:
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __init__(self, order: int, edges: List[Tuple[int, int]]):
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>order <span style="color:#f92672">=</span> order
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>adj_list <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (src, dest) <span style="color:#f92672">in</span> edges:
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">if</span> src <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>adj_list:
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>adj_list[src] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">if</span> dest <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>adj_list:
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>adj_list[dest] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>   self<span style="color:#f92672">.</span>adj_list[src]<span style="color:#f92672">.</span>append(dest)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __repr__(self):
+</span></span><span style="display:flex;"><span>  out <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> s_node <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>adj_list:
+</span></span><span style="display:flex;"><span>   out<span style="color:#f92672">.</span>append(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>s_node<span style="color:#e6db74">}</span><span style="color:#e6db74"> -&gt; &#34;</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">for</span> d_node <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>adj_list[s_node]:
+</span></span><span style="display:flex;"><span>    out<span style="color:#f92672">.</span>append(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>d_node<span style="color:#e6db74">}</span><span style="color:#e6db74">, &#34;</span>)
+</span></span><span style="display:flex;"><span>   out<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(out)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dfs</span>(graph: Graph, start_node: int, visited: List[int], arrival: List[int], departure: List[int], time: int) <span style="color:#f92672">-&gt;</span> int:
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> start_node <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>  time <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  arrival[start_node] <span style="color:#f92672">=</span> time
+</span></span><span style="display:flex;"><span>  visited<span style="color:#f92672">.</span>append(start_node)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> neighbour <span style="color:#f92672">in</span> graph<span style="color:#f92672">.</span>adj_list[start_node]:
+</span></span><span style="display:flex;"><span>   time <span style="color:#f92672">=</span> dfs(graph, neighbour, visited, arrival, departure, time)
+</span></span><span style="display:flex;"><span>  time <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  departure[start_node] <span style="color:#f92672">=</span> time
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">return</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span> edges <span style="color:#f92672">=</span> [ (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>), (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>), (<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>), (<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>) ]
+</span></span><span style="display:flex;"><span> graph <span style="color:#f92672">=</span> Graph(<span style="color:#ae81ff">8</span>, edges)
+</span></span><span style="display:flex;"><span> visited, arrival, departure <span style="color:#f92672">=</span> [], {}, {}
+</span></span><span style="display:flex;"><span> time <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> graph<span style="color:#f92672">.</span>adj_list:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> node <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>   time <span style="color:#f92672">=</span> dfs(graph, node, visited, arrival, departure, time)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(visited)):
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>visited[i]<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">{</span>arrival[i]<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">{</span>departure[i]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><h2 id="directed-acycling-graph-dag">Directed Acycling Graph (DAG)</h2>
+<ul>
+<li>DAG is a graph with directed edges and no cycle.
+<ul>
+<li>A graph with a cycle cannot have a valid ordering.</li>
+</ul>
+</li>
+<li>All rooted trees have topological ordering since they do not contain any cycles.</li>
+</ul>
+<h2 id="directed-graph">Directed graph</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List, Tuple
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Graph</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, edge_list: List[Tuple[int, int]], order: int):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>adj_list <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (src, dest) <span style="color:#f92672">in</span> edge_list:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> src <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>adj_list:
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>adj_list[src] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> dest <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>adj_list:
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>adj_list[dest] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>adj_list[src]<span style="color:#f92672">.</span>append(dest)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __repr__(self):
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> s_node <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>adj_list:
+</span></span><span style="display:flex;"><span>            out<span style="color:#f92672">.</span>append(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>s_node<span style="color:#e6db74">}</span><span style="color:#e6db74"> -&gt; &#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> d_node <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>adj_list[s_node]:
+</span></span><span style="display:flex;"><span>                out<span style="color:#f92672">.</span>append(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>d_node<span style="color:#e6db74">}</span><span style="color:#e6db74">, &#34;</span>)
+</span></span><span style="display:flex;"><span>            out<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(out)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    edge_list <span style="color:#f92672">=</span> [ (<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>), (<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>), (<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>), (<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>) ]
+</span></span><span style="display:flex;"><span>    order <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    graph <span style="color:#f92672">=</span> Graph(edge_list, order) 
+</span></span><span style="display:flex;"><span>    print(graph)
+</span></span></code></pre></div><h2 id="disjoint-set">Disjoint set</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DisjointSet</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __init__(self, size):
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>root <span style="color:#f92672">=</span> [ i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(size) ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">find</span>(self, x):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>root[x] <span style="color:#f92672">==</span> x:
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>root[x] <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>find(self<span style="color:#f92672">.</span>root[x])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>root[x]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">union</span>(self, x, y):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  rootX <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>find(x)
+</span></span><span style="display:flex;"><span>  rootY <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>find(y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> rootX <span style="color:#f92672">!=</span> rootY:
+</span></span><span style="display:flex;"><span>   self<span style="color:#f92672">.</span>root[rootY] <span style="color:#f92672">=</span> rootX
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">connected</span>(self, x, y):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>find(x) <span style="color:#f92672">==</span> self<span style="color:#f92672">.</span>find(y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> str(self<span style="color:#f92672">.</span>root)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>disjoint_set <span style="color:#f92672">=</span> DisjointSet(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>)
+</span></span><span style="display:flex;"><span>disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>)
+</span></span><span style="display:flex;"><span>disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(disjoint_set)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(disjoint_set<span style="color:#f92672">.</span>connected(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>))
+</span></span></code></pre></div><h2 id="eulerian-path">Eulerian path</h2>
+<h2 id="eulerian-graph">Eulerian Graph</h2>
+<ul>
+<li>
+<p>A graph is considered Eulerian if you can start at a vertex, traverse through every <em>edge</em> only once, and return to the same vertex you started at.</p>
+</li>
+<li>
+<p>A graph is Eulerian if and only if each vertex has an even degree.</p>
+</li>
+</ul>
+<p><a href="http://mathonline.wikidot.com/eulerian-graphs-and-semi-eulerian-graphs#:~:text=Definition%3A%20A%20graph%20is%20considered,return%20to%20the%20start%20vertex.">Ref 1</a>, <a href="https://www.youtube.com/watch?v=ZlMirH-YQcU&amp;ab_channel=itechnica">Ref 2</a></p>
+<h2 id="finding-bridges">Finding Bridges</h2>
+<ul>
+<li>A bridge/cut edge is any edge in a graph whose removal increases the number of connected components.</li>
+<li>It often hints at the weak points, bottlenecks, and vulnerabilities.</li>
+</ul>
+<h2 id="graph-colouring">Graph colouring</h2>
+<ul>
+<li>Coloring nodes means assigning the same value to each component.</li>
+</ul>
+<h2 id="graph-dictionary">Graph dictionary</h2>
+<ul>
+<li>
+<p><strong>Adjacent vertices:</strong> Connected vertices, neighbors.</p>
+</li>
+<li>
+<p><strong>Betweenness centrality:</strong> It describes how important a user is as a link between different network segments.</p>
+</li>
+<li>
+<p><strong>Blockmodels:</strong> It is an analytic method that uses data partitioning in a social network to classify actors based on their patterns of ties to others.</p>
+</li>
+<li>
+<p><strong>Clique:</strong> It is a graph (or subgraph) in which every node is connected to every other node.</p>
+</li>
+<li>
+<p><strong>Closeness centrality:</strong> It measures how close a user is to the other users in the network.</p>
+</li>
+<li>
+<p><strong>Clustering coefficient:</strong> It is a measure of how much nodes tend to form dense subgraphs in a network. For social networks, this can be interpreted as the probability that two friends of a single person are also themselves friends.</p>
+</li>
+<li>
+<p><strong>Cohesive groups:</strong> They are communities in which the nodes (members) are connected to others in the same group more frequent than they are to those who are outside of the group, allowing all of the members of the group to reach each other.</p>
+</li>
+<li>
+<p><strong>Complete graph:</strong> It is a family of a graph of which each pair of vertices is connected to one edge. `The number of vertices = $\frac{[n(n-1)]}{2}$</p>
+</li>
+<li>
+<p><strong>Connectivity:</strong> It refers to the ability to move from one node to another in a network. It can be calculated locally and globally.</p>
+</li>
+<li>
+<p><strong>Degree centrality:</strong> It considers the number of direct links to other users as the measure of importance.</p>
+</li>
+<li>
+<p><strong>Degree of vertex:</strong> The number of edges supported by a vertex.</p>
+</li>
+<li>
+<p><strong>Degree of vertices:</strong> The sum of degree of vertices is twice the number of edges.</p>
+</li>
+<li>
+<p><strong>Density:</strong> It is defined as the degree to which network nodes are connected one to another. It can be used as a measure of how close a network is to completion.</p>
+</li>
+<li>
+<p><strong>Diameter:</strong> The highest eccentricity of its nodes. It represents the maximum distance between nodes.</p>
+</li>
+<li>
+<p><strong>Directed graph:</strong> It is a family of a graph in which every edge is an arrow.</p>
+</li>
+<li>
+<p><strong>Eccentricity:</strong> The maximum distance from a given node to all other nodes in a network.</p>
+</li>
+<li>
+<p><strong>Eigenvector centrality:</strong> It defines the important user as the one who is connected to important users in the network.</p>
+</li>
+<li>
+<p><strong>Homophily:</strong> Individuals tend to connect with others who share the same attitudes and beliefs.</p>
+</li>
+<li>
+<p><strong>In-degree:</strong> The number of an arrow going into a vertex.</p>
+</li>
+<li>
+<p><strong>Isolated vertex:</strong> It is a vertex that has zero degree</p>
+</li>
+<li>
+<p><strong>K-core:</strong> In an undirected graph, a k-core is a connected maximal induced subgraph having a minimum value greater than or equal to k.</p>
+</li>
+<li>
+<p><strong>Loop:</strong> If an edge is supported by only one vertex.</p>
+</li>
+<li>
+<p><strong>Maximal clique:</strong> It is a clique that is not a subset of any other clique in the graph.</p>
+</li>
+<li>
+<p><strong>Null graph:</strong> It is a graph that contains no edge.</p>
+</li>
+<li>
+<p><strong>Out-degree:</strong> The number of an arrow going out of a vertex.</p>
+</li>
+<li>
+<p><strong>Pagerank:</strong> A variant of eigenvector centrality measure that calculates the importance of a Web page by considering the probability that a user visits this page based on the hyperlinks.</p>
+</li>
+<li>
+<p><strong>Reciprocity:</strong> It is a measure of the tendency towards building mutually directed connections between two actors.</p>
+</li>
+<li>
+<p><strong>Simple graph:</strong> It is a family of a graph that has no loop and no multiple edges.</p>
+</li>
+<li>
+<p><strong>Vertex degree (Valency):</strong></p>
+</li>
+</ul>
+<h2 id="graph-representations">Graph Representations</h2>
+<ul>
+<li>Adjacency means the direct connection.</li>
+<li>There are two common graph representations in memory, adjacency matrix and adjacency list.</li>
+</ul>
+<h3 id="1-adjacency-matrix-vertex-to-vertex">1. Adjacency matrix (Vertex to vertex)</h3>
+<ul>
+<li>It represents a graph $G$ using an $n \times n$ matrix $M$.</li>
+<li>$M[i][j]$ := the edge weight of going from node $i$ to node $j$.
+<ul>
+<li>$M[i][j] = 1$ if $(i,j)$ is an edge of $G$.</li>
+<li>$M[i][j] = 0$ if $(i,j)$ is not an edge of $G$.</li>
+</ul>
+</li>
+</ul>
+<h3 id="11-advantages">1.1. Advantages</h3>
+<ul>
+<li>Space-efficient for dense graphs</li>
+<li>The simplest representation</li>
+<li>Edge weight lookup $O(1)$</li>
+</ul>
+<h3 id="12-disadvantages">1.2. Disadvantages</h3>
+<ul>
+<li>Iterating over all edges $O(V^2)$</li>
+<li>$O(V^2)$ space, $V$ vertex := $ V \times V $ square matrix</li>
+</ul>
+<h2 id="2-adjacency-list">2. Adjacency list</h2>
+<ul>
+<li>We create a master list of all vertices in the graph object.</li>
+<li>Each item in the graph object is connected to a graph vertex object that contains adjacent vertices and the weight of edges.</li>
+<li>An adjacency list is a list of linked lists where each vertex of a graph is stored alongside a collection of connected vertices.</li>
+<li>It can also be represented in code using a <code>dict</code>. The keys of the dictionary are the source vertices and the value for each key is a list, which is usually implemented as a linked list.</li>
+</ul>
+<h3 id="21-advantages">2.1. Advantages</h3>
+<ul>
+<li>The space-efficient for sparse graphs</li>
+<li>Iterating over all edges is efficient</li>
+</ul>
+<h3 id="22-disadvantages">2.2. Disadvantages</h3>
+<ul>
+<li>Edge weight lookup $O(E)$</li>
+<li>Slightly more complex graph representation</li>
+</ul>
+<h2 id="3-edge-list">3. Edge List</h2>
+<ul>
+<li>$(u,v,w)$, where $w$ is the cost of going $v$ from $u$.</li>
+<li>Seldomly used due to the lack of representation</li>
+</ul>
+<h3 id="31-advantages">3.1. Advantages</h3>
+<ul>
+<li>Space efficient for sparse graphs</li>
+<li>Simple</li>
+<li>Iterating over all edges is efficient</li>
+</ul>
+<h3 id="32-disadvantages">3.2. Disadvantages</h3>
+<ul>
+<li>Edge weight lookup: $O(E)$</li>
+</ul>
+<h2 id="4-incident-matrix-vertex-to-edge">4. Incident matrix (Vertex to edge)</h2>
+<ul>
+<li>It counts the connection between edges and vertices. ($v \times e$ matrix)</li>
+<li>If an edge is connected to a vertex, the vertex is said to be incident to an edge.</li>
+</ul>
+<h2 id="graph-theory-on-grids">Graph Theory on Grids</h2>
+<ul>
+<li>We can determine a node&rsquo;s neighbours based on our location within the grid.</li>
+<li>Finding a path through a grid is solving a maze.</li>
+<li>Convert the grid to an adjacency list/matrix.</li>
+</ul>
+<p>Assume that only move up/down/left/right
+Empty grid
+0 -&gt; 1
+|    ^
+v    |
+2 &lt;- 3
+|
+v
+4    5</p>
+<p>0 -&gt; [1, 2]
+1 -&gt; [0, 3]
+&hellip;
+3 -&gt; [1, 2, 5]
+&hellip;</p>
+<h2 id="graph-traversal">Graph traversal</h2>
+<h3 id="graph-traversal-applications">Graph traversal applications</h3>
+<ul>
+<li>Printing graphs</li>
+<li>Copying graphs</li>
+<li>Converting between alternative representations</li>
+<li>Maze representations
+<ul>
+<li>vertex := junction</li>
+<li>edge := passageway</li>
+</ul>
+</li>
+</ul>
+<h3 id="if-i-am-your-friend-does-that-mean-you-are-my-friend">If I am your friend, does that mean you are my friend?</h3>
+<ul>
+<li>Asks whether the graph is directed.</li>
+</ul>
+<h3 id="how-close-a-friend-are-you">How close a friend are you?</h3>
+<ul>
+<li>We could model the strength of a friendship by associating each edge with an appropriate value, perhaps from −100 (enemies) to 100 (blood brothers).</li>
+</ul>
+<h3 id="am-i-my-friend">Am I my friend?</h3>
+<ul>
+<li>Asks whether the graph is simple, meaning it contains no loops and no multiple edges.</li>
+</ul>
+<h3 id="who-has-the-most-friends">Who has the most friends?</h3>
+<ul>
+<li>Find the vertex of the highest degree</li>
+</ul>
+<h3 id="do-my-friends-live-near-me">Do my friends live near me?</h3>
+<ul>
+<li>It requires an embedded graph, where each vertex is associated with the point in this world where they live.</li>
+</ul>
+<h3 id="oh-you-also-know-her">Oh, you also know her?</h3>
+<ul>
+<li>That said, the actual friendship graph of the world is represented implicitly. Each person knows who their friends are, but cannot find out about other people’s friendships except by asking them.</li>
+</ul>
+<h3 id="are-you-truly-an-individual-or-just-one-of-the-faceless-crowd">Are you truly an individual, or just one of the faceless crowd?</h3>
+<ul>
+<li>Much of the study of social networks is unconcerned with labels on graphs. Often the ID number given to a vertex in the graph data structure serves as its label, either for convenience or the need for anonymity.</li>
+</ul>
+<h2 id="type-of-graphs">Type of graphs</h2>
+<p><img src="/img/graph_types.png" alt="graph_types"></p>
+<h3 id="1-undirected-graphs">1. Undirected graphs</h3>
+<ul>
+<li>
+<p>A graph $G=(V,E)$ is undirected if $(u,v) \in E$ implies $(v,u) \in E$.</p>
+<ul>
+<li>$(u,v) = (v,u)$</li>
+<li>i.e. friendship, etc.</li>
+</ul>
+</li>
+<li>
+<p>Edges in undirected graphs:</p>
+<ul>
+<li><em>Tree edges</em>
+<ul>
+<li>discover new vertices.</li>
+<li>encoded in parent relation.</li>
+</ul>
+</li>
+<li><em>Back edges</em>
+<ul>
+<li>point back into the tree.</li>
+<li>their other endpoint is an ancestor of the vertex being expanded.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-directed-graphs">2. Directed graphs</h3>
+<ul>
+<li>Directions are defined for edges.
+<ul>
+<li>i.e. following someone on Twitter, etc.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-unweighted-graphs">3. Unweighted graphs</h3>
+<ul>
+<li>There is no cost distinction between various edges and vertices.</li>
+<li>A shortest path can be found using BFS in unweighted graphs.</li>
+</ul>
+<h3 id="4-weighted-graphs">4. Weighted graphs</h3>
+<ul>
+<li>Each edge is assigned a numerical value or weight.</li>
+</ul>
+<h3 id="5-tree">5. Tree</h3>
+<ul>
+<li>Undirected acyclic graph</li>
+</ul>
+<h3 id="6-rooted-tree">6. Rooted tree</h3>
+<ul>
+<li>Every edge either points away from or towards the root node.</li>
+</ul>
+<h3 id="7-cyclic-graphs">7. Cyclic graphs</h3>
+<ul>
+<li>A cycle is a closed path of 3 or more vertices that has no repeating vertices except the start/end point.</li>
+</ul>
+<h3 id="8-acyclic-graphs">8. Acyclic graphs</h3>
+<ul>
+<li>Graphs without cycles</li>
+</ul>
+<h3 id="9-directed-acyclic-graph-dag">9. Directed acyclic graph (DAG)</h3>
+<ul>
+<li>Both directed and acyclic graphs</li>
+<li>Naturally arise in scheduling problems
+<ul>
+<li>$(u,v)$ indicates that activity $u$ must occur before $v$.</li>
+</ul>
+</li>
+<li><a href="topological_sort.md">Topological sort</a> is the first step of a DAG.</li>
+</ul>
+<h3 id="10-bipartite-graph">10. Bipartite graph</h3>
+<ul>
+<li>Vertices can be split into two independent groups, $U$ and $V$, such that every edge connects between $U$ and $V$.</li>
+<li>It can be coloured without conflicts while using only two colours.</li>
+<li>It can only have an even edge length cycle.</li>
+</ul>
+<h3 id="11-complete-graph">11. Complete graph</h3>
+<ul>
+<li>There is a unique edge between every pair of nodes.</li>
+</ul>
+<h3 id="12-simple-graph">12. Simple graph</h3>
+<ul>
+<li>It does not contain more than one edge between the pair of vertices.</li>
+</ul>
+<h3 id="13-non-simple-graph">13. Non-simple graph</h3>
+<ul>
+<li>It contains more than one edge between the pair of vertices.</li>
+</ul>
+<h3 id="14-sparse-graph">14. Sparse graph</h3>
+<ul>
+<li>Only a small fraction of the possible vertex pairs have edges defined between them.</li>
+</ul>
+<h3 id="15-dense-graph">15. Dense graph</h3>
+<ul>
+<li>A large fraction of the vertex pairs define edges.</li>
+</ul>
+<h3 id="16-embedded-graph">16. Embedded graph</h3>
+<ul>
+<li>The vertices and edges are assigned geometric positions.</li>
+<li>Its drawing may or may not have algorithmic significance.</li>
+</ul>
+<h3 id="17-topological-graph">17. Topological graph</h3>
+<ul>
+<li>Grid of points is an example.</li>
+</ul>
+<h3 id="18-implicit-graph">18. Implicit graph</h3>
+<ul>
+<li>The vertices of this implicit search graph are the states of the search vector, while edges link pairs of states that can be directly generated from each other. A web-scale analysis is another example, where you should try to dynamically crawl and analyze the small relevant portion of interest instead of initially downloading the entire web.</li>
+</ul>
+<h3 id="19-explicit-graph">19. Explicit graph</h3>
+<ul>
+<li>It is often easier to work with an implicit graph and store the entire thing before analysis.</li>
+</ul>
+<h3 id="20-labelled-graph">20. Labelled graph</h3>
+<ul>
+<li>Each vertex is assigned a unique name or identifier.</li>
+</ul>
+<h3 id="21-unlabeled-graph">21. Unlabeled graph</h3>
+<ul>
+<li>Each vertex is the same.</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=09_LlHjoEiY">Ref</a></p>
+<h2 id="graph-visualization">Graph visualization</h2>
+<ul>
+<li>iGraph
+<ul>
+<li>
+<p>python-igraph</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install python-igraph
+</span></span><span style="display:flex;"><span>pip install cairocffi <span style="color:#75715e"># to plot the graphs</span>
+</span></span></code></pre></div><p><a href="https://igraph.org/python/doc/tutorial/tutorial.html">Ref 1</a>, <a href="https://towardsdatascience.com/visualising-graph-data-with-python-igraph-b3cc81a495cf">Ref 2</a></p>
+</li>
+<li>
+<p>IGraph/M</p>
+</li>
+<li>
+<p>igraphC library</p>
+</li>
+<li>
+<p>igraph R package</p>
+</li>
+</ul>
+</li>
+<li>Graphviz</li>
+<li>MuxViz</li>
+<li>NetworkX</li>
+</ul>
+<p><a href="https://igraph.org/python/">Ref 1</a>, <a href="http://www.graphviz.org/">Ref 2</a></p>
+<h2 id="independent-set">Independent set</h2>
+<h2 id="isomorphism">Isomorphism</h2>
+<ul>
+<li>Isomorphism testing determines whether the topological structures of two graphs are identical either respecting or ignoring any labels.</li>
+</ul>
+<h2 id="maximum-clique">Maximum clique</h2>
+<h2 id="nearest-neighbour">Nearest neighbour</h2>
+<h2 id="negativity">Negativity</h2>
+<ul>
+<li>Does the weighted graph have any negative cycles? If so, where?</li>
+</ul>
+<h3 id="negativity-algorithms">Negativity algorithms</h3>
+<ol>
+<li>Bellman-Ford</li>
+<li>Floyd-Warshall</li>
+</ol>
+<h2 id="paths">Paths</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> Dict, List
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dfs</span>(graph: Dict[int, int], start_node: int) <span style="color:#f92672">-&gt;</span> List[int]:
+</span></span><span style="display:flex;"><span>    stack <span style="color:#f92672">=</span> [start_node]
+</span></span><span style="display:flex;"><span>    visited <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> stack:
+</span></span><span style="display:flex;"><span>        popped_node <span style="color:#f92672">=</span> stack<span style="color:#f92672">.</span>pop()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> popped_node <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> neighbour <span style="color:#f92672">in</span> graph[popped_node]:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> neighbour <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>                    stack<span style="color:#f92672">.</span>append(neighbour)
+</span></span><span style="display:flex;"><span>            visited<span style="color:#f92672">.</span>append(popped_node)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> visited
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bfs</span>(graph: Dict[int, int], start_node: int) <span style="color:#f92672">-&gt;</span> List[int]:
+</span></span><span style="display:flex;"><span> visited <span style="color:#f92672">=</span> [start_node]
+</span></span><span style="display:flex;"><span> queue <span style="color:#f92672">=</span> [start_node]
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">while</span> queue:
+</span></span><span style="display:flex;"><span>  popped_node <span style="color:#f92672">=</span> queue<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> neighbour <span style="color:#f92672">in</span> graph[popped_node]:
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">if</span> neighbour <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>    queue<span style="color:#f92672">.</span>append(neighbour)
+</span></span><span style="display:flex;"><span>    visited<span style="color:#f92672">.</span>append(neighbour)
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">return</span> visited
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_path</span>(graph: Dict[int, int], start_node: int, end_node: int) <span style="color:#f92672">-&gt;</span> bool:
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> start_node <span style="color:#f92672">==</span> end_node:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> end_node <span style="color:#f92672">in</span> bfs(graph, start_node): <span style="color:#75715e"># bfs := path from start node</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> letter_graph <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#39;a&#39;</span> : [<span style="color:#e6db74">&#39;d&#39;</span>],
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#39;b&#39;</span> : [<span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;f&#39;</span>],
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#39;c&#39;</span> : [],
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#39;d&#39;</span> : [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;f&#39;</span>],
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#39;e&#39;</span> : [<span style="color:#e6db74">&#39;d&#39;</span>],
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#39;f&#39;</span> : [<span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>],
+</span></span><span style="display:flex;"><span>     }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># print(dfs(letter_graph, &#39;a&#39;))</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># print(bfs(letter_graph, &#39;b&#39;))</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># print(is_path(graph=letter_graph, start_node=&#39;a&#39;, end_node=&#39;e&#39;))</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># print(is_path(graph=letter_graph, start_node=&#39;c&#39;, end_node=&#39;f&#39;))</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># print(is_path(graph=letter_graph, start_node=&#39;f&#39;, end_node=&#39;f&#39;))</span>
+</span></span></code></pre></div><h2 id="strongly-connected-components">Strongly connected components</h2>
+<ul>
+<li>Self-contained cycles within a directed graph where every vertex in a given cycle can reach every other vertex in the same cycle.
+<ul>
+<li>i.e. Road networks, otherwise there will be places you can drive to but not drive home from without violating one-way signs.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kosarajus">Kosaraju&rsquo;s</h3>
+<ul>
+<li>Two-pass algorithm
+<ol>
+<li>DFS</li>
+<li>Order by finish time in decreasing order</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List, Tuple
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Graph</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, edge_list: List[Tuple[int, int]]):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>graph <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (src, dest) <span style="color:#f92672">in</span> edge_list:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> src <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>graph:
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>graph[src] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> dest <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>graph:
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>graph[dest] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>graph[src]<span style="color:#f92672">.</span>append(dest)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reverse_graph</span>(self):
+</span></span><span style="display:flex;"><span>        rev <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> src <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>graph:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> dest <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>graph[src]:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> src <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> rev:
+</span></span><span style="display:flex;"><span>                    rev[src] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> dest <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> rev:
+</span></span><span style="display:flex;"><span>                    rev[dest] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>                rev[dest]<span style="color:#f92672">.</span>append(src)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> rev
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dfs</span>(self, node, visited, departure):
+</span></span><span style="display:flex;"><span>        visited<span style="color:#f92672">.</span>append(node)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> neig <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>graph[node]:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> neig <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>dfs(neig, visited, departure)
+</span></span><span style="display:flex;"><span>        departure<span style="color:#f92672">.</span>append(node)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_component</span>(self, node, visited, component, rev_g):
+</span></span><span style="display:flex;"><span>        component<span style="color:#f92672">.</span>append(node)
+</span></span><span style="display:flex;"><span>        visited<span style="color:#f92672">.</span>append(node)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> neig <span style="color:#f92672">in</span> rev_g[node]:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> neig <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>get_component(neig, visited, component, rev_g)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">strongly_connected_component</span>(self):
+</span></span><span style="display:flex;"><span>        departure <span style="color:#f92672">=</span> [] <span style="color:#75715e"># order of departure is the departure time</span>
+</span></span><span style="display:flex;"><span>        visited <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>graph:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> node <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>dfs(node, visited, departure)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        rev_g <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>reverse_graph()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        res <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        visited <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> departure:
+</span></span><span style="display:flex;"><span>            node <span style="color:#f92672">=</span> departure<span style="color:#f92672">.</span>pop()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> node <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>                component <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>get_component(node, visited, component, rev_g)
+</span></span><span style="display:flex;"><span>                res<span style="color:#f92672">.</span>append(component)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> res        
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    edge_list <span style="color:#f92672">=</span> [ (<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>), (<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>), (<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>), (<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>), (<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>), (<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">3</span>), (<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>) ]
+</span></span><span style="display:flex;"><span>    g <span style="color:#f92672">=</span> Graph(edge_list)
+</span></span><span style="display:flex;"><span>    print(g<span style="color:#f92672">.</span>strongly_connected_component())
+</span></span></code></pre></div><h3 id="tarjans">Tarjan&rsquo;s</h3>
+<ul>
+<li>It can be used to find cycles in a graph.</li>
+</ul>
+<h2 id="topological-sort-top-short">Topological Sort (Top Short)</h2>
+<ul>
+<li>
+<p>The most important operation on <a href="/img/dag.md">DAG</a></p>
+</li>
+<li>
+<p><em>Topology</em> is the way the parts of something are arranged and related.</p>
+</li>
+<li>
+<p>There can be more than one topological sorting for a graph.</p>
+</li>
+<li>
+<p>There is an <strong>ordering</strong> on the nodes of the graph, for every directed edge $(u,v)$, vertex $u$ comes before $v$ in the ordering.</p>
+<ul>
+<li>i.e. School class prerequisites, etc.</li>
+</ul>
+</li>
+<li>
+<p>Topological orderings are NOT unique.</p>
+</li>
+<li>
+<p><strong>Runtime:</strong> $O(V+E)$</p>
+</li>
+</ul>
+<h3 id="topological-sort-algorithm">Topological sort algorithm</h3>
+<ol>
+<li>Find an unvisited node</li>
+<li>Begin with the selected node, and do a DFS exploring only unvisited nodes.</li>
+<li>On the recursive callback of the DFS, add the current node to the topological ordering in reverse order.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Graph</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, edges, order):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>order <span style="color:#f92672">=</span> order
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>adj_list <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (src, dest) <span style="color:#f92672">in</span> edges:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> src <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>adj_list:
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>adj_list[src] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> dest <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>adj_list:
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>adj_list[dest] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>adj_list[src]<span style="color:#f92672">.</span>append(dest)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dfs</span>(self, node, visited):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> node <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>            visited<span style="color:#f92672">.</span>append(node)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> neighbour <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>adj_list[node]:
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>dfs(neighbour, visited)
+</span></span><span style="display:flex;"><span>            stack<span style="color:#f92672">.</span>append(node) <span style="color:#75715e"># back</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    edges <span style="color:#f92672">=</span> [ (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">6</span>), (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>), (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>), (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0</span>), (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>), (<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">0</span>), (<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">1</span>) ]
+</span></span><span style="display:flex;"><span>    graph <span style="color:#f92672">=</span> Graph(edges, <span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>    visited <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    stack <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> graph<span style="color:#f92672">.</span>adj_list:
+</span></span><span style="display:flex;"><span>        graph<span style="color:#f92672">.</span>dfs(node, visited)
+</span></span><span style="display:flex;"><span>    print(visited)
+</span></span><span style="display:flex;"><span>    print(stack)
+</span></span></code></pre></div><h2 id="two-colouring">Two colouring</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> defaultdict
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dfs</span>(node, g):
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> node <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> visited[node] <span style="color:#f92672">==</span> g
+</span></span><span style="display:flex;"><span> visited[node] <span style="color:#f92672">=</span> g
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">return</span> all(dfs(neighbour,<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>g) <span style="color:#66d9ef">for</span> neighbour <span style="color:#f92672">in</span> graph[node])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># dislikes = [ [1,2], [1,3], [2,3], [3,4] ]</span>
+</span></span><span style="display:flex;"><span> dislikes <span style="color:#f92672">=</span> [ [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>] ]
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span> graph <span style="color:#f92672">=</span> defaultdict(list)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> dislikes:
+</span></span><span style="display:flex;"><span>  graph[node[<span style="color:#ae81ff">0</span>]]<span style="color:#f92672">.</span>append(node[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>  graph[node[<span style="color:#ae81ff">1</span>]]<span style="color:#f92672">.</span>append(node[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> visited <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span> print(all(dfs(node,<span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> graph <span style="color:#66d9ef">if</span> node <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited))
+</span></span></code></pre></div><h2 id="union">Union</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DisjointSet</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __init__(self, size):
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>root <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(size)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">find</span>(self, x):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>root[x]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">union</span>(self, x, y):
+</span></span><span style="display:flex;"><span>  rootX <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>find(x)
+</span></span><span style="display:flex;"><span>  rootY <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>find(y)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> rootX <span style="color:#f92672">!=</span> rootY:
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(self<span style="color:#f92672">.</span>root)):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>root[i] <span style="color:#f92672">==</span> rootY:
+</span></span><span style="display:flex;"><span>     self<span style="color:#f92672">.</span>root[i] <span style="color:#f92672">=</span> rootX
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_connected</span>(self, x, y):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>find(x) <span style="color:#f92672">==</span> self<span style="color:#f92672">.</span>find(y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __repr__(self):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> str(self<span style="color:#f92672">.</span>root)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> disjoint_set <span style="color:#f92672">=</span> DisjointSet(size<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>)
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>)
+</span></span><span style="display:flex;"><span> print(disjoint_set<span style="color:#f92672">.</span>is_connected(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>))  <span style="color:#75715e"># true</span>
+</span></span><span style="display:flex;"><span> print(disjoint_set<span style="color:#f92672">.</span>is_connected(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>))  <span style="color:#75715e"># true</span>
+</span></span><span style="display:flex;"><span> print(disjoint_set<span style="color:#f92672">.</span>is_connected(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>))  <span style="color:#75715e"># false</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># 1-2-5-6-7 3-8-9-4</span>
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span> print(disjoint_set<span style="color:#f92672">.</span>is_connected(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>))  <span style="color:#75715e"># true</span>
+</span></span></code></pre></div><h3 id="union-by-rank">Union by rank</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DisjointSet</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __init__(self, size):
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>root <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(size)]
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>rank <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(size)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">find</span>(self, x):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> x <span style="color:#f92672">!=</span> self<span style="color:#f92672">.</span>root[x]:
+</span></span><span style="display:flex;"><span>   x <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>root[x]
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">union</span>(self, x, y):
+</span></span><span style="display:flex;"><span>  rootX <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>find(x)
+</span></span><span style="display:flex;"><span>  rootY <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>find(y)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> rootX <span style="color:#f92672">!=</span> rootY:
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>rank[rootX] <span style="color:#f92672">&gt;</span> self<span style="color:#f92672">.</span>rank[rootY]:
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>root[rootY] <span style="color:#f92672">=</span> rootX
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">elif</span> self<span style="color:#f92672">.</span>rank[rootX] <span style="color:#f92672">&lt;</span> self<span style="color:#f92672">.</span>rank[rootY]:
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>root[rootX] <span style="color:#f92672">=</span> rootY
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>root[rootY] <span style="color:#f92672">=</span> rootX
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>rank[rootX] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __repr__(self):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> str(self<span style="color:#f92672">.</span>root)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> disjoint_set <span style="color:#f92672">=</span> DisjointSet(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>)
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>)
+</span></span><span style="display:flex;"><span> disjoint_set<span style="color:#f92672">.</span>union(<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span> print(str(disjoint_set))
+</span></span></code></pre></div><h2 id="unweighted-graphs">Unweighted graphs</h2>
+<h3 id="hamiltonian-cycle">Hamiltonian cycle</h3>
+<ul>
+<li>Does there exist a simple tour that visits each vertex of an unweighted graph <code>G</code> without repetition?</li>
+</ul>
+<h2 id="vertex-cover">Vertex cover</h2>
+<h2 id="walk-path-and-circuit">Walk, Path, and Circuit</h2>
+<h3 id="walk-trail">Walk (Trail)</h3>
+<ul>
+<li>Finite alternative sequence of vertices and edges.</li>
+<li>No edge can appear more than once in the sequence.</li>
+<li>i.e., $v_k$ $e_m$ $v_n$ &hellip;</li>
+<li>Walk
+<ul>
+<li>open</li>
+<li>closed $\rightarrow$ terminal vertex: initial and final vertex</li>
+</ul>
+</li>
+</ul>
+<h3 id="path">Path</h3>
+<ul>
+<li>An open walk in which no vertex can appear more than once.</li>
+</ul>
+<h3 id="circuit">Circuit</h3>
+<ul>
+<li>A closed walk at least one edge in which no vertex except the terminal vertices appears more than once.</li>
+</ul>
+<h2 id="weighted-graphs">Weighted graphs</h2>
+<h3 id="maximum-flow-network-flow">Maximum flow (Network flow)</h3>
+<ul>
+<li>With an infinite input source, how much flow can we push through the network?</li>
+<li>Traditional algorithms are based on the idea of <em>augmenting paths</em>.</li>
+</ul>
+<h3 id="algorithms">Algorithms</h3>
+<ol>
+<li>Ford-Fulkerson</li>
+<li>Edmonds-Karp</li>
+<li>Dinic&rsquo;s</li>
+</ol>
+<h3 id="ford-fulkerson">Ford Fulkerson</h3>
+<ul>
+<li>
+<p>Greedy</p>
+</li>
+<li>
+<p><strong>Runtime:</strong></p>
+<ul>
+<li>$O(VE^2)$ with BFS (Edmonds-Karp)</li>
+<li>$O(V^3)$ with adjacency matrix</li>
+</ul>
+</li>
+<li>
+<p>Terminologies</p>
+<ul>
+<li><em>Augmenting Path</em> is the path available in a flow network.</li>
+<li><em>Residual Graph</em> represents the flow network that has additional possible flow.</li>
+<li><em>Residual Capacity</em> is the capacity of the edge after subtracting the flow from the maximum capacity.</li>
+<li><em>Minimum cut</em></li>
+</ul>
+</li>
+<li>
+<p>Steps</p>
+<ol>
+<li>Initialize the flow in all the edges to 0.</li>
+<li>While there is an augmenting path between the source and the sink, add this path to the flow.</li>
+<li>Update the residual graph.</li>
+</ol>
+</li>
+<li>
+<p>Applications</p>
+<ul>
+<li>Water distribution pipeline</li>
+<li>Bipartite matching problem</li>
+<li>Circulation with demands</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> defaultdict
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Graph</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, graph):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>graph <span style="color:#f92672">=</span> graph
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bfs</span>(self, s, t, parent):
+</span></span><span style="display:flex;"><span>        visited <span style="color:#f92672">=</span> [s]
+</span></span><span style="display:flex;"><span>        queue <span style="color:#f92672">=</span> [s]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> queue:
+</span></span><span style="display:flex;"><span>            u <span style="color:#f92672">=</span> queue<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> ind,val <span style="color:#f92672">in</span> enumerate(self<span style="color:#f92672">.</span>graph[u]):
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> ind <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited <span style="color:#f92672">and</span> val <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                    queue<span style="color:#f92672">.</span>append(ind)
+</span></span><span style="display:flex;"><span>                    visited<span style="color:#f92672">.</span>append(ind)
+</span></span><span style="display:flex;"><span>                    parent[ind] <span style="color:#f92672">=</span> u
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> t <span style="color:#f92672">in</span> visited
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ford_fulkerson</span>(self, source, sink):
+</span></span><span style="display:flex;"><span>        parent <span style="color:#f92672">=</span> [<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> len(self<span style="color:#f92672">.</span>graph)
+</span></span><span style="display:flex;"><span>        max_flow <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> self<span style="color:#f92672">.</span>bfs(source, sink, parent):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            s <span style="color:#f92672">=</span> sink
+</span></span><span style="display:flex;"><span>            path_flow <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#34;inf&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span> s <span style="color:#f92672">!=</span> source:
+</span></span><span style="display:flex;"><span>                path_flow <span style="color:#f92672">=</span> min(path_flow, self<span style="color:#f92672">.</span>graph[parent[s]][s])
+</span></span><span style="display:flex;"><span>                s <span style="color:#f92672">=</span> parent[s]
+</span></span><span style="display:flex;"><span>            max_flow <span style="color:#f92672">+=</span> path_flow
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            v <span style="color:#f92672">=</span> sink
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span> v <span style="color:#f92672">!=</span> source:
+</span></span><span style="display:flex;"><span>                u <span style="color:#f92672">=</span> parent[v]
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>graph[u][v] <span style="color:#f92672">-=</span> path_flow
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>graph[v][u] <span style="color:#f92672">+=</span> path_flow
+</span></span><span style="display:flex;"><span>                v <span style="color:#f92672">=</span> parent[v]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> max_flow
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> Graph( [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>            [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>            [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">2</span>],
+</span></span><span style="display:flex;"><span>            [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>],
+</span></span><span style="display:flex;"><span>            [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>            [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>], ])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Max Flow: </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> &#34;</span> <span style="color:#f92672">%</span> g<span style="color:#f92672">.</span>ford_fulkerson(source<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, sink<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>))
+</span></span></code></pre></div><h3 id="edmonds-karp">Edmonds Karp</h3>
+<ul>
+<li>Uses a BFS as a method of finding augmenting paths</li>
+<li><strong>Runtime:</strong> <code>$O(E^2V)$</code></li>
+</ul>
+<h3 id="dinic">Dinic</h3>
+<ul>
+<li>Uses a combination of BFS + DFS to find augmenting paths</li>
+<li>$O(V^2E)$</li>
+</ul>
+<h3 id="capacity-scaling">Capacity scaling</h3>
+<ul>
+<li>Adds a heuristic on top of Ford-Fulkerson to pick larger paths first</li>
+<li><strong>Runtime:</strong> $O(E^2log(U))$</li>
+</ul>
+<h3 id="push-relabel">Push relabel</h3>
+<ul>
+<li>Uses a concept of maintaining a &ldquo;preflow&rdquo; instead of finding augmenting paths to achieve a max-flow solution</li>
+<li><strong>Runtime:</strong> $O(V^2E)$ or $V^2\sqrt{E}$</li>
+</ul>
+<h3 id="min-cut">Min-cut</h3>
+<h3 id="minimum-spanning-trees">Minimum spanning trees</h3>
+<ul>
+<li>A spanning tree is a subgraph of the undirected connected graph with the minimum possible number of edges.
+<ul>
+<li>The subgraph should contain each node of the original graph.</li>
+</ul>
+</li>
+<li>The spanning tree in which the sum of edges is minimum as possible then that spanning tree is called the minimum spanning tree.</li>
+<li>A graph can have multiple spanning-tree but it can have only one unique minimum spanning tree.</li>
+<li>Connected and acyclic</li>
+<li>The cheapest smallest possible network</li>
+<li>The minimum spanning tree of a graph is unique if all <code>m</code> edge weights in the graph are distinct.</li>
+</ul>
+<h4 id="minimum-spanning-trees-algorithms">Minimum spanning trees algorithms</h4>
+<ol>
+<li>Kruskal&rsquo;s</li>
+<li>Prim&rsquo;s</li>
+<li>Boruvka&rsquo;s</li>
+</ol>
+<h4 id="boruvkas">Boruvka&rsquo;s</h4>
+<h4 id="kruskals">Kruskal&rsquo;s</h4>
+<ul>
+<li><strong>Runtime:</strong> $O(ElogV)$ with binary heaps</li>
+<li><strong>Runtime:</strong> $O(E+VlogV)$ with Fibonacci heaps</li>
+<li>Select the least costly node until the end.</li>
+<li>Selection order doesn&rsquo;t matter for the nodes with the same cost.</li>
+<li>Greedy algorithm</li>
+</ul>
+<h5 id="kruskals-algorithm-steps">Kruskal&rsquo;s algorithm steps</h5>
+<ol>
+<li>Sort all the edges in non-decreasing order of their weight.</li>
+<li>Pick the smallest edge. Check if it forms a cycle with the spanning tree formed so far. If a cycle is not formed, include this edge. Else, discard it.</li>
+<li>Repeat step 2 until there are $order-1$ edges in the spanning tree.</li>
+</ol>
+<ul>
+<li>Repeatedly add the next lightest edge that doesn&rsquo;t produce a cycle.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Graph</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __init__(self, vertices):
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>V <span style="color:#f92672">=</span> vertices
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>graph <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">addEdge</span>(self, u, v, w):
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>graph<span style="color:#f92672">.</span>append([u, v, w])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">find</span>(self, parent, i):
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34; which set does i belong
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> parent[i] <span style="color:#f92672">==</span> i:
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> i
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>find(parent, parent[i])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">union</span>(self, parent, rank, x, y):
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34; merge sets containing x and y
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  xroot <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>find(parent, x)
+</span></span><span style="display:flex;"><span>  yroot <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>find(parent, y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Attach smaller rank tree under the root of high-rank tree</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> rank[xroot] <span style="color:#f92672">&lt;</span> rank[yroot]:
+</span></span><span style="display:flex;"><span>   parent[xroot] <span style="color:#f92672">=</span> yroot
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">elif</span> rank[xroot] <span style="color:#f92672">&gt;</span> rank[yroot]:
+</span></span><span style="display:flex;"><span>   parent[yroot] <span style="color:#f92672">=</span> xroot
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># If ranks are the same, then make one a root and increment its rank by one</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>   parent[yroot] <span style="color:#f92672">=</span> xroot
+</span></span><span style="display:flex;"><span>   rank[xroot] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">KruskalMST</span>(self):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  result <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>  i, e <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>graph <span style="color:#f92672">=</span> sorted(self<span style="color:#f92672">.</span>graph, key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> item: item[<span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  parent, rank <span style="color:#f92672">=</span> [], []
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>V):
+</span></span><span style="display:flex;"><span>   parent<span style="color:#f92672">.</span>append(node)
+</span></span><span style="display:flex;"><span>   rank<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> e <span style="color:#f92672">&lt;</span> self<span style="color:#f92672">.</span>V <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>   u, v, w <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>graph[i]
+</span></span><span style="display:flex;"><span>   i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>   x <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>find(parent, u)
+</span></span><span style="display:flex;"><span>   y <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>find(parent, v)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">if</span> x <span style="color:#f92672">!=</span> y:
+</span></span><span style="display:flex;"><span>    e <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    result<span style="color:#f92672">.</span>append([u, v, w])
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>union(parent, rank, x, y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  minimumCost <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> u, v, weight <span style="color:#f92672">in</span> result:
+</span></span><span style="display:flex;"><span>   minimumCost <span style="color:#f92672">+=</span> weight
+</span></span><span style="display:flex;"><span>   print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> -- </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> == </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (u, v, weight))
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;Minimum Spanning Tree: &#34;</span> , minimumCost)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> Graph(<span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">15</span>)
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>addEdge(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>KruskalMST()
+</span></span></code></pre></div><h4 id="prims">Prim&rsquo;s</h4>
+<ul>
+<li>
+<p>Greedy algorithm</p>
+</li>
+<li>
+<p>It starts with the single source node and later explores all the adjacent nodes of the source node with all the connecting edges. While we are exploring the graphs, we will choose the edges with the minimum weight and those which cannot cause the cycles in the graph.</p>
+</li>
+<li>
+<p><strong>Runtime:</strong></p>
+<ul>
+<li>$O(V^2)$ adjacency matrix, searching</li>
+<li>$O(ElogV)$ binary heap and adjacency list</li>
+<li>$O(E+VlogV)$ Fibonacci heap and adjacency list</li>
+</ul>
+</li>
+<li>
+<p>The algorithm is as given below:</p>
+<ol>
+<li>Initialize the algorithm by choosing the source vertex.</li>
+<li>Find the minimum weight edge connected to the source node and another node and add it to the tree.</li>
+<li>Keep repeating this process until we find the minimum spanning tree.</li>
+</ol>
+</li>
+<li>
+<p>We create two sets of nodes:</p>
+<ol>
+<li>Visited nodes</li>
+<li>Unvisited nodes</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Graph</span>:
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">def</span> __init__(self, order):
+</span></span><span style="display:flex;"><span>          self<span style="color:#f92672">.</span>V <span style="color:#f92672">=</span> order
+</span></span><span style="display:flex;"><span>          self<span style="color:#f92672">.</span>graph <span style="color:#f92672">=</span> [ [ <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> column <span style="color:#f92672">in</span> range(order) ] <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> range(order) ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">printMST</span>(self, parent):
+</span></span><span style="display:flex;"><span>          print(<span style="color:#e6db74">&#34;Edge </span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">Weight&#34;</span>)
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, self<span style="color:#f92672">.</span>V):
+</span></span><span style="display:flex;"><span>               print (parent[i], <span style="color:#e6db74">&#34;-&#34;</span>, i, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">&#34;</span>, self<span style="color:#f92672">.</span>graph[i][parent[i]])
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">minKey</span>(self, key, visited):
+</span></span><span style="display:flex;"><span>          min_ <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;inf&#39;</span>)
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>V):
+</span></span><span style="display:flex;"><span>               <span style="color:#66d9ef">if</span> min_ <span style="color:#f92672">&gt;</span> key[v] <span style="color:#f92672">and</span> v <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>                    min_ <span style="color:#f92672">=</span> key[v]
+</span></span><span style="display:flex;"><span>                    min_index <span style="color:#f92672">=</span> v
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> min_index
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">primMST</span>(self):
+</span></span><span style="display:flex;"><span>          key <span style="color:#f92672">=</span> [float(<span style="color:#e6db74">&#39;inf&#39;</span>)] <span style="color:#f92672">*</span> self<span style="color:#f92672">.</span>V
+</span></span><span style="display:flex;"><span>          key[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          parent <span style="color:#f92672">=</span> [<span style="color:#66d9ef">None</span>] <span style="color:#f92672">*</span> self<span style="color:#f92672">.</span>V
+</span></span><span style="display:flex;"><span>          parent[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          visited <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>V):
+</span></span><span style="display:flex;"><span>               u <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>minKey(key, visited)
+</span></span><span style="display:flex;"><span>               visited<span style="color:#f92672">.</span>append(u)
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>               <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>V):
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>graph[u][v] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> v <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited <span style="color:#f92672">and</span> key[v] <span style="color:#f92672">&gt;</span> self<span style="color:#f92672">.</span>graph[u][v]:
+</span></span><span style="display:flex;"><span>                         key[v] <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>graph[u][v]
+</span></span><span style="display:flex;"><span>                         parent[v] <span style="color:#f92672">=</span> u
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>          self<span style="color:#f92672">.</span>printMST(parent)
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> Graph(<span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>graph <span style="color:#f92672">=</span> [ [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>],
+</span></span><span style="display:flex;"><span>            [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>            [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>            [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>            [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>          ]
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>primMST()
+</span></span></code></pre></div><h5 id="prim-binary-heap">Prim binary heap</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> defaultdict
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> heapq
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_spanning_tree</span>(graph, starting_vertex):
+</span></span><span style="display:flex;"><span>    mst <span style="color:#f92672">=</span> defaultdict(set)
+</span></span><span style="display:flex;"><span>    visited <span style="color:#f92672">=</span> set([starting_vertex])
+</span></span><span style="display:flex;"><span>    edges <span style="color:#f92672">=</span> [ (cost, starting_vertex, to) <span style="color:#66d9ef">for</span> to, cost <span style="color:#f92672">in</span> graph[starting_vertex]<span style="color:#f92672">.</span>items()]
+</span></span><span style="display:flex;"><span>    heapq<span style="color:#f92672">.</span>heapify(edges)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> edges:
+</span></span><span style="display:flex;"><span>        cost, frm, to <span style="color:#f92672">=</span> heapq<span style="color:#f92672">.</span>heappop(edges)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> to <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>            visited<span style="color:#f92672">.</span>add(to)
+</span></span><span style="display:flex;"><span>            mst[frm]<span style="color:#f92672">.</span>add(to)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> to_next, cost <span style="color:#f92672">in</span> graph[to]<span style="color:#f92672">.</span>items():
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> to_next <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+</span></span><span style="display:flex;"><span>                    heapq<span style="color:#f92672">.</span>heappush(edges, (cost, to, to_next))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> mst
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    example_graph <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;A&#39;</span>: {<span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">3</span>},
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;B&#39;</span>: {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">4</span>},
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;C&#39;</span>: {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">5</span>},
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;D&#39;</span>: {<span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;E&#39;</span>: {<span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;F&#39;</span>: {<span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;G&#39;</span>: {<span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(create_spanning_tree(example_graph, <span style="color:#e6db74">&#39;A&#39;</span>))
+</span></span></code></pre></div><h4 id="variations-of-minimum-spanning-trees">Variations of minimum spanning trees</h4>
+<h5 id="low-degree-spanning-tree">Low-degree spanning tree</h5>
+<h5 id="maximum-spanning-tree">Maximum spanning tree</h5>
+<ul>
+<li>The maximum spanning tree can be found by negating the edge weights of the input graph G and using a minimum spanning tree algorithm on the result. The spanning tree of G that has the most negative weight will define the maximum-weight tree in G.
+<ul>
+<li>i.e. Suppose an evil telephone company is contracted to connect a bunch of houses, such that they will be paid a price proportional to the amount of wire they install. Naturally, they will seek to build the most expensive possible spanning tree.</li>
+</ul>
+</li>
+</ul>
+<h5 id="minimum-bottleneck-spanning-tree">Minimum bottleneck spanning tree</h5>
+<p>Sometimes we seek a spanning tree that minimizes the maximum edge weight over all possible trees. Every minimum-spanning tree has this property. The proof follows directly from the correctness of Kruskal’s algorithm.</p>
+<p>Such bottleneck-spanning trees have interesting applications when the edge weights are interpreted as costs, capacities, or strengths. A less efficient but conceptually simpler way to solve such problems might be to delete all “heavy” edges from the graph and ask whether the result is still connected. These kinds of tests can be done with BFS or DFS.</p>
+<h5 id="minimum-product-spanning-trees">Minimum product spanning trees</h5>
+<p>Suppose we seek the spanning tree that minimizes the product of edge weights, assuming all edge weights are positive. Since $lg(a · b) = lg(a) + lg(b)$, the minimum spanning tree on a graph whose edge weights are replaced with their logarithms gives the minimum product spanning tree on the original graph.</p>
+<h5 id="minimum-steiner-tree">Minimum Steiner tree</h5>
+<p>Suppose we want to wire a bunch of houses together, but have the freedom to add extra intermediate vertices to serve as a shared junction.</p>
+<h3 id="shortest-path">Shortest path</h3>
+<ul>
+<li>Given a weight graph, find the shortest path of edges from $u$ to $v$.</li>
+</ul>
+<h3 id="shortest-path-algorithms">Shortest path algorithms</h3>
+<ol>
+<li>BFS</li>
+<li>Dijkstra&rsquo;s</li>
+<li>Bellman-Ford</li>
+<li>Floyd-Warshall</li>
+<li>A*, etc.</li>
+</ol>
+<h4 id="bellman-ford">Bellman-Ford</h4>
+<h4 id="dijkstra">Dijkstra</h4>
+<ul>
+<li>It provides all shortest paths in a network with their lengths.</li>
+<li><strong>Runtime:</strong> $O(n^2)$</li>
+</ul>
+<h3 id="dijkstra-algorithm">Dijkstra algorithm</h3>
+<ol>
+<li>Mark all nodes as temporary</li>
+<li>Assign $d_v$ to $\inf$ for $v \neq s$ and $d_s$ to 0.</li>
+<li>Choose a temporary node $u$ with the smallest path length.</li>
+<li>Mark $u$ as permanent.</li>
+<li>$d_v = min {d_v, d_u + w_{uv}}$ for every temporary node $v$ adjacent to $u$.</li>
+<li>If no temporary nodes are left, STOP.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dijkstra</span>(nodes, edges, source_index<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span> path_lengths <span style="color:#f92672">=</span> { node: float(<span style="color:#e6db74">&#39;inf&#39;</span>) <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> nodes }
+</span></span><span style="display:flex;"><span> path_lengths[source_index] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> adj_nodes <span style="color:#f92672">=</span> { node: {} <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> nodes }
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span> (u,v), w_uv <span style="color:#f92672">in</span> edges<span style="color:#f92672">.</span>items():
+</span></span><span style="display:flex;"><span>  adj_nodes[u][v] <span style="color:#f92672">=</span> w_uv
+</span></span><span style="display:flex;"><span>  adj_nodes[v][u] <span style="color:#f92672">=</span> w_uv
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> temporary_nodes <span style="color:#f92672">=</span> [ node <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> nodes ]
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">while</span> len(temporary_nodes) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>  upper_bounds <span style="color:#f92672">=</span> { node: path_lengths[node] <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> temporary_nodes }
+</span></span><span style="display:flex;"><span>  u <span style="color:#f92672">=</span> min(upper_bounds, key<span style="color:#f92672">=</span>upper_bounds<span style="color:#f92672">.</span>get)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  temporary_nodes<span style="color:#f92672">.</span>remove(u)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> v, w_uv <span style="color:#f92672">in</span> adj_nodes[u]<span style="color:#f92672">.</span>items():
+</span></span><span style="display:flex;"><span>   path_lengths[v] <span style="color:#f92672">=</span> min(path_lengths[v], path_lengths[u] <span style="color:#f92672">+</span> w_uv)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">return</span> path_lengths
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nodes <span style="color:#f92672">=</span> list(range(<span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>edges <span style="color:#f92672">=</span> { (<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>): <span style="color:#ae81ff">1.0</span>, (<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>): <span style="color:#ae81ff">1.5</span>, (<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">3</span>):<span style="color:#ae81ff">2.0</span>, (<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>): <span style="color:#ae81ff">0.5</span>, (<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span>): <span style="color:#ae81ff">2.5</span>, (<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>): <span style="color:#ae81ff">1.5</span>, (<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>): <span style="color:#ae81ff">1.0</span> }
+</span></span><span style="display:flex;"><span>print(dijkstra(nodes, edges, source_index<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>))
+</span></span></code></pre></div><h4 id="floyd-warshall">Floyd-Warshall</h4>
+<ul>
+<li>
+<p>Find all-pair shortest path problem from a given weighted graph</p>
+</li>
+<li>
+<p>It generates a matrix, which will represent the minimum distance from any node to all other nodes in the graph.</p>
+</li>
+<li>
+<p>DP</p>
+</li>
+<li>
+<p><strong>Runtime:</strong> $O(n^3)$ := All shortest path := Dijkstra for each node</p>
+</li>
+<li>
+<p><strong>Runtime:</strong> $O(n^3)$ := Floyd-Warshall</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">floyd</span>(G, nV):
+</span></span><span style="display:flex;"><span>    dist <span style="color:#f92672">=</span> { (u,v): float(<span style="color:#e6db74">&#39;inf&#39;</span>) <span style="color:#66d9ef">if</span> u <span style="color:#f92672">!=</span> v <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> u <span style="color:#f92672">in</span> range(nV) <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> range(nV) }
+</span></span><span style="display:flex;"><span>    dist <span style="color:#f92672">=</span> { (u,v): G[u][v] <span style="color:#66d9ef">for</span> u <span style="color:#f92672">in</span> range(nV) <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> range(nV) }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(nV):
+</span></span><span style="display:flex;"><span>        dist <span style="color:#f92672">=</span> { (u,v): min(dist[(u,v)], dist[(u,k)] <span style="color:#f92672">+</span> dist[(k,v)]) <span style="color:#66d9ef">for</span> u <span style="color:#f92672">in</span> range(nV) <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> range(nV) }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> u <span style="color:#f92672">in</span> range(nV):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> range(nV):
+</span></span><span style="display:flex;"><span>            print(dist[(u,v)], end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;  &#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    INF <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;inf&#39;</span>)
+</span></span><span style="display:flex;"><span>    G <span style="color:#f92672">=</span> [ [<span style="color:#ae81ff">0</span>,  <span style="color:#ae81ff">5</span>,   INF, INF],
+</span></span><span style="display:flex;"><span>          [<span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">0</span>,   <span style="color:#ae81ff">15</span>,  <span style="color:#ae81ff">5</span>  ],
+</span></span><span style="display:flex;"><span>          [<span style="color:#ae81ff">30</span>, INF, <span style="color:#ae81ff">0</span>,   <span style="color:#ae81ff">15</span> ],
+</span></span><span style="display:flex;"><span>          [<span style="color:#ae81ff">15</span>, INF, <span style="color:#ae81ff">5</span>,   <span style="color:#ae81ff">0</span>  ],
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    floyd(G, <span style="color:#ae81ff">4</span>)
+</span></span></code></pre></div><h3 id="traveling-salesman">Traveling salesman</h3>
+<ul>
+<li>Given all cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the original city?</li>
+<li><code>NP-hard</code></li>
+<li>It tries to find the most efficient route given a set of restrictions like the seven bridges in Euler&rsquo;s problem.</li>
+<li>It is figuring out the most efficient way to travel between pairs of cities of specified distances.</li>
+</ul>
+<h3 id="traveling-salesman-algorithms">Traveling salesman algorithms</h3>
+<ol>
+<li>Held-Karp</li>
+<li>Branch-and-bound</li>
+<li>Many approximation algorithms</li>
+</ol>
+<h4 id="branch-and-bound">Branch and bound</h4>
+<h4 id="held-karp">Held-Karp</h4>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/coding/" rel="tag">coding</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/algorithms/" rel="tag">algorithms</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/data-structures/" rel="tag">data structures</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/python-note/gui/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">GUI</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/python-note/glob/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">glob</p>
+		</a>
+	</div>
+</nav>
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "www-fatmakahveci-com-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/coding-note/apache_hbase/">Apache HBase</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/binary_tree_traversal/">Binary tree traversal</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/concurrency/">Concurrency</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/database/">Database</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dog_pile_effect/">Dogpile effect</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dynamic_programming/">Dynamic Programming (DP)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/google_bigtable/">Google BigTable</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/jaccard_similarity/">Jaccard Similarity</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/mongodb/">MongoDB</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/naming_variables/">Naming variables</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Spotify" rel="noopener noreferrer" href="https://open.spotify.com/playlist/2lY1JpIvZI8T1SG8RAaosw?si=CvDn8z0xQlaA9RtXUGM_2g" target="_blank">
+				
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+	 viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+<path id="SVGCleanerId_0" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+	c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+	c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+	c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+	c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+	c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+	 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+	c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+	C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+<g>
+	<path id="SVGCleanerId_0_1_" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+		c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+		c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+		c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+		c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+		c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+		 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+		c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+		C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+</g>
+<path style="fill:#2CC64D;" d="M219.68,195.296c-94.952,0-177.16,35.576-217.168,87.448C19.536,402.832,123.384,496,248,496
+	c90.016,0,169.208-48.624,212.664-120.872c1.392-6.856,2.168-13.84,2.168-20.952C462.832,266.424,353.976,195.296,219.68,195.296z
+	 M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96c-58.28-35.96-131.448-43.392-218.224-23.544
+	c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6c94.232-21.08,176.08-12.4,240.56,27.28
+	C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16c-6.192,8.68-17.368,12.392-26.04,6.192
+	c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4c-2.48-9.92,2.488-21.088,12.408-23.568
+	c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z"/>
+<path style="fill:#5AF27A;" d="M248,36.816c131.384,0,237.808,101.68,247.248,229.536C495.696,260.288,496,254.168,496,248
+	C496,111.6,385.648,0,248,0C111.608,0,0,111.6,0,248c0,6.184,0.304,12.328,0.76,18.408C10.272,138.512,117.808,36.816,248,36.816z"
+	/>
+<path style="fill:#1DAA59;" d="M326.192,483.216c14.488-33.36,32.688-83.248,35.872-88.056c3.736-7.432,2.488-17.352-6.184-21.072
+	c-64.488-39.68-146.328-48.36-240.56-27.28c-7.44,2.48-13.64,9.92-11.16,18.6c1.248,3.76,6.512,49.088,12.528,92.632
+	C154.832,482.048,199.848,496,248,496C275.304,496,301.568,491.464,326.192,483.216z"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+				<span>Spotify</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/cheburashkaF" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Instagram" rel="noopener noreferrer" href="https://www.instagram.com/fatmakhv" target="_blank">
+				<svg class="widget-social__link-icon icon icon-instagram" width="24" height="24" viewBox="0 0 256 256"><circle cx="193" cy="59" r="15"/><path fill-rule="evenodd" d="M101 0h54c41 0 58.4 3.9 74.5 17C256.2 37.5 256 74.8 256 97.7v60c0 26.7 0 60.4-26.5 81.4-16 13.4-33.5 16.9-74.5 16.9h-54c-41 0-57.5-3.5-74.5-16.9C1 218.9.5 186.3.1 160.5L0 155V97.7c0-23-.2-60.2 26.5-80.7C45 2 60 0 101 0zm4.9 23h44.3c45.8 0 58.3 3.5 70.3 17.5 11.8 13.2 12 30.1 12.5 62.9V156c.2 20.8.3 45.8-12.5 59.5-12 14-24.5 17.5-70.3 17.5h-44.3c-45.9 0-57.3-3.5-70.4-17.5-12.2-13-12.3-36.5-12.4-56.7v-55.6c.4-32.6.7-49.6 12.4-62.7C48 26.5 60 23 105.9 23zm19.6 144.5a42 42 0 1 0 0-84 42 42 0 0 0 0 84zm0 22.5a64.5 64.5 0 1 0 0-129 64.5 64.5 0 0 0 0 129z"/></svg>
+				<span>Instagram</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/fatma-kahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/fatmakahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="algorithm">algorithm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/aws/" title="aws">aws</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bash/" title="bash">bash</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bfs/" title="bfs">bfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/big-oh-notation/" title="big-oh-notation">big-oh-notation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bigtable/" title="bigtable">bigtable</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cloud-computing/" title="cloud computing">cloud computing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/concurrency/" title="concurrency">concurrency</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dfs/" title="dfs">dfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="Django">Django</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/framework/" title="framework">framework</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="javascript">javascript</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb/" title="MongoDB">MongoDB</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/network/" title="network">network</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nosql/" title="nosql">nosql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/numpy/" title="NumPy">NumPy</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="react">react</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="Software">Software</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="sql">sql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/travel/" title="travel">travel</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tree-traversal/" title="tree traversal">tree traversal</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/user-interface/" title="user interface">user interface</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web-development/" title="web development">web development</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Fatma Kahveci.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG" async></script>
+</body>
+</html>

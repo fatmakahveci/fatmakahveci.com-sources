@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>AWS Certified Solutions Architect - Associate (SAA-C03) - Fatma Kahveci</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="AWS Certified Solutions Architect - Associate (SAA-C03)">
+		<meta property="og:title" content="AWS Certified Solutions Architect - Associate (SAA-C03)" />
+<meta property="og:description" content="AWS Certified Solutions Architect - Associate (SAA-C03)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fatmakahveci.com/aws-note/a/" /><meta property="article:section" content="aws note" />
+
+
+
+		<meta itemprop="name" content="AWS Certified Solutions Architect - Associate (SAA-C03)">
+<meta itemprop="description" content="AWS Certified Solutions Architect - Associate (SAA-C03)">
+
+<meta itemprop="wordCount" content="3749">
+<meta itemprop="keywords" content="aws,coding,cloud computing," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&display=swap">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Fatma Kahveci" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Fatma Kahveci</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/coding-note/">
+				
+				<span class="menu__text">coding</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/python-note/">
+				
+				<span class="menu__text">python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/django-note/">
+				
+				<span class="menu__text">django</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/react-note/">
+				
+				<span class="menu__text">react</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/go-note/">
+				
+				<span class="menu__text">go</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/javascript-note/">
+				
+				<span class="menu__text">js</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/bash-note/">
+				
+				<span class="menu__text">bash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aws-note/">
+				
+				<span class="menu__text">aws</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/travel-note/">
+				
+				<span class="menu__text">Travel</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">AWS Certified Solutions Architect - Associate (SAA-C03)</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Fatma Kahveci</span>
+</div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/coding/" rel="category">Coding</a>
+	</span>
+</div></div>
+		</header><div class="content post__content clearfix">
+			<p><img src="/img/aws.png" alt="aws"></p>
+<h2 id="1-cloud-computing">1. Cloud computing</h2>
+<ul>
+<li><em>Cloud computing</em> is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing.</li>
+<li>Instead of buying, owning, and maintaining physical data centers and servers, you can access technology services, such as computing power, storage, and databases, on an as-needed basis from a cloud provider.</li>
+</ul>
+<h3 id="11-advantages-of-cloud-computing">1.1 Advantages of cloud computing</h3>
+<ol>
+<li>Trade capital expense for variable expense - pay only when you consume</li>
+<li>Benefit from massive economies of scale - lower pay-as-you-go prices</li>
+<li>Stop guessing capacity - access as much or little capacity as you need</li>
+<li>Increase speed and agility - a click away IT resources</li>
+<li>Stop spending money to run and maintain data centers - focus on projects, not the infrastructure</li>
+<li>Go global in minutes - low latency with easily deployed application in multiple regions</li>
+</ol>
+<h3 id="12-types-of-cloud-computing">1.2 Types of cloud computing</h3>
+<ol>
+<li><strong>Infrastructure-as-a-Service (IaaS)</strong> provides access to networking features, computers, and data storage space. It provides you with the highest level of flexibility and management control over your IT resources.</li>
+<li><strong>Platform-as-a-Service (PaaS)</strong> removes the need for management the underlying infrastructure (usually hardware and OS). You don&rsquo;t need to worry about resource procurement, capacity planning, software maintenance, patching, etc.</li>
+<li><strong>Software-as-a-Service (SaaS)</strong> provides a completed product that is run and managed by the service provider. i.e., web-based email which you can use to send and receive email without having to manage feature additions or maintain the servers and OS.</li>
+</ol>
+<h3 id="13-cloud-computing-deployment-models">1.3 Cloud computing deployment models</h3>
+<ul>
+<li>Factors to be considered for selecting a cloud strategy:
+<ul>
+<li>Required cloud application components</li>
+<li>Preferred resource management tools</li>
+<li>Any legacy IT infrastructure requirements.</li>
+</ul>
+</li>
+</ul>
+<h4 id="131-cloud-based-deployment">1.3.1 Cloud-based deployment</h4>
+<ul>
+<li>Run all parts of the application in the cloud.</li>
+<li>Migrate existing applications to the cloud.</li>
+<li>Design and build new applications in the cloud.</li>
+</ul>
+<h4 id="132-on-premises-deployment">1.3.2 On-premises deployment</h4>
+<ul>
+<li>Private cloud deployment</li>
+<li>Deploy resources by using virtualization and resource management tools.</li>
+<li>Increase resource utilization by using application management and virtualization technologies.</li>
+</ul>
+<h4 id="133-hybrid-deployment">1.3.3 Hybrid deployment</h4>
+<ul>
+<li>Connect cloud-based resources to on-premises infrastructure.</li>
+<li>Integrate cloud-based resources with legacy IT applications.</li>
+</ul>
+<h3 id="14-serverless-computing">1.4 Serverless computing</h3>
+<ul>
+<li><em>Serverless</em> means that your code runs on servers, but you do not need to provision or manage these servers.</li>
+<li>It gives the flexibility to scale serverless applications automatically.</li>
+<li>Serverless computing can adjust the applications&rsquo; capacity by modifying the units of consumptions, such as throughput and memory.</li>
+<li>You cannot see or access the underlying infrastructure or instances.</li>
+</ul>
+<h3 id="15-a-client-server-model">1.5 A client-server model</h3>
+<ul>
+<li>Most of the modern computing uses a basic client-server model.</li>
+<li>A client can be a web browser or desktop application that a person interacts with to make requests to computer servers.</li>
+<li>A server can be services such as Amazon Elastic Compute Cloud (Amazon EC2), a type of virtual server. It evaluates the details of a request and fulfills it by returning the information to the client.</li>
+</ul>
+<h2 id="2-domain-1-design-secure-architectures">2. Domain 1: Design secure architectures</h2>
+<ul>
+<li>You can practice creating a serverless architecture with <a href="#121">an AWS Lambda</a> function.
+<ul>
+<li><strong>A serverless architecture</strong> is a way to build and run applications and services without having to manage infrastructure. Your application still runs on servers, but all the server management is done by AWS.</li>
+</ul>
+</li>
+<li>The Lambda function inserts a test item into <a href="#39">an Amazon DynamoDB</a> table and uploads a test object to <a href="#126">an Amazon Simple Storage Service (Amazon S3)</a> bucket.</li>
+</ul>
+<h3 id="21-design-a-multi-tier-architecture-solutions">2.1 Design a multi-tier architecture solutions</h3>
+<ul>
+<li>
+<p><strong>Multi-tier architecture</strong> pattern provides a general framework to ensure decoupled and independently scalable application components can be separately developed, managed, and maintained.</p>
+</li>
+<li>
+<p>Solutions based on access patterns</p>
+<ul>
+<li>Consider access patterns with regards to who and what needs access, and how they will access the services and architectures
+<ul>
+<li>Where the connections and requests are coming from</li>
+<li>What the access pattern looks like from time to time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Scaling (changes to traffic patterns) strategies for components</p>
+<ul>
+<li>Consider ways to implement scaling, how various services handle elasticity, methods to automate scaling needs, and services limitations in those considerations
+<ul>
+<li>Horizontal and vertical scaling methods</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Determining database needs and selecting appropriate compute and storage services</p>
+<ul>
+<li>Evaluate how architecture requirements will affect the selection of database, storage, and compute services</li>
+</ul>
+</li>
+</ul>
+<h3 id="22-design-highly-available-and-fault-tolerant-architectures">2.2 Design highly-available and fault-tolerant architectures</h3>
+<ul>
+<li>
+<p>Designing for <strong>high availability</strong> means designing for minimal downtime.</p>
+<ul>
+<li>It focuses on reducing the negative impacts to the end user by prioritizing restoration of essential services when a component or application fails.</li>
+</ul>
+</li>
+<li>
+<p>Designing for <strong>fault tolerance</strong> means designing for zero downtime and service interruption.</p>
+<ul>
+<li>It generally means more higher costs due to much more replication and redundancy.</li>
+<li>It involves much more complexity because of the management of data replication and component redundancy.</li>
+</ul>
+</li>
+<li>
+<p>Determine the amount of resources needed</p>
+<ul>
+<li>It includes the redundancy of your normal operational components (servers, databases, etc.), the use of the AWS global infrastructure, components needed to handle data replication, traffic management, and failure detection.</li>
+</ul>
+</li>
+<li>
+<p>Determine which AWS services can be used to improve reliability</p>
+</li>
+<li>
+<p>Select highly available configurations to mitigate single points of failure, and select appropriate disaster recovery strategies</p>
+<ul>
+<li>When looking at an environment, take each component and assess what happens when that component fails.</li>
+<li>Disaster recovery objectives <a href="https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html">(*Ref)</a>
+<img src="/img/aws_rec.png" alt="aws">
+<ul>
+<li><strong>Recovery time objective (RTO)</strong> is a measure of how quickly can your application recover after an outage.</li>
+<li><strong>Recovery point objective (RPO)</strong> is a measure of the maximum amount of data loss that your application can tolerate.</li>
+</ul>
+</li>
+<li>Disaster recovery strategies
+<ul>
+<li><strong>Active/passive</strong> strategy uses an active site to host the workload and serve traffic. The passive site is used for recovery, and does not actively serve traffic until a failover event is triggered.
+<ul>
+<li><strong>Backup and restore</strong> strategy is suitable for mitigating against data loss or corruption.</li>
+<li><strong>Pilot light</strong> strategy is to replicate data from one region to another and provisions a copy of your core workload infrastructure.</li>
+<li><strong>Warm standby</strong> strategy involves ensuring that there is a scaled down, but fully functional, copy of your production environment in another region.</li>
+</ul>
+</li>
+<li><strong>Active/active</strong> strategy runs your workload simultaneously in multiple regions.
+<ul>
+<li><strong>Multi-site active/active</strong> strategy serves traffic from all regions to which it is deployed. Users are able to access your workload in any of the Regions in which it is deployed.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Understanding key performance indicators (KPIs)</p>
+<ul>
+<li>It is important to determining when to take action.</li>
+<li>Monitoring and benchmarking are the primary ways you can know what normal operations look like.</li>
+</ul>
+</li>
+</ul>
+<h3 id="23-design-decoupling-mechanisms-using-aws-services">2.3 Design decoupling mechanisms using AWS services</h3>
+<ul>
+<li>Services in achieving loose decoupling of components
+<ul>
+<li><strong>Decoupling</strong> refers to components remaining autonomous and unaware of each other as they complete their work as part of a larger system.</li>
+</ul>
+</li>
+<li>Decoupling techniques
+<ul>
+<li><em>Synchronous decoupling</em> involves at least two components, both must always be available in order for things to function properly.
+<ul>
+<li>All instances are unaware of each other and doing the same type of work, but they are doing it independently.</li>
+</ul>
+</li>
+<li><em>Asynchronous decoupling</em> involves communication between components through durable components.</li>
+</ul>
+</li>
+</ul>
+<h3 id="24-choose-appropriate-resilient-storage">2.4 Choose appropriate resilient storage</h3>
+<ul>
+<li>Defining a data-durability strategy</li>
+<li>Identifying the impact of service consistency on operations</li>
+<li>Analyzing how access requirements direct the selection of data services</li>
+<li>The use of storage services with hybrid and non-cloud-native applications</li>
+</ul>
+<h2 id="3-domain-2-design-resilient-architectures">3. Domain 2: Design resilient architectures</h2>
+<p>@TODO</p>
+<h2 id="4-domain-3-design-high-performing-architectures">4. Domain 3: Design high-performing architectures</h2>
+<p>@TODO</p>
+<h2 id="5-domain-4-design-cost-optimized-architectures">5. Domain 4: Design cost-optimized architectures</h2>
+<p>@TODO</p>
+<h2 id="6-aws-services-and-features">6. AWS services and features</h2>
+<h3 id="61-analytics">6.1 Analytics</h3>
+<h4 id="611-span-id1amazon-athenaspan">6.1.1 <!-- raw HTML omitted -->Amazon Athena<!-- raw HTML omitted --></h4>
+<h4 id="612-span-id2aws-data-exchangespan">6.1.2 <!-- raw HTML omitted -->AWS Data Exchange<!-- raw HTML omitted --></h4>
+<h4 id="613-span-id3aws-data-pipeline">6.1.3 <!-- raw HTML omitted -->AWS Data Pipeline</h4>
+<h4 id="614-span-id4amazon-emr">6.1.4 <!-- raw HTML omitted -->Amazon EMR</h4>
+<h4 id="615-span-id5aws-glue">6.1.5 <!-- raw HTML omitted -->AWS Glue</h4>
+<h4 id="616-span-id6amazon-kinesis">6.1.6 <!-- raw HTML omitted -->Amazon Kinesis</h4>
+<ul>
+<li>Amazon Kinesis cost-effectively processes and analyzes streaming data at any scale as a fully managed service. With Kinesis, you can ingest real-time data, such as video, audio, application logs, website clickstreams, and IoT telemetry data, for machine learning (ML), analytics, and other applications.</li>
+</ul>
+<h4 id="617-span-id7aws-lake-formation">6.1.7 <!-- raw HTML omitted -->AWS Lake Formation</h4>
+<h4 id="618-span-id8amazon-managed-streaming-for-apache-kafka-amazon-msk">6.1.8 <!-- raw HTML omitted -->Amazon Managed Streaming for Apache Kafka (Amazon MSK)</h4>
+<h4 id="619-span-id9amazon-opensearch-service-amazon-elasticsearch-service">6.1.9 <!-- raw HTML omitted -->Amazon OpenSearch Service (Amazon Elasticsearch Service)</h4>
+<h4 id="6110-span-id10amazon-quicksight">6.1.10 <!-- raw HTML omitted -->Amazon QuickSight</h4>
+<h4 id="6111-span-id11amazon-redshift">6.1.11 <!-- raw HTML omitted -->Amazon Redshift</h4>
+<h3 id="62-application-integration">6.2 Application Integration</h3>
+<h4 id="621-span-id12amazon-appflow">6.2.1 <!-- raw HTML omitted -->Amazon AppFlow</h4>
+<h4 id="622-span-id13aws-appsync">6.2.2 <!-- raw HTML omitted -->AWS AppSync</h4>
+<h4 id="623-span-id14amazon-eventbridge-amazon-cloudwatch-events">6.2.3 <!-- raw HTML omitted -->Amazon EventBridge (Amazon CloudWatch Events)</h4>
+<h4 id="624-span-id15amazon-mq">6.2.4 <!-- raw HTML omitted -->Amazon MQ</h4>
+<h4 id="625-span-id16amazon-simple-notification-service-amazon-sns">6.2.5 <!-- raw HTML omitted -->Amazon Simple Notification Service (Amazon SNS)</h4>
+<ul>
+<li>A channel for messages to be delivered.</li>
+<li>A publish/subscribe service</li>
+<li>Using Amazon SNS topics, a publisher publishes messages to subscribers. This is similar to the coffee shop; the cashier provides coffee orders to the barista who makes the drinks.</li>
+<li>In Amazon SNS, subscribers can be
+<ul>
+<li>web servers</li>
+<li>email addresses</li>
+<li>AWS Lambda functions, etc.</li>
+</ul>
+</li>
+<li>How it works:
+<ol>
+<li>Publish updates from a single topic</li>
+<li>Publish updates from multiple topics
+<ul>
+<li>Instead of having a single newsletter for all topics, it has broken it up into three separate newsletters.</li>
+<li>Each newsletter is devoted to a specific topic.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="626-span-id17amazon-simple-queue-service-amazon-sqs">6.2.6 <!-- raw HTML omitted -->Amazon Simple Queue Service (Amazon SQS)</h4>
+<ul>
+<li>
+<p>Messages are placed until they are processed.</p>
+</li>
+<li>
+<p>You can send, store, and receive messages between software components, without losing messages or requiring other services to be available.</p>
+</li>
+<li>
+<p>In Amazon SQS, an application sends messages into a queue. A user or service retrieves a message from the queue, processes it, and then deletes it from the queue.</p>
+</li>
+<li>
+<p>SQS allows to</p>
+<ul>
+<li>send messages</li>
+<li>store messages</li>
+<li>receive messages</li>
+<li>between software components</li>
+<li>at any volume</li>
+</ul>
+</li>
+<li>
+<p>How it works:</p>
+<ol>
+<li>Fullfiling an order:
+- Think of cashier and barista as two separate components.
+- The process run smoothly unless components are coordinated.</li>
+<li>Orders in a queue</li>
+</ol>
+</li>
+<li>
+<p><strong>Amazon SQS FIFO queue</strong></p>
+</li>
+<li>
+<p><strong>Amazon SQS standard queue</strong></p>
+</li>
+</ul>
+<h4 id="627-span-id18aws-step-functions">6.2.7 <!-- raw HTML omitted -->AWS Step Functions</h4>
+<h3 id="63-aws-cost-management">6.3 AWS Cost Management</h3>
+<h4 id="631-span-id19aws-budgets">6.3.1 <!-- raw HTML omitted -->AWS Budgets</h4>
+<h4 id="632-span-id20aws-cost-and-usage-report">6.3.2 <!-- raw HTML omitted -->AWS Cost and Usage Report</h4>
+<h4 id="633-span-id21aws-cost-explorer">6.3.3 <!-- raw HTML omitted -->AWS Cost Explorer</h4>
+<h4 id="634-span-id22savings-plans">6.3.4 <!-- raw HTML omitted -->Savings Plans</h4>
+<h3 id="64-compute">6.4 Compute</h3>
+<h4 id="641-span-id23aws-batch">6.4.1 <!-- raw HTML omitted -->AWS Batch</h4>
+<h4 id="642-span-id24amazon-ec2">6.4.2 <!-- raw HTML omitted -->Amazon EC2</h4>
+<ul>
+<li>A web service that provides secure and resizable compute capacity to support virtually any workload in the cloud as Amazon EC2 instances.</li>
+<li>Payment
+<ul>
+<li>for running instances, not stopped or terminated instances.</li>
+<li>for the compute time you use when an instance is running, not when it is stopped or terminated.</li>
+<li>for server capacity that you need or want.</li>
+</ul>
+</li>
+<li><strong>Multitenancy</strong> shares underlying hardware between virtual machines. It is managed by AWS.</li>
+<li><strong>Hypervisor</strong> is responsible for multitenancy. It isolates instances from each other as they share resources from the host. (the host with multiple other instances)</li>
+<li>Instances are resizable. You can give more memory / more CPU.</li>
+<li><strong>Vertical scaling</strong> makes instances bigger or smaller.</li>
+<li>You can control the networking aspect of EC2.</li>
+<li>Compute-as-a-Service (CaaS)</li>
+</ul>
+<h5 id="6421-how-ec2-works">6.4.2.1 How EC2 Works</h5>
+<ul>
+<li>If you have applications that you want to run in Amazon EC2, you must do the following:
+<ol>
+<li>Provision instances (virtual servers)</li>
+<li>Upload your code</li>
+<li>Continue to manage the instances while your application is running</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li>Launch
+<ul>
+<li>Launch an instance. Select a template with basic configurations for your instance.</li>
+<li>Configurations:
+<ul>
+<li>OS</li>
+<li>Application server/Applications</li>
+<li>Instance type (specific hardware configuration of your instance)</li>
+<li>Security settings to control the network traffic that can flow into and out of your instance.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Connect
+<ul>
+<li>Connect to the instance.</li>
+<li>Your programs and applications have multiple methods to connect directly to the instance and exchange data.</li>
+<li>Users can also connect to the instance by logging in and accessing the computer desktop.</li>
+</ul>
+</li>
+<li>Use
+<ul>
+<li>You can run commands to install software, add storage, copy and organize files, etc.</li>
+</ul>
+</li>
+</ol>
+<h5 id="6422-ec-instance-types">6.4.2.2 EC Instance types</h5>
+<ul>
+<li>Each instance type is grouped under an instance family and optimized for different tasks.</li>
+<li>When selecting an instance type, consider the specific needs of your workloads and applications.</li>
+<li>EC2 instance families:
+<ul>
+<li>General purpose
+<ul>
+<li>It provides a balance of compute, memory, and networking resources.</li>
+</ul>
+</li>
+<li>Compute optimized
+<ul>
+<li>It is ideal for compute-bound applications that benefit from high-performance processors.</li>
+<li>i.e., high-performance web servers, compute-intensive applications servers, and dedicated gaming servers.</li>
+</ul>
+</li>
+<li>Memory optimized
+<ul>
+<li>It is ideal for processing large datasets in memory.</li>
+<li>i.e., In case that you have a workload that requires large amounts of data to be preloaded before running an application.</li>
+</ul>
+</li>
+<li>Accelerated computing
+<ul>
+<li>It uses hardware accelerators, or coprocessors, to perform some functions more efficiently than is possible in software running on CPUs.</li>
+<li>i.e., floating-point number calculations, graphics processing, and data pattern matching.</li>
+</ul>
+</li>
+<li>Storage optimized
+<ul>
+<li>It is ideal for workloads that require high, sequential read and write access to large datasets on local storage.</li>
+<li>In computing, the term input/output operations per second (IOPS) is a metric that measures the performance of a storage device. It indicates how many different input or output operations a device can perform in one second. Storage optimized instances are designed to deliver tens of thousands of low-latency, random IOPS to applications.</li>
+<li>i.e., distributed file systems, data warehousing applications, and high-frequency online transaction processing (OLTP) systems.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="6423-pricing">6.4.2.3 Pricing</h5>
+<h6 id="64231-on-demand">6.4.2.3.1 On-demand</h6>
+<ul>
+<li>Ideal for short-term, irregular workloads that cannot be interrupted.</li>
+<li>No upfront costs or minimum contracts apply.</li>
+<li>The instances run continuously until you stop them, and you pay for only the compute time you use.</li>
+<li>Sample use cases for <em>On-Demand Instances</em> include developing and testing applications and running applications that have unpredictable usage patterns.</li>
+<li>On-Demand Instances are not recommended for workloads that last a year or longer.</li>
+</ul>
+<h6 id="64232-saving-plans">6.4.2.3.2 Saving Plans</h6>
+<ul>
+<li><em>Amazon EC2 Savings Plans</em> enable you to reduce your compute costs by committing to a consistent amount of compute usage for a 1-year or 3-year term.</li>
+<li>Any usage up to the commitment is charged at the discounted <em>Savings Plan</em> rate (for example, $10 an hour). Any usage beyond the commitment is charged at regular <em>On-Demand</em> rates.</li>
+</ul>
+<h6 id="64233-reserved-instances">6.4.2.3.3 Reserved Instances</h6>
+<ul>
+<li><em>Reserved Instances</em> are a billing discount applied to the use of <em>On-Demand Instances</em> in your account.</li>
+<li>You can purchase <em>Standard Reserved</em> and <em>Convertible Reserved Instances</em> for a 1- or 3-year term, and <em>Scheduled Reserved Instances</em> for a 1-year term.</li>
+<li>At the end of a <em>Reserved Instance</em> term, you can continue using the <em>Amazon EC2</em> instance without interruption. However, you are charged <em>On-Demand</em> rates until you do one of the following:
+<ul>
+<li>Terminate the instance.</li>
+<li>Purchase a new <em>Reserved Instance</em> that matches the instance attributes (instance type, Region, tenancy, and platform).</li>
+</ul>
+</li>
+</ul>
+<h6 id="64234-spot-instances">6.4.2.3.4 Spot Instances</h6>
+<ul>
+<li><em>Spot Instances</em> are ideal for workloads with flexible start and end times, or that can withstand interruptions.</li>
+<li><em>Spot Instances</em> use unused <em>Amazon EC2</em> computing capacity.</li>
+<li>Suppose that you have a background processing job that can start and stop as needed (such as the data processing job for a customer survey). You want to start and stop the processing job without affecting the overall operations of your business. If you make a Spot request and <em>Amazon EC2</em> capacity is available, your Spot Instance launches. However, if you make a Spot request and <em>Amazon EC2</em> capacity is unavailable, the request is not successful until capacity becomes available. The unavailable capacity might delay the launch of your background processing job.</li>
+<li>After you have launched a <em>Spot Instance</em>, if capacity is no longer available or demand for <em>Spot Instances</em> increases, your instance may be interrupted. This might not pose any issues for your background processing job. However, in the earlier example of developing and testing applications, you would most likely want to avoid unexpected interruptions. Therefore, choose a different EC2 instance type that is ideal for those tasks.</li>
+</ul>
+<h6 id="64235-dedicated-hosts">6.4.2.3.5 Dedicated Hosts</h6>
+<ul>
+<li>Dedicated Hosts are physical servers with Amazon EC2 instance capacity that is fully dedicated to your use.</li>
+<li>You can use your existing per-socket, per-core, or per-VM software licenses to help maintain license compliance. You can purchase On-Demand Dedicated Hosts and Dedicated Hosts Reservations. Of all the Amazon EC2 options that were covered, Dedicated Hosts are the most expensive.</li>
+</ul>
+<h5 id="6424-messaging-and-queuing">6.4.2.4 Messaging and queuing</h5>
+<h6 id="64241-monolithic-applications">6.4.2.4.1 Monolithic applications</h6>
+<ul>
+<li>Tightly coupled architecture</li>
+<li>In monolithic apps, if a single component fails, other components fail, and possibly the entire application fails.</li>
+<li>Applications are made of multiple components.</li>
+<li>The components communicate with each other to
+<ul>
+<li>transmit data</li>
+<li>fulfill requests</li>
+<li>keep the application running</li>
+</ul>
+</li>
+<li>The components might include
+<ul>
+<li>databases</li>
+<li>servers</li>
+<li>UI</li>
+<li>business logic, etc.</li>
+</ul>
+</li>
+</ul>
+<h6 id="64242-microservices">6.4.2.4.2 Microservices</h6>
+<ul>
+<li>In a microservices approach, application components are loosely coupled.</li>
+<li>If a single component fails, the other components continue to work because they are communicating with each other.</li>
+<li>The loose coupling prevents the entire application from failing.</li>
+<li>When designing applications on AWS, you can take a microservices approach with services and components that fulfill different functions.</li>
+</ul>
+<h5 id="6425-directing-traffic-with-elastic-load-balancing">6.4.2.5 Directing traffic with elastic load balancing</h5>
+<ul>
+<li>
+<p><em>Elastic load balancing</em> is the AWS service that automatically distributes incoming application traffic across multiple resources, such as EC2 instances.</p>
+</li>
+<li>
+<p>A <em>load balancer</em> acts as a single point of contact for all incoming web traffic to your Auto Scaling group.</p>
+</li>
+<li>
+<p>Although Elastic Load Balancing and Amazon EC2 Auto Scaling are separate services, they work together to help ensure that applications running in Amazon EC2 can provide high performance and availability.</p>
+<ol>
+<li>Low-demand period</li>
+<li>High-demand period</li>
+</ol>
+</li>
+<li>
+<p><em>Scalability</em> involves beginning with only the resources you need and designing your architecture to automatically respond to changing demand by scaling out or in.</p>
+</li>
+</ul>
+<h5 id="6426-amazon-ec2-auto-scaling">6.4.2.6 Amazon EC2 Auto Scaling</h5>
+<ul>
+<li>It enables you to automatically add or remove Amazon EC2 instances in response to changing application demand so you maintain a greater sense of application availability.</li>
+<li>Two approaches:
+<ol>
+<li><em>Dynamic scaling</em> responds to changing demand.</li>
+<li><em>Predictive scaling</em> automatically schedules the right number of EC2 instances based on predicted demand.</li>
+</ol>
+</li>
+<li>To scale faster, you can use dynamic scaling and predictive scaling together.
+<ul>
+<li>When you create an Auto Scaling group, you can set the <em>minimum capacity</em> which is the number of Amazon EC2 instances that launch immediately after you have created the Auto Scaling group.</li>
+<li>If you do not specify the desired number of Amazon EC2 instances in an Auto Scaling group, the <em>desired capacity</em> defaults to your minimum capacity.</li>
+<li>The third configuration that you can set in an Auto Scaling group is the <em>maximum capacity</em>.</li>
+</ul>
+</li>
+<li>Auto Scaling groups can span multiple availability zones.</li>
+</ul>
+<h4 id="643-span-id25aws-elastic-beanstalkspan">6.4.3 <!-- raw HTML omitted -->AWS Elastic Beanstalk<!-- raw HTML omitted --></h4>
+<h4 id="644-span-id26aws-outpostsspan">6.4.4 <!-- raw HTML omitted -->AWS Outposts<!-- raw HTML omitted --></h4>
+<h4 id="645-span-id27aws-serverless-application-repositoryspan">6.4.5 <!-- raw HTML omitted -->AWS Serverless Application Repository<!-- raw HTML omitted --></h4>
+<h4 id="646-span-id28vmware-cloud-on-awsspan">6.4.6 <!-- raw HTML omitted -->VMware Cloud on AWS<!-- raw HTML omitted --></h4>
+<h4 id="647-span-id29aws-wavelengthspan">6.4.7 <!-- raw HTML omitted -->AWS Wavelength<!-- raw HTML omitted --></h4>
+<h3 id="65-containers">6.5 Containers</h3>
+<ul>
+<li>A package for your code</li>
+<li>In AWS, you can also build and run containerized applications.</li>
+<li>Here the host is the instance.</li>
+</ul>
+<h4 id="651-span-id30amazon-elastic-container-registry-amazon-ecrspan">6.5.1 <!-- raw HTML omitted -->Amazon Elastic Container Registry (Amazon ECR)<!-- raw HTML omitted --></h4>
+<h4 id="652-span-id31amazon-elastic-container-service-amazon-ecsspan">6.5.2 <!-- raw HTML omitted -->Amazon Elastic Container Service (Amazon ECS)<!-- raw HTML omitted --></h4>
+<h4 id="653-span-id32amazon-ecs-anywherespan">6.5.3 <!-- raw HTML omitted -->Amazon ECS Anywhere<!-- raw HTML omitted --></h4>
+<h4 id="654-span-id33amazon-elastic-kubernetes-service-amazon-eksspan">6.5.4 <!-- raw HTML omitted -->Amazon Elastic Kubernetes Service (Amazon EKS)<!-- raw HTML omitted --></h4>
+<h4 id="655-span-id34amazon-eks-anywherespan">6.5.5 <!-- raw HTML omitted -->Amazon EKS Anywhere<!-- raw HTML omitted --></h4>
+<h4 id="656-span-id35amazon-eks-distrospan">6.5.6 <!-- raw HTML omitted -->Amazon EKS Distro<!-- raw HTML omitted --></h4>
+<h3 id="66-database">6.6 Database</h3>
+<h4 id="661-span-id36amazon-auroraspan">6.6.1 <!-- raw HTML omitted -->Amazon Aurora<!-- raw HTML omitted --></h4>
+<h4 id="662-span-id37amazon-aurora-serverlessspan">6.6.2 <!-- raw HTML omitted -->Amazon Aurora Serverless<!-- raw HTML omitted --></h4>
+<h4 id="663-span-id38amazon-documentdb-with-mongodb-compatibilityspan">6.6.3 <!-- raw HTML omitted -->Amazon DocumentDB (with MongoDB compatibility)<!-- raw HTML omitted --></h4>
+<h4 id="664-span-id39amazon-dynamodbspan">6.6.4 <!-- raw HTML omitted -->Amazon DynamoDB<!-- raw HTML omitted --></h4>
+<ul>
+<li>An Amazon DynamoDB is a fully managed, serverless, key-value NoSQL database designed to run high-performance applications at any scale.</li>
+</ul>
+<h4 id="665-span-id40amazon-elasticachespan">6.6.5 <!-- raw HTML omitted -->Amazon ElastiCache<!-- raw HTML omitted --></h4>
+<h4 id="666-span-id41amazon-keyspaces-for-apache-cassandraspan">6.6.6 <!-- raw HTML omitted -->Amazon Keyspaces (for Apache Cassandra)<!-- raw HTML omitted --></h4>
+<h4 id="667-span-id42amazon-neptunespan">6.6.7 <!-- raw HTML omitted -->Amazon Neptune<!-- raw HTML omitted --></h4>
+<h4 id="668-span-id43amazon-quantum-ledger-database-amazon-qldbspan">6.6.8 <!-- raw HTML omitted -->Amazon Quantum Ledger Database (Amazon QLDB)<!-- raw HTML omitted --></h4>
+<h4 id="669-span-id44amazon-rdsspan">6.6.9 <!-- raw HTML omitted -->Amazon RDS<!-- raw HTML omitted --></h4>
+<h4 id="6610-span-id45amazon-timestreamspan">6.6.10 <!-- raw HTML omitted -->Amazon Timestream<!-- raw HTML omitted --></h4>
+<h3 id="67-developer-tools">6.7 Developer Tools</h3>
+<h4 id="671-span-id46aws-x-rayspan">6.7.1 <!-- raw HTML omitted -->AWS X-Ray<!-- raw HTML omitted --></h4>
+<h3 id="68-front-end-web-and-mobile">6.8 Front-End Web and Mobile</h3>
+<h4 id="681-span-id47aws-amplifyspan">6.8.1 <!-- raw HTML omitted -->AWS Amplify<!-- raw HTML omitted --></h4>
+<h4 id="682-span-id48amazon-api-gatewayspan">6.8.2 <!-- raw HTML omitted -->Amazon API Gateway<!-- raw HTML omitted --></h4>
+<h4 id="683-span-id49aws-device-farmspan">6.8.3 <!-- raw HTML omitted -->AWS Device Farm<!-- raw HTML omitted --></h4>
+<h4 id="684-span-id50amazon-pinpointspan">6.8.4 <!-- raw HTML omitted -->Amazon Pinpoint<!-- raw HTML omitted --></h4>
+<h3 id="69-machine-learning">6.9 Machine Learning</h3>
+<h4 id="691-span-id51amazon-comprehendspan">6.9.1 <!-- raw HTML omitted -->Amazon Comprehend<!-- raw HTML omitted --></h4>
+<h4 id="692-span-id52amazon-forecastspan">6.9.2 <!-- raw HTML omitted -->Amazon Forecast<!-- raw HTML omitted --></h4>
+<h4 id="693-span-id53amazon-fraud-detectorspan">6.9.3 <!-- raw HTML omitted -->Amazon Fraud Detector<!-- raw HTML omitted --></h4>
+<h4 id="694-span-id54amazon-kendraspan">6.9.4 <!-- raw HTML omitted -->Amazon Kendra<!-- raw HTML omitted --></h4>
+<h4 id="695-span-id55amazon-lexspan">6.9.5 <!-- raw HTML omitted -->Amazon Lex<!-- raw HTML omitted --></h4>
+<h4 id="696-span-id56amazon-pollyspan">6.9.6 <!-- raw HTML omitted -->Amazon Polly<!-- raw HTML omitted --></h4>
+<h4 id="697-span-id57amazon-rekognitionspan">6.9.7 <!-- raw HTML omitted -->Amazon Rekognition<!-- raw HTML omitted --></h4>
+<h4 id="698-span-id58amazon-sagemakerspan">6.9.8 <!-- raw HTML omitted -->Amazon SageMaker<!-- raw HTML omitted --></h4>
+<h4 id="699-span-id59amazon-textractspan">6.9.9 <!-- raw HTML omitted -->Amazon Textract<!-- raw HTML omitted --></h4>
+<h4 id="6910-span-id60amazon-transcribespan">6.9.10 <!-- raw HTML omitted -->Amazon Transcribe<!-- raw HTML omitted --></h4>
+<h4 id="6911-span-id61amazon-translatespan">6.9.11 <!-- raw HTML omitted -->Amazon Translate<!-- raw HTML omitted --></h4>
+<h3 id="610-management-and-governance">6.10 Management and Governance</h3>
+<h4 id="6101-span-id62aws-auto-scalingspan">6.10.1 <!-- raw HTML omitted -->AWS Auto Scaling<!-- raw HTML omitted --></h4>
+<h4 id="6102-span-id63aws-cloudformationspan">6.10.2 <!-- raw HTML omitted -->AWS CloudFormation<!-- raw HTML omitted --></h4>
+<h4 id="6103-span-id64aws-cloudtrailspan">6.10.3 <!-- raw HTML omitted -->AWS CloudTrail<!-- raw HTML omitted --></h4>
+<h4 id="6104-span-id65amazon-cloudwatchspan">6.10.4 <!-- raw HTML omitted -->Amazon CloudWatch<!-- raw HTML omitted --></h4>
+<h4 id="6105-span-id66aws-command-line-interface-aws-clispan">6.10.5 <!-- raw HTML omitted -->AWS Command Line Interface (AWS CLI)<!-- raw HTML omitted --></h4>
+<h4 id="6106-span-id67aws-compute-optimizerspan">6.10.6 <!-- raw HTML omitted -->AWS Compute Optimizer<!-- raw HTML omitted --></h4>
+<h4 id="6107-span-id68aws-configspan">6.10.7 <!-- raw HTML omitted -->AWS Config<!-- raw HTML omitted --></h4>
+<h4 id="6108-span-id69aws-control-towerspan">6.10.8 <!-- raw HTML omitted -->AWS Control Tower<!-- raw HTML omitted --></h4>
+<h4 id="6109-span-id70aws-license-managerspan">6.10.9 <!-- raw HTML omitted -->AWS License Manager<!-- raw HTML omitted --></h4>
+<h4 id="61010-span-id71amazon-managed-grafanaspan">6.10.10 <!-- raw HTML omitted -->Amazon Managed Grafana<!-- raw HTML omitted --></h4>
+<h4 id="61011-span-id72amazon-managed-service-for-prometheusspan">6.10.11 <!-- raw HTML omitted -->Amazon Managed Service for Prometheus<!-- raw HTML omitted --></h4>
+<h4 id="61012-span-id73aws-management-consolespan">6.10.12 <!-- raw HTML omitted -->AWS Management Console<!-- raw HTML omitted --></h4>
+<h4 id="61013-span-id74aws-organizationsspan">6.10.13 <!-- raw HTML omitted -->AWS Organizations<!-- raw HTML omitted --></h4>
+<h4 id="61014-span-id75aws-personal-health-dashboardspan">6.10.14 <!-- raw HTML omitted -->AWS Personal Health Dashboard<!-- raw HTML omitted --></h4>
+<h4 id="61015-span-id76aws-protonspan">6.10.15 <!-- raw HTML omitted -->AWS Proton<!-- raw HTML omitted --></h4>
+<h4 id="61016-span-id77aws-service-catalogspan">6.10.16 <!-- raw HTML omitted -->AWS Service Catalog<!-- raw HTML omitted --></h4>
+<h4 id="61017-span-id78aws-systems-managerspan">6.10.17 <!-- raw HTML omitted -->AWS Systems Manager<!-- raw HTML omitted --></h4>
+<h4 id="61018-span-id79aws-trusted-advisorspan">6.10.18 <!-- raw HTML omitted -->AWS Trusted Advisor<!-- raw HTML omitted --></h4>
+<h4 id="61019-span-id80aws-well-architected-toolspan">6.10.19 <!-- raw HTML omitted -->AWS Well-Architected Tool<!-- raw HTML omitted --></h4>
+<h3 id="611-media-services">6.11 Media Services</h3>
+<h4 id="6111-span-id81amazon-elastic-transcoderspan">6.11.1 <!-- raw HTML omitted -->Amazon Elastic Transcoder<!-- raw HTML omitted --></h4>
+<h4 id="6112-span-id82amazon-kinesis-video-streamsspan">6.11.2 <!-- raw HTML omitted -->Amazon Kinesis Video Streams<!-- raw HTML omitted --></h4>
+<h3 id="612-migration-and-transfer">6.12 Migration and Transfer</h3>
+<h4 id="6121-span-id83aws-application-discovery-servicespan">6.12.1 <!-- raw HTML omitted -->AWS Application Discovery Service<!-- raw HTML omitted --></h4>
+<h4 id="6122-span-id84aws-application-migration-service-cloudendure-migrationspan">6.12.2 <!-- raw HTML omitted -->AWS Application Migration Service (CloudEndure Migration)<!-- raw HTML omitted --></h4>
+<h4 id="6123-span-id85aws-database-migration-service-aws-dmsspan">6.12.3 <!-- raw HTML omitted -->AWS Database Migration Service (AWS DMS)<!-- raw HTML omitted --></h4>
+<h4 id="6124-span-id86aws-datasyncspan">6.12.4 <!-- raw HTML omitted -->AWS DataSync<!-- raw HTML omitted --></h4>
+<h4 id="6125-span-id87aws-migration-hubspan">6.12.5 <!-- raw HTML omitted -->AWS Migration Hub<!-- raw HTML omitted --></h4>
+<h4 id="6126-span-id88aws-server-migration-service-aws-smsspan">6.12.6 <!-- raw HTML omitted -->AWS Server Migration Service (AWS SMS)<!-- raw HTML omitted --></h4>
+<h4 id="6127-span-id89aws-snow-familyspan">6.12.7 <!-- raw HTML omitted -->AWS Snow Family<!-- raw HTML omitted --></h4>
+<h4 id="6128-span-id90aws-transfer-familyspan">6.12.8 <!-- raw HTML omitted -->AWS Transfer Family<!-- raw HTML omitted --></h4>
+<h3 id="613-networking-and-content-delivery">6.13 Networking and Content Delivery</h3>
+<h4 id="6131-span-id91amazon-cloudfrontspan">6.13.1 <!-- raw HTML omitted -->Amazon CloudFront<!-- raw HTML omitted --></h4>
+<h4 id="6132-span-id92aws-direct-connectspan">6.13.2 <!-- raw HTML omitted -->AWS Direct Connect<!-- raw HTML omitted --></h4>
+<h4 id="6133-span-id93elastic-load-balancing-elbspan">6.13.3 <!-- raw HTML omitted -->Elastic Load Balancing (ELB)<!-- raw HTML omitted --></h4>
+<h4 id="6134-span-id94aws-global-acceleratorspan">6.13.4 <!-- raw HTML omitted -->AWS Global Accelerator<!-- raw HTML omitted --></h4>
+<h4 id="6135-span-id95aws-privatelinkspan">6.13.5 <!-- raw HTML omitted -->AWS PrivateLink<!-- raw HTML omitted --></h4>
+<h4 id="6136-span-id96amazon-route-53span">6.13.6 <!-- raw HTML omitted -->Amazon Route 53<!-- raw HTML omitted --></h4>
+<h4 id="6137-span-id97aws-transit-gatewayspan">6.13.7 <!-- raw HTML omitted -->AWS Transit Gateway<!-- raw HTML omitted --></h4>
+<h4 id="6138-span-id98amazon-vpcspan">6.13.8 <!-- raw HTML omitted -->Amazon VPC<!-- raw HTML omitted --></h4>
+<h4 id="6139-span-id99aws-vpnspan">6.13.9 <!-- raw HTML omitted -->AWS VPN<!-- raw HTML omitted --></h4>
+<h3 id="614-security-identity-and-compliance">6.14 Security, Identity, and Compliance</h3>
+<h4 id="6141-span-id100aws-artifactspan">6.14.1 <!-- raw HTML omitted -->AWS Artifact<!-- raw HTML omitted --></h4>
+<h4 id="6142-span-id101aws-audit-managerspan">6.14.2 <!-- raw HTML omitted -->AWS Audit Manager<!-- raw HTML omitted --></h4>
+<h4 id="6143-span-id102aws-certificate-manager-acmspan">6.14.3 <!-- raw HTML omitted -->AWS Certificate Manager (ACM)<!-- raw HTML omitted --></h4>
+<h4 id="6144-span-id103aws-cloudhsmspan">6.14.4 <!-- raw HTML omitted -->AWS CloudHSM<!-- raw HTML omitted --></h4>
+<h4 id="6145-span-id104amazon-cognitospan">6.14.5 <!-- raw HTML omitted -->Amazon Cognito<!-- raw HTML omitted --></h4>
+<h4 id="6146-span-id105amazon-detectivespan">6.14.6 <!-- raw HTML omitted -->Amazon Detective<!-- raw HTML omitted --></h4>
+<h4 id="6147-span-id106aws-directory-servicespan">6.14.7 <!-- raw HTML omitted -->AWS Directory Service<!-- raw HTML omitted --></h4>
+<h4 id="6148-span-id107aws-firewall-managerspan">6.14.8 <!-- raw HTML omitted -->AWS Firewall Manager<!-- raw HTML omitted --></h4>
+<h4 id="6149-span-id108amazon-guarddutyspan">6.14.9 <!-- raw HTML omitted -->Amazon GuardDuty<!-- raw HTML omitted --></h4>
+<h4 id="61410-span-id109aws-identity-and-access-management-iamspan">6.14.10 <!-- raw HTML omitted -->AWS Identity and Access Management (IAM)<!-- raw HTML omitted --></h4>
+<h4 id="61411-span-id110amazon-inspectorspan">6.14.11 <!-- raw HTML omitted -->Amazon Inspector<!-- raw HTML omitted --></h4>
+<h4 id="61412-span-id111aws-key-management-service-aws-kmsspan">6.14.12 <!-- raw HTML omitted -->AWS Key Management Service (AWS KMS)<!-- raw HTML omitted --></h4>
+<h4 id="61413-span-id112amazon-maciespan">6.14.13 <!-- raw HTML omitted -->Amazon Macie<!-- raw HTML omitted --></h4>
+<h4 id="61414-span-id113aws-network-firewallspan">6.14.14 <!-- raw HTML omitted -->AWS Network Firewall<!-- raw HTML omitted --></h4>
+<h4 id="61415-span-id114aws-resource-access-manager-aws-ramspan">6.14.15 <!-- raw HTML omitted -->AWS Resource Access Manager (AWS RAM)<!-- raw HTML omitted --></h4>
+<h4 id="61416-span-id115aws-secrets-managerspan">6.14.16 <!-- raw HTML omitted -->AWS Secrets Manager<!-- raw HTML omitted --></h4>
+<h4 id="61417-span-id116aws-security-hubspan">6.14.17 <!-- raw HTML omitted -->AWS Security Hub<!-- raw HTML omitted --></h4>
+<h4 id="61418-span-id117aws-shieldspan">6.14.18 <!-- raw HTML omitted -->AWS Shield<!-- raw HTML omitted --></h4>
+<h4 id="61419-span-id118aws-single-sign-onspan">6.14.19 <!-- raw HTML omitted -->AWS Single Sign-On<!-- raw HTML omitted --></h4>
+<h4 id="61420-span-id119aws-wafspan">6.14.20 <!-- raw HTML omitted -->AWS WAF<!-- raw HTML omitted --></h4>
+<h3 id="615-serverless">6.15 Serverless</h3>
+<h4 id="6151-span-id120aws-fargatespan">6.15.1 <!-- raw HTML omitted -->AWS Fargate<!-- raw HTML omitted --></h4>
+<ul>
+<li>AWS Fargate is a serverless compute engine for containers.</li>
+<li>It works with both Amazon ECS and Amazon EKS.</li>
+</ul>
+<h4 id="6152-span-id121aws-lambdaspan">6.15.2 <!-- raw HTML omitted -->AWS Lambda<!-- raw HTML omitted --></h4>
+<ul>
+<li>AWS Lambda is a serverless compute service that runs your code in response to events and automatically manages the underlying compute resources for you. These events may include changes in state or an update, such as a user placing an item in a shopping cart on an ecommerce website. When the trigger is detected, the code is automatically run in a managed environment.</li>
+<li>While using AWS Lambda, you pay only for the compute time that you consume. Charges apply only when your code is running.</li>
+<li>It allows you to upload your code into lambda function. You can also run code for virtually any type of application or backend service, all with zero administration.
+<ul>
+<li>For example, a simple Lambda function might involve automatically resizing uploaded images to the AWS Cloud. In this case, the function triggers when uploading a new image.</li>
+</ul>
+</li>
+</ul>
+<h3 id="616-storage">6.16 Storage</h3>
+<h4 id="6161-span-id122aws-backupspan">6.16.1 <!-- raw HTML omitted -->AWS Backup<!-- raw HTML omitted --></h4>
+<h4 id="6162-span-id123amazon-elastic-block-store-amazon-ebsspan">6.16.2 <!-- raw HTML omitted -->Amazon Elastic Block Store (Amazon EBS)<!-- raw HTML omitted --></h4>
+<h4 id="6163-span-id124amazon-elastic-file-system-amazon-efsspan">6.16.3 <!-- raw HTML omitted -->Amazon Elastic File System (Amazon EFS)<!-- raw HTML omitted --></h4>
+<h4 id="6164-span-id125amazon-fsx-for-all-typesspan">6.16.4 <!-- raw HTML omitted -->Amazon FSx (for all types)<!-- raw HTML omitted --></h4>
+<h4 id="6165-span-id126amazon-simple-storage-service-s3-amazon-s3span">6.16.5 <!-- raw HTML omitted -->Amazon Simple Storage Service S3 (Amazon S3)<!-- raw HTML omitted --></h4>
+<ul>
+<li>
+<p>An Amazon S3 is an object storage service offering industry-leading scalability, data availability, security, and performance.</p>
+</li>
+<li>
+<p>Object storage service</p>
+<ul>
+<li>An object is uniquely identified.
+<ul>
+<li>data</li>
+<li>metadata
+<ul>
+<li>name-value pairs that describe the object</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>S3 buckets</code> are containers for objects stored in S3.</p>
+</li>
+<li>
+<p>Industry leading</p>
+<ul>
+<li>Scalability</li>
+<li>Data availability</li>
+<li>Security
+<ul>
+<li>It secures from unauthorized access with
+<ul>
+<li>Encryption features</li>
+<li>Access management tools</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Durability (99.99%)
+<ul>
+<li>It automatically creates and stores copies of all S3 objects.</li>
+</ul>
+</li>
+<li>Performance</li>
+</ul>
+</li>
+<li>
+<p>It stores and protects data use cases, such as website, mobile app, enterprise app, backup and restore, archive, IoT devices, and big data analytics.</p>
+</li>
+<li>
+<p>It can easily makes fluctuating demands by automatically scales storage resources up. No upfront investment. No resource procurement cycles.</p>
+</li>
+<li>
+<p>It blocks public access.</p>
+</li>
+</ul>
+<h4 id="6166-span-id127amazon-s3-glacierspan">6.16.6 <!-- raw HTML omitted -->Amazon S3 Glacier<!-- raw HTML omitted --></h4>
+<h4 id="6167-span-id128aws-storage-gatewayspan">6.16.7 <!-- raw HTML omitted -->AWS Storage Gateway<!-- raw HTML omitted --></h4>
+<h2 id="7-how-to-interact-with-aws">7. How to interact with AWS</h2>
+<ul>
+<li>
+<p>Instead of physically managing infrastructure, you logically manage it, through the AWS Application Programming Interface (AWS API).</p>
+</li>
+<li>
+<p>When you create, delete, or change any AWS resource, you will use API calls to AWS to do that.</p>
+</li>
+<li>
+<p><strong>AWS Management Console</strong> is a web application that comprises a broad collection of service consoles for managing AWS resources.</p>
+</li>
+<li>
+<p><strong>The AWS Command Line Interface (AWS CLI)</strong> is an open source tool that enables you to create and configure AWS services using commands in your command-line shell.</p>
+</li>
+<li>
+<p><strong>Integrated Development Environment (IDE)</strong> is to write, run, debug, and deploy applications on AWS using familiar Integrated Development Environments (IDE).</p>
+</li>
+<li>
+<p><strong>Software Development Kit (SDK)</strong> simplifies coding with language-specific abstracted APIs for AWS services.</p>
+</li>
+</ul>
+<h2 id="8-resources">8. Resources</h2>
+<ol>
+<li><a href="https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Exam-Guide.pdf">Exam guide</a></li>
+<li><a href="https://www.coursera.org/articles/solutions-architect">What does a solutions architect do?</a></li>
+<li><a href="https://www.coursera.org/learn/aws-certified-solutions-architect-associate/home/week/1">Coursera</a></li>
+<li><a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html">AWS glossary</a></li>
+<li><a href="https://d0.awsstatic.com/whitepapers/aws-overview.pdf">AWS white paper</a></li>
+</ol>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/aws/" rel="tag">aws</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/coding/" rel="tag">coding</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/cloud-computing/" rel="tag">cloud computing</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/aws-note/certified_solutions_architect-associate/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">AWS Certified Solutions Architect - Associate (SAA-C03)</p>
+		</a>
+	</div>
+</nav>
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "www-fatmakahveci-com-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/coding-note/apache_hbase/">Apache HBase</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/binary_tree_traversal/">Binary tree traversal</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/concurrency/">Concurrency</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/database/">Database</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dog_pile_effect/">Dog pile effect</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dynamic_programming/">Dynamic Programming (DP)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/google_bigtable/">Google BigTable</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/jaccard_similarity/">Jaccard Similarity</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/mongodb/">MongoDB</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/naming_variables/">Naming variables</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Spotify" rel="noopener noreferrer" href="https://open.spotify.com/playlist/2lY1JpIvZI8T1SG8RAaosw?si=CvDn8z0xQlaA9RtXUGM_2g" target="_blank">
+				
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+	 viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+<path id="SVGCleanerId_0" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+	c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+	c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+	c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+	c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+	c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+	 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+	c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+	C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+<g>
+	<path id="SVGCleanerId_0_1_" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+		c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+		c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+		c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+		c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+		c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+		 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+		c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+		C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+</g>
+<path style="fill:#2CC64D;" d="M219.68,195.296c-94.952,0-177.16,35.576-217.168,87.448C19.536,402.832,123.384,496,248,496
+	c90.016,0,169.208-48.624,212.664-120.872c1.392-6.856,2.168-13.84,2.168-20.952C462.832,266.424,353.976,195.296,219.68,195.296z
+	 M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96c-58.28-35.96-131.448-43.392-218.224-23.544
+	c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6c94.232-21.08,176.08-12.4,240.56,27.28
+	C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16c-6.192,8.68-17.368,12.392-26.04,6.192
+	c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4c-2.48-9.92,2.488-21.088,12.408-23.568
+	c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z"/>
+<path style="fill:#5AF27A;" d="M248,36.816c131.384,0,237.808,101.68,247.248,229.536C495.696,260.288,496,254.168,496,248
+	C496,111.6,385.648,0,248,0C111.608,0,0,111.6,0,248c0,6.184,0.304,12.328,0.76,18.408C10.272,138.512,117.808,36.816,248,36.816z"
+	/>
+<path style="fill:#1DAA59;" d="M326.192,483.216c14.488-33.36,32.688-83.248,35.872-88.056c3.736-7.432,2.488-17.352-6.184-21.072
+	c-64.488-39.68-146.328-48.36-240.56-27.28c-7.44,2.48-13.64,9.92-11.16,18.6c1.248,3.76,6.512,49.088,12.528,92.632
+	C154.832,482.048,199.848,496,248,496C275.304,496,301.568,491.464,326.192,483.216z"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+				<span>Spotify</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/cheburashkaF" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Instagram" rel="noopener noreferrer" href="https://www.instagram.com/fatmakhv" target="_blank">
+				<svg class="widget-social__link-icon icon icon-instagram" width="24" height="24" viewBox="0 0 256 256"><circle cx="193" cy="59" r="15"/><path fill-rule="evenodd" d="M101 0h54c41 0 58.4 3.9 74.5 17C256.2 37.5 256 74.8 256 97.7v60c0 26.7 0 60.4-26.5 81.4-16 13.4-33.5 16.9-74.5 16.9h-54c-41 0-57.5-3.5-74.5-16.9C1 218.9.5 186.3.1 160.5L0 155V97.7c0-23-.2-60.2 26.5-80.7C45 2 60 0 101 0zm4.9 23h44.3c45.8 0 58.3 3.5 70.3 17.5 11.8 13.2 12 30.1 12.5 62.9V156c.2 20.8.3 45.8-12.5 59.5-12 14-24.5 17.5-70.3 17.5h-44.3c-45.9 0-57.3-3.5-70.4-17.5-12.2-13-12.3-36.5-12.4-56.7v-55.6c.4-32.6.7-49.6 12.4-62.7C48 26.5 60 23 105.9 23zm19.6 144.5a42 42 0 1 0 0-84 42 42 0 0 0 0 84zm0 22.5a64.5 64.5 0 1 0 0-129 64.5 64.5 0 0 0 0 129z"/></svg>
+				<span>Instagram</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/fatma-kahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/fatmakahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="algorithm">algorithm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/aws/" title="aws">aws</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bash/" title="bash">bash</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bfs/" title="bfs">bfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/big-oh-notation/" title="big-oh-notation">big-oh-notation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bigtable/" title="bigtable">bigtable</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cloud-computing/" title="cloud computing">cloud computing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/concurrency/" title="concurrency">concurrency</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dfs/" title="dfs">dfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="django">django</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/framework/" title="framework">framework</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="javascript">javascript</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb/" title="mongodb">mongodb</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/network/" title="network">network</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nosql/" title="nosql">nosql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="react">react</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="software">software</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="sql">sql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/travel/" title="travel">travel</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tree-traversal/" title="tree traversal">tree traversal</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/user-interface/" title="user interface">user interface</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web-development/" title="web development">web development</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Fatma Kahveci.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG" async></script>
+</body>
+</html>

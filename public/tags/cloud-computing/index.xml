@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cloud computing on Fatma Kahveci</title>
+    <link>https://fatmakahveci.com/tags/cloud-computing/</link>
+    <description>Recent content in cloud computing on Fatma Kahveci</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://fatmakahveci.com/tags/cloud-computing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS Certified Solutions Architect - Associate (SAA-C03)</title>
+      <link>https://fatmakahveci.com/aws-note/certified_solutions_architect-associate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/aws-note/certified_solutions_architect-associate/</guid>
+      <description>Updated by Fatma, Apr 03, 2023.</description>
+    </item>
+    
+  </channel>
+</rss>

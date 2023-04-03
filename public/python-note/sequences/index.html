@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sequences - Fatma Kahveci</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Sequences">
+		<meta property="og:title" content="Sequences" />
+<meta property="og:description" content="Sequences" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fatmakahveci.com/python-note/sequences/" /><meta property="article:section" content="python note" />
+
+
+
+		<meta itemprop="name" content="Sequences">
+<meta itemprop="description" content="Sequences">
+
+<meta itemprop="wordCount" content="1694">
+<meta itemprop="keywords" content="Python,coding,algorithms,data structures," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&display=swap">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Fatma Kahveci" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Fatma Kahveci</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/coding-note/">
+				
+				<span class="menu__text">coding</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/python-note/">
+				
+				<span class="menu__text">python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/django-note/">
+				
+				<span class="menu__text">django</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/react-note/">
+				
+				<span class="menu__text">react</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/go-note/">
+				
+				<span class="menu__text">go</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/javascript-note/">
+				
+				<span class="menu__text">js</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/bash-note/">
+				
+				<span class="menu__text">bash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aws-note/">
+				
+				<span class="menu__text">aws</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/travel-note/">
+				
+				<span class="menu__text">Travel</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Sequences</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Fatma Kahveci</span>
+</div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/coding/" rel="category">Coding</a>
+	</span>
+</div></div>
+		</header><div class="content post__content clearfix">
+			<h2 id="operations">Operations</h2>
+<ul>
+<li>Sequences share a rich set of common operations including
+<ul>
+<li>iteration,</li>
+<li>slicing,</li>
+<li>sorting, and</li>
+<li>concatenation.</li>
+</ul>
+</li>
+</ul>
+<h3 id="slicing">Slicing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bicycle&#39;</span>
+</span></span><span style="display:flex;"><span>s[::<span style="color:#ae81ff">3</span>] <span style="color:#75715e"># bye</span>
+</span></span><span style="display:flex;"><span>s[::<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#75715e"># eccb</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>invoice <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">0.....6.................................40........52...55........
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">1909 Pimoroni PiBrella $17.50 3 $52.50
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">1489 6mm Tactile Switch x20 $4.95 2 $9.90
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">1510 Panavise Jr. - PV-201 $28.00 1 $28.00
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">1601 PiTFT Mini Kit 320x240 $34.95 1 $34.95
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>DESCRIPTION <span style="color:#f92672">=</span> slice(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">40</span>)
+</span></span><span style="display:flex;"><span>line_items <span style="color:#f92672">=</span> invoice<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)[<span style="color:#ae81ff">2</span>:]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> line_items:
+</span></span><span style="display:flex;"><span>  print(item[DESCRIPTION])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Assigning to slices</span>
+</span></span><span style="display:flex;"><span>l <span style="color:#f92672">=</span> list(range(<span style="color:#ae81ff">10</span>)) <span style="color:#75715e"># 0 1 2 3 4 5 6 7 8 9</span>
+</span></span><span style="display:flex;"><span>l[<span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">30</span>] <span style="color:#75715e"># 0 1 20 30 5 6 7 8 9</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">del</span> l[<span style="color:#ae81ff">5</span>:<span style="color:#ae81ff">7</span>] <span style="color:#75715e"># 0 1 20 30 5 8 9</span>
+</span></span><span style="display:flex;"><span>l[<span style="color:#ae81ff">3</span>::<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">22</span>] <span style="color:#75715e"># 0 1 20 11 5 22 9</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># l[2:5] = 100 # not allowed if the target is sliced the right-hand side must be iterable even if it has just one item</span>
+</span></span><span style="display:flex;"><span>l[<span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">100</span>] <span style="color:#75715e"># 0 1 100 22 9</span>
+</span></span></code></pre></div><ul>
+<li>[] operator can take
+<ul>
+<li>multiple indexes <em>or</em></li>
+<li>slices separated by commas.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="sequence-types">Sequence types</h2>
+<ul>
+<li>
+<p>Sequences can be categorized as either container or flat.</p>
+<ul>
+<li>Container sequences can hold items of different types, such as <code>list</code>, <code>tuple</code>, and <code>collections.deque</code>. They hold references to the objects they contain.</li>
+<li>Flat sequences can hold items of one type. <code>str</code>, <code>bytes</code>, <code>bytearray</code>, <code>memoryview</code>, and <code>array.array</code>. They store the value of each item within its own memory space, not as distinct objects. They are limited to holding primitives values like <code>chars</code>, <code>bytes</code>, <code>numbers</code>, etc.</li>
+</ul>
+</li>
+<li>
+<p>Sequences can also be categorized as either mutable or immutable.</p>
+<ul>
+<li>Mutable sequences can be modified after they are created, such as <code>list</code>, <code>bytearray</code>, <code>array.array</code>, <code>collections.deque</code>, <code>memoryview</code>, <code>bitarray</code>.</li>
+<li>Immutable sequences cannot be modified after they are created, such as <code>tuple</code>, <code>str</code>, <code>bytes</code>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="arrayarray">array.array</h3>
+<ul>
+<li>If all you want to put in the list are numbers, an array.array is more efficient than a list.</li>
+<li>It supports all mutable sequence operations.
+<ul>
+<li><code>.pop</code></li>
+<li><code>.insert</code></li>
+<li><code>.extend</code></li>
+<li><code>.frombytes</code> fast loading</li>
+<li><code>.tofile</code> fast saving</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> array <span style="color:#f92672">import</span> array
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># creates an array of double-precision floats from any iterable object, in this case, a generator</span>
+</span></span><span style="display:flex;"><span>floats <span style="color:#f92672">=</span> array(<span style="color:#e6db74">&#39;d&#39;</span>, (random() <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span><span style="color:#f92672">**</span><span style="color:#ae81ff">7</span>)))
+</span></span><span style="display:flex;"><span>floats2 <span style="color:#f92672">=</span> array(<span style="color:#e6db74">&#39;d&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># save the array to a binary file</span>
+</span></span><span style="display:flex;"><span>fp <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;floats.bin&#39;</span>, <span style="color:#e6db74">&#39;wb&#39;</span>)
+</span></span><span style="display:flex;"><span>floats<span style="color:#f92672">.</span>tofile(fp)
+</span></span><span style="display:flex;"><span>fp<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># reads from the binary file</span>
+</span></span><span style="display:flex;"><span>fp <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;floats.bin&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>)
+</span></span><span style="display:flex;"><span>floats2<span style="color:#f92672">.</span>fromfile(fp, <span style="color:#ae81ff">10</span><span style="color:#f92672">**</span><span style="color:#ae81ff">7</span>)
+</span></span><span style="display:flex;"><span>fp<span style="color:#f92672">.</span>close()
+</span></span></code></pre></div><hr>
+<h3 id="bitarray">bitarray</h3>
+<ul>
+<li>
+<p><code>pip install bitarray</code></p>
+</li>
+<li>
+<p>It is an efficient way of representing bools in an array.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> bitarray <span style="color:#f92672">import</span> bitarray
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr <span style="color:#f92672">=</span> bitarray()      
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr<span style="color:#f92672">.</span>append(<span style="color:#66d9ef">False</span>) <span style="color:#75715e"># bitarray(0)</span>
+</span></span><span style="display:flex;"><span>arr<span style="color:#f92672">.</span>append(<span style="color:#66d9ef">True</span>) <span style="color:#75715e"># bitarray(1)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>arr <span style="color:#f92672">=</span> bitarray(<span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">5</span>) <span style="color:#75715e"># creates an empty bit array of size 32</span>
+</span></span><span style="display:flex;"><span>bitarray(<span style="color:#e6db74">&#39;11011011&#39;</span>) <span style="color:#75715e"># declares a bitarray using string</span>
+</span></span></code></pre></div><h4 id="bitwise-operators">Bitwise operators</h4>
+<ul>
+<li><code>&amp;, |, ^, &amp;=, |=, ^=, ~</code></li>
+<li>There is no sign bit and <code>unsigned right shift operator (&gt;&gt;&gt;)</code> in Python.</li>
+<li>They are to implement algorithms such as
+<ul>
+<li>compression</li>
+<li>encryption</li>
+<li>error detection</li>
+</ul>
+</li>
+<li>Bit masks pack information on a single byte.</li>
+<li><code>(42).bit_length()</code> # 6</li>
+</ul>
+<h4 id="functions">Functions</h4>
+<ul>
+<li><code>all()</code> is <code>True</code> when all bits in the array are <code>True</code>.</li>
+<li><code>any()</code> is <code>True</code> when any bit in the array is <code>True</code>.</li>
+<li><code>append(item, /)</code> appends the truth value <code>bool(item)</code> to the end of the bitarray.</li>
+<li><code>bytereverse()</code> reverses the bit order in place.</li>
+<li><code>clear()</code> empties the bitarray.</li>
+<li><code>copy()</code> copies the bitarray.</li>
+<li><code>count(value=True, start=0, stop=&lt;end of array&gt;, /)</code> counts the frequency of a bool value.</li>
+<li><code>endian()</code> # &lsquo;big&rsquo; # bitarray(endian=&lsquo;little&rsquo;)</li>
+<li><code>extend(iterable or string, /)</code> extends the bitarray.</li>
+<li><code>fill()</code> adds 0s to the end of bitarray to make it a multiple of 8.</li>
+<li><code>array.frombytes(b'A')</code> # bitarray(&lsquo;01000001&rsquo;)</li>
+<li><code>index(value, start=0, stop=&lt;end of array&gt;, /)</code> finds the index of the first occurrence of the given bool value int.</li>
+<li><code>insert(index, value, /)</code> inserts a bool value in the given index.</li>
+<li><code>invert(index=&lt;all bits&gt;)</code> inverts all bits in place.</li>
+<li><code>itersearch(bitarray, /)</code> searches for the given bitarray.</li>
+<li><code>length()</code> gives the length of the bitarray.</li>
+<li><code>pop(index=-1, /)</code> deletes and returns the ith element.</li>
+<li><code>remove(value, /)</code> remove the first occurrence of given bool value.</li>
+<li><code>reverse()</code> reverses the order of bits in place.</li>
+<li><code>setall(0)</code> sets all elements in a to 0.</li>
+<li><code>sort(reverse=False)</code> sorts the bits in place.</li>
+<li><code>a.tobytes()</code> # b&rsquo;A&rsquo;</li>
+</ul>
+<hr>
+<h3 id="bytearray">bytearray</h3>
+<hr>
+<h3 id="bytes">bytes</h3>
+<ul>
+<li>To define a bytes variable, just prepend a <code>b</code> to the string.</li>
+</ul>
+<h3 id="bytes-vs-str">bytes vs str</h3>
+<ol>
+<li>
+<p><code>str</code> is represented internally as a sequence of Unicode codepoints. You can declare a <code>str</code> variable without prepending the string with <code>u</code>.</p>
+</li>
+<li>
+<p><code>bytes</code> is a binary serialization format represented by a sequence of 8-bit integers that is fit for storing data on the filesystem or sending it across the Internet. That is why you can only create bytes containing ASCII literal characters.</p>
+</li>
+</ol>
+<ul>
+<li><code>bytes := str.encode()</code></li>
+<li><code>str := bytes.decode()</code></li>
+</ul>
+<hr>
+<h3 id="collectionsdeque">collections.deque</h3>
+<hr>
+<h3 id="lists">lists</h3>
+<ul>
+<li>If you keep a big array an array is much more efficient because an array does not hold full-fledged float objects. It only holds the packed bytes representing their machine values, just like an array in the <code>C</code> language.</li>
+</ul>
+<h4 id="lists-of-lists">Lists of lists</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>board <span style="color:#f92672">=</span> [[<span style="color:#e6db74">&#39;_&#39;</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>)] <span style="color:#75715e"># [[&#39;_&#39;, &#39;_&#39;, &#39;_&#39;], [&#39;_&#39;, &#39;_&#39;, &#39;_&#39;], [&#39;_&#39;, &#39;_&#39;, &#39;_&#39;]]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># equals to</span>
+</span></span><span style="display:flex;"><span>board <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>  row <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;_&#39;</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>   <span style="color:#75715e"># each iteration builds a new row and </span>
+</span></span><span style="display:flex;"><span>  board<span style="color:#f92672">.</span>append(row) <span style="color:#75715e"># appends it to board.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># a wrong case</span>
+</span></span><span style="display:flex;"><span>weird_board <span style="color:#f92672">=</span> [[<span style="color:#e6db74">&#39;_&#39;</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span> <span style="color:#75715e"># this is made of three references to the same inner list.</span>
+</span></span><span style="display:flex;"><span>weird_board[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;O&#39;</span> <span style="color:#75715e"># [[&#39;_&#39;, &#39;_&#39;, &#39;O&#39;], [&#39;_&#39;, &#39;_&#39;, &#39;O&#39;], [&#39;_&#39;, &#39;_&#39;, &#39;O&#39;]]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># equals to</span>
+</span></span><span style="display:flex;"><span>row <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;_&#39;</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>board <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>  board<span style="color:#f92672">.</span>append(row) <span style="color:#75715e"># the same row is appended 3 times to the board.</span>
+</span></span></code></pre></div><ul>
+<li>In the wrong case, there is a list with three references to the same list.</li>
+</ul>
+<hr>
+<h3 id="memoryview">memoryview</h3>
+<ul>
+<li><code>memoryview</code> references the object.</li>
+<li>It is important for large data sets.</li>
+<li>It allows direct read and writes access to an object&rsquo;s byte-oriented data without needing to copy it first.</li>
+<li>It allows you to share memory between data structures like PIL images, SQLite databases, and NumPy arrays without first copying.</li>
+<li>It allows to access the internal data of an object that supports the buffer protocol without copying.</li>
+<li><code>memoryview.cast</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Create a random byte array</span>
+</span></span><span style="display:flex;"><span>rarray <span style="color:#f92672">=</span> bytearray(<span style="color:#e6db74">&#39;XYZ&#39;</span>, <span style="color:#e6db74">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get memory view</span>
+</span></span><span style="display:flex;"><span>mview <span style="color:#f92672">=</span> memoryview(rarray)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print memory view&#39;s 0th Index</span>
+</span></span><span style="display:flex;"><span>print(mview[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a list of the memory view</span>
+</span></span><span style="display:flex;"><span>print(list(mview[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">3</span>]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a tuple of the memory view</span>
+</span></span><span style="display:flex;"><span>print(tuple(mview[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">3</span>]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update a value of the memory view</span>
+</span></span><span style="display:flex;"><span>mview[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">70</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>numbers <span style="color:#f92672">=</span> array<span style="color:#f92672">.</span>array(<span style="color:#e6db74">&#39;h&#39;</span>, [<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># build memoryview from array of 5 short signed integers (typecode &#39;h&#39;)</span>
+</span></span><span style="display:flex;"><span>memv <span style="color:#f92672">=</span> memoryview(numbers)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>len(memv) <span style="color:#75715e"># 5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># memv sees the same 5 items in the array</span>
+</span></span><span style="display:flex;"><span>memv[<span style="color:#ae81ff">0</span>] <span style="color:#75715e"># -2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># create memv_oct by casting the elements of memv to type code &#39;B&#39; (unsigned char)</span>
+</span></span><span style="display:flex;"><span>memv_oct <span style="color:#f92672">=</span> memv<span style="color:#f92672">.</span>cast(<span style="color:#e6db74">&#39;B&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># export elements of memv_oct as list for inspection</span>
+</span></span><span style="display:flex;"><span>memv_oct<span style="color:#f92672">.</span>tolist() <span style="color:#75715e"># [254, 255, 255, 255, 0, 0, 1, 0, 2, 0]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># assign value 4 to byte offset 5</span>
+</span></span><span style="display:flex;"><span>memv_oct[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># a 4 is in the most significant byte of a 2-byte unsigned integer is 1024.</span>
+</span></span><span style="display:flex;"><span>numbers
+</span></span></code></pre></div><ul>
+<li>It takes a single parameter <code>&lt;object&gt;</code>.</li>
+</ul>
+<p><a href="https://www.geeksforgeeks.org/memoryview-in-python/">Ref</a></p>
+<hr>
+<h3 id="str">str</h3>
+<h4 id="string-representation">String representation</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Vector</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self, x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>x <span style="color:#f92672">=</span> x
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>y <span style="color:#f92672">=</span> y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __repr__(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Vector(</span><span style="color:#e6db74">%r</span><span style="color:#e6db74">, </span><span style="color:#e6db74">%r</span><span style="color:#e6db74">)&#39;</span> <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>x, self<span style="color:#f92672">.</span>y)
+</span></span></code></pre></div><ul>
+<li>If we don&rsquo;t implement <code>__repr__</code>, vector instances will be shown like <code>&lt;Vector object at 0x10e100070&gt;</code>.</li>
+<li><code>__str__</code> is called by the <code>str()</code> constructor and implicitly used by the print function.
+<ul>
+<li>It should return a string suitable for display to end-users.</li>
+</ul>
+</li>
+<li><strong>If you only implement one of <code>__repr__</code> or <code>__str__</code>, choose the first because Python will call it a fallback.</strong></li>
+</ul>
+<hr>
+<h3 id="tuples">tuples</h3>
+<ul>
+<li>Immutable list and records with no field names.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># immutable list example</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># latitude and longitude of Los Angeles International Airport (LAX)</span>
+</span></span><span style="display:flex;"><span>lax_coordinates <span style="color:#f92672">=</span> (<span style="color:#ae81ff">33.9425</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">118.408056</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># the most visible form of tuple unpacking</span>
+</span></span><span style="display:flex;"><span>latitude, longitude <span style="color:#f92672">=</span> lax_coordinates
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># unpacking with a star</span>
+</span></span><span style="display:flex;"><span>t <span style="color:#f92672">=</span> divmod(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>a, b, rest <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">2</span>) <span style="color:#75715e"># 1, 2, []</span>
+</span></span><span style="display:flex;"><span>a, b, rest <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">5</span>) <span style="color:#75715e"># 1, 2, [3, 4, 5]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span>_, file_name <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;/home/luciano/.ssh/idrsa.pub&#39;</span>) <span style="color:#75715e"># filename = idrsa.pub</span>
+</span></span></code></pre></div><ul>
+<li>Each item in the tuple holds the data for one field.</li>
+<li>The position of the item gives its meaning.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># data example</span>
+</span></span><span style="display:flex;"><span>traveler_ids <span style="color:#f92672">=</span> [(<span style="color:#e6db74">&#39;USA&#39;</span>, <span style="color:#e6db74">&#39;4323412&#39;</span>), (<span style="color:#e6db74">&#39;BRA&#39;</span>, <span style="color:#e6db74">&#39;2314233&#39;</span>), (<span style="color:#e6db74">&#39;ESP&#39;</span>, <span style="color:#e6db74">&#39;3241235&#39;</span>)]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> country, _ <span style="color:#f92672">in</span> traveler_ids: <span style="color:#75715e"># USA BRA ESP</span>
+</span></span><span style="display:flex;"><span>    print(country)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> passport <span style="color:#f92672">in</span> sorted(traveler_ids): <span style="color:#75715e"># USA/4323412 BRA/2314233 ESP/3241235</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> passport)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>metro_areas <span style="color:#f92672">=</span> [ (<span style="color:#e6db74">&#39;Tokyo&#39;</span>, <span style="color:#e6db74">&#39;JP&#39;</span>, <span style="color:#ae81ff">36.933</span>, (<span style="color:#ae81ff">35.689722</span>, <span style="color:#ae81ff">139.691667</span>)),
+</span></span><span style="display:flex;"><span>                (<span style="color:#e6db74">&#39;Delhi NCR&#39;</span>, <span style="color:#e6db74">&#39;IN&#39;</span>, <span style="color:#ae81ff">21.935</span>, (<span style="color:#ae81ff">28.613889</span>, <span style="color:#ae81ff">77.208889</span>)),
+</span></span><span style="display:flex;"><span>                (<span style="color:#e6db74">&#39;Mexico City&#39;</span>, <span style="color:#e6db74">&#39;MX&#39;</span>, <span style="color:#ae81ff">20.142</span>, (<span style="color:#ae81ff">19.433333</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">99.133333</span>)),
+</span></span><span style="display:flex;"><span>                (<span style="color:#e6db74">&#39;New York-Newark&#39;</span>, <span style="color:#e6db74">&#39;US&#39;</span>, <span style="color:#ae81ff">20.104</span>, (<span style="color:#ae81ff">40.808611</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">74.020386</span>)),
+</span></span><span style="display:flex;"><span>                (<span style="color:#e6db74">&#39;Sao Paulo&#39;</span>, <span style="color:#e6db74">&#39;BR&#39;</span>, <span style="color:#ae81ff">19.649</span>, (<span style="color:#f92672">-</span><span style="color:#ae81ff">23.547778</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">46.635833</span>)), 
+</span></span><span style="display:flex;"><span>              ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fmt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{:15}</span><span style="color:#e6db74"> | </span><span style="color:#e6db74">{:9.4f}</span><span style="color:#e6db74"> | </span><span style="color:#e6db74">{:9.4f}</span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> name, cc, pop, (latitude, longitude) <span style="color:#f92672">in</span> metro_areas:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> longitude <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        print(fmt<span style="color:#f92672">.</span>format(name, latitude, longitude))
+</span></span></code></pre></div><ul>
+<li>Putting mutable items in tuples is not a good idea.</li>
+</ul>
+<h2 id="sort">Sort</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_list <span style="color:#f92672">=</span> [(<span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#ae81ff">4</span>), (<span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#ae81ff">6</span>), (<span style="color:#e6db74">&#39;m&#39;</span>, <span style="color:#ae81ff">2</span>)]
+</span></span><span style="display:flex;"><span>my_list<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> s:s[<span style="color:#ae81ff">1</span>])
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_tup_lis <span style="color:#f92672">=</span> [(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>), (<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">16</span>), (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">12</span>), (<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>)]
+</span></span><span style="display:flex;"><span>mul_sort <span style="color:#f92672">=</span> sorted(my_tup_lis, key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> t: (t[<span style="color:#ae81ff">1</span>], t[<span style="color:#ae81ff">0</span>]))
+</span></span></code></pre></div><hr>
+<h3 id="namedtuple">namedtuple</h3>
+<ul>
+<li>It helps to debug.</li>
+<li>They use less memory than regular objects because they store attributes in a per-instance <code>__dict__</code>.</li>
+<li>Two parameters are required to create a named tuple:
+<ul>
+<li>class name</li>
+<li>a list of field names
+<ul>
+<li>it can be given as
+<ul>
+<li>an iterable of strings <em>or</em></li>
+<li>a single space-delimited string.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Additional attributes of a named tuple in comparison to a tuple:
+<ul>
+<li>Class attribute
+<ul>
+<li><code>_fields</code>
+<ul>
+<li>a tuple with the field names of the class</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Class method
+<ul>
+<li><code>_make(iterable)</code>
+<ul>
+<li>instantiate a named tuple from an iterable
+<ul>
+<li><code>City._make(delhi_data) &lt;==&gt; City(*delhi_data)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>_asdict()</code>
+<ul>
+<li>returns a <code>collections.OrderedDict</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="namedtuple-example">namedtuple example</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> namedtuple
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> choice
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Card <span style="color:#f92672">=</span> namedtuple(<span style="color:#e6db74">&#39;Card&#39;</span>, [<span style="color:#e6db74">&#39;rank&#39;</span>, <span style="color:#e6db74">&#39;suit&#39;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FrenchDeck</span>:
+</span></span><span style="display:flex;"><span> ranks <span style="color:#f92672">=</span> [ str(n) <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">11</span>) ] <span style="color:#f92672">+</span> list(<span style="color:#e6db74">&#39;JQKA&#39;</span>)
+</span></span><span style="display:flex;"><span> suits <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;spades diamonds clubs hearts&#39;</span><span style="color:#f92672">.</span>split()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>_cards <span style="color:#f92672">=</span> [ Card(rank, suit) <span style="color:#66d9ef">for</span> suit <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>suits
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">for</span> rank <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>ranks ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __len__(self):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> len(self<span style="color:#f92672">.</span>_cards)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">def</span> __getitem__(self, position):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_cards[position]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">spades_high</span>(card):
+</span></span><span style="display:flex;"><span> rank_value <span style="color:#f92672">=</span> FrenchDeck<span style="color:#f92672">.</span>ranks<span style="color:#f92672">.</span>index(card<span style="color:#f92672">.</span>rank)
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">return</span> rank_value <span style="color:#f92672">*</span> len(suit_values) <span style="color:#f92672">+</span> suit_values[card<span style="color:#f92672">.</span>suit]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> my_card <span style="color:#f92672">=</span> Card(<span style="color:#e6db74">&#39;7&#39;</span>, <span style="color:#e6db74">&#39;diamonds&#39;</span>) <span style="color:#75715e"># Card(rank=&#39;7&#39;, suit=&#39;diamonds&#39;)</span>
+</span></span><span style="display:flex;"><span> deck <span style="color:#f92672">=</span> FrenchDeck()
+</span></span><span style="display:flex;"><span> print(len(deck)) <span style="color:#75715e"># 52</span>
+</span></span><span style="display:flex;"><span> print(deck[<span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># Card(rank=&#39;2&#39;, suit=&#39;spades&#39;)</span>
+</span></span><span style="display:flex;"><span> choice(deck) <span style="color:#75715e"># i.e. Card(rank=&#39;3&#39;, suit=&#39;hearts&#39;)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> suit_values <span style="color:#f92672">=</span> dict(spades<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, hearts<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, diamonds<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, clubs<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span> card <span style="color:#f92672">in</span> sorted(deck, key<span style="color:#f92672">=</span>spades_high):
+</span></span><span style="display:flex;"><span>  print(card) <span style="color:#75715e"># Card(rank=&#39;2&#39;, suit=&#39;clubs&#39;) Card(rank=&#39;2&#39;, suit=&#39;hearts&#39;) , ..., Card(rank=&#39;A&#39;, suit=&#39;spades&#39;)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> deck[<span style="color:#ae81ff">12</span>::<span style="color:#ae81ff">13</span>] <span style="color:#75715e"># [start:stop:step]</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">#[Card(rank=&#39;A&#39;, suit=&#39;spades&#39;), Card(rank=&#39;A&#39;, suit=&#39;diamonds&#39;), Card(rank=&#39;A&#39;, suit=&#39;clubs&#39;), Card(rank=&#39;A&#39;, suit=&#39;hearts&#39;)]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> City <span style="color:#f92672">=</span> namedtuple(<span style="color:#e6db74">&#39;City&#39;</span>, <span style="color:#e6db74">&#39;name country population coordinates&#39;</span>)
+</span></span><span style="display:flex;"><span> tokyo <span style="color:#f92672">=</span> City(<span style="color:#e6db74">&#39;Tokyo&#39;</span>, <span style="color:#e6db74">&#39;JP&#39;</span>, <span style="color:#ae81ff">36.933</span>, (<span style="color:#ae81ff">35.689722</span>, <span style="color:#ae81ff">139.691667</span>))
+</span></span></code></pre></div>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">Python</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/coding/" rel="tag">coding</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/algorithms/" rel="tag">algorithms</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/data-structures/" rel="tag">data structures</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/python-note/sorting/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Sorting</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/python-note/seaborn/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">seaborn</p>
+		</a>
+	</div>
+</nav>
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "www-fatmakahveci-com-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/coding-note/apache_hbase/">Apache HBase</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/binary_tree_traversal/">Binary tree traversal</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/concurrency/">Concurrency</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/database/">Database</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dog_pile_effect/">Dogpile effect</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dynamic_programming/">Dynamic Programming (DP)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/google_bigtable/">Google BigTable</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/jaccard_similarity/">Jaccard Similarity</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/mongodb/">MongoDB</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/naming_variables/">Naming variables</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Spotify" rel="noopener noreferrer" href="https://open.spotify.com/playlist/2lY1JpIvZI8T1SG8RAaosw?si=CvDn8z0xQlaA9RtXUGM_2g" target="_blank">
+				
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+	 viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+<path id="SVGCleanerId_0" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+	c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+	c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+	c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+	c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+	c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+	 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+	c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+	C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+<g>
+	<path id="SVGCleanerId_0_1_" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+		c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+		c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+		c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+		c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+		c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+		 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+		c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+		C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+</g>
+<path style="fill:#2CC64D;" d="M219.68,195.296c-94.952,0-177.16,35.576-217.168,87.448C19.536,402.832,123.384,496,248,496
+	c90.016,0,169.208-48.624,212.664-120.872c1.392-6.856,2.168-13.84,2.168-20.952C462.832,266.424,353.976,195.296,219.68,195.296z
+	 M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96c-58.28-35.96-131.448-43.392-218.224-23.544
+	c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6c94.232-21.08,176.08-12.4,240.56,27.28
+	C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16c-6.192,8.68-17.368,12.392-26.04,6.192
+	c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4c-2.48-9.92,2.488-21.088,12.408-23.568
+	c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z"/>
+<path style="fill:#5AF27A;" d="M248,36.816c131.384,0,237.808,101.68,247.248,229.536C495.696,260.288,496,254.168,496,248
+	C496,111.6,385.648,0,248,0C111.608,0,0,111.6,0,248c0,6.184,0.304,12.328,0.76,18.408C10.272,138.512,117.808,36.816,248,36.816z"
+	/>
+<path style="fill:#1DAA59;" d="M326.192,483.216c14.488-33.36,32.688-83.248,35.872-88.056c3.736-7.432,2.488-17.352-6.184-21.072
+	c-64.488-39.68-146.328-48.36-240.56-27.28c-7.44,2.48-13.64,9.92-11.16,18.6c1.248,3.76,6.512,49.088,12.528,92.632
+	C154.832,482.048,199.848,496,248,496C275.304,496,301.568,491.464,326.192,483.216z"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+				<span>Spotify</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/cheburashkaF" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Instagram" rel="noopener noreferrer" href="https://www.instagram.com/fatmakhv" target="_blank">
+				<svg class="widget-social__link-icon icon icon-instagram" width="24" height="24" viewBox="0 0 256 256"><circle cx="193" cy="59" r="15"/><path fill-rule="evenodd" d="M101 0h54c41 0 58.4 3.9 74.5 17C256.2 37.5 256 74.8 256 97.7v60c0 26.7 0 60.4-26.5 81.4-16 13.4-33.5 16.9-74.5 16.9h-54c-41 0-57.5-3.5-74.5-16.9C1 218.9.5 186.3.1 160.5L0 155V97.7c0-23-.2-60.2 26.5-80.7C45 2 60 0 101 0zm4.9 23h44.3c45.8 0 58.3 3.5 70.3 17.5 11.8 13.2 12 30.1 12.5 62.9V156c.2 20.8.3 45.8-12.5 59.5-12 14-24.5 17.5-70.3 17.5h-44.3c-45.9 0-57.3-3.5-70.4-17.5-12.2-13-12.3-36.5-12.4-56.7v-55.6c.4-32.6.7-49.6 12.4-62.7C48 26.5 60 23 105.9 23zm19.6 144.5a42 42 0 1 0 0-84 42 42 0 0 0 0 84zm0 22.5a64.5 64.5 0 1 0 0-129 64.5 64.5 0 0 0 0 129z"/></svg>
+				<span>Instagram</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/fatma-kahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/fatmakahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="algorithm">algorithm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/aws/" title="aws">aws</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bash/" title="bash">bash</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bfs/" title="bfs">bfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/big-oh-notation/" title="big-oh-notation">big-oh-notation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bigtable/" title="bigtable">bigtable</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cloud-computing/" title="cloud computing">cloud computing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/concurrency/" title="concurrency">concurrency</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dfs/" title="dfs">dfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="Django">Django</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/framework/" title="framework">framework</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="javascript">javascript</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb/" title="MongoDB">MongoDB</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/network/" title="network">network</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nosql/" title="nosql">nosql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/numpy/" title="NumPy">NumPy</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="react">react</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="Software">Software</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="sql">sql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/travel/" title="travel">travel</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tree-traversal/" title="tree traversal">tree traversal</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/user-interface/" title="user interface">user interface</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web-development/" title="web development">web development</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Fatma Kahveci.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG" async></script>
+</body>
+</html>

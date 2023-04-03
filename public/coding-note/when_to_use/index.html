@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>When to use data structures and algorithms - Fatma Kahveci</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="When to use data structures and algorithms">
+		<meta property="og:title" content="When to use data structures and algorithms" />
+<meta property="og:description" content="When to use data structures and algorithms" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fatmakahveci.com/coding-note/when_to_use/" /><meta property="article:section" content="coding note" />
+
+
+
+		<meta itemprop="name" content="When to use data structures and algorithms">
+<meta itemprop="description" content="When to use data structures and algorithms">
+
+<meta itemprop="wordCount" content="3527">
+<meta itemprop="keywords" content="coding,algorithms,data structures," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&display=swap">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Fatma Kahveci" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Fatma Kahveci</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/coding-note/">
+				
+				<span class="menu__text">coding</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/python-note/">
+				
+				<span class="menu__text">python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/django-note/">
+				
+				<span class="menu__text">django</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/react-note/">
+				
+				<span class="menu__text">react</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/go-note/">
+				
+				<span class="menu__text">go</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/javascript-note/">
+				
+				<span class="menu__text">js</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/bash-note/">
+				
+				<span class="menu__text">bash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aws-note/">
+				
+				<span class="menu__text">aws</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/travel-note/">
+				
+				<span class="menu__text">Travel</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">When to use data structures and algorithms</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Fatma Kahveci</span>
+</div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/coding/" rel="category">Coding</a>
+	</span>
+</div></div>
+		</header><div class="content post__content clearfix">
+			<h2 id="technical-questions">Technical Questions</h2>
+<ol>
+<li>
+<p>Listen carefully.</p>
+<ul>
+<li>Given two arrays that are <strong>sorted</strong>, &hellip;</li>
+<li>Design an algorithm to be run <strong>repeatedly</strong> on a server, &hellip;
+<ul>
+<li>Cache the data or</li>
+<li>Some reasonable precomputation on the initial dataset.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Draw an example.</p>
+<ul>
+<li>Specific
+<ul>
+<li>Use real numbers or strings, if applicable.</li>
+</ul>
+</li>
+<li>Sufficiently large</li>
+<li>Not a special case</li>
+</ul>
+</li>
+<li>
+<p>State a Brute Force.</p>
+<ul>
+<li>Your initial algorithm won&rsquo;t be very optimal. A brute force algorithm is valuable to discuss.</li>
+<li>Explain what the space and time complexity is, and then dive into improvements.</li>
+</ul>
+</li>
+<li>
+<p>Optimize.</p>
+<ul>
+<li>Look for any unused information.</li>
+<li>Use a fresh example.</li>
+<li>Having an incorrect solution might help you find a correct solution.</li>
+<li>Make time vs. space tradeoff.</li>
+<li>Precompute information.</li>
+<li>Use a hash table. <strong>Hash tables are widely used in interview questions and should be at the top of your mind.</strong></li>
+<li>Think about the best conceivable runtime.</li>
+</ul>
+</li>
+<li>
+<p>Walkthrough.</p>
+<ul>
+<li>Take a moment to solidify your understanding of the algorithm.</li>
+</ul>
+</li>
+<li>
+<p>Implement.</p>
+<ul>
+<li>Modularized code
+<ul>
+<li>If your algorithm uses a matrix initialized to something, don&rsquo;t waste your time writing this initialization code.</li>
+</ul>
+</li>
+<li>Error checks.
+<ul>
+<li>add a todo and say what you&rsquo;d like to test.</li>
+</ul>
+</li>
+<li>Use other classes/structs where appropriate.</li>
+<li>Good variable names.</li>
+</ul>
+</li>
+<li>
+<p>Test.</p>
+<ul>
+<li>Read and analyze what each line of code does.</li>
+<li>Weird-looking code</li>
+<li>Hot spots
+<ul>
+<li>Base cases in recursive code.</li>
+</ul>
+</li>
+<li>Small test cases</li>
+<li>Special cases
+<ul>
+<li>Test against null or single element values, extreme cases, etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="arrays">Arrays</h2>
+<ul>
+<li>.</li>
+</ul>
+<hr>
+<h2 id="backtracking">Backtracking</h2>
+<ul>
+<li>
+<p>Generate all</p>
+</li>
+<li>
+<p>Compute all</p>
+</li>
+<li>
+<p>The problem has mostly exponential time</p>
+</li>
+<li>
+<p>3 keys of backtracking</p>
+<ul>
+<li><strong>choice</strong> := decision space that you can choose from</li>
+<li><strong>constraints</strong> := your decisions are constrained somehow</li>
+<li><strong>goal</strong> := like filling n slots, etc.</li>
+</ul>
+</li>
+<li>
+<p>There are three types of problems in backtracking, where we search for</p>
+<ol>
+<li><strong>Decision problem:</strong> a feasible solution</li>
+<li><strong>Optimization problem:</strong> the best solution</li>
+<li><strong>Enumeration problem:</strong> all feasible solutions</li>
+</ol>
+</li>
+<li>
+<p>In backtracking, we use recursion to explore all the possibilities until we get the best result for the problem.</p>
+</li>
+</ul>
+<hr>
+<h2 id="binary-tree">Binary tree</h2>
+<p>A general approach to solving the problems:</p>
+<ol>
+<li>Find one or more base cases</li>
+<li>Call the same function on the left subtree</li>
+<li>Call the same function on the right subtree</li>
+<li>Join the results</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tree_sum</span>(root):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> root:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> root<span style="color:#f92672">.</span>data <span style="color:#f92672">+</span> tree_sum(root<span style="color:#f92672">.</span>left) <span style="color:#f92672">+</span> tree_sum(root<span style="color:#f92672">.</span>right)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tree_max</span>(root):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> root:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> float(<span style="color:#e6db74">&#34;-inf&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> max(root<span style="color:#f92672">.</span>data, tree_max(root<span style="color:#f92672">.</span>left), tree_max(root<span style="color:#f92672">.</span>right))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tree_height</span>(root):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> root:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> max(tree_height(root<span style="color:#f92672">.</span>left), tree_height(root<span style="color:#f92672">.</span>right))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exist_in_tree</span>(root, val):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> root:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> root<span style="color:#f92672">.</span>data <span style="color:#f92672">==</span> val <span style="color:#f92672">or</span> exist_in_tree(root<span style="color:#f92672">.</span>left) <span style="color:#f92672">or</span> exist_in_tree(root<span style="color:#f92672">.</span>right)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reverse_tree</span>(root):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> root:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>  reverse_tree(root<span style="color:#f92672">.</span>left)
+</span></span><span style="display:flex;"><span>  reverse_tree(root<span style="color:#f92672">.</span>right)
+</span></span><span style="display:flex;"><span>  root<span style="color:#f92672">.</span>left, root<span style="color:#f92672">.</span>right <span style="color:#f92672">=</span> root<span style="color:#f92672">.</span>right, root<span style="color:#f92672">.</span>left
+</span></span></code></pre></div><hr>
+<h2 id="binary-search-tree">Binary search tree</h2>
+<ul>
+<li>To quickly check whether an element is present in a set or not.</li>
+</ul>
+<hr>
+<h2 id="bitwise-algorithms">Bitwise algorithms</h2>
+<hr>
+<h2 id="clarification-questions">Clarification questions</h2>
+<ul>
+<li>What result should be returned for the total amount of 0?</li>
+<li>What result should be returned if the list/vector contains a single element/no elements?</li>
+<li>What result should be returned if there is no solution?</li>
+<li>What result should be returned when all elements are negative?</li>
+<li>What result should be returned if the matrix does not contain ones?</li>
+<li>What result should be returned for an empty string/matrix/set/sentence/array/vector?</li>
+<li>How long can the list/set/string/vector/n/array be?</li>
+<li>How many queries can we have?</li>
+<li>Are the indices in the queries valid?</li>
+<li>What is the maximum length of the input?</li>
+<li>What is the largest height?</li>
+<li>Is it possible that the amount cannot be paid with the given coins?</li>
+<li>Is it possible that the sentence cannot be split into words?</li>
+<li>Is it possible that no path to the destination exists?</li>
+<li>Can some elements be zero/negative? How should invalid values be handled?</li>
+<li>Can the hand be empty?</li>
+<li>Can cells contain values other than 0 or 1?</li>
+<li>Can there be walls in the starting or ending positions?</li>
+<li>When there are multiple palindromic substrings of the same length, which should be returned?</li>
+<li>Are we looking for palindromes of both odd and even lengths?</li>
+<li>Are the indices in the queries valid?</li>
+<li>Suppose that no palindromic substring of length at least 2 exists. Is a substring of length 1 (i.e. a single character) a valid palindrome?</li>
+<li>Should we consider subsequences that are decreasing? Such as [5, 3, 1].</li>
+<li>Should we consider subsequences that are constant? Such as [1, 1, 1].</li>
+<li>Does the dealer know the values of the cards in the deck and their order?</li>
+<li>How large can a hand/maze/matrix be?</li>
+<li>How should we handle invalid regular expressions? For example, &lsquo;*&rsquo; or &lsquo;a**&rsquo;.</li>
+<li>What if there are not enough cards in the deck to build a hand of the requested size?</li>
+</ul>
+<hr>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Use comments to explain <em>why</em> the code is doing something.</li>
+<li>If you feel the need to explain <em>what</em> it is doing, it might be time to refactor that piece of code into an approximately-named function.</li>
+<li>Add comment like: &ldquo;TODO: refactor into a helper function.&rdquo;</li>
+</ul>
+<hr>
+<h2 id="complexity">Complexity</h2>
+<h3 id="1-time-complexity">1. Time complexity</h3>
+<h3 id="2-space-complexity">2. Space complexity</h3>
+<hr>
+<h2 id="design-patterns">Design patterns</h2>
+<hr>
+<h2 id="dictionaries">Dictionaries</h2>
+<ul>
+<li>
+<p>To locate, insert, and delete a record associated with any query with key <code>q</code></p>
+</li>
+<li>
+<p><code>search(d,k)</code> returns a pointer to the element in <code>d</code> whose value is <code>k</code>, if one exists.</p>
+</li>
+<li>
+<p><code>insert(d,x)</code> adds <code>x</code> to <code>d</code>.</p>
+</li>
+<li>
+<p><code>delete(d,x)</code> removes <code>x</code> from <code>d</code>.</p>
+</li>
+<li>
+<p><code>max(d)</code> retrieves the item with the largest key.</p>
+</li>
+<li>
+<p><code>min(d)</code> retrieves the item with the smallest key.</p>
+</li>
+<li>
+<p><code>predecessor(d,x)</code> retrieves the item from <code>d</code> whose key is immediately before <code>x</code> in sorted order.</p>
+</li>
+<li>
+<p><code>successor(d,x)</code> retrieves the item from <code>d</code> whose key is immediately after <code>x</code> in sorted order.</p>
+</li>
+</ul>
+<p>dictionary implementations:= BST, hash table</p>
+<p><img src="list_cost.png" alt="list_cost"></p>
+<h3 id="implementations">Implementations</h3>
+<h4 id="1-hash-table">1. Hash table</h4>
+<h5 id="birthday-paradox">Birthday paradox</h5>
+<ul>
+<li>In a room with 23 people, there is a 50%-50% chance of a shared birthday.</li>
+</ul>
+<h5 id="application-on-a-hash-table">Application on a hash table</h5>
+<ul>
+<li><strong>Question:</strong> How large a hash table <code>m</code> do we need before we can expect zero collisions among <code>n</code> keys?</li>
+</ul>
+<h4 id="2-skip-list">2. Skip list</h4>
+<h4 id="3-balancedunbalanced-search-tree">3. Balanced/unbalanced search tree</h4>
+<hr>
+<h2 id="divide-and-conquer-algorithms">Divide-and-conquer algorithms</h2>
+<ul>
+<li>They break a problem into subproblems, but these subproblems are not overlapping.</li>
+</ul>
+<hr>
+<h2 id="dynamic-programming-dp">Dynamic Programming (DP)</h2>
+<ul>
+<li>It is generally the right method for optimization problems on combinatorial objects that have an inherent left-to-right order among components.
+<ul>
+<li>Left-to-right objects include
+<ul>
+<li>character strings</li>
+<li>rooted trees</li>
+<li>polygons</li>
+<li>integer sequences</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>(1) It asks for the optimum value (minimum or maximum) of something, or the number of ways there are to do something. (Also, it might be for the greedy.)</p>
+<ul>
+<li>What is the minimum cost of doing&hellip;</li>
+<li>What is the maximum profit from&hellip;</li>
+<li>How many ways are there to do&hellip;</li>
+<li>What is the longest possible&hellip;</li>
+<li>Is it possible to reach a certain point&hellip;</li>
+</ul>
+<p>(2) In case the future decision depends on the earlier decisions. Deciding to do something at one step may affect the ability to do something in a later step (Here we cannot use greedy algorithms).</p>
+<h3 id="top-down-vs-bottom-up">Top-down vs. Bottom-up</h3>
+<ul>
+<li><code>Top-down</code> is typically implemented with a recursive function and hash map (memoization). Without memoization, this isn&rsquo;t DP.</li>
+<li><code>Bottom-up</code> is implemented with iteration (nested for loops and an array) and starts at the base cases.</li>
+</ul>
+<h3 id="solving-dp-ie-longest-increasing-subsequence">Solving DP (i.e. Longest increasing subsequence)</h3>
+<h4 id="1-visualize-an-example-to-see-the-underlying-pattern">1. Visualize an example to see the underlying pattern</h4>
+<ul>
+<li>Diagram what makes a valid solution.</li>
+</ul>
+<h4 id="2-find-an-appropriate-subproblem">2. Find an appropriate subproblem</h4>
+<ul>
+<li>All increasing subsequences are subsets of the original sequence.</li>
+<li>All increasing subsequences have a start and end.</li>
+<li><code>LIS[k]</code> = <code>LIS</code> ending at index <code>k</code></li>
+</ul>
+<h4 id="3-find-relationships-among-subproblems">3. Find relationships among subproblems</h4>
+<ul>
+<li>What subproblems are needed to solve <code>LIS[k]</code>?</li>
+<li>How do we use these subproblems to solve <code>LIS[k]</code>?
+<ul>
+<li><code>LIS[k] = 1 + max{LIS[0], LIS[1], ..., LIS[k-1]}</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="4-generalize-the-relationship">4. Generalize the relationship</h4>
+<ul>
+<li>How do we solve subproblem <code>LIS[k]</code>?</li>
+</ul>
+<h4 id="5-implement-by-solving-subproblems-in-order">5. Implement by solving subproblems in order</h4>
+<ul>
+<li>
+<p>In what order do we solve these subproblems?</p>
+</li>
+<li>
+<p>How do we ensure correct ordering if items are given in random order?</p>
+</li>
+<li>
+<p>How do we get the sequence?</p>
+<ul>
+<li>Keep track of previous indices</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="edge-cases">Edge cases</h2>
+<ul>
+<li>Handle and eliminate the edge cases early</li>
+</ul>
+<hr>
+<h2 id="exhaustive-search">Exhaustive search</h2>
+<ul>
+<li>They try all possibilities and select the best always producing the optimum result, but usually at a prohibitive cost in terms of time complexity.</li>
+</ul>
+<hr>
+<h2 id="flow-algorithms">Flow algorithms</h2>
+<ul>
+<li>They can be used to solve general edge and vertex connectivity problems in graphs.</li>
+</ul>
+<hr>
+<h2 id="graphs">Graphs</h2>
+<ul>
+<li>Questions to ask yourself while using graphs:
+<ul>
+<li>
+<p>Directed or undirected?</p>
+</li>
+<li>
+<p>Weighted or unweighted?</p>
+</li>
+<li>
+<p>Sparse or dense edges?</p>
+</li>
+<li>
+<p>Which graph representation?</p>
+<ul>
+<li>Adjacency lists are the right data structure for most applications of graphs.</li>
+</ul>
+<p><img src="graph_representation.png" alt="graph_representation"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="depth-first-search-dfs">Depth First Search (DFS)</h3>
+<ul>
+<li>Traverse all vertices in a graph</li>
+<li>Traverse all paths between any two vertices in a graph</li>
+<li>Compute a graph&rsquo;s minimum spanning tree</li>
+<li>Detect and find cycles in a graph</li>
+<li>Check if a graph is bipartite</li>
+<li>Find strongly connected components</li>
+<li>Topologically sort the nodes of a graph</li>
+<li>Find bridges/articulation points</li>
+<li>Find augmenting paths in a flow network</li>
+<li>Generate mazes</li>
+<li>Count connected components</li>
+<li>Determine connectivity</li>
+</ul>
+<h3 id="breadth-first-search-bfs">Breadth First Search (BFS)</h3>
+<ul>
+<li>Traverse all vertices in a graph</li>
+<li>Find the shortest path between two vertices in a graph where all edges have equal and positive weights, or on unweighted graphs</li>
+<li>Connected components</li>
+<li>Two-coloring graphs</li>
+</ul>
+<hr>
+<h2 id="greedy-algorithms">Greedy algorithms</h2>
+<ul>
+<li>They have optimal substructure, but no overlapping subproblems.</li>
+<li>They make the best local decision at each step and are typically efficient, but usually do not guarantee global optimality.</li>
+</ul>
+<hr>
+<h2 id="hashing">Hashing</h2>
+<hr>
+<h2 id="hashmap">Hashmap</h2>
+<ul>
+<li>While they are very fast, you must work with unique and unordered data.</li>
+</ul>
+<hr>
+<h2 id="heaps">Heaps</h2>
+<hr>
+<h2 id="heapsort">Heapsort</h2>
+<ul>
+<li>
+<p>Time complexity</p>
+<ul>
+<li>Worst-case = $O(nlogn)$</li>
+<li>Average-case = $O(nlogn)$</li>
+<li>Best-case = $O(n)$</li>
+</ul>
+</li>
+<li>
+<p>Space complexity = $O(1)$</p>
+<ul>
+<li>Data in an array can be rearranged into a heap, in place.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="linked-lists">Linked lists</h2>
+<ul>
+<li>.</li>
+</ul>
+<hr>
+<h2 id="median-and-selection">Median and selection</h2>
+<ul>
+<li>Given a set of $n$ numbers or keys and an integer $k$, find the key greater than or equal to exactly $k$ of the $n$ keys.</li>
+<li>Median finding is a special case of selection problem, which seeks the $k^{th}$ element in the sorted order.</li>
+</ul>
+<h3 id="selection">Selection</h3>
+<ul>
+<li>
+<p>Selection arises in several applications:</p>
+<ol>
+<li>Filtering outlying elements</li>
+<li>Identifying the most promising candidates</li>
+<li>Deciles and related divisions</li>
+<li>Order statistics</li>
+</ol>
+</li>
+<li>
+<p>Issues:</p>
+<ul>
+<li>How fast does it have to be?
+<ul>
+<li>The most elementary median finding is $O(nlogn)$</li>
+<li><code>Quick select</code> is $O(n)$-expected time based on <code>quicksort</code>.</li>
+</ul>
+</li>
+<li>What if you only get to see each element once?</li>
+<li>How fast you can find the node?</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="memoization">Memoization</h2>
+<ul>
+<li>Memoization is the top-down technique.
+<ul>
+<li>It starts by breaking the problem down.</li>
+<li>It stores the completed calculations so that when you need them again, you can look them up instead of needing to compute them an nth time.</li>
+<li><code>Memoization = Recursion + Cache - Recomputing overlapping subproblems</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="monotonic-stack">Monotonic Stack</h2>
+<ul>
+<li>It maintains the maximum and minimum elements in the range and keeps the order of elements in the range.</li>
+</ul>
+<ol>
+<li>It is a range of queries in an array problem.</li>
+<li>The minima/maxima element or the monotonic order of elements in a range is useful to get an answer to every range query.</li>
+<li>When an element is popped from the monotonic stack, it will never be used again.</li>
+</ol>
+<ul>
+<li>It tells <code>the next greater element</code>.</li>
+</ul>
+<hr>
+<h2 id="off-by-one-error">Off-by-one Error</h2>
+<ul>
+<li>It occurs when a program uses an improper maximum or minimum value that is one more or one less than the proper value.</li>
+</ul>
+<hr>
+<h2 id="optimization">Optimization</h2>
+<ul>
+<li>Find a solution that maximizes or minimizes an objective function
+<ul>
+<li>i.e. travelling salesman</li>
+</ul>
+</li>
+<li>It requires proof that they always return the best possible solution.</li>
+</ul>
+<hr>
+<h2 id="permutation">Permutation</h2>
+<ul>
+<li>
+<p>Generate</p>
+<ul>
+<li>all permutations of length $n$</li>
+<li>random permutations of length $n$</li>
+<li>next permutation of length $n$</li>
+</ul>
+</li>
+<li>
+<p>There are two paradigms to construct permutations:</p>
+<ol>
+<li>Ranking/unranking methods, can be applied to a much wider class of problems
+a. <strong>Ranking:</strong> What is the position of $p={p_1, &hellip;, p_n}$ in the given generation order?
+<ul>
+<li>A typical ranking function is recursive.
+b. <strong>Unranking:</strong> Which permutation is in position $m$ of the $n!$ permutation of $n$ items?</li>
+<li>A typical unranking function finds the number of times $(n−1)!$ goes into $m$ and proceeds recursively.</li>
+</ul>
+</li>
+<li>Incremental change methods, more efficient</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="queues">Queues</h2>
+<ul>
+<li><code>FIFO</code></li>
+<li>Use when the order matters.</li>
+<li><code>enqueue(x,q)</code> inserts <code>x</code> at the back of <code>q</code>.</li>
+<li><code>deque(q)</code> returns and removes the front from <code>q</code>.</li>
+<li><code>BFS</code> in graphs.</li>
+</ul>
+<hr>
+<h2 id="quicksort">Quicksort</h2>
+<ul>
+<li>To implement your quicksort:
+<ol>
+<li>Use randomization to eliminate $O(n^2)$ time on nearly sorted data.</li>
+<li>Use the median of the first, last, and middle elements to increase the likelihood of partitioning the array into roughly equal pieces.</li>
+<li>Leave small subarrays for insertion. Terminating the quicksort recursion and switching to insertion sort makes sense when the subarrays get small, say fewer than 20 elements.</li>
+<li>Do the smaller partition first.</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="recursion">Recursion</h2>
+<ul>
+<li>When a function is breakable into subproblems.</li>
+<li>The function calls itself until it reaches a base case.</li>
+</ul>
+<hr>
+<h2 id="searching">Searching</h2>
+<ul>
+<li>Programming time</li>
+<li>Certain items may be accessed more often than others.
+<ul>
+<li>Put the most common words to the top.</li>
+<li>Knowledge of access frequencies is easy to exploit with sequential search.</li>
+</ul>
+</li>
+<li>Access frequencies might change over time.
+<ul>
+<li>The best self-organizing scheme is a move-to-front; that is, we move the most recently searched-for key from its current position to the front of the list.</li>
+</ul>
+</li>
+<li>Is the key close by?
+<ul>
+<li>One-sided binary search is faster when $l&laquo;n$.</li>
+</ul>
+</li>
+<li>Is my data structure sitting on external memory?
+<ul>
+<li>Once the number of keys grows too large, binary search loses its status as the best search technique.</li>
+<li>Much better are data structures such as <code>B-trees</code> or <code>van Emde Boas trees</code>, which cluster the keys into pages to minimize the number of disk accesses per search.</li>
+</ul>
+</li>
+<li>Can I guess where the key should be?
+<ul>
+<li>In interpolation search, we exploit our understanding of the distribution of keys to guess where to look next.</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-sequential-search">1. Sequential search</h3>
+<ul>
+<li>We start from the front of our list/array of keys and compare each successive item against the search key <code>q</code> until we find a match, or reach the end.</li>
+</ul>
+<h3 id="2-binary-search">2. Binary search</h3>
+<ul>
+<li>
+<p>We start with a sorted array of keys. To search for <code>q</code>, we compare it to the middle of key $S_{\frac{n}{2}}$. If <code>q</code> is before $S_{\frac{n}{2}}$, it must reside in the top half of our set. If not, it must reside in the bottom half of our set. By repeating this process on the correct half, we find <code>q</code> using $|-(logn)-|$ comparisons.</p>
+</li>
+<li>
+<p>To quickly check whether an element is present in a set or not.</p>
+</li>
+<li>
+<p>Ordered or sorted binary tree is a rooted binary tree.</p>
+</li>
+<li>
+<p>There must be no duplicate nodes.</p>
+</li>
+<li>
+<p>In an N-element sorted array</p>
+<ul>
+<li>If x == middle, return.</li>
+<li>If x &lt; middle, search on LHS.</li>
+<li>If x &gt; middle, search on RHS.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># def binary_search(arr, target):</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  low, high = 0, len(arr)-1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  while low &lt; high:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   mid = (low + high)//2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   if target == arr[mid]:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    return mid</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   if target &lt; arr[mid]:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    high = mid-1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   else:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    low = mid+1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  if low == high and arr[low] == target:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   return low</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  return -1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">binary_search</span>(arr, target, low, high):
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> low <span style="color:#f92672">&gt;</span> high:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span> mid <span style="color:#f92672">=</span> (low <span style="color:#f92672">+</span> high)<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> target <span style="color:#f92672">==</span> arr[mid]:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> mid
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">elif</span> target <span style="color:#f92672">&lt;</span> arr[mid]:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> binary_search(arr, target, low, mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> binary_search(arr, target, mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, high)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span> arr <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">19</span>]
+</span></span><span style="display:flex;"><span> target <span style="color:#f92672">=</span> <span style="color:#ae81ff">19</span>
+</span></span><span style="display:flex;"><span> print(binary_search(arr, target, <span style="color:#ae81ff">0</span>, len(arr)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))
+</span></span></code></pre></div><h4 id="related-problems">Related problems</h4>
+<h5 id="counting-occurrences">Counting occurrences</h5>
+<ul>
+<li>Count the number of times a given key <code>k</code> occurs in a given sorted array.
+<ul>
+<li>Search from the left and right and find its size.
+<ul>
+<li>1122223 -&gt; 11_2_&hellip; 3_2&hellip; =&gt; #2s</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="one-sided-binary-search">One-sided binary search</h5>
+<ul>
+<li>
+<p>For an array consisting of a run of 0&rsquo;s, followed by an unbounded run of 1&rsquo;s, and would like to identify the exact point of transition between them.</p>
+</li>
+<li>
+<p>It finds the target at position $p+l$ using at most $2|-lgl-|$ comparisons, so it is faster than binary search when $l&laquo;n$, yet it can never be much worse.</p>
+</li>
+<li>
+<p>It is particularly useful in unbounded search problems, such as in numerical root findings.</p>
+</li>
+</ul>
+<h5 id="square-and-other-roots">Square and other roots</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">squareRoot</span>(x):
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> x
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    floor_val <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    start, end <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, x <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e"># sqrt(x) &lt;= x/2, where x&gt;1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> start <span style="color:#f92672">&lt;=</span> end:
+</span></span><span style="display:flex;"><span>        mid <span style="color:#f92672">=</span> (start <span style="color:#f92672">+</span> end) <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>        sqrt <span style="color:#f92672">=</span> mid<span style="color:#f92672">*</span>mid
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> sqrt <span style="color:#f92672">==</span> x:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> mid
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> sqrt <span style="color:#f92672">&lt;</span> x:
+</span></span><span style="display:flex;"><span>            start <span style="color:#f92672">=</span> mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            floor_val <span style="color:#f92672">=</span> mid
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            end <span style="color:#f92672">=</span> mid <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> floor_val 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(round(squareRoot(<span style="color:#ae81ff">50</span>), <span style="color:#ae81ff">4</span>))
+</span></span></code></pre></div><h3 id="bisect">bisect</h3>
+<ul>
+<li><code>bisect</code> implements binary search and insertion into a <strong>sorted list</strong>.</li>
+</ul>
+<h4 id="bisectbisect">bisect.bisect</h4>
+<ul>
+<li>It finds insertion points for items in a sorted sequence.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> bisect
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">7</span>]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># bisect.bisect(&lt;sorted_list&gt;, &lt;item&gt;)</span>
+</span></span><span style="display:flex;"><span>bisect<span style="color:#f92672">.</span>bisect(c, <span style="color:#ae81ff">2</span>) <span style="color:#75715e"># finds the location where an element should be inserted to keep it sorted. # 4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">grade</span>(score, breakpoints<span style="color:#f92672">=</span>[<span style="color:#ae81ff">60</span>, <span style="color:#ae81ff">70</span>, <span style="color:#ae81ff">80</span>, <span style="color:#ae81ff">90</span>], grades<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;FDCBA&#39;</span>):
+</span></span><span style="display:flex;"><span>  i <span style="color:#f92672">=</span> bisect<span style="color:#f92672">.</span>bisect(breakpoints, score)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> grades[i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[grade(score) <span style="color:#66d9ef">for</span> score <span style="color:#f92672">in</span> [<span style="color:#ae81ff">33</span>, <span style="color:#ae81ff">99</span>, <span style="color:#ae81ff">77</span>, <span style="color:#ae81ff">70</span>, <span style="color:#ae81ff">89</span>, <span style="color:#ae81ff">90</span>, <span style="color:#ae81ff">100</span>]] <span style="color:#75715e"># [&#39;F&#39;, &#39;A&#39;, &#39;C&#39;, &#39;C&#39;, &#39;B&#39;, &#39;A&#39;, &#39;A&#39;]</span>
+</span></span></code></pre></div><h4 id="bisectbisect_leftax">bisect.bisect_left(a,x)</h4>
+<ul>
+<li>If <code>x</code> is already present in <code>a</code>, the insertion point will be before (to the left of) any existing entries.</li>
+</ul>
+<h4 id="bisectbisect_rightax">bisect.bisect_right(a,x)</h4>
+<ul>
+<li>It returns an insertion point which comes after (to the right of) any existing entries of <code>x</code> in <code>a</code>.</li>
+</ul>
+<h4 id="bisectinsort">bisect.insort</h4>
+<ul>
+<li>It inserts <code>&lt;item&gt;</code> into <code>seq</code> to keep <code>seq</code> in ascending order.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> bisect
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SIZE <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">1729</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_list <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(SIZE):
+</span></span><span style="display:flex;"><span>  new_item <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randrange(SIZE<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>  bisect<span style="color:#f92672">.</span>insort(my_list, new_item)
+</span></span></code></pre></div><h4 id="bisectinsort_left">bisect.insort_left</h4>
+<ol>
+<li>It runs <code>bisect_left()</code> to locate an insertion point.</li>
+<li>It runs the <code>insert()</code> method on a to insert <code>x</code> at the appropriate position to maintain sort order.</li>
+</ol>
+<h4 id="bisectinsort_right">bisect.insort_right</h4>
+<ol>
+<li>It runs <code>bisect_right()</code> to locate an insertion point.</li>
+<li>It runs the <code>insert()</code> method on a to insert <code>x</code> at the appropriate position to maintain sort order.</li>
+</ol>
+<hr>
+<h2 id="set">Set</h2>
+<ul>
+<li>To get unique elements and perform lookups.</li>
+<li>If you are doing set logic, use sets:
+<ul>
+<li>Difference</li>
+<li>Intersection</li>
+<li>Symmetric difference</li>
+<li>Union</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="sliding-windows">Sliding windows</h2>
+<ul>
+<li>Iterable items</li>
+<li>Min, max, longest, largest, shortest, contains</li>
+<li>Everything grouped sequentially</li>
+</ul>
+<hr>
+<h2 id="sorting">Sorting</h2>
+<ul>
+<li>
+<p>Number of keys to be sorted</p>
+<ul>
+<li>For small data, say &lt;=100, $O(n^2)$ is also fine.</li>
+<li>For large data, $O(nlogn)$ is required. (heapsort, quicksort, or mergesort)</li>
+<li>For extremely large data, think about external memory sorting algorithms that minimize disk or network access.</li>
+</ul>
+</li>
+<li>
+<p>Existence of duplicated keys</p>
+<ul>
+<li>Determine which comes first</li>
+<li>A stable sorting algorithm preserves the original ordering.
+<ul>
+<li>Most of the $O(n^2)$ algorithms are stable.</li>
+<li>Many of the $O(nlogn)$ algorithms are not stable.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>About data</p>
+<ul>
+<li>Partially sorted
+<ul>
+<li>Insertion sort perform better than they otherwise would.</li>
+</ul>
+</li>
+<li>Distribution of keys
+<ul>
+<li>If the keys are randomly or uniformly distributed, a bucket or distribution sort makes sense.</li>
+</ul>
+</li>
+<li>Keys are long or hard to compare
+<ul>
+<li>Use relatively short prefixes to sort</li>
+<li>Use radix sort. This always takes time linear in the number of characters in the file, instead of $O(nlgn)$ times the cost of comparing two keys.</li>
+</ul>
+</li>
+<li>A very small range of possible keys
+<ul>
+<li>Initialize an n-element bit vector, turn on the bits corresponding to keys, then scan from left to right and report the positions with true bits.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Should I worry about disk accesses?</p>
+<ul>
+<li>External sorting:= the data is maintained on an external storage device.
+<ul>
+<li>The simplest approach loads the data into a B-tree and then does an in-order traversal of the tree to read the keys off in sorted order.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="stacks">Stacks</h2>
+<ul>
+<li><code>LIFO</code> tends to happen in the course of executing recursive algorithms.</li>
+<li>Use when retrieval order doesn&rsquo;t matter, such as when processing batch jobs.</li>
+<li><code>push(x,s)</code> inserts <code>x</code> at the top of <code>s</code>.</li>
+<li><code>pop(s)</code> returns and removes the top of <code>s</code>.</li>
+</ul>
+<hr>
+<h2 id="strings">Strings</h2>
+<hr>
+<h2 id="trees">Trees</h2>
+<h3 id="1-avl-trees">1. AVL Trees</h3>
+<ul>
+<li>For indexing large records in databases</li>
+<li>For searching in large databases</li>
+</ul>
+<hr>
+<h2 id="2-binary-trees">2. Binary trees</h2>
+<p>A general approach to solving the problems:</p>
+<ol>
+<li>Find one or more base cases</li>
+<li>Call the same function on the left subtree</li>
+<li>Call the same function on the right subtree</li>
+<li>Join the results</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tree_sum</span>(root):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> root:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> root<span style="color:#f92672">.</span>data <span style="color:#f92672">+</span> tree_sum(root<span style="color:#f92672">.</span>left) <span style="color:#f92672">+</span> tree_sum(root<span style="color:#f92672">.</span>right)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tree_max</span>(root):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> root:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> float(<span style="color:#e6db74">&#34;-inf&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> max(root<span style="color:#f92672">.</span>data, tree_max(root<span style="color:#f92672">.</span>left), tree_max(root<span style="color:#f92672">.</span>right))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tree_height</span>(root):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> root:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> max(tree_height(root<span style="color:#f92672">.</span>left), tree_height(root<span style="color:#f92672">.</span>right))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exist_in_tree</span>(root, val):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> root:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> root<span style="color:#f92672">.</span>data <span style="color:#f92672">==</span> val <span style="color:#f92672">or</span> exist_in_tree(root<span style="color:#f92672">.</span>left) <span style="color:#f92672">or</span> exist_in_tree(root<span style="color:#f92672">.</span>right)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reverse_tree</span>(root):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> root:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>  reverse_tree(root<span style="color:#f92672">.</span>left)
+</span></span><span style="display:flex;"><span>  reverse_tree(root<span style="color:#f92672">.</span>right)
+</span></span><span style="display:flex;"><span>  root<span style="color:#f92672">.</span>left, root<span style="color:#f92672">.</span>right <span style="color:#f92672">=</span> root<span style="color:#f92672">.</span>right, root<span style="color:#f92672">.</span>left
+</span></span></code></pre></div><hr>
+<h2 id="3-binary-search-trees">3. Binary search trees</h2>
+<ul>
+<li>
+<p>To quickly check whether an element is present in a set or not.</p>
+</li>
+<li>
+<p>Min and max values in binary search trees</p>
+</li>
+</ul>
+<p>![/img/min_max_in_bst.png](Binary Search Tree)</p>
+<hr>
+<h3 id="question-variants">Question variants</h3>
+<h4 id="i-fixed-length">i. Fixed length</h4>
+<ul>
+<li>Max sum subarray of size k</li>
+</ul>
+<h4 id="ii-dynamic-variant-as-in-the-caterpillar-example">ii. Dynamic variant (as in the caterpillar example)</h4>
+<ul>
+<li>Smallest sum &gt;= to some value S</li>
+</ul>
+<h4 id="iii-dynamic-variant-with-auxiliary-data-structure">iii. Dynamic variant with auxiliary data structure</h4>
+<ul>
+<li>A hash map, a hash set, an additional array, etc.</li>
+<li>Longest substring with no more than k distinct characters</li>
+<li>String permutations</li>
+</ul>
+<hr>
+<h2 id="trie">Trie</h2>
+<ul>
+<li>Given the list of strings, find all the words.</li>
+</ul>
+<hr>
+<h2 id="two-pointers-approach">Two-Pointers Approach</h2>
+<h3 id="1-pointer-initialization">1. Pointer initialization</h3>
+<ul>
+<li>Both at the beginning</li>
+<li>One at the beginning and one at the end</li>
+</ul>
+<h3 id="2-pointer-movement">2. Pointer movement</h3>
+<ul>
+<li>
+<p>Move in the same direction</p>
+</li>
+<li>
+<p>Move in the opposite direction</p>
+</li>
+<li>
+<p>Different increments</p>
+<ul>
+<li>Slow pointer: 1</li>
+<li>Fast pointer: 2</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-stop-condition">3. Stop condition</h3>
+<ul>
+<li>Continue till we reach a node whose next element is <code>None</code></li>
+<li>Continue till our start is less than the end $i&lt;j$</li>
+</ul>
+<hr>
+<h2 id="pointers-and-linked-structures">Pointers and Linked Structures</h2>
+<p>(!) Dynamic memory allocation provides us with flexibility on how and where we use our limited storage resources.</p>
+<ul>
+<li>Linked structures require extra memory for storing pointer fields.</li>
+<li>Pointers are the connections that hold the pieces of linked structures together.</li>
+<li>All linked data structures share certain properties:
+<ul>
+<li>Each node contains
+<ul>
+<li>data field(s)</li>
+<li>pointer field to at least one other node (next)</li>
+</ul>
+</li>
+<li>A pointer to the head, so we know where to access it.</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-searching-a-list">1. Searching a list</h3>
+<ul>
+<li>Iterative or recursive</li>
+</ul>
+<h3 id="2-insertion-into-a-list">2. Insertion into a list</h3>
+<ul>
+<li>At the beginning avoids any need to traverse the list, but it requires updating the pointer to the head of the data structure.</li>
+</ul>
+<h3 id="3-deletion-from-a-list">3. Deletion from a list</h3>
+<ul>
+<li>Find a pointer to the predecessor of the item to be deleted (recursively).</li>
+</ul>
+<h2 id="binary-search-trees">Binary Search Trees</h2>
+<ul>
+<li>Each node in a binary tree with a single key <code>x</code>
+<ul>
+<li>nodes on the LHS &lt; <code>x</code></li>
+<li>nodes on the RHS &gt; <code>x</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="implementation">Implementation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BinarySearchTree</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self, data):
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>left_child <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>right_child <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>data <span style="color:#f92672">=</span> data
+</span></span></code></pre></div><p><img src="bst.png" alt="bst"></p>
+<h4 id="traversal">Traversal</h4>
+<h4 id="insertion">Insertion</h4>
+<h4 id="deletion">Deletion</h4>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/coding/" rel="tag">coding</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/algorithms/" rel="tag">algorithms</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/data-structures/" rel="tag">data structures</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/coding-note/thread/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Thread</p>
+		</a>
+	</div>
+</nav>
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "www-fatmakahveci-com-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/coding-note/apache_hbase/">Apache HBase</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/binary_tree_traversal/">Binary tree traversal</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/concurrency/">Concurrency</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/database/">Database</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dog_pile_effect/">Dogpile effect</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dynamic_programming/">Dynamic Programming (DP)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/google_bigtable/">Google BigTable</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/jaccard_similarity/">Jaccard Similarity</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/mongodb/">MongoDB</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/naming_variables/">Naming variables</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Spotify" rel="noopener noreferrer" href="https://open.spotify.com/playlist/2lY1JpIvZI8T1SG8RAaosw?si=CvDn8z0xQlaA9RtXUGM_2g" target="_blank">
+				
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+	 viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+<path id="SVGCleanerId_0" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+	c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+	c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+	c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+	c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+	c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+	 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+	c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+	C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+<g>
+	<path id="SVGCleanerId_0_1_" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+		c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+		c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+		c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+		c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+		c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+		 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+		c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+		C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+</g>
+<path style="fill:#2CC64D;" d="M219.68,195.296c-94.952,0-177.16,35.576-217.168,87.448C19.536,402.832,123.384,496,248,496
+	c90.016,0,169.208-48.624,212.664-120.872c1.392-6.856,2.168-13.84,2.168-20.952C462.832,266.424,353.976,195.296,219.68,195.296z
+	 M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96c-58.28-35.96-131.448-43.392-218.224-23.544
+	c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6c94.232-21.08,176.08-12.4,240.56,27.28
+	C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16c-6.192,8.68-17.368,12.392-26.04,6.192
+	c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4c-2.48-9.92,2.488-21.088,12.408-23.568
+	c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z"/>
+<path style="fill:#5AF27A;" d="M248,36.816c131.384,0,237.808,101.68,247.248,229.536C495.696,260.288,496,254.168,496,248
+	C496,111.6,385.648,0,248,0C111.608,0,0,111.6,0,248c0,6.184,0.304,12.328,0.76,18.408C10.272,138.512,117.808,36.816,248,36.816z"
+	/>
+<path style="fill:#1DAA59;" d="M326.192,483.216c14.488-33.36,32.688-83.248,35.872-88.056c3.736-7.432,2.488-17.352-6.184-21.072
+	c-64.488-39.68-146.328-48.36-240.56-27.28c-7.44,2.48-13.64,9.92-11.16,18.6c1.248,3.76,6.512,49.088,12.528,92.632
+	C154.832,482.048,199.848,496,248,496C275.304,496,301.568,491.464,326.192,483.216z"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+				<span>Spotify</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/cheburashkaF" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Instagram" rel="noopener noreferrer" href="https://www.instagram.com/fatmakhv" target="_blank">
+				<svg class="widget-social__link-icon icon icon-instagram" width="24" height="24" viewBox="0 0 256 256"><circle cx="193" cy="59" r="15"/><path fill-rule="evenodd" d="M101 0h54c41 0 58.4 3.9 74.5 17C256.2 37.5 256 74.8 256 97.7v60c0 26.7 0 60.4-26.5 81.4-16 13.4-33.5 16.9-74.5 16.9h-54c-41 0-57.5-3.5-74.5-16.9C1 218.9.5 186.3.1 160.5L0 155V97.7c0-23-.2-60.2 26.5-80.7C45 2 60 0 101 0zm4.9 23h44.3c45.8 0 58.3 3.5 70.3 17.5 11.8 13.2 12 30.1 12.5 62.9V156c.2 20.8.3 45.8-12.5 59.5-12 14-24.5 17.5-70.3 17.5h-44.3c-45.9 0-57.3-3.5-70.4-17.5-12.2-13-12.3-36.5-12.4-56.7v-55.6c.4-32.6.7-49.6 12.4-62.7C48 26.5 60 23 105.9 23zm19.6 144.5a42 42 0 1 0 0-84 42 42 0 0 0 0 84zm0 22.5a64.5 64.5 0 1 0 0-129 64.5 64.5 0 0 0 0 129z"/></svg>
+				<span>Instagram</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/fatma-kahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/fatmakahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="algorithm">algorithm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/aws/" title="aws">aws</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bash/" title="bash">bash</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bfs/" title="bfs">bfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/big-oh-notation/" title="big-oh-notation">big-oh-notation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bigtable/" title="bigtable">bigtable</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cloud-computing/" title="cloud computing">cloud computing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/concurrency/" title="concurrency">concurrency</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dfs/" title="dfs">dfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="Django">Django</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/framework/" title="framework">framework</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="javascript">javascript</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb/" title="MongoDB">MongoDB</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/network/" title="network">network</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nosql/" title="nosql">nosql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/numpy/" title="NumPy">NumPy</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="react">react</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="Software">Software</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="sql">sql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/travel/" title="travel">travel</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tree-traversal/" title="tree traversal">tree traversal</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/user-interface/" title="user interface">user interface</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web-development/" title="web development">web development</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Fatma Kahveci.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG" async></script>
+</body>
+</html>

@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MongoDB - Fatma Kahveci</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="MongoDB">
+		<meta property="og:title" content="MongoDB" />
+<meta property="og:description" content="MongoDB" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fatmakahveci.com/coding-note/mongodb/" /><meta property="article:section" content="coding note" />
+
+
+
+		<meta itemprop="name" content="MongoDB">
+<meta itemprop="description" content="MongoDB">
+
+<meta itemprop="wordCount" content="2959">
+<meta itemprop="keywords" content="MongoDB,coding,Database," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&display=swap">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Fatma Kahveci" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Fatma Kahveci</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/coding-note/">
+				
+				<span class="menu__text">coding</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/python-note/">
+				
+				<span class="menu__text">python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/django-note/">
+				
+				<span class="menu__text">django</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/react-note/">
+				
+				<span class="menu__text">react</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/go-note/">
+				
+				<span class="menu__text">go</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/javascript-note/">
+				
+				<span class="menu__text">js</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/bash-note/">
+				
+				<span class="menu__text">bash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aws-note/">
+				
+				<span class="menu__text">aws</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/travel-note/">
+				
+				<span class="menu__text">Travel</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">MongoDB</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Fatma Kahveci</span>
+</div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/coding/" rel="category">Coding</a>
+	</span>
+</div></div>
+		</header><div class="content post__content clearfix">
+			<ul>
+<li>A document-oriented database, which aims to ease scaling out</li>
+<li>It automatically takes care of balancing data and load across a cluster, redistributing documents automatically and routing reads and writes to the correct machines.</li>
+<li>By allowing embedded documents and arrays, the document-oriented approach makes it possible to represent complex hierarchical relationships with a single record.</li>
+<li>There are also no predefined schemas: a document&rsquo;s keys and values are not of fixed types or sizes so adding or removing fields as needed becomes easier.</li>
+<li>It is type- and case-sensitive.</li>
+<li>It can query for all documents where <code>&lt;bla_bla&gt;</code> is an element of the <code>&lt;bla_bla&gt;</code> array.</li>
+<li>If there is a common query, you can even create an index on the <code>&lt;bla_bla&gt;</code> key to improve the query&rsquo;s speed.</li>
+<li>It allows atomic updates that modify the contents of arrays.</li>
+<li>It understands the structure of embedded documents and can reach inside them to build indexes, perform queries, or make updates.</li>
+</ul>
+<hr>
+<h2 id="basic-concepts">Basic concepts</h2>
+<h3 id="collection">Collection</h3>
+<ul>
+<li>MongoDB groups documents into collections.</li>
+<li>Analog of a table in RDBMs</li>
+<li>It has dynamic schemas.
+<ul>
+<li>A single collection can have any number of different shapes.</li>
+<li>Defining schemas is good practice forced by
+<ul>
+<li>MongoDB&rsquo;s document validation functionality</li>
+<li>Object-document mapping libraries available for many PLs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>It is identified by its name.
+<ul>
+<li><code>&quot;&quot;</code> is not valid.</li>
+<li>It must not contain <code>\0</code> (the null character), which signifies the end of a key.</li>
+<li>Not start with <code>system.</code>.</li>
+<li><code>$</code> have special properties and should only be used in certain circumstances.</li>
+</ul>
+</li>
+<li>Naming: <code>&lt;database_name&gt;.&lt;collection_name&gt;</code></li>
+</ul>
+<h4 id="why-we-should-use-more-than-one-collection">Why we should use more than one collection</h4>
+<ul>
+<li>If we&rsquo;re querying for blog posts, it&rsquo;s a hassle to weed out documents containing author data.</li>
+<li>It&rsquo;s much faster to get a list of collections than to extract a list of the types of documents in a collection.</li>
+<li>Grouping documents of the same kind together in the same collection allows for data locality.</li>
+<li>By putting only documents of a single type into the same collection, we can index our collections more efficiently.</li>
+</ul>
+<h4 id="subcollections">Subcollections</h4>
+<ul>
+<li><code>&lt;collection&gt;.&lt;subcollection&gt;</code> only for organizational purposes</li>
+</ul>
+<h3 id="database">Database</h3>
+<ul>
+<li>MongoDB groups collections into databases.</li>
+<li>A single instance of MongoDB can host multiple independent databases, each grouping together zero or more collections.
+<ul>
+<li>Storing all data for a single application in the same database is practical.</li>
+<li><code>/</code>, <code>\</code>, <code>.</code>, <code>&quot;</code>, <code>*</code>, <code>&lt;</code>, <code>&gt;</code>, <code>:</code>, <code>|</code>, <code>?</code>, <code>$</code>, <code> </code>, or <code>\0</code> not be contained in naming.</li>
+<li>Database names are case-insensitive, limited to a max of 64 bytes.</li>
+<li>Reserved names
+<ul>
+<li><code>admin</code> db plays a role in authentication and authorization.</li>
+<li><code>local</code> db stores data specific to a single server.</li>
+<li><code>config</code> db stores information about each shard.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><code>show dbs</code>
+<code>use &lt;database_name&gt;</code>
+<code>&lt;database_name&gt;</code></p>
+<h4 id="creating-users">Creating Users</h4>
+<p><code>db.createUser({ user : &lt;user_name&gt;, pwd : &lt;password&gt;, roles : [&quot;readWrite&quot;, &quot;dbAdmin&quot;] });</code></p>
+<h3 id="document">Document</h3>
+<ul>
+<li>The basic unit of data for MongoDB (~row in RDBMs)</li>
+<li>An ordered set of keys with associated values</li>
+<li>Its representation depends on the PL</li>
+<li>Keys are strings.
+<ul>
+<li>It must not contain <code>\0</code> (the null character), which signifies the end of a key.</li>
+<li><code>.</code> and <code>$</code> have special properties and should only be used in certain circumstances.</li>
+<li>It cannot contain replicated keys.</li>
+</ul>
+</li>
+</ul>
+<h3 id="mongo-shell">Mongo shell</h3>
+<ul>
+<li>Built-in support for administering MongoDB instances and manipulating data using the MongoDB query language.</li>
+<li><code>mongo &lt;code1&gt;.js &lt;code2&gt;.js</code></li>
+</ul>
+<hr>
+<h2 id="data-types">Data types</h2>
+<h3 id="arrays">Arrays</h3>
+<ul>
+<li>
+<p>Arrays can contain different data types as values.</p>
+<ul>
+<li><code>{&quot;x&quot; : [ &quot;pie&quot;, 3.14 ]}</code></li>
+</ul>
+</li>
+<li>
+<p>Ordered operations</p>
+<ul>
+<li>lists</li>
+<li>stacks</li>
+<li>queues</li>
+</ul>
+</li>
+<li>
+<p>Unordered operations</p>
+<ul>
+<li>sets</li>
+</ul>
+</li>
+<li>
+<p>Arrays use 0-based indexing.</p>
+</li>
+<li>
+<p>You can manipulate the values in array in two ways:</p>
+<ul>
+<li>by position</li>
+<li>by position operator <code>$</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="array-operators">Array operators</h4>
+<ul>
+<li><code>&quot;$push&quot;</code> adds elements to the end of an array if the array exists. If not, it creates an array.</li>
+</ul>
+<h5 id="modifiers-with-push">Modifiers with <code>push</code></h5>
+<ul>
+<li>
+<p><code>&quot;$each&quot;</code> pushes multiple values in one operation.</p>
+<ul>
+<li>i.e. <code>db.stock.ticker.updateOne({&quot;_id&quot; : &quot;GOOG&quot;}, {&quot;$push&quot; : {&quot;hourly&quot; : {&quot;$each&quot; : [562.776, 562.790, 559.123]}}})</code></li>
+</ul>
+</li>
+<li>
+<p><code>&quot;$slice&quot;</code> prevents an array from growing beyond a certain size.</p>
+<ul>
+<li>i.e. <code>db.movies.updateOne({&quot;genre&quot; : &quot;horror&quot;}, {&quot;$push&quot; : {&quot;top10&quot; : {&quot;$each&quot; : [&quot;Nightmare on Elm Street&quot;, &quot;Saw&quot;], &quot;$slice&quot; : -10}}})</code> limits the array to the last 10 elements pushed.</li>
+</ul>
+</li>
+<li>
+<p><code>&quot;$sort&quot;</code> sorts all of the objects in the array by <code>&lt;field&gt;</code>.</p>
+</li>
+<li>
+<p><code>&quot;$ne&quot;</code> adds values if they are not present.</p>
+<ul>
+<li>i.e. <code>db.papers.updateOne({&quot;authors cited&quot; : {&quot;$ne&quot; : &quot;Richie&quot;}}, {$push : {&quot;authors cited&quot; : &quot;Richie&quot;}})</code></li>
+</ul>
+</li>
+<li>
+<p><code>&quot;$addToSet&quot;</code> adds values if they are not present. It prevents duplications, which is useful where <code>&quot;$ne&quot;</code> does not work. <code>&quot;$addToSet&quot;</code>+<code>&quot;$each&quot;</code> can add multiple unique values, which cannot be done with <code>&quot;$ne&quot;</code>+<code>&quot;$push&quot;</code>.</p>
+</li>
+<li>
+<p><code>&quot;$pop&quot;</code> treats an array like a queue or stack.</p>
+<ul>
+<li><code>{&quot;$pop&quot; : {&quot;key&quot; : 1}}</code> removes an element from the end of the array. <code>{&quot;$pop&quot; : {&quot;key&quot; : -1}}</code> removes it from the beginning.</li>
+</ul>
+</li>
+<li>
+<p><code>&quot;$pull&quot;</code> removes all elements that match the given criteria. ([1, 1, 2, 1] - pull 1 -&gt; [2])</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">lists</span>.<span style="color:#a6e22e">insertOne</span>({<span style="color:#e6db74">&#34;todo&#34;</span> <span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;dishes&#34;</span>, <span style="color:#e6db74">&#34;laundry&#34;</span>, <span style="color:#e6db74">&#34;dry cleaning&#34;</span>]})
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">lists</span>.<span style="color:#a6e22e">updateOne</span>({}, {<span style="color:#e6db74">&#34;$pull&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;todo&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;laundry&#34;</span>}}) <span style="color:#75715e">// todo: dishes, dry cleaning
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">```
+</span></span></span></code></pre></div></li>
+</ul>
+<h3 id="binary-data">Binary data</h3>
+<ul>
+<li>A string of arbitrary bytes</li>
+</ul>
+<h3 id="boolean">Boolean</h3>
+<ul>
+<li><code>{&quot;x&quot; : true}</code></li>
+</ul>
+<h3 id="code">Code</h3>
+<ul>
+<li><code>{&quot;x&quot; : function() { /* ... */ }}</code> stores arbitrary JavaScript queries and documents.</li>
+</ul>
+<h3 id="dates">Dates</h3>
+<ul>
+<li><code>{&quot;x&quot; : new Date()}</code> returns a string representation of the date.</li>
+</ul>
+<h3 id="embedded-documents">Embedded documents</h3>
+<ul>
+<li>A document which is used as the value for a key</li>
+<li><code>{&quot;x&quot; : {&quot;foo&quot; : &quot;bar&quot;}}</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;name&#34;</span>    <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John Doe&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;address&#34;</span> <span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>                  <span style="color:#e6db74">&#34;street&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;123 Park Street&#34;</span>,
+</span></span><span style="display:flex;"><span>                  <span style="color:#e6db74">&#34;city&#34;</span>   <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Anytown&#34;</span>,
+</span></span><span style="display:flex;"><span>                  <span style="color:#e6db74">&#34;state&#34;</span>  <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;NY&#34;</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="null">Null</h3>
+<ul>
+<li><code>{&quot;x&quot; : null}</code></li>
+</ul>
+<h3 id="number">Number</h3>
+<ul>
+<li><code>{&quot;x&quot; : 3.14}</code></li>
+<li><code>{&quot;x&quot; : NumberInt(&quot;3&quot;)}</code></li>
+<li><code>{&quot;x&quot; : NumberLong(&quot;3&quot;)}</code></li>
+</ul>
+<h3 id="object-id">Object ID</h3>
+<ul>
+<li><code>{&quot;x&quot; : ObjectId()}</code> is a 12-byte ID for documents.</li>
+</ul>
+<p><img src="/img/object_id.png" alt="object_id"></p>
+<ul>
+<li>Default type for <code>_id</code></li>
+</ul>
+<h4 id="_id">_id</h4>
+<ul>
+<li>A special key of each document within a collection.</li>
+<li>It can be any type.</li>
+</ul>
+<h3 id="regex">Regex</h3>
+<ul>
+<li><code>{&quot;x&quot; : /foobar/i}</code></li>
+</ul>
+<hr>
+<h2 id="the-features-provided-by-mongodb">The features provided by MongoDB</h2>
+<h3 id="indexing">Indexing</h3>
+<ul>
+<li>It supports generic secondary indexes and provides unique, compound, geospatial, and full-text indexing.</li>
+</ul>
+<h3 id="aggregation">Aggregation</h3>
+<ul>
+<li>It provides an aggregation framework based on the concept of data processing pipelines.</li>
+<li>Aggregation pipelines allow you to build complex analytics engines by processing data through a series of relatively simple stages on the server side, taking full advantage of database optimizations.</li>
+</ul>
+<h3 id="special-collection-and-index-types">Special collection and index types</h3>
+<ul>
+<li>It supports time-to-live (TTL) collections for data that should expire at a certain time, such as sessions and fixed-size (capped) collections, for holding recent data, such as logs.</li>
+<li>It supports partial indexes limited to only those documents matching a criteria filter to increase efficiency and reduce the amount of storage space required.</li>
+</ul>
+<h3 id="file-storage">File storage</h3>
+<ul>
+<li>It supports an easy-to-use protocol for storing large files and file metadata.</li>
+</ul>
+<h2 id="querying">Querying</h2>
+<ul>
+<li>Query for ranges, set inclusion, inequalities, and more by using <code>$</code> conditionals.</li>
+</ul>
+<h3 id="find"><code>find()</code></h3>
+<ul>
+<li>It performs queries in MongoDB.</li>
+<li>It returns a subset of documents in a collection.</li>
+<li><code>find(&lt;query_criteria&gt;, &lt;specify_the_keys_you_want&gt;)</code>
+<ul>
+<li>i.e. <code>db.users.find({}, {&quot;username&quot; : 1, &quot;email&quot; : 1})</code> returns only the <em>username</em> and <em>email</em> keys.</li>
+<li>i.e. <code>db.users.find({}, {&quot;fatal_weakness&quot; : 0})</code> returns except the <em>fatal_weakness</em> key.</li>
+</ul>
+</li>
+<li><code>{}</code> matches everything in the collection.</li>
+</ul>
+<h3 id="query-conditionals">Query conditionals</h3>
+<ul>
+<li>
+<p><code>&quot;$lt&quot;</code>, <code>&quot;$lte&quot;</code>, <code>&quot;$gt&quot;</code>, <code>&quot;$gte&quot;</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#e6db74">`db.users.find({&#34;age&#34; : {&#34;$gte&#34; : 18, &#34;$lte&#34; : 30}})`</span> <span style="color:#75715e">// 18 &lt; age &lt; 30
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Dates
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">start</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#e6db74">&#34;01/01/2007&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;registered&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$lt&#34;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">start</span>}) <span style="color:#75715e">// before January 1, 2007
+</span></span></span></code></pre></div></li>
+<li>
+<p><code>&quot;$ne&quot;</code> := not equal to</p>
+<ul>
+<li>i.e. <code>db.users.find({&quot;username&quot; : {&quot;$ne&quot; : &quot;joe&quot;}})</code></li>
+</ul>
+</li>
+<li>
+<p><code>&quot;$in&quot;</code>, <code>&quot;$nin&quot;</code> (not in), and <code>&quot;$or&quot;</code> queries for a variety of values for a single key.</p>
+</li>
+<li>
+<p>While <code>&quot;$or&quot;</code> will always work, use <code>&quot;$in&quot;</code> whenever possible as the query optimizer handles it more efficiently.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">raffle</span>.<span style="color:#a6e22e">find</span>({<span style="color:#e6db74">&#34;ticket_no&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$in&#34;</span> <span style="color:#f92672">:</span> [<span style="color:#ae81ff">12345</span>, <span style="color:#e6db74">&#34;joe&#34;</span>]}})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">raffle</span>.<span style="color:#a6e22e">find</span>({<span style="color:#e6db74">&#34;$or&#34;</span> <span style="color:#f92672">:</span> [{<span style="color:#e6db74">&#34;ticket_no&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">725</span>}, {<span style="color:#e6db74">&#34;winner&#34;</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>}]})
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">raffle</span>.<span style="color:#a6e22e">find</span>({<span style="color:#e6db74">&#34;$or&#34;</span> <span style="color:#f92672">:</span> [{<span style="color:#e6db74">&#34;ticket_no&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$in&#34;</span> <span style="color:#f92672">:</span> [<span style="color:#ae81ff">725</span>, <span style="color:#ae81ff">542</span>, <span style="color:#ae81ff">390</span>]}}, {<span style="color:#e6db74">&#34;winner&#34;</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>}]}) <span style="color:#75715e">// $or can contain other conditionals.
+</span></span></span></code></pre></div><ul>
+<li><code>&quot;$not&quot;</code> is a meta conditional so it can be applied on top of any other criteria.</li>
+</ul>
+<h3 id="type-specific-queries">Type-specific queries</h3>
+<h4 id="null-1"><code>null</code></h4>
+<ul>
+<li>It also matches &ldquo;does not exist.&rdquo; Thus, querying for a key with the value <code>null</code> will return all documents lacking that key.</li>
+<li>If we only want to find keys whose value is <code>null</code>, we can check that the key is <code>null</code> and exists using the <code>&quot;$exists&quot;</code> conditional.
+<ul>
+<li>i.e. <code>db.c.find({&quot;z&quot; : {&quot;$eq&quot; : null, &quot;$exists&quot; : true}})</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="regex-1"><code>&quot;$regex&quot;</code></h4>
+<ul>
+<li>i.e. <code>db.users.find({&quot;name&quot; : {&quot;$regex&quot; : /joe/i }})</code> search for case-insensitive i.e. Joe and joe</li>
+</ul>
+<h4 id="querying-arrays">Querying arrays</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">food</span>.<span style="color:#a6e22e">insertOne</span>({<span style="color:#e6db74">&#34;fruit&#34;</span> <span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>, <span style="color:#e6db74">&#34;peach&#34;</span>]})
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">food</span>.<span style="color:#a6e22e">find</span>({<span style="color:#e6db74">&#34;fruit&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;banana&#34;</span>}) <span style="color:#75715e">// will match
+</span></span></span></code></pre></div><ul>
+<li><code>&quot;$all&quot;</code> matches a list of elements. Order does not matter.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">food</span>.<span style="color:#a6e22e">insertOne</span>({<span style="color:#e6db74">&#34;_id&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;fruit&#34;</span> <span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>, <span style="color:#e6db74">&#34;peach&#34;</span>]})
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">food</span>.<span style="color:#a6e22e">insertOne</span>({<span style="color:#e6db74">&#34;_id&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;fruit&#34;</span> <span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;kumquat&#34;</span>, <span style="color:#e6db74">&#34;orange&#34;</span>]})
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">food</span>.<span style="color:#a6e22e">insertOne</span>({<span style="color:#e6db74">&#34;_id&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;fruit&#34;</span> <span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;cherry&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>, <span style="color:#e6db74">&#34;apple&#34;</span>]})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">food</span>.<span style="color:#a6e22e">find</span>({<span style="color:#e6db74">&#34;fruit&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$all&#34;</span> <span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>]}}) <span style="color:#75715e">// [&#34;cherry&#34;, &#34;banana&#34;, &#34;apple&#34;], [&#34;apple&#34;, &#34;banana&#34;, &#34;peach&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// index @2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">food</span>.<span style="color:#a6e22e">find</span>({<span style="color:#e6db74">&#34;fruit.2&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;peach&#34;</span>}) <span style="color:#75715e">// [&#34;apple&#34;, &#34;banana&#34;, &#34;peach&#34;]
+</span></span></span></code></pre></div><ul>
+<li>
+<p><code>&quot;$size&quot;</code> queries for arrays of a given size.</p>
+<ul>
+<li>It cannot be combined with another conditional.
+<ul>
+<li>i.e. <code>db.food.find({&quot;fruit&quot; : {&quot;$size&quot; : 3}})</code> // returns all of the above</li>
+</ul>
+</li>
+<li>i.e. <code>db.blog.posts.findOne(criteria, {&quot;comments&quot; : {&quot;$slice&quot; : 10}})</code> limits to the first 10 elements.</li>
+</ul>
+</li>
+<li>
+<p><code>$</code> operator returns the matching element. It helps when you do not know the index of the element.</p>
+<ul>
+<li>i.e. <code>db.blog.posts.find({&quot;comments.name&quot; : &quot;bob&quot;}, {&quot;comments.$&quot; : 1})</code></li>
+</ul>
+</li>
+<li>
+<p><code>&quot;$elemMatch&quot;</code> forces MongoDB to compare clauses with a single array element.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// For the following documents {&#34;x&#34; : 5}, {&#34;x&#34; : 15}, {&#34;x&#34; : 25}, {&#34;x&#34; : [5, 25]}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">find</span>({<span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$gt&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;$lt&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>}}) <span style="color:#75715e">// {&#34;x&#34; : 15}, {&#34;x&#34; : [5, 25]}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">find</span>({<span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$elemMatch&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$gt&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;$lt&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>}}}) <span style="color:#75715e">// {}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">find</span>({<span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$gt&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;$lt&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>}}).<span style="color:#a6e22e">min</span>({<span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>}).<span style="color:#a6e22e">max</span>({<span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>}) <span style="color:#75715e">// {&#34;x&#34; : 15}
+</span></span></span></code></pre></div><h4 id="querying-on-embedded-documents">Querying on embedded documents</h4>
+<ul>
+<li>
+<p>There are two ways:</p>
+<ol>
+<li>query for the whole documents</li>
+<li>query for the individual key/value pairs</li>
+</ol>
+</li>
+<li>
+<p>Query documents can contain dots, which means &ldquo;reach into an embedded document&rdquo;.</p>
+<ul>
+<li>i.e. <code>db.people.find({&quot;name.first&quot; : &quot;Joe&quot;, &quot;name.last&quot; : &quot;Schmoe&quot;})</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="where-queries"><code>$where</code> queries</h3>
+<ul>
+<li>It allows you to execute arbitrary JavaScript as part of your query.</li>
+<li>It should not be used unless strictly necessary because it is much slower than a regular query.</li>
+<li>For security, the use of &ldquo;$where&rdquo; clauses should be highly restricted or eliminated. End users should never be allowed to execute arbitrary &ldquo;$where&rdquo; clauses.</li>
+</ul>
+<h3 id="cursors">Cursors</h3>
+<ul>
+<li>Queries return a database cursor, which lazily returns batches of documents as you need them.</li>
+<li>The database returns results from <code>find</code> using a cursor.</li>
+<li>Metaoperations on a cursor include
+<ul>
+<li>skipping a certain number of results,</li>
+<li>limiting the number of results returned, and</li>
+<li>sorting results by any combination of keys in any direction.</li>
+</ul>
+</li>
+</ul>
+<h4 id="how-to-create-a-cursor">How to create a cursor</h4>
+<ol>
+<li>Put some documents into a collection.</li>
+<li>Do a query on them.</li>
+<li>Assign the results to a local variable.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">100</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">insertOne</span>({<span style="color:#a6e22e">x</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">i</span>});
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cursor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">find</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">cursor</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">cursor</span>.<span style="color:#a6e22e">hasNext</span>()) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cursor</span>.<span style="color:#a6e22e">next</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do stuff
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h3 id="covered-queries">Covered queries</h3>
+<ul>
+<li>When an index contains all the values requested by a query, the query is covered.</li>
+<li>If your query is only looking for the fields that are included in the index, it does not need to fetch the document.</li>
+</ul>
+<h2 id="crud-operations">CRUD operations</h2>
+<h3 id="create">Create</h3>
+<ul>
+<li>
+<p>Adding new documents to a collection</p>
+</li>
+<li>
+<p>MongoDB will add <code>_id</code> key.</p>
+</li>
+<li>
+<p><code>&lt;database_name&gt;.&lt;collection_name&gt;.insertOne(&lt;document&gt;)</code>, where <code>&lt;document&gt; = { &lt;key&gt;: &lt;value&gt; }</code>.</p>
+</li>
+<li>
+<p><code>&lt;database_name&gt;.&lt;collection_name&gt;.insertMany([&lt;document1&gt;, &lt;document2&gt;])</code> passes an array of documents to the database.</p>
+<ul>
+<li>default: true := ordered, but slow</li>
+</ul>
+</li>
+</ul>
+<h3 id="read">Read</h3>
+<ul>
+<li><code>&lt;database_name&gt;.&lt;collection_name&gt;.findOne();</code></li>
+<li><code>&lt;database_name&gt;.&lt;collection_name&gt;.find();</code> displays up to 20 documents.</li>
+<li><code>&lt;database_name&gt;.&lt;collection_name&gt;.find().pretty();</code>, where <code>pretty()</code> as a helper function.</li>
+</ul>
+<h3 id="update">Update</h3>
+<ul>
+<li>
+<p>Updating existing documents</p>
+</li>
+<li>
+<p>Updating a document is atomic: if two updates happen at the same time, whichever one reaches the server first will be applied, and then the next one will be applied.</p>
+</li>
+<li>
+<p><code>&lt;database_name&gt;.&lt;collection_name&gt;.updateOne(&lt;filter_document&gt;, &lt;modifier_document&gt;)</code></p>
+</li>
+<li>
+<p><code>&lt;database_name&gt;.&lt;collection_name&gt;.updateMany(&lt;filter_document&gt;, &lt;modifier_document&gt;)</code></p>
+</li>
+<li>
+<p><code>&lt;database_name&gt;.&lt;collection_name&gt;.replaceOne(&lt;filter_document&gt;, &lt;replace_document&gt;)</code> fully replaces a matching document with a new one.</p>
+</li>
+<li>
+<p>i.e. <code>db.customers.update({first_name:&quot;Steven&quot;}, {$set:{gender:&quot;male&quot;}});</code> adds <code>gender: male</code> to the document of which <code>first_name</code> is <code>Steven</code>.</p>
+</li>
+<li>
+<p>Your update should always specify a unique document, perhaps by matching on a key like <code>_id</code>.</p>
+</li>
+</ul>
+<h4 id="update-operators">Update operators</h4>
+<ul>
+<li>
+<p>Special keys that can alter, add, or remove keys, and even manipulate arrays and embedded documents.</p>
+</li>
+<li>
+<p><code>$inc</code> increments the value of the field by the specified amount.</p>
+<ul>
+<li>If the field does not yet exist, it will be created.</li>
+<li>It can be used only on values of type integer, long, double, or decimal.</li>
+</ul>
+</li>
+<li>
+<p><code>$currentDate</code> sets the value of a field to the current date, either as a Date or a Timestamp.</p>
+</li>
+<li>
+<p><code>$min</code> only updates the field if the specified value is less than the existing field value.</p>
+</li>
+<li>
+<p><code>$max</code> only updates the field if the specified value is greater than the existing field value.</p>
+</li>
+<li>
+<p><code>$mul</code> multiplies the value of the field by the specified amount.</p>
+</li>
+<li>
+<p><code>$rename</code> renames a field.</p>
+</li>
+<li>
+<p><code>$set</code> sets the value of a field in a document.</p>
+<ul>
+<li>If the field does not yet exist, it will be created.</li>
+</ul>
+</li>
+<li>
+<p><code>$setOnInsert</code> sets the value of a field if an update results in an insert of a document.</p>
+<ul>
+<li>It does not affect update operations that modify existing documents.</li>
+</ul>
+</li>
+<li>
+<p><code>$unset</code> removes the specified field.</p>
+</li>
+</ul>
+<h4 id="upserts">Upserts</h4>
+<ul>
+<li>An upsert is a special type of update.</li>
+<li>If no document is found that matches the filter, a new document will be created by combining the criteria and updated documents.</li>
+<li>If a matching document is found, it will be updated normally.</li>
+</ul>
+<h3 id="delete">Delete</h3>
+<ul>
+<li>
+<p>Removing documents from a collection</p>
+</li>
+<li>
+<p><code>&lt;database_name&gt;.&lt;collection_name&gt;.deleteOne(&lt;filter_document&gt;)</code> deletes only a single match even if there are many.</p>
+</li>
+<li>
+<p><code>&lt;database_name&gt;.&lt;collection_name&gt;.deleteMany(&lt;filter_document&gt;)</code> deletes all the documents that match a filter.</p>
+</li>
+</ul>
+<h4 id="drop">drop</h4>
+<ul>
+<li><code>&lt;database_name&gt;.&lt;collection_name&gt;.drop()</code> removes all documents in a collection.</li>
+</ul>
+<h3 id="security-choosing-the-correct-level-of-safety-versus-speed-for-all-of-these-operations">Security: Choosing the correct level of safety versus speed for all of these operations</h3>
+<ul>
+<li>.</li>
+</ul>
+<hr>
+<h2 id="indexes">Indexes</h2>
+<ul>
+<li><code>explain</code> command to see what MongoDB is doing when it executes the query.
+<ul>
+<li>i.e. <code>db.users.find({&quot;username&quot;: &quot;user101&quot;}).explain(&quot;executionStats&quot;)</code></li>
+<li><code>executionStats</code> mode helps us understand the effect of using an index to satisfy queries.</li>
+<li><code>totalKeysExamined</code> := the number of keys within the index MongoDB walked through to generate the result set.</li>
+<li><code>totalDocsExamined</code> := the number of documents MongoDB looked at while trying to satisfy the query.</li>
+<li><code>executionTimeMillis</code> := the number of milliseconds it took to execute the query.</li>
+<li><code>nReturned</code> := the number of results returned.</li>
+<li>and more&hellip;</li>
+</ul>
+</li>
+</ul>
+<h3 id="creating-an-index">Creating an index</h3>
+<ul>
+<li>To choose which fields to create indexes for, look through your frequent queries and queries that need to be fast and try to find a common set of keys from those.</li>
+<li><code>db.users.createIndex({&quot;username&quot; : 1})</code></li>
+<li>If you need to sort on two (or more) criteria, you may need to have index keys go in different directions.
+<ul>
+<li>i.e. age by asc and name by desc order</li>
+</ul>
+</li>
+<li>The direction (asc or desc) only matters for multikey sorts.</li>
+<li>If you have more than 32 MB of results MongoDB will just error out, refusing to sort that much data.
+<ul>
+<li>To avoid this, you must create an index supporting the sort operation or use sort in conjunction with limit to reduce the results to below 32 MB.</li>
+</ul>
+</li>
+</ul>
+<h3 id="compound-indexes">Compound indexes</h3>
+<ul>
+<li><code>db.users.createIndex({&quot;age&quot; : 1, &quot;username&quot; : 1})</code> makes an index on both age and username.</li>
+<li>Below holds for most of the situations, when designing a compound index:
+<ul>
+<li>Keys for equality filters should appear first.</li>
+<li>Keys used for sorting should appear before multivalue fields.</li>
+<li>Keys for multivalue filters should appear last.</li>
+</ul>
+</li>
+<li>This allows the query to find an exact value for the first index key and then search within that for a second index range.</li>
+</ul>
+<h3 id="implicit-indexes">Implicit indexes</h3>
+<ul>
+<li>If an index has N keys, you get a &ldquo;free&rdquo; index on any prefix of those keys. For example, if we have an index that looks like {&ldquo;a&rdquo;: 1, &ldquo;b&rdquo;: 1, &ldquo;c&rdquo;: 1, &hellip;, &ldquo;z&rdquo;: 1}, we effectively have indexes on {&ldquo;a&rdquo;: 1}, {&ldquo;a&rdquo;: 1, &ldquo;b&rdquo; : 1}, {&ldquo;a&rdquo;: 1, &ldquo;b&rdquo;: 1, &ldquo;c&rdquo;: 1}, and so on.</li>
+</ul>
+<h3 id="how--operators-use-indexes">How <code>$</code> operators use indexes</h3>
+<h4 id="inefficient-operators">Inefficient operators</h4>
+<ul>
+<li>In general, negation is inefficient.
+<ul>
+<li><code>&quot;$ne&quot;</code> has to scan the entire index.</li>
+</ul>
+</li>
+</ul>
+<h4 id="or-queries">Or queries</h4>
+<ul>
+<li>Normally, MongoDB will use one of the indexes you created, not both. However, <code>&quot;$or&quot;</code> can use one index per &ldquo;$or&rdquo; clause, as &ldquo;$or&rdquo; performs two queries and then merges the results.</li>
+</ul>
+<h3 id="indexing-objects-and-arrays">Indexing objects and arrays</h3>
+<ul>
+<li>MongoDB allows you to reach into your documents and create indexes on nested fields and arrays.</li>
+</ul>
+<h4 id="indexing-embedded-docs">Indexing embedded docs</h4>
+<ul>
+<li>Indexes can be created on keys in embedded documents in the same way that they are created on normal keys.
+<ul>
+<li>i.e. <code>db.users.createIndex({&quot;&lt;field&gt;.&lt;subfield&gt;&quot; : 1})</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="indexing-arrays">Indexing arrays</h4>
+<ul>
+<li>Indexing an array field indexes each element of the array, not the array itself.</li>
+<li>Array indexes are more expensive than single-value ones. For a single insert, update, or remove, every array entry might have to be updated.</li>
+</ul>
+<h4 id="multikey-index-implications">Multikey index implications</h4>
+<ul>
+<li>If any document has an array field for the indexed key, the index immediately is flagged as a multikey index, which may be a bit slower than non-multikey indexes.</li>
+</ul>
+<h4 id="index-cardinality">Index cardinality</h4>
+<ul>
+<li><em>Cardinality</em> is the number of distinct values for a field in a collection.</li>
+<li>In general, the greater the cardinality of a field, the more helpful an index on that field can be.
+<ul>
+<li>gender := 2, name := N -&gt; name is better.</li>
+</ul>
+</li>
+</ul>
+<h3 id="gridfs">GridFS</h3>
+<ul>
+<li>A protocol for storing large files</li>
+<li>It uses subcollections to store file metadata separately from content chunks.</li>
+</ul>
+<h3 id="special-index-and-collection-types">Special index and collection types</h3>
+<h3 id="geospatial-indexes">Geospatial Indexes</h3>
+<h4 id="1-2d">1. 2d</h4>
+<ul>
+<li>It indexes points stored on a 2D plane.</li>
+<li>2d indexes support both flat geometries and distance-only calculations on spheres.</li>
+</ul>
+<h4 id="2-2dsphere">2. 2dsphere</h4>
+<ul>
+<li>It works with spherical geometries that model the surface of the earth based on the <code>WGS84 datum</code>.</li>
+<li>It allows you to specify geometries for points, lines, and polygons in the <code>GeoJSON</code> format.</li>
+<li>Queries using spherical geometries will be more performant and accurate with a 2dsphere index.</li>
+<li>You can create a geospatial index using the &ldquo;2dsphere&rdquo; type with createIndex.
+<ul>
+<li>i.e. <code>db.openStreetMap.createIndex({&quot;loc&quot; : &quot;2dsphere&quot;})</code></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// A point is given by a two-element array, representing `[longitude, latitude]`.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;New York City&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;loc&#34;</span> <span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;type&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Point&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;coordinates&#34;</span> <span style="color:#f92672">:</span> [<span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// A line is given by an array of points.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Hudson River&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;loc&#34;</span> <span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;type&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;LineString&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;coordinates&#34;</span> <span style="color:#f92672">:</span> [[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>], [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>]]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// A polygon is given by an array of points, but with a different &#34;type&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;New England&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;loc&#34;</span> <span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;type&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Polygon&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;coordinates&#34;</span> <span style="color:#f92672">:</span> [[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>], [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>]]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="types-of-geospatial-queries-intersection-within-nearness">Types of geospatial queries: intersection, within, nearness</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">eastVillage</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;type&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Polygon&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;coordinates&#34;</span> <span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    [
+</span></span><span style="display:flex;"><span>      [ <span style="color:#f92672">-</span><span style="color:#ae81ff">73.9732566</span>, <span style="color:#ae81ff">40.7187272</span> ],
+</span></span><span style="display:flex;"><span>      [ <span style="color:#f92672">-</span><span style="color:#ae81ff">73.9724573</span>, <span style="color:#ae81ff">40.7217745</span> ],
+</span></span><span style="display:flex;"><span>      [ <span style="color:#f92672">-</span><span style="color:#ae81ff">73.9732566</span>, <span style="color:#ae81ff">40.7187272</span> ]
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>]}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">openStreetMap</span>.<span style="color:#a6e22e">find</span>({<span style="color:#e6db74">&#34;loc&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$geoIntersects&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$geometry&#34;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">eastVillage</span>}}}) <span style="color:#75715e">// intersection operator
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">openStreetMap</span>.<span style="color:#a6e22e">find</span>({<span style="color:#e6db74">&#34;loc&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$geoWithin&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$geometry&#34;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">eastVillage</span>}}}) <span style="color:#75715e">// within operator
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">openStreetMap</span>.<span style="color:#a6e22e">find</span>({<span style="color:#e6db74">&#34;loc&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$near&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;$geometry&#34;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">eastVillage</span>}}}) <span style="color:#75715e">// nearness operator
+</span></span></span></code></pre></div><h4 id="using-geospatial-indexes">Using geospatial indexes</h4>
+<p><img src="/img/geometric_query1.png" alt="geometric_query1">
+<img src="/img/geometric_query2.png" alt="geometric_query2"></p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/mongodb/" rel="tag">MongoDB</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/coding/" rel="tag">coding</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/database/" rel="tag">Database</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/coding-note/naming_variables/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Naming variables</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/coding-note/jaccard_similarity/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Jaccard Similarity</p>
+		</a>
+	</div>
+</nav>
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "www-fatmakahveci-com-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/coding-note/apache_hbase/">Apache HBase</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/binary_tree_traversal/">Binary tree traversal</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/concurrency/">Concurrency</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/database/">Database</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dog_pile_effect/">Dogpile effect</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dynamic_programming/">Dynamic Programming (DP)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/google_bigtable/">Google BigTable</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/jaccard_similarity/">Jaccard Similarity</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/mongodb/">MongoDB</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/naming_variables/">Naming variables</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Spotify" rel="noopener noreferrer" href="https://open.spotify.com/playlist/2lY1JpIvZI8T1SG8RAaosw?si=CvDn8z0xQlaA9RtXUGM_2g" target="_blank">
+				
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+	 viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+<path id="SVGCleanerId_0" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+	c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+	c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+	c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+	c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+	c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+	 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+	c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+	C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+<g>
+	<path id="SVGCleanerId_0_1_" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+		c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+		c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+		c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+		c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+		c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+		 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+		c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+		C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+</g>
+<path style="fill:#2CC64D;" d="M219.68,195.296c-94.952,0-177.16,35.576-217.168,87.448C19.536,402.832,123.384,496,248,496
+	c90.016,0,169.208-48.624,212.664-120.872c1.392-6.856,2.168-13.84,2.168-20.952C462.832,266.424,353.976,195.296,219.68,195.296z
+	 M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96c-58.28-35.96-131.448-43.392-218.224-23.544
+	c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6c94.232-21.08,176.08-12.4,240.56,27.28
+	C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16c-6.192,8.68-17.368,12.392-26.04,6.192
+	c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4c-2.48-9.92,2.488-21.088,12.408-23.568
+	c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z"/>
+<path style="fill:#5AF27A;" d="M248,36.816c131.384,0,237.808,101.68,247.248,229.536C495.696,260.288,496,254.168,496,248
+	C496,111.6,385.648,0,248,0C111.608,0,0,111.6,0,248c0,6.184,0.304,12.328,0.76,18.408C10.272,138.512,117.808,36.816,248,36.816z"
+	/>
+<path style="fill:#1DAA59;" d="M326.192,483.216c14.488-33.36,32.688-83.248,35.872-88.056c3.736-7.432,2.488-17.352-6.184-21.072
+	c-64.488-39.68-146.328-48.36-240.56-27.28c-7.44,2.48-13.64,9.92-11.16,18.6c1.248,3.76,6.512,49.088,12.528,92.632
+	C154.832,482.048,199.848,496,248,496C275.304,496,301.568,491.464,326.192,483.216z"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+				<span>Spotify</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/cheburashkaF" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Instagram" rel="noopener noreferrer" href="https://www.instagram.com/fatmakhv" target="_blank">
+				<svg class="widget-social__link-icon icon icon-instagram" width="24" height="24" viewBox="0 0 256 256"><circle cx="193" cy="59" r="15"/><path fill-rule="evenodd" d="M101 0h54c41 0 58.4 3.9 74.5 17C256.2 37.5 256 74.8 256 97.7v60c0 26.7 0 60.4-26.5 81.4-16 13.4-33.5 16.9-74.5 16.9h-54c-41 0-57.5-3.5-74.5-16.9C1 218.9.5 186.3.1 160.5L0 155V97.7c0-23-.2-60.2 26.5-80.7C45 2 60 0 101 0zm4.9 23h44.3c45.8 0 58.3 3.5 70.3 17.5 11.8 13.2 12 30.1 12.5 62.9V156c.2 20.8.3 45.8-12.5 59.5-12 14-24.5 17.5-70.3 17.5h-44.3c-45.9 0-57.3-3.5-70.4-17.5-12.2-13-12.3-36.5-12.4-56.7v-55.6c.4-32.6.7-49.6 12.4-62.7C48 26.5 60 23 105.9 23zm19.6 144.5a42 42 0 1 0 0-84 42 42 0 0 0 0 84zm0 22.5a64.5 64.5 0 1 0 0-129 64.5 64.5 0 0 0 0 129z"/></svg>
+				<span>Instagram</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/fatma-kahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/fatmakahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="algorithm">algorithm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/aws/" title="aws">aws</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bash/" title="bash">bash</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bfs/" title="bfs">bfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/big-oh-notation/" title="big-oh-notation">big-oh-notation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bigtable/" title="bigtable">bigtable</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cloud-computing/" title="cloud computing">cloud computing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/concurrency/" title="concurrency">concurrency</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dfs/" title="dfs">dfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="Django">Django</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/framework/" title="framework">framework</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="javascript">javascript</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb/" title="MongoDB">MongoDB</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/network/" title="network">network</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nosql/" title="nosql">nosql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/numpy/" title="NumPy">NumPy</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="react">react</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="Software">Software</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="sql">sql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/travel/" title="travel">travel</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tree-traversal/" title="tree traversal">tree traversal</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/user-interface/" title="user interface">user interface</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web-development/" title="web development">web development</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Fatma Kahveci.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG" async></script>
+</body>
+</html>
