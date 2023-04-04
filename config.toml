@@ -107,6 +107,7 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
     url = "/reading note/"
     weight = 0
 
+
 [Params.logo]
   subtitle = "" # Logo subtitle
 

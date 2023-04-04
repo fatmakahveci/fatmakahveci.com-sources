@@ -14,7 +14,7 @@ Bacterial gene transfer differs from eukaryotes. Bacteria can transfer their gen
 
 # 1. Vertical Gene Transfer
 
-Genetic material is passed on from parent to the offspring vertically. 
+Genetic material is passed on from parent to the offspring vertically.
 
 ![vertical_gene_transfer](/img/vertical_gene_transfer.png)
 

@@ -879,3 +879,7 @@ tags:
 1. [Coursera](https://www.coursera.org/learn/aws-certified-solutions-architect-associate/home/week/1)
 1. [AWS glossary](https://docs.aws.amazon.com/general/latest/gr/glos-chap.html)
 1. [AWS white paper](https://d0.awsstatic.com/whitepapers/aws-overview.pdf)
+
+---
+
+Updated by _Fatma_ on April 04, 2023

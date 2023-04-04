@@ -8,19 +8,19 @@
     <language>en-us</language><atom:link href="https://fatmakahveci.com/tags/bacteria/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bacterial Strain Identification</title>
-      <link>https://fatmakahveci.com/bioinformatics/bacterial_strain_identification/</link>
+      <link>https://fatmakahveci.com/bioinformatics-note/bacterial_strain_identification/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fatmakahveci.com/bioinformatics/bacterial_strain_identification/</guid>
+      <guid>https://fatmakahveci.com/bioinformatics-note/bacterial_strain_identification/</guid>
       <description>Here is an intro to bacterial strain identification.</description>
     </item>
     
     <item>
       <title>Gene transfer mechanisms in bacteria</title>
-      <link>https://fatmakahveci.com/bioinformatics/gene_transfer_in_bacteria/</link>
+      <link>https://fatmakahveci.com/bioinformatics-note/gene_transfer_in_bacteria/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fatmakahveci.com/bioinformatics/gene_transfer_in_bacteria/</guid>
+      <guid>https://fatmakahveci.com/bioinformatics-note/gene_transfer_in_bacteria/</guid>
       <description>Bacterial gene transfer differs from eukaryotes. Bacteria can transfer their genes both vertically and horizontally.</description>
     </item>
     

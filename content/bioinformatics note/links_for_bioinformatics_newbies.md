@@ -38,4 +38,3 @@ tags:
 - [How to Write Scientific Names of Bacterial Species in Journal Manuscripts](https://www.enago.com/academy/write-scientific-names-in-a-research-paper)
 
 - [How to Write Scientific Names of Plant and Animal Species in Journal Manuscripts](https://www.enago.com/academy/how-to-write-scientific-names-in-a-research-paper-animals-plants/)
-
