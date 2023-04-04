@@ -10,7 +10,7 @@ tags:
   - "reading"
 ---
 
-## 1. Limitless
+## 1. [Limitless](https://www.limitlessbook.com)
 
 ### 1.1 Seven LIES (Limited Ideas Entertaining)
 
@@ -42,11 +42,9 @@ tags:
 
 - Genius is not born; it is made through deep practice.
 
-_Limitless:_ https://www.limitlessbook.com
-
 ---
 
-## 2. Atomic Habits
+## 2. [Atomic Habits](https://jamesclear.com/atomic-habits)
 
 - The backbone is the four-step model of habits are cue, craving, response, and reward.
 - Behavioral scientists realized that if you offered the right reward or punishment, you could get people to act in a certain way.
@@ -121,21 +119,26 @@ _Limitless:_ https://www.limitlessbook.com
 - Boiling water will soften a potato but harden an egg.
 - Our genes do not eliminate the need for hard work.
 
-_Atomic Habits:_ https://jamesclear.com/atomic-habits
-
 ---
 
-## 3. Deep Work
+## 3. [Deep Work](https://www.calnewport.com/books/deep-work)
 
 - A deep life is a good life.
-
-_Deep Work:_ https://www.calnewport.com/books/deep-work
+- Deep work is focus ability without distraction on a cognitively demanding task.
+- Shallow work is non-cognitively demanding, logistical-style work, often performed while distracted.
+- Deep work is like a superpower in our increasingly competitive 21st century economy.
 
 ---
 
-## 4. The Programmers Brain
+## 4. [The Programmers Brain](https://www.manning.com/books/the-programmers-brain)
 
 ### 4.1 Cognitive processes in programming
+
+- Confusion is acceptable for a while when you start to work in a new domain. Not knowing the meaning of a concept and trying to read complex code are distinct ways of confusion. Each relates to a different cognitive process.
+- Three ways of confusion:
+  - __A lack of knowledge__ means that relevant facts are insufficient in your long-term memory (LTM), where all your memories are permanently stored. e.g., not knowing the meaning of an operator.
+  - __Lack of information__ presents a challenge for your short-term memory (STM). Information that you are gathering has to be stored in STM temporarily, but if e.g., not knowing the inner workings of a function.
+  - __Lack of processing power:__ Based on the names of variables and the operations, you can make an educated guess about what the code does, but you cannot process the entire execution in your brain.
 
 ### 4.2 Read code quickly and get a sense of its workings
 
