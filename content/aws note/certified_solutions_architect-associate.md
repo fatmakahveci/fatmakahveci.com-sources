@@ -1,8 +1,8 @@
 ---
 title: AWS Certified Solutions Architect - Associate (SAA-C03)
 description: AWS Certified Solutions Architect - Associate (SAA-C03)
-summary: "Updated by Fatma, Apr 03, 2023."
-date: 03-04-2023
+summary: "Updated by Fatma, Apr 04, 2023."
+date: 04-04-2023
 categories:
   - "Coding"
 tags:
@@ -250,25 +250,40 @@ tags:
 
 #### 6.1.3 <span id="3">AWS Data Pipeline</span>
 
-- .
+- [AWS Data Pipeline](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/what-is-datapipeline.html) is a web service that you can use to automate the movement and transformation of data. With AWS Data Pipeline, you can define data-driven workflows, so that tasks can be dependent on the successful completion of previous tasks.
 
-#### 6.1.4 <span id="4">Amazon EMR</span>
+#### 6.1.4 <span id="4">Amazon EMR (Elastic MapReduce)</span>
+
+- [Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html) is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark on AWS to process and analyze vast amounts of data.
 
 #### 6.1.5 <span id="5">AWS Glue</span>
 
+- [AWS Glue](https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html) is a serverless data integration service that makes it easy for analytics users to discover, prepare, move, and integrate data from multiple resources.
+
 #### 6.1.6 <span id="6">Amazon Kinesis</span>
 
-- Amazon Kinesis cost-effectively processes and analyzes streaming data at any scale as a fully managed service. With Kinesis, you can ingest real-time data, such as video, audio, application logs, website clickstreams, and IoT telemetry data, for machine learning (ML), analytics, and other applications.
+- [Amazon Kinesis](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/what-is-kinesis-video.html) cost-effectively processes and analyzes streaming data at any scale as a fully managed service. With Kinesis, you can ingest real-time data, such as video, audio, application logs, website clickstreams, and IoT telemetry data, for machine learning (ML), analytics, and other applications.
 
 #### 6.1.7 <span id="7">AWS Lake Formation</span>
 
+- [AWS Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/what-is-lake-formation.html) is a fully managed service that makes it easy to build, secure, and manage data lakes. Lake Formation simplifies and automates many of the complex manual steps that are usually required to create data lakes. These steps include collecting, cleansing, moving, and cataloging data, and securely making that data available for analytics and machine learning.
+
 #### 6.1.8 <span id="8">Amazon Managed Streaming for Apache Kafka (Amazon MSK)</span>
+
+- [Amazon MSK](https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html) is a fully managed service that enables you to build and run applications that use Apache Kafka to process streaming data.
 
 #### 6.1.9 <span id="9">Amazon OpenSearch Service (Amazon Elasticsearch Service)</span>
 
+- [Amazon Opensearch Service](https://docs.aws.amazon.com/ru_ru/opensearch-service/latest/developerguide/what-is.html) is a managed service that makes it easy to deploy, operate, and scale OpenSearch clusters in the AWS Cloud.
+  - OpenSearch is a fully open-source search and analytics engine for use cases such as log analytics, real-time application monitoring, and clickstream analysis.
+
 #### 6.1.10 <span id="10">Amazon QuickSight</span>
 
+- [Amazon QuickSight](https://docs.aws.amazon.com/quicksight/latest/user/welcome.html) is a cloud-scale business intelligence service that you can use to deliver easy-to-understand insights to the people who you work with, wherever they are.
+
 #### 6.1.11 <span id="11">Amazon Redshift</span>
+
+- [Amazon Redshift](https://docs.aws.amazon.com/redshift/) is a fast, fully managed, petabyte-scale data warehouse service that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools.
 
 ### 6.2 Application Integration
 
@@ -332,7 +347,11 @@ tags:
 
 #### 6.3.1 <span id="19">AWS Budgets</span>
 
+- You can use [AWS Budgets](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) to track and take action on your AWS costs and usage.
+
 #### 6.3.2 <span id="20">AWS Cost and Usage Report</span>
+
+- [AWS Cost and Usage Report](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html) contains the most comprehensive set of cost and usage data available. You can use it to publish your AWS billing reports to an Amazon S3 bucket that you own. You can receive reports that break down your costs by the hour, day, or month, by product or product resource, or by tags that you define yourself.
 
 #### 6.3.3 <span id="21">AWS Cost Explorer</span>
 
@@ -502,8 +521,8 @@ tags:
 - When you launch a new EC2 instance, the EC2 service attempts to place the instance in such a way that all of your instances are spread out across underlying hardware to minimize correlated failures.
 - Depending on the type of workload, you can create a placement group using one of the following placement strategies:
   - A **cluster placement group** is a logical grouping of instances within a single Availability Zone.
-  - **Partition placement groups**
-  - **Spread placement groups**
+  - A **partition placement group** helps reduce the likelihood of correlated hardware failures for your application. Amazon EC2 ensures that each partition within a placement group has its own set of racks.
+  - A **spread placement group** is a group of instances that are each placed on distinct hardware.
 
 #### 6.4.3 <span id="25">AWS Elastic Beanstalk</span>
 
@@ -548,6 +567,8 @@ tags:
 - [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) is a fully managed, serverless, key-value NoSQL database designed to run high-performance applications at any scale.
 
 #### 6.6.5 <span id="40">Amazon ElastiCache</span>
+
+- [Amazon ElastiCache](https://docs.aws.amazon.com/elasticache/index.html) makes it easy to set up, manage, and scale distributed in-memory cache environments in the AWS Cloud. It provides a high performance, resizable, and cost-effective in-memory cache, while removing complexity associated with deploying and managing a distributed cache environment.
 
 #### 6.6.6 <span id="41">Amazon Keyspaces (for Apache Cassandra)</span>
 
@@ -683,6 +704,8 @@ tags:
 - [AWS Snow Family](https://aws.amazon.com/snow/) is a group of devices that transport data in and out of AWS. Its devices are physical devices.
 
 #### 6.12.8 <span id="90">AWS Transfer Family</span>
+
+- [AWS Transfer Family](https://docs.aws.amazon.com/transfer/latest/userguide/what-is-aws-transfer-family.html) is a secure transfer service that enables you to transfer files in and out of the AWS storage services.
 
 ### 6.13 Networking and Content Delivery
 
@@ -821,12 +844,12 @@ tags:
 
 #### 6.16.4 <span id="124">Amazon Elastic File System (Amazon EFS)</span>
 
-- [Amazon EFS](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance.
-- It scales automatically.
+- [Amazon EFS](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance. It scales automatically.
 
 #### 6.16.5 <span id="125">Amazon FSx</span>
 
 - [Amazon FSx](https://docs.aws.amazon.com/fsx/) makes it easy and cost-effective to launch, run, and scale feature-rich, high-performance file systems in the cloud.
+- Amazon File Cache serves as a temporary, high-performance storage location for data that's stored in on-premises file systems, AWS file systems, and Amazon S3 buckets.
 
 #### 6.16.6 <span id="127">Amazon S3 Glacier</span>
 

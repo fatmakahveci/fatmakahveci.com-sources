@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://fatmakahveci.com/tags/turkey/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Turkey</title>
-      <link>https://fatmakahveci.com/travel/turkey/</link>
+      <title>Covid19</title>
+      <link>https://fatmakahveci.com/bioinformatics/map_covid/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fatmakahveci.com/travel/turkey/</guid>
-      <description>Ankara, Antalya, Balikesir, Canakkale, Cappadocia, Eskisehir, Istanbul, Izmir, Mugla, Sinop, and Trabzon.</description>
+      <guid>https://fatmakahveci.com/bioinformatics/map_covid/</guid>
+      <description>Here is the number of samples for each city in Turkey.</description>
     </item>
     
   </channel>

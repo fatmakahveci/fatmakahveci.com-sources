@@ -26,6 +26,12 @@
   </url><url>
     <loc>https://fatmakahveci.com/aws-note/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/tags/bacteria/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/bacterial-strain-identification/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/bioinformatics/bacterial_strain_identification/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/travel-note/balikesir/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/bash/</loc>
@@ -45,6 +51,20 @@
     <loc>https://fatmakahveci.com/tags/bigtable/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/coding-note/binary_tree_traversal/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/bioinform%C3%A1tica/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/bioinformatician/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/bioinformatics/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/categories/bioinformatics/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/bioinformatics/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/biyoinformatik/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/categories/blog_posts/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/travel-note/bordeaux/</loc>
   </url><url>
@@ -110,6 +130,10 @@
   </url><url>
     <loc>https://fatmakahveci.com/travel-note/cordoba/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/tags/covid19/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/bioinformatics/map_covid/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/python-note/data_classes/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/data-structures/</loc>
@@ -127,6 +151,10 @@
     <loc>https://fatmakahveci.com/python-note/design_patterns/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/dfs/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/diccionario/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/dictionary/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/dictionary/</loc>
   </url><url>
@@ -156,7 +184,15 @@
   </url><url>
     <loc>https://fatmakahveci.com/python-note/efficiency/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/tags/en-es/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/en-tr/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/python-note/encapsulation/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/bioinformatics/dict_en_es/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/bioinformatics/dict_en_tr/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/travel-note/ericeira/</loc>
   </url><url>
@@ -185,6 +221,10 @@
     <loc>https://fatmakahveci.com/python-note/functools/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/garbage_collection/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/gene-transfer/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/bioinformatics/gene_transfer_in_bacteria/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/generator/</loc>
   </url><url>
@@ -302,6 +342,8 @@
   </url><url>
     <loc>https://fatmakahveci.com/travel-note/new_york/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/tags/newbies/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/tags/nosql/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/numpy/</loc>
@@ -344,6 +386,10 @@
   </url><url>
     <loc>https://fatmakahveci.com/travel-note/positano/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/tags/post/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/post/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/python-note/primality_testing/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/coding-note/procedural_programming/</loc>
@@ -371,6 +417,14 @@
     <loc>https://fatmakahveci.com/react-note/react/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/react-note/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/reading/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/post/reading/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/reading-note/reading/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/reading-note/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/coding-note/recurrence/</loc>
   </url><url>
@@ -408,7 +462,11 @@
   </url><url>
     <loc>https://fatmakahveci.com/coding-note/problems/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/bioinformatics/links_for_bioinformatics_newbies/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/python-note/sorting/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/s%C3%B6zl%C3%BCk/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/sql/</loc>
   </url><url>
@@ -417,6 +475,8 @@
     <loc>https://fatmakahveci.com/python-note/star_expressions/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/statsmodels/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/strain/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/strings/</loc>
   </url><url>
@@ -463,6 +523,8 @@
     <loc>https://fatmakahveci.com/python-note/trie/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/travel-note/turin/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/turkey/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/typing/</loc>
   </url><url>

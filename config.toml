@@ -100,6 +100,12 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
     name = "Travel"
     url = "/travel note/"
     weight = -1
+  
+  [[menu.main]]
+    identifier = "reading"
+    name = "Reading"
+    url = "/reading note/"
+    weight = 0
 
 [Params.logo]
   subtitle = "" # Logo subtitle
