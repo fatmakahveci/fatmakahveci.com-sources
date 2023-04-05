@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Design patterns">
 <meta itemprop="description" content="Design patterns">
 
-<meta itemprop="wordCount" content="851">
+<meta itemprop="wordCount" content="999">
 <meta itemprop="keywords" content="Python,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -189,13 +189,74 @@
 </ul>
 <h2 id="1-creational-patterns">1. Creational patterns</h2>
 <ul>
-<li>They instantiate classes or create objects.</li>
+<li>They instantiate classes using inheritance, or create objects using delegation.</li>
 </ul>
 <h3 id="11-abstract-factory">1.1 Abstract factory</h3>
 <ul>
 <li>Create entire product families without specifying their concrete classes</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> abc <span style="color:#f92672">import</span> ABC, abstractmethod
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AbstractFactory</span>(ABC):
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@abstractmethod</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_flower</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@abstractmethod</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_vase</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FirstBrandFactory</span>(AbstractFactory):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_flower</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Rose()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_vase</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> CeramicVase()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecondBrandFactory</span>(AbstractFactory):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_flower</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Lily()
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_vase</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> GlassVase()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AbstractFlower</span>(ABC):
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@abstractmethod</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bloom</span>(self) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Rose</span>(AbstractFlower):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bloom</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;The rose is blooming beautifully.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Lily</span>(AbstractFlower):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bloom</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;The lily is blooming beautifully.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AbstractVase</span>(ABC):
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@abstractmethod</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">display</span>(self) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CeramicVase</span>(AbstractVase):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">display</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;The flowers are displayed in a beautiful ceramic vase.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GlassVase</span>(AbstractVase):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">display</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;The flowers are displayed in a beautiful glass vase.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">client_code</span>(factory: AbstractFactory) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>  flower <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span>create_flower()
+</span></span><span style="display:flex;"><span>  vase <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span>create_vase()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  print(flower<span style="color:#f92672">.</span>bloom())
+</span></span><span style="display:flex;"><span>  print(vase<span style="color:#f92672">.</span>display())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>  client_code(FirstBrandFactory())
+</span></span><span style="display:flex;"><span>  client_code(SecondBrandFactory())
+</span></span></code></pre></div><hr>
 <h3 id="12-factory">1.2 Factory</h3>
 <ul>
 <li>Create product objects without specifying their concrete classes</li>
@@ -245,18 +306,21 @@
 <ul>
 <li>Construct complex objects step-by-step</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="14-prototype">1.4 Prototype</h3>
 <ul>
 <li>Copy existing objects without making your code dependent on their classes</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="15-singleton">1.5 Singleton</h3>
 <ul>
 <li>Ensure that a class has only one instance, while providing a global access point to this instance</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h2 id="2-structural-patterns">2. Structural patterns</h2>
+<ul>
+<li>They create larger structures that offer additional features and capabilities by arranging different classes and objects.</li>
+</ul>
 <h3 id="21-adapter">2.1 Adapter</h3>
 <ul>
 <li>Allow objects with incompatible interfaces to collaborate</li>
@@ -303,17 +367,17 @@
 <ul>
 <li>Split a large class or a set of closely related classes into two separate hierarchies-abstraction and implementation- which can be developed independently of each other</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="23-composite">2.3 Composite</h3>
 <ul>
 <li>Compose objects into tree structures and then work with these structures as if they were individual objects</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="24-decorator">2.4 Decorator</h3>
 <ul>
 <li>Attach new behaviours to objects by placing these objects inside special wrapper objects that contain the behaviours</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="25-facade">2.5 Facade</h3>
 <ul>
 <li>Provide a simplified interface to a library, a framework, or any other complex set of classes</li>
@@ -374,39 +438,42 @@
 <ul>
 <li>Fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="27-proxy">2.7 Proxy</h3>
 <ul>
 <li>Provide a substitute or placeholder for another object</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h2 id="3-behavioral-patterns">3. Behavioral patterns</h2>
+<ul>
+<li>They recognise shared communication patterns among objects and implement them.</li>
+</ul>
 <h3 id="31-chain-of-responsibility">3.1 Chain of responsibility</h3>
 <ul>
 <li>Pass requests along a chain of handlers</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="32-command">3.2 Command</h3>
 <ul>
 <li>Turn a request into a stand-alone object that contains all information about the request</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="33-iterator">3.3 Iterator</h3>
 <ul>
 <li>Traverse elements of a collection without exposing its underlying representation</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="34-mediator">3.4 Mediator</h3>
 <ul>
 <li>Reduce chaotic dependencies between objects</li>
 <li>It restricts direct communication between the objects and forces them to collaborate only via a mediator object.</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="35-memento">3.5 Memento</h3>
 <ul>
 <li>Save and restore the previous state of an object without revealing the details of its implementation</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="36-observer">3.6 Observer</h3>
 <ul>
 <li>Define a subscription mechanism to notify multiple objects about any events that happen to the object they&rsquo;re observing</li>
@@ -507,22 +574,22 @@
 <ul>
 <li>Alter an object behaviour when its internal state changes</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="38-strategy">3.8 Strategy</h3>
 <ul>
 <li>Define a family of algorithms, put each of them into a separate class, and make their objects interchangeable</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="39-template">3.9 Template</h3>
 <ul>
 <li>Define the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 <h3 id="310-visitor">3.10 Visitor</h3>
 <ul>
 <li>Separate algorithms from the objects on which they operate</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><hr>
 
 		</div>
 		<footer class="post__footer">

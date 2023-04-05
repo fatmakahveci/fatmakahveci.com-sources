@@ -1,8 +1,8 @@
 ---
 title: Design patterns
 description: Design patterns
-summary: "Updated by Fatma, Mar 28, 2023."
-date: 28-03-2023
+summary: "Updated by Fatma, Apr 05, 2023."
+date: 05-04-2023
 categories:
   - "Coding"
 tags:
@@ -19,11 +19,75 @@ comments: true
 
 ## 1. Creational patterns
 
-- They instantiate classes or create objects.
+- They instantiate classes using inheritance, or create objects using delegation.
 
 ### 1.1 Abstract factory
 
 - Create entire product families without specifying their concrete classes
+
+```python
+from abc import ABC, abstractmethod
+
+class AbstractFactory(ABC):
+  @abstractmethod
+  def create_flower(self):
+    pass
+  
+  @abstractmethod
+  def create_vase(self):
+    pass
+
+class FirstBrandFactory(AbstractFactory):
+  def create_flower(self):
+    return Rose()
+
+  def create_vase(self):
+    return CeramicVase()
+
+class SecondBrandFactory(AbstractFactory):
+  def create_flower(self):
+    return Lily()
+  
+  def create_vase(self):
+    return GlassVase()
+
+class AbstractFlower(ABC):
+  @abstractmethod
+  def bloom(self) -> str:
+    pass
+
+class Rose(AbstractFlower):
+  def bloom(self):
+    return "The rose is blooming beautifully."
+
+class Lily(AbstractFlower):
+  def bloom(self):
+    return "The lily is blooming beautifully."
+
+class AbstractVase(ABC):
+  @abstractmethod
+  def display(self) -> str:
+    pass
+
+class CeramicVase(AbstractVase):
+  def display(self):
+    return "The flowers are displayed in a beautiful ceramic vase."
+
+class GlassVase(AbstractVase):
+  def display(self):
+    return "The flowers are displayed in a beautiful glass vase."
+
+def client_code(factory: AbstractFactory) -> None:
+  flower = factory.create_flower()
+  vase = factory.create_vase()
+
+  print(flower.bloom())
+  print(vase.display())
+
+if __name__ == "__main__":
+  client_code(FirstBrandFactory())
+  client_code(SecondBrandFactory())
+```
 
 ---
 
@@ -80,11 +144,17 @@ if __name__ == "__main__":
 
 - Construct complex objects step-by-step
 
+```python
+```
+
 ---
 
 ### 1.4 Prototype
 
 - Copy existing objects without making your code dependent on their classes
+
+```python
+```
 
 ---
 
@@ -92,9 +162,14 @@ if __name__ == "__main__":
 
 - Ensure that a class has only one instance, while providing a global access point to this instance
 
+```python
+```
+
 ---
 
 ## 2. Structural patterns
+
+- They create larger structures that offer additional features and capabilities by arranging different classes and objects.
 
 ### 2.1 Adapter
 
@@ -146,17 +221,26 @@ if __name__ == "__main__":
 
 - Split a large class or a set of closely related classes into two separate hierarchies-abstraction and implementation- which can be developed independently of each other
 
+```python
+```
+
 ---
 
 ### 2.3 Composite
 
 - Compose objects into tree structures and then work with these structures as if they were individual objects
 
+```python
+```
+
 ---
 
 ### 2.4 Decorator
 
 - Attach new behaviours to objects by placing these objects inside special wrapper objects that contain the behaviours
+
+```python
+```
 
 ---
 
@@ -223,19 +307,30 @@ if __name__ == "__main__":
 
 - Fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object
 
+```python
+```
+
 ---
 
 ### 2.7 Proxy
 
 - Provide a substitute or placeholder for another object
 
+```python
+```
+
 ---
 
 ## 3. Behavioral patterns
 
+- They recognise shared communication patterns among objects and implement them.
+
 ### 3.1 Chain of responsibility
 
 - Pass requests along a chain of handlers
+
+```python
+```
 
 ---
 
@@ -243,11 +338,17 @@ if __name__ == "__main__":
 
 - Turn a request into a stand-alone object that contains all information about the request
 
+```python
+```
+
 ---
 
 ### 3.3 Iterator
 
 - Traverse elements of a collection without exposing its underlying representation
+
+```python
+```
 
 ---
 
@@ -256,11 +357,17 @@ if __name__ == "__main__":
 - Reduce chaotic dependencies between objects
 - It restricts direct communication between the objects and forces them to collaborate only via a mediator object.
 
+```python
+```
+
 ---
 
 ### 3.5 Memento
 
 - Save and restore the previous state of an object without revealing the details of its implementation
+
+```python
+```
 
 ---
 
@@ -368,11 +475,17 @@ if __name__ == "__main__":
 
 - Alter an object behaviour when its internal state changes
 
+```python
+```
+
 ---
 
 ### 3.8 Strategy
 
 - Define a family of algorithms, put each of them into a separate class, and make their objects interchangeable
+
+```python
+```
 
 ---
 
@@ -380,10 +493,16 @@ if __name__ == "__main__":
 
 - Define the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure
 
+```python
+```
+
 ---
 
 ### 3.10 Visitor
 
 - Separate algorithms from the objects on which they operate
+
+```python
+```
 
 ---
