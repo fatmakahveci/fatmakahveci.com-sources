@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [Calton Hill](https://goo.gl/maps/B3eNVphBTnUEq5Vq5)

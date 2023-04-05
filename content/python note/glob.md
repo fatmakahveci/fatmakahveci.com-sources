@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - It gets the contents of a directory.
 - It uses shell-like wildcards.
 

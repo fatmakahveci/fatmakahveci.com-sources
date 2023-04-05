@@ -8,6 +8,7 @@ categories:
 tags:
   - "post"
   - "reading"
+comments: true
 ---
 ## [Deep work](https://www.calnewport.com/books/deep-work)
 

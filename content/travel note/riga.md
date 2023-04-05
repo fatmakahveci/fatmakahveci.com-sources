@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [House of the Blackheads](https://www.google.com/maps/place/Kara+Kafal%C4%B1lar+Evi/@56.947123,24.1068979,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPUxCFqOqUKppp-pwWXQ7zUPGm1z4cxnECnvzw!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPUxCFqOqUKppp-pwWXQ7zUPGm1z4cxnECnvzw%3Dw129-h86-k-no!7i3968!8i2645!4m5!3m4!1s0x46eecfd6f9b26c0d:0x29e9e4862a12a11f!8m2!3d56.947123!4d24.1068979)

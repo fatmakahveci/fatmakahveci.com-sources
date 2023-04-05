@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - It is a kitchen sink of Python utility libraries for doing "stuff" in a functional way.
 
 ```python

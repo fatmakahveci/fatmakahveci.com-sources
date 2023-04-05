@@ -10,9 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
-
 ```python
 # explaining how to add menu bars, menus, and toolbars to GUI apps with python and pyqt.
 

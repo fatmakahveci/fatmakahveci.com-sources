@@ -10,5 +10,6 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
 - When the number of references to an object drops to zero, python will eventually notice that it is inaccessible and reclaim the allocated memory so we can use it for something else.

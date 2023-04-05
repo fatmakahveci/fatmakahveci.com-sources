@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 ```python
 a = [1, 2, 3]
 b = a

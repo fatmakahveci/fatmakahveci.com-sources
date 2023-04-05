@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 ![binary_tree_traversal](/img/binary_tree_traversal.png)
 
 ## 1. Breadth-First Search Algorithm

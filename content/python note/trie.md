@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - A type of tree
 - It stores characters.
 - Don't look up each prefix from the root.

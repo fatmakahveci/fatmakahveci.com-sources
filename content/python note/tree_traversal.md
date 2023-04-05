@@ -13,8 +13,8 @@ tags:
   - "tree traversal"
   - "dfs"
   - "bfs"
+comments: true
 ---
-
 ![binary_tree_traversal](/img/binary_tree_traversal.png)
 
 ## Breadth-First Search Algorithm (BFS)

@@ -10,6 +10,7 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
 - For given weights and values of $n$ items, we have to choose sets of weights that can fill up the maximum capacity $w$ in a bag of capacity $W$.
 - This set should contain a maximum number of items.

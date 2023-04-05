@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - With `return`, functions send returns value back to the caller code.
 - Types:
   1. **Explicit `return` statement:** It terminates a function execution and sends the return value back to the caller code.

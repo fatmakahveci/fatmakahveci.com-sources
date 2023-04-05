@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 ## Dict comprehensions
 
 - They transform one dictionary into another one.

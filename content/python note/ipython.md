@@ -10,7 +10,7 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - It provides easy access to the OS's shell and file system.
 - You can run, debug, and test the code.

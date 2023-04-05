@@ -9,8 +9,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - HBase is a data model that is similar to Google's big table.
 - It is an open-source distributed database, written in Java.
 - HBase runs on top of HDFS (Hadoop Distributed File System).

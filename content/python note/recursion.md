@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - Recursion isn't a strong Python feature due to the inherent recursion limit.
 
 ```python

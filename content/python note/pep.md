@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - A PEP is a design document that
   - provides information
   - describes a new feature.

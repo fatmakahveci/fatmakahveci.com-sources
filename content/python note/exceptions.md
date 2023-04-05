@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - Exceptions are errors detected during execution.
 - They are objects that are raised (or thrown) by code that encounters an unexpected circumstance.
 - Most exceptions are not handled by programs.

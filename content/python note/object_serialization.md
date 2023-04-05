@@ -10,6 +10,7 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
 - Serialization refers to the process of converting an object in memory to a byte stream that can be stored on disk or sent over a network.
 - Later on, this character stream can then be retrieved and de-serialized back to a Python object.

@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [Rynek Glowny (Main Square)](https://www.google.com/maps/place/Rynek+G%C5%82%C3%B3wny,+31-000+Krak%C3%B3w,+Polonya/@50.0618971,19.9367558,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipMe_XeLE9m0Cc7FKfa9Xr-bPzfThlA55Fv0fY6Y!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMe_XeLE9m0Cc7FKfa9Xr-bPzfThlA55Fv0fY6Y%3Dw203-h253-k-no!7i2883!8i3604!4m13!1m7!3m6!1s0x47165b0e0789882b:0x3d71c4eb22dfdb51!2zUnluZWsgR8WCw7N3bnksIDMxLTAwMCBLcmFrw7N3LCBQb2xvbnlh!3b1!8m2!3d50.0618969!4d19.9367559!3m4!1s0x47165b0e0789882b:0x3d71c4eb22dfdb51!8m2!3d50.0618969!4d19.9367559)

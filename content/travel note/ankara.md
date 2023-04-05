@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [Anıtkabir](https://goo.gl/maps/4LQ5wwFEfPRndv3g8)

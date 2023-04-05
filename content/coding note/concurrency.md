@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - Concurrency is the ability to handle multiple tasks simultaneously to improve performance and responsiveness.
 - Concurrency examples:
   - Web servers handle requests for millions of clients at once.

@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [Berat Castle (Kalaja e Beratit)](https://g.page/berat-castle?share)

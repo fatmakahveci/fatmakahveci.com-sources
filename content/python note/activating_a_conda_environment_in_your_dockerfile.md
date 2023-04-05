@@ -10,10 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
-## Activating a Conda environment in your Dockerfile
-
 ```bash
 #!/bin/bash --login
 # --login ensures the bash configuration is loaded, enabling Conda

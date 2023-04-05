@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 ```python
 
 numbers = [ 2, 8, 0, 1, 1, 9, 7, 7 ]

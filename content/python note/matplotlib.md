@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - The most popular python plotting and 2D data visualization library
 
 ## Install

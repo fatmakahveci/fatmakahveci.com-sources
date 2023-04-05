@@ -10,12 +10,10 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - A decorator is a function that takes another function as an argument, adds some functionality, and returns another function without altering the source code.
-
 - This is also called metaprogramming because a part of the program tries to modify another part of the program at compile time.
-
 - Decorators can serve to
   - shorten code
   - speed up code

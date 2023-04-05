@@ -11,6 +11,7 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
 ## numpy - **num**erical **py**thon
 

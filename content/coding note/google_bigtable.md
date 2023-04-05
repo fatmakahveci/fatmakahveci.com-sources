@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - A distributed storage system for structured data
 - BigTable is a distributed storage system that is designed to be highly scalable and fault tolerant with relaxed SQL capabilities.
 - A BigTable persistent, sparse, N-D map in which each cell can be indexed by a row key and column key.

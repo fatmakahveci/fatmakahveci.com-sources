@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [Basilica of the Holy Blood (Basiliek van het Heilig Bloed)](https://goo.gl/maps/1KVbJJtCRSxk5ioU9)

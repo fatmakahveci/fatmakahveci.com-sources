@@ -10,9 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
-
 ```python
 class Computer:
  def __init__(self):

@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [Goreme Open Air Museum (Göreme Açık Hava Müzesi)](https://goo.gl/maps/Hd8NwfMcvyUN3zPQ8)

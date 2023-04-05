@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [Independence Square (Майдан Незалежності)](https://www.google.com/maps/place/Independence+Square,+Kyiv,+Ukrayna,+02000/@50.450893,30.5226522,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipMkLS9Avo180hh5Ne4nguWtZzuVymoBpkfhfzyS!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMkLS9Avo180hh5Ne4nguWtZzuVymoBpkfhfzyS%3Dw203-h152-k-no!7i2592!8i1944!4m5!3m4!1s0x40d4ce50f8b6e3c3:0xb528dc4d6dadc4f8!8m2!3d50.4505318!4d30.5229899)

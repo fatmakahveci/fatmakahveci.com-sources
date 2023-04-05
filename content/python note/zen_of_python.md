@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - Beautiful is better than ugly.
 - Explicit is better than implicit.
 - Simple is better than complex.

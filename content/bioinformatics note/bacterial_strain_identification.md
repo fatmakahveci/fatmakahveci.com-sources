@@ -10,8 +10,8 @@ tags:
   - "bacteria"
   - "strain"
   - "bioinformatics"
+comments: true
 ---
-
 Bacterial species are highly adaptable to their environment in harsh conditions. It makes bacterial infections of great concern due to their relevance to the high mortality, morbidity rates, and cost of treatments. It is critical to discriminate bacterial isolates at the strain level in transmission surveillance during infectious disease outbreaks.
 
 WGS-based approaches pave the way to identify and characterize bacterial species and strains. It is feasible with increasing available data size and ease of their applicability through SNVs among strains, as a group of closely related isolates that share critical characteristics. SNVs in the core genome are a good starting point for discrimination in case the aim is distantly related organisms.

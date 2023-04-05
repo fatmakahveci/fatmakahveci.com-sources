@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [Arc de Triomphe](https://goo.gl/maps/ZvBec4W2cxqpXCyBA)

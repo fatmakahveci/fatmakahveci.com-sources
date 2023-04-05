@@ -10,8 +10,8 @@ tags:
   - "sql"
   - "coding"
   - "database"
+comments: true
 ---
-
 ## Database Management Systems (DBMS)
 
 ### 1. NoSQL

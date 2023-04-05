@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - In Python Introspection is the ability of an object to know about its attributes at runtime.
   - A function knows its name and documentation.
     - `print(<function_name>.__name__)`

@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 ## `__init__.py`
 
 - It tells Python that the directory is a package.

@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ![bordeaux](/img/bordeaux.png)
 
 - The Celtic tribe that gave [Bordeaux](https://www.bordeauxwalks.com/romans-in-bordeaux/) the name Burdigala, meaning _swamp shelter_, in the Basque language in reference to the area's marsh environment.

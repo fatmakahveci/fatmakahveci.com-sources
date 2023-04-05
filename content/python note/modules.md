@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - A module is a file containing definitions and implementations of classes, functions that can be used inside another program, and variables.
 
 - Do not use `import *` because it affects readability.

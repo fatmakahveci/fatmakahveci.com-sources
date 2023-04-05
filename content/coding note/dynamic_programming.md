@@ -9,8 +9,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - A technique for efficiently implementing a recursive algorithm by storing partial results
 - It starts with a recursive algorithm or definition.
 - How to solve a DP problem

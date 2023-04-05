@@ -10,6 +10,7 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
 - Encodings convert code points into bytes.
 - There are many different character encodings.

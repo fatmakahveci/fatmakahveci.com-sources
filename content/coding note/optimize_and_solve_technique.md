@@ -9,8 +9,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 ## 1. BUD
 
 ### Bottlenecks

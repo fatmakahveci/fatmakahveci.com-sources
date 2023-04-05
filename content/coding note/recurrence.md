@@ -9,8 +9,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 ## Divide-and-conquer recurrences
 
 ### Mergesort

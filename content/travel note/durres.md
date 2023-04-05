@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [Beach of Durrës (Plazhi i Durrësit)](https://goo.gl/maps/Sr8pFoAH6sVVoPUa7)

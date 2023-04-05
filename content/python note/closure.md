@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - A closure is a function object that has access to variables in its enclosing lexical scope, even when the function is called outside that scope.
 
 ```python

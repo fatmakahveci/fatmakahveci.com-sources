@@ -10,6 +10,7 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
 - A comparison sort cannot perform better than `O(nlogn)` on average.
 

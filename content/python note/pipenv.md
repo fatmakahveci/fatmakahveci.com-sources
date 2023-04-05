@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - They are isolated containers containing all the software dependencies for a given project.
 - You should use a dedicated virtual environment for each new Python project.
 - Historically Python developers have used either `virtualenv` or `pyenv` to configure the virtual environment, but prominent Python developer Kenneth Reitz released `Pipenv` which is now the officially recommended Python packaging tool.

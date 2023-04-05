@@ -8,6 +8,7 @@ categories:
 tags:
   - "post"
   - "reading"
+comments: true
 ---
 ## [Atomic habits](https://jamesclear.com/atomic-habits)
 

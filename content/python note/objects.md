@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - Functions or methods that change an object inplace should return `None` to make it clear to the caller that the object itself is changed, and no new object was created.
 
 ## Object references

@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 ```python
 from pynput.keyboard import Listener, Key, Controller
 

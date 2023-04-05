@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ![carcassonne](/img/carcassonne.png)
 
 - [Getting from terminal to castle](https://www.rome2rio.com/s/Carcassonne-Station/Cit%C3%A9-de-Carcassonne)

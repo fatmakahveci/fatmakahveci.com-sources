@@ -10,6 +10,6 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - [http://docopt.org/](http://docopt.org/)

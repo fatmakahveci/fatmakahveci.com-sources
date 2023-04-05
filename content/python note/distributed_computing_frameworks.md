@@ -10,13 +10,10 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
 
-Processing truly big datasets with Hadoop and Spark
-
 ## Distributed computing
-
-- .
 
 ## 1. Hadoop
 

@@ -12,8 +12,8 @@ tags:
   - "framework"
   - "frontend"
   - "web development"
+comments: true
 ---
-
 ![react](/img/react.gif)
 
 - [React](`https://reactjs.org/docs/getting-started.html`) is a `JS` framework for developing SPAs (single-page applications).

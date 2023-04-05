@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 ## Buffer Protocol
 
 - It provides a way to access the internal data of an object.

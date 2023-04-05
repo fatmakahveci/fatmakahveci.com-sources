@@ -10,10 +10,9 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - It is a string written as the first line of a function.
-
 - Every function in python comes with a __doc__ attribute that holds this information.
 
 ## Popular docstring formats

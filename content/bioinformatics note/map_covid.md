@@ -8,8 +8,8 @@ categories:
 tags:
   - "covid19"
   - "turkey"
+comments: true
 ---
-
 {{< maps >}}
 
 The numbers are taken from <a href="https://www.gisaid.org/" target="_blank">https://www.gisaid.org/</a>

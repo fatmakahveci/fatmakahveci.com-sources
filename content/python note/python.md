@@ -10,6 +10,7 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
 - Guido van Rossum is the creator of the Python programming language.
 - Every number, string, data structure, function, class, module, and so on exist in the Python interpreter in its own “box,” which is referred to as a Python object.

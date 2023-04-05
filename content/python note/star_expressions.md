@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - They are useful when iterating over a sequence of tuples of varying lengths.
 
 - Also, they are useful when combined with certain kinds of string processing operations, such as splitting.

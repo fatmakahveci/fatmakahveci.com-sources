@@ -9,8 +9,8 @@ tags:
   - "MongoDB"
   - "coding"
   - "Database"
+comments: true
 ---
-
 - A document-oriented database, which aims to ease scaling out
 - It automatically takes care of balancing data and load across a cluster, redistributing documents automatically and routing reads and writes to the correct machines.
 - By allowing embedded documents and arrays, the document-oriented approach makes it possible to represent complex hierarchical relationships with a single record.

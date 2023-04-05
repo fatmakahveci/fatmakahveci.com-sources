@@ -9,8 +9,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - **Precedence:** Local-> Enclosed-> Global -> Built-in
 
 ## 1. Built-in scope

@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 ## Copy an Object in Python
 
 - `=` does not create a new object. It only creates a new variable that shares the reference of the original object.

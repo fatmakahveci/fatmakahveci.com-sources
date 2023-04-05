@@ -8,9 +8,8 @@ categories:
 tags:
   - "Python"
   - "coding"
+comments: true
 ---
-## functools module
-
 - It is for higher-order functions that work on other functions.
 - It provides functions for working with other functions and callable objects to use or extend them without completely rewriting them.
 

@@ -8,8 +8,8 @@ categories:
 tags:
   - "network"
   - "coding"
+comments: true
 ---
-
 ## Hypertext Markup Language (HTML)
 
 - A text-based approach to describe how content contained within an HTML file is structured.

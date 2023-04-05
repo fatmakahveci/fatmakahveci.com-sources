@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 `import seaborn as sns`
 
 [Color palette](https://seaborn.pydata.org/tutorial/color_palettes.html)

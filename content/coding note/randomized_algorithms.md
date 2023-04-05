@@ -9,8 +9,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 ## Random sampling
 
 - This is the idea behind opinion polling, where we sample a small number of people as a proxy for the full population. The result should be representative of the full set.

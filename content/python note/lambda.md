@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - The Lambda functions are a way of creating small anonymous functions.
 - They are functions without a name.
 - lambda arguments: return expression

@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - Order is defined by the insertion order of keys.
 - `OrderedDict` is mutable.
 - Two functions differ from `dict`.

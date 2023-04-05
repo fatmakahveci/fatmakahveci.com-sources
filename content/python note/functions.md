@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 `def <function_name>(<function_name_without_parantheses>):`
 
 - Functions are first-class objects, which means that

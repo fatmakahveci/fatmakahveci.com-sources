@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - A nonlinear hierarchical data structure that consists of nodes connected by edges.
 - They allow quicker and easier access to data, as they are nonlinear data structures.
 

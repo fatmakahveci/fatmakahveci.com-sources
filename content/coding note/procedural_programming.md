@@ -7,6 +7,6 @@ categories:
   - "Coding"
 tags:
   - "coding"
+comments: true
 ---
-
 - It structures a program like a recipe in that it provides a set of steps in the form of functions and code blocks, that flow sequentially to complete a task.

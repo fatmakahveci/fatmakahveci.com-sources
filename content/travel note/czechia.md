@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [Basilica of the Assumption of the Virgin Mary (Bazilika Nanebevzetí Panny Marie)](https://goo.gl/maps/eHixkHtT9uEhnwbx5)

@@ -10,6 +10,7 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
 - If the named module cannot be found, a `ModuleNotFoundError` is raised.
 

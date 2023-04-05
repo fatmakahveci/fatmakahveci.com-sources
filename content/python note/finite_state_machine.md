@@ -10,7 +10,7 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - `pip install transitions`
 - `transitions` implements an FSM.

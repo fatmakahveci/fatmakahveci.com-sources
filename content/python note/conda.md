@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - It is a package, dependency, and environment management.
 - It was created for Python, but it is also used for R, Java, C/C++, etc.
 - It runs on macOS, Linux, etc.

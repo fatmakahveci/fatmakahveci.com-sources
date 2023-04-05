@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ## 1.1 [Mathematical Bridge](https://www.google.com/maps/place/Mathematical+Bridge/@52.2039915,0.1152037,16.12z/data=!4m13!1m7!3m6!1s0x47d85d89f32a012d:0x63a320e1a35e3d21!2sCambridge!3b1!8m2!3d52.205337!4d0.121817!3m4!1s0x0:0x22f7ea16d56bec6a!8m2!3d52.2021922!4d0.1150683)

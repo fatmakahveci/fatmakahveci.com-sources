@@ -7,8 +7,8 @@ categories:
   - "Coding"
 tags:
   - "coding"
+comments: true
 ---
-
 ## 1. Camel Case
 
 - i.e. numberOfCollegeGraduates

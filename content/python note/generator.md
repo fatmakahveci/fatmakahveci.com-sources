@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - It can be thought of as a resumable function. Whereas normal functions execute and return a single result at a time, generators return a sequence of multiple results lazily, pausing after each one until the next one is requested. To create a generator, use the `yield` keyword instead of `return` in a function.
 - A generator is a special class of functions that simplify the task of writing iterators.
 - A generator returns an iterator that returns a stream of values.

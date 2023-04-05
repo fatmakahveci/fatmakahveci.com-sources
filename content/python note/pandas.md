@@ -10,6 +10,7 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
 - _pandas (panel data)_ provides high-level data structures and functions designed to make working with structured or tabular data fast, easy, and expressive.
 - It provides sophisticated indexing functionality to make it easy to

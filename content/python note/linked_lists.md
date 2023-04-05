@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - A sequence of nodes
   - Singly-linked list
     - Each node points to the next node

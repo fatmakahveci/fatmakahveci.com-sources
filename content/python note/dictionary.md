@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - Dictionaries are widely used instead of `if statements` in python.
 - If the key is not present, it will raise an exception.
 - Dictionaries are also a fundamental part of the Python implementation:

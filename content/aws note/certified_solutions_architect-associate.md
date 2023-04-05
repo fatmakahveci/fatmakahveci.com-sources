@@ -9,8 +9,8 @@ tags:
   - "aws"
   - "coding"
   - "cloud computing"
+comments: true
 ---
-
 ![aws](/img/aws.png)
 
 ## 1. Cloud computing

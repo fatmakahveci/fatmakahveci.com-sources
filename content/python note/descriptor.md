@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - It lets objects customize attribute lookup, storage, and deletion.
 - Any object which defines the methods
   - `__get__(self, type=None) -> object`,

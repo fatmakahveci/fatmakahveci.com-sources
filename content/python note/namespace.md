@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - It is a collection of names along with the information of the object it refers to.
 - It maps names to the objects.
 

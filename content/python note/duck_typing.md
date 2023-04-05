@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - When you don't care about the type of object but rather only whether it has certain methods or behaviour.
   - "If it walks like a duck and quacks like a duck, then it's a duck."
 

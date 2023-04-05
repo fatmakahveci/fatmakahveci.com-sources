@@ -10,10 +10,9 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - It performs cleanup after the interpreter exits.
-
 - It has two functions:
 
 ## 1. `register()`

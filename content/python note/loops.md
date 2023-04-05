@@ -10,6 +10,6 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - python has no `switch` statement.

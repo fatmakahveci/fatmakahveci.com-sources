@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - They simplify resource management patterns by abstracting their functionality.
 
 ## Creating a context manager

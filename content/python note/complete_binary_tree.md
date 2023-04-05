@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - Complete binary tree is a binary tree in which all the levels are filled except possibly the lowest one, which is filled from the left.
 
 ## Full (Proper) binary tree

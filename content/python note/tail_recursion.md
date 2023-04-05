@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - Python doesn't support it because it is built more around the idea of iteration than recursion.
 
 ```python

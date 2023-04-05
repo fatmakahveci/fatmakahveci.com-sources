@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - It is a problem-solving approach, where all computations are carried out using objects.
 - It bundles related properties and behaviours into individual objects to structure a program.
   - An object may represent a person with `properties` like name, and `behaviours` like walking.

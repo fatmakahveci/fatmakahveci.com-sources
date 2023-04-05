@@ -11,8 +11,8 @@ tags:
   - "Django"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 ![header](/img/django_header.png)
 
 ## Django File System

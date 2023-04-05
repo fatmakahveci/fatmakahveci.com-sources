@@ -10,6 +10,7 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
 - Heap is a special tree-based data structure, which is an almost complete tree that satisfies the heap property:
   - **Max heap:** parent >= children

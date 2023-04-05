@@ -10,10 +10,9 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - We use `*args` and `**kwargs` as an argument when we do not know in advance the number of arguments that will be passed in the functions.
-
 - We can pass a variable number of arguments to a function using two special symbols:
   - `*args` := non-keyword arguments
   - `**kwargs` := keyword arguments

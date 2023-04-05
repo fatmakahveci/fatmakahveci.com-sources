@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - It is especially useful for data exploration and visualization.
 - It allows you to author content in
   - Markdown

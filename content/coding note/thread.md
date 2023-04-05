@@ -9,8 +9,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - A thread is alive if its run method is executing.
 - OS knows about each thread, and it can interrupt a thread at any time to start running a different thread.
 - It is created at the OS level and more expensive to create than coroutines.

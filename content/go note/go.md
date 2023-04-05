@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 ![go](/img/go.png)
 
 - Go (Golang) is a feature-rich, compiled, strongly-typed and garbage-collected programming language born from Google.

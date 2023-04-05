@@ -10,6 +10,6 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 [Ref](https://predictivemodeler.com/2019/02/06/py-horizontal-bar-chart/)

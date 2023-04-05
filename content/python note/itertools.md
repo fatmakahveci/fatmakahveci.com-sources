@@ -10,8 +10,8 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+comments: true
 ---
-
 - The module’s functions fall into a few broad classes:
 
 1. Functions that create a new iterator based on an existing iterator.
