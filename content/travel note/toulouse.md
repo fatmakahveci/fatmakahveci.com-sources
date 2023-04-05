@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ![toulouse](/img/toulouse.png)
 
 - In its history, Toulouse has seen many Spanish coming to the city to flee from the civil war, which makes it the most Spanish city in France.

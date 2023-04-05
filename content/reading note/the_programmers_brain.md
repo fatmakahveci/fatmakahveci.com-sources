@@ -8,6 +8,7 @@ categories:
 tags:
   - "post"
   - "reading"
+comments: true
 ---
 ## [The programmers brain](https://www.manning.com/books/the-programmers-brain)
 

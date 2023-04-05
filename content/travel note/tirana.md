@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [Blloku](https://goo.gl/maps/ndroGV2MWv1sTKSp9)

@@ -136,7 +136,155 @@
 </div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/coding/" rel="category">Coding</a>
 	</span>
 </div></div>
-		</header><div class="content post__content clearfix">
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#concurrency-in-python">Concurrency in Python</a>
+      <ul>
+        <li><a href="#asyncios-_hello-world_">asyncio&rsquo;s <em>Hello World!</em></a></li>
+        <li><a href="#awaitable">Awaitable</a></li>
+        <li><a href="#coroutine">Coroutine</a></li>
+        <li><a href="#event-loop">Event Loop</a></li>
+        <li><a href="#future">Future</a></li>
+        <li><a href="#task">Task</a></li>
+        <li><a href="#running-in-threads">Running in Threads</a></li>
+      </ul>
+    </li>
+    <li><a href="#aiohttp">aiohttp</a>
+      <ul>
+        <li><a href="#asycnhronous-http-clientserver-for-asyncio-and-python-aiohttp">Asycnhronous HTTP client/server for asyncio and python (<code>aiohttp</code>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#async-delay-app">async delay app</a></li>
+    <li><a href="#asyncgenerator">AsyncGenerator</a></li>
+    <li><a href="#async-input-reader">async input reader</a></li>
+    <li><a href="#awaitables">Awaitables</a></li>
+    <li><a href="#web-applications">Web Applications</a>
+      <ul>
+        <li><a href="#creating-web-applications-with-aiohttpaiohttpmd">Creating web applications with <a href="../aiohttp.md"><code>aiohttp</code></a></a></li>
+        <li><a href="#asgi">ASGI</a></li>
+        <li><a href="#creating-asgi-web-applications-with-starlette">Creating ASGI web applications with Starlette</a></li>
+        <li><a href="#using-djangos-asynchronous-views">Using Django&rsquo;s asynchronous views</a></li>
+      </ul>
+    </li>
+    <li><a href="#event-loop-1">Event loop</a>
+      <ul>
+        <li><a href="#use-asyncios-non-blocking-socket-coroutines-to-allow-multi-clients-to-connect-properly">Use <code>asyncio</code>&rsquo;s non-blocking socket coroutines to allow multi-clients to connect properly</a></li>
+        <li><a href="#event-loop-coroutines-for-sockets">Event loop coroutines for sockets</a></li>
+      </ul>
+    </li>
+    <li><a href="#chat-client">chat client</a></li>
+    <li><a href="#chat-server">chat server</a></li>
+    <li><a href="#cli-sql">cli sql</a></li>
+    <li><a href="#designing-an-asyncio-echo-server">Designing an <code>asyncio</code> echo server</a></li>
+    <li><a href="#requests"><code>requests</code></a>
+      <ul>
+        <li><a href="#status-codes">Status codes</a></li>
+        <li><a href="#session-objects">Session Objects</a></li>
+      </ul>
+    </li>
+    <li><a href="#build-socket-based-network-applications-with-asyncio-that-can-handle-multi-client-simultaneously-with-one-thread">Build socket-based network applications with <code>asyncio</code> that can handle multi-client simultaneously with one thread</a>
+      <ul>
+        <li><a href="#1-starting-a-server-and-listening-for-a-connection">1. Starting a server and listening for a connection</a></li>
+        <li><a href="#2-reading-and-writing-data-to-and-from-a-socket">2. Reading and writing data to and from a socket</a></li>
+        <li><a href="#3-build-a-multi-client-echo-server-using-non-blocking-sockets-and-os-event-notification-system">3. Build a multi-client echo server using non-blocking sockets and OS&rsquo; event notification system</a></li>
+        <li><a href="#4-use-the-selectors-module-to-build-a-socket-event-loop">4. Use the <code>selectors</code> module to build a socket event loop</a></li>
+        <li><a href="#5-add-custom-shutdown-logic">5. Add custom shutdown logic</a></li>
+      </ul>
+    </li>
+    <li><a href="#concurrency-methods">Concurrency methods</a>
+      <ul>
+        <li><a href="#multiple-processing">Multiple processing</a></li>
+        <li><a href="#single-processing">Single processing</a></li>
+      </ul>
+    </li>
+    <li><a href="#concurrent-futures">concurrent futures</a>
+      <ul>
+        <li><a href="#concurrentfutures-module"><code>concurrent.futures</code> module</a></li>
+        <li><a href="#executor">executor</a></li>
+      </ul>
+    </li>
+    <li><a href="#handling-cpu-bound-work">Handling CPU-bound work</a>
+      <ul>
+        <li><a href="#using-process-pools">Using process pools</a></li>
+        <li><a href="#using-async-and-await-to-manage-cpu-bound-work">Using <code>async</code> and <code>await</code> to manage CPU-bound work</a></li>
+        <li><a href="#solving-a-problem-with-mapreduce-using-asyncio">Solving a problem with MapReduce using <code>asyncio</code></a></li>
+        <li><a href="#handling-shared-data-between-multiple-processes-with-locks">Handling shared data between multiple processes with locks</a></li>
+      </ul>
+    </li>
+    <li><a href="#handling-blocking-work-with-threads">Handling blocking work with threads</a>
+      <ul>
+        <li><a href="#1-threading-module">1. <code>threading</code> module</a></li>
+        <li><a href="#2-using-threads-with-asyncio">2. Using threads with <code>asyncio</code></a></li>
+        <li><a href="#3-locks-shared-data-and-deadlocks">3. Locks, shared data, and deadlocks</a></li>
+        <li><a href="#4-event-loops-in-separate-threads">4. Event loops in separate threads</a></li>
+        <li><a href="#5-using-threads-for-cpu-bound-work">5. Using threads for CPU-bound work</a></li>
+      </ul>
+    </li>
+    <li><a href="#multithread-hashing">Multithread hashing</a></li>
+    <li><a href="#multithread-numpy">Multithread numpy</a></li>
+    <li><a href="#multithread-echo-server">Multithread echo server</a></li>
+    <li><a href="#non-blocking-database-drivers">Non-blocking database drivers</a>
+      <ul>
+        <li><a href="#running-asyncio-friendly-database-queries-with-asyncpg">Running asyncio-friendly database queries with <code>asyncpg</code></a></li>
+        <li><a href="#executing-queries-concurrently-with-connection-pools">Executing queries concurrently with connection pools</a></li>
+        <li><a href="#managing-asynchronous-database-transactions-and-handling-an-error-in-a-transaction">Managing asynchronous database transactions and handling an error in a transaction</a></li>
+        <li><a href="#using-asynchronous-generators-to-stream-query-results">Using asynchronous generators to stream query results</a></li>
+      </ul>
+    </li>
+    <li><a href="#protocol">Protocol</a></li>
+    <li><a href="#server">server</a></li>
+    <li><a href="#stream-reader">Stream reader</a></li>
+    <li><a href="#streams">Streams</a>
+      <ul>
+        <li><a href="#stream-readers-and-stream-writers">Stream readers and stream writers</a></li>
+        <li><a href="#using-streams-for-network-connections">Using streams for network connections</a></li>
+        <li><a href="#processing-command-line-input-asynchronously">Processing command-line input asynchronously</a></li>
+        <li><a href="#creating-servers">Creating servers</a></li>
+      </ul>
+    </li>
+    <li><a href="#subroutine">Subroutine</a></li>
+    <li><a href="#mapreduce-process-pools">Mapreduce process pools</a></li>
+    <li><a href="#lock">Lock</a>
+      <ul>
+        <li><a href="#process-lock">Process lock</a></li>
+        <li><a href="#thread-lock">Thread lock</a></li>
+      </ul>
+    </li>
+    <li><a href="#thread">Thread</a>
+      <ul>
+        <li><a href="#to-thread">to thread</a></li>
+      </ul>
+    </li>
+    <li><a href="#synchronization">Synchronization</a>
+      <ul>
+        <li><a href="#asyncio-lock">asyncio lock</a></li>
+        <li><a href="#single-threaded-concurrency-issues">Single-threaded concurrency issues</a></li>
+        <li><a href="#uses-of-synchronization-primitives">Uses of synchronization primitives</a></li>
+        <li><a href="#solving-race-conditions-_with_-locks-and-other-concurrency-primitives">Solving race conditions <em>with</em> locks and other concurrency primitives</a></li>
+        <li><a href="#limiting-concurrency-and-controlling-access-to-a-shared-source-_with_-semaphores">Limiting concurrency and controlling access to a shared source <em>with</em> semaphores</a></li>
+        <li><a href="#notifying-tasks-when-something-occurs-and-acquiring-the-shared-sources-when-it-happens-_with_-events-and-conditions">Notifying tasks when something occurs and acquiring the shared sources when it happens <em>with</em> events and conditions</a></li>
+        <li><a href="#queues">Queues</a></li>
+      </ul>
+    </li>
+    <li><a href="#utils">utils</a>
+      <ul>
+        <li><a href="#async-timed">async timed</a></li>
+        <li><a href="#create-stdin-reader">create stdin reader</a></li>
+        <li><a href="#cursor">cursor</a></li>
+        <li><a href="#delay">delay</a></li>
+        <li><a href="#fetch-status">fetch status</a></li>
+        <li><a href="#message-store">message store</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div>
+<div class="content post__content clearfix">
 			<h2 id="concurrency-in-python">Concurrency in Python</h2>
 <h3 id="asyncios-_hello-world_">asyncio&rsquo;s <em>Hello World!</em></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
@@ -2892,6 +3040,11 @@ waiting for coroutines will run until complete or hit the next <code>await</code
 	</article>
 </main>
 
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Fatma Kahveci</span>
+	</div>
+</div>
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">

@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [Austrian Parliament Building](https://goo.gl/maps/NCdXxM8eVHWV1oWQ6)

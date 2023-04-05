@@ -136,7 +136,169 @@
 </div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/coding/" rel="category">Coding</a>
 	</span>
 </div></div>
-		</header><div class="content post__content clearfix">
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-categories-of-graph-problems">The categories of graph problems</a></li>
+    <li><a href="#articulation-points">Articulation points</a></li>
+    <li><a href="#breadth-first-search">Breadth-First Search</a>
+      <ul>
+        <li><a href="#applications">Applications</a></li>
+      </ul>
+    </li>
+    <li><a href="#bipartite-matching">Bipartite matching</a></li>
+    <li><a href="#connected-components-1">Connected Components</a></li>
+    <li><a href="#connectivity">Connectivity</a>
+      <ul>
+        <li><a href="#solution">Solution</a></li>
+      </ul>
+    </li>
+    <li><a href="#cycle-detection">Cycle detection</a>
+      <ul>
+        <li><a href="#cycle-detection-in-a-directed-graph">Cycle detection in a directed graph</a></li>
+        <li><a href="#cycle-detection-in-an-undirected-graph">Cycle detection in an undirected graph</a></li>
+      </ul>
+    </li>
+    <li><a href="#depth-first-search-dfs">Depth First Search (DFS)</a></li>
+    <li><a href="#dfs-algorithm">DFS algorithm</a>
+      <ul>
+        <li><a href="#dfs-recursive">DFS recursive</a></li>
+        <li><a href="#applications-of-arrival-and-departure-time-of-vertices">Applications of arrival and departure time of vertices</a></li>
+      </ul>
+    </li>
+    <li><a href="#directed-acycling-graph-dag">Directed Acycling Graph (DAG)</a></li>
+    <li><a href="#directed-graph">Directed graph</a></li>
+    <li><a href="#disjoint-set">Disjoint set</a></li>
+    <li><a href="#eulerian-path">Eulerian path</a></li>
+    <li><a href="#eulerian-graph">Eulerian Graph</a></li>
+    <li><a href="#finding-bridges">Finding Bridges</a></li>
+    <li><a href="#graph-colouring">Graph colouring</a></li>
+    <li><a href="#graph-dictionary">Graph dictionary</a></li>
+    <li><a href="#graph-representations">Graph Representations</a>
+      <ul>
+        <li><a href="#1-adjacency-matrix-vertex-to-vertex">1. Adjacency matrix (Vertex to vertex)</a></li>
+        <li><a href="#11-advantages">1.1. Advantages</a></li>
+        <li><a href="#12-disadvantages">1.2. Disadvantages</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-adjacency-list">2. Adjacency list</a>
+      <ul>
+        <li><a href="#21-advantages">2.1. Advantages</a></li>
+        <li><a href="#22-disadvantages">2.2. Disadvantages</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-edge-list">3. Edge List</a>
+      <ul>
+        <li><a href="#31-advantages">3.1. Advantages</a></li>
+        <li><a href="#32-disadvantages">3.2. Disadvantages</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-incident-matrix-vertex-to-edge">4. Incident matrix (Vertex to edge)</a></li>
+    <li><a href="#graph-theory-on-grids">Graph Theory on Grids</a></li>
+    <li><a href="#graph-traversal">Graph traversal</a>
+      <ul>
+        <li><a href="#graph-traversal-applications">Graph traversal applications</a></li>
+        <li><a href="#if-i-am-your-friend-does-that-mean-you-are-my-friend">If I am your friend, does that mean you are my friend?</a></li>
+        <li><a href="#how-close-a-friend-are-you">How close a friend are you?</a></li>
+        <li><a href="#am-i-my-friend">Am I my friend?</a></li>
+        <li><a href="#who-has-the-most-friends">Who has the most friends?</a></li>
+        <li><a href="#do-my-friends-live-near-me">Do my friends live near me?</a></li>
+        <li><a href="#oh-you-also-know-her">Oh, you also know her?</a></li>
+        <li><a href="#are-you-truly-an-individual-or-just-one-of-the-faceless-crowd">Are you truly an individual, or just one of the faceless crowd?</a></li>
+      </ul>
+    </li>
+    <li><a href="#type-of-graphs">Type of graphs</a>
+      <ul>
+        <li><a href="#1-undirected-graphs">1. Undirected graphs</a></li>
+        <li><a href="#2-directed-graphs">2. Directed graphs</a></li>
+        <li><a href="#3-unweighted-graphs">3. Unweighted graphs</a></li>
+        <li><a href="#4-weighted-graphs">4. Weighted graphs</a></li>
+        <li><a href="#5-tree">5. Tree</a></li>
+        <li><a href="#6-rooted-tree">6. Rooted tree</a></li>
+        <li><a href="#7-cyclic-graphs">7. Cyclic graphs</a></li>
+        <li><a href="#8-acyclic-graphs">8. Acyclic graphs</a></li>
+        <li><a href="#9-directed-acyclic-graph-dag">9. Directed acyclic graph (DAG)</a></li>
+        <li><a href="#10-bipartite-graph">10. Bipartite graph</a></li>
+        <li><a href="#11-complete-graph">11. Complete graph</a></li>
+        <li><a href="#12-simple-graph">12. Simple graph</a></li>
+        <li><a href="#13-non-simple-graph">13. Non-simple graph</a></li>
+        <li><a href="#14-sparse-graph">14. Sparse graph</a></li>
+        <li><a href="#15-dense-graph">15. Dense graph</a></li>
+        <li><a href="#16-embedded-graph">16. Embedded graph</a></li>
+        <li><a href="#17-topological-graph">17. Topological graph</a></li>
+        <li><a href="#18-implicit-graph">18. Implicit graph</a></li>
+        <li><a href="#19-explicit-graph">19. Explicit graph</a></li>
+        <li><a href="#20-labelled-graph">20. Labelled graph</a></li>
+        <li><a href="#21-unlabeled-graph">21. Unlabeled graph</a></li>
+      </ul>
+    </li>
+    <li><a href="#graph-visualization">Graph visualization</a></li>
+    <li><a href="#independent-set">Independent set</a></li>
+    <li><a href="#isomorphism">Isomorphism</a></li>
+    <li><a href="#maximum-clique">Maximum clique</a></li>
+    <li><a href="#nearest-neighbour">Nearest neighbour</a></li>
+    <li><a href="#negativity">Negativity</a>
+      <ul>
+        <li><a href="#negativity-algorithms">Negativity algorithms</a></li>
+      </ul>
+    </li>
+    <li><a href="#paths">Paths</a></li>
+    <li><a href="#strongly-connected-components">Strongly connected components</a>
+      <ul>
+        <li><a href="#kosarajus">Kosaraju&rsquo;s</a></li>
+        <li><a href="#tarjans">Tarjan&rsquo;s</a></li>
+      </ul>
+    </li>
+    <li><a href="#topological-sort-top-short">Topological Sort (Top Short)</a>
+      <ul>
+        <li><a href="#topological-sort-algorithm">Topological sort algorithm</a></li>
+      </ul>
+    </li>
+    <li><a href="#two-colouring">Two colouring</a></li>
+    <li><a href="#union">Union</a>
+      <ul>
+        <li><a href="#union-by-rank">Union by rank</a></li>
+      </ul>
+    </li>
+    <li><a href="#unweighted-graphs">Unweighted graphs</a>
+      <ul>
+        <li><a href="#hamiltonian-cycle">Hamiltonian cycle</a></li>
+      </ul>
+    </li>
+    <li><a href="#vertex-cover">Vertex cover</a></li>
+    <li><a href="#walk-path-and-circuit">Walk, Path, and Circuit</a>
+      <ul>
+        <li><a href="#walk-trail">Walk (Trail)</a></li>
+        <li><a href="#path">Path</a></li>
+        <li><a href="#circuit">Circuit</a></li>
+      </ul>
+    </li>
+    <li><a href="#weighted-graphs">Weighted graphs</a>
+      <ul>
+        <li><a href="#maximum-flow-network-flow">Maximum flow (Network flow)</a></li>
+        <li><a href="#algorithms">Algorithms</a></li>
+        <li><a href="#ford-fulkerson">Ford Fulkerson</a></li>
+        <li><a href="#edmonds-karp">Edmonds Karp</a></li>
+        <li><a href="#dinic">Dinic</a></li>
+        <li><a href="#capacity-scaling">Capacity scaling</a></li>
+        <li><a href="#push-relabel">Push relabel</a></li>
+        <li><a href="#min-cut">Min-cut</a></li>
+        <li><a href="#minimum-spanning-trees">Minimum spanning trees</a></li>
+        <li><a href="#shortest-path">Shortest path</a></li>
+        <li><a href="#shortest-path-algorithms">Shortest path algorithms</a></li>
+        <li><a href="#dijkstra-algorithm">Dijkstra algorithm</a></li>
+        <li><a href="#traveling-salesman">Traveling salesman</a></li>
+        <li><a href="#traveling-salesman-algorithms">Traveling salesman algorithms</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div>
+<div class="content post__content clearfix">
 			<ul>
 <li>Graphs are collections of vertices and edges.</li>
 </ul>
@@ -1870,6 +2032,11 @@ v
 	</article>
 </main>
 
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Fatma Kahveci</span>
+	</div>
+</div>
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">

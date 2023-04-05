@@ -7,8 +7,8 @@ categories:
   - "Travel"
 tags:
   - "travel"
+comments: true
 ---
-
 ## 1. Top sights
 
 ### 1.1 [Hamsilos Bay](https://goo.gl/maps/xguUvCWT6j3bfuWw9)
