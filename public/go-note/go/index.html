@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Go for beginners">
 <meta itemprop="description" content="Go for beginners">
 
-<meta itemprop="wordCount" content="5769">
+<meta itemprop="wordCount" content="5772">
 <meta itemprop="keywords" content="go,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -169,13 +169,16 @@
 </ul>
 </li>
 <li>
-<p><a href="https://go.dev/">Go&rsquo;s official website</a></p>
+<p><a href="https://go.dev/" target="_blank" >Go&rsquo;s official website</a>
+</p>
 </li>
 <li>
-<p><a href="https://go.dev/doc/">Go&rsquo;s official documentation</a></p>
+<p><a href="https://go.dev/doc/" target="_blank" >Go&rsquo;s official documentation</a>
+</p>
 </li>
 <li>
-<p><a href="https://github.com/avelino/awesome-go">Libraries</a></p>
+<p><a href="https://github.com/avelino/awesome-go" target="_blank" >Libraries</a>
+</p>
 </li>
 <li>
 <p><strong>Gophers</strong> means Go programmers.</p>
@@ -188,17 +191,22 @@
 <h2 id="1-hello-world">1. Hello world</h2>
 <h3 id="11-download-and-install-go">1.1. Download and install Go</h3>
 <ul>
-<li>Visit the <a href="https://go.dev/doc/install">Go</a>&rsquo;s download page.</li>
+<li>Visit the <a href="https://go.dev/doc/install" target="_blank" >Go</a>
+&rsquo;s download page.</li>
 <li>You can test the installation:</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go version
 </span></span></code></pre></div><ul>
 <li>You can use the following IDEs:
 <ul>
-<li><a href="https://www.jetbrains.com/go/download/#section=mac">JetBrains GoLand</a></li>
-<li><a href="https://code.visualstudio.com/Download">Visual Studio Code</a></li>
-<li><a href="https://github.blog/2022-06-08-sunsetting-atom/">Atom</a></li>
-<li><a href="https://www.sublimetext.com/">Sublime Text</a></li>
+<li><a href="https://www.jetbrains.com/go/download/#section=mac" target="_blank" >JetBrains GoLand</a>
+</li>
+<li><a href="https://code.visualstudio.com/Download" target="_blank" >Visual Studio Code</a>
+</li>
+<li><a href="https://github.blog/2022-06-08-sunsetting-atom/" target="_blank" >Atom</a>
+</li>
+<li><a href="https://www.sublimetext.com/" target="_blank" >Sublime Text</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -325,7 +333,8 @@
 <ul>
 <li>Go comes with a <code>math</code>, <code>net</code> (networking), <code>fmt</code> (formatted IO), etc.</li>
 </ul>
-<p><a href="https://pkg.go.dev/std">Ref</a></p>
+<p><a href="https://pkg.go.dev/std" target="_blank" >Ref</a>
+</p>
 <h4 id="221-the-fmt-package">2.2.1. The <code>fmt</code> package</h4>
 <h5 id="2211-printing-print-and-println">2.2.1.1. Printing: <code>Print</code> and <code>Println</code></h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
@@ -342,7 +351,8 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello world&#34;</span>) <span style="color:#75715e">// Hello world\n
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span></code></pre></div><ul>
-<li>For the details read the documentation: <a href="https://pkg.go.dev/fmt#hdr-Printing">printing</a></li>
+<li>For the details read the documentation: <a href="https://pkg.go.dev/fmt#hdr-Printing" target="_blank" >printing</a>
+</li>
 </ul>
 <h5 id="2212-formatting-fmtsprint-and-fmtsprintln">2.2.1.2. Formatting: <code>fmt.Sprint()</code> and <code>fmt.Sprintln()</code></h5>
 <ul>
@@ -379,7 +389,8 @@
 <ul>
 <li>Dependencies are external packages that your code utilizes. As you continue to work on the code, an upgrade or substitution of these dependencies may be required.</li>
 <li>Go&rsquo;s dependency managers keep your Go applications secure and consistent as you work with the dependencies.</li>
-<li>Go edits <a href="https://go.dev/doc/modules/gomod-ref">go.mod</a> file to manage dependencies.</li>
+<li>Go edits <a href="https://go.dev/doc/modules/gomod-ref" target="_blank" >go.mod</a>
+ file to manage dependencies.</li>
 <li>Each formal Go project supporting Go modules needs a <code>go.mod</code> file located in the root folder of that project.</li>
 </ul>
 <hr>
@@ -676,7 +687,8 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">At</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#a6e22e">color</span>.<span style="color:#a6e22e">Color</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><ul>
-<li>For more details on <a href="https://golangdocs.com/golang-image-processing">Golang Image Processing:</a></li>
+<li>For more details on <a href="https://golangdocs.com/golang-image-processing" target="_blank" >Golang Image Processing:</a>
+</li>
 </ul>
 <hr>
 <h2 id="4-variables">4. Variables</h2>
@@ -949,7 +961,8 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Cannot divide by 0!&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><ul>
-<li>For more details visit &ldquo;<a href="https://earthly.dev/blog/golang-errors/">Effective Error Handling in Golang</a>&rdquo;.</li>
+<li>For more details visit &ldquo;<a href="https://earthly.dev/blog/golang-errors/" target="_blank" >Effective Error Handling in Golang</a>
+&rdquo;.</li>
 </ul>
 <h4 id="417-pointer-types">4.1.7. Pointer types</h4>
 <ul>
@@ -1650,7 +1663,8 @@
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><ul>
-<li>For more <a href="https://www.programiz.com/golang/select">details</a>.</li>
+<li>For more <a href="https://www.programiz.com/golang/select" target="_blank" >details</a>
+.</li>
 </ul>
 <hr>
 <h2 id="10-memory-management">10. Memory management</h2>

@@ -1,5 +1,5 @@
 ---
-title: Reading
+title: Atomic habits
 description: Some of the influential parts from the books that I have read.
 summary: "Updated by Fatma, Apr 04, 2023."
 date: 04-04-2023
@@ -9,42 +9,7 @@ tags:
   - "post"
   - "reading"
 ---
-
-## 1. [Limitless](https://www.limitlessbook.com)
-
-### 1.1 Seven LIES (Limited Ideas Entertaining)
-
-#### 1.1.1 ~~Intelligence is fixed.~~ Intelligence is fluid
-
-- "This is something I'm not good at yet."
-
-#### 1.1.2 ~~We only use 10 percent of our brains.~~ We use our brains as a whole
-
-- "I am learning to use my whole brain in the best way possible."
-
-#### 1.1.3 ~~Mistakes are failures.~~ Mistakes are a sign that you are trying something new
-
-- There is no such thing as a failure. Only failure to learn.
-
-#### 1.1.4 ~~Knowledge is power.~~ Knowledge only has the potential to be power
-
-- Knowledge x Action = Power
-
-#### 1.1.5 ~~Learning new things is very difficult.~~ Sometimes it is hard to learn new things
-
-- When you learn how to learn, the challenge of learning can be fun.
-
-#### 1.1.6 ~~The criticism of other people matters.~~ People will criticize you no matter what you do
-
-- It is not your job to like, love, or respect me. It is mine.
-
-#### 1.1.7 ~~Genius is born.~~ Genius leaves clues. There is always a method behind what looks like magic
-
-- Genius is not born; it is made through deep practice.
-
----
-
-## 2. [Atomic Habits](https://jamesclear.com/atomic-habits)
+## [Atomic habits](https://jamesclear.com/atomic-habits)
 
 - The backbone is the four-step model of habits are cue, craving, response, and reward.
 - Behavioral scientists realized that if you offered the right reward or punishment, you could get people to act in a certain way.
@@ -55,9 +20,9 @@ tags:
 - Time magnifies the margin between success and failure.
 - Warren Buffet: "That's how knowledge works. It builds up, like compound interest."
 
-### 2.1 Your Habits Can Compound For You or Against You
+### 1 Your Habits Can Compound For You or Against You
 
-#### 2.1.1 Positive Compounding
+#### 1.1 Positive Compounding
 
 - Productivity compounds:
   - Automating an old task
@@ -67,7 +32,7 @@ tags:
 - Relationships compounds:
   - Being a little bit nicer in each interaction
 
-#### 2.1.2 Negative Compounding
+#### 1.2 Negative Compounding
 
 - Stress compounds:
   - The frustration of a traffic jam
@@ -82,11 +47,11 @@ tags:
 - The San Antonio Spurs is one of the most successful teams in NBA history:
   - "When nothing seems to help, I go and look at a stonecutter hammering away at his rock, perhaps a hundred times without as much as a crack showing in it. Yet at the hundred and first blow it will split in two, and I know it was not the last blow that did it-but all that had gone before."
 
-##### 2.1.2.1 The Plateau of Latent Potential
+##### 1.2.1 The Plateau of Latent Potential
 
 - All big things come from small beginnings.
 
-##### 2.1.2.2 Forget About Goals, Focus on Systems Instead
+##### 1.2.2 Forget About Goals, Focus on Systems Instead
 
 - Three-time Super Bowl winner Bill Walsh: "The score takes care of itself."
 - Problem #1: Winners and losers have the same goals.
@@ -99,7 +64,7 @@ tags:
 - Problem #4: Goals are at odds with long-term progress.
   - True long-term thinking is goal-less thinking. It is not about any single accomplishment.
 
-##### 2.1.2.3 A System of Atomic Habits
+##### 1.2.3 A System of Atomic Habits
 
 - Small changes often appear to make no difference until you cross a critical threshold.
 - The most powerful outcomes of any compounding process are delayed. You need to be patient.
@@ -118,51 +83,6 @@ tags:
 - The more pride you have in a particular aspect of your identity, the more motivated you will be to maintain the habits associated with it.
 - Boiling water will soften a potato but harden an egg.
 - Our genes do not eliminate the need for hard work.
-
----
-
-## 3. [Deep Work](https://www.calnewport.com/books/deep-work)
-
-- A deep life is a good life.
-- Deep work is focus ability without distraction on a cognitively demanding task.
-- Shallow work is non-cognitively demanding, logistical-style work, often performed while distracted.
-- Deep work is like a superpower in our increasingly competitive 21st century economy.
-
----
-
-## 4. [The Programmers Brain](https://www.manning.com/books/the-programmers-brain)
-
-### 4.1 Cognitive processes in programming
-
-- Confusion is acceptable for a while when you start to work in a new domain. Not knowing the meaning of a concept and trying to read complex code are distinct ways of confusion. Each relates to a different cognitive process.
-- Three ways of confusion:
-  - __A lack of knowledge__ means that relevant facts are insufficient in your long-term memory (LTM), where all your memories are permanently stored. e.g., not knowing the meaning of an operator.
-  - __Lack of information__ presents a challenge for your short-term memory (STM). Information that you are gathering has to be stored in STM temporarily, but if e.g., not knowing the inner workings of a function.
-  - __Lack of processing power:__ Based on the names of variables and the operations, you can make an educated guess about what the code does, but you cannot process the entire execution in your brain.
-
-### 4.2 Read code quickly and get a sense of its workings
-
-### 4.3 Learn programming syntax and concepts
-
-### 4.4 Read complex code
-
-### 4.5 Understanding of unfamiliar code deeply
-
-### 4.6 Solve programming problems better
-
-### 4.7 Avoid bugs in code and in thinking
-
-### 4.8 Select clear variable names
-
-### 4.9 Code smells and the cognitive principles behind them
-
-### 4.10 Advanced techniques to solve complex problems
-
-### 4.11 The act of coding and variety of tasks in programming
-
-### 4.12 Improve large code bases
-
-### 4.13 Less painful onboarding process of new developers
 
 ---
 

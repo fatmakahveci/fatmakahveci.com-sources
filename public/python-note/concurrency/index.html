@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Concurrency">
 <meta itemprop="description" content="Concurrency">
 
-<meta itemprop="wordCount" content="10644">
+<meta itemprop="wordCount" content="10649">
 <meta itemprop="keywords" content="Python,coding,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -403,7 +403,8 @@
 <ul>
 <li><code>asyncio.to_thread(&lt;function&gt;, /, *args, **kwargs)</code></li>
 </ul>
-<p><a href="https://docs.python.org/">Ref</a></p>
+<p><a href="https://docs.python.org/" target="_blank" >Ref</a>
+</p>
 <hr>
 <h2 id="aiohttp">aiohttp</h2>
 <h3 id="asycnhronous-http-clientserver-for-asyncio-and-python-aiohttp">Asycnhronous HTTP client/server for asyncio and python (<code>aiohttp</code>)</h3>
@@ -414,7 +415,8 @@
 <li>It has not only support as an HTTP client but also has the functionality to create asyncio-ready web application servers as well.</li>
 <li>It provides web server functionality in the web module.</li>
 </ul>
-<h4 id="asynchronous-context-managerscontext_managermd">Asynchronous <a href="../context_manager.md">context managers</a></h4>
+<h4 id="asynchronous-context-managerscontext_managermd">Asynchronous <a href="../context_manager.md" >context managers</a>
+</h4>
 <ul>
 <li><code>with</code> works for the synchronous. <code>async with</code> works for the asynchronous.</li>
 <li>It acquires and closes HTTP sessions cleanly with two special coroutine methods:
@@ -862,9 +864,12 @@
 </ul>
 <hr>
 <h2 id="web-applications">Web Applications</h2>
-<h3 id="creating-web-applications-with-aiohttpaiohttpmd">Creating web applications with <a href="../aiohttp.md"><code>aiohttp</code></a></h3>
+<h3 id="creating-web-applications-with-aiohttpaiohttpmd">Creating web applications with <a href="../aiohttp.md" ><code>aiohttp</code></a>
+</h3>
 <ul>
-<li>Build async <a href="../../api/rest_api.md">REST API</a>s with <a href="../aiohttp.md"><code>aiohttp</code></a></li>
+<li>Build async <a href="../../api/rest_api.md" >REST API</a>
+s with <a href="../aiohttp.md" ><code>aiohttp</code></a>
+</li>
 </ul>
 <h4 id="web-module-of-aiohttp"><code>web</code> module of <code>aiohttp</code></h4>
 <ul>
@@ -1746,7 +1751,8 @@ waiting for coroutines will run until complete or hit the next <code>await</code
 </ul>
 </li>
 <li><code>cancel</code> method definition by subclassing the <code>Thread</code> class lets to shut down the client socket. Then, <code>recv</code> and <code>sendall</code> will be interrupted, allowing to exit <code>while</code> loop and close out the thread.</li>
-<li>How to cleanly terminate threads on application shutdown. (<a href="multithreaded_echo_server.py">code</a>)</li>
+<li>How to cleanly terminate threads on application shutdown. (<a href="multithreaded_echo_server.py" >code</a>
+)</li>
 </ul>
 <h3 id="2-using-threads-with-asyncio">2. Using threads with <code>asyncio</code></h3>
 <ul>
@@ -1769,7 +1775,8 @@ waiting for coroutines will run until complete or hit the next <code>await</code
 </ul>
 <h4 id="24-default-executors">2.4. Default executors</h4>
 <ul>
-<li><code>asyncio.to_thread</code> coroutine was introduced to further simplify putting work on the default thread pool executor. It takes in a function to run in a thread and a set of arguments to pass to that function. (<a href="to_thread.py">code</a>)</li>
+<li><code>asyncio.to_thread</code> coroutine was introduced to further simplify putting work on the default thread pool executor. It takes in a function to run in a thread and a set of arguments to pass to that function. (<a href="to_thread.py" >code</a>
+)</li>
 </ul>
 <h3 id="3-locks-shared-data-and-deadlocks">3. Locks, shared data, and deadlocks</h3>
 <ul>
@@ -1827,11 +1834,13 @@ waiting for coroutines will run until complete or hit the next <code>await</code
 </ul>
 <h4 id="51-multithreading-with-hashlib">5.1. Multithreading with <code>hashlib</code></h4>
 <ul>
-<li>Hashing sensitive text for security (<a href="multithread_hashing.py">code</a>)</li>
+<li>Hashing sensitive text for security (<a href="multithread_hashing.py" >code</a>
+)</li>
 </ul>
 <h4 id="52-multithreading-with-numpy">5.2. Multithreading with <code>numpy</code></h4>
 <ul>
-<li>Solving a data analysis problem (<a href="multithread_numpy.py">code</a>)</li>
+<li>Solving a data analysis problem (<a href="multithread_numpy.py" >code</a>
+)</li>
 <li>It is generally safe to assume matrix operations can potentially be multithreaded for a performance win.</li>
 </ul>
 <hr>
@@ -2284,7 +2293,8 @@ waiting for coroutines will run until complete or hit the next <code>await</code
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">await</span> connection<span style="color:#f92672">.</span>close()
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>run(main())
-</span></span></code></pre></div><p><a href="https://magicstack.github.io/asyncpg/current/">asyncpg documentation</a></p>
+</span></span></code></pre></div><p><a href="https://magicstack.github.io/asyncpg/current/" target="_blank" >asyncpg documentation</a>
+</p>
 <hr>
 <h2 id="protocol">Protocol</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
@@ -2450,7 +2460,8 @@ waiting for coroutines will run until complete or hit the next <code>await</code
 </ul>
 <h3 id="stream-readers-and-stream-writers">Stream readers and stream writers</h3>
 <ul>
-<li>We develop networking applications in <code>asycnio</code> using <code>stream</code>. <a href="stream_reader.py">code</a></li>
+<li>We develop networking applications in <code>asycnio</code> using <code>stream</code>. <a href="stream_reader.py" >code</a>
+</li>
 <li><code>open_connection</code> will create
 <ul>
 <li><code>StreamWriter</code> to send out the HTTP request
@@ -2483,12 +2494,14 @@ waiting for coroutines will run until complete or hit the next <code>await</code
 </ul>
 <h3 id="processing-command-line-input-asynchronously">Processing command-line input asynchronously</h3>
 <ul>
-<li><a href="cli_sql.py">code</a></li>
+<li><a href="cli_sql.py" >code</a>
+</li>
 </ul>
 <h3 id="creating-servers">Creating servers</h3>
 <ul>
 <li>
-<p><a href="server.py">code</a></p>
+<p><a href="server.py" >code</a>
+</p>
 </li>
 <li>
 <p><code>asyncio.start_server(&lt;host&gt;, &lt;port&gt;, &lt;client_connected_cb&gt;)</code> creates servers without managing sockets.</p>
@@ -2718,7 +2731,8 @@ waiting for coroutines will run until complete or hit the next <code>await</code
 </ul>
 </li>
 <li><code>asyncio</code> locks are awaitable objects that suspend <code>coroutine</code> execution when they are blocked.</li>
-<li><code>async with</code> is recommended use because <code>asyncio</code> locks are context managers. <a href="asyncio_lock.py">code</a></li>
+<li><code>async with</code> is recommended use because <code>asyncio</code> locks are context managers. <a href="asyncio_lock.py" >code</a>
+</li>
 </ul>
 <h3 id="limiting-concurrency-and-controlling-access-to-a-shared-source-_with_-semaphores">Limiting concurrency and controlling access to a shared source <em>with</em> semaphores</h3>
 <ul>
