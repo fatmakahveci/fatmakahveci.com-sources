@@ -1,8 +1,8 @@
 ---
 title: Design patterns
 description: Design patterns
-summary: "Updated by Fatma, Apr 05, 2023."
-date: 05-04-2023
+summary: "Updated by Fatma, Apr 06, 2023."
+date: 06-04-2023
 categories:
   - "Coding"
 tags:
@@ -24,6 +24,7 @@ comments: true
 ### 1.1 Abstract factory
 
 - Create entire product families without specifying their concrete classes
+- It takes over the responsibility of creating objects.
 
 ```python
 from abc import ABC, abstractmethod
@@ -94,6 +95,7 @@ if __name__ == "__main__":
 ### 1.2 Factory
 
 - Create product objects without specifying their concrete classes
+- It takes over the responsibility of creating objects.
 
 ```python
 class FrenchLocalizer:
@@ -143,8 +145,94 @@ if __name__ == "__main__":
 ### 1.3 Builder
 
 - Construct complex objects step-by-step
+- It manages the creation process.
+- It has four parts:
+  1. **Product** is the final complex object which we obtain in the end.
+  2. **Builder (Interface)** abstracts the building process.
+  3. **Builder (Concrete)** implements interface and builds the product. The more different products we want to send to the assembly line, the more builders we have.
+  4. **Director** communicates with the client. It has a construction method that captures the right builder objects.
 
 ```python
+from abc import ABC, abstractmethod
+
+class IFlowerBuilder(ABC):
+  @abstractmethod
+  def build_petals(self) -> None:
+    pass
+
+  @abstractmethod
+  def build_color(self) -> None:
+    pass
+
+  @abstractmethod
+  def build_scent(self) -> None:
+    pass
+
+class Flower():
+  def __init__(self, petals: int = 10, color: str = "red", scent: str = "flower") -> None:
+    self.petals = petals
+    self.color = color
+    self.scent = scent
+  
+  def construction(self) -> None:
+    print(f"This is a {self.color} flower with {self.petals} petals and {self.scent} scent.")
+
+class FlowerBuilder(IFlowerBuilder):
+  def __init__(self):
+    self.flower = Flower()
+  
+  def build_petals(self, petals: int) -> None:
+    self.flower.petals = petals
+  
+  def build_color(self, color: str) -> None:
+    self.flower.color = color
+  
+  def build_scent(self, scent: str) -> None:
+    self.flower.scent = scent
+
+class RoseDirector:
+  def __init__(self) -> None:
+    self._flower_builder = None
+  
+  @property
+  def flower_builder(self) -> FlowerBuilder:
+    return self._flower_builder
+  
+  @flower_builder.setter
+  def flower_builder(self, flower_builder: FlowerBuilder) -> None:
+    self._flower_builder = flower_builder
+  
+  @staticmethod
+  def build_flower() -> None:
+    flower_builder.build_petals(20)
+    flower_builder.build_color('pink')
+    flower_builder.build_scent('rose')
+
+class LilyDirector:
+  def __init__(self) -> None:
+    self._flower_builder = None
+  
+  @property
+  def flower_builder(self) -> FlowerBuilder:
+    return self._flower_builder
+  
+  @flower_builder.setter
+  def flower_builder(self, flower_builder: FlowerBuilder) -> None:
+    self._flower_builder = flower_builder
+  
+  @staticmethod
+  def build_flower() -> None:
+    flower_builder.build_petals(15)
+    flower_builder.build_color('white')
+    flower_builder.build_scent('lily')
+
+if __name__ == "__main__":
+  flower_builder = FlowerBuilder()
+  flower_builder.flower.construction() # default flower
+  RoseDirector.build_flower()
+  flower_builder.flower.construction()
+  LilyDirector.build_flower()
+  flower_builder.flower.construction()
 ```
 
 ---
