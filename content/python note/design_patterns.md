@@ -202,7 +202,7 @@ class RoseDirector:
   def flower_builder(self, flower_builder: FlowerBuilder) -> None:
     self._flower_builder = flower_builder
   
-  @classmethod
+  @staticmethod
   def build_flower() -> None:
     flower_builder.build_petals(20)
     flower_builder.build_color('pink')
@@ -220,7 +220,7 @@ class LilyDirector:
   def flower_builder(self, flower_builder: FlowerBuilder) -> None:
     self._flower_builder = flower_builder
   
-  @classmethod
+  @staticmethod
   def build_flower() -> None:
     flower_builder.build_petals(15)
     flower_builder.build_color('white')
