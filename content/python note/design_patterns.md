@@ -10,6 +10,7 @@ tags:
   - "coding"
   - "algorithms"
   - "data structures"
+  - "design patterns"
 comments: true
 ---
 - A design pattern offers a widely applicable and reusable solution for addressing common problems in software design.

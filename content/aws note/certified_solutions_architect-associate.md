@@ -1,8 +1,8 @@
 ---
 title: AWS Certified Solutions Architect - Associate (SAA-C03)
 description: AWS Certified Solutions Architect - Associate (SAA-C03)
-summary: "Updated by Fatma, Apr 04, 2023."
-date: 04-04-2023
+summary: "Updated by Fatma, Apr 08, 2023."
+date: 08-04-2023
 categories:
   - "Coding"
 tags:
@@ -262,7 +262,23 @@ comments: true
 
 #### 6.1.6 <span id="6">Amazon Kinesis</span>
 
-- [Amazon Kinesis](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/what-is-kinesis-video.html) cost-effectively processes and analyzes streaming data at any scale as a fully managed service. With Kinesis, you can ingest real-time data, such as video, audio, application logs, website clickstreams, and IoT telemetry data, for machine learning (ML), analytics, and other applications.
+- [Amazon Kinesis](https://aws.amazon.com/kinesis/) cost-effectively processes and analyzes streaming data at any scale as a fully managed service. With Kinesis, you can ingest real-time data, such as video, audio, application logs, website clickstreams, and IoT telemetry data, for machine learning (ML), analytics, and other applications.
+
+##### 6.1.6.1 <span id="620">Amazon Kinesis Data Streams</span>
+
+- [Amazon Kinesis Data Streams](https://docs.aws.amazon.com/streams/latest/dev/introduction.html) lets you to collect and process large streams of data records in real time.
+
+#### 6.1.6.2 <span id="82">Amazon Kinesis Video Streams</span>
+
+- [Amazon Kinesis Video Streams](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/what-is-kinesis-video.html) is a fully managed AWS service that you can use to stream live video from devices to the AWS Cloud, or build applications for real-time video processing or batch-oriented video analytics.
+
+##### 6.1.6.3 <span id="630">Amazon Kinesis Data Analytics</span>
+
+- [Amazon Kinesis Data Analytics](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/what-is.html) lets you to process and analyze streaming data using standard SQL.
+
+##### 6.1.6.4 <span id="610">Amazon Kinesis Data Firehose</span>
+
+- [Amazon Kinesis Data Firehose](https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html) is a fully managed service for delivering real-time streaming data to destinations such as Amazon S3, Amazon Redshift, Amazon OpenSearch Service, Amazon OpenSearch Serverless, Splunk, and any custom HTTP endpoint or HTTP endpoints owned by supported third-party service providers.
 
 #### 6.1.7 <span id="7">AWS Lake Formation</span>
 
@@ -558,6 +574,9 @@ comments: true
 
 #### 6.6.1 <span id="36">Amazon Aurora</span>
 
+- [Amazon Aurora](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL.
+- `Aurora Replicas` connect to the same storage volume as the primary DB instance, but support read operations only. You use Aurora Replicas to offload read workloads from the primary DB instance.
+
 #### 6.6.2 <span id="37">Amazon Aurora Serverless</span>
 
 #### 6.6.3 <span id="38">Amazon DocumentDB (with MongoDB compatibility)</span>
@@ -683,8 +702,6 @@ comments: true
 
 #### 6.11.1 <span id="81">Amazon Elastic Transcoder</span>
 
-#### 6.11.2 <span id="82">Amazon Kinesis Video Streams</span>
-
 ### 6.12 Migration and Transfer
 
 #### 6.12.1 <span id="83">AWS Application Discovery Service</span>
@@ -711,15 +728,24 @@ comments: true
 
 #### 6.13.1 <span id="91">Amazon CloudFront</span>
 
-- [Amazon CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html) is a web service that speeds up distribution of your static and dynamic web content, such as `.html`, `.css`, `.js`, and image files, to your users.
+- [Amazon CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html) is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment.
+- It is a web service that speeds up distribution of your static and dynamic web content, such as `.html`, `.css`, `.js`, and image files, to your users.
 
 #### 6.13.2 <span id="92">AWS Direct Connect</span>
+
+- [AWS Direct Connect](https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html) makes it easy to establish a dedicated connection from an on-premises network to one or more VPCs in the same region.
+- It links your internal network to an AWS Direct Connect location over a standard Ethernet fiber-optic cable.
 
 #### 6.13.3 <span id="93">Elastic Load Balancing (ELB)</span>
 
 - [Elastic Load Balancing](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html) automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. It monitors the health of its registered targets, and routes traffic only to the healthy targets. Elastic Load Balancing scales your load balancer capacity automatically in response to changes in incoming traffic.
 
 #### 6.13.4 <span id="94">AWS Global Accelerator</span>
+
+- [AWS Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html) is a service in which you create accelerators to improve the performance of your applications for local and global users.
+- It directs user traffic to the application endpoint that is nearest to the client, which reduces internet latency and jitter.
+- It routes traffic to the closest edge location by using Anycast, and then routes it to the closest regional endpoint over the AWS global network.
+- It quickly reacts to changes in network performance.
 
 #### 6.13.5 <span id="95">AWS PrivateLink</span>
 
@@ -780,6 +806,8 @@ comments: true
 
 #### 6.14.18 <span id="117">AWS Shield</span>
 
+- [AWS Shield](https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html) provides protection against a wide range of known DDoS attack vectors and zero-day attack vectors. Shield detection and mitigation is designed to provide coverage against threats even if they are not explicitly known to the service at the time of detection.
+
 #### 6.14.19 <span id="118">AWS Single Sign-On</span>
 
 #### 6.14.20 <span id="119">AWS WAF</span>
@@ -791,9 +819,9 @@ comments: true
 - AWS Fargate is a serverless compute engine for containers.
 - It works with both Amazon ECS and Amazon EKS.
 
-#### 6.15.2 AWS Lambda
+#### 6.15.2 <span id="121">AWS Lambda</span>
 
-- <span id="121"></span>[AWS Lambda](https://aws.amazon.com/lambda/) is a serverless compute service that runs your code in response to events and automatically manages the underlying compute resources for you. These events may include changes in state or an update, such as a user placing an item in a shopping cart on an e-commerce website. When the trigger is detected, the code is automatically run in a managed environment.
+- [AWS Lambda](https://aws.amazon.com/lambda/) is a serverless compute service that runs your code in response to events and automatically manages the underlying compute resources for you. These events may include changes in state or an update, such as a user placing an item in a shopping cart on an e-commerce website. When the trigger is detected, the code is automatically run in a managed environment.
 - While using AWS Lambda, you pay only for the computing time that you consume. Charges apply only when your code is running.
 - It allows you to upload your code into the Lambda function. You can also run code for virtually any type of application or backend service, all with zero administration.
   - For example, a simple Lambda function might involve automatically resizing uploaded images to the AWS Cloud. In this case, the function triggers when uploading a new image.

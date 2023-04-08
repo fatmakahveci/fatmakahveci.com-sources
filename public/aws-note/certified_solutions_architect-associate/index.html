@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="AWS Certified Solutions Architect - Associate (SAA-C03)">
 <meta itemprop="description" content="AWS Certified Solutions Architect - Associate (SAA-C03)">
 
-<meta itemprop="wordCount" content="6328">
+<meta itemprop="wordCount" content="6691">
 <meta itemprop="keywords" content="aws,coding,cloud computing," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -546,8 +546,28 @@
 </ul>
 <h4 id="616-span-id6amazon-kinesisspan">6.1.6 <!-- raw HTML omitted -->Amazon Kinesis<!-- raw HTML omitted --></h4>
 <ul>
-<li><a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/what-is-kinesis-video.html" target="_blank" >Amazon Kinesis</a>
+<li><a href="https://aws.amazon.com/kinesis/" target="_blank" >Amazon Kinesis</a>
  cost-effectively processes and analyzes streaming data at any scale as a fully managed service. With Kinesis, you can ingest real-time data, such as video, audio, application logs, website clickstreams, and IoT telemetry data, for machine learning (ML), analytics, and other applications.</li>
+</ul>
+<h5 id="6161-span-id620amazon-kinesis-data-streamsspan">6.1.6.1 <!-- raw HTML omitted -->Amazon Kinesis Data Streams<!-- raw HTML omitted --></h5>
+<ul>
+<li><a href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html" target="_blank" >Amazon Kinesis Data Streams</a>
+ lets you to collect and process large streams of data records in real time.</li>
+</ul>
+<h4 id="6162-span-id82amazon-kinesis-video-streamsspan">6.1.6.2 <!-- raw HTML omitted -->Amazon Kinesis Video Streams<!-- raw HTML omitted --></h4>
+<ul>
+<li><a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/what-is-kinesis-video.html" target="_blank" >Amazon Kinesis Video Streams</a>
+ is a fully managed AWS service that you can use to stream live video from devices to the AWS Cloud, or build applications for real-time video processing or batch-oriented video analytics.</li>
+</ul>
+<h5 id="6163-span-id630amazon-kinesis-data-analyticsspan">6.1.6.3 <!-- raw HTML omitted -->Amazon Kinesis Data Analytics<!-- raw HTML omitted --></h5>
+<ul>
+<li><a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/what-is.html" target="_blank" >Amazon Kinesis Data Analytics</a>
+ lets you to process and analyze streaming data using standard SQL.</li>
+</ul>
+<h5 id="6164-span-id610amazon-kinesis-data-firehosespan">6.1.6.4 <!-- raw HTML omitted -->Amazon Kinesis Data Firehose<!-- raw HTML omitted --></h5>
+<ul>
+<li><a href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html" target="_blank" >Amazon Kinesis Data Firehose</a>
+ is a fully managed service for delivering real-time streaming data to destinations such as Amazon S3, Amazon Redshift, Amazon OpenSearch Service, Amazon OpenSearch Serverless, Splunk, and any custom HTTP endpoint or HTTP endpoints owned by supported third-party service providers.</li>
 </ul>
 <h4 id="617-span-id7aws-lake-formationspan">6.1.7 <!-- raw HTML omitted -->AWS Lake Formation<!-- raw HTML omitted --></h4>
 <ul>
@@ -929,6 +949,11 @@
 <h4 id="656-span-id35amazon-eks-distrospan">6.5.6 <!-- raw HTML omitted -->Amazon EKS Distro<!-- raw HTML omitted --></h4>
 <h3 id="66-database">6.6 Database</h3>
 <h4 id="661-span-id36amazon-auroraspan">6.6.1 <!-- raw HTML omitted -->Amazon Aurora<!-- raw HTML omitted --></h4>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html" target="_blank" >Amazon Aurora</a>
+ is a fully managed relational database engine that&rsquo;s compatible with MySQL and PostgreSQL.</li>
+<li><code>Aurora Replicas</code> connect to the same storage volume as the primary DB instance, but support read operations only. You use Aurora Replicas to offload read workloads from the primary DB instance.</li>
+</ul>
 <h4 id="662-span-id37amazon-aurora-serverlessspan">6.6.2 <!-- raw HTML omitted -->Amazon Aurora Serverless<!-- raw HTML omitted --></h4>
 <h4 id="663-span-id38amazon-documentdb-with-mongodb-compatibilityspan">6.6.3 <!-- raw HTML omitted -->Amazon DocumentDB (with MongoDB compatibility)<!-- raw HTML omitted --></h4>
 <h4 id="664-span-id39amazon-dynamodbspan">6.6.4 <!-- raw HTML omitted -->Amazon DynamoDB<!-- raw HTML omitted --></h4>
@@ -1020,7 +1045,6 @@
 <h4 id="61019-span-id80aws-well-architected-toolspan">6.10.19 <!-- raw HTML omitted -->AWS Well-Architected Tool<!-- raw HTML omitted --></h4>
 <h3 id="611-media-services">6.11 Media Services</h3>
 <h4 id="6111-span-id81amazon-elastic-transcoderspan">6.11.1 <!-- raw HTML omitted -->Amazon Elastic Transcoder<!-- raw HTML omitted --></h4>
-<h4 id="6112-span-id82amazon-kinesis-video-streamsspan">6.11.2 <!-- raw HTML omitted -->Amazon Kinesis Video Streams<!-- raw HTML omitted --></h4>
 <h3 id="612-migration-and-transfer">6.12 Migration and Transfer</h3>
 <h4 id="6121-span-id83aws-application-discovery-servicespan">6.12.1 <!-- raw HTML omitted -->AWS Application Discovery Service<!-- raw HTML omitted --></h4>
 <h4 id="6122-span-id84aws-application-migration-service-cloudendure-migrationspan">6.12.2 <!-- raw HTML omitted -->AWS Application Migration Service (CloudEndure Migration)<!-- raw HTML omitted --></h4>
@@ -1042,15 +1066,28 @@
 <h4 id="6131-span-id91amazon-cloudfrontspan">6.13.1 <!-- raw HTML omitted -->Amazon CloudFront<!-- raw HTML omitted --></h4>
 <ul>
 <li><a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html" target="_blank" >Amazon CloudFront</a>
- is a web service that speeds up distribution of your static and dynamic web content, such as <code>.html</code>, <code>.css</code>, <code>.js</code>, and image files, to your users.</li>
+ is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment.</li>
+<li>It is a web service that speeds up distribution of your static and dynamic web content, such as <code>.html</code>, <code>.css</code>, <code>.js</code>, and image files, to your users.</li>
 </ul>
 <h4 id="6132-span-id92aws-direct-connectspan">6.13.2 <!-- raw HTML omitted -->AWS Direct Connect<!-- raw HTML omitted --></h4>
+<ul>
+<li><a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html" target="_blank" >AWS Direct Connect</a>
+ makes it easy to establish a dedicated connection from an on-premises network to one or more VPCs in the same region.</li>
+<li>It links your internal network to an AWS Direct Connect location over a standard Ethernet fiber-optic cable.</li>
+</ul>
 <h4 id="6133-span-id93elastic-load-balancing-elbspan">6.13.3 <!-- raw HTML omitted -->Elastic Load Balancing (ELB)<!-- raw HTML omitted --></h4>
 <ul>
 <li><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html" target="_blank" >Elastic Load Balancing</a>
  automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. It monitors the health of its registered targets, and routes traffic only to the healthy targets. Elastic Load Balancing scales your load balancer capacity automatically in response to changes in incoming traffic.</li>
 </ul>
 <h4 id="6134-span-id94aws-global-acceleratorspan">6.13.4 <!-- raw HTML omitted -->AWS Global Accelerator<!-- raw HTML omitted --></h4>
+<ul>
+<li><a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html" target="_blank" >AWS Global Accelerator</a>
+ is a service in which you create accelerators to improve the performance of your applications for local and global users.</li>
+<li>It directs user traffic to the application endpoint that is nearest to the client, which reduces internet latency and jitter.</li>
+<li>It routes traffic to the closest edge location by using Anycast, and then routes it to the closest regional endpoint over the AWS global network.</li>
+<li>It quickly reacts to changes in network performance.</li>
+</ul>
 <h4 id="6135-span-id95aws-privatelinkspan">6.13.5 <!-- raw HTML omitted -->AWS PrivateLink<!-- raw HTML omitted --></h4>
 <h4 id="6136-span-id96amazon-route-53span">6.13.6 <!-- raw HTML omitted -->Amazon Route 53<!-- raw HTML omitted --></h4>
 <ul>
@@ -1099,6 +1136,10 @@
 <h4 id="61416-span-id115aws-secrets-managerspan">6.14.16 <!-- raw HTML omitted -->AWS Secrets Manager<!-- raw HTML omitted --></h4>
 <h4 id="61417-span-id116aws-security-hubspan">6.14.17 <!-- raw HTML omitted -->AWS Security Hub<!-- raw HTML omitted --></h4>
 <h4 id="61418-span-id117aws-shieldspan">6.14.18 <!-- raw HTML omitted -->AWS Shield<!-- raw HTML omitted --></h4>
+<ul>
+<li><a href="https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html" target="_blank" >AWS Shield</a>
+ provides protection against a wide range of known DDoS attack vectors and zero-day attack vectors. Shield detection and mitigation is designed to provide coverage against threats even if they are not explicitly known to the service at the time of detection.</li>
+</ul>
 <h4 id="61419-span-id118aws-single-sign-onspan">6.14.19 <!-- raw HTML omitted -->AWS Single Sign-On<!-- raw HTML omitted --></h4>
 <h4 id="61420-span-id119aws-wafspan">6.14.20 <!-- raw HTML omitted -->AWS WAF<!-- raw HTML omitted --></h4>
 <h3 id="615-serverless">6.15 Serverless</h3>
@@ -1107,9 +1148,9 @@
 <li>AWS Fargate is a serverless compute engine for containers.</li>
 <li>It works with both Amazon ECS and Amazon EKS.</li>
 </ul>
-<h4 id="6152-aws-lambda">6.15.2 AWS Lambda</h4>
+<h4 id="6152-span-id121aws-lambdaspan">6.15.2 <!-- raw HTML omitted -->AWS Lambda<!-- raw HTML omitted --></h4>
 <ul>
-<li><!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://aws.amazon.com/lambda/" target="_blank" >AWS Lambda</a>
+<li><a href="https://aws.amazon.com/lambda/" target="_blank" >AWS Lambda</a>
  is a serverless compute service that runs your code in response to events and automatically manages the underlying compute resources for you. These events may include changes in state or an update, such as a user placing an item in a shopping cart on an e-commerce website. When the trigger is detected, the code is automatically run in a managed environment.</li>
 <li>While using AWS Lambda, you pay only for the computing time that you consume. Charges apply only when your code is running.</li>
 <li>It allows you to upload your code into the Lambda function. You can also run code for virtually any type of application or backend service, all with zero administration.
@@ -1457,6 +1498,7 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/data/" title="data">data</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/design-patterns/" title="design patterns">design patterns</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dfs/" title="dfs">dfs</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/diccionario/" title="diccionario">diccionario</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dictionary/" title="dictionary">dictionary</a>
