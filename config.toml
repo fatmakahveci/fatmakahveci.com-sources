@@ -34,7 +34,7 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
   fontFamilyPrimary = "Montserrat, Arial"
 
 [Params.widgets.social]
-  twitter = "cheburashkaF"
+  twitter = "science_n_code"
   instagram = "fatmakhv"
   linkedin = "fatma-kahveci"
   github = "fatmakahveci"
@@ -50,61 +50,55 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
   [[menu.main]]
     identifier = "coding"
     name = "coding"
-    url = "/coding note/"
-    weight = -9
+    url = "/coding-note/"
+    weight = -8
 
   [[menu.main]]
     identifier = "python"
     name = "python"
-    url = "/python note/"
-    weight = -8
-
-  [[menu.main]]
-    identifier = "django"
-    name = "django"
-    url = "/django note/"
+    url = "/python-note/"
     weight = -7
 
   [[menu.main]]
-    identifier = "react"
-    name = "react"
-    url = "/react note/"
+    identifier = "backend"
+    name = "backend"
+    url = "/backend-note/"
     weight = -6
+
+  [[menu.main]]
+    identifier = "frontend"
+    name = "frontend"
+    url = "/frontend-note/"
+    weight = -5
   
   [[menu.main]]
     identifier = "go"
     name = "go"
-    url = "/go note/"
-    weight = -5
-
-  [[menu.main]]
-    identifier = "js"
-    name = "js"
-    url = "/javascript note/"
+    url = "/go-note/"
     weight = -4
 
   [[menu.main]]
     identifier = "bash"
     name = "bash"
-    url = "/bash note/"
+    url = "/bash-note/"
     weight = -3
 
   [[menu.main]]
     identifier = "aws"
     name = "aws"
-    url = "/aws note/"
+    url = "/aws-note/"
     weight = -2
 
   [[menu.main]]
     identifier = "travel"
     name = "Travel"
-    url = "/travel note/"
+    url = "/travel-note/"
     weight = -1
   
   [[menu.main]]
     identifier = "reading"
     name = "Reading"
-    url = "/reading note/"
+    url = "/reading-note/"
     weight = 0
 
 

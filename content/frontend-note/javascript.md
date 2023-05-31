@@ -1,8 +1,8 @@
 ---
-title: JavaScript for beginners
-description: JavaScript for beginners
-summary: "Updated by Fatma, Mar 28, 2023."
-date: 28-03-2023
+title: JavaScript
+description: JavaScript
+summary: "Updated by Fatma, May 25, 2023."
+date: 25-05-2023
 categories:
   - "Coding"
 tags:
@@ -19,22 +19,42 @@ comments: true
 - It supports object-oriented programming with object prototypes, instead of classes.
 - It supports functional programming - because they are objects, functions may be stored in variables and passed around like any other object.
 
-## Types
+## Data types
 
-- **Number:** double-precision 64-bit format IEEE 754 values
-- String
-- Boolean
-- Object
+### Primitive data types
+
+- `number` double-precision 64-bit format IEEE 754 values
+- `string`
+- `boolean`
+- `null` represents `empty` or `unknown` value.
+- `undefined` represents value that is not assigned.
+- `bigint` := There is no such thing as an integer except `BigInt`.
+- `symbol` := immutable and unique
+
+  ```js
+  const value1 = Symbol('hello');
+  const value2 = Symbol('hello');
+  console.log(value1 === value2); // false
+  ```
+
+  ```js
+  // symbol
+  for()
+  keyFor()
+  toSource()
+  toString()
+  valueOf()
+  ```
+
+### Reference data types
+
+- `array`
+- `object`
   - Function
-  - Array
-  - Date
   - RegExp
-- Symbol
-- undefined
-- null
-- Error
+- `date`
 
-- There is no such thing as an integer except `BigInt`.
+- Error
 
 ## Numbers
 
@@ -243,22 +263,39 @@ var avg = function() {
 
 ## Variables
 
-### let
+### `var`
 
+- `var` is valid.
+- `var a;`
+- `var name = 'Simon';`
+
+### `let`
+
+- `let` creates a variable.
 - It allows you to declare block-level variables.
 - The declared variable is available from the block it is enclosed in.
 - `let a;`
 - `let name = 'Simon';`
 
-### const
+```js
+var myName = 'fatma 1';
+myName = 'fatma 1 update';
+console.log(myName);
 
+const myName2 = 'fatma 2';
+// myName2 = 'fatma 2 update'; // causes an error
+console.log(myName2);
+
+let myName3 = 'fatma 3';
+myName3 = 'fatma 3 update';
+console.log(myName3);
+```
+
+### `const`
+
+- `const` creates a constant value. (mostly)
 - `const` variables are never intended to change.
 - `const Pi = 3.14;`
-
-### var
-
-- `var a;`
-- `var name = 'Simon';`
 
 ## Operators
 
@@ -534,6 +571,61 @@ const arr = [ {key: 1, value: 10} ]; // [{key: 1, value: 10}]
 const newArr = arr.map(({key, value}) -> ({ [key]: value })); // [{1: 10}]
 ```
 
+### `Array.prototype.splice()`
+
+```js
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb'); // Inserts at index 1
+console.log(months); // Array ["Jan", "Feb", "March", "April", "June"]
+months.splice(4, 1, 'May'); // Replaces 1 element at index 4
+console.log(months); // Array ["Jan", "Feb", "March", "April", "May"]
+```
+
+### `Array.prototype.slice()`
+
+```js
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+console.log(animals.slice(2)); // Array ["camel", "duck", "elephant"]
+console.log(animals.slice(2, 4)); // Array ["camel", "duck"]
+console.log(animals.slice(1, 5)); // Array ["bison", "camel", "duck", "elephant"]
+console.log(animals.slice(-2)); // Array ["duck", "elephant"]
+console.log(animals.slice(2, -1)); // Array ["camel", "duck"]
+console.log(animals.slice()); // Array ["ant", "bison", "camel", "duck", "elephant"]
+```
+
+### `Array.prototype.concat()`
+
+```js
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
+const array3 = array1.concat(array2);
+console.log(array3); // Array ["a", "b", "c", "d", "e", "f"]
+```
+
+### `Array.prototype.filter()`
+
+```js
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length > 6);
+console.log(result); // Array ["exuberant", "destruction", "present"]
+```
+
+### `Array.prototype.find()`
+
+```js
+const array1 = [5, 12, 8, 130, 44];
+const found = array1.find(element => element > 10);
+console.log(found); // 12
+```
+
+### `Array.prototype.findIndex()`
+
+```js
+const array1 = [5, 12, 8, 130, 44];
+const isLargeNumber = (element) => element > 13;
+console.log(array1.findIndex(isLargeNumber)); // 3
+```
+
 ---
 
 ## while
@@ -567,3 +659,232 @@ switch (action) {
 // If you try to access a non-existent array index.
 typeof a[90]; // undefined
 ```
+
+---
+
+## Arrow functions
+
+```js
+// function
+function myFunction(name) {
+  console.log('My name is '+ name+'.');
+}
+myFunction('Fatma');
+
+// arrow function
+const myFunction2 = (name) => { // if single parameter, () no needed
+  console.log('My name is '+ name+'.');
+}
+myFunction2('Fatma');
+
+const multiply = (number) => {
+  return 2 * number;
+}
+console.log(multiply(4));
+// equals to
+const multiply = number => number * 2;
+console.log(multiply(4));
+```
+
+## exports and imports (modules)
+
+- Import in the correct order.
+
+```js
+// person.js
+
+const person = {
+    name: 'Bob'
+}
+export default person;
+```
+
+```js
+// app.js
+import person from './person.js';
+import prs from './person.js';
+```
+
+---
+
+```js
+// utility.js
+
+export const clean = () => {...}
+export const baseData = 10;
+```
+
+```js
+import { clean } from './utility.js';
+import { baseData } from './utility.js';
+```
+
+## Classes, properties, and methods
+
+```js
+class Person {
+  name = 'Bob' // property
+  call = () => {...} // method
+}
+
+class Human {
+  gender = 'male';
+  
+  printMyGender() {
+    console.log(this.gender);
+  }
+}
+
+class Person extends Human { // inheritance
+  name =  'Bob';
+  gender = 'female';
+  
+  printMyName() {
+    console.log(this.name);
+  }
+}
+
+const person = new Person();
+person.printMyName(); // Bob
+person.printMyGender(); // female
+```
+
+## Spread and rest operators
+
+### Spread
+
+- `...` splits up array elements OR object properties
+
+```js
+const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4]; // if [numbers, 4];
+
+// output: [1, 2, 3, 4]
+console.log(newNumbers); // if [[1, 2, 3], 4]
+```
+
+```js
+const person = {
+  name: 'Bob'
+};
+
+const newPerson = {
+  ...person,
+  age: 28
+}
+
+console.log(newPerson); // age: 28, name: 'Bob'
+```
+
+### Rest
+
+- merges a list of function arguments into an array
+
+```js
+function sortArgs(...args) {
+  return args.sort();
+}
+
+console.log(sortArgs(2, 3, 1)); // [1, 2, 3]
+
+const filter = (...args) => {
+  return args.filter(el => el === 1);
+}
+
+console.log(filter(1, 2, 3)); // [1]
+```
+
+## Destructuring
+
+- It easily extracts array elements or object properties and store them in variables.
+
+### Array destructuring
+
+```js
+[a, b] = ['Hello', 'Bob'];
+console.log(a); // Hello
+console.log(b); // Bob
+```
+
+```js
+const numbers = [1, 2, 3];
+[num1, , num3] = numbers;
+console.log(num1, num3);
+```
+
+### Object destructuring
+
+```js
+{name} = {name:'Bob', age:28}
+console.log(name); // Bob
+console.log(age); // undefined
+```
+
+## Reference and primitive types
+
+```js
+const person = {
+  name: 'Bob'
+};
+const secondPerson = person;
+person.name = 'Alice';
+console.log(secondPerson); // Alice
+```
+
+```js
+const person = {
+  name: 'Bob'
+};
+const secondPerson = {
+  ...person
+};
+person.name = 'Alice';
+console.log(secondPerson); //Bob
+```
+
+## `try...catch...finally`
+
+```js
+try {
+    // statements
+} 
+catch(error) {
+    // statements  
+}
+finally() {
+    // executed anyway
+}
+```
+
+## `throw`
+
+```js
+throw expression;
+
+try {
+    // body of try
+    throw exception;
+} 
+catch(error) {
+    // body of catch  
+}
+```
+
+## `JSX`
+
+- `JSX` can only return a single element at a time.
+
+```javascript
+// JS
+let element = React.createElement('h1', {}, 'Hello world')
+ReactDOM.render(element, document.getElementById('root'));
+
+// JSX equivalent
+let element = <h1>Hello world</h1>
+ReactDOM.render(element, document.getElementById('root'))
+```
+
+- `{}` is the `JSX` expression and can be a variable, props (properties), function, or any `JS` expression.
+- It tells `React` to evaluate the content inside and then return it.
+- If you want to specify string literals for an attribute you can use double quotes `""`.
+- `""` and `{}` should not be used together for the same attribute.

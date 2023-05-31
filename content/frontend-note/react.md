@@ -1,8 +1,8 @@
 ---
-title: React for beginners
-description: React for beginners
-summary: "Updated by Fatma, Mar 28, 2023."
-date: 28-03-2023
+title: React
+description: React
+summary: "Updated by Fatma, May 25, 2023."
+date: 25-05-2023
 categories:
   - "Coding"
 tags:
@@ -14,9 +14,10 @@ tags:
   - "web development"
 comments: true
 ---
+
 ![react](/img/react.gif)
 
-- [React](`https://reactjs.org/docs/getting-started.html`) is a `JS` framework for developing SPAs (single-page applications).
+- [React](`https://reactjs.org/docs/getting-started.html`) is a `Javascripty` library for building interactive user interfaces.
 
 ## The fundamentals of React
 
@@ -43,6 +44,12 @@ class <className> extends React.Component {
   }
 }
 ```
+
+#### Server and client components
+
+![component](/img/component.png)
+
+- [Ref](https://nextjs.org/docs/getting-started/react-essentials#server-components)
 
 ### 2. Props
 
@@ -127,6 +134,17 @@ setState((prevState) => ({
 
 - One of the most important files is `package.json` which is React app's configuration file.
 - It is central to provide any metadata about the project, add any additional libraries to our project, and configuring things like run scripts.
+
+---
+
+## `fontawesome`
+
+- `fontawesome` will provide svgs as react components.
+
+```bash
+# installation
+npm i --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
+```
 
 ---
 
@@ -564,6 +582,7 @@ root.render(<NumberList numbers={numbers} />);
 
 ### Rendering Elements
 
+- Rendering converts the code you write into user interfaces (UIs).
 - An element is the smallest building block of React apps. It describes what you want to see on the screen.
 - Each _React element_ is a JS object that you can store in a variable or pass around in your program.
 - The only way to update the UI is to create a new element, and pass it to `root.render()`.
@@ -591,12 +610,6 @@ setInterval(tick, 1000);
 - `setInterval` executes a function at specific intervals. It helps in checking a condition regularly or fetching data every so often.
 - `clearInterval(<intervalName>)` stops the interval.
 
----
+## Layouts
 
-## Login, Registration, and Authentication
-
-- `fontawesome` will provide svgs as react components.
-
-```bash
-npm i --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
-```
+- A layout is UI that is shared between multiple pages.

@@ -286,6 +286,15 @@
     </item>
     
     <item>
+      <title>html</title>
+      <link>https://fatmakahveci.com/tags/html/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>javascript</title>
       <link>https://fatmakahveci.com/tags/javascript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -322,6 +331,15 @@
     </item>
     
     <item>
+      <title>nextjs</title>
+      <link>https://fatmakahveci.com/tags/nextjs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/tags/nextjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>nosql</title>
       <link>https://fatmakahveci.com/tags/nosql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -349,7 +367,7 @@
     </item>
     
     <item>
-      <title>python</title>
+      <title>Python</title>
       <link>https://fatmakahveci.com/tags/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -439,6 +457,15 @@
     </item>
     
     <item>
+      <title>typescript</title>
+      <link>https://fatmakahveci.com/tags/typescript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>user interface</title>
       <link>https://fatmakahveci.com/tags/user-interface/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -453,6 +480,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/tags/web-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webpack</title>
+      <link>https://fatmakahveci.com/tags/webpack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/tags/webpack/</guid>
       <description></description>
     </item>
     

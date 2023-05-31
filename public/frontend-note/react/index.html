@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>React - Fatma Kahveci</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="React">
+		<meta property="og:title" content="React" />
+<meta property="og:description" content="React" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fatmakahveci.com/frontend-note/react/" /><meta property="article:section" content="frontend-note" />
+
+
+
+		<meta itemprop="name" content="React">
+<meta itemprop="description" content="React">
+
+<meta itemprop="wordCount" content="2225">
+<meta itemprop="keywords" content="react,user interface,coding,framework,frontend,web development," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&display=swap">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Fatma Kahveci" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Fatma Kahveci</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/coding-note/">
+				
+				<span class="menu__text">coding</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/python-note/">
+				
+				<span class="menu__text">python</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/backend-note/">
+				
+				<span class="menu__text">backend</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/frontend-note/">
+				
+				<span class="menu__text">frontend</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/go-note/">
+				
+				<span class="menu__text">go</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/bash-note/">
+				
+				<span class="menu__text">bash</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aws-note/">
+				
+				<span class="menu__text">aws</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/travel-note/">
+				
+				<span class="menu__text">Travel</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/reading-note/">
+				
+				<span class="menu__text">Reading</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">React</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Fatma Kahveci</span>
+</div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/coding/" rel="category">Coding</a>
+	</span>
+</div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-fundamentals-of-react">The fundamentals of React</a>
+      <ul>
+        <li><a href="#1-component">1. Component</a></li>
+        <li><a href="#2-props">2. Props</a></li>
+        <li><a href="#3-state">3. State</a></li>
+      </ul>
+    </li>
+    <li><a href="#packagejson"><code>package.json</code></a></li>
+    <li><a href="#fontawesome"><code>fontawesome</code></a></li>
+    <li><a href="#jsx">JSX</a></li>
+    <li><a href="#hooks">Hooks</a>
+      <ul>
+        <li><a href="#1-usestate-hook">1. <code>useState</code> hook</a></li>
+        <li><a href="#2-usereducer-hook">2. <code>useReducer</code> hook</a></li>
+        <li><a href="#3-useeffect-hook">3. <code>useEffect</code> hook</a></li>
+        <li><a href="#4-usecontext-hook">4. <code>useContext</code> hook</a></li>
+        <li><a href="#5-usememo-hook">5. <code>useMemo</code> hook</a></li>
+        <li><a href="#6-usecallback-hook">6. <code>useCallback</code> hook</a></li>
+        <li><a href="#7-useref-hook">7. <code>useRef</code> hook</a></li>
+        <li><a href="#8-useimperativehandle-hook">8. <code>useImperativeHandle</code> hook</a></li>
+        <li><a href="#9-uselayouteffect-hook">9. <code>useLayoutEffect</code> hook</a></li>
+        <li><a href="#10-usedebugvalue-hook">10. <code>useDebugValue</code> hook</a></li>
+        <li><a href="#11-usedeferredvalue-hook">11. <code>useDeferredValue</code> hook</a></li>
+        <li><a href="#12-usetransition-hook">12. <code>useTransition</code> hook</a></li>
+        <li><a href="#13-useid-hook">13. <code>useId</code> hook</a></li>
+        <li><a href="#14-usesyncexternalstore">14. <code>useSyncExternalStore</code></a></li>
+        <li><a href="#15-useinsertioneffect">15. <code>useInsertionEffect</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#axios-requests">axios requests</a>
+      <ul>
+        <li><a href="#with-asyncawait">With <code>async/await</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#handling-events">Handling events</a>
+      <ul>
+        <li><a href="#passing-arguments-to-event-handlers">Passing arguments to event handlers</a></li>
+      </ul>
+    </li>
+    <li><a href="#conditional-rendering">Conditional rendering</a></li>
+    <li><a href="#match">match</a></li>
+    <li><a href="#lists-and-keys">Lists and keys</a>
+      <ul>
+        <li><a href="#rendering-elements">Rendering Elements</a></li>
+      </ul>
+    </li>
+    <li><a href="#layouts">Layouts</a></li>
+  </ul>
+</nav>
+	</div>
+</div>
+<div class="content post__content clearfix">
+			<p><img src="/img/react.gif" alt="react"></p>
+<ul>
+<li><a href="%60https://reactjs.org/docs/getting-started.html%60" >React</a>
+ is a <code>Javascripty</code> library for building interactive user interfaces.</li>
+</ul>
+<h2 id="the-fundamentals-of-react">The fundamentals of React</h2>
+<h3 id="1-component">1. Component</h3>
+<ul>
+<li>
+<p>React composes complex UIs from small and isolated pieces of code called <em>components</em>.</p>
+</li>
+<li>
+<p>We use components to tell React what we want to see on the screen. When our data changes, React will efficiently update and re-render our components.</p>
+</li>
+<li>
+<p>A component is written as either a <code>.JSX</code> or <code>.JS</code> file. It is simply a JS class or function that returns some HTML code.</p>
+</li>
+<li>
+<p>A component file contains both logic and view written in <code>JS</code> and <code>HTML</code>, respectively.</p>
+</li>
+<li>
+<p>A component name and file name is always written in <code>TitleCase</code>.</p>
+</li>
+<li>
+<p>Imports are made at the top of a React component.</p>
+</li>
+<li>
+<p>React components are imported into other React components before using them.</p>
+</li>
+<li>
+<p>Using a component is as simple as declaring it inside of tags, for example: <code>&lt;HelloWorld /&gt;</code></p>
+</li>
+<li>
+<p>A component takes in parameters, called props and returns a hierarchy of views to display via the render method.</p>
+</li>
+<li>
+<p>The render method returns a description of what you want to see on the screen. React takes the description and displays the result. In particular, render returns a React element, which is a lightweight description of what to render.</p>
+</li>
+<li>
+<p>All React component classes that have a constructor should start with a super (props) call:</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">className</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="server-and-client-components">Server and client components</h4>
+<p><img src="/img/component.png" alt="component"></p>
+<ul>
+<li><a href="https://nextjs.org/docs/getting-started/react-essentials#server-components" target="_blank" >Ref</a>
+</li>
+</ul>
+<h3 id="2-props">2. Props</h3>
+<ul>
+<li>React components use <code>props</code> to communicate with each other.
+<ul>
+<li>Every parent component can pass some information to its child components by giving them props.</li>
+<li>You can pass any JS value through them, including objects, arrays, and functions.</li>
+</ul>
+</li>
+</ul>
+<h4 id="passing-props-to-a-component">Passing props to a component</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">getImageUrl</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./utils.js&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Photo</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">person</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">person</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">size</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">size</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">img</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;photo&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">getImageUrl</span>(<span style="color:#a6e22e">person</span>)}
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">name</span>}
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">size</span>}
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">size</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Step 1: Pass props to the child component
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Profile</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Photo</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">person</span><span style="color:#f92672">=</span>{{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Bob Alice&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">imageId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;12ab&#39;</span>
+</span></span><span style="display:flex;"><span>      }}
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span>{<span style="color:#ae81ff">100</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Step 2: Read props inside the child component
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Photo</span>({ <span style="color:#a6e22e">person</span>, <span style="color:#a6e22e">size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span> }) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// variables are available here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><ul>
+<li><strong>[Prop drilling] (threading)</strong> refers to the process you have to go through to get data to parts of the React component tree.</li>
+<li>It may cause problems while your project is growing. Below are some cases:
+<ul>
+<li>Refactoring the data: <code>{user: {name: 'Bob'}}</code> =&gt; <code>{user: {name: 'Bob', age: 70}}</code></li>
+<li>Passing redundant props or missing props due to moving a component</li>
+<li>Renaming props makes tracking difficult for your brain</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-state">3. State</h3>
+<ul>
+<li>
+<p>All the React components can have a state associated with them.</p>
+</li>
+<li>
+<p>A state can change either due to</p>
+<ul>
+<li>a response to an action performed by the user OR</li>
+<li>en event triggered by the system.</li>
+</ul>
+</li>
+<li>
+<p>Whenever the state changes, React re-renders the component to the browser.</p>
+</li>
+<li>
+<p>The following lets you use local state within a function component.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> [<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">currentState</span><span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">functionToUpdateTheState</span><span style="color:#f92672">&gt;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">`&lt;initialState&gt;`</span>);
+</span></span></code></pre></div><h4 id="setstate"><code>setState</code></h4>
+<ul>
+<li>After building an initial state setup, we use <code>setState()</code> method to change the state object.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">stateName</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">updatedStateValue</span> })
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// OR
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">setState</span>((<span style="color:#a6e22e">prevState</span>) =&gt; ({ 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">stateName</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">prevState</span>.<span style="color:#a6e22e">stateName</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> 
+</span></span><span style="display:flex;"><span>}))
+</span></span></code></pre></div><hr>
+<h2 id="packagejson"><code>package.json</code></h2>
+<ul>
+<li>One of the most important files is <code>package.json</code> which is React app&rsquo;s configuration file.</li>
+<li>It is central to provide any metadata about the project, add any additional libraries to our project, and configuring things like run scripts.</li>
+</ul>
+<hr>
+<h2 id="fontawesome"><code>fontawesome</code></h2>
+<ul>
+<li><code>fontawesome</code> will provide svgs as react components.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># installation</span>
+</span></span><span style="display:flex;"><span>npm i --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
+</span></span></code></pre></div><hr>
+<h2 id="jsx">JSX</h2>
+<ul>
+<li>You can put any JS expressions within braces inside <code>JSX</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span>, <span style="color:#a6e22e">world</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><hr>
+<h2 id="hooks">Hooks</h2>
+<ul>
+<li>
+<p><code>Hooks</code> let you use state and other React features without writing a class. They don&rsquo;t work inside classes.</p>
+</li>
+<li>
+<p>They let you hook into React state and lifecycle features from function components.</p>
+</li>
+<li>
+<p>Hooks are JS functions imposing two additional rules:</p>
+<ol>
+<li>
+<p>Only call Hooks at the top level. Don&rsquo;t call Hooks inside loops, conditions, or nested functions.</p>
+</li>
+<li>
+<p>Only call Hooks from React function components. Don&rsquo;t call Hooks from regular JavaScript functions.</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="1-usestate-hook">1. <code>useState</code> hook</h3>
+<p><code>const [&lt;currentState&gt;, &lt;functionToUpdateTheState&gt;] = useState(&lt;initialState&gt;);</code> lets you use local state within a function component.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, { <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Example</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">count</span>, <span style="color:#a6e22e">setCount</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">You</span> <span style="color:#a6e22e">clicked</span> {<span style="color:#a6e22e">count</span>} <span style="color:#a6e22e">times</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{() =&gt; <span style="color:#a6e22e">setCount</span>(<span style="color:#a6e22e">count</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)}<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Click</span> <span style="color:#a6e22e">me</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="2-usereducer-hook">2. <code>useReducer</code> hook</h3>
+<ul>
+<li>It is an alternative to <code>useState</code>. It is preferable to <code>useState</code> when you have complex state logic that involves multiple subvalues or when the next state depends on the previous one.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">dispatch</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useReducer</span>(<span style="color:#a6e22e">reducer</span>, <span style="color:#a6e22e">initialArg</span>, <span style="color:#a6e22e">init</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// specifying the initial state
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// pass the initial state as a second argument
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">dispatch</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useReducer</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">reducer</span>,
+</span></span><span style="display:flex;"><span>  {<span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">initialCount</span>}
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><h3 id="3-useeffect-hook">3. <code>useEffect</code> hook</h3>
+<ul>
+<li>Fetching, subscriptions, or manually changing the DOM called &ldquo;side effects (effects)&rdquo; because they can affect other components and can&rsquo;t be done during rendering.</li>
+<li>Runs on every update</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ComponentName</span><span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {});
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>Runs ONCE after the initial rendering</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ComponentName</span><span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>  },[]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>Runs if any dependency changes</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ComponentName</span><span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>  },[<span style="color:#a6e22e">Dependencies</span>]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>Runs on cleanup</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ComponentName</span><span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>()=&gt;{}
+</span></span><span style="display:flex;"><span>  },[]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>Calling <code>useEffect</code> runs the &ldquo;effect&rdquo; function after flushing the changes to the DOM.
+<ul>
+<li>Effects are declared inside the component so they have access to its props and state.</li>
+<li>By default, React runs the effects after every render, including the first.</li>
+</ul>
+</li>
+<li>Just like <code>useState</code>, you can use multiple single effect in a component.</li>
+</ul>
+<h3 id="4-usecontext-hook">4. <code>useContext</code> hook</h3>
+<ul>
+<li>React <a href="https://reactjs.org/docs/context.html" target="_blank" >context</a>
+ is an interface for sharing information with other components without explicitly passing the data as <code>props</code>.</li>
+<li>It is flexible enough to use as a centralized state management system for the project, or you can scope it to smaller sections of your application.</li>
+<li>You can hold inside the context:
+<ul>
+<li>global state</li>
+<li>theme</li>
+<li>application configuration</li>
+<li>authenticated user</li>
+<li>user settings</li>
+<li>prefferred language</li>
+<li>a collection of services</li>
+</ul>
+</li>
+</ul>
+<h4 id="41-create-the-context">4.1. Create the context</h4>
+<ul>
+<li>It creates a context instance.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createContext</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Context</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createContext</span>(<span style="color:#e6db74">&#39;Default Value&#39;</span>);
+</span></span></code></pre></div><h4 id="42-provide-the-context">4.2. Provide the context</h4>
+<ul>
+<li>It provides the context to its child components, no matter how deep they are.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;My Context Value&#39;</span>; <span style="color:#75715e">// update it to change the context value
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// &lt;MyComponent /&gt; to add the component
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Context</span>.<span style="color:#a6e22e">Provider</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">value</span>}<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">MyComponent</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Context.Provider&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="43-consume-the-context">4.3. Consume the context</h4>
+<ul>
+<li>You can have multiple consumers for a single context. All customers will be notified and re-rendered depending on the context value change.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useContext</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MyComponent</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useContext</span>(<span style="color:#a6e22e">Context</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">span</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">value</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/span&gt;;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>OR</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MyComponent</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Context</span>.<span style="color:#a6e22e">Consumer</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      {<span style="color:#a6e22e">value</span> =&gt; <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">span</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">value</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/span&gt;}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Context.Consumer&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="5-usememo-hook">5. <code>useMemo</code> hook</h3>
+<ul>
+<li><code>const &lt;cachedValue&gt; = useMemo(&lt;calculateValue&gt;, [&lt;dependencies&gt;])</code> caches the result of a calculation between re-renders.</li>
+<li>It takes two arguments which are dependencies and a function that computes the value you want to memoize.</li>
+<li>It memoizes a value.</li>
+<li>It can avoid unnecessary recomputing.</li>
+<li><a href="https://www.youtube.com/watch?v=THL1OPn72vo" target="_blank" >Example code</a>
+</li>
+</ul>
+<h3 id="6-usecallback-hook">6. <code>useCallback</code> hook</h3>
+<ul>
+<li><code>const &lt;cachedFunctionName&gt; = useCallback(&lt;functionName&gt;, [&lt;dependencies&gt;])</code> caches a function definition between re-renders.</li>
+<li>It takes two arguments which are dependencies and a function that you want to memoize.</li>
+<li>It memoizes a function.</li>
+<li>It can avoid re-rendering the child component every time the parent component is rendered.</li>
+<li><a href="https://www.youtube.com/watch?v=_AyFP5s69N4" target="_blank" >Example code</a>
+</li>
+</ul>
+<h3 id="7-useref-hook">7. <code>useRef</code> hook</h3>
+<ul>
+<li>
+<p><code>const &lt;ref&gt; = useRef(&lt;initialValue&gt;)</code> creates a reference value that&rsquo;s not needed for rendering.</p>
+<ul>
+<li><strong>Parameter:</strong> <code>&lt;initialValue&gt;</code> can be a value of any type.</li>
+<li><strong>Return:</strong> <code>&lt;current&gt;</code> is set to the <code>&lt;initialValue&gt;</code> initially, you can later change it.</li>
+</ul>
+</li>
+<li>
+<p>Changing a ref doesn&rsquo;t trigger a re-render so refs are ideal for storing information that doesn&rsquo;t affect the visual output of your component.</p>
+</li>
+<li>
+<p><strong>Example:</strong> Focusing a text input</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useRef</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Form</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">inputRef</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRef</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleClick</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">inputRef</span>.<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">focus</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">inputRef</span>} <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleClick</span>}<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Focus</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">input</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="8-useimperativehandle-hook">8. <code>useImperativeHandle</code> hook</h3>
+<ul>
+<li><code>useImperativeHandle(&lt;ref&gt;, &lt;createHandle&gt;, [&lt;dependencies&gt;])</code> exposes a value, state or function inside a child component to the parent component through <code>ref</code>.
+<ul>
+<li><code>&lt;ref&gt;</code> := ref passed down from the parent component</li>
+<li><code>&lt;createHandle&gt;</code>:= value to be exposed to the parent component</li>
+</ul>
+</li>
+<li>You can decide which properties the parent component can access so you can maintain the private scoping of the child component.</li>
+<li>It is useful when you need bidirectional data.</li>
+<li><a href="https://www.youtube.com/watch?v=zpEyAOkytkU&amp;list=PLZlA0Gpn_vH8EtggFGERCwMY5u5hOjf-h&amp;index=12" target="_blank" >Example code</a>
+</li>
+</ul>
+<h3 id="9-uselayouteffect-hook">9. <code>useLayoutEffect</code> hook</h3>
+<ul>
+<li><code>useLayoutEffect(&lt;setup&gt;, [&lt;dependencies&gt;])</code> performs side effects.
+<ul>
+<li><code>&lt;setup&gt;</code> := function containing the side effect logic</li>
+</ul>
+</li>
+<li>It is a version of <code>useEffect</code> that fires before the browser repaints the screen. The main difference is the timing of when they are executed.</li>
+<li>It is useful when measuring the layout before the browser repaints the screen.</li>
+</ul>
+<h3 id="10-usedebugvalue-hook">10. <code>useDebugValue</code> hook</h3>
+<ul>
+<li><code>useDebugValue(&lt;value&gt;, &lt;format&gt;)</code> adds a label to a custom hook.
+<ul>
+<li><code>&lt;value&gt;</code> := any value that you want to display</li>
+<li><code>&lt;format&gt;</code> := an optional formatting function</li>
+</ul>
+</li>
+<li>It is also useful when deferring the formatting of a debug value.</li>
+</ul>
+<h3 id="11-usedeferredvalue-hook">11. <code>useDeferredValue</code> hook</h3>
+<ul>
+<li><code>useDeferredValue(&lt;value&gt;)</code> defers updating a part of the UI.
+<ul>
+<li><code>&lt;value&gt;</code> := any value that you want to defer</li>
+</ul>
+</li>
+<li>It is also useful when showing stale content while fresh content is loading.</li>
+</ul>
+<h3 id="12-usetransition-hook">12. <code>useTransition</code> hook</h3>
+<ul>
+<li><code>const [&lt;isPending&gt;, &lt;startTransition&gt;] = useTransition()</code> updates the state without blocking the UI.
+<ul>
+<li><code>&lt;isPending&gt;</code> flag that tells you whether there is a pending transition.</li>
+<li><code>&lt;startTransition&gt;</code> function that lets you mark a state update as a transition.</li>
+</ul>
+</li>
+<li>It is useful when marking a state update as a non-blocking transition.</li>
+</ul>
+<h3 id="13-useid-hook">13. <code>useId</code> hook</h3>
+<ul>
+<li><code>const &lt;id&gt; = useId()</code> generates unique IDs that can be passed to accessibility attributes.</li>
+</ul>
+<h3 id="14-usesyncexternalstore">14. <code>useSyncExternalStore</code></h3>
+<ul>
+<li><code>const &lt;snapshot&gt; = useSyncExternalStore(&lt;subscribe&gt;, &lt;getSnapshot&gt;, &lt;getServerSnapshot&gt;)</code> subscribes to an external store.
+<ul>
+<li><code>&lt;snapshot&gt;</code>:= function that takes a single callback argument and subscribes it to the store</li>
+<li><code>&lt;getSnapshot&gt;</code>:= function that returns a snapshot of the data in the store that’s needed by the component</li>
+</ul>
+</li>
+<li>It is useful when subscribing to an external store or a browser API, extracting the logic to a custom Hook, or adding support for server rendering.</li>
+</ul>
+<h3 id="15-useinsertioneffect">15. <code>useInsertionEffect</code></h3>
+<ul>
+<li><code>useInsertionEffect(&lt;setup&gt;, [&lt;dependencies&gt;])</code> is a version of <code>useEffect</code> that fires before any DOM mutations.
+<ul>
+<li><code>&lt;setup&gt;</code> := function with your Effect&rsquo;s logic.</li>
+</ul>
+</li>
+<li>It is useful when injecting dynamic styles from CSS-in-JS libraries.</li>
+</ul>
+<hr>
+<h2 id="axios-requests">axios requests</h2>
+<ul>
+<li><code>axios</code> is a popular data fetching package on <code>npm</code>.</li>
+<li>It is an open-source and promise-based HTTP client.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install axios
+</span></span></code></pre></div><h3 id="with-asyncawait">With <code>async/await</code></h3>
+<ul>
+<li><code>async</code> is a function that pauses until the promise is resolved due to <code>await</code>. To pull out the response from the promise object, we use then and catch methods.</li>
+<li><code>await</code> is an operator that is declared with the promise function. It is always defined inside the <code>async</code> function. It holds the execution of the promise function as long as the promise is completely fulfilled.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;axios&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// GET
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;&lt;url&gt;&#34;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// POST
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;url&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;value&#39;</span>};
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;content-type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">config</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// &lt;command&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// &lt;command&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// PUT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">put</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// DELETE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">axios</span>.<span style="color:#66d9ef">delete</span>()
+</span></span></code></pre></div><hr>
+<h2 id="handling-events">Handling events</h2>
+<ul>
+<li>
+<p>They are named using <em>camelCase</em>.</p>
+</li>
+<li>
+<p>With JSX you pass a function as the event handler.</p>
+</li>
+<li>
+<p>You cannot return <code>false</code> to prevent default behaviour in React. You must call <code>preventDefault</code> explicitly.</p>
+</li>
+<li>
+<p>Generally, if you refer to a method without <code>()</code>, you should bind that method.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Toggle</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">isToggleOn</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// This binding is necessary to make `this` work in the callback
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleClick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleClick</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">handleClick</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">prevState</span> =&gt; ({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">isToggleOn</span><span style="color:#f92672">:</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">prevState</span>.<span style="color:#a6e22e">isToggleOn</span>
+</span></span><span style="display:flex;"><span>    }));
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleClick</span>}<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">isToggleOn</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;ON&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;OFF&#39;</span>}
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="passing-arguments-to-event-handlers">Passing arguments to event handlers</h3>
+<ul>
+<li>With an arrow function, we have to pass the React event <code>e</code> explicitly.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">e</span>) =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">deleteRow</span>(<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">e</span>)}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Delete</span> <span style="color:#a6e22e">Row</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+</span></span></code></pre></div><hr>
+<h2 id="conditional-rendering">Conditional rendering</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">UserGreeting</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Welcome</span> <span style="color:#a6e22e">back</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">GuestGreeting</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Please</span> <span style="color:#a6e22e">sign</span> <span style="color:#a6e22e">up</span>.<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Greeting</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">isLoggedIn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">isLoggedIn</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isLoggedIn</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">UserGreeting</span> <span style="color:#f92672">/&gt;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">GuestGreeting</span> <span style="color:#f92672">/&gt;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>)); 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Greeting</span> <span style="color:#a6e22e">isLoggedIn</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">false</span>} <span style="color:#f92672">/&gt;</span>);
+</span></span></code></pre></div><hr>
+<h2 id="match">match</h2>
+<ul>
+<li>A <code>match</code> object contains information about how a <code>&lt;Route path&gt;</code> matched the URL.
+<ul>
+<li><code>params</code> are key/value pairs from the URL corresponding to the dynamic segments of the path.</li>
+<li><code>isExact</code> is <code>true</code> if the entire URL was matched.</li>
+<li><code>path</code> is the pattern used to match.</li>
+<li><code>url</code> is the matched part of the URL.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="lists-and-keys">Lists and keys</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ListItem</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">value</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">NumberList</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">numbers</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">listItems</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">number</span>) =&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ListItem</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">number</span>.<span style="color:#a6e22e">toString</span>()}
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">number</span>} <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      {<span style="color:#a6e22e">listItems</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">NumberList</span> <span style="color:#a6e22e">numbers</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">numbers</span>} <span style="color:#f92672">/&gt;</span>);
+</span></span></code></pre></div><hr>
+<h3 id="rendering-elements">Rendering Elements</h3>
+<ul>
+<li>Rendering converts the code you write into user interfaces (UIs).</li>
+<li>An element is the smallest building block of React apps. It describes what you want to see on the screen.</li>
+<li>Each <em>React element</em> is a JS object that you can store in a variable or pass around in your program.</li>
+<li>The only way to update the UI is to create a new element, and pass it to <code>root.render()</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(
+</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>)
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">tick</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">world</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h2</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">It</span> <span style="color:#a6e22e">is</span> {<span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">toLocaleTimeString</span>()}.<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h2&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">element</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setInterval</span>(<span style="color:#a6e22e">tick</span>, <span style="color:#ae81ff">1000</span>);
+</span></span></code></pre></div><h4 id="setinterval"><code>setInterval</code></h4>
+<ul>
+<li><code>setInterval</code> executes a function at specific intervals. It helps in checking a condition regularly or fetching data every so often.</li>
+<li><code>clearInterval(&lt;intervalName&gt;)</code> stops the interval.</li>
+</ul>
+<h2 id="layouts">Layouts</h2>
+<ul>
+<li>A layout is UI that is shared between multiple pages.</li>
+</ul>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/react/" rel="tag">react</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/user-interface/" rel="tag">user interface</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/coding/" rel="tag">coding</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/framework/" rel="tag">framework</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/frontend/" rel="tag">frontend</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/web-development/" rel="tag">web development</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Fatma Kahveci</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/frontend-note/tailwindcss/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Tailwindcss</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/frontend-note/next_js/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Next.js</p>
+		</a>
+	</div>
+</nav>
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "www-fatmakahveci-com-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Spotify" rel="noopener noreferrer" href="https://open.spotify.com/playlist/2lY1JpIvZI8T1SG8RAaosw?si=CvDn8z0xQlaA9RtXUGM_2g" target="_blank">
+				
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px"
+	 viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+<path id="SVGCleanerId_0" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+	c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+	c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+	c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+	c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+	c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+	 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+	c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+	C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+<g>
+	<path id="SVGCleanerId_0_1_" style="fill:#37D660;" d="M248,0C111.608,0,0,111.6,0,248c0,136.392,111.608,248,248,248
+		c136.4,0,248-111.608,248-248C496,111.6,385.648,0,248,0z M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96
+		c-58.28-35.96-131.448-43.392-218.224-23.544c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6
+		c94.232-21.08,176.08-12.4,240.56,27.28C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16
+		c-6.192,8.68-17.368,12.392-26.04,6.192c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4
+		c-2.48-9.92,2.488-21.088,12.408-23.568c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z
+		 M426.552,214.512c-6.184,8.672-21.08,12.408-32.232,6.184c-79.36-47.104-212.032-52.064-287.672-28.512
+		c-12.416,3.736-24.808-3.712-28.512-14.872C74.4,164.92,81.848,152.512,93,148.8c88.04-26.032,233.136-21.096,324.88,33.488
+		C429.04,188.48,432.776,203.352,426.552,214.512z"/>
+</g>
+<path style="fill:#2CC64D;" d="M219.68,195.296c-94.952,0-177.16,35.576-217.168,87.448C19.536,402.832,123.384,496,248,496
+	c90.016,0,169.208-48.624,212.664-120.872c1.392-6.856,2.168-13.84,2.168-20.952C462.832,266.424,353.976,195.296,219.68,195.296z
+	 M362.072,358.352c-4.936,7.448-13.624,9.928-21.072,4.96c-58.28-35.96-131.448-43.392-218.224-23.544
+	c-8.704,2.464-16.128-3.736-18.608-11.168c-2.488-8.68,3.72-16.128,11.16-18.6c94.232-21.08,176.08-12.4,240.56,27.28
+	C364.552,341,365.808,350.92,362.072,358.352z M391.84,290.16c-6.192,8.68-17.368,12.392-26.04,6.192
+	c-66.96-40.912-168.64-53.32-246.768-28.512c-9.904,2.48-21.08-2.488-23.56-12.4c-2.48-9.92,2.488-21.088,12.408-23.568
+	c90.52-27.272,202.12-13.648,279,33.48C394.32,269.072,398.04,281.48,391.84,290.16z"/>
+<path style="fill:#5AF27A;" d="M248,36.816c131.384,0,237.808,101.68,247.248,229.536C495.696,260.288,496,254.168,496,248
+	C496,111.6,385.648,0,248,0C111.608,0,0,111.6,0,248c0,6.184,0.304,12.328,0.76,18.408C10.272,138.512,117.808,36.816,248,36.816z"
+	/>
+<path style="fill:#1DAA59;" d="M326.192,483.216c14.488-33.36,32.688-83.248,35.872-88.056c3.736-7.432,2.488-17.352-6.184-21.072
+	c-64.488-39.68-146.328-48.36-240.56-27.28c-7.44,2.48-13.64,9.92-11.16,18.6c1.248,3.76,6.512,49.088,12.528,92.632
+	C154.832,482.048,199.848,496,248,496C275.304,496,301.568,491.464,326.192,483.216z"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+				<span>Spotify</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/science_n_code" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Instagram" rel="noopener noreferrer" href="https://www.instagram.com/fatmakhv" target="_blank">
+				<svg class="widget-social__link-icon icon icon-instagram" width="24" height="24" viewBox="0 0 256 256"><circle cx="193" cy="59" r="15"/><path fill-rule="evenodd" d="M101 0h54c41 0 58.4 3.9 74.5 17C256.2 37.5 256 74.8 256 97.7v60c0 26.7 0 60.4-26.5 81.4-16 13.4-33.5 16.9-74.5 16.9h-54c-41 0-57.5-3.5-74.5-16.9C1 218.9.5 186.3.1 160.5L0 155V97.7c0-23-.2-60.2 26.5-80.7C45 2 60 0 101 0zm4.9 23h44.3c45.8 0 58.3 3.5 70.3 17.5 11.8 13.2 12 30.1 12.5 62.9V156c.2 20.8.3 45.8-12.5 59.5-12 14-24.5 17.5-70.3 17.5h-44.3c-45.9 0-57.3-3.5-70.4-17.5-12.2-13-12.3-36.5-12.4-56.7v-55.6c.4-32.6.7-49.6 12.4-62.7C48 26.5 60 23 105.9 23zm19.6 144.5a42 42 0 1 0 0-84 42 42 0 0 0 0 84zm0 22.5a64.5 64.5 0 1 0 0-129 64.5 64.5 0 0 0 0 129z"/></svg>
+				<span>Instagram</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/fatma-kahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/fatmakahveci" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithm/" title="algorithm">algorithm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/algorithms/" title="algorithms">algorithms</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/aws/" title="aws">aws</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bacteria/" title="bacteria">bacteria</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bacterial-strain-identification/" title="bacterial strain identification">bacterial strain identification</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bash/" title="bash">bash</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bfs/" title="bfs">bfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/big-oh-notation/" title="big-oh-notation">big-oh-notation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bigtable/" title="bigtable">bigtable</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bioinformatician/" title="bioinformatician">bioinformatician</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bioinformatics/" title="bioinformatics">bioinformatics</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bioinform%C3%A1tica/" title="bioinformática">bioinformática</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/biyoinformatik/" title="biyoinformatik">biyoinformatik</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cloud-computing/" title="cloud computing">cloud computing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/concurrency/" title="concurrency">concurrency</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/covid19/" title="covid19">covid19</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data/" title="data">data</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/design-patterns/" title="design patterns">design patterns</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dfs/" title="dfs">dfs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/diccionario/" title="diccionario">diccionario</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dictionary/" title="dictionary">dictionary</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/django/" title="Django">Django</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/en-es/" title="en-es">en-es</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/en-tr/" title="en-tr">en-tr</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/framework/" title="framework">framework</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gene-transfer/" title="gene transfer">gene transfer</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html/" title="html">html</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="javascript">javascript</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb/" title="MongoDB">MongoDB</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/network/" title="network">network</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/newbies/" title="newbies">newbies</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nextjs/" title="nextjs">nextjs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nosql/" title="nosql">nosql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/numpy/" title="NumPy">NumPy</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/post/" title="post">post</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="react">react</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/reading/" title="reading">reading</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="Software">Software</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql/" title="sql">sql</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/strain/" title="strain">strain</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/s%C3%B6zl%C3%BCk/" title="sözlük">sözlük</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/travel/" title="travel">travel</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tree-traversal/" title="tree traversal">tree traversal</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/turkey/" title="turkey">turkey</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/typescript/" title="typescript">typescript</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/user-interface/" title="user interface">user interface</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web-development/" title="web development">web development</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/webpack/" title="webpack">webpack</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Fatma Kahveci.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG" async></script>
+</body>
+</html>

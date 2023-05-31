@@ -28,6 +28,8 @@
   </url><url>
     <loc>https://fatmakahveci.com/aws-note/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/backend-note/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/tags/bacteria/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/bacterial-strain-identification/</loc>
@@ -170,9 +172,7 @@
   </url><url>
     <loc>https://fatmakahveci.com/tags/django/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/django-note/django/</loc>
-  </url><url>
-    <loc>https://fatmakahveci.com/django-note/</loc>
+    <loc>https://fatmakahveci.com/backend-note/django/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/docopt/</loc>
   </url><url>
@@ -224,6 +224,8 @@
   </url><url>
     <loc>https://fatmakahveci.com/tags/frontend/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/frontend-note/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/python-note/functions/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/functools/</loc>
@@ -258,6 +260,10 @@
   </url><url>
     <loc>https://fatmakahveci.com/python-note/horizontal_bar_chart/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/tags/html/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/frontend-note/html/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/python-note/import/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/inheritance/</loc>
@@ -280,9 +286,7 @@
   </url><url>
     <loc>https://fatmakahveci.com/tags/javascript/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/javascript-note/javascript/</loc>
-  </url><url>
-    <loc>https://fatmakahveci.com/javascript-note/</loc>
+    <loc>https://fatmakahveci.com/frontend-note/javascript/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/jupyter/</loc>
   </url><url>
@@ -354,6 +358,10 @@
   </url><url>
     <loc>https://fatmakahveci.com/tags/newbies/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/frontend-note/next_js/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/nextjs/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/tags/nosql/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/numpy/</loc>
@@ -404,9 +412,9 @@
   </url><url>
     <loc>https://fatmakahveci.com/python-note/pydash/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/tags/python/</loc>
-  </url><url>
     <loc>https://fatmakahveci.com/python-note/python/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/python/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/libraries/</loc>
   </url><url>
@@ -420,9 +428,7 @@
   </url><url>
     <loc>https://fatmakahveci.com/tags/react/</loc>
   </url><url>
-    <loc>https://fatmakahveci.com/react-note/react/</loc>
-  </url><url>
-    <loc>https://fatmakahveci.com/react-note/</loc>
+    <loc>https://fatmakahveci.com/frontend-note/react/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/reading/</loc>
   </url><url>
@@ -488,6 +494,8 @@
   </url><url>
     <loc>https://fatmakahveci.com/python-note/tail_recursion/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/frontend-note/tailwindcss/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/travel-note/estonia/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/tempfile/</loc>
@@ -530,6 +538,10 @@
   </url><url>
     <loc>https://fatmakahveci.com/tags/turkey/</loc>
   </url><url>
+    <loc>https://fatmakahveci.com/tags/typescript/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/frontend-note/typescript/</loc>
+  </url><url>
     <loc>https://fatmakahveci.com/python-note/typing/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/python-note/underscores/</loc>
@@ -551,6 +563,10 @@
     <loc>https://fatmakahveci.com/python-note/walrus/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/tags/web-development/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/tags/webpack/</loc>
+  </url><url>
+    <loc>https://fatmakahveci.com/frontend-note/webpack/</loc>
   </url><url>
     <loc>https://fatmakahveci.com/coding-note/when_to_use/</loc>
   </url><url>

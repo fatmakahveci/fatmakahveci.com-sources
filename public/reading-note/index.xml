@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Reading notes on Fatma Kahveci</title>
+    <title>Reading-notes on Fatma Kahveci</title>
     <link>https://fatmakahveci.com/reading-note/</link>
-    <description>Recent content in Reading notes on Fatma Kahveci</description>
+    <description>Recent content in Reading-notes on Fatma Kahveci</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://fatmakahveci.com/reading-note/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -39,7 +39,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/reading-note/the_programmers_brain/</guid>
-      <description>Updated by Fatma, Apr 05, 2023.</description>
+      <description>Updated by Fatma, May 05, 2023.</description>
     </item>
     
   </channel>

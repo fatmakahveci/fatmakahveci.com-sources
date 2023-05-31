@@ -10,14 +10,14 @@
 		<meta property="og:title" content="The programmers brain" />
 <meta property="og:description" content="Some of the influential parts from the books that I have read." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://fatmakahveci.com/reading-note/the_programmers_brain/" /><meta property="article:section" content="reading note" />
+<meta property="og:url" content="https://fatmakahveci.com/reading-note/the_programmers_brain/" /><meta property="article:section" content="reading-note" />
 
 
 
 		<meta itemprop="name" content="The programmers brain">
 <meta itemprop="description" content="Some of the influential parts from the books that I have read.">
 
-<meta itemprop="wordCount" content="344">
+<meta itemprop="wordCount" content="792">
 <meta itemprop="keywords" content="post,reading," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -64,16 +64,16 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/django-note/">
+			<a class="menu__link" href="/backend-note/">
 				
-				<span class="menu__text">django</span>
+				<span class="menu__text">backend</span>
 				
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/react-note/">
+			<a class="menu__link" href="/frontend-note/">
 				
-				<span class="menu__text">react</span>
+				<span class="menu__text">frontend</span>
 				
 			</a>
 		</li>
@@ -81,13 +81,6 @@
 			<a class="menu__link" href="/go-note/">
 				
 				<span class="menu__text">go</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
-			<a class="menu__link" href="/javascript-note/">
-				
-				<span class="menu__text">js</span>
 				
 			</a>
 		</li>
@@ -228,6 +221,122 @@
 </li>
 </ul>
 <h3 id="2-read-code-quickly-and-get-a-sense-of-its-workings">2 Read code quickly and get a sense of its workings</h3>
+<ul>
+<li>
+<p>STM and LTM</p>
+<ul>
+<li>Information passes through sensory memory before it reaches STM.
+<ul>
+<li>Each of the five senses has its cache in the sensory memory.</li>
+<li><em>iconic memory</em> is for the sense of sight
+<ul>
+<li>You can remember more information about code than you can process in your STM. <em>Code at a glance</em> exercise will help you gain an initial image of the code.
+<ul>
+<li>Look at the code for a few seconds, then remove it from sight and try to answer the following questions:
+<ul>
+<li>What is the structure of the code?
+<ul>
+<li>Is the code nested deeply, or is it flat?</li>
+<li>Are there any lines that stand out?</li>
+</ul>
+</li>
+<li>How is whitespace used to structure the code?
+<ul>
+<li>Are there gaps in the code?</li>
+<li>Are there large blobs of code?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>STM first stores information when you read code.
+<ul>
+<li>The time and size (2-6 things) limit STM to remember the information.
+<ul>
+<li>STM and LTM collaborate to overcome STM&rsquo;s size limitation.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>LTM
+<ul>
+<li>syntactic knowledge of PL</li>
+<li>know the algorithm before</li>
+</ul>
+</li>
+<li>Lack of practice makes code reading harder.</li>
+</ul>
+</li>
+<li>
+<p>Code reading</p>
+<ul>
+<li>We often read code to
+<ul>
+<li>add a feature
+<ul>
+<li>the right location to implement</li>
+</ul>
+</li>
+<li>find a bug, and
+<ul>
+<li>the location of a specific bug where you last edited the code</li>
+<li>how a certain method is implemented</li>
+</ul>
+</li>
+<li>build an understanding of a large system.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Chunking</p>
+<ul>
+<li>When you read new information, your brain tries to divide the information into recognizable parts called chunks.</li>
+<li>If you want to write code that is easy to chunk, make use of design patterns.</li>
+<li>To deliberately practice chunking, actively try to remember code. Ask yourself:
+<ul>
+<li>Which parts did you produce correctly with ease?</li>
+<li>Are there any parts of the code that you reproduced partly?</li>
+<li>Are there parts of the code that you missed entirely?</li>
+<li>Do you understand why you missed the lines that you did?</li>
+<li>Do the lines of code that you missed contain programming concepts that are unfamiliar to you?</li>
+<li>Do the lines of code that you missed contain domain concepts that are unfamiliar to you?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Comments</p>
+<ul>
+<li>Add comments for your junior developers. Beginners focus more on comments.</li>
+</ul>
+</li>
+<li>
+<p>Beacons</p>
+<ul>
+<li>They are parts of a program that help a programmer understand what the code does.
+<ul>
+<li><em>Simple beacons</em> are self-explaining syntactic code elements, such as meaningful variable names.</li>
+<li><em>Compound beacons</em> do not offer much insight into the code, but together they do. For instance, a for-loop can be a compound beacon because it contains the variable, the initial assignment, and the increment and the boundary values.</li>
+</ul>
+</li>
+<li>Ask yourself:
+<ul>
+<li>What beacons have you collected?</li>
+<li>Are these code elements or natural language information?</li>
+<li>What knowledge do they represent?</li>
+<li>Do they represent knowledge about the domain of the code?</li>
+<li>Do they represent knowledge about the functionality of the code?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="3-learn-programming-syntax-and-concepts">3 Learn programming syntax and concepts</h3>
 <ul>
 <li>The use of LTM, different forms of remembering, and ways to strengthen the cognitive process</li>
@@ -307,23 +416,6 @@
 
 			</div>
 			<aside class="sidebar">
-<div class="widget-recent widget">
-	<h4 class="widget__title">Recent Posts</h4>
-	<div class="widget__content">
-		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/coding-note/apache_hbase/">Apache HBase</a></li>
-			<li class="widget__item"><a class="widget__link" href="/coding-note/binary_tree_traversal/">Binary tree traversal</a></li>
-			<li class="widget__item"><a class="widget__link" href="/coding-note/concurrency/">Concurrency</a></li>
-			<li class="widget__item"><a class="widget__link" href="/coding-note/database/">Database</a></li>
-			<li class="widget__item"><a class="widget__link" href="/coding-note/dog_pile_effect/">Dogpile effect</a></li>
-			<li class="widget__item"><a class="widget__link" href="/coding-note/dynamic_programming/">Dynamic Programming (DP)</a></li>
-			<li class="widget__item"><a class="widget__link" href="/coding-note/google_bigtable/">Google BigTable</a></li>
-			<li class="widget__item"><a class="widget__link" href="/coding-note/jaccard_similarity/">Jaccard Similarity</a></li>
-			<li class="widget__item"><a class="widget__link" href="/coding-note/mongodb/">MongoDB</a></li>
-			<li class="widget__item"><a class="widget__link" href="/coding-note/naming_variables/">Naming variables</a></li>
-		</ul>
-	</div>
-</div>
 <div class="widget-social widget">
 	<h4 class="widget-social__title widget__title">Social</h4>
 	<div class="widget-social__content widget__content">
@@ -401,7 +493,7 @@
 			</a>
 		</div>
 		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/cheburashkaF" target="_blank">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/science_n_code" target="_blank">
 				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
 				<span>Twitter</span>
 			</a>
@@ -462,14 +554,16 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gene-transfer/" title="gene transfer">gene transfer</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html/" title="html">html</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/javascript/" title="javascript">javascript</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/mongodb/" title="MongoDB">MongoDB</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/network/" title="network">network</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/newbies/" title="newbies">newbies</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nextjs/" title="nextjs">nextjs</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nosql/" title="nosql">nosql</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/numpy/" title="NumPy">NumPy</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/post/" title="post">post</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="python">python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python/" title="Python">Python</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/react/" title="react">react</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/reading/" title="reading">reading</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/software/" title="Software">Software</a>
@@ -479,8 +573,10 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/travel/" title="travel">travel</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/tree-traversal/" title="tree traversal">tree traversal</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/turkey/" title="turkey">turkey</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/typescript/" title="typescript">typescript</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/user-interface/" title="user interface">user interface</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/web-development/" title="web development">web development</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/webpack/" title="webpack">webpack</a>
 	</div>
 </div>
 </aside>

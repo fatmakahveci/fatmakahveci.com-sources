@@ -487,7 +487,7 @@ class HomePageView(TemplateView):
   - user accounts
   - groups
   - permissions
-  - cookie-based user sessions
+  - cookie-based user sessions:= In Django, sessions are stored as cookies.
 
 - It handles both authentication and authorization.
   - _Authentication_ verifies a user is who they claim to be.
@@ -516,6 +516,15 @@ if new_user is not None:
     # A backend authenticated the credentials
 else:
     # No backend authenticated the credentials
+```
+
+- `request.user` accesses the user.
+
+```python
+if request.user.is_authenticated:
+    # Do something for authenticated users.
+else: # Here user is an instance of AnonymousUser class
+    # Do something for anonymous users.
 ```
 
 #### Create a `superuser`

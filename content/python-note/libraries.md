@@ -295,3 +295,57 @@ comments: true
 ### 7.22 urllib3
 
 - [urllib3](https://pypi.org/project/urllib3/) is a powerful, user-friendly HTTP client for Python.
+
+---
+
+## 8. Graph Analytics
+
+### 8.1 NetworkX
+
+### 8.2 igraph
+
+### 8.3 karateclub
+
+### 8.4 graph-tool
+
+### 8.5 SNAP.py
+
+### 8.6 Deep Graph Library (DGL)
+
+### 8.7 PyTorch Geometric
+
+### 8.8 Spektral
+
+### 8.9 stellargraph
+
+### 8.10 scikit-network
+
+### 8.11 CDlib
+
+### 8.12 pyclustering
+
+### 8.13 Graphein
+
+### 8.14 nxviz
+
+### 8.15 Grakn
+
+### 8.16 Tulip
+
+### 8.17 PowerGraph
+
+### 8.18 Gephi
+
+### 8.19 PyG
+
+### 8.20 Python-I graph
+
+### 8.21 leidenalg
+
+### 8.22 markov-clustering
+
+### 8.23 NetworKit
+
+### 8.24 Grakel
+
+### 8.25 PyGraphistry

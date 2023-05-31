@@ -287,10 +287,10 @@
     
     <item>
       <title>Django for beginners</title>
-      <link>https://fatmakahveci.com/django-note/django/</link>
+      <link>https://fatmakahveci.com/backend-note/django/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fatmakahveci.com/django-note/django/</guid>
+      <guid>https://fatmakahveci.com/backend-note/django/</guid>
       <description>Updated by Fatma, Mar 28, 2023.</description>
     </item>
     
@@ -511,6 +511,15 @@
     </item>
     
     <item>
+      <title>HTML</title>
+      <link>https://fatmakahveci.com/frontend-note/html/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/frontend-note/html/</guid>
+      <description>Updated by Fatma, May 25, 2023.</description>
+    </item>
+    
+    <item>
       <title>import</title>
       <link>https://fatmakahveci.com/python-note/import/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -583,12 +592,12 @@
     </item>
     
     <item>
-      <title>JavaScript for beginners</title>
-      <link>https://fatmakahveci.com/javascript-note/javascript/</link>
+      <title>JavaScript</title>
+      <link>https://fatmakahveci.com/frontend-note/javascript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fatmakahveci.com/javascript-note/javascript/</guid>
-      <description>Updated by Fatma, Mar 28, 2023.</description>
+      <guid>https://fatmakahveci.com/frontend-note/javascript/</guid>
+      <description>Updated by Fatma, May 25, 2023.</description>
     </item>
     
     <item>
@@ -724,6 +733,15 @@
       
       <guid>https://fatmakahveci.com/coding-note/network/</guid>
       <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Next.js</title>
+      <link>https://fatmakahveci.com/frontend-note/next_js/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/frontend-note/next_js/</guid>
+      <description>Updated by Fatma, May 30, 2023.</description>
     </item>
     
     <item>
@@ -925,12 +943,12 @@
     </item>
     
     <item>
-      <title>React for beginners</title>
-      <link>https://fatmakahveci.com/react-note/react/</link>
+      <title>React</title>
+      <link>https://fatmakahveci.com/frontend-note/react/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fatmakahveci.com/react-note/react/</guid>
-      <description>Updated by Fatma, Mar 28, 2023.</description>
+      <guid>https://fatmakahveci.com/frontend-note/react/</guid>
+      <description>Updated by Fatma, May 25, 2023.</description>
     </item>
     
     <item>
@@ -1078,6 +1096,15 @@
     </item>
     
     <item>
+      <title>Tailwindcss</title>
+      <link>https://fatmakahveci.com/frontend-note/tailwindcss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/frontend-note/tailwindcss/</guid>
+      <description>Updated by Fatma, May 25, 2023.</description>
+    </item>
+    
+    <item>
       <title>tempfile</title>
       <link>https://fatmakahveci.com/python-note/tempfile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1159,6 +1186,15 @@
     </item>
     
     <item>
+      <title>Typescript</title>
+      <link>https://fatmakahveci.com/frontend-note/typescript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/frontend-note/typescript/</guid>
+      <description>Updated by Fatma, May 30, 2023.</description>
+    </item>
+    
+    <item>
       <title>typing - Support for type hints</title>
       <link>https://fatmakahveci.com/python-note/typing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1210,6 +1246,15 @@
       
       <guid>https://fatmakahveci.com/python-note/walrus/</guid>
       <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>webpack</title>
+      <link>https://fatmakahveci.com/frontend-note/webpack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/frontend-note/webpack/</guid>
+      <description>Updated by Fatma, May 28, 2023.</description>
     </item>
     
     <item>
