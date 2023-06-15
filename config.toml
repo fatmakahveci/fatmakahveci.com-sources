@@ -27,7 +27,7 @@ disqusShortname = "www-fatmakahveci-com-1" # Enable comments by entering your Di
   highlightColor = "#4a5fc1" # Override highlight color
   customCSS = ["css/custom.css"] # Include custom CSS files
   customJS = ["js/custom.js"] # Include custom JS files
-  mainSections = ["coding note"]
+  mainSections = ["coding-note"]
   googleFontsLink = "https://fonts.googleapis.com/css2?family=Life+Savers:wght@700&display=swap"
 
 [Params.style.vars]

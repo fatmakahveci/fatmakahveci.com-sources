@@ -106,6 +106,15 @@
     </item>
     
     <item>
+      <title>Barcelona</title>
+      <link>https://fatmakahveci.com/travel-note/barcelona/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/travel-note/barcelona/</guid>
+      <description>Updated by Fatma, Jun 12, 2023.</description>
+    </item>
+    
+    <item>
       <title>Bash for beginners</title>
       <link>https://fatmakahveci.com/bash-note/bash/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -340,6 +349,15 @@
     </item>
     
     <item>
+      <title>Content delivery network (CDN)</title>
+      <link>https://fatmakahveci.com/coding-note/cdn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/coding-note/cdn/</guid>
+      <description>Updated by Fatma, May 31, 2023.</description>
+    </item>
+    
+    <item>
       <title>Context Managers and the `with` statement</title>
       <link>https://fatmakahveci.com/python-note/context_manager/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -382,6 +400,15 @@
       
       <guid>https://fatmakahveci.com/bioinformatics-note/map_covid/</guid>
       <description>Here is the number of samples for each city in Turkey.</description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>https://fatmakahveci.com/frontend-note/css/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/frontend-note/css/</guid>
+      <description>Updated by Fatma, May 31, 2023.</description>
     </item>
     
     <item>
@@ -1182,7 +1209,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/frontend-note/next_js/</guid>
-      <description>Updated by Fatma, May 30, 2023.</description>
+      <description>Updated by Fatma, Jun 13, 2023.</description>
     </item>
     
     <item>
@@ -1434,7 +1461,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/frontend-note/react/</guid>
-      <description>Updated by Fatma, May 25, 2023.</description>
+      <description>Updated by Fatma, May 31, 2023.</description>
     </item>
     
     <item>
@@ -1462,6 +1489,15 @@
       
       <guid>https://fatmakahveci.com/python-note/regex/</guid>
       <description>Updated by Fatma, Mar 28, 2023.</description>
+    </item>
+    
+    <item>
+      <title>Responsive design</title>
+      <link>https://fatmakahveci.com/frontend-note/responsive_design/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/frontend-note/responsive_design/</guid>
+      <description>Updated by Fatma, Jun 08, 2023.</description>
     </item>
     
     <item>

@@ -18,4 +18,10 @@ comments: true
 - It uses predefined classes.
 - Install [`node.js`](https://nodejs.org/en)
 - Run `npx tailwindcss init`
-- `npx tailwindcss -i <file>.css -o <dir>/style.css --watch`
+- `npx tailwindcss -i <dir>/<css_file_name>.css -o <dir>/<css_file_name>.css --watch`
+
+## Hover and focus states
+
+```css
+
+```

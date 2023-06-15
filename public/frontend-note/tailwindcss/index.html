@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Tailwindcss">
 <meta itemprop="description" content="Tailwindcss">
 
-<meta itemprop="wordCount" content="25">
+<meta itemprop="wordCount" content="29">
 <meta itemprop="keywords" content="user interface,coding,framework,frontend,web development," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -133,7 +133,11 @@
 <div class="post__toc toc">
 	<div class="toc__title">Page content</div>
 	<div class="toc__menu">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#hover-and-focus-states">Hover and focus states</a></li>
+  </ul>
+</nav>
 	</div>
 </div>
 <div class="content post__content clearfix">
@@ -143,9 +147,10 @@
 <li>Install <a href="https://nodejs.org/en" target="_blank" ><code>node.js</code></a>
 </li>
 <li>Run <code>npx tailwindcss init</code></li>
-<li><code>npx tailwindcss -i &lt;file&gt;.css -o &lt;dir&gt;/style.css --watch</code></li>
+<li><code>npx tailwindcss -i &lt;dir&gt;/&lt;css_file_name&gt;.css -o &lt;dir&gt;/&lt;css_file_name&gt;.css --watch</code></li>
 </ul>
-
+<h2 id="hover-and-focus-states">Hover and focus states</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"></code></pre></div>
 		</div>
 		<footer class="post__footer">
 			
@@ -187,9 +192,9 @@
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/frontend-note/react/" rel="next">
+		<a class="pager__link" href="/frontend-note/responsive_design/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">React</p>
+			<p class="pager__title">Responsive design</p>
 		</a>
 	</div>
 </nav>
@@ -220,6 +225,23 @@
 
 			</div>
 			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/coding-note/apache_hbase/">Apache HBase</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/binary_tree_traversal/">Binary tree traversal</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/concurrency/">Concurrency</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/cdn/">Content delivery network (CDN)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/database/">Database</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dog_pile_effect/">Dogpile effect</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dynamic_programming/">Dynamic Programming (DP)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/google_bigtable/">Google BigTable</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/jaccard_similarity/">Jaccard Similarity</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/mongodb/">MongoDB</a></li>
+		</ul>
+	</div>
+</div>
 <div class="widget-social widget">
 	<h4 class="widget-social__title widget__title">Social</h4>
 	<div class="widget-social__content widget__content">
@@ -344,6 +366,7 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/concurrency/" title="concurrency">concurrency</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/covid19/" title="covid19">covid19</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="css">css</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/data/" title="data">data</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>

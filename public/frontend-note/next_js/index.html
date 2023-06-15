@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Next.js">
 <meta itemprop="description" content="Next.js">
 
-<meta itemprop="wordCount" content="471">
+<meta itemprop="wordCount" content="584">
 <meta itemprop="keywords" content="nextjs,react,user interface,coding,framework,frontend,web development," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -135,6 +135,7 @@
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
+    <li><a href="#hello-world">Hello world</a></li>
     <li><a href="#document-object-model-dom">Document object model (DOM)</a></li>
     <li><a href="#pre-rendering">Pre-rendering</a>
       <ul>
@@ -148,12 +149,19 @@
         <li><a href="#root-layout">Root Layout</a></li>
       </ul>
     </li>
+    <li><a href="#dynamic-routes">Dynamic routes</a></li>
+    <li><a href="#routing">Routing</a>
+      <ul>
+        <li><a href="#the-app-router">The <code>app</code> router</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 	</div>
 </div>
 <div class="content post__content clearfix">
-			<ul>
+			<p><img src="/img/next_js_header.png" alt="header"></p>
+<ul>
 <li>
 <p><code>Next.js</code> is a web framework that gives you building blocks to create web applications.</p>
 </li>
@@ -176,7 +184,7 @@
 <p><strong>Rendering:</strong> When and where you render static or dynamic content</p>
 </li>
 <li>
-<p><strong>Integrations:</strong> What third-party services you use (CMS, auth, payments, etc) and how you connect to them</p>
+<p><strong>Integrations:</strong> What third-party services that you use (CMS, auth, payments, etc) and how you connect to them</p>
 </li>
 <li>
 <p><strong>Infrastructure:</strong> Where you deploy, store, and run your application code (Serverless, CDN, Edge, etc)</p>
@@ -191,7 +199,11 @@
 <p><strong>Developer Experience:</strong> Your team&rsquo;s experience building and maintaining your application</p>
 </li>
 </ul>
-<h2 id="document-object-model-dom">Document object model (DOM)</h2>
+<h2 id="hello-world">Hello world</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx create-next-app my-app
+</span></span><span style="display:flex;"><span>cd my-app
+</span></span><span style="display:flex;"><span>npm run dev
+</span></span></code></pre></div><h2 id="document-object-model-dom">Document object model (DOM)</h2>
 <ul>
 <li><code>DOM</code> is an object representation of the HTML elements.</li>
 <li>It acts as a bridge between your code and the UI.</li>
@@ -200,9 +212,32 @@
 </ul>
 <h2 id="pre-rendering">Pre-rendering</h2>
 <ul>
-<li><code>Next.js</code> has two forms of pre-rendering.</li>
-<li>You can create a hybrid app by using static generation for most pages and using server-side rendering for others.</li>
+<li>
+<p><code>Next.js</code> has two forms of pre-rendering.</p>
+</li>
+<li>
+<p>You can create a hybrid app by using static generation for most pages and using server-side rendering for others.</p>
+</li>
+<li>
+<p><a href="https://nextjs.org/learn/basics/data-fetching/pre-rendering" target="_blank" >Pre-rendering vs. no pre-rendering</a>
+</p>
+</li>
 </ul>
+<p><img src="/img/prerendering.png" alt="prerendering"></p>
+<p><img src="/img/no_prerendering.png" alt="no_prerendering"></p>
+<ul>
+<li><a href="https://nextjs.org/learn/basics/data-fetching/two-forms" target="_blank" >Static generation vs. server-side rendering</a>
+</li>
+</ul>
+<p><img src="/img/static_generation.png" alt="static_generation"></p>
+<p><img src="/img/ssr.png" alt="ssr"></p>
+<p><img src="/img/static_generation_w_data.png" alt="static_generation_w_data"></p>
+<p><img src="/img/static_generation_wo_data.png" alt="static_generation_wo_data"></p>
+<ul>
+<li><a href="https://nextjs.org/learn/basics/data-fetching/blog-data" target="_blank" >getStaticProps</a>
+</li>
+</ul>
+<p><img src="/img/getStaticProps.png" alt="getStaticProps"></p>
 <h3 id="1-static-generation">1. Static generation</h3>
 <ul>
 <li>The HTML is generated at build time and will be reused on each request.</li>
@@ -217,24 +252,60 @@
 </ul>
 <h2 id="pages">Pages</h2>
 <ul>
-<li>A page is UI that is unique to a route.</li>
-<li>A page is always the leaf of the route subtree.</li>
-<li><code>.js</code>, <code>.jsx</code> or <code>.ts</code> files can be used for pages.</li>
-<li>A <code>page.js</code> file is required to make a route segment publicly accessible.</li>
-<li>Pages are Server Components by default but can be set to a Client Component.</li>
-<li>Pages can fetch data. View the Data Fetching section for more information.</li>
+<li>
+<p>A page is UI that is unique to a route.</p>
+</li>
+<li>
+<p>Any file created inside of the <code>pages</code> directory would act as a route in the UI.</p>
+</li>
+<li>
+<p>The following routes to <code>www.website.com/home</code></p>
+<pre tabindex="0"><code class="language-code" data-lang="code">pages
+  |__ home.jsx
+</code></pre></li>
+<li>
+<p>A page is always the leaf of the route subtree.</p>
+</li>
+<li>
+<p><code>.js</code>, <code>.jsx</code> or <code>.ts</code> files can be used for pages.</p>
+</li>
+<li>
+<p>A <code>page.js</code> file is required to make a route segment publicly accessible.</p>
+</li>
+<li>
+<p>Pages are Server Components by default but can be set to a Client Component.</p>
+</li>
+<li>
+<p>Pages can fetch data. View the Data Fetching section for more information.</p>
+</li>
 </ul>
 <h2 id="layouts">Layouts</h2>
 <ul>
 <li>A layout is UI that is shared between multiple pages.</li>
-<li>Any route segment can optionally define its own Layout. These layouts will be shared across all pages in that segment.</li>
+<li>Any route segment can optionally define its Layout. These layouts will be shared across all pages in that segment.</li>
 <li><code>.js</code>, <code>.jsx</code> or <code>.ts</code> files can be used for layouts.</li>
-<li>A <code>layout.js</code> and <code>page.js</code> file can be defined in the same folder. The layout will wrap the page.</li>
+<li>A <code>layout.js</code> and <code>page.js</code> file can be defined in the same folder. The layout will wrap up the page.</li>
+<li>A layout can render another layout or a page inside of it.</li>
 </ul>
 <h3 id="root-layout">Root Layout</h3>
 <ul>
 <li>The <code>app</code> directory must include a root layout.</li>
-<li>The top-most layout is called the Root Layout. This required layout is shared across all pages in an application. Root layouts must contain <code>html</code> and <code>body</code> tags.</li>
+<li>The topmost layout is called the Root Layout. This required layout is shared across all pages in an application. Root layouts must contain <code>html</code> and <code>body</code> tags.</li>
+</ul>
+<h2 id="dynamic-routes">Dynamic routes</h2>
+<ul>
+<li>A dynamic segment (<code>[folderName]</code>) can be accessed from <code>useRouter</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useRouter</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;next/router&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Page</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRouter</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Post</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">query</span>.<span style="color:#a6e22e">slug</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="routing">Routing</h2>
+<h3 id="the-app-router">The <code>app</code> router</h3>
+<ul>
+<li>By default, the <code>app</code> router uses server components. It renders components on the server and reduces the <code>JS</code> sent to the client.</li>
 </ul>
 
 		</div>
@@ -317,6 +388,23 @@
 
 			</div>
 			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/coding-note/apache_hbase/">Apache HBase</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/binary_tree_traversal/">Binary tree traversal</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/concurrency/">Concurrency</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/cdn/">Content delivery network (CDN)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/database/">Database</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dog_pile_effect/">Dogpile effect</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/dynamic_programming/">Dynamic Programming (DP)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/google_bigtable/">Google BigTable</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/jaccard_similarity/">Jaccard Similarity</a></li>
+			<li class="widget__item"><a class="widget__link" href="/coding-note/mongodb/">MongoDB</a></li>
+		</ul>
+	</div>
+</div>
 <div class="widget-social widget">
 	<h4 class="widget-social__title widget__title">Social</h4>
 	<div class="widget-social__content widget__content">
@@ -441,6 +529,7 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/coding/" title="coding">coding</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/concurrency/" title="concurrency">concurrency</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/covid19/" title="covid19">covid19</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="css">css</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/data/" title="data">data</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/data-structures/" title="data structures">data structures</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>

@@ -1,8 +1,8 @@
 ---
 title: Next.js
 description: Next.js
-summary: "Updated by Fatma, May 30, 2023."
-date: 30-05-2023
+summary: "Updated by Fatma, Jun 13, 2023."
+date: 13-06-2023
 categories:
   - "Coding"
 tags:
@@ -16,6 +16,8 @@ tags:
 comments: true
 ---
 
+![header](/img/next_js_header.png)
+
 - `Next.js` is a web framework that gives you building blocks to create web applications.
 - It handles the tooling and configuration needed for React.
 - It provides additional structure, features, and optimizations for your app.
@@ -24,11 +26,19 @@ comments: true
 - **Routing:** How users navigate between different parts of your application
 - **Data Fetching:** Where your data lives and how to get it
 - **Rendering:** When and where you render static or dynamic content
-- **Integrations:** What third-party services you use (CMS, auth, payments, etc) and how you connect to them
+- **Integrations:** What third-party services that you use (CMS, auth, payments, etc) and how you connect to them
 - **Infrastructure:** Where you deploy, store, and run your application code (Serverless, CDN, Edge, etc)
 - **Performance:** How to optimize your application for end-users
 - **Scalability:** How your application adapts as your team, data, and traffic grow
 - **Developer Experience:** Your team's experience building and maintaining your application
+
+## Hello world
+
+```bash
+npx create-next-app my-app
+cd my-app
+npm run dev
+```
 
 ## Document object model (DOM)
 
@@ -41,6 +51,26 @@ comments: true
 
 - `Next.js` has two forms of pre-rendering.
 - You can create a hybrid app by using static generation for most pages and using server-side rendering for others.
+
+- [Pre-rendering vs. no pre-rendering](https://nextjs.org/learn/basics/data-fetching/pre-rendering)
+
+![prerendering](/img/prerendering.png)
+
+![no_prerendering](/img/no_prerendering.png)
+
+- [Static generation vs. server-side rendering](https://nextjs.org/learn/basics/data-fetching/two-forms)
+
+![static_generation](/img/static_generation.png)
+
+![ssr](/img/ssr.png)
+
+![static_generation_w_data](/img/static_generation_w_data.png)
+
+![static_generation_wo_data](/img/static_generation_wo_data.png)
+
+- [getStaticProps](https://nextjs.org/learn/basics/data-fetching/blog-data)
+
+![getStaticProps](/img/getStaticProps.png)
 
 ### 1. Static generation
 
@@ -56,6 +86,15 @@ comments: true
 ## Pages
 
 - A page is UI that is unique to a route.
+- Any file created inside of the `pages` directory would act as a route in the UI.
+
+- The following routes to `www.website.com/home`
+
+  ```code
+  pages
+    |__ home.jsx
+  ```
+
 - A page is always the leaf of the route subtree.
 - `.js`, `.jsx` or `.ts` files can be used for pages.
 - A `page.js` file is required to make a route segment publicly accessible.
@@ -65,11 +104,31 @@ comments: true
 ## Layouts
 
 - A layout is UI that is shared between multiple pages.
-- Any route segment can optionally define its own Layout. These layouts will be shared across all pages in that segment.
+- Any route segment can optionally define its Layout. These layouts will be shared across all pages in that segment.
 - `.js`, `.jsx` or `.ts` files can be used for layouts.
-- A `layout.js` and `page.js` file can be defined in the same folder. The layout will wrap the page.
+- A `layout.js` and `page.js` file can be defined in the same folder. The layout will wrap up the page.
+- A layout can render another layout or a page inside of it.
 
 ### Root Layout
 
 - The `app` directory must include a root layout.
-- The top-most layout is called the Root Layout. This required layout is shared across all pages in an application. Root layouts must contain `html` and `body` tags.
+- The topmost layout is called the Root Layout. This required layout is shared across all pages in an application. Root layouts must contain `html` and `body` tags.
+
+## Dynamic routes
+
+- A dynamic segment (`[folderName]`) can be accessed from `useRouter`.
+
+```javascript
+import { useRouter } from 'next/router';
+
+export default function Page() {
+  const router = useRouter();
+  return <p>Post: {router.query.slug}</p>;
+}
+```
+
+## Routing
+
+### The `app` router
+
+- By default, the `app` router uses server components. It renders components on the server and reduces the `JS` sent to the client.
