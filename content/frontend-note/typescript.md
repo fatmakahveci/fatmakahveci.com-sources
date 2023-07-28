@@ -1,8 +1,8 @@
 ---
 title: Typescript
 description: Typescript
-summary: "Updated by Fatma, May 30, 2023."
-date: 30-05-2023
+summary: "Updated by Fatma, Jul 28, 2023."
+date: 28-07-2023
 categories:
   - "Coding"
 tags:
@@ -20,9 +20,9 @@ comments: true
 - `Typescript` offers all `JS`'s features, and typing system.
 - It also supports object-oriented programming as `JS`.
 
-## Installation
+## 1. Installation
 
-### `Node.js` and `npm` (node package manager)
+### 1.1 `Node.js` and `npm` (node package manager)
 
 - They are required to setup the environment. After installing them, you can check using the following commands:
 
@@ -31,7 +31,7 @@ comments: true
   npm -v # checks the version
   ```
 
-### `typeScript`
+### 1.2 `typeScript`
 
 ```bash
 npm install -g typescript
@@ -40,7 +40,7 @@ npm install -g typescript
 - The line above installs the `TypeScript` Compiler `tsc` globally.
 - You can also use `npx` to run `tsc` from a local `node_modules` package instead.
 
-## Hello world
+## 2. Hello world
 
 ```typescript
 // typeScript filename: greeting.ts
@@ -56,39 +56,76 @@ tsc greeting.ts
 node greeting.js
 ```
 
-## Compilation
+## 3. Compilation
 
 - Because browsers and `Node.js` process only `JavaScript`, you must compile your `TypeScript` code before running or debugging it.
   - `tsc <file1>.ts <file2>.ts --outDir ./dist` keeps the directory clean.
 
-## Data types
+## 4. Data types
 
-### Primitive types
+### 4.1 Primitive types
 
-#### `string`
+#### 4.1.1 `string`
 
 ```typescript
 var greeting: string = "Hello World";
-console.log(greeting.toLowerCase());
-console.log(greeting);
+console.log(greeting.toLowerCase()); // "hello world"
+console.log(greeting); // "Hello World"
+
+// Multi-line strings
+let firstName: string = `Bob`;
+let profile: string = `Hello
+I'm ${firstName}.`;
 ```
 
-#### `number`
+#### 4.1.2 `number`
 
-- There's no equivalent to `int` or `float` - everything is simply `number`.
+- There's no equivalent to `int` or `float`, but big integers get the type `bigint`.
 
-#### `boolean`
+```typescript
+// Binary numbers := 0b... or 0B...
+let bin = 0b100;
+let anotherBin: number = 0B010;
+
+// Octal numbers := 0o...
+let octal: number = 0o10;
+
+// Hexadecimal numbers := 0x... or 0X...
+// The digits after the 0x must be in the range (0123456789ABCDEF).
+let hexadecimal: number = 0XA;
+
+// Big integers := ...n
+let big: bigint = 9007199254740991n;
+```
+
+#### 4.1.3 `boolean`
 
 - `true` and `false`
 
-### `array`
+### 4.2 `array`
 
 ```typescript
+// let arrayName: type[];
+
 let list: number[] = [1, 2, 3];
 let list: Array<number> = [1, 2, 3];
 ```
 
-### `any`
+- `forEach()`, `map()`, `reduce()`, and `filter()` are useful array methods.
+
+```typescript
+let arr: number[] = [1, 2]; // [ 1, 2 ]
+let square: number[] = arr.map(e => e * e); // [ 1, 4 ]
+```
+
+- Mixed types
+
+```typescript
+let scores : (string | number)[];
+scores = ['Bob', 100]; // [ 'Bob', 100 ]
+```
+
+### 4.3 `any`
 
 - You can use whenever you don't want a particular value to cause typechecking errors, except instead of `never`.
 
@@ -101,18 +138,18 @@ let strictlyTyped: unknown = 4;
 strictlyTyped.toFixed();
 ```
 
-### `never`
+### 4.4 `never`
 
 - It indicates that a function will never return or that a value will never be assignable to a particular type.
 
-### Type annotations on variables
+### 4.5 Type annotations on variables
 
-#### `var`
+#### 4.5.1 `var`
 
 - `var` is valid.
 - `var name: string = 'Simon';`
 
-#### `let`
+#### 4.5.2 `let`
 
 - `let` creates a variable.
 - It allows you to declare block-level variables.
@@ -122,7 +159,7 @@ strictlyTyped.toFixed();
 let name: string = 'Simon';
 ```
 
-#### `const`
+#### 4.5.3 `const`
 
 - `const` creates a constant value. (mostly)
 - `const` variables are never intended to change.
@@ -131,14 +168,14 @@ let name: string = 'Simon';
 const Pi: number = 3.14;
 ```
 
-### Composing types
+### 4.6 Composing types
 
-#### Union (`|`)
+#### 4.6.1 Union (`|`)
 
 - It declares that an object can be more than one type.
   - `type StringOrNumber = string | number;`
 
-### `Date`
+### 4.7 `Date`
 
 ```typescript
 function greet(person: string, date: Date) {
@@ -147,7 +184,7 @@ function greet(person: string, date: Date) {
 greet("Bob", new Date(2023, 5, 28));
 ```
 
-### `enum`
+### 4.8 `enum`
 
 - You can define a set of named constants using `enum`.
 
@@ -160,28 +197,41 @@ enum Color {
 let c: Color = Color.Green;
 ```
 
-### `object`
+### 4.9 `object`
 
 - It represents the non-primitive type.
 - It refers to any JavaScript value with properties.
 - To define an object type, we simply list its properties and their types.
+- Object types are functions, arrays, classes, etc.
 
 ```typescript
-function printCoord(pt: { x: number; y: number }) {}
+function printCoord(pt: { x: number; y: number }) { }
+
+// combined representation
+let employee: {
+    firstName: string;
+    lastName: string;
+} = {
+    firstName: 'Jane',
+    lastName: 'Doe',
+};
+
+// empty
+let vacant: {} = {};
 ```
 
-#### Optional properties
+#### 4.9.1 Optional properties
 
 - When you read from an optional property, you must check for `undefined` before using it.
 
 ```typescript
-function printName(obj: { first: string; last?: string }) {}
+function printName(obj: { first: string; last?: string }) { }
 
 printName({ first: "Bob" });
 printName({ first: "Alice", last: "Alisson" });
 ```
 
-### `null` and `undefined`
+### 4.10 `null` and `undefined`
 
 - These primitive values are used to signal absent or uninitialized value.
 
@@ -190,10 +240,11 @@ let u: undefined = undefined;
 let n: null = null;
 ```
 
-### `tuple`
+### 4.11 `tuple`
 
 ```typescript
-const passingResponse: [string, number] = ["{}", 200];
+const passingResponse: [string, number] = ["{}", 200]; // [ '{}', 200 ]
+let colour: [number, number, number] = [255, 0, 0]; // [ 255, 0, 0 ]
 ```
 
 ```typescript
@@ -205,7 +256,7 @@ const payStubs: PayStubs[] = [
 ];
 ```
 
-### `unknown`
+### 4.12 `unknown`
 
 - It describes the type of variables that we do not know when we are writing the code.
 
@@ -215,9 +266,9 @@ notSure = "maybe a string instead"; // OK
 notSure = false; // OK
 ```
 
-### `void`
+### 4.13 `void`
 
-- It is a little like the opposite of any: the absence of having any type at all. You may commonly see this as the return type of functions that do not return a value:
+- It is a little like the opposite of any: the absence of having any type at all. It is a good practice to add the void type as the return type of a function or a method that doesn't return any value.
 
 ```typescript
 function warnUser(): void {
@@ -225,7 +276,7 @@ function warnUser(): void {
 }
 ```
 
-### `bigint`
+### 4.14 `bigint`
 
 - For very large integers.
 
@@ -234,7 +285,7 @@ const oneHundred: bigint = BigInt(100);
 const anotherHundred: bigint = 100n;
 ```
 
-### `symbol`
+### 4.15 `symbol`
 
 - `symbol` := immutable and unique
 
@@ -253,9 +304,9 @@ toString()
 valueOf()
 ```
 
-## Functions
+## 5. Functions
 
-### Parameter type annotations
+### 5.1 Parameter type annotations
 
 ```typescript
 function greet(name: string) {
@@ -263,7 +314,7 @@ function greet(name: string) {
 }
 ```
 
-### Return type annotations
+### 5.2 Return type annotations
 
 ```typescript
 function getNumber(): number {
@@ -271,7 +322,7 @@ function getNumber(): number {
 }
 ```
 
-### Anonymous functions
+### 5.3 Anonymous functions
 
 ```typescript
 const names = ["Alice", "Bob", "Eve"];
@@ -285,11 +336,11 @@ names.forEach((s) => {
 });
 ```
 
-## Interfaces and type aliases
+## 6. Interfaces and type aliases
 
 - The key distinction is that a `type` cannot be re-opened to add new properties vs an `interface` which is always extendable.
 
-### Interfaces
+### 6.1 Interfaces
 
 ```typescript
 interface Point {
@@ -297,10 +348,10 @@ interface Point {
   y: number;
 }
 
-function printCoord(pt: Point) {}
+function printCoord(pt: Point) { }
 ```
 
-### Type aliases
+### 6.2 Type aliases
 
 - A type alias is exactly that - a name for any type.
 
@@ -310,10 +361,10 @@ type Point = {
   y: number;
 };
 
-function printCoord(pt: Point) {}
+function printCoord(pt: Point) { }
 ```
 
-## Type assertions
+## 7. Type assertions
 
 - They are removed by the compiler, like a type annotation, and won't affect the runtime behavior of your code.
 
@@ -323,7 +374,7 @@ const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
 const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas"); // you can use <>, except if the code is in a .tsx file
 ```
 
-## Literal types
+## 8. Literal types
 
 ```typescript
 // combining literal types (return)
@@ -332,7 +383,7 @@ function compare(a: string, b: string): -1 | 0 | 1 {
 }
 ```
 
-## Narrowing
+## 9. Narrowing
 
 - The process of refining types to more specific types than declared is called narrowing.
 
@@ -345,7 +396,7 @@ function padLeft(padding: number | string, input: string) {
 }
 ```
 
-### `in`
+### 9.1 `in`
 
 - `in` operator determines if an object has a property with a name.
 
@@ -361,15 +412,15 @@ function move(animal: Fish | Bird) {
 }
 ```
 
-### `instanceof`
+### 9.2 `instanceof`
 
 - It has an operator for checking whether or not a value is an “instance” of another value.
 
-## `typeof`
+## 10. `typeof`
 
 - It shows the type of values we have at runtime.
 
-## Type predicate
+## 11. Type predicate
 
 - To define a user-defined type guard, we simply need to define a function whose return type is a type predicate:
 
@@ -381,4 +432,37 @@ if (isFish(pet)) {
 } else {
   pet.fly();
 }
+```
+
+## 12. Parameters
+
+### 12.1 Rest parameters
+
+- It allows you to represent an indefinite number (zero or more) of arguments as an array.
+
+```typescript
+function <function_name>(...<parameter_name>: <parameter_type>[]) { }
+```
+
+- Rules:
+  - A function has only one rest parameter.
+  - The rest parameter appears last in the parameter list.
+  - The type of the rest parameter is _array_.
+
+### 12.2 Default parameters
+
+- The default initialised value for the _omitted_ parameters.
+- Default parameters don't need to appear after the required parameters. When a default parameter appears before a required parameter, you need to explicitly pass `undefined` to get the default initialised value.
+
+```typescript
+function <function_name>(<parameter_name>: <parameter_type>=<default_value>,...): <return_type_if_any>{ }
+```
+
+### 12.3 Optional parameters
+
+- Optional parameters must come after the required parameters.
+- Using `?` after the parameter name makes a function parameter optional.
+
+```typescript
+function <function_name>(<parameter_name>?: <parameter_type>=<default_value>,...): <return_type_if_any>{ }
 ```

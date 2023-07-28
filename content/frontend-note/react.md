@@ -1,8 +1,8 @@
 ---
 title: React
 description: React
-summary: "Updated by Fatma, May 31, 2023."
-date: 31-05-2023
+summary: "Updated by Fatma, Jul 25, 2023."
+date: 25-07-2023
 categories:
   - "Coding"
 tags:
@@ -17,7 +17,7 @@ comments: true
 
 ![react](/img/react.gif)
 
-- [React](`https://reactjs.org/docs/getting-started.html`) is a `Javascripty` library for building interactive user interfaces.
+- [React](`https://reactjs.org/docs/getting-started.html`) is a `Javascript` library for building interactive user interfaces.
 
 ## The fundamentals of React
 

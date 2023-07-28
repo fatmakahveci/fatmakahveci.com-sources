@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="The programmers brain">
 <meta itemprop="description" content="Some of the influential parts from the books that I have read.">
 
-<meta itemprop="wordCount" content="792">
+<meta itemprop="wordCount" content="3149">
 <meta itemprop="keywords" content="post,reading," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -141,10 +141,10 @@
         <li><a href="#2-read-code-quickly-and-get-a-sense-of-its-workings">2 Read code quickly and get a sense of its workings</a></li>
         <li><a href="#3-learn-programming-syntax-and-concepts">3 Learn programming syntax and concepts</a></li>
         <li><a href="#4-read-complex-code">4 Read complex code</a></li>
-        <li><a href="#5-understanding-of-unfamiliar-code-deeply">5 Understanding of unfamiliar code deeply</a></li>
+        <li><a href="#5-reaching-a-deeper-understanding-of-code">5 Reaching a deeper understanding of code</a></li>
         <li><a href="#6-solve-programming-problems-better">6 Solve programming problems better</a></li>
-        <li><a href="#7-avoid-bugs-in-code-and-in-thinking">7 Avoid bugs in code and in thinking</a></li>
-        <li><a href="#8-select-clear-variable-names">8 Select clear variable names</a></li>
+        <li><a href="#7-misconceptions-bugs-in-thinking">7 Misconceptions: Bugs in thinking</a></li>
+        <li><a href="#8-how-to-get-better-at-naming-things">8 How to get better at naming things</a></li>
         <li><a href="#9-code-smells-and-the-cognitive-principles-behind-them">9 Code smells and the cognitive principles behind them</a></li>
         <li><a href="#10-advanced-techniques-to-solve-complex-problems">10 Advanced techniques to solve complex problems</a></li>
         <li><a href="#11-the-act-of-coding-and-variety-of-tasks-in-programming">11 The act of coding and variety of tasks in programming</a></li>
@@ -256,7 +256,7 @@
 </li>
 <li>STM first stores information when you read code.
 <ul>
-<li>The time and size (2-6 things) limit STM to remember the information.
+<li>The time and size (2-6 things) limit STM to remember the information. You can use chunking for more, such as design patterns.
 <ul>
 <li>STM and LTM collaborate to overcome STM&rsquo;s size limitation.</li>
 </ul>
@@ -339,23 +339,351 @@
 </ul>
 <h3 id="3-learn-programming-syntax-and-concepts">3 Learn programming syntax and concepts</h3>
 <ul>
-<li>The use of LTM, different forms of remembering, and ways to strengthen the cognitive process</li>
+<li>Knowing more syntax by heart eases chunking and avoids interrupting your work.</li>
+<li>Regular practices fight memory decay.</li>
+<li>Flashcards help to practice and remember the new syntax.</li>
+<li>Retrieval practice, trying to remember information before looking it up, is the best way.</li>
+<li>Spreading the practices maximize remembering.</li>
+<li>LTM stores information as a connected network of related facts.</li>
+<li>Engaging in the active processing of new information enhances the interconnectedness of memories, facilitating their retrieval and strengthening the memory network.</li>
 </ul>
 <h3 id="4-read-complex-code">4 Read complex code</h3>
 <ul>
-<li>Information overload and how to prevent the brain from overloading</li>
+<li>
+<p>Working memory is like the brain&rsquo;s processor. It processes <code>1+2+3=</code>.</p>
+</li>
+<li>
+<p>Cognitive load is the capacity to process two to six things at once. If the code is difficult to comprehend and you want to take notes or carefully track each step of execution, you may be facing a significant cognitive burden.</p>
+</li>
+<li>
+<p>Working memory overloads when too many elements cannot be divided efficiently into chunks.</p>
+</li>
+<li>
+<p>Types of cognitive load as they relate to programming</p>
+<ul>
+<li><strong>Intrinsic load</strong> means how complex the problem is inside (inherent complexity).</li>
+<li><strong>Extraneous load</strong> is what outside distractions add to the problem. It often occurs by accident.</li>
 </ul>
-<h3 id="5-understanding-of-unfamiliar-code-deeply">5 Understanding of unfamiliar code deeply</h3>
+</li>
+<li>
+<p>Techniques to reduce load</p>
+<ul>
+<li>
+<p><strong>Refactoring</strong> eases the maintenance and makes the code more readable.</p>
+<ul>
+<li><strong>Inlining</strong> is to take a method and copy the body directly at the call site. It is a clear choice when it has a vague name.</li>
+<li>Putting a method definition close to its first call reduces extraneous cognitive load.</li>
+</ul>
+</li>
+<li>
+<p><strong>Replacing unfamiliar language constructs</strong>, such as list comprehensions, lambdas and ternary operators.</p>
+</li>
+<li>
+<p><strong>Code synonyms are great additions to a flashcard deck.</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Memory aids to use when your working memory is overloaded:</p>
+<ul>
+<li>
+<p><strong>Creating a dependency graph</strong> helps you understand an interconnected code.</p>
+<ol>
+<li>Circle all the variables.</li>
+<li>Link similar variables.</li>
+<li>Circle all method/function calls in a different colour.</li>
+<li>Link methods/functions to their definitions.</li>
+<li>Circle all instances of classes in a third colour.</li>
+<li>Draw a link between classes and their instances.</li>
+</ol>
+</li>
+<li>
+<p><strong>Creating a state table</strong> containing the intermediate values of variables for code with complex calculations may be util.</p>
+<ol>
+<li>Make a list of all the variables.</li>
+<li>Create a table and give each variable its column.</li>
+<li>Add one row to the table for each distinct part of the execution of the code.</li>
+<li>Execute each part of the code and write down the value of each variable in its cell.</li>
+</ol>
+</li>
+<li>
+<p><strong>Combining dependency graphs and state tables</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-reaching-a-deeper-understanding-of-code">5 Reaching a deeper understanding of code</h3>
+<ul>
+<li>
+<p>Figure out what roles the variables play when reading an unfamiliar code</p>
+<ul>
+<li>There are eleven roles to cover almost all variables:
+<ol>
+<li><strong>Fixed value</strong> is initialized once and never change, such as <em>pi</em>.</li>
+<li><strong>Stepper</strong> can be predicted as soon as the succession starts. It always iterates over a list of values that are known beforehand. It can be an integer.</li>
+<li><strong>Flag</strong> indicates that something happened or is the case.</li>
+<li><strong>Walker</strong> traverses a data structure like a stepper. It traverses a data structure unknown before the loop starts. It might be a pointer or integer index.</li>
+<li><strong>Most recent holder</strong> holds the latest value encountered in going through a series of values.</li>
+<li><strong>Most wanted holder</strong> holds the variable searched for a value.</li>
+<li><strong>Gatherer</strong> collects and aggregates data into one value.</li>
+<li><strong>Follower</strong> keeps track of a previous or subsequent value. It is always coupled to another variable. e.g., previous element in a linked list when traversing the list.</li>
+<li><strong>Container</strong> is a data structure holding multiple elements that can be added and removed. e.g., lists, arrays, stacks, and trees.</li>
+<li><strong>Organizer</strong> is only used for rearranging or storing values differently.</li>
+<li><strong>Temporary</strong> is used only briefly. It can be to swap data or store the result of a computation used multiple times in a method.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>A group of roles often characterizes a type of program. e.g. a program with a stepper and a most wanted holder value is a search program.</p>
+</li>
+<li>
+<p>Text structure vs plan knowledge</p>
+<ul>
+<li>Text structure knowledge is to know the syntactic concepts.</li>
+<li>Plan knowledge is to understand the intentions of the code&rsquo;s creator. It is to learn what parts of the code relate to other parts and how.
+<ol>
+<li>Find a focal point. e.g. <code>main()</code> in Java. You need to understand how the framework links code together to know where to start.</li>
+<li>Expand knowledge from the focal point. Look for relationships in the code.</li>
+<li>Understand a concept from a set of related entities. You can check call patterns. For example, is there a method called in several places? It might be critical in the codebase.</li>
+<li>Understand concepts across multiple entities. Check for the operations applied to the data structures and the constraints on them.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>Your ability to learn a natural language can predict your ability to learn to program.</p>
+</li>
+<li>
+<p>There are different strategies to gain a deeper understanding of code, such as visualizing and summarizing.</p>
+</li>
+<li>
+<p>Programmers first scan the code. Novices read more linearly, whereas experts mostly follow the call stack.</p>
+</li>
+</ul>
+<p>Strategies for reading comprehension:</p>
+<ol>
+<li><strong>Activating</strong> is actively thinking of related things to activate prior knowledge. Giving yourself a fixed amount of time to study code and get a sense of what it&rsquo;s about activates prior knowledge. Questions:
+<ol>
+<li>What was the first element that caught your eye? Why? &hellip;</li>
+<li>Are these related?</li>
+<li>What concepts (syntactic or domain) are present? Do you know all?</li>
+</ol>
+</li>
+<li><strong>Monitoring</strong> is keeping track of your understanding of a text. Mark the lines that you understand and make you confused. In your second time, you can focus on the confusing lines.</li>
+<li><strong>Determining importance</strong> is deciding what parts of a text are most relevant. Put an exclamation mark on the lines that look important. Questions:
+<ol>
+<li>Why did you choose them?</li>
+<li>What role do those lines have?</li>
+<li>How are they connected to the overall?</li>
+</ol>
+</li>
+<li><strong>Inferring</strong> is filling in facts that are not explicitly given in the text. Questions:
+<ol>
+<li>What is the domain or topic?</li>
+<li>What concepts are used?</li>
+<li>What can you learn from them?</li>
+<li>Which names are related to each other?</li>
+<li>Are there ambiguous names when looked at without context?</li>
+<li>What meaning could ambiguous names have?</li>
+</ol>
+</li>
+<li><strong>Visualizing</strong> is drawing diagrams of the read text to deepen understanding.</li>
+<li><strong>Questioning</strong> is asking questions about the text at hand. Questions:
+<ol>
+<li>What are the five most central concepts?</li>
+<li>What strategies did you use to identify the central concepts?</li>
+<li>What are the five most central computer science concepts?</li>
+<li>What can you determine about the decisions made bythe creator(s)?</li>
+<li>What assumptions do decisions rely on?</li>
+<li>What are the benefits of these decisions?</li>
+<li>What are some potential downsides of these decisions?</li>
+<li>Can you think of alternative solutions?</li>
+</ol>
+</li>
+<li><strong>Summarizing</strong> is creating a short summary of a text.</li>
+</ol>
 <h3 id="6-solve-programming-problems-better">6 Solve programming problems better</h3>
-<h3 id="7-avoid-bugs-in-code-and-in-thinking">7 Avoid bugs in code and in thinking</h3>
-<h3 id="8-select-clear-variable-names">8 Select clear variable names</h3>
+<ul>
+<li>Models help communicate information about programs and solve problems.</li>
+<li>The following subsections explains how to make decisions about different software designs</li>
+</ul>
+<h4 id="61-the-mental-model-is-created-by-the-brain-while-programming">6.1 The mental model is created by the brain while programming</h4>
+<ul>
+<li>
+<p>It creates an abstraction in your working memory that you can use to reason about the problem at hand.</p>
+</li>
+<li>
+<p>Creating mental models of source code <strong>in the working memory</strong></p>
+<ol>
+<li>Begin by creating local models</li>
+<li>List all relevant objects in the codebase and the relationship between them</li>
+<li>Answer questions about the system and use the answers to refine your model
+<ol>
+<li>What are the most important elements? Are they present in the model?</li>
+<li>What are the relationships between these important elements?</li>
+<li>What are the main goals of the program?</li>
+<li>How does the goal relate to the core elements and their relationships?</li>
+<li>What is a typical use case? Is it covered in the model?</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="62-how-we-think-about-computers-when-solving-problems">6.2 How we think about computers when solving problems</h4>
+<ul>
+<li>
+<p>Notional machines are abstract versions of how a real computer functions that are used when explaining programming concepts and reasoning about programming. They help us understand programming because they enable us to apply existing schemata to programming. Different notional machines sometimes nicely complement each other but may also create conflicting mental models.</p>
+</li>
+<li>
+<p>Analyzing to scope problems correctly by abstracting irrelevant details and including important ones</p>
+</li>
+</ul>
+<h3 id="7-misconceptions-bugs-in-thinking">7 Misconceptions: Bugs in thinking</h3>
+<ul>
+<li>
+<p><strong>Positive transfer</strong> helps you learn faster and perform tasks better by getting knowledge from your LTM and transfering to new situations. You can actively search for related information in your LTM to use it.</p>
+</li>
+<li>
+<p>The factors effecting how much transfer takes place:</p>
+<ol>
+<li><strong>Mastery</strong> How well you’ve mastered the task for which knowledge is already stored in your LTM.</li>
+<li><strong>Similarity</strong> Commonalities between the two tasks.</li>
+<li><strong>Context</strong> How similar the environments are.</li>
+<li><strong>Critical attributes</strong> How clear it is to you what knowledge may be beneficial.</li>
+<li><strong>Association</strong> How strongly you feel that the tasks are similar.</li>
+<li><strong>Emotions</strong> How you feel about the task.</li>
+</ol>
+</li>
+<li>
+<p><strong>Negative transfer</strong> happens when existing knowledge interferes with learning new things or executing new tasks. You may hold misconceptions when you assure that you are right, but you are wrong. To fix misconceptions, you need a new mental model to replace the wrong model. Even if you have learned a correct model, there is always the risk you will fall back to using the misconception. Use tests and documentation within a codebase to help prevent misconceptions.</p>
+</li>
+<li>
+<p><strong>High-road transfer</strong> is of more complex task.</p>
+</li>
+<li>
+<p><strong>Low-road transfer</strong> is of automatized skills.</p>
+</li>
+<li>
+<p><strong>Near transfer</strong> happens when the transfer is between close domains.</p>
+</li>
+<li>
+<p><strong>Far transfer</strong> happens when the transfer is between distant domains.</p>
+</li>
+<li>
+<p>For a belief to be a misconception, it must be faulty, be held consistently, across different situations, and be held with confidence.</p>
+</li>
+</ul>
+<h3 id="8-how-to-get-better-at-naming-things">8 How to get better at naming things</h3>
+<ul>
+<li>
+<p>Naming matters for four reasons:</p>
+<ul>
+<li>Names make up a large part of code.</li>
+<li>Names play a role in code reviews.</li>
+<li>Names are the most accessible form of documentation.</li>
+<li>Names can serve as beacons.</li>
+</ul>
+</li>
+<li>
+<p>Some examples from Simon Butler&rsquo;s naming conventions:</p>
+<ul>
+<li>Identifiers should be composed of between two and four words.</li>
+<li>Identifiers should not consist of fewer than eight characters, except for c, d, e, g, i, in, inOut, j, k, m, n, o, out, t, x, y, z.</li>
+<li>Unless there are clear reasons not to do so, enumeration types should be declared in alphabetical order.</li>
+<li>Identifiers should not begin or end in an underscore.</li>
+<li>Type information should not be encoded in it.</li>
+</ul>
+</li>
+<li>
+<p>Identifiers consisting of full words are easier to understand.</p>
+</li>
+<li>
+<p>Not the length of variable names make harder to remember, but the number of syllables the names contain.</p>
+</li>
+<li>
+<p>Words are better than letters and abbreviations.</p>
+</li>
+<li>
+<p>Camel case variables are more rememberable. Snake case is more recognisable.</p>
+</li>
+<li>
+<p>Initial naming practices have a lasting impact.</p>
+</li>
+<li>
+<p>Although there is no causation, bad naming code is more prone to bugs.</p>
+</li>
+<li>
+<p>There are many different name molds used to shape variable names, but limiting yourself to a smaller number of molds will likely help comprehension.</p>
+</li>
+<li>
+<p>Applying Feitelson’s three-step model (what concepts to use in a name, what words to use for those concepts, and how to combine them) leads to higher quality names.</p>
+</li>
+</ul>
 <h3 id="9-code-smells-and-the-cognitive-principles-behind-them">9 Code smells and the cognitive principles behind them</h3>
+<ul>
+<li>Code smells, such as long methods, indicate structural issues with code. There
+are different cognitive reasons why code smells cause a higher cognitive load.
+Duplicated code, for example, makes it harder to chunk code properly, while
+long parameter lists are heavy on your working memory.
+ There are different ways to measure cognitive load, including biometric sensors
+like measuring blinking rate or skin temperature. If you want to measure your
+own cognitive load, the Paas Scale typically is a reliable instrument.
+ Linguistic antipatterns indicate places in a codebase where code does something
+different than names involved suggest, leading to a higher cognitive load.
+This is likely caused by the fact that your LTM finds wrong facts while trying to
+support your thinking. Linguistic antipatterns can also lead to wrong chunking
+because your brain assumes a meaning of code that is not actually implemented.</li>
+</ul>
 <h3 id="10-advanced-techniques-to-solve-complex-problems">10 Advanced techniques to solve complex problems</h3>
+<ul>
+<li>While many people in programming argue that problem solving is a generic skill, it is not. Your prior knowledge of programming, coupled with the current problem you are solving, influence how quickly you can solve programming problems. Your LTM stores different types of memories, which all play a different role when solving problems. The two overarching categories of memories are implicit and explicit memories. Implicit memories are &ldquo;muscle memories&rdquo;, tasks you can execute without thinking about them, like touch typing. Explicit memories are memories you are aware of that you need to actively recall, such as the syntax of a for-loop.</li>
+<li>To strengthen your implicit memories related to programming, it is best to automatize related skills, such as touch typing and memorizing relevant keyboard shortcuts.</li>
+<li>To strengthen your explicit memories related to programming, study existing code, preferably with an explanation about how the code was designed.</li>
+</ul>
 <h3 id="11-the-act-of-coding-and-variety-of-tasks-in-programming">11 The act of coding and variety of tasks in programming</h3>
+<p>When you are programming, you perform a combination of different programming
+activities: searching, comprehending, transcription, incrementation, and
+exploration. Each activity puts pressure on different memory systems. Therefore,
+each activity should be supported by different techniques.
+ Interruptions while you are programming are not only annoying; they are detrimental
+to productivity because it takes time to rebuild your mental model of
+the code.
+ To better deal with interruptions, offload mental models into notes, documentation,
+or comments.
+ Deliberately support your prospective memory if you cannot complete a task by
+documenting your plans.
+ Try to limit interruptions to moments you experience low cognitive load, for
+example, through automation using a FlowLight or manually by setting your
+status in Slack.</p>
 <h3 id="12-improve-large-code-bases">12 Improve large code bases</h3>
+<p>CDN is a framework that helps programmers predict the cognitive effect programming
+languages will have on their users.
+ CDCB is an extension of CDN that helps programmers understand the impact
+their codebases, libraries, and frameworks will have on their users.
+ In many cases, trade-offs between different dimensions must be made. Improving
+one dimension might decrease another dimension.
+ Improving the design of existing codebases according to the notations framework’s
+cognitive dimension can be done with a design maneuver.
+ Different activities place different demands on the dimensions a codebase
+optimizes for.</p>
 <h3 id="13-less-painful-onboarding-process-of-new-developers">13 Less painful onboarding process of new developers</h3>
+<p>Experts think and act differently from beginners. Experts can reason abstractly
+about code and have the ability to think about it without referring to the code
+itself. Beginners tend to focus on details in the code and have a hard time stepping
+back from details.
+ When midlevel programmers learn new information, they sometimes fall back
+to beginner-level thinking.
+ People who are learning a new concept need to learn about it in both abstract
+terms and in concrete examples.
+ People who are learning a new concept also need time to connect a new concept
+to prior knowledge.
+ When onboarding, limit the programming activities newcomers perform to one
+at a time.
+ When onboarding, prepare relevant information to support the onboardee’s
+long-term, short-term, and working memory.</p>
 <hr>
-<p>Updated by <em>Fatma</em> on April 05, 2023</p>
+<p>Updated by <em>Fatma</em> on July 04, 2023</p>
 
 		</div>
 		<footer class="post__footer">

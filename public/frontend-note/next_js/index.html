@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Next.js">
 <meta itemprop="description" content="Next.js">
 
-<meta itemprop="wordCount" content="584">
+<meta itemprop="wordCount" content="619">
 <meta itemprop="keywords" content="nextjs,react,user interface,coding,framework,frontend,web development," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -153,6 +153,11 @@
     <li><a href="#routing">Routing</a>
       <ul>
         <li><a href="#the-app-router">The <code>app</code> router</a></li>
+      </ul>
+    </li>
+    <li><a href="#_appjs"><code>_app.js</code></a>
+      <ul>
+        <li><a href="#use-cases">Use cases</a></li>
       </ul>
     </li>
   </ul>
@@ -307,6 +312,16 @@
 <ul>
 <li>By default, the <code>app</code> router uses server components. It renders components on the server and reduces the <code>JS</code> sent to the client.</li>
 </ul>
+<h2 id="_appjs"><code>_app.js</code></h2>
+<ul>
+<li>It is called du ring each page initialization. (<code>pages/_app.js</code>)</li>
+</ul>
+<h3 id="use-cases">Use cases</h3>
+<h4 id="1-reusing-a-common-layout-between-pages">1. Reusing a common layout between pages</h4>
+<ul>
+<li>It involves using the same header and footer.</li>
+</ul>
+<h4 id="2-adding-global-css-for-your-entire-app">2. Adding global CSS for your entire app</h4>
 
 		</div>
 		<footer class="post__footer">

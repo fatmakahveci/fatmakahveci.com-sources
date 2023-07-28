@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Typescript">
 <meta itemprop="description" content="Typescript">
 
-<meta itemprop="wordCount" content="968">
+<meta itemprop="wordCount" content="1338">
 <meta itemprop="keywords" content="typescript,user interface,coding,framework,frontend,web development," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -135,56 +135,63 @@
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#installation">Installation</a>
+    <li><a href="#1-installation">1. Installation</a>
       <ul>
-        <li><a href="#nodejs-and-npm-node-package-manager"><code>Node.js</code> and <code>npm</code> (node package manager)</a></li>
-        <li><a href="#typescript"><code>typeScript</code></a></li>
+        <li><a href="#11-nodejs-and-npm-node-package-manager">1.1 <code>Node.js</code> and <code>npm</code> (node package manager)</a></li>
+        <li><a href="#12-typescript">1.2 <code>typeScript</code></a></li>
       </ul>
     </li>
-    <li><a href="#hello-world">Hello world</a></li>
-    <li><a href="#compilation">Compilation</a></li>
-    <li><a href="#data-types">Data types</a>
+    <li><a href="#2-hello-world">2. Hello world</a></li>
+    <li><a href="#3-compilation">3. Compilation</a></li>
+    <li><a href="#4-data-types">4. Data types</a>
       <ul>
-        <li><a href="#primitive-types">Primitive types</a></li>
-        <li><a href="#array"><code>array</code></a></li>
-        <li><a href="#any"><code>any</code></a></li>
-        <li><a href="#never"><code>never</code></a></li>
-        <li><a href="#type-annotations-on-variables">Type annotations on variables</a></li>
-        <li><a href="#composing-types">Composing types</a></li>
-        <li><a href="#date"><code>Date</code></a></li>
-        <li><a href="#enum"><code>enum</code></a></li>
-        <li><a href="#object"><code>object</code></a></li>
-        <li><a href="#null-and-undefined"><code>null</code> and <code>undefined</code></a></li>
-        <li><a href="#tuple"><code>tuple</code></a></li>
-        <li><a href="#unknown"><code>unknown</code></a></li>
-        <li><a href="#void"><code>void</code></a></li>
-        <li><a href="#bigint"><code>bigint</code></a></li>
-        <li><a href="#symbol"><code>symbol</code></a></li>
+        <li><a href="#41-primitive-types">4.1 Primitive types</a></li>
+        <li><a href="#42-array">4.2 <code>array</code></a></li>
+        <li><a href="#43-any">4.3 <code>any</code></a></li>
+        <li><a href="#44-never">4.4 <code>never</code></a></li>
+        <li><a href="#45-type-annotations-on-variables">4.5 Type annotations on variables</a></li>
+        <li><a href="#46-composing-types">4.6 Composing types</a></li>
+        <li><a href="#47-date">4.7 <code>Date</code></a></li>
+        <li><a href="#48-enum">4.8 <code>enum</code></a></li>
+        <li><a href="#49-object">4.9 <code>object</code></a></li>
+        <li><a href="#410-null-and-undefined">4.10 <code>null</code> and <code>undefined</code></a></li>
+        <li><a href="#411-tuple">4.11 <code>tuple</code></a></li>
+        <li><a href="#412-unknown">4.12 <code>unknown</code></a></li>
+        <li><a href="#413-void">4.13 <code>void</code></a></li>
+        <li><a href="#414-bigint">4.14 <code>bigint</code></a></li>
+        <li><a href="#415-symbol">4.15 <code>symbol</code></a></li>
       </ul>
     </li>
-    <li><a href="#functions">Functions</a>
+    <li><a href="#5-functions">5. Functions</a>
       <ul>
-        <li><a href="#parameter-type-annotations">Parameter type annotations</a></li>
-        <li><a href="#return-type-annotations">Return type annotations</a></li>
-        <li><a href="#anonymous-functions">Anonymous functions</a></li>
+        <li><a href="#51-parameter-type-annotations">5.1 Parameter type annotations</a></li>
+        <li><a href="#52-return-type-annotations">5.2 Return type annotations</a></li>
+        <li><a href="#53-anonymous-functions">5.3 Anonymous functions</a></li>
       </ul>
     </li>
-    <li><a href="#interfaces-and-type-aliases">Interfaces and type aliases</a>
+    <li><a href="#6-interfaces-and-type-aliases">6. Interfaces and type aliases</a>
       <ul>
-        <li><a href="#interfaces">Interfaces</a></li>
-        <li><a href="#type-aliases">Type aliases</a></li>
+        <li><a href="#61-interfaces">6.1 Interfaces</a></li>
+        <li><a href="#62-type-aliases">6.2 Type aliases</a></li>
       </ul>
     </li>
-    <li><a href="#type-assertions">Type assertions</a></li>
-    <li><a href="#literal-types">Literal types</a></li>
-    <li><a href="#narrowing">Narrowing</a>
+    <li><a href="#7-type-assertions">7. Type assertions</a></li>
+    <li><a href="#8-literal-types">8. Literal types</a></li>
+    <li><a href="#9-narrowing">9. Narrowing</a>
       <ul>
-        <li><a href="#in"><code>in</code></a></li>
-        <li><a href="#instanceof"><code>instanceof</code></a></li>
+        <li><a href="#91-in">9.1 <code>in</code></a></li>
+        <li><a href="#92-instanceof">9.2 <code>instanceof</code></a></li>
       </ul>
     </li>
-    <li><a href="#typeof"><code>typeof</code></a></li>
-    <li><a href="#type-predicate">Type predicate</a></li>
+    <li><a href="#10-typeof">10. <code>typeof</code></a></li>
+    <li><a href="#11-type-predicate">11. Type predicate</a></li>
+    <li><a href="#12-parameters">12. Parameters</a>
+      <ul>
+        <li><a href="#121-rest-parameters">12.1 Rest parameters</a></li>
+        <li><a href="#122-default-parameters">12.2 Default parameters</a></li>
+        <li><a href="#123-optional-parameters">12.3 Optional parameters</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 	</div>
@@ -195,8 +202,8 @@
 <li><code>Typescript</code> offers all <code>JS</code>&rsquo;s features, and typing system.</li>
 <li>It also supports object-oriented programming as <code>JS</code>.</li>
 </ul>
-<h2 id="installation">Installation</h2>
-<h3 id="nodejs-and-npm-node-package-manager"><code>Node.js</code> and <code>npm</code> (node package manager)</h3>
+<h2 id="1-installation">1. Installation</h2>
+<h3 id="11-nodejs-and-npm-node-package-manager">1.1 <code>Node.js</code> and <code>npm</code> (node package manager)</h3>
 <ul>
 <li>
 <p>They are required to setup the environment. After installing them, you can check using the following commands:</p>
@@ -204,13 +211,13 @@
 </span></span><span style="display:flex;"><span>npm -v <span style="color:#75715e"># checks the version</span>
 </span></span></code></pre></div></li>
 </ul>
-<h3 id="typescript"><code>typeScript</code></h3>
+<h3 id="12-typescript">1.2 <code>typeScript</code></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g typescript
 </span></span></code></pre></div><ul>
 <li>The line above installs the <code>TypeScript</code> Compiler <code>tsc</code> globally.</li>
 <li>You can also use <code>npx</code> to run <code>tsc</code> from a local <code>node_modules</code> package instead.</li>
 </ul>
-<h2 id="hello-world">Hello world</h2>
+<h2 id="2-hello-world">2. Hello world</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// typeScript filename: greeting.ts
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">greeting</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello World&#34;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">greeting</span>);
@@ -219,7 +226,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># bash: run javascript file</span>
 </span></span><span style="display:flex;"><span>node greeting.js
-</span></span></code></pre></div><h2 id="compilation">Compilation</h2>
+</span></span></code></pre></div><h2 id="3-compilation">3. Compilation</h2>
 <ul>
 <li>Because browsers and <code>Node.js</code> process only <code>JavaScript</code>, you must compile your <code>TypeScript</code> code before running or debugging it.
 <ul>
@@ -227,24 +234,54 @@
 </ul>
 </li>
 </ul>
-<h2 id="data-types">Data types</h2>
-<h3 id="primitive-types">Primitive types</h3>
-<h4 id="string"><code>string</code></h4>
+<h2 id="4-data-types">4. Data types</h2>
+<h3 id="41-primitive-types">4.1 Primitive types</h3>
+<h4 id="411-string">4.1.1 <code>string</code></h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">greeting</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello World&#34;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">greeting</span>.<span style="color:#a6e22e">toLowerCase</span>());
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">greeting</span>);
-</span></span></code></pre></div><h4 id="number"><code>number</code></h4>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">greeting</span>.<span style="color:#a6e22e">toLowerCase</span>()); <span style="color:#75715e">// &#34;hello world&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">greeting</span>); <span style="color:#75715e">// &#34;Hello World&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Multi-line strings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">firstName</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`Bob`</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">profile</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`Hello
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">I&#39;m </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">firstName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.`</span>;
+</span></span></code></pre></div><h4 id="412-number">4.1.2 <code>number</code></h4>
 <ul>
-<li>There&rsquo;s no equivalent to <code>int</code> or <code>float</code> - everything is simply <code>number</code>.</li>
+<li>There&rsquo;s no equivalent to <code>int</code> or <code>float</code>, but big integers get the type <code>bigint</code>.</li>
 </ul>
-<h4 id="boolean"><code>boolean</code></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// Binary numbers := 0b... or 0B...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">bin</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#a6e22e">b100</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">anotherBin</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#a6e22e">B010</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Octal numbers := 0o...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">octal</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#a6e22e">o10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Hexadecimal numbers := 0x... or 0X...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// The digits after the 0x must be in the range (0123456789ABCDEF).
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">hexadecimal</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#a6e22e">XA</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Big integers := ...n
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">big</span>: <span style="color:#66d9ef">bigint</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">9007199254740991</span><span style="color:#a6e22e">n</span>;
+</span></span></code></pre></div><h4 id="413-boolean">4.1.3 <code>boolean</code></h4>
 <ul>
 <li><code>true</code> and <code>false</code></li>
 </ul>
-<h3 id="array"><code>array</code></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">list</span>: <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
+<h3 id="42-array">4.2 <code>array</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// let arrayName: type[];
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">list</span>: <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">list</span>: <span style="color:#66d9ef">Array</span>&lt;<span style="color:#f92672">number</span>&gt; <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
-</span></span></code></pre></div><h3 id="any"><code>any</code></h3>
+</span></span></code></pre></div><ul>
+<li><code>forEach()</code>, <code>map()</code>, <code>reduce()</code>, and <code>filter()</code> are useful array methods.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span>: <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>]; <span style="color:#75715e">// [ 1, 2 ]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">square</span>: <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">e</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">e</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">e</span>); <span style="color:#75715e">// [ 1, 4 ]
+</span></span></span></code></pre></div><ul>
+<li>Mixed types</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">scores</span> <span style="color:#f92672">:</span> (<span style="color:#66d9ef">string</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span>)[];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scores</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Bob&#39;</span>, <span style="color:#ae81ff">100</span>]; <span style="color:#75715e">// [ &#39;Bob&#39;, 100 ]
+</span></span></span></code></pre></div><h3 id="43-any">4.3 <code>any</code></h3>
 <ul>
 <li>You can use whenever you don&rsquo;t want a particular value to cause typechecking errors, except instead of <code>never</code>.</li>
 </ul>
@@ -254,31 +291,31 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">strictlyTyped</span>: <span style="color:#66d9ef">unknown</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">strictlyTyped</span>.<span style="color:#a6e22e">toFixed</span>();
-</span></span></code></pre></div><h3 id="never"><code>never</code></h3>
+</span></span></code></pre></div><h3 id="44-never">4.4 <code>never</code></h3>
 <ul>
 <li>It indicates that a function will never return or that a value will never be assignable to a particular type.</li>
 </ul>
-<h3 id="type-annotations-on-variables">Type annotations on variables</h3>
-<h4 id="var"><code>var</code></h4>
+<h3 id="45-type-annotations-on-variables">4.5 Type annotations on variables</h3>
+<h4 id="451-var">4.5.1 <code>var</code></h4>
 <ul>
 <li><code>var</code> is valid.</li>
 <li><code>var name: string = 'Simon';</code></li>
 </ul>
-<h4 id="let"><code>let</code></h4>
+<h4 id="452-let">4.5.2 <code>let</code></h4>
 <ul>
 <li><code>let</code> creates a variable.</li>
 <li>It allows you to declare block-level variables.</li>
 <li>The declared variable is available from the block it is enclosed in.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Simon&#39;</span>;
-</span></span></code></pre></div><h4 id="const"><code>const</code></h4>
+</span></span></code></pre></div><h4 id="453-const">4.5.3 <code>const</code></h4>
 <ul>
 <li><code>const</code> creates a constant value. (mostly)</li>
 <li><code>const</code> variables are never intended to change.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Pi</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14</span>;
-</span></span></code></pre></div><h3 id="composing-types">Composing types</h3>
-<h4 id="union-">Union (<code>|</code>)</h4>
+</span></span></code></pre></div><h3 id="46-composing-types">4.6 Composing types</h3>
+<h4 id="461-union-">4.6.1 Union (<code>|</code>)</h4>
 <ul>
 <li>It declares that an object can be more than one type.
 <ul>
@@ -286,12 +323,12 @@
 </ul>
 </li>
 </ul>
-<h3 id="date"><code>Date</code></h3>
+<h3 id="47-date">4.7 <code>Date</code></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>(<span style="color:#a6e22e">person</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">date</span>: <span style="color:#66d9ef">Date</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Hello </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">person</span><span style="color:#e6db74">}</span><span style="color:#e6db74">, today is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">toString</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">greet</span>(<span style="color:#e6db74">&#34;Bob&#34;</span>, <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2023</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">28</span>));
-</span></span></code></pre></div><h3 id="enum"><code>enum</code></h3>
+</span></span></code></pre></div><h3 id="48-enum">4.8 <code>enum</code></h3>
 <ul>
 <li>You can define a set of named constants using <code>enum</code>.</li>
 </ul>
@@ -301,56 +338,70 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Blue</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">c</span>: <span style="color:#66d9ef">Color</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Color</span>.<span style="color:#a6e22e">Green</span>;
-</span></span></code></pre></div><h3 id="object"><code>object</code></h3>
+</span></span></code></pre></div><h3 id="49-object">4.9 <code>object</code></h3>
 <ul>
 <li>It represents the non-primitive type.</li>
 <li>It refers to any JavaScript value with properties.</li>
 <li>To define an object type, we simply list its properties and their types.</li>
+<li>Object types are functions, arrays, classes, etc.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printCoord</span>(<span style="color:#a6e22e">pt</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">number</span>; <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">number</span> }) {}
-</span></span></code></pre></div><h4 id="optional-properties">Optional properties</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printCoord</span>(<span style="color:#a6e22e">pt</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">number</span>; <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">number</span> }) { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// combined representation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">employee</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">firstName</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lastName</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>} <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">firstName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Jane&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lastName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Doe&#39;</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// empty
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vacant</span><span style="color:#f92672">:</span> {} <span style="color:#f92672">=</span> {};
+</span></span></code></pre></div><h4 id="491-optional-properties">4.9.1 Optional properties</h4>
 <ul>
 <li>When you read from an optional property, you must check for <code>undefined</code> before using it.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printName</span>(<span style="color:#a6e22e">obj</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">first</span>: <span style="color:#66d9ef">string</span>; <span style="color:#a6e22e">last?</span>: <span style="color:#66d9ef">string</span> }) {}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printName</span>(<span style="color:#a6e22e">obj</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">first</span>: <span style="color:#66d9ef">string</span>; <span style="color:#a6e22e">last?</span>: <span style="color:#66d9ef">string</span> }) { }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">printName</span>({ <span style="color:#a6e22e">first</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Bob&#34;</span> });
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">printName</span>({ <span style="color:#a6e22e">first</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Alice&#34;</span>, <span style="color:#a6e22e">last</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Alisson&#34;</span> });
-</span></span></code></pre></div><h3 id="null-and-undefined"><code>null</code> and <code>undefined</code></h3>
+</span></span></code></pre></div><h3 id="410-null-and-undefined">4.10 <code>null</code> and <code>undefined</code></h3>
 <ul>
 <li>These primitive values are used to signal absent or uninitialized value.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">u</span>: <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">n</span>: <span style="color:#66d9ef">null</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
-</span></span></code></pre></div><h3 id="tuple"><code>tuple</code></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">passingResponse</span><span style="color:#f92672">:</span> [<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">number</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;{}&#34;</span>, <span style="color:#ae81ff">200</span>];
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">PayStubs</span> <span style="color:#f92672">=</span> [<span style="color:#a6e22e">StaffAccount</span>, ...<span style="color:#66d9ef">number</span>[]];
+</span></span></code></pre></div><h3 id="411-tuple">4.11 <code>tuple</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">passingResponse</span><span style="color:#f92672">:</span> [<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">number</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;{}&#34;</span>, <span style="color:#ae81ff">200</span>]; <span style="color:#75715e">// [ &#39;{}&#39;, 200 ]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colour</span><span style="color:#f92672">:</span> [<span style="color:#66d9ef">number</span>, <span style="color:#66d9ef">number</span>, <span style="color:#66d9ef">number</span>] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>]; <span style="color:#75715e">// [ 255, 0, 0 ]
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">PayStubs</span> <span style="color:#f92672">=</span> [<span style="color:#a6e22e">StaffAccount</span>, ...<span style="color:#66d9ef">number</span>[]];
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">payStubs</span>: <span style="color:#66d9ef">PayStubs</span>[] <span style="color:#f92672">=</span> [
 </span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">staff</span>[<span style="color:#ae81ff">0</span>], <span style="color:#ae81ff">250</span>],
 </span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">staff</span>[<span style="color:#ae81ff">1</span>], <span style="color:#ae81ff">250</span>, <span style="color:#ae81ff">260</span>],
 </span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">staff</span>[<span style="color:#ae81ff">0</span>], <span style="color:#ae81ff">300</span>, <span style="color:#ae81ff">300</span>, <span style="color:#ae81ff">300</span>],
 </span></span><span style="display:flex;"><span>];
-</span></span></code></pre></div><h3 id="unknown"><code>unknown</code></h3>
+</span></span></code></pre></div><h3 id="412-unknown">4.12 <code>unknown</code></h3>
 <ul>
 <li>It describes the type of variables that we do not know when we are writing the code.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">notSure</span>: <span style="color:#66d9ef">unknown</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>; <span style="color:#75715e">// OK
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">notSure</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;maybe a string instead&#34;</span>; <span style="color:#75715e">// OK
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">notSure</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>; <span style="color:#75715e">// OK
-</span></span></span></code></pre></div><h3 id="void"><code>void</code></h3>
+</span></span></span></code></pre></div><h3 id="413-void">4.13 <code>void</code></h3>
 <ul>
-<li>It is a little like the opposite of any: the absence of having any type at all. You may commonly see this as the return type of functions that do not return a value:</li>
+<li>It is a little like the opposite of any: the absence of having any type at all. It is a good practice to add the void type as the return type of a function or a method that doesn&rsquo;t return any value.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">warnUser</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;This is my warning message&#34;</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="bigint"><code>bigint</code></h3>
+</span></span></code></pre></div><h3 id="414-bigint">4.14 <code>bigint</code></h3>
 <ul>
 <li>For very large integers.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">oneHundred</span>: <span style="color:#66d9ef">bigint</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">BigInt</span>(<span style="color:#ae81ff">100</span>);
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">anotherHundred</span>: <span style="color:#66d9ef">bigint</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span><span style="color:#a6e22e">n</span>;
-</span></span></code></pre></div><h3 id="symbol"><code>symbol</code></h3>
+</span></span></code></pre></div><h3 id="415-symbol">4.15 <code>symbol</code></h3>
 <ul>
 <li><code>symbol</code> := immutable and unique</li>
 </ul>
@@ -363,16 +414,16 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">toSource</span>()
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">toString</span>()
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">valueOf</span>()
-</span></span></code></pre></div><h2 id="functions">Functions</h2>
-<h3 id="parameter-type-annotations">Parameter type annotations</h3>
+</span></span></code></pre></div><h2 id="5-functions">5. Functions</h2>
+<h3 id="51-parameter-type-annotations">5.1 Parameter type annotations</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>(<span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Hello &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">toUpperCase</span>());
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="return-type-annotations">Return type annotations</h3>
+</span></span></code></pre></div><h3 id="52-return-type-annotations">5.2 Return type annotations</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getNumber</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="anonymous-functions">Anonymous functions</h3>
+</span></span></code></pre></div><h3 id="53-anonymous-functions">5.3 Anonymous functions</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">names</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Alice&#34;</span>, <span style="color:#e6db74">&#34;Bob&#34;</span>, <span style="color:#e6db74">&#34;Eve&#34;</span>];
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">names</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">s</span>) {
@@ -382,18 +433,18 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">names</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">s</span>) <span style="color:#f92672">=&gt;</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">toUpperCase</span>());
 </span></span><span style="display:flex;"><span>});
-</span></span></code></pre></div><h2 id="interfaces-and-type-aliases">Interfaces and type aliases</h2>
+</span></span></code></pre></div><h2 id="6-interfaces-and-type-aliases">6. Interfaces and type aliases</h2>
 <ul>
 <li>The key distinction is that a <code>type</code> cannot be re-opened to add new properties vs an <code>interface</code> which is always extendable.</li>
 </ul>
-<h3 id="interfaces">Interfaces</h3>
+<h3 id="61-interfaces">6.1 Interfaces</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Point</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">number</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">number</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printCoord</span>(<span style="color:#a6e22e">pt</span>: <span style="color:#66d9ef">Point</span>) {}
-</span></span></code></pre></div><h3 id="type-aliases">Type aliases</h3>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printCoord</span>(<span style="color:#a6e22e">pt</span>: <span style="color:#66d9ef">Point</span>) { }
+</span></span></code></pre></div><h3 id="62-type-aliases">6.2 Type aliases</h3>
 <ul>
 <li>A type alias is exactly that - a name for any type.</li>
 </ul>
@@ -402,20 +453,20 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">number</span>;
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printCoord</span>(<span style="color:#a6e22e">pt</span>: <span style="color:#66d9ef">Point</span>) {}
-</span></span></code></pre></div><h2 id="type-assertions">Type assertions</h2>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printCoord</span>(<span style="color:#a6e22e">pt</span>: <span style="color:#66d9ef">Point</span>) { }
+</span></span></code></pre></div><h2 id="7-type-assertions">7. Type assertions</h2>
 <ul>
 <li>They are removed by the compiler, like a type annotation, and won&rsquo;t affect the runtime behavior of your code.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myCanvas</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;main_canvas&#34;</span>) <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">HTMLCanvasElement</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myCanvas</span> <span style="color:#f92672">=</span> &lt;<span style="color:#f92672">HTMLCanvasElement</span>&gt;document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;main_canvas&#34;</span>); <span style="color:#75715e">// you can use &lt;&gt;, except if the code is in a .tsx file
-</span></span></span></code></pre></div><h2 id="literal-types">Literal types</h2>
+</span></span></span></code></pre></div><h2 id="8-literal-types">8. Literal types</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// combining literal types (return)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">compare</span>(<span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">b</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">1</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">0</span> : <span style="color:#66d9ef">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="narrowing">Narrowing</h2>
+</span></span></code></pre></div><h2 id="9-narrowing">9. Narrowing</h2>
 <ul>
 <li>The process of refining types to more specific types than declared is called narrowing.</li>
 </ul>
@@ -425,7 +476,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">padding</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">input</span>; <span style="color:#75715e">// padding:= string
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><h3 id="in"><code>in</code></h3>
+</span></span></code></pre></div><h3 id="91-in">9.1 <code>in</code></h3>
 <ul>
 <li><code>in</code> operator determines if an object has a property with a name.</li>
 </ul>
@@ -438,15 +489,15 @@
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">animal</span>.<span style="color:#a6e22e">fly</span>();
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="instanceof"><code>instanceof</code></h3>
+</span></span></code></pre></div><h3 id="92-instanceof">9.2 <code>instanceof</code></h3>
 <ul>
 <li>It has an operator for checking whether or not a value is an “instance” of another value.</li>
 </ul>
-<h2 id="typeof"><code>typeof</code></h2>
+<h2 id="10-typeof">10. <code>typeof</code></h2>
 <ul>
 <li>It shows the type of values we have at runtime.</li>
 </ul>
-<h2 id="type-predicate">Type predicate</h2>
+<h2 id="11-type-predicate">11. Type predicate</h2>
 <ul>
 <li>To define a user-defined type guard, we simply need to define a function whose return type is a type predicate:</li>
 </ul>
@@ -457,6 +508,33 @@
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">pet</span>.<span style="color:#a6e22e">fly</span>();
 </span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="12-parameters">12. Parameters</h2>
+<h3 id="121-rest-parameters">12.1 Rest parameters</h3>
+<ul>
+<li>It allows you to represent an indefinite number (zero or more) of arguments as an array.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> &lt;<span style="color:#f92672">function_name</span>&gt;(...&lt;<span style="color:#f92672">parameter_name</span>&gt;<span style="color:#f92672">:</span> &lt;<span style="color:#f92672">parameter_type</span>&gt;[]) { }
+</span></span></code></pre></div><ul>
+<li>Rules:
+<ul>
+<li>A function has only one rest parameter.</li>
+<li>The rest parameter appears last in the parameter list.</li>
+<li>The type of the rest parameter is <em>array</em>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="122-default-parameters">12.2 Default parameters</h3>
+<ul>
+<li>The default initialised value for the <em>omitted</em> parameters.</li>
+<li>Default parameters don&rsquo;t need to appear after the required parameters. When a default parameter appears before a required parameter, you need to explicitly pass <code>undefined</code> to get the default initialised value.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> &lt;<span style="color:#f92672">function_name</span>&gt;(&lt;<span style="color:#f92672">parameter_name</span>&gt;<span style="color:#f92672">:</span> &lt;<span style="color:#f92672">parameter_type</span>&gt;<span style="color:#f92672">=</span>&lt;<span style="color:#f92672">default_value</span>&gt;,...)<span style="color:#f92672">:</span> &lt;<span style="color:#f92672">return_type_if_any</span>&gt;{ }
+</span></span></code></pre></div><h3 id="123-optional-parameters">12.3 Optional parameters</h3>
+<ul>
+<li>Optional parameters must come after the required parameters.</li>
+<li>Using <code>?</code> after the parameter name makes a function parameter optional.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> &lt;<span style="color:#f92672">function_name</span>&gt;(&lt;<span style="color:#f92672">parameter_name</span>&gt;<span style="color:#f92672">?:</span> &lt;<span style="color:#f92672">parameter_type</span>&gt;<span style="color:#f92672">=</span>&lt;<span style="color:#f92672">default_value</span>&gt;,...)<span style="color:#f92672">:</span> &lt;<span style="color:#f92672">return_type_if_any</span>&gt;{ }
 </span></span></code></pre></div>
 		</div>
 		<footer class="post__footer">
@@ -496,9 +574,9 @@
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/frontend-note/webpack/" rel="prev">
+		<a class="pager__link" href="/frontend-note/typescript_react/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">webpack</p>
+			<p class="pager__title">Typescript and React</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">

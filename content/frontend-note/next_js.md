@@ -132,3 +132,15 @@ export default function Page() {
 ### The `app` router
 
 - By default, the `app` router uses server components. It renders components on the server and reduces the `JS` sent to the client.
+
+## `_app.js`
+
+- It is called du ring each page initialization. (`pages/_app.js`)
+
+### Use cases
+
+#### 1. Reusing a common layout between pages
+
+- It involves using the same header and footer.
+
+#### 2. Adding global CSS for your entire app

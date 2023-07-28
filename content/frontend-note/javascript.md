@@ -1,8 +1,8 @@
 ---
 title: JavaScript
 description: JavaScript
-summary: "Updated by Fatma, May 25, 2023."
-date: 25-05-2023
+summary: "Updated by Fatma, Jul 25, 2023."
+date: 25-07-2023
 categories:
   - "Coding"
 tags:
@@ -194,6 +194,16 @@ obj[user] = prompt('what is its value?')
 var person = Object.create(Object.prototype);
 person.firstName = "Paul";
 person.lastName  = "Irish";
+
+////
+
+const user = {
+  name: "Bob",
+  sayHi() {
+    console.log("Hi "+this.name+"!");
+  }
+}
+user.sayHi(); // Hi Bob!
 ```
 
 ## Object prototype
@@ -254,6 +264,18 @@ var avg = function() {
 };
 ```
 
+### Defining functions inside of functions
+
+```javascript
+function say() {
+  function sayHello() {
+    console.log("Hello");
+  }
+  sayHello();
+}
+// sayHello(); not permitted outside of the function
+```
+
 ## Other Types
 
 - null := non-value
@@ -305,7 +327,11 @@ console.log(myName3);
 
 ## Objects
 
-- A simple collection of name-value pairs. It is similar to dictionaries in python.
+- A simple collection of name-value pairs that is similar to dictionaries in python.
+- Objects = Reference Values
+  - For objects, including arrays, the memory address is stored in the variable.
+  - The underlying value, such as the object or array, can be edited without changing the address.
+  - The value can therefore be edited without reassigning the variable.
 
 ## Array
 
@@ -367,13 +393,12 @@ hello.call("Bob", "world") //=> Bob says hello world
 
 ## Arrow function
 
-- It is a compact alternative to a traditional function expression, but it is not unlimited to use in all situations.
-- Differences and Limitations:
-  - It doesn't have its bindings to `this` or `super`, and shouldn't be used as a method.
-  - It does not have arguments or `new.target` keywords.
-  - It isn't suitable for `call`, `apply`, and `bind` methods, which generally rely on establishing a scope.
-  - It cannot be used as a constructor.
-  - It cannot use `yield`, within its body.
+- It is a compact function alternative, which has limited use.
+- It doesn't have its bindings to `this` or `super`, and shouldn't be used as a method.
+- It does not have arguments or `new.target` keywords.
+- It isn't suitable for `call`, `apply`, and `bind` methods, which generally rely on establishing a scope.
+- It cannot be used as a constructor.
+- It cannot use `yield`, within its body.
 
 ```javascript
 const materials = [' Hydrogen', 'Helium'];
@@ -620,6 +645,8 @@ console.log(found); // 12
 
 ### `Array.prototype.findIndex()`
 
+- It takes a function as an input.
+
 ```js
 const array1 = [5, 12, 8, 130, 44];
 const isLargeNumber = (element) => element > 13;
@@ -747,6 +774,14 @@ class Person extends Human { // inheritance
 const person = new Person();
 person.printMyName(); // Bob
 person.printMyGender(); // female
+
+////
+
+class User {
+  constructor(name) { // keyword constructor
+    this.name = name;
+  }
+}
 ```
 
 ## Spread and rest operators
@@ -757,10 +792,8 @@ person.printMyGender(); // female
 
 ```js
 const numbers = [1, 2, 3];
-const newNumbers = [...numbers, 4]; // if [numbers, 4];
-
-// output: [1, 2, 3, 4]
-console.log(newNumbers); // if [[1, 2, 3], 4]
+const newNumbers = [...numbers, 4];
+console.log(newNumbers); 
 ```
 
 ```js
