@@ -140,7 +140,13 @@ strictlyTyped.toFixed();
 
 ### 4.4 `never`
 
-- It indicates that a function will never return or that a value will never be assignable to a particular type.
+- It indicates that a function will never return or that a value will never be assignable to a particular type. Typically, it represents the return type of a function that always throws an error.
+
+```typescript
+function raiseError(message: string): never {
+    throw new Error(message);
+}
+```
 
 ### 4.5 Type annotations on variables
 
@@ -362,6 +368,24 @@ type Point = {
 };
 
 function printCoord(pt: Point) { }
+
+//
+
+// union
+type alphanumeric = string | number;
+
+let input: alphanumeric;
+input = 'Bob'; // valid
+input = 1900; // valid
+```
+
+#### 6.2.1 String literal type
+
+```typescript
+type MouseEvent: 'click' | 'dblclick' | 'mouseup' | 'mousedown';
+let mouseEvent: MouseEvent;
+mouseEvent = 'click'; // valid
+mouseEvent = 'dblclick'; // valid
 ```
 
 ## 7. Type assertions
