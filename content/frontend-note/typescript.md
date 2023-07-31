@@ -237,6 +237,23 @@ printName({ first: "Bob" });
 printName({ first: "Alice", last: "Alisson" });
 ```
 
+#### 4.9.2 Readonly properties
+
+- A readonly property should be modifiable only when the object first created.
+
+```typescript
+interface Person {
+    readonly ssn: string;
+    name: string;
+}
+
+let person: Person;
+person = {
+    ssn: '171-28-0926',
+    name: 'Bob'
+}
+```
+
 ### 4.10 `null` and `undefined`
 
 - These primitive values are used to signal absent or uninitialized value.
@@ -312,6 +329,18 @@ valueOf()
 
 ## 5. Functions
 
+- Declaring a function:
+
+```typescript
+let sayHi: (name: string) => string;
+
+sayHi = function (name) {
+    return `Hi ${name}!`;
+};
+
+console.log(sayHi('Bob')); // Hi Bob!
+```
+
 ### 5.1 Parameter type annotations
 
 ```typescript
@@ -345,6 +374,9 @@ names.forEach((s) => {
 ## 6. Interfaces and type aliases
 
 - The key distinction is that a `type` cannot be re-opened to add new properties vs an `interface` which is always extendable.
+- Interfaces define contracts and provide explicit names for type checking.
+- Interfaces may have optional properties or readonly properties.
+- Interfaces can be used as function types.
 
 ### 6.1 Interfaces
 
@@ -355,6 +387,45 @@ interface Point {
 }
 
 function printCoord(pt: Point) { }
+
+interface ThisPoint extends Point { }
+```
+
+- An interface can extend one or multiple interfaces or a class.
+
+```typescript
+interface <InterfaceX> {
+  x(): void
+}
+
+interface <InterfaceY> {
+  y(): void
+}
+
+interface <InterfaceZ> extends <InterfaceX>, <InterfaceY> {
+  z(): string
+}
+```
+
+- Only the class itself or its subclasses are allowed to implement the interface, if a class contains private or protected members.
+
+```typescript
+class Cat {
+  private _age: number = 0;
+}
+
+interface StrayCat extends Cat {
+  play(): void
+}
+
+class YellowStrayCat extends Cat implements StrayCat {
+  play() {
+    console.log('I like toys.')
+  }
+}
+
+const yellowStrayCat = new YellowStrayCat();
+yellowStrayCat.play();
 ```
 
 ### 6.2 Type aliases
@@ -369,10 +440,12 @@ type Point = {
 
 function printCoord(pt: Point) { }
 
-//
+// intersection
+
+type <bothType> = <firstType> & <secondType>; // <bothType> will have all properties from both the first and second.
 
 // union
-type alphanumeric = string | number;
+type alphanumeric = string | number; // Alphanumerics holds a value of either string or number.
 
 let input: alphanumeric;
 input = 'Bob'; // valid
@@ -386,6 +459,13 @@ type MouseEvent: 'click' | 'dblclick' | 'mouseup' | 'mousedown';
 let mouseEvent: MouseEvent;
 mouseEvent = 'click'; // valid
 mouseEvent = 'dblclick'; // valid
+```
+
+#### 6.2.2 Type casting
+
+```typescript
+let a: typeA;
+let b = <typeB>a;
 ```
 
 ## 7. Type assertions
@@ -489,4 +569,105 @@ function <function_name>(<parameter_name>: <parameter_type>=<default_value>,...)
 
 ```typescript
 function <function_name>(<parameter_name>?: <parameter_type>=<default_value>,...): <return_type_if_any>{ }
+```
+
+## 13. Class
+
+```typescript
+class Cat {
+    catName: string;
+
+    constructor(catName: string) {
+        this.catName = catName;
+    }
+
+    getCatName(): string {
+        return `${this.catName}`;
+    }
+}
+
+let cat = new Cat('Puffy');
+```
+
+### 13.1 Getters and setters
+
+```typescript
+class Cat {
+  private _age: number = 0;
+
+  public get age(): number {
+    return this._age;
+  }
+
+  public set age(newAge: number) {
+    if (newAge < 0) {
+      throw new Error('Age is invalid.');
+    }
+    else if (newAge > 1) {
+        console.log('Not a kitten');
+    }
+    this._age = newAge;
+  }
+}
+
+const cat = new Cat();
+console.log(cat); // 0
+
+cat.age = 5; // Not a kitten
+console.log(cat); // 5
+
+cat.age = -1; // Age is invalid.
+```
+
+## 14. Static methods and properties
+
+- A static property is shared among all instances of a class.
+
+```typescript
+class Cat {
+  static counter: number = 0;
+
+  constructor(private catName: string) {
+    Cat.counter++;
+  }
+    
+  public static getCounter() {
+    return Cat.counter;
+  }
+}
+
+let simba = new Cat('Simba');
+let felix = new Cat('Felix');
+
+console.log(Cat.counter); // 2
+console.log(Cat.getCounter()); // 2
+```
+
+## 15. Abstract class
+
+- It defines common behaviours for derived classes to extend.
+- Unlike a regular class, it cannot be instantiated directly.
+- To use it, you must inherit and implement its abstract methods.
+- It often contains one or more abstract methods.
+
+```typescript
+abstract class Cat {
+  constructor(private catName: string) { }
+
+  abstract getSpecies(): string 
+}
+
+class SpecificCat extends Cat {
+  constructor(catName: string, private species: string) {
+    super(catName);
+  }
+
+  getSpecies(): string {
+    return this.species;
+  }
+}
+
+let simba = new SpecificCat('Simba', 'stray cat');
+
+console.log(simba.getSpecies()); // stray cat
 ```
