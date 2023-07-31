@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Typescript">
 <meta itemprop="description" content="Typescript">
 
-<meta itemprop="wordCount" content="1338">
+<meta itemprop="wordCount" content="1866">
 <meta itemprop="keywords" content="typescript,user interface,coding,framework,frontend,web development," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -192,6 +192,13 @@
         <li><a href="#123-optional-parameters">12.3 Optional parameters</a></li>
       </ul>
     </li>
+    <li><a href="#13-class">13. Class</a>
+      <ul>
+        <li><a href="#131-getters-and-setters">13.1 Getters and setters</a></li>
+      </ul>
+    </li>
+    <li><a href="#14-static-methods-and-properties">14. Static methods and properties</a></li>
+    <li><a href="#15-abstract-class">15. Abstract class</a></li>
   </ul>
 </nav>
 	</div>
@@ -293,9 +300,12 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">strictlyTyped</span>.<span style="color:#a6e22e">toFixed</span>();
 </span></span></code></pre></div><h3 id="44-never">4.4 <code>never</code></h3>
 <ul>
-<li>It indicates that a function will never return or that a value will never be assignable to a particular type.</li>
+<li>It indicates that a function will never return or that a value will never be assignable to a particular type. Typically, it represents the return type of a function that always throws an error.</li>
 </ul>
-<h3 id="45-type-annotations-on-variables">4.5 Type annotations on variables</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">raiseError</span>(<span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">never</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">message</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="45-type-annotations-on-variables">4.5 Type annotations on variables</h3>
 <h4 id="451-var">4.5.1 <code>var</code></h4>
 <ul>
 <li><code>var</code> is valid.</li>
@@ -366,6 +376,20 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">printName</span>({ <span style="color:#a6e22e">first</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Bob&#34;</span> });
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">printName</span>({ <span style="color:#a6e22e">first</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Alice&#34;</span>, <span style="color:#a6e22e">last</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Alisson&#34;</span> });
+</span></span></code></pre></div><h4 id="492-readonly-properties">4.9.2 Readonly properties</h4>
+<ul>
+<li>A readonly property should be modifiable only when the object first created.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">readonly</span> <span style="color:#a6e22e">ssn</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">person</span>: <span style="color:#66d9ef">Person</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">person</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ssn</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;171-28-0926&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Bob&#39;</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="410-null-and-undefined">4.10 <code>null</code> and <code>undefined</code></h3>
 <ul>
 <li>These primitive values are used to signal absent or uninitialized value.</li>
@@ -415,7 +439,17 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">toString</span>()
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">valueOf</span>()
 </span></span></code></pre></div><h2 id="5-functions">5. Functions</h2>
-<h3 id="51-parameter-type-annotations">5.1 Parameter type annotations</h3>
+<ul>
+<li>Declaring a function:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sayHi</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sayHi</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">name</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`Hi </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">!`</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">sayHi</span>(<span style="color:#e6db74">&#39;Bob&#39;</span>)); <span style="color:#75715e">// Hi Bob!
+</span></span></span></code></pre></div><h3 id="51-parameter-type-annotations">5.1 Parameter type annotations</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>(<span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Hello &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">toUpperCase</span>());
 </span></span><span style="display:flex;"><span>}
@@ -436,6 +470,9 @@
 </span></span></code></pre></div><h2 id="6-interfaces-and-type-aliases">6. Interfaces and type aliases</h2>
 <ul>
 <li>The key distinction is that a <code>type</code> cannot be re-opened to add new properties vs an <code>interface</code> which is always extendable.</li>
+<li>Interfaces define contracts and provide explicit names for type checking.</li>
+<li>Interfaces may have optional properties or readonly properties.</li>
+<li>Interfaces can be used as function types.</li>
 </ul>
 <h3 id="61-interfaces">6.1 Interfaces</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Point</span> {
@@ -444,6 +481,41 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printCoord</span>(<span style="color:#a6e22e">pt</span>: <span style="color:#66d9ef">Point</span>) { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ThisPoint</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Point</span> { }
+</span></span></code></pre></div><ul>
+<li>An interface can extend one or multiple interfaces or a class.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> &lt;<span style="color:#f92672">InterfaceX</span>&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">x</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> &lt;<span style="color:#f92672">InterfaceY</span>&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">y</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> &lt;<span style="color:#f92672">InterfaceZ</span>&gt; <span style="color:#66d9ef">extends</span> &lt;<span style="color:#f92672">InterfaceX</span>&gt;, &lt;<span style="color:#f92672">InterfaceY</span>&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">z</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>Only the class itself or its subclasses are allowed to implement the interface, if a class contains private or protected members.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_age</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">StrayCat</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Cat</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">play</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">YellowStrayCat</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Cat</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">StrayCat</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">play() {</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;I like toys.&#39;</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">yellowStrayCat</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">YellowStrayCat</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">yellowStrayCat</span>.<span style="color:#a6e22e">play</span>();
 </span></span></code></pre></div><h3 id="62-type-aliases">6.2 Type aliases</h3>
 <ul>
 <li>A type alias is exactly that - a name for any type.</li>
@@ -454,6 +526,25 @@
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printCoord</span>(<span style="color:#a6e22e">pt</span>: <span style="color:#66d9ef">Point</span>) { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// intersection
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> &lt;<span style="color:#f92672">bothType</span>&gt; <span style="color:#f92672">=</span> &lt;<span style="color:#f92672">firstType</span>&gt; <span style="color:#f92672">&amp;</span> &lt;<span style="color:#f92672">secondType</span>&gt;; <span style="color:#75715e">// &lt;bothType&gt; will have all properties from both the first and second.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// union
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">alphanumeric</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span>; <span style="color:#75715e">// Alphanumerics holds a value of either string or number.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">input</span>: <span style="color:#66d9ef">alphanumeric</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">input</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Bob&#39;</span>; <span style="color:#75715e">// valid
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">input</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1900</span>; <span style="color:#75715e">// valid
+</span></span></span></code></pre></div><h4 id="621-string-literal-type">6.2.1 String literal type</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MouseEvent</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;click&#39;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#39;dblclick&#39;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#39;mouseup&#39;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#39;mousedown&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mouseEvent</span>: <span style="color:#66d9ef">MouseEvent</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mouseEvent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;click&#39;</span>; <span style="color:#75715e">// valid
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">mouseEvent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dblclick&#39;</span>; <span style="color:#75715e">// valid
+</span></span></span></code></pre></div><h4 id="622-type-casting">6.2.2 Type casting</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">typeA</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> &lt;<span style="color:#f92672">typeB</span>&gt;<span style="color:#a6e22e">a</span>;
 </span></span></code></pre></div><h2 id="7-type-assertions">7. Type assertions</h2>
 <ul>
 <li>They are removed by the compiler, like a type annotation, and won&rsquo;t affect the runtime behavior of your code.</li>
@@ -535,7 +626,94 @@
 <li>Using <code>?</code> after the parameter name makes a function parameter optional.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> &lt;<span style="color:#f92672">function_name</span>&gt;(&lt;<span style="color:#f92672">parameter_name</span>&gt;<span style="color:#f92672">?:</span> &lt;<span style="color:#f92672">parameter_type</span>&gt;<span style="color:#f92672">=</span>&lt;<span style="color:#f92672">default_value</span>&gt;,...)<span style="color:#f92672">:</span> &lt;<span style="color:#f92672">return_type_if_any</span>&gt;{ }
-</span></span></code></pre></div>
+</span></span></code></pre></div><h2 id="13-class">13. Class</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">catName</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">catName</span>: <span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">catName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">catName</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getCatName</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">catName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">cat</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Cat</span>(<span style="color:#e6db74">&#39;Puffy&#39;</span>);
+</span></span></code></pre></div><h3 id="131-getters-and-setters">13.1 Getters and setters</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_age</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">get</span> <span style="color:#a6e22e">age</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_age</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">set</span> <span style="color:#a6e22e">age</span>(<span style="color:#a6e22e">newAge</span>: <span style="color:#66d9ef">number</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">newAge</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#39;Age is invalid.&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">newAge</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Not a kitten&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_age</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newAge</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cat</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Cat</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">cat</span>); <span style="color:#75715e">// 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">cat</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>; <span style="color:#75715e">// Not a kitten
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">cat</span>); <span style="color:#75715e">// 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">cat</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">// Age is invalid.
+</span></span></span></code></pre></div><h2 id="14-static-methods-and-properties">14. Static methods and properties</h2>
+<ul>
+<li>A static property is shared among all instances of a class.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">counter</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>(<span style="color:#66d9ef">private</span> <span style="color:#a6e22e">catName</span>: <span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Cat</span>.<span style="color:#a6e22e">counter</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">getCounter() {</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Cat</span>.<span style="color:#a6e22e">counter</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">simba</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Cat</span>(<span style="color:#e6db74">&#39;Simba&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">felix</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Cat</span>(<span style="color:#e6db74">&#39;Felix&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">Cat</span>.<span style="color:#a6e22e">counter</span>); <span style="color:#75715e">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">Cat</span>.<span style="color:#a6e22e">getCounter</span>()); <span style="color:#75715e">// 2
+</span></span></span></code></pre></div><h2 id="15-abstract-class">15. Abstract class</h2>
+<ul>
+<li>It defines common behaviours for derived classes to extend.</li>
+<li>Unlike a regular class, it cannot be instantiated directly.</li>
+<li>To use it, you must inherit and implement its abstract methods.</li>
+<li>It often contains one or more abstract methods.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>(<span style="color:#66d9ef">private</span> <span style="color:#a6e22e">catName</span>: <span style="color:#66d9ef">string</span>) { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">abstract</span> <span style="color:#a6e22e">getSpecies</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> 
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SpecificCat</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Cat</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">catName</span>: <span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">species</span>: <span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">catName</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getSpecies</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">species</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">simba</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SpecificCat</span>(<span style="color:#e6db74">&#39;Simba&#39;</span>, <span style="color:#e6db74">&#39;stray cat&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">simba</span>.<span style="color:#a6e22e">getSpecies</span>()); <span style="color:#75715e">// stray cat
+</span></span></span></code></pre></div>
 		</div>
 		<footer class="post__footer">
 			
