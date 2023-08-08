@@ -500,26 +500,6 @@ function padLeft(padding: number | string, input: string) {
 }
 ```
 
-### 9.1 `in`
-
-- `in` operator determines if an object has a property with a name.
-
-```typescript
-type Fish = { swim: () => void };
-type Bird = { fly: () => void };
-
-function move(animal: Fish | Bird) {
-  if ("swim" in animal) {
-    return animal.swim();
-  }
-  return animal.fly();
-}
-```
-
-### 9.2 `instanceof`
-
-- It has an operator for checking whether or not a value is an “instance” of another value.
-
 ## 10. `typeof`
 
 - It shows the type of values we have at runtime.
@@ -671,3 +651,51 @@ let simba = new SpecificCat('Simba', 'stray cat');
 
 console.log(simba.getSpecies()); // stray cat
 ```
+
+## 16. Operators
+
+### 16.1 Non-null assertion operator `!`
+
+- `!` says that it will never be `null` or `undefined`.
+
+```typescript
+interface Person {
+    name: string
+    age: number
+}
+
+function printName(person?: Person) {
+  // If we don't put an exclamation mark (person!) an error will
+  // occur, 'person' is possibly 'undefined'.
+    console.log(`The name is ${person!.name}`)
+}
+```
+
+### 16.2 Nullish coalescing operator `??`
+
+- `??` returns the first argument if it's not `null`/`undefined`. Otherwise, the second one.
+
+```typescript
+a ?? b // equals to
+( a!== null && a!== undefined ) ? a : b
+```
+
+### 16.3 `in`
+
+- `in` operator determines if an object has a property with a name.
+
+```typescript
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+
+function move(animal: Fish | Bird) {
+  if ("swim" in animal) {
+    return animal.swim();
+  }
+  return animal.fly();
+}
+```
+
+### 16.4 `instanceof`
+
+- It has an operator for checking whether or not a value is an “instance” of another value.

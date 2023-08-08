@@ -1,8 +1,8 @@
 ---
 title: AWS Certified Solutions Architect - Associate (SAA-C03)
 description: AWS Certified Solutions Architect - Associate (SAA-C03)
-summary: "Updated by Fatma, Apr 08, 2023."
-date: 08-04-2023
+summary: "Updated by Fatma, Aug 04, 2023."
+date: 04-08-2023
 categories:
   - "Coding"
 tags:

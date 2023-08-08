@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Typescript">
 <meta itemprop="description" content="Typescript">
 
-<meta itemprop="wordCount" content="1866">
+<meta itemprop="wordCount" content="1953">
 <meta itemprop="keywords" content="typescript,user interface,coding,framework,frontend,web development," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -177,12 +177,7 @@
     </li>
     <li><a href="#7-type-assertions">7. Type assertions</a></li>
     <li><a href="#8-literal-types">8. Literal types</a></li>
-    <li><a href="#9-narrowing">9. Narrowing</a>
-      <ul>
-        <li><a href="#91-in">9.1 <code>in</code></a></li>
-        <li><a href="#92-instanceof">9.2 <code>instanceof</code></a></li>
-      </ul>
-    </li>
+    <li><a href="#9-narrowing">9. Narrowing</a></li>
     <li><a href="#10-typeof">10. <code>typeof</code></a></li>
     <li><a href="#11-type-predicate">11. Type predicate</a></li>
     <li><a href="#12-parameters">12. Parameters</a>
@@ -199,6 +194,14 @@
     </li>
     <li><a href="#14-static-methods-and-properties">14. Static methods and properties</a></li>
     <li><a href="#15-abstract-class">15. Abstract class</a></li>
+    <li><a href="#16-operators">16. Operators</a>
+      <ul>
+        <li><a href="#161-non-null-assertion-operator-">16.1 Non-null assertion operator <code>!</code></a></li>
+        <li><a href="#162-nullish-coalescing-operator-">16.2 Nullish coalescing operator <code>??</code></a></li>
+        <li><a href="#163-in">16.3 <code>in</code></a></li>
+        <li><a href="#164-instanceof">16.4 <code>instanceof</code></a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 	</div>
@@ -567,24 +570,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">padding</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">input</span>; <span style="color:#75715e">// padding:= string
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><h3 id="91-in">9.1 <code>in</code></h3>
-<ul>
-<li><code>in</code> operator determines if an object has a property with a name.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Fish</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">swim</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span> };
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Bird</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">fly</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span> };
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">move</span>(<span style="color:#a6e22e">animal</span>: <span style="color:#66d9ef">Fish</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Bird</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#34;swim&#34;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">animal</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">animal</span>.<span style="color:#a6e22e">swim</span>();
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">animal</span>.<span style="color:#a6e22e">fly</span>();
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="92-instanceof">9.2 <code>instanceof</code></h3>
-<ul>
-<li>It has an operator for checking whether or not a value is an “instance” of another value.</li>
-</ul>
-<h2 id="10-typeof">10. <code>typeof</code></h2>
+</span></span></code></pre></div><h2 id="10-typeof">10. <code>typeof</code></h2>
 <ul>
 <li>It shows the type of values we have at runtime.</li>
 </ul>
@@ -713,7 +699,45 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">simba</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SpecificCat</span>(<span style="color:#e6db74">&#39;Simba&#39;</span>, <span style="color:#e6db74">&#39;stray cat&#39;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">simba</span>.<span style="color:#a6e22e">getSpecies</span>()); <span style="color:#75715e">// stray cat
-</span></span></span></code></pre></div>
+</span></span></span></code></pre></div><h2 id="16-operators">16. Operators</h2>
+<h3 id="161-non-null-assertion-operator-">16.1 Non-null assertion operator <code>!</code></h3>
+<ul>
+<li><code>!</code> says that it will never be <code>null</code> or <code>undefined</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">age</span>: <span style="color:#66d9ef">number</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printName</span>(<span style="color:#a6e22e">person?</span>: <span style="color:#66d9ef">Person</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// If we don&#39;t put an exclamation mark (person!) an error will
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// occur, &#39;person&#39; is possibly &#39;undefined&#39;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`The name is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">person</span><span style="color:#f92672">!</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="162-nullish-coalescing-operator-">16.2 Nullish coalescing operator <code>??</code></h3>
+<ul>
+<li><code>??</code> returns the first argument if it&rsquo;s not <code>null</code>/<code>undefined</code>. Otherwise, the second one.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">??</span> <span style="color:#a6e22e">b</span> <span style="color:#75715e">// equals to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>( <span style="color:#a6e22e">a</span><span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">a</span><span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span> ) <span style="color:#f92672">?</span> <span style="color:#a6e22e">a</span> : <span style="color:#66d9ef">b</span>
+</span></span></code></pre></div><h3 id="163-in">16.3 <code>in</code></h3>
+<ul>
+<li><code>in</code> operator determines if an object has a property with a name.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Fish</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">swim</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span> };
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Bird</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">fly</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">move</span>(<span style="color:#a6e22e">animal</span>: <span style="color:#66d9ef">Fish</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Bird</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#34;swim&#34;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">animal</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">animal</span>.<span style="color:#a6e22e">swim</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">animal</span>.<span style="color:#a6e22e">fly</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="164-instanceof">16.4 <code>instanceof</code></h3>
+<ul>
+<li>It has an operator for checking whether or not a value is an “instance” of another value.</li>
+</ul>
+
 		</div>
 		<footer class="post__footer">
 			
