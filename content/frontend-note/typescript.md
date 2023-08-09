@@ -1,8 +1,8 @@
 ---
 title: Typescript
 description: Typescript
-summary: "Updated by Fatma, Jul 28, 2023."
-date: 28-07-2023
+summary: "Updated by Fatma, Aug 09, 2023."
+date: 09-08-2023
 categories:
   - "Coding"
 tags:
@@ -263,7 +263,7 @@ let u: undefined = undefined;
 let n: null = null;
 ```
 
-### 4.11 `tuple`
+### 4.11 Tuples
 
 ```typescript
 const passingResponse: [string, number] = ["{}", 200]; // [ '{}', 200 ]
@@ -277,6 +277,20 @@ const payStubs: PayStubs[] = [
   [staff[1], 250, 260],
   [staff[0], 300, 300, 300],
 ];
+```
+
+```typescript
+type ThreeDCoordinate = [ x: number, y: number, z: number ];
+
+function add3DCoordinate(c1: ThreeDCoordinate, c2: ThreeDCoordinate): ThreeDCoordinate {
+    return [
+        c1[0] + c2[0],
+        c1[1] + c2[1],
+        c1[2] + c2[2],
+    ]
+}
+
+console.log(add3DCoordinate([0, 10, 0], [10, 20, 30])); // [ 10, 30, 30 ]
 ```
 
 ### 4.12 `unknown`
@@ -699,3 +713,154 @@ function move(animal: Fish | Bird) {
 ### 16.4 `instanceof`
 
 - It has an operator for checking whether or not a value is an “instance” of another value.
+
+## 17. Callback functions
+
+- A `callback` is used to pass a function to another function. So that within the called function, it can _call back_ the function you passed to it.
+
+```typescript
+interface Greeter {
+  (message: string): void;
+}
+
+function sayHi(callback: Greeter) {
+  callback('Hi!');
+}
+
+const myGreeter: Greeter = (message: string) => {
+  console.log(`Greeting: ${message}`);
+};
+
+sayHi(myGreeter); // "Greeting: Hi!"
+```
+
+## 18. Optionals
+
+```typescript
+function printIngredient(quantity: string, ingredient: string, extra?: string) {
+    console.log(`${quantity} ${ingredient} ${extra ? ` ${extra}` : ""}`);
+}
+
+printIngredient("1C", "Flour");
+printIngredient("1C", "Sugar", "Something more")
+
+interface User {
+    id: string;
+    info?: {
+        email?: string;
+    }
+}
+
+function getEmailEasy(user: User): string {
+    return user?.info?.email ?? "";
+}
+
+function addWithCallback(x: number, y: number, callback?: () => void) {
+    console.log([x,y]);
+    callback?.();
+}
+```
+
+## 19. Generics
+
+```typescript
+function identity<Type>(arg: Type): Type {
+  return arg;
+}
+
+function identityArr<Type>(arg: Type[]): Type[] {
+  console.log(arg.length);
+  return arg;
+}
+```
+
+```typescript
+function simpleState<T>(initial: T): [() => T, (v: T) => void] {
+    let val: T = initial;
+    return [
+        () => val,
+        (v: T) => {
+            val = v;
+        },
+    ];
+}
+
+const [str1getter, str1setter] = simpleState("hello");
+console.log(str1getter()); // hello
+str1setter("bye");
+console.log(str1getter()); // bye
+
+const [int1getter, int1setter] = simpleState(1);
+console.log(int1getter()); // 1
+int1setter(2);
+console.log(int1getter()); // 2
+```
+
+### 19.1 Generics with keyof
+
+```typescript
+function extract<DataType, KeyType extends keyof DataType>(
+    items: DataType[],
+    key: KeyType
+): DataType[KeyType][] {
+    return items.map((item) => item[key]);
+}
+
+const people = [
+    { name: 'Bob', age: 20},
+    { name: 'Alice', age: 30}
+]
+
+console.log(extract(people, "age"));
+console.log(extract(people, "name"));
+```
+
+## 20. Utility Types
+
+- They facilitate common type transformations.
+
+```typescript
+interface MyUser {
+    name: string;
+    id: string;
+    email?: string;
+}
+
+type MyUserPartial = Partial<MyUser>; // name?, id?, email?
+type MyUserRequired = Required<MyUser>; // name, id, email
+type MyUserJustIdAndEmail = Pick<MyUser, "id" | "email">; // id, email?
+```
+
+### 20.1 `Partial<Type>`
+
+- It constructs a type with all properties of Type set to optional.
+
+### 20.2 `Pick<Type,Keys>`
+
+- It constructs a type by picking the set of properties Keys from Type.
+
+### 20.3 `Record<Keys,Type>`
+
+- It constructs an object type whose property keys are Keys and whose property values are Type.
+
+```typescript
+interface CatInfo {
+  age: number;
+  breed: string;
+}
+
+type CatName = "puffy" | "mia";
+
+const cats: Record<CatName, CatInfo> = {
+  puffy: { age: 1, breed: "Persian" },
+  mia: { age: 2, breed: "Stray" }
+};
+
+console.log(cats.puffy); // { "age": 1, "breed": "Persian" }
+```
+
+### 20.4 `Required<Type>`
+
+- It constructs a type consisting of all properties of Type set to required. It is the opposite of `Partial`.
+
+- For more utility types: [https://www.typescriptlang.org/docs/handbook/utility-types.html](https://www.typescriptlang.org/docs/handbook/utility-types.html)
