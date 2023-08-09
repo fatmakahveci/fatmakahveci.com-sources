@@ -102,7 +102,7 @@ let big: bigint = 9007199254740991n;
 
 - `true` and `false`
 
-### 4.2 `array`
+### 4.2 `Array`
 
 ```typescript
 // let arrayName: type[];
@@ -111,18 +111,60 @@ let list: number[] = [1, 2, 3];
 let list: Array<number> = [1, 2, 3];
 ```
 
-- `forEach()`, `map()`, `reduce()`, and `filter()` are useful array methods.
-
-```typescript
-let arr: number[] = [1, 2]; // [ 1, 2 ]
-let square: number[] = arr.map(e => e * e); // [ 1, 4 ]
-```
-
 - Mixed types
 
 ```typescript
 let scores : (string | number)[];
 scores = ['Bob', 100]; // [ 'Bob', 100 ]
+```
+
+- `Array.forEach()`, `Array.map()`, `Array.reduce()`, and `Array.filter()` are useful array methods.
+
+#### 4.2.1 `Array.forEach()`
+
+- It calls a function for each element in the array.
+
+```typescript
+let num = [1, 2, 3];
+num.forEach(function (value) {
+  console.log(value); // 1 2 3
+});
+```
+
+#### 4.2.2 `Array.map()`
+
+```typescript
+let arr: number[] = [1, 2, 3];
+let square: number[] = arr.map(e => e * e);
+console.log(square); // [ 1, 4, 9 ]
+```
+
+#### 4.2.3 `Array.reduce()`
+
+- It applies a function against two values of the array as to reduce it to a single value.
+
+```typescript
+let arr: number[] = [1, 2, 3];
+let val = arr.reduce(function(a, b) { // (a,b):= (previous, current)
+  return a + b;
+})
+console.log(val); // 6
+```
+
+#### 4.2.4 `Array.filter()`
+
+- It creates a new array with all elements that pass the test implemented by the provided function.
+
+```typescript
+function isEven(n: number) {
+  if(n % 2 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log([1, 2, 3].filter(isEven)); // [ 2 ]
 ```
 
 ### 4.3 `any`
