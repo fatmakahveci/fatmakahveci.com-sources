@@ -284,17 +284,28 @@ printName({ first: "Alice", last: "Alisson" });
 - A readonly property should be modifiable only when the object first created.
 
 ```typescript
-interface Person {
-    readonly ssn: string;
+interface Cat{
     name: string;
+    breed: string;
 }
 
-let person: Person;
-person = {
-    ssn: '171-28-0926',
-    name: 'Bob'
+function makeCat(name: string, breed: string): Readonly<Cat> {
+    return { name, breed };
 }
+
+const mia = makeCat("Mia", "Calico");
+// mia.breed = "Tabby"; // error
+
+// OR add `readonly` in front of the name to make it read only
+// interface Cat{
+//     readonly name: string;
+//     breed: string;
+// }
 ```
+
+- readonly tuple:= `readonly [number, number, number]`
+
+- readonly array:= `const constArr = [1, 2] as const;
 
 ### 4.10 `null` and `undefined`
 
@@ -517,7 +528,19 @@ mouseEvent = 'click'; // valid
 mouseEvent = 'dblclick'; // valid
 ```
 
-#### 6.2.2 Type casting
+#### 6.2.2 Numeric literal type
+
+```typescript
+function rollDice(times: 1 | 2): void {
+    for (let i=0;i<times;i++) {
+        let dice: number = Math.floor((Math.random() * 5) + 1);
+        console.log(dice);
+    }
+}
+rollDice(2);
+```
+
+#### 6.2.3 Type casting
 
 ```typescript
 let a: typeA;
@@ -556,11 +579,7 @@ function padLeft(padding: number | string, input: string) {
 }
 ```
 
-## 10. `typeof`
-
-- It shows the type of values we have at runtime.
-
-## 11. Type predicate
+## 10. Type predicate
 
 - To define a user-defined type guard, we simply need to define a function whose return type is a type predicate:
 
@@ -574,9 +593,9 @@ if (isFish(pet)) {
 }
 ```
 
-## 12. Parameters
+## 11. Parameters
 
-### 12.1 Rest parameters
+### 11.1 Rest parameters
 
 - It allows you to represent an indefinite number (zero or more) of arguments as an array.
 
@@ -589,7 +608,7 @@ function <function_name>(...<parameter_name>: <parameter_type>[]) { }
   - The rest parameter appears last in the parameter list.
   - The type of the rest parameter is _array_.
 
-### 12.2 Default parameters
+### 11.2 Default parameters
 
 - The default initialised value for the _omitted_ parameters.
 - Default parameters don't need to appear after the required parameters. When a default parameter appears before a required parameter, you need to explicitly pass `undefined` to get the default initialised value.
@@ -598,7 +617,7 @@ function <function_name>(...<parameter_name>: <parameter_type>[]) { }
 function <function_name>(<parameter_name>: <parameter_type>=<default_value>,...): <return_type_if_any>{ }
 ```
 
-### 12.3 Optional parameters
+### 11.3 Optional parameters
 
 - Optional parameters must come after the required parameters.
 - Using `?` after the parameter name makes a function parameter optional.
@@ -607,7 +626,7 @@ function <function_name>(<parameter_name>: <parameter_type>=<default_value>,...)
 function <function_name>(<parameter_name>?: <parameter_type>=<default_value>,...): <return_type_if_any>{ }
 ```
 
-## 13. Class
+## 12. Class
 
 ```typescript
 class Cat {
@@ -625,7 +644,7 @@ class Cat {
 let cat = new Cat('Puffy');
 ```
 
-### 13.1 Getters and setters
+### 12.1 Getters and setters
 
 ```typescript
 class Cat {
@@ -655,7 +674,11 @@ console.log(cat); // 5
 cat.age = -1; // Age is invalid.
 ```
 
-## 14. Static methods and properties
+### 12.2 Member visibility
+
+- `private`, `protected` and `public`.
+
+## 13. Static methods and properties
 
 - A static property is shared among all instances of a class.
 
@@ -679,7 +702,7 @@ console.log(Cat.counter); // 2
 console.log(Cat.getCounter()); // 2
 ```
 
-## 15. Abstract class
+## 14. Abstract class
 
 - It defines common behaviours for derived classes to extend.
 - Unlike a regular class, it cannot be instantiated directly.
@@ -708,9 +731,9 @@ let simba = new SpecificCat('Simba', 'stray cat');
 console.log(simba.getSpecies()); // stray cat
 ```
 
-## 16. Operators
+## 15. Operators
 
-### 16.1 Non-null assertion operator `!`
+### 15.1 Non-null assertion operator `!`
 
 - `!` says that it will never be `null` or `undefined`.
 
@@ -727,7 +750,7 @@ function printName(person?: Person) {
 }
 ```
 
-### 16.2 Nullish coalescing operator `??`
+### 15.2 Nullish coalescing operator `??`
 
 - `??` returns the first argument if it's not `null`/`undefined`. Otherwise, the second one.
 
@@ -736,7 +759,7 @@ a ?? b // equals to
 ( a!== null && a!== undefined ) ? a : b
 ```
 
-### 16.3 `in`
+### 15.3 `in`
 
 - `in` operator determines if an object has a property with a name.
 
@@ -752,11 +775,11 @@ function move(animal: Fish | Bird) {
 }
 ```
 
-### 16.4 `instanceof`
+### 15.4 `instanceof`
 
 - It has an operator for checking whether or not a value is an “instance” of another value.
 
-## 17. Callback functions
+## 16. Callback functions
 
 - A `callback` is used to pass a function to another function. So that within the called function, it can _call back_ the function you passed to it.
 
@@ -776,7 +799,7 @@ const myGreeter: Greeter = (message: string) => {
 sayHi(myGreeter); // "Greeting: Hi!"
 ```
 
-## 18. Optionals
+## 17. Optionals
 
 ```typescript
 function printIngredient(quantity: string, ingredient: string, extra?: string) {
@@ -803,7 +826,11 @@ function addWithCallback(x: number, y: number, callback?: () => void) {
 }
 ```
 
-## 19. Generics
+## 18. Types
+
+### 18.1 Generics
+
+- They are the types which take parameters.
 
 ```typescript
 function identity<Type>(arg: Type): Type {
@@ -838,7 +865,9 @@ int1setter(2);
 console.log(int1getter()); // 2
 ```
 
-### 19.1 Generics with keyof
+#### 18.2 `keyof` Type Operator
+
+- The `keyof` operator takes an object type and produces a string or numeric literal union of its keys.
 
 ```typescript
 function extract<DataType, KeyType extends keyof DataType>(
@@ -857,7 +886,18 @@ console.log(extract(people, "age"));
 console.log(extract(people, "name"));
 ```
 
-## 20. Utility Types
+## 18.3 `typeof` Type Operator
+
+- `typeof` shows the type of values we have at runtime.
+
+```typescript
+function f() {
+  return { x: 10, y: 3 };
+}
+type P = ReturnType<typeof f>; // type P = { x: number; y: number; }
+```
+
+## 19. Utility Types
 
 - They facilitate common type transformations.
 
@@ -871,17 +911,22 @@ interface MyUser {
 type MyUserPartial = Partial<MyUser>; // name?, id?, email?
 type MyUserRequired = Required<MyUser>; // name, id, email
 type MyUserJustIdAndEmail = Pick<MyUser, "id" | "email">; // id, email?
+type MyUserOmitEmail = Omit<MyUser, "email"> // name, id
 ```
 
-### 20.1 `Partial<Type>`
+### 19.1 `Omit<Type, Keys>`
+
+- It constructs a type by picking all properties from Type and then removing Keys. It is the opposite of `Pick`.
+
+### 19.2 `Partial<Type>`
 
 - It constructs a type with all properties of Type set to optional.
 
-### 20.2 `Pick<Type,Keys>`
+### 19.3 `Pick<Type, Keys>`
 
 - It constructs a type by picking the set of properties Keys from Type.
 
-### 20.3 `Record<Keys,Type>`
+### 19.4 `Record<Keys, Type>`
 
 - It constructs an object type whose property keys are Keys and whose property values are Type.
 
@@ -901,7 +946,7 @@ const cats: Record<CatName, CatInfo> = {
 console.log(cats.puffy); // { "age": 1, "breed": "Persian" }
 ```
 
-### 20.4 `Required<Type>`
+### 19.5 `Required<Type>`
 
 - It constructs a type consisting of all properties of Type set to required. It is the opposite of `Partial`.
 

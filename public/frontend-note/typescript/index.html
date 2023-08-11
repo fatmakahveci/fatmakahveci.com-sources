@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Typescript">
 <meta itemprop="description" content="Typescript">
 
-<meta itemprop="wordCount" content="2505">
+<meta itemprop="wordCount" content="2680">
 <meta itemprop="keywords" content="typescript,user interface,coding,framework,frontend,web development," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -178,43 +178,45 @@
     <li><a href="#7-type-assertions">7. Type assertions</a></li>
     <li><a href="#8-literal-types">8. Literal types</a></li>
     <li><a href="#9-narrowing">9. Narrowing</a></li>
-    <li><a href="#10-typeof">10. <code>typeof</code></a></li>
-    <li><a href="#11-type-predicate">11. Type predicate</a></li>
-    <li><a href="#12-parameters">12. Parameters</a>
+    <li><a href="#10-type-predicate">10. Type predicate</a></li>
+    <li><a href="#11-parameters">11. Parameters</a>
       <ul>
-        <li><a href="#121-rest-parameters">12.1 Rest parameters</a></li>
-        <li><a href="#122-default-parameters">12.2 Default parameters</a></li>
-        <li><a href="#123-optional-parameters">12.3 Optional parameters</a></li>
+        <li><a href="#111-rest-parameters">11.1 Rest parameters</a></li>
+        <li><a href="#112-default-parameters">11.2 Default parameters</a></li>
+        <li><a href="#113-optional-parameters">11.3 Optional parameters</a></li>
       </ul>
     </li>
-    <li><a href="#13-class">13. Class</a>
+    <li><a href="#12-class">12. Class</a>
       <ul>
-        <li><a href="#131-getters-and-setters">13.1 Getters and setters</a></li>
+        <li><a href="#121-getters-and-setters">12.1 Getters and setters</a></li>
+        <li><a href="#122-member-visibility">12.2 Member visibility</a></li>
       </ul>
     </li>
-    <li><a href="#14-static-methods-and-properties">14. Static methods and properties</a></li>
-    <li><a href="#15-abstract-class">15. Abstract class</a></li>
-    <li><a href="#16-operators">16. Operators</a>
+    <li><a href="#13-static-methods-and-properties">13. Static methods and properties</a></li>
+    <li><a href="#14-abstract-class">14. Abstract class</a></li>
+    <li><a href="#15-operators">15. Operators</a>
       <ul>
-        <li><a href="#161-non-null-assertion-operator-">16.1 Non-null assertion operator <code>!</code></a></li>
-        <li><a href="#162-nullish-coalescing-operator-">16.2 Nullish coalescing operator <code>??</code></a></li>
-        <li><a href="#163-in">16.3 <code>in</code></a></li>
-        <li><a href="#164-instanceof">16.4 <code>instanceof</code></a></li>
+        <li><a href="#151-non-null-assertion-operator-">15.1 Non-null assertion operator <code>!</code></a></li>
+        <li><a href="#152-nullish-coalescing-operator-">15.2 Nullish coalescing operator <code>??</code></a></li>
+        <li><a href="#153-in">15.3 <code>in</code></a></li>
+        <li><a href="#154-instanceof">15.4 <code>instanceof</code></a></li>
       </ul>
     </li>
-    <li><a href="#17-callback-functions">17. Callback functions</a></li>
-    <li><a href="#18-optionals">18. Optionals</a></li>
-    <li><a href="#19-generics">19. Generics</a>
+    <li><a href="#16-callback-functions">16. Callback functions</a></li>
+    <li><a href="#17-optionals">17. Optionals</a></li>
+    <li><a href="#18-types">18. Types</a>
       <ul>
-        <li><a href="#191-generics-with-keyof">19.1 Generics with keyof</a></li>
+        <li><a href="#181-generics">18.1 Generics</a></li>
       </ul>
     </li>
-    <li><a href="#20-utility-types">20. Utility Types</a>
+    <li><a href="#183-typeof-type-operator">18.3 <code>typeof</code> Type Operator</a></li>
+    <li><a href="#19-utility-types">19. Utility Types</a>
       <ul>
-        <li><a href="#201-partialtype">20.1 <code>Partial&lt;Type&gt;</code></a></li>
-        <li><a href="#202-picktypekeys">20.2 <code>Pick&lt;Type,Keys&gt;</code></a></li>
-        <li><a href="#203-recordkeystype">20.3 <code>Record&lt;Keys,Type&gt;</code></a></li>
-        <li><a href="#204-requiredtype">20.4 <code>Required&lt;Type&gt;</code></a></li>
+        <li><a href="#191-omittype-keys">19.1 <code>Omit&lt;Type, Keys&gt;</code></a></li>
+        <li><a href="#192-partialtype">19.2 <code>Partial&lt;Type&gt;</code></a></li>
+        <li><a href="#193-picktype-keys">19.3 <code>Pick&lt;Type, Keys&gt;</code></a></li>
+        <li><a href="#194-recordkeys-type">19.4 <code>Record&lt;Keys, Type&gt;</code></a></li>
+        <li><a href="#195-requiredtype">19.5 <code>Required&lt;Type&gt;</code></a></li>
       </ul>
     </li>
   </ul>
@@ -430,17 +432,32 @@
 <ul>
 <li>A readonly property should be modifiable only when the object first created.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Person</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">readonly</span> <span style="color:#a6e22e">ssn</span>: <span style="color:#66d9ef">string</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Cat</span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">breed</span>: <span style="color:#66d9ef">string</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">person</span>: <span style="color:#66d9ef">Person</span>;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">person</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ssn</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;171-28-0926&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Bob&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">makeCat</span>(<span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">breed</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Readonly</span>&lt;<span style="color:#f92672">Cat</span>&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">breed</span> };
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="410-null-and-undefined">4.10 <code>null</code> and <code>undefined</code></h3>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mia</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">makeCat</span>(<span style="color:#e6db74">&#34;Mia&#34;</span>, <span style="color:#e6db74">&#34;Calico&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// mia.breed = &#34;Tabby&#34;; // error
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// OR add `readonly` in front of the name to make it read only
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// interface Cat{
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//     readonly name: string;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//     breed: string;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// }
+</span></span></span></code></pre></div><ul>
+<li>
+<p>readonly tuple:= <code>readonly [number, number, number]</code></p>
+</li>
+<li>
+<p>readonly array:= `const constArr = [1, 2] as const;</p>
+</li>
+</ul>
+<h3 id="410-null-and-undefined">4.10 <code>null</code> and <code>undefined</code></h3>
 <ul>
 <li>These primitive values are used to signal absent or uninitialized value.</li>
 </ul>
@@ -603,7 +620,15 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mouseEvent</span>: <span style="color:#66d9ef">MouseEvent</span>;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">mouseEvent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;click&#39;</span>; <span style="color:#75715e">// valid
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">mouseEvent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dblclick&#39;</span>; <span style="color:#75715e">// valid
-</span></span></span></code></pre></div><h4 id="622-type-casting">6.2.2 Type casting</h4>
+</span></span></span></code></pre></div><h4 id="622-numeric-literal-type">6.2.2 Numeric literal type</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">rollDice</span>(<span style="color:#a6e22e">times</span>: <span style="color:#66d9ef">1</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">2</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">i</span>&lt;<span style="color:#f92672">times</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#a6e22e">i</span><span style="color:#960050;background-color:#1e0010">++)</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">let</span> <span style="color:#a6e22e">dice</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">number </span><span style="color:#f92672">=</span> <span style="color:#a6e22e">Math.floor</span><span style="color:#960050;background-color:#1e0010">((</span><span style="color:#a6e22e">Math.random</span><span style="color:#960050;background-color:#1e0010">()</span> <span style="color:#960050;background-color:#1e0010">*</span> <span style="color:#a6e22e">5</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">+</span> <span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console.log</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">dice</span><span style="color:#960050;background-color:#1e0010">);</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">rollDice</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">2</span><span style="color:#960050;background-color:#1e0010">);</span>
+</span></span></code></pre></div><h4 id="623-type-casting">6.2.3 Type casting</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">typeA</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> &lt;<span style="color:#f92672">typeB</span>&gt;<span style="color:#a6e22e">a</span>;
 </span></span></code></pre></div><h2 id="7-type-assertions">7. Type assertions</h2>
@@ -628,11 +653,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">padding</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">input</span>; <span style="color:#75715e">// padding:= string
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><h2 id="10-typeof">10. <code>typeof</code></h2>
-<ul>
-<li>It shows the type of values we have at runtime.</li>
-</ul>
-<h2 id="11-type-predicate">11. Type predicate</h2>
+</span></span></code></pre></div><h2 id="10-type-predicate">10. Type predicate</h2>
 <ul>
 <li>To define a user-defined type guard, we simply need to define a function whose return type is a type predicate:</li>
 </ul>
@@ -643,8 +664,8 @@
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">pet</span>.<span style="color:#a6e22e">fly</span>();
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="12-parameters">12. Parameters</h2>
-<h3 id="121-rest-parameters">12.1 Rest parameters</h3>
+</span></span></code></pre></div><h2 id="11-parameters">11. Parameters</h2>
+<h3 id="111-rest-parameters">11.1 Rest parameters</h3>
 <ul>
 <li>It allows you to represent an indefinite number (zero or more) of arguments as an array.</li>
 </ul>
@@ -658,19 +679,19 @@
 </ul>
 </li>
 </ul>
-<h3 id="122-default-parameters">12.2 Default parameters</h3>
+<h3 id="112-default-parameters">11.2 Default parameters</h3>
 <ul>
 <li>The default initialised value for the <em>omitted</em> parameters.</li>
 <li>Default parameters don&rsquo;t need to appear after the required parameters. When a default parameter appears before a required parameter, you need to explicitly pass <code>undefined</code> to get the default initialised value.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> &lt;<span style="color:#f92672">function_name</span>&gt;(&lt;<span style="color:#f92672">parameter_name</span>&gt;<span style="color:#f92672">:</span> &lt;<span style="color:#f92672">parameter_type</span>&gt;<span style="color:#f92672">=</span>&lt;<span style="color:#f92672">default_value</span>&gt;,...)<span style="color:#f92672">:</span> &lt;<span style="color:#f92672">return_type_if_any</span>&gt;{ }
-</span></span></code></pre></div><h3 id="123-optional-parameters">12.3 Optional parameters</h3>
+</span></span></code></pre></div><h3 id="113-optional-parameters">11.3 Optional parameters</h3>
 <ul>
 <li>Optional parameters must come after the required parameters.</li>
 <li>Using <code>?</code> after the parameter name makes a function parameter optional.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> &lt;<span style="color:#f92672">function_name</span>&gt;(&lt;<span style="color:#f92672">parameter_name</span>&gt;<span style="color:#f92672">?:</span> &lt;<span style="color:#f92672">parameter_type</span>&gt;<span style="color:#f92672">=</span>&lt;<span style="color:#f92672">default_value</span>&gt;,...)<span style="color:#f92672">:</span> &lt;<span style="color:#f92672">return_type_if_any</span>&gt;{ }
-</span></span></code></pre></div><h2 id="13-class">13. Class</h2>
+</span></span></code></pre></div><h2 id="12-class">12. Class</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">catName</span>: <span style="color:#66d9ef">string</span>;
 </span></span><span style="display:flex;"><span>
@@ -684,7 +705,7 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">cat</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Cat</span>(<span style="color:#e6db74">&#39;Puffy&#39;</span>);
-</span></span></code></pre></div><h3 id="131-getters-and-setters">13.1 Getters and setters</h3>
+</span></span></code></pre></div><h3 id="121-getters-and-setters">12.1 Getters and setters</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_age</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>
@@ -710,7 +731,11 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">cat</span>); <span style="color:#75715e">// 5
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">cat</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">// Age is invalid.
-</span></span></span></code></pre></div><h2 id="14-static-methods-and-properties">14. Static methods and properties</h2>
+</span></span></span></code></pre></div><h3 id="122-member-visibility">12.2 Member visibility</h3>
+<ul>
+<li><code>private</code>, <code>protected</code> and <code>public</code>.</li>
+</ul>
+<h2 id="13-static-methods-and-properties">13. Static methods and properties</h2>
 <ul>
 <li>A static property is shared among all instances of a class.</li>
 </ul>
@@ -731,7 +756,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">Cat</span>.<span style="color:#a6e22e">counter</span>); <span style="color:#75715e">// 2
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">Cat</span>.<span style="color:#a6e22e">getCounter</span>()); <span style="color:#75715e">// 2
-</span></span></span></code></pre></div><h2 id="15-abstract-class">15. Abstract class</h2>
+</span></span></span></code></pre></div><h2 id="14-abstract-class">14. Abstract class</h2>
 <ul>
 <li>It defines common behaviours for derived classes to extend.</li>
 <li>Unlike a regular class, it cannot be instantiated directly.</li>
@@ -757,8 +782,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">simba</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SpecificCat</span>(<span style="color:#e6db74">&#39;Simba&#39;</span>, <span style="color:#e6db74">&#39;stray cat&#39;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">simba</span>.<span style="color:#a6e22e">getSpecies</span>()); <span style="color:#75715e">// stray cat
-</span></span></span></code></pre></div><h2 id="16-operators">16. Operators</h2>
-<h3 id="161-non-null-assertion-operator-">16.1 Non-null assertion operator <code>!</code></h3>
+</span></span></span></code></pre></div><h2 id="15-operators">15. Operators</h2>
+<h3 id="151-non-null-assertion-operator-">15.1 Non-null assertion operator <code>!</code></h3>
 <ul>
 <li><code>!</code> says that it will never be <code>null</code> or <code>undefined</code>.</li>
 </ul>
@@ -772,13 +797,13 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// occur, &#39;person&#39; is possibly &#39;undefined&#39;.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`The name is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">person</span><span style="color:#f92672">!</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="162-nullish-coalescing-operator-">16.2 Nullish coalescing operator <code>??</code></h3>
+</span></span></code></pre></div><h3 id="152-nullish-coalescing-operator-">15.2 Nullish coalescing operator <code>??</code></h3>
 <ul>
 <li><code>??</code> returns the first argument if it&rsquo;s not <code>null</code>/<code>undefined</code>. Otherwise, the second one.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">??</span> <span style="color:#a6e22e">b</span> <span style="color:#75715e">// equals to
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>( <span style="color:#a6e22e">a</span><span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">a</span><span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span> ) <span style="color:#f92672">?</span> <span style="color:#a6e22e">a</span> : <span style="color:#66d9ef">b</span>
-</span></span></code></pre></div><h3 id="163-in">16.3 <code>in</code></h3>
+</span></span></code></pre></div><h3 id="153-in">15.3 <code>in</code></h3>
 <ul>
 <li><code>in</code> operator determines if an object has a property with a name.</li>
 </ul>
@@ -791,11 +816,11 @@
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">animal</span>.<span style="color:#a6e22e">fly</span>();
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="164-instanceof">16.4 <code>instanceof</code></h3>
+</span></span></code></pre></div><h3 id="154-instanceof">15.4 <code>instanceof</code></h3>
 <ul>
 <li>It has an operator for checking whether or not a value is an “instance” of another value.</li>
 </ul>
-<h2 id="17-callback-functions">17. Callback functions</h2>
+<h2 id="16-callback-functions">16. Callback functions</h2>
 <ul>
 <li>A <code>callback</code> is used to pass a function to another function. So that within the called function, it can <em>call back</em> the function you passed to it.</li>
 </ul>
@@ -812,7 +837,7 @@
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">sayHi</span>(<span style="color:#a6e22e">myGreeter</span>); <span style="color:#75715e">// &#34;Greeting: Hi!&#34;
-</span></span></span></code></pre></div><h2 id="18-optionals">18. Optionals</h2>
+</span></span></span></code></pre></div><h2 id="17-optionals">17. Optionals</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printIngredient</span>(<span style="color:#a6e22e">quantity</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">ingredient</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">extra?</span>: <span style="color:#66d9ef">string</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">quantity</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">ingredient</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">extra</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">` </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">extra</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
 </span></span><span style="display:flex;"><span>}
@@ -835,7 +860,11 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>([<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">y</span>]);
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">callback</span><span style="color:#f92672">?</span>.();
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="19-generics">19. Generics</h2>
+</span></span></code></pre></div><h2 id="18-types">18. Types</h2>
+<h3 id="181-generics">18.1 Generics</h3>
+<ul>
+<li>They are the types which take parameters.</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">identity</span>&lt;<span style="color:#f92672">Type</span>&gt;(<span style="color:#a6e22e">arg</span>: <span style="color:#66d9ef">Type</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Type</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arg</span>;
 </span></span><span style="display:flex;"><span>}
@@ -863,7 +892,10 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">int1getter</span>()); <span style="color:#75715e">// 1
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">int1setter</span>(<span style="color:#ae81ff">2</span>);
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">int1getter</span>()); <span style="color:#75715e">// 2
-</span></span></span></code></pre></div><h3 id="191-generics-with-keyof">19.1 Generics with keyof</h3>
+</span></span></span></code></pre></div><h4 id="182-keyof-type-operator">18.2 <code>keyof</code> Type Operator</h4>
+<ul>
+<li>The <code>keyof</code> operator takes an object type and produces a string or numeric literal union of its keys.</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">extract</span>&lt;<span style="color:#f92672">DataType</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">KeyType</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">keyof</span> <span style="color:#a6e22e">DataType</span>&gt;(
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">items</span>: <span style="color:#66d9ef">DataType</span>[],
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">key</span>: <span style="color:#66d9ef">KeyType</span>
@@ -878,7 +910,15 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">extract</span>(<span style="color:#a6e22e">people</span>, <span style="color:#e6db74">&#34;age&#34;</span>));
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">extract</span>(<span style="color:#a6e22e">people</span>, <span style="color:#e6db74">&#34;name&#34;</span>));
-</span></span></code></pre></div><h2 id="20-utility-types">20. Utility Types</h2>
+</span></span></code></pre></div><h2 id="183-typeof-type-operator">18.3 <code>typeof</code> Type Operator</h2>
+<ul>
+<li><code>typeof</code> shows the type of values we have at runtime.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">f() {</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">10</span>, <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">3</span> };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">P</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReturnType</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">f</span>&gt;; <span style="color:#75715e">// type P = { x: number; y: number; }
+</span></span></span></code></pre></div><h2 id="19-utility-types">19. Utility Types</h2>
 <ul>
 <li>They facilitate common type transformations.</li>
 </ul>
@@ -891,15 +931,20 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyUserPartial</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Partial</span>&lt;<span style="color:#f92672">MyUser</span>&gt;; <span style="color:#75715e">// name?, id?, email?
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyUserRequired</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Required</span>&lt;<span style="color:#f92672">MyUser</span>&gt;; <span style="color:#75715e">// name, id, email
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyUserJustIdAndEmail</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Pick</span>&lt;<span style="color:#f92672">MyUser</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">id</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">email</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;; <span style="color:#75715e">// id, email?
-</span></span></span></code></pre></div><h3 id="201-partialtype">20.1 <code>Partial&lt;Type&gt;</code></h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyUserOmitEmail</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Omit</span>&lt;<span style="color:#f92672">MyUser</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">email</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt; <span style="color:#75715e">// name, id
+</span></span></span></code></pre></div><h3 id="191-omittype-keys">19.1 <code>Omit&lt;Type, Keys&gt;</code></h3>
+<ul>
+<li>It constructs a type by picking all properties from Type and then removing Keys. It is the opposite of <code>Pick</code>.</li>
+</ul>
+<h3 id="192-partialtype">19.2 <code>Partial&lt;Type&gt;</code></h3>
 <ul>
 <li>It constructs a type with all properties of Type set to optional.</li>
 </ul>
-<h3 id="202-picktypekeys">20.2 <code>Pick&lt;Type,Keys&gt;</code></h3>
+<h3 id="193-picktype-keys">19.3 <code>Pick&lt;Type, Keys&gt;</code></h3>
 <ul>
 <li>It constructs a type by picking the set of properties Keys from Type.</li>
 </ul>
-<h3 id="203-recordkeystype">20.3 <code>Record&lt;Keys,Type&gt;</code></h3>
+<h3 id="194-recordkeys-type">19.4 <code>Record&lt;Keys, Type&gt;</code></h3>
 <ul>
 <li>It constructs an object type whose property keys are Keys and whose property values are Type.</li>
 </ul>
@@ -916,7 +961,7 @@
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">cats</span>.<span style="color:#a6e22e">puffy</span>); <span style="color:#75715e">// { &#34;age&#34;: 1, &#34;breed&#34;: &#34;Persian&#34; }
-</span></span></span></code></pre></div><h3 id="204-requiredtype">20.4 <code>Required&lt;Type&gt;</code></h3>
+</span></span></span></code></pre></div><h3 id="195-requiredtype">19.5 <code>Required&lt;Type&gt;</code></h3>
 <ul>
 <li>
 <p>It constructs a type consisting of all properties of Type set to required. It is the opposite of <code>Partial</code>.</p>
