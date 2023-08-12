@@ -686,25 +686,29 @@ cat.age = -1; // Age is invalid.
 - It often contains one or more abstract methods.
 
 ```typescript
-abstract class Cat {
-  constructor(private catName: string) { }
+abstract class PokemonCharacter {
+    constructor() {}
 
-  abstract getSpecies(): string 
+    walk() {}
+    attack() {
+        console.log(`${this.name} attack with ${this.getSpecialAttack()}`);
+    }
+
+    abstract getSpecialAttack(): string;
+    abstract get name(): string;
 }
 
-class SpecificCat extends Cat {
-  constructor(catName: string, private species: string) {
-    super(catName);
-  }
-
-  getSpecies(): string {
-    return this.species;
-  }
+class Pikachu extends PokemonCharacter {
+    get name(): string {
+        return "Pikachu";
+    }
+    getSpecialAttack(): string {
+        return "Thunder Shock";
+    }
 }
 
-let simba = new SpecificCat('Simba', 'stray cat');
-
-console.log(simba.getSpecies()); // stray cat
+const pikachu = new Pikachu();
+pikachu.attack();
 ```
 
 ## 13. Static methods and properties
@@ -914,8 +918,43 @@ type Age = Person["age"]; // type Age = number
 
 ### 17.6 Mapped Types
 
+- As a generic type, it uses a union of `PropertyKey`s (frequently created via a keyof) to iterate through keys to create a type:
+
 ```typescript
-// TO-DO
+// definition
+type OptionsFlags<Type> = {
+  [Property in keyof Type]: boolean;
+};
+
+type Features = {
+  darkMode: () => void;
+  newUserProfile: () => void;
+};
+ 
+type FeatureOptions = OptionsFlags<Features> // type FeatureOptions = { darkMode: boolean; newUserProfile: boolean; }
+```
+
+- Key remapping via `as`:
+
+```typescript
+// definition
+type MappedTypeWithNewProperties<Type> = {
+    [Properties in keyof Type as NewKeyType]: Type[Properties]
+}
+
+//
+
+type Getters<Type> = {
+    [Property in keyof Type as `get${Capitalize<string & Property>}`]: () => Type[Property]
+};
+ 
+interface Person {
+    name: string;
+    age: number;
+    location: string;
+}
+ 
+type LazyPerson = Getters<Person>; // type LazyPerson = { getName: () => string; getAge: () => number; getLocation: () => string; }
 ```
 
 ### 17.7 Template Literal Types
@@ -987,3 +1026,33 @@ console.log(cats.puffy); // { "age": 1, "breed": "Persian" }
 - It constructs a type consisting of all properties of Type set to required. It is the opposite of `Partial`.
 
 - For more utility types: [https://www.typescriptlang.org/docs/handbook/utility-types.html](https://www.typescriptlang.org/docs/handbook/utility-types.html)
+
+## 19. Design patterns
+
+### 19.1 Singleton
+
+```typescript
+class Flower {
+    constructor(public readonly name: string, public readonly numberOfPetals: number) {
+    }
+}
+
+class FlowerList {
+    private flowers: Flower[] = [];
+
+    static instance: FlowerList = new FlowerList();
+
+    private constructor() {}
+
+    static addFlower(flower: Flower) {
+        FlowerList.instance.flowers.push(flower);
+    }
+
+    getFlowers() {
+        return this.flowers;
+    }
+}
+
+FlowerList.addFlower(new Flower("Rose", 20));
+console.log(FlowerList.instance.getFlowers());
+```

@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Typescript">
 <meta itemprop="description" content="Typescript">
 
-<meta itemprop="wordCount" content="2779">
+<meta itemprop="wordCount" content="2963">
 <meta itemprop="keywords" content="typescript,user interface,coding,framework,frontend,web development," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -222,6 +222,11 @@
         <li><a href="#183-picktype-keys">18.3 <code>Pick&lt;Type, Keys&gt;</code></a></li>
         <li><a href="#184-recordkeys-type">18.4 <code>Record&lt;Keys, Type&gt;</code></a></li>
         <li><a href="#185-requiredtype">18.5 <code>Required&lt;Type&gt;</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#19-design-patterns">19. Design patterns</a>
+      <ul>
+        <li><a href="#191-singleton">19.1 Singleton</a></li>
       </ul>
     </li>
   </ul>
@@ -747,26 +752,30 @@
 <li>To use it, you must inherit and implement its abstract methods.</li>
 <li>It often contains one or more abstract methods.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>(<span style="color:#66d9ef">private</span> <span style="color:#a6e22e">catName</span>: <span style="color:#66d9ef">string</span>) { }
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PokemonCharacter</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">constructor</span>() {}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">abstract</span> <span style="color:#a6e22e">getSpecies</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">walk() {</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">attack() {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> attack with </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getSpecialAttack</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">abstract</span> <span style="color:#a6e22e">getSpecialAttack</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">get</span> <span style="color:#a6e22e">name</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SpecificCat</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Cat</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">catName</span>: <span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">species</span>: <span style="color:#66d9ef">string</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">catName</span>);
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getSpecies</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">species</span>;
-</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pikachu</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">PokemonCharacter</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">get</span> <span style="color:#a6e22e">name</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Pikachu&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getSpecialAttack</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Thunder Shock&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">simba</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SpecificCat</span>(<span style="color:#e6db74">&#39;Simba&#39;</span>, <span style="color:#e6db74">&#39;stray cat&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">simba</span>.<span style="color:#a6e22e">getSpecies</span>()); <span style="color:#75715e">// stray cat
-</span></span></span></code></pre></div><h2 id="13-static-methods-and-properties">13. Static methods and properties</h2>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pikachu</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Pikachu</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">pikachu</span>.<span style="color:#a6e22e">attack</span>();
+</span></span></code></pre></div><h2 id="13-static-methods-and-properties">13. Static methods and properties</h2>
 <ul>
 <li>A static property is shared among all instances of a class.</li>
 </ul>
@@ -932,7 +941,41 @@
 </span></span></span></code></pre></div><h3 id="175-conditional-types">17.5 Conditional Types</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// TO-DO
 </span></span></span></code></pre></div><h3 id="176-mapped-types">17.6 Mapped Types</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// TO-DO
+<ul>
+<li>As a generic type, it uses a union of <code>PropertyKey</code>s (frequently created via a keyof) to iterate through keys to create a type:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// definition
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">OptionsFlags</span>&lt;<span style="color:#f92672">Type</span>&gt; <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">Property</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">Type</span>]<span style="color:#f92672">:</span> <span style="color:#66d9ef">boolean</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Features</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">darkMode</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">newUserProfile</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">FeatureOptions</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">OptionsFlags</span>&lt;<span style="color:#f92672">Features</span>&gt; <span style="color:#75715e">// type FeatureOptions = { darkMode: boolean; newUserProfile: boolean; }
+</span></span></span></code></pre></div><ul>
+<li>Key remapping via <code>as</code>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// definition
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MappedTypeWithNewProperties</span>&lt;<span style="color:#f92672">Type</span>&gt; <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">Properties</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">Type</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">NewKeyType</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">Type</span>[<span style="color:#a6e22e">Properties</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Getters</span>&lt;<span style="color:#f92672">Type</span>&gt; <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">Property</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">keyof</span> <span style="color:#a6e22e">Type</span> <span style="color:#66d9ef">as</span> <span style="color:#e6db74">`get</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">Capitalize</span>&lt;<span style="color:#f92672">string</span> <span style="color:#960050;background-color:#1e0010">&amp;</span> <span style="color:#a6e22e">Property</span>&gt;<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>]<span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">Type</span>[<span style="color:#a6e22e">Property</span>]
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">age</span>: <span style="color:#66d9ef">number</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">location</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">LazyPerson</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Getters</span>&lt;<span style="color:#f92672">Person</span>&gt;; <span style="color:#75715e">// type LazyPerson = { getName: () =&gt; string; getAge: () =&gt; number; getLocation: () =&gt; string; }
 </span></span></span></code></pre></div><h3 id="177-template-literal-types">17.7 Template Literal Types</h3>
 <ul>
 <li>They are build on string literal types and can expand into many strings via unions.</li>
@@ -998,7 +1041,32 @@
 </p>
 </li>
 </ul>
-
+<h2 id="19-design-patterns">19. Design patterns</h2>
+<h3 id="191-singleton">19.1 Singleton</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Flower</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">constructor</span>(<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">readonly</span> <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">readonly</span> <span style="color:#a6e22e">numberOfPetals</span>: <span style="color:#66d9ef">number</span>) {
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FlowerList</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">flowers</span>: <span style="color:#66d9ef">Flower</span>[] <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">instance</span>: <span style="color:#66d9ef">FlowerList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FlowerList</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">constructor</span>() {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">addFlower</span>(<span style="color:#a6e22e">flower</span>: <span style="color:#66d9ef">Flower</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">FlowerList</span>.<span style="color:#a6e22e">instance</span>.<span style="color:#a6e22e">flowers</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">flower</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getFlowers() {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">flowers</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">FlowerList</span>.<span style="color:#a6e22e">addFlower</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Flower</span>(<span style="color:#e6db74">&#34;Rose&#34;</span>, <span style="color:#ae81ff">20</span>));
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">FlowerList</span>.<span style="color:#a6e22e">instance</span>.<span style="color:#a6e22e">getFlowers</span>());
+</span></span></code></pre></div>
 		</div>
 		<footer class="post__footer">
 			
