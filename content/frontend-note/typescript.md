@@ -678,31 +678,7 @@ cat.age = -1; // Age is invalid.
 
 - `private`, `protected` and `public`.
 
-## 13. Static methods and properties
-
-- A static property is shared among all instances of a class.
-
-```typescript
-class Cat {
-  static counter: number = 0;
-
-  constructor(private catName: string) {
-    Cat.counter++;
-  }
-    
-  public static getCounter() {
-    return Cat.counter;
-  }
-}
-
-let simba = new Cat('Simba');
-let felix = new Cat('Felix');
-
-console.log(Cat.counter); // 2
-console.log(Cat.getCounter()); // 2
-```
-
-## 14. Abstract class
+### 12.3 Abstract class
 
 - It defines common behaviours for derived classes to extend.
 - Unlike a regular class, it cannot be instantiated directly.
@@ -731,9 +707,33 @@ let simba = new SpecificCat('Simba', 'stray cat');
 console.log(simba.getSpecies()); // stray cat
 ```
 
-## 15. Operators
+## 13. Static methods and properties
 
-### 15.1 Non-null assertion operator `!`
+- A static property is shared among all instances of a class.
+
+```typescript
+class Cat {
+  static counter: number = 0;
+
+  constructor(private catName: string) {
+    Cat.counter++;
+  }
+    
+  public static getCounter() {
+    return Cat.counter;
+  }
+}
+
+let simba = new Cat('Simba');
+let felix = new Cat('Felix');
+
+console.log(Cat.counter); // 2
+console.log(Cat.getCounter()); // 2
+```
+
+## 14. Operators
+
+### 14.1 Non-null assertion operator `!`
 
 - `!` says that it will never be `null` or `undefined`.
 
@@ -750,7 +750,7 @@ function printName(person?: Person) {
 }
 ```
 
-### 15.2 Nullish coalescing operator `??`
+### 14.2 Nullish coalescing operator `??`
 
 - `??` returns the first argument if it's not `null`/`undefined`. Otherwise, the second one.
 
@@ -759,7 +759,7 @@ a ?? b // equals to
 ( a!== null && a!== undefined ) ? a : b
 ```
 
-### 15.3 `in`
+### 14.3 `in`
 
 - `in` operator determines if an object has a property with a name.
 
@@ -775,11 +775,11 @@ function move(animal: Fish | Bird) {
 }
 ```
 
-### 15.4 `instanceof`
+### 14.4 `instanceof`
 
 - It has an operator for checking whether or not a value is an “instance” of another value.
 
-## 16. Callback functions
+## 15. Callback functions
 
 - A `callback` is used to pass a function to another function. So that within the called function, it can _call back_ the function you passed to it.
 
@@ -799,7 +799,7 @@ const myGreeter: Greeter = (message: string) => {
 sayHi(myGreeter); // "Greeting: Hi!"
 ```
 
-## 17. Optionals
+## 16. Optionals
 
 ```typescript
 function printIngredient(quantity: string, ingredient: string, extra?: string) {
@@ -826,11 +826,11 @@ function addWithCallback(x: number, y: number, callback?: () => void) {
 }
 ```
 
-## 18. Types
+## 17. Types
 
-### 18.1 Generics
+### 17.1 Generics
 
-- They are the types which take parameters.
+- Generics can create a component that can work over a variety of types rather than a single one.
 
 ```typescript
 function identity<Type>(arg: Type): Type {
@@ -865,7 +865,7 @@ int1setter(2);
 console.log(int1getter()); // 2
 ```
 
-#### 18.2 `keyof` Type Operator
+### 17.2 `keyof` Type Operator
 
 - The `keyof` operator takes an object type and produces a string or numeric literal union of its keys.
 
@@ -886,7 +886,7 @@ console.log(extract(people, "age"));
 console.log(extract(people, "name"));
 ```
 
-## 18.3 `typeof` Type Operator
+### 17.3 `typeof` Type Operator
 
 - `typeof` shows the type of values we have at runtime.
 
@@ -897,7 +897,43 @@ function f() {
 type P = ReturnType<typeof f>; // type P = { x: number; y: number; }
 ```
 
-## 19. Utility Types
+### 17.4 Indexed Access Types
+
+- An indexed access type can look up a specific property on another type.
+
+```typescript
+type Person = { age: number; name: string; alive: boolean };
+type Age = Person["age"]; // type Age = number
+```
+
+### 17.5 Conditional Types
+
+```typescript
+// TO-DO
+```
+
+### 17.6 Mapped Types
+
+```typescript
+// TO-DO
+```
+
+### 17.7 Template Literal Types
+
+- They are build on string literal types and can expand into many strings via unions.
+
+```typescript
+type Size = 'small' | 'medium';
+type Colour = 'red' | 'blue';
+type Style = `${Size}-${Colour}`;
+
+function applyStyle(style: Style) {
+}
+
+applyStyle('small-primary');
+```
+
+## 18. Utility Types
 
 - They facilitate common type transformations.
 
@@ -914,19 +950,19 @@ type MyUserJustIdAndEmail = Pick<MyUser, "id" | "email">; // id, email?
 type MyUserOmitEmail = Omit<MyUser, "email"> // name, id
 ```
 
-### 19.1 `Omit<Type, Keys>`
+### 18.1 `Omit<Type, Keys>`
 
 - It constructs a type by picking all properties from Type and then removing Keys. It is the opposite of `Pick`.
 
-### 19.2 `Partial<Type>`
+### 18.2 `Partial<Type>`
 
 - It constructs a type with all properties of Type set to optional.
 
-### 19.3 `Pick<Type, Keys>`
+### 18.3 `Pick<Type, Keys>`
 
 - It constructs a type by picking the set of properties Keys from Type.
 
-### 19.4 `Record<Keys, Type>`
+### 18.4 `Record<Keys, Type>`
 
 - It constructs an object type whose property keys are Keys and whose property values are Type.
 
@@ -946,7 +982,7 @@ const cats: Record<CatName, CatInfo> = {
 console.log(cats.puffy); // { "age": 1, "breed": "Persian" }
 ```
 
-### 19.5 `Required<Type>`
+### 18.5 `Required<Type>`
 
 - It constructs a type consisting of all properties of Type set to required. It is the opposite of `Partial`.
 
