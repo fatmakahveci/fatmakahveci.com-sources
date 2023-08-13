@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Typescript">
 <meta itemprop="description" content="Typescript">
 
-<meta itemprop="wordCount" content="2963">
+<meta itemprop="wordCount" content="3467">
 <meta itemprop="keywords" content="typescript,user interface,coding,framework,frontend,web development," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -217,11 +217,24 @@
     </li>
     <li><a href="#18-utility-types">18. Utility Types</a>
       <ul>
-        <li><a href="#181-omittype-keys">18.1 <code>Omit&lt;Type, Keys&gt;</code></a></li>
-        <li><a href="#182-partialtype">18.2 <code>Partial&lt;Type&gt;</code></a></li>
-        <li><a href="#183-picktype-keys">18.3 <code>Pick&lt;Type, Keys&gt;</code></a></li>
-        <li><a href="#184-recordkeys-type">18.4 <code>Record&lt;Keys, Type&gt;</code></a></li>
-        <li><a href="#185-requiredtype">18.5 <code>Required&lt;Type&gt;</code></a></li>
+        <li><a href="#181-awaitedtype">18.1 <code>Awaited&lt;Type&gt;</code></a></li>
+        <li><a href="#182-capitalizestringtype">18.2 <code>Capitalize&lt;StringType&gt;</code></a></li>
+        <li><a href="#183-constructparameterstype">18.3 <code>ConstructParameters&lt;Type&gt;</code></a></li>
+        <li><a href="#184-excludeuniontype-excludedmembers">18.4 <code>Exclude&lt;UnionType, ExcludedMembers</code></a></li>
+        <li><a href="#185-extracttype-union">18.5 <code>Extract&lt;Type, Union&gt;</code></a></li>
+        <li><a href="#186-instancetypetype">18.6 <code>InstanceType&lt;Type&gt;</code></a></li>
+        <li><a href="#187-lowercasestringtype">18.7 <code>Lowercase&lt;StringType&gt;</code></a></li>
+        <li><a href="#188-nonnullabletype">18.8 <code>NonNullable&lt;Type&gt;</code></a></li>
+        <li><a href="#189-omittype-keys">18.9 <code>Omit&lt;Type, Keys&gt;</code></a></li>
+        <li><a href="#1810-parameterstype">18.10 <code>Parameters&lt;Type&gt;</code></a></li>
+        <li><a href="#1811-partialtype">18.11 <code>Partial&lt;Type&gt;</code></a></li>
+        <li><a href="#1812-picktype-keys">18.12 <code>Pick&lt;Type, Keys&gt;</code></a></li>
+        <li><a href="#1813-readonlytype">18.13 <code>Readonly&lt;Type&gt;</code></a></li>
+        <li><a href="#1814-recordkeys-type">18.14 <code>Record&lt;Keys, Type&gt;</code></a></li>
+        <li><a href="#1815-requiredtype">18.15 <code>Required&lt;Type&gt;</code></a></li>
+        <li><a href="#1816-returntypetype">18.16 <code>ReturnType&lt;Type&gt;</code></a></li>
+        <li><a href="#1817-uncapitalizestringtype">18.17 <code>Uncapitalize&lt;StringType&gt;</code></a></li>
+        <li><a href="#1818-uppercasestringtype">18.18 <code>Uppercase&lt;StringType&gt;</code></a></li>
       </ul>
     </li>
     <li><a href="#19-design-patterns">19. Design patterns</a>
@@ -252,7 +265,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g typescript
 </span></span></code></pre></div><ul>
 <li>The line above installs the <code>TypeScript</code> Compiler <code>tsc</code> globally.</li>
-<li>You can also use <code>npx</code> to run <code>tsc</code> from a local <code>node_modules</code> package instead.</li>
+<li>Also, you can use <code>npx</code> to run <code>tsc</code> from a local <code>node_modules</code> package instead.</li>
 </ul>
 <h2 id="2-hello-world">2. Hello world</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// typeScript filename: greeting.ts
@@ -330,7 +343,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">square</span>); <span style="color:#75715e">// [ 1, 4, 9 ]
 </span></span></span></code></pre></div><h4 id="423-arrayreduce">4.2.3 <code>Array.reduce()</code></h4>
 <ul>
-<li>It applies a function against two values of the array as to reduce it to a single value.</li>
+<li>It applies a function against two array values to reduce it to a single value.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span>: <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">reduce</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) { <span style="color:#75715e">// (a,b):= (previous, current)
@@ -362,7 +375,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">strictlyTyped</span>.<span style="color:#a6e22e">toFixed</span>();
 </span></span></code></pre></div><h3 id="44-never">4.4 <code>never</code></h3>
 <ul>
-<li>It indicates that a function will never return or that a value will never be assignable to a particular type. Typically, it represents the return type of a function that always throws an error.</li>
+<li>It indicates that a function will never return or a value will never be assignable to a particular type. Typically, it represents the return type of a function that always throws an error.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">raiseError</span>(<span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">never</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">message</span>);
@@ -377,7 +390,7 @@
 <ul>
 <li><code>let</code> creates a variable.</li>
 <li>It allows you to declare block-level variables.</li>
-<li>The declared variable is available from the block it is enclosed in.</li>
+<li>The declared variable is available from the block is enclosed in.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Simon&#39;</span>;
 </span></span></code></pre></div><h4 id="453-const">4.5.3 <code>const</code></h4>
@@ -414,7 +427,7 @@
 <ul>
 <li>It represents the non-primitive type.</li>
 <li>It refers to any JavaScript value with properties.</li>
-<li>To define an object type, we simply list its properties and their types.</li>
+<li>To define an object type, we list its properties and their types.</li>
 <li>Object types are functions, arrays, classes, etc.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printCoord</span>(<span style="color:#a6e22e">pt</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">number</span>; <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">number</span> }) { }
@@ -557,7 +570,7 @@
 </span></span><span style="display:flex;"><span>});
 </span></span></code></pre></div><h2 id="6-interfaces-and-type-aliases">6. Interfaces and type aliases</h2>
 <ul>
-<li>The key distinction is that a <code>type</code> cannot be re-opened to add new properties vs an <code>interface</code> which is always extendable.</li>
+<li>Key distinction is that a <code>type</code> cannot be reopened to add new properties, whereas an <code>interface</code> is always extendable.</li>
 <li>Interfaces define contracts and provide explicit names for type checking.</li>
 <li>Interfaces may have optional properties or readonly properties.</li>
 <li>Interfaces can be used as function types.</li>
@@ -606,7 +619,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">yellowStrayCat</span>.<span style="color:#a6e22e">play</span>();
 </span></span></code></pre></div><h3 id="62-type-aliases">6.2 Type aliases</h3>
 <ul>
-<li>A type alias is exactly that - a name for any type.</li>
+<li>A type alias is literally that - a name for any type.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Point</span> <span style="color:#f92672">=</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">number</span>;
@@ -655,7 +668,7 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="9-narrowing">9. Narrowing</h2>
 <ul>
-<li>The process of refining types to more specific types than declared is called narrowing.</li>
+<li>Refining types to more specific types than declared is called narrowing.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">padLeft</span>(<span style="color:#a6e22e">padding</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">input</span>: <span style="color:#66d9ef">string</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">padding</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;number&#34;</span>) {
@@ -665,7 +678,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span></code></pre></div><h2 id="10-type-predicate">10. Type predicate</h2>
 <ul>
-<li>To define a user-defined type guard, we simply need to define a function whose return type is a type predicate:</li>
+<li>To define a user-defined type guard, we simply need to define a function of which return type is a type predicate:</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pet</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getSmallPet</span>();
 </span></span><span style="display:flex;"><span>
@@ -813,7 +826,7 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="142-nullish-coalescing-operator-">14.2 Nullish coalescing operator <code>??</code></h3>
 <ul>
-<li><code>??</code> returns the first argument if it&rsquo;s not <code>null</code>/<code>undefined</code>. Otherwise, the second one.</li>
+<li><code>??</code> returns the first argument if not <code>null</code>/<code>undefined</code>. Otherwise, it returns the second one.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">??</span> <span style="color:#a6e22e">b</span> <span style="color:#75715e">// equals to
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>( <span style="color:#a6e22e">a</span><span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">a</span><span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span> ) <span style="color:#f92672">?</span> <span style="color:#a6e22e">a</span> : <span style="color:#66d9ef">b</span>
@@ -939,7 +952,10 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">age</span>: <span style="color:#66d9ef">number</span>; <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>; <span style="color:#a6e22e">alive</span>: <span style="color:#66d9ef">boolean</span> };
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Age</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Person</span>[<span style="color:#e6db74">&#34;age&#34;</span>]; <span style="color:#75715e">// type Age = number
 </span></span></span></code></pre></div><h3 id="175-conditional-types">17.5 Conditional Types</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// TO-DO
+<ul>
+<li>They help describe the relation between the types of inputs and outputs.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#75715e">// SomeType extends OtherType ? TrueType : FalseType;
 </span></span></span></code></pre></div><h3 id="176-mapped-types">17.6 Mapped Types</h3>
 <ul>
 <li>As a generic type, it uses a union of <code>PropertyKey</code>s (frequently created via a keyof) to iterate through keys to create a type:</li>
@@ -992,31 +1008,111 @@
 <ul>
 <li>They facilitate common type transformations.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">MyUser</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span>: <span style="color:#66d9ef">string</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">email?</span>: <span style="color:#66d9ef">string</span>;
+<h3 id="181-awaitedtype">18.1 <code>Awaited&lt;Type&gt;</code></h3>
+<ul>
+<li>It extracts the type that is being returned by a promise. It helps us to avoid using <code>.then()</code> and <code>await</code> the same promise repeatedly.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCat</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span><span style="color:#f92672">&lt;</span>{ 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>; 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">age</span>: <span style="color:#66d9ef">number</span> 
+</span></span><span style="display:flex;"><span>}<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Simba&#34;</span>, <span style="color:#a6e22e">age</span>: <span style="color:#66d9ef">1</span> };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">CatType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Awaited</span>&lt;<span style="color:#f92672">ReturnType</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">typeof</span> <span style="color:#a6e22e">getCat</span>&gt;<span style="color:#f92672">&gt;</span>; <span style="color:#75715e">// [ name: string, age: number ]
+</span></span></span></code></pre></div><h3 id="182-capitalizestringtype">18.2 <code>Capitalize&lt;StringType&gt;</code></h3>
+<ul>
+<li>It converts the first character into the string to an uppercase equivalent.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">LowercaseGreeting</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello, world&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Greeting</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Capitalize</span>&lt;<span style="color:#f92672">LowercaseGreeting</span>&gt;; <span style="color:#75715e">// &#34;Hello, world&#34;
+</span></span></span></code></pre></div><h3 id="183-constructparameterstype">18.3 <code>ConstructParameters&lt;Type&gt;</code></h3>
+<ul>
+<li>It constructs a tuple or an array type from the types of a constructor function type.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">str</span>: <span style="color:#66d9ef">string</span>) {}
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyUserPartial</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Partial</span>&lt;<span style="color:#f92672">MyUser</span>&gt;; <span style="color:#75715e">// name?, id?, email?
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyUserRequired</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Required</span>&lt;<span style="color:#f92672">MyUser</span>&gt;; <span style="color:#75715e">// name, id, email
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyUserJustIdAndEmail</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Pick</span>&lt;<span style="color:#f92672">MyUser</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">id</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">email</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;; <span style="color:#75715e">// id, email?
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyUserOmitEmail</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Omit</span>&lt;<span style="color:#f92672">MyUser</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">email</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt; <span style="color:#75715e">// name, id
-</span></span></span></code></pre></div><h3 id="181-omittype-keys">18.1 <code>Omit&lt;Type, Keys&gt;</code></h3>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">T0</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ConstructorParameters</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">MyClass</span>&gt;; <span style="color:#75715e">// [ x: number, str: string ]
+</span></span></span></code></pre></div><h3 id="184-excludeuniontype-excludedmembers">18.4 <code>Exclude&lt;UnionType, ExcludedMembers</code></h3>
 <ul>
-<li>It constructs a type by picking all properties from Type and then removing Keys. It is the opposite of <code>Pick</code>.</li>
+<li>It constructs a type by excluding all union members that are assignable to <code>ExcludedMembers</code>.</li>
 </ul>
-<h3 id="182-partialtype">18.2 <code>Partial&lt;Type&gt;</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ExcludedType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Exclude</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;str&#34;</span>, <span style="color:#e6db74">&#34;str&#34;</span><span style="color:#f92672">&gt;</span>; <span style="color:#75715e">// &#34;a&#34;
+</span></span></span></code></pre></div><h3 id="185-extracttype-union">18.5 <code>Extract&lt;Type, Union&gt;</code></h3>
+<ul>
+<li>It constructs a new type by exracting all union members that are assignable to <code>Union</code>. It is the opposite of <code>Exclude</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ExtractedType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Extract</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;str&#34;</span>, <span style="color:#e6db74">&#34;str&#34;</span><span style="color:#f92672">&gt;</span>; <span style="color:#75715e">// &#34;str&#34;
+</span></span></span></code></pre></div><h3 id="186-instancetypetype">18.6 <code>InstanceType&lt;Type&gt;</code></h3>
+<ul>
+<li>It constructs a type consisting of the instance type of a constructor function in Type. It is similar to <code>ReturnType</code>, but it acts on a class constructor.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">age</span>: <span style="color:#66d9ef">number</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">cat</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>; <span style="color:#a6e22e">age</span>: <span style="color:#66d9ef">number</span> }) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cat</span>.<span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cat</span>.<span style="color:#a6e22e">age</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">CatType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">InstanceType</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">Cat</span>&gt;; <span style="color:#75715e">// [ name: string; age: number ]
+</span></span></span></code></pre></div><h3 id="187-lowercasestringtype">18.7 <code>Lowercase&lt;StringType&gt;</code></h3>
+<ul>
+<li>It converts each character into the string to the lowercase equivalent.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Greeting</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello, world&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">QuietGreeting</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Lowercase</span>&lt;<span style="color:#f92672">Greeting</span>&gt;; <span style="color:#75715e">// &#34;hello, world&#34;
+</span></span></span></code></pre></div><h3 id="188-nonnullabletype">18.8 <code>NonNullable&lt;Type&gt;</code></h3>
+<ul>
+<li>It constructs a new type by excluding <code>null</code> and <code>undefined</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Type</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">undefined</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">NonNullableType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">NonNullable</span>&lt;<span style="color:#f92672">Type</span>&gt;; <span style="color:#75715e">// &#34;string&#34; | &#34;number&#34;
+</span></span></span></code></pre></div><h3 id="189-omittype-keys">18.9 <code>Omit&lt;Type, Keys&gt;</code></h3>
+<ul>
+<li>It constructs a type by picking all properties from Type, then removing Keys. It is the opposite of <code>Pick</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Type</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">str</span>: <span style="color:#66d9ef">string</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">OmitType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Omit</span>&lt;<span style="color:#f92672">Type</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">a</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;; <span style="color:#75715e">// { str: string }
+</span></span></span></code></pre></div><h3 id="1810-parameterstype">18.10 <code>Parameters&lt;Type&gt;</code></h3>
+<ul>
+<li>It constucts a tuple types from the types used in the parameters of a function type <code>Type</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sayHi</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">str</span>: <span style="color:#66d9ef">string</span>) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Hi&#34;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">FunctionParameters</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Parameters</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">sayHi</span>&gt;; <span style="color:#75715e">// [str: string]
+</span></span></span></code></pre></div><h3 id="1811-partialtype">18.11 <code>Partial&lt;Type&gt;</code></h3>
 <ul>
 <li>It constructs a type with all properties of Type set to optional.</li>
 </ul>
-<h3 id="183-picktype-keys">18.3 <code>Pick&lt;Type, Keys&gt;</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Type</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">str</span>: <span style="color:#66d9ef">string</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">PartialType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Partial</span>&lt;<span style="color:#f92672">Type</span>&gt;; <span style="color:#75715e">// { a?: number; str?: string }
+</span></span></span></code></pre></div><h3 id="1812-picktype-keys">18.12 <code>Pick&lt;Type, Keys&gt;</code></h3>
 <ul>
 <li>It constructs a type by picking the set of properties Keys from Type.</li>
 </ul>
-<h3 id="184-recordkeys-type">18.4 <code>Record&lt;Keys, Type&gt;</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Type</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">str</span>: <span style="color:#66d9ef">string</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">PickType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Pick</span>&lt;<span style="color:#f92672">Type</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">a</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;; <span style="color:#75715e">// { a: number }
+</span></span></span></code></pre></div><h3 id="1813-readonlytype">18.13 <code>Readonly&lt;Type&gt;</code></h3>
 <ul>
-<li>It constructs an object type whose property keys are Keys and whose property values are Type.</li>
+<li>It creates a new type with all properties of Type set to <code>readonly</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Type</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">str</span>: <span style="color:#66d9ef">string</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ReadonlyType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Readonly</span>&lt;<span style="color:#f92672">Type</span>&gt;; <span style="color:#75715e">// { readonly a: number; readonly str: string }
+</span></span></span></code></pre></div><h3 id="1814-recordkeys-type">18.14 <code>Record&lt;Keys, Type&gt;</code></h3>
+<ul>
+<li>It constructs an object type of which property keys are Keys and of which property values are Type.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">CatInfo</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">age</span>: <span style="color:#66d9ef">number</span>;
@@ -1031,17 +1127,38 @@
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">cats</span>.<span style="color:#a6e22e">puffy</span>); <span style="color:#75715e">// { &#34;age&#34;: 1, &#34;breed&#34;: &#34;Persian&#34; }
-</span></span></span></code></pre></div><h3 id="185-requiredtype">18.5 <code>Required&lt;Type&gt;</code></h3>
+</span></span></span></code></pre></div><h3 id="1815-requiredtype">18.15 <code>Required&lt;Type&gt;</code></h3>
 <ul>
-<li>
-<p>It constructs a type consisting of all properties of Type set to required. It is the opposite of <code>Partial</code>.</p>
-</li>
-<li>
-<p>For more utility types: <a href="https://www.typescriptlang.org/docs/handbook/utility-types.html" target="_blank" >https://www.typescriptlang.org/docs/handbook/utility-types.html</a>
-</p>
-</li>
+<li>It constructs a type consisting of all properties of Type set to required. It is the opposite of <code>Partial</code>.</li>
 </ul>
-<h2 id="19-design-patterns">19. Design patterns</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Type</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a?</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">str?</span>: <span style="color:#66d9ef">string</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">RequiredType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Required</span>&lt;<span style="color:#f92672">Type</span>&gt;; <span style="color:#75715e">// { a: number; str: string }
+</span></span></span></code></pre></div><h3 id="1816-returntypetype">18.16 <code>ReturnType&lt;Type&gt;</code></h3>
+<ul>
+<li>It constructs a type of the return type of the function. (Use in <code>useState</code> hook in React)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getCat</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> ({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Simba&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">age</span>: <span style="color:#66d9ef">1</span>
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">FunctionReturnType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReturnType</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">getCat</span>&gt;; <span style="color:#75715e">// { name: string; age: number; }
+</span></span></span></code></pre></div><h3 id="1817-uncapitalizestringtype">18.17 <code>Uncapitalize&lt;StringType&gt;</code></h3>
+<ul>
+<li>It converts the first character into the string to a lowercase equivalent.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">UppercaseGreeting</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;HELLO WORLD&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">UncomfortableGreeting</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Uncapitalize</span>&lt;<span style="color:#f92672">UppercaseGreeting</span>&gt;; <span style="color:#75715e">// &#34;hELLO WORLD&#34;
+</span></span></span></code></pre></div><h3 id="1818-uppercasestringtype">18.18 <code>Uppercase&lt;StringType&gt;</code></h3>
+<ul>
+<li>It converts each character into the string to the uppercase version.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Greeting</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello, world&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ShoutyGreeting</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Uppercase</span>&lt;<span style="color:#f92672">Greeting</span>&gt;; <span style="color:#75715e">// &#34;HELLO, WORLD&#34;
+</span></span></span></code></pre></div><h2 id="19-design-patterns">19. Design patterns</h2>
 <h3 id="191-singleton">19.1 Singleton</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Flower</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">constructor</span>(<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">readonly</span> <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">readonly</span> <span style="color:#a6e22e">numberOfPetals</span>: <span style="color:#66d9ef">number</span>) {

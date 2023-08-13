@@ -38,7 +38,7 @@ npm install -g typescript
 ```
 
 - The line above installs the `TypeScript` Compiler `tsc` globally.
-- You can also use `npx` to run `tsc` from a local `node_modules` package instead.
+- Also, you can use `npx` to run `tsc` from a local `node_modules` package instead.
 
 ## 2. Hello world
 
@@ -141,7 +141,7 @@ console.log(square); // [ 1, 4, 9 ]
 
 #### 4.2.3 `Array.reduce()`
 
-- It applies a function against two values of the array as to reduce it to a single value.
+- It applies a function against two array values to reduce it to a single value.
 
 ```typescript
 let arr: number[] = [1, 2, 3];
@@ -182,7 +182,7 @@ strictlyTyped.toFixed();
 
 ### 4.4 `never`
 
-- It indicates that a function will never return or that a value will never be assignable to a particular type. Typically, it represents the return type of a function that always throws an error.
+- It indicates that a function will never return or a value will never be assignable to a particular type. Typically, it represents the return type of a function that always throws an error.
 
 ```typescript
 function raiseError(message: string): never {
@@ -201,7 +201,7 @@ function raiseError(message: string): never {
 
 - `let` creates a variable.
 - It allows you to declare block-level variables.
-- The declared variable is available from the block it is enclosed in.
+- The declared variable is available from the block is enclosed in.
 
 ```typescript
 let name: string = 'Simon';
@@ -249,7 +249,7 @@ let c: Color = Color.Green;
 
 - It represents the non-primitive type.
 - It refers to any JavaScript value with properties.
-- To define an object type, we simply list its properties and their types.
+- To define an object type, we list its properties and their types.
 - Object types are functions, arrays, classes, etc.
 
 ```typescript
@@ -440,7 +440,7 @@ names.forEach((s) => {
 
 ## 6. Interfaces and type aliases
 
-- The key distinction is that a `type` cannot be re-opened to add new properties vs an `interface` which is always extendable.
+- Key distinction is that a `type` cannot be reopened to add new properties, whereas an `interface` is always extendable.
 - Interfaces define contracts and provide explicit names for type checking.
 - Interfaces may have optional properties or readonly properties.
 - Interfaces can be used as function types.
@@ -497,7 +497,7 @@ yellowStrayCat.play();
 
 ### 6.2 Type aliases
 
-- A type alias is exactly that - a name for any type.
+- A type alias is literally that - a name for any type.
 
 ```typescript
 type Point = {
@@ -568,7 +568,7 @@ function compare(a: string, b: string): -1 | 0 | 1 {
 
 ## 9. Narrowing
 
-- The process of refining types to more specific types than declared is called narrowing.
+- Refining types to more specific types than declared is called narrowing.
 
 ```typescript
 function padLeft(padding: number | string, input: string) {
@@ -581,7 +581,7 @@ function padLeft(padding: number | string, input: string) {
 
 ## 10. Type predicate
 
-- To define a user-defined type guard, we simply need to define a function whose return type is a type predicate:
+- To define a user-defined type guard, we simply need to define a function of which return type is a type predicate:
 
 ```typescript
 let pet = getSmallPet();
@@ -756,7 +756,7 @@ function printName(person?: Person) {
 
 ### 14.2 Nullish coalescing operator `??`
 
-- `??` returns the first argument if it's not `null`/`undefined`. Otherwise, the second one.
+- `??` returns the first argument if not `null`/`undefined`. Otherwise, it returns the second one.
 
 ```typescript
 a ?? b // equals to
@@ -912,8 +912,10 @@ type Age = Person["age"]; // type Age = number
 
 ### 17.5 Conditional Types
 
+- They help describe the relation between the types of inputs and outputs.
+
 ```typescript
-// TO-DO
+// SomeType extends OtherType ? TrueType : FalseType;
 ```
 
 ### 17.6 Mapped Types
@@ -976,34 +978,150 @@ applyStyle('small-primary');
 
 - They facilitate common type transformations.
 
-```typescript
-interface MyUser {
-    name: string;
-    id: string;
-    email?: string;
-}
+### 18.1 `Awaited<Type>`
 
-type MyUserPartial = Partial<MyUser>; // name?, id?, email?
-type MyUserRequired = Required<MyUser>; // name, id, email
-type MyUserJustIdAndEmail = Pick<MyUser, "id" | "email">; // id, email?
-type MyUserOmitEmail = Omit<MyUser, "email"> // name, id
+- It extracts the type that is being returned by a promise. It helps us to avoid using `.then()` and `await` the same promise repeatedly.
+
+```typescript
+async function getCat(): Promise<{ 
+    name: string; 
+    age: number 
+}> {
+    return { name: "Simba", age: 1 };
+}
+  
+type CatType = Awaited<ReturnType<typeof getCat>>; // [ name: string, age: number ]
 ```
 
-### 18.1 `Omit<Type, Keys>`
+### 18.2 `Capitalize<StringType>`
 
-- It constructs a type by picking all properties from Type and then removing Keys. It is the opposite of `Pick`.
+- It converts the first character into the string to an uppercase equivalent.
 
-### 18.2 `Partial<Type>`
+```typescript
+type LowercaseGreeting = "hello, world";
+type Greeting = Capitalize<LowercaseGreeting>; // "Hello, world"
+```
+
+### 18.3 `ConstructParameters<Type>`
+
+- It constructs a tuple or an array type from the types of a constructor function type.
+
+```typescript
+class MyClass {
+  constructor(x: number, str: string) {}
+}
+
+type T0 = ConstructorParameters<typeof MyClass>; // [ x: number, str: string ]
+```
+
+### 18.4 `Exclude<UnionType, ExcludedMembers`
+
+- It constructs a type by excluding all union members that are assignable to `ExcludedMembers`.
+
+```typescript
+type ExcludedType = Exclude<"a" | "str", "str">; // "a"
+```
+
+### 18.5 `Extract<Type, Union>`
+
+- It constructs a new type by exracting all union members that are assignable to `Union`. It is the opposite of `Exclude`.
+
+```typescript
+type ExtractedType = Extract<"a" | "str", "str">; // "str"
+```
+
+### 18.6 `InstanceType<Type>`
+
+- It constructs a type consisting of the instance type of a constructor function in Type. It is similar to `ReturnType`, but it acts on a class constructor.
+
+```typescript
+class Cat {
+  name: string;
+  age: number;
+
+  constructor(cat: { name: string; age: number }) {
+    this.name = cat.name;
+    this.age = cat.age;
+  }
+}
+
+type CatType = InstanceType<typeof Cat>; // [ name: string; age: number ]
+```
+
+### 18.7 `Lowercase<StringType>`
+
+- It converts each character into the string to the lowercase equivalent.
+
+```typescript
+type Greeting = "Hello, world";
+type QuietGreeting = Lowercase<Greeting>; // "hello, world"
+```
+
+### 18.8 `NonNullable<Type>`
+
+- It constructs a new type by excluding `null` and `undefined`.
+
+```typescript
+type Type = string | number | null | undefined;
+
+type NonNullableType = NonNullable<Type>; // "string" | "number"
+```
+
+### 18.9 `Omit<Type, Keys>`
+
+- It constructs a type by picking all properties from Type, then removing Keys. It is the opposite of `Pick`.
+
+```typescript
+type Type = { a: number, str: string };
+
+type OmitType = Omit<Type, "a">; // { str: string }
+```
+
+### 18.10 `Parameters<Type>`
+
+- It constucts a tuple types from the types used in the parameters of a function type `Type`.
+
+```typescript
+const sayHi = (str: string) => {
+  console.log("Hi");
+};
+
+type FunctionParameters = Parameters<typeof sayHi>; // [str: string]
+```
+
+### 18.11 `Partial<Type>`
 
 - It constructs a type with all properties of Type set to optional.
 
-### 18.3 `Pick<Type, Keys>`
+```typescript
+type Type = { a: number, str: string };
+
+type PartialType = Partial<Type>; // { a?: number; str?: string }
+```
+
+### 18.12 `Pick<Type, Keys>`
 
 - It constructs a type by picking the set of properties Keys from Type.
 
-### 18.4 `Record<Keys, Type>`
+```typescript
+type Type = { a: number, str: string };
 
-- It constructs an object type whose property keys are Keys and whose property values are Type.
+type PickType = Pick<Type, "a">; // { a: number }
+```
+
+### 18.13 `Readonly<Type>`
+
+- It creates a new type with all properties of Type set to `readonly`.
+
+```typescript
+type Type = { a: number, str: string };
+
+type ReadonlyType = Readonly<Type>; // { readonly a: number; readonly str: string }
+```
+
+### 18.14 `Record<Keys, Type>`
+
+- It constructs an object type of which property keys are Keys and of which property values are Type.
 
 ```typescript
 interface CatInfo {
@@ -1021,11 +1139,48 @@ const cats: Record<CatName, CatInfo> = {
 console.log(cats.puffy); // { "age": 1, "breed": "Persian" }
 ```
 
-### 18.5 `Required<Type>`
+### 18.15 `Required<Type>`
 
 - It constructs a type consisting of all properties of Type set to required. It is the opposite of `Partial`.
 
-- For more utility types: [https://www.typescriptlang.org/docs/handbook/utility-types.html](https://www.typescriptlang.org/docs/handbook/utility-types.html)
+```typescript
+type Type = { a?: number, str?: string };
+
+type RequiredType = Required<Type>; // { a: number; str: string }
+```
+
+### 18.16 `ReturnType<Type>`
+
+- It constructs a type of the return type of the function. (Use in `useState` hook in React)
+
+```typescript
+const getCat = () => ({
+  name: "Simba",
+  age: 1
+});
+
+type FunctionReturnType = ReturnType<typeof getCat>; // { name: string; age: number; }
+```
+
+### 18.17 `Uncapitalize<StringType>`
+
+- It converts the first character into the string to a lowercase equivalent.
+
+```typescript
+type UppercaseGreeting = "HELLO WORLD";
+
+type UncomfortableGreeting = Uncapitalize<UppercaseGreeting>; // "hELLO WORLD"
+```
+
+### 18.18 `Uppercase<StringType>`
+
+- It converts each character into the string to the uppercase version.
+
+```typescript
+type Greeting = "Hello, world";
+
+type ShoutyGreeting = Uppercase<Greeting>; // "HELLO, WORLD"
+```
 
 ## 19. Design patterns
 
