@@ -7,12 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://fatmakahveci.com/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Design Patterns in Typescript</title>
+      <link>https://fatmakahveci.com/frontend-note/design_patterns_in_typescript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fatmakahveci.com/frontend-note/design_patterns_in_typescript/</guid>
+      <description>Updated by Fatma, Aug 14, 2023.</description>
+    </item>
+    
+    <item>
       <title>Typescript</title>
       <link>https://fatmakahveci.com/frontend-note/typescript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/frontend-note/typescript/</guid>
-      <description>Updated by Fatma, Aug 09, 2023.</description>
+      <description>Updated by Fatma, Aug 14, 2023.</description>
     </item>
     
     <item>
@@ -21,7 +30,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fatmakahveci.com/frontend-note/typescript_react/</guid>
-      <description>Updated by Fatma, Jul 27, 2023.</description>
+      <description>Updated by Fatma, Aug 14, 2023.</description>
     </item>
     
   </channel>

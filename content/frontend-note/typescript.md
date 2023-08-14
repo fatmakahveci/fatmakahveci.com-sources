@@ -1,8 +1,8 @@
 ---
 title: Typescript
 description: Typescript
-summary: "Updated by Fatma, Aug 09, 2023."
-date: 09-08-2023
+summary: "Updated by Fatma, Aug 14, 2023."
+date: 14-08-2023
 categories:
   - "Coding"
 tags:
@@ -1179,34 +1179,4 @@ type UncomfortableGreeting = Uncapitalize<UppercaseGreeting>; // "hELLO WORLD"
 type Greeting = "Hello, world";
 
 type ShoutyGreeting = Uppercase<Greeting>; // "HELLO, WORLD"
-```
-
-## 19. Design patterns
-
-### 19.1 Singleton
-
-```typescript
-class Flower {
-    constructor(public readonly name: string, public readonly numberOfPetals: number) {
-    }
-}
-
-class FlowerList {
-    private flowers: Flower[] = [];
-
-    static instance: FlowerList = new FlowerList();
-
-    private constructor() {}
-
-    static addFlower(flower: Flower) {
-        FlowerList.instance.flowers.push(flower);
-    }
-
-    getFlowers() {
-        return this.flowers;
-    }
-}
-
-FlowerList.addFlower(new Flower("Rose", 20));
-console.log(FlowerList.instance.getFlowers());
 ```

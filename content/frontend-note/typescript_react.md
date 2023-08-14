@@ -1,8 +1,8 @@
 ---
 title: Typescript and React
 description: Typescript and React
-summary: "Updated by Fatma, Jul 27, 2023."
-date: 27-07-2023
+summary: "Updated by Fatma, Aug 14, 2023."
+date: 14-08-2023
 categories:
   - "Coding"
 tags:
