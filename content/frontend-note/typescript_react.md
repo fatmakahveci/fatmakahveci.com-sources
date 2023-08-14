@@ -16,6 +16,12 @@ tags:
 comments: true
 ---
 
+## Create a React App
+
+```bash
+yarn create react-app <appName> --template typescript
+```
+
 ## React `useState` hook with TypeScript
 
 - `Typescript (TS)` can infer the type of certain variables based on initialisation if a lack of explicit information.

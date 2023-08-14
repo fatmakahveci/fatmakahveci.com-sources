@@ -23,6 +23,7 @@ comments: true
 ## 1. Creational patterns
 
 - They instantiate classes using inheritance, or create objects using delegation.
+- How objects are created...
 
 ### 1.1 Abstract factory
 
@@ -61,7 +62,12 @@ comments: true
 
 ### 1.4 Prototype
 
-- Copy existing objects without making your code dependent on their classes
+- Create a new object by copying an existing one and allowing us to modify the newly created object. Use:
+  - if an object initialisation is costly.
+  - when creating similar multiple objects with different values.
+  - when you want to reduce subclassing.
+  - when reating immutable objects, since each clone is a separate instance.
+- `clone` or `copy` methods can reveal the prototype design pattern.
 
 ```typescript
 ```
@@ -73,29 +79,39 @@ comments: true
 - Ensure that a class has only one instance, while providing a global access point to this instance
 
 ```typescript
-class Flower {
-    constructor(public readonly name: string, public readonly numberOfPetals: number) {
-    }
+class Setting {
+    constructor(
+        public readonly name: string,
+        public readonly value: number | string
+    ) { }
 }
 
-class FlowerList {
-    private flowers: Flower[] = [];
-
-    static instance: FlowerList = new FlowerList();
+class Settings {
+    private settings: Setting[] = [];
+    private static instance: Settings | null = null;
 
     private constructor() {}
 
-    static addFlower(flower: Flower) {
-        FlowerList.instance.flowers.push(flower);
+    static getInstance() {
+        if (!Settings.instance) {
+            Settings.instance = new Settings();
+        }
+        return Settings.instance;
     }
 
-    getFlowers() {
-        return this.flowers;
+    addSetting(setting: Setting) {
+        this.settings.push(setting);
+    }
+
+    getSettings() {
+        return this.settings;
     }
 }
 
-FlowerList.addFlower(new Flower("Rose", 20));
-console.log(FlowerList.instance.getFlowers());
+const settingsSingleton = Settings.getInstance();
+
+settingsSingleton.addSetting(new Setting("Volume", 20));
+console.log(settingsSingleton.getSettings());
 ```
 
 ---
@@ -103,6 +119,7 @@ console.log(FlowerList.instance.getFlowers());
 ## 2. Structural patterns
 
 - They create larger structures that offer additional features and capabilities by arranging different classes and objects.
+- How objects relate to each other...
 
 ### 2.1 Adapter
 
@@ -168,6 +185,7 @@ console.log(FlowerList.instance.getFlowers());
 ## 3. Behavioral patterns
 
 - They recognise shared communication patterns among objects and implement them.
+- How objects communicate to each other...
 
 ### 3.1 Chain of responsibility
 
