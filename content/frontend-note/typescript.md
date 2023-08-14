@@ -508,7 +508,6 @@ type Point = {
 function printCoord(pt: Point) { }
 
 // intersection
-
 type <bothType> = <firstType> & <secondType>; // <bothType> will have all properties from both the first and second.
 
 // union
