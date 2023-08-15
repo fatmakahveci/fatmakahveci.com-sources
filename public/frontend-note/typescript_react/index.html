@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Typescript and React">
 <meta itemprop="description" content="Typescript and React">
 
-<meta itemprop="wordCount" content="141">
+<meta itemprop="wordCount" content="324">
 <meta itemprop="keywords" content="typescript,user interface,coding,framework,frontend,web development,react," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -135,16 +135,35 @@
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#create-a-react-app">Create a React App</a></li>
-    <li><a href="#react-usestate-hook-with-typescript">React <code>useState</code> hook with TypeScript</a></li>
+    <li><a href="#1-hello-world">1. Hello, world</a>
+      <ul>
+        <li><a href="#11-create-a-react-app">1.1 Create a React App</a></li>
+        <li><a href="#12-start-the-react-app">1.2 Start the React App</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-react-hooks-with-typescript">2. React hooks with TypeScript</a>
+      <ul>
+        <li><a href="#21-usestate">2.1 <code>useState</code></a></li>
+        <li><a href="#22-useeffect">2.2 <code>useEffect</code></a></li>
+        <li><a href="#23-usereducer">2.3 <code>useReducer</code></a></li>
+        <li><a href="#24-useref">2.4 <code>useRef</code></a></li>
+        <li><a href="#25-usecallback">2.5 <code>useCallback</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#3-reactreactnode">3. <code>React.ReactNode</code></a></li>
+    <li><a href="#4-children-parameter">4. <code>children</code> parameter</a></li>
   </ul>
 </nav>
 	</div>
 </div>
 <div class="content post__content clearfix">
-			<h2 id="create-a-react-app">Create a React App</h2>
+			<h2 id="1-hello-world">1. Hello, world</h2>
+<h3 id="11-create-a-react-app">1.1 Create a React App</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn create react-app &lt;appName&gt; --template typescript
-</span></span></code></pre></div><h2 id="react-usestate-hook-with-typescript">React <code>useState</code> hook with TypeScript</h2>
+</span></span></code></pre></div><h3 id="12-start-the-react-app">1.2 Start the React App</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn start
+</span></span></code></pre></div><h2 id="2-react-hooks-with-typescript">2. React hooks with TypeScript</h2>
+<h3 id="21-usestate">2.1 <code>useState</code></h3>
 <ul>
 <li>
 <p><code>Typescript (TS)</code> can infer the type of certain variables based on initialisation if a lack of explicit information.</p>
@@ -176,7 +195,46 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">users</span>, <span style="color:#a6e22e">setUsers</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>&lt;<span style="color:#f92672">User</span><span style="color:#960050;background-color:#1e0010">[]</span>&gt;([]);
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// OR
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">users</span>, <span style="color:#a6e22e">setUsers</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>&lt;<span style="color:#f92672">Array</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">User</span>&gt;<span style="color:#f92672">&gt;</span>([]); 
-</span></span></code></pre></div>
+</span></span></code></pre></div><h3 id="22-useeffect">2.2 <code>useEffect</code></h3>
+<ul>
+<li><code>TS</code> will not allow you to return anything other than <em>a function</em> or <code>undefined</code> for <code>useEffect</code>.</li>
+</ul>
+<h3 id="23-usereducer">2.3 <code>useReducer</code></h3>
+<ul>
+<li><code>TS</code> will infer the return type of reducer if you do not define it.</li>
+</ul>
+<h3 id="24-useref">2.4 <code>useRef</code></h3>
+<ul>
+<li>In <code>TS</code>, <code>useRef</code> returns a reference that is either <code>readonly</code> or <code>mutable</code>. It depends on whether your type argument fully covers the initial value or not.
+<ul>
+<li><strong>To access a DOM element:</strong> provide only the element type as argument, and use <code>null</code> as initial value. It will return <code>readonly</code>.</li>
+<li><strong>To have a mutable value:</strong> provide the type you want, and make sure the initial value fully belongs to that type.</li>
+</ul>
+</li>
+</ul>
+<h3 id="25-usecallback">2.5 <code>useCallback</code></h3>
+<ul>
+<li><code>TS</code> knows that <code>useCallback</code> accepts a function and an array of dependencies.</li>
+</ul>
+<h2 id="3-reactreactnode">3. <code>React.ReactNode</code></h2>
+<ul>
+<li>A <code>ReactNode</code> is one of the following types:
+<ul>
+<li><code>boolean</code></li>
+<li><code>null</code> or <code>undefined</code></li>
+<li><code>number</code></li>
+<li><code>string</code></li>
+<li>A React element (result of JSX)</li>
+<li>An array of any of the above, possibly a nested one.</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-children-parameter">4. <code>children</code> parameter</h2>
+<ul>
+<li>It describes what child elements have, if any.</li>
+<li>A child element could be any ReactNode.</li>
+</ul>
+
 		</div>
 		<footer class="post__footer">
 			

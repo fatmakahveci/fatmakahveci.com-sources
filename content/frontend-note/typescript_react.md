@@ -1,8 +1,8 @@
 ---
 title: Typescript and React
 description: Typescript and React
-summary: "Updated by Fatma, Aug 14, 2023."
-date: 14-08-2023
+summary: "Updated by Fatma, Aug 15, 2023."
+date: 15-08-2023
 categories:
   - "Coding"
 tags:
@@ -16,13 +16,23 @@ tags:
 comments: true
 ---
 
-## Create a React App
+## 1. Hello, world
+
+### 1.1 Create a React App
 
 ```bash
 yarn create react-app <appName> --template typescript
 ```
 
-## React `useState` hook with TypeScript
+### 1.2 Start the React App
+
+```bash
+yarn start
+```
+
+## 2. React hooks with TypeScript
+
+### 2.1 `useState`
 
 - `Typescript (TS)` can infer the type of certain variables based on initialisation if a lack of explicit information.
 
@@ -58,3 +68,36 @@ const [users, setUsers] = useState<User[]>([]);
 // OR
 const [users, setUsers] = useState<Array<User>>([]); 
 ```
+
+### 2.2 `useEffect`
+
+- `TS` will not allow you to return anything other than _a function_ or `undefined` for `useEffect`.
+
+### 2.3 `useReducer`
+
+- `TS` will infer the return type of reducer if you do not define it.
+
+### 2.4 `useRef`
+
+- In `TS`, `useRef` returns a reference that is either `readonly` or `mutable`. It depends on whether your type argument fully covers the initial value or not.
+  - **To access a DOM element:** provide only the element type as argument, and use `null` as initial value. It will return `readonly`.
+  - **To have a mutable value:** provide the type you want, and make sure the initial value fully belongs to that type.
+
+### 2.5 `useCallback`
+
+- `TS` knows that `useCallback` accepts a function and an array of dependencies.
+
+## 3. `React.ReactNode`
+
+- A `ReactNode` is one of the following types:
+  - `boolean`
+  - `null` or `undefined`
+  - `number`
+  - `string`
+  - A React element (result of JSX)
+  - An array of any of the above, possibly a nested one.
+
+## 4. `children` parameter
+
+- It describes what child elements have, if any.
+- A child element could be any ReactNode.
