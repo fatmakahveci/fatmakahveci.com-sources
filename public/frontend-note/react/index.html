@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="React">
 <meta itemprop="description" content="React">
 
-<meta itemprop="wordCount" content="2225">
+<meta itemprop="wordCount" content="2229">
 <meta itemprop="keywords" content="react,user interface,coding,framework,frontend,web development," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -351,22 +351,13 @@
 </span></span></code></pre></div><hr>
 <h2 id="hooks">Hooks</h2>
 <ul>
-<li>
-<p><code>Hooks</code> let you use state and other React features without writing a class. They don&rsquo;t work inside classes.</p>
-</li>
-<li>
-<p>They let you hook into React state and lifecycle features from function components.</p>
-</li>
-<li>
-<p>Hooks are JS functions imposing two additional rules:</p>
-<ol>
-<li>
-<p>Only call Hooks at the top level. Don&rsquo;t call Hooks inside loops, conditions, or nested functions.</p>
-</li>
-<li>
-<p>Only call Hooks from React function components. Don&rsquo;t call Hooks from regular JavaScript functions.</p>
-</li>
-</ol>
+<li><code>Hooks</code> let you use state and other React features without writing a class. They don&rsquo;t work inside classes.</li>
+<li>They let you hook into React state and lifecycle features from function components.</li>
+<li>Hooks are JS functions imposing two additional rules:
+<ul>
+<li>Only call hooks at the top level. Don&rsquo;t call hooks inside loops, conditions, or nested functions.</li>
+<li>Only call hooks from React function components. Don&rsquo;t call hooks from regular <code>JS</code> functions.</li>
+</ul>
 </li>
 </ul>
 <h3 id="1-usestate-hook">1. <code>useState</code> hook</h3>
@@ -400,35 +391,29 @@
 </span></span></code></pre></div><h3 id="3-useeffect-hook">3. <code>useEffect</code> hook</h3>
 <ul>
 <li>Fetching, subscriptions, or manually changing the DOM called &ldquo;side effects (effects)&rdquo; because they can affect other components and can&rsquo;t be done during rendering.</li>
-<li>Runs on every update</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Runs on every update
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ComponentName</span><span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {});
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><ul>
-<li>Runs ONCE after the initial rendering</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Runs ONCE after the initial rendering
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ComponentName</span><span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
 </span></span><span style="display:flex;"><span>  },[]);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><ul>
-<li>Runs if any dependency changes</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Runs if any dependency changes
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ComponentName</span><span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
 </span></span><span style="display:flex;"><span>  },[<span style="color:#a6e22e">Dependencies</span>]);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><ul>
-<li>Runs on cleanup</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Runs on cleanup
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ComponentName</span><span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {

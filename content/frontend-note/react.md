@@ -168,10 +168,8 @@ const element = (
 - `Hooks` let you use state and other React features without writing a class. They don't work inside classes.
 - They let you hook into React state and lifecycle features from function components.
 - Hooks are JS functions imposing two additional rules:
-  
-  1. Only call Hooks at the top level. Don't call Hooks inside loops, conditions, or nested functions.
-  
-  2. Only call Hooks from React function components. Don't call Hooks from regular JavaScript functions.
+  - Only call hooks at the top level. Don't call hooks inside loops, conditions, or nested functions.
+  - Only call hooks from React function components. Don't call hooks from regular `JS` functions.
 
 ### 1. `useState` hook
 
@@ -212,9 +210,9 @@ const [state, dispatch] = useReducer(
 ### 3. `useEffect` hook
 
 - Fetching, subscriptions, or manually changing the DOM called "side effects (effects)" because they can affect other components and can't be done during rendering.
-- Runs on every update
 
 ```javascript
+// Runs on every update
 import { useEffect } from 'react';
 
 function <ComponentName> {
@@ -222,9 +220,8 @@ function <ComponentName> {
 }
 ```
 
-- Runs ONCE after the initial rendering
-
 ```javascript
+// Runs ONCE after the initial rendering
 import { useEffect } from 'react';
 
 function <ComponentName> {
@@ -233,9 +230,8 @@ function <ComponentName> {
 }
 ```
 
-- Runs if any dependency changes
-
 ```javascript
+// Runs if any dependency changes
 import { useEffect } from 'react';
 
 function <ComponentName> {
@@ -244,9 +240,8 @@ function <ComponentName> {
 }
 ```
 
-- Runs on cleanup
-
 ```javascript
+// Runs on cleanup
 import { useEffect } from 'react';
 
 function <ComponentName> {
