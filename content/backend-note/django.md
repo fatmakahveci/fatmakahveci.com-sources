@@ -1,8 +1,8 @@
 ---
 title: Django for beginners
 description: Django for beginners
-summary: "Updated by Fatma, Mar 28, 2023."
-date: 28-03-2023
+summary: "Updated by Fatma, Aug 23, 2023."
+date: 23-08-2023
 categories:
   - "Coding"
 tags:
@@ -555,6 +555,23 @@ MIDDLEWARE = [
 
 - The order in `MIDDLEWARE` matters because a middleware can depend on other middleware.
   - i.e. `AuthenticationMiddleware` stores the authenticated user in the session so it must run after `SessionMiddleware`.
+
+---
+
+## Django REST Framework
+
+### Throttling
+
+- _Throttling_ is similar to _permissions_ in that it determines if a request should be authorized.
+- It indicates a temporary state.
+- It controls the rate of requests that clients can make to an API.
+
+### Permissions
+
+- Permission checks are always run at the very start of the view, before any other code is allowed to proceed.
+- Permission checks will typically use the authentication information in the request.user and request.auth properties to determine if the incoming request should be permitted.
+- `request.user` and `request.auth` are used to check permissions.
+- `IsAuthenticated` or `IsAuthenticatedOrReadOnly`.
 
 ---
 

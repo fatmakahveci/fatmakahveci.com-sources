@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Django for beginners">
 <meta itemprop="description" content="Django for beginners">
 
-<meta itemprop="wordCount" content="2216">
+<meta itemprop="wordCount" content="2308">
 <meta itemprop="keywords" content="Python,coding,Django,algorithms,data structures," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -169,6 +169,12 @@
     <li><a href="#middleware-in-django">Middleware in Django</a>
       <ul>
         <li><a href="#how-you-activate-middleware">How you activate middleware</a></li>
+      </ul>
+    </li>
+    <li><a href="#django-rest-framework">Django REST Framework</a>
+      <ul>
+        <li><a href="#throttling">Throttling</a></li>
+        <li><a href="#permissions">Permissions</a></li>
       </ul>
     </li>
     <li><a href="#tldr">TL;DR</a>
@@ -668,6 +674,21 @@
 <li>i.e. <code>AuthenticationMiddleware</code> stores the authenticated user in the session so it must run after <code>SessionMiddleware</code>.</li>
 </ul>
 </li>
+</ul>
+<hr>
+<h2 id="django-rest-framework">Django REST Framework</h2>
+<h3 id="throttling">Throttling</h3>
+<ul>
+<li><em>Throttling</em> is similar to <em>permissions</em> in that it determines if a request should be authorized.</li>
+<li>It indicates a temporary state.</li>
+<li>It controls the rate of requests that clients can make to an API.</li>
+</ul>
+<h3 id="permissions">Permissions</h3>
+<ul>
+<li>Permission checks are always run at the very start of the view, before any other code is allowed to proceed.</li>
+<li>Permission checks will typically use the authentication information in the request.user and request.auth properties to determine if the incoming request should be permitted.</li>
+<li><code>request.user</code> and <code>request.auth</code> are used to check permissions.</li>
+<li><code>IsAuthenticated</code> or <code>IsAuthenticatedOrReadOnly</code>.</li>
 </ul>
 <hr>
 <h2 id="tldr">TL;DR</h2>
