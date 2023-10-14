@@ -1,8 +1,8 @@
 ---
 title: MongoDB
 description: MongoDB
-summary: "Updated by Fatma, Mar 28, 2023."
-date: 28-03-2023
+summary: "Updated by Fatma, Oct 13, 2023."
+date: 13-10-2023
 categories:
   - "Coding"
 tags:
@@ -132,7 +132,7 @@ comments: true
 
 - `"$pull"` removes all elements that match the given criteria. ([1, 1, 2, 1] - pull 1 -> [2])
 
-  ````js
+  ```js
   db.lists.insertOne({"todo" : ["dishes", "laundry", "dry cleaning"]})
   db.lists.updateOne({}, {"$pull" : {"todo" : "laundry"}}) // todo: dishes, dry cleaning
   ```
@@ -151,7 +151,11 @@ comments: true
 
 ### Dates
 
-- `{"x" : new Date()}` returns a string representation of the date.
+- `Date()` method which returns the current date as a string.
+
+- `new Date()` constructor which returns a `Date` object using the `ISODate()` wrapper.
+
+- `ISODate()` constructor which returns a `Date` object using the `ISODate()` wrapper.
 
 ### Embedded documents
 
@@ -173,11 +177,15 @@ comments: true
 
 - `{"x" : null}`
 
-### Number
+### Numeric Types
 
-- `{"x" : 3.14}`
-- `{"x" : NumberInt("3")}`
-- `{"x" : NumberLong("3")}`
+```mongodb
+{ _id: 1, value: 1, expectedType: 'Int32' },
+{ _id: 2, value: Long("1"), expectedType: 'Long' },
+{ _id: 3, value: 1.01, expectedType: 'Double' },
+{ _id: 4, value: Decimal128("1.01"), expectedType: 'Decimal128' },
+{ _id: 5, value: 3200000001, expectedType: 'Double' }
+```
 
 ### Object ID
 
@@ -195,6 +203,16 @@ comments: true
 ### Regex
 
 - `{"x" : /foobar/i}`
+
+### String
+
+- `{"title": "Hello, world!"}`
+
+### Timestamp
+
+```json
+Timestamp( { "t": <integer>, "i": <integer> } )
+```
 
 ---
 
@@ -389,6 +407,10 @@ while (cursor.hasNext()) {
 - i.e. `db.customers.update({first_name:"Steven"}, {$set:{gender:"male"}});` adds `gender: male` to the document of which `first_name` is `Steven`.
 
 - Your update should always specify a unique document, perhaps by matching on a key like `_id`.
+
+```json
+db.flightData.updateOne({<key>:<value>}, {$set:{<key>:<value>}})
+```
 
 #### Update operators
 

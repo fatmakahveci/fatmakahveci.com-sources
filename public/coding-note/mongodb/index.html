@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="MongoDB">
 <meta itemprop="description" content="MongoDB">
 
-<meta itemprop="wordCount" content="2959">
+<meta itemprop="wordCount" content="3027">
 <meta itemprop="keywords" content="MongoDB,coding,Database," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -152,9 +152,11 @@
         <li><a href="#dates">Dates</a></li>
         <li><a href="#embedded-documents">Embedded documents</a></li>
         <li><a href="#null">Null</a></li>
-        <li><a href="#number">Number</a></li>
+        <li><a href="#numeric-types">Numeric Types</a></li>
         <li><a href="#object-id">Object ID</a></li>
         <li><a href="#regex">Regex</a></li>
+        <li><a href="#string">String</a></li>
+        <li><a href="#timestamp">Timestamp</a></li>
       </ul>
     </li>
     <li><a href="#the-features-provided-by-mongodb">The features provided by MongoDB</a>
@@ -366,7 +368,6 @@
 <p><code>&quot;$pull&quot;</code> removes all elements that match the given criteria. ([1, 1, 2, 1] - pull 1 -&gt; [2])</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">lists</span>.<span style="color:#a6e22e">insertOne</span>({<span style="color:#e6db74">&#34;todo&#34;</span> <span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;dishes&#34;</span>, <span style="color:#e6db74">&#34;laundry&#34;</span>, <span style="color:#e6db74">&#34;dry cleaning&#34;</span>]})
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">lists</span>.<span style="color:#a6e22e">updateOne</span>({}, {<span style="color:#e6db74">&#34;$pull&#34;</span> <span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;todo&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;laundry&#34;</span>}}) <span style="color:#75715e">// todo: dishes, dry cleaning
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">```
 </span></span></span></code></pre></div></li>
 </ul>
 <h3 id="binary-data">Binary data</h3>
@@ -383,7 +384,15 @@
 </ul>
 <h3 id="dates">Dates</h3>
 <ul>
-<li><code>{&quot;x&quot; : new Date()}</code> returns a string representation of the date.</li>
+<li>
+<p><code>Date()</code> method which returns the current date as a string.</p>
+</li>
+<li>
+<p><code>new Date()</code> constructor which returns a <code>Date</code> object using the <code>ISODate()</code> wrapper.</p>
+</li>
+<li>
+<p><code>ISODate()</code> constructor which returns a <code>Date</code> object using the <code>ISODate()</code> wrapper.</p>
+</li>
 </ul>
 <h3 id="embedded-documents">Embedded documents</h3>
 <ul>
@@ -402,13 +411,13 @@
 <ul>
 <li><code>{&quot;x&quot; : null}</code></li>
 </ul>
-<h3 id="number">Number</h3>
-<ul>
-<li><code>{&quot;x&quot; : 3.14}</code></li>
-<li><code>{&quot;x&quot; : NumberInt(&quot;3&quot;)}</code></li>
-<li><code>{&quot;x&quot; : NumberLong(&quot;3&quot;)}</code></li>
-</ul>
-<h3 id="object-id">Object ID</h3>
+<h3 id="numeric-types">Numeric Types</h3>
+<pre tabindex="0"><code class="language-mongodb" data-lang="mongodb">{ _id: 1, value: 1, expectedType: &#39;Int32&#39; },
+{ _id: 2, value: Long(&#34;1&#34;), expectedType: &#39;Long&#39; },
+{ _id: 3, value: 1.01, expectedType: &#39;Double&#39; },
+{ _id: 4, value: Decimal128(&#34;1.01&#34;), expectedType: &#39;Decimal128&#39; },
+{ _id: 5, value: 3200000001, expectedType: &#39;Double&#39; }
+</code></pre><h3 id="object-id">Object ID</h3>
 <ul>
 <li><code>{&quot;x&quot; : ObjectId()}</code> is a 12-byte ID for documents.</li>
 </ul>
@@ -425,7 +434,13 @@
 <ul>
 <li><code>{&quot;x&quot; : /foobar/i}</code></li>
 </ul>
-<hr>
+<h3 id="string">String</h3>
+<ul>
+<li><code>{&quot;title&quot;: &quot;Hello, world!&quot;}</code></li>
+</ul>
+<h3 id="timestamp">Timestamp</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Timestamp(</span> { <span style="color:#f92672">&#34;t&#34;</span>: <span style="color:#960050;background-color:#1e0010">&lt;integer&gt;</span>, <span style="color:#f92672">&#34;i&#34;</span>: <span style="color:#960050;background-color:#1e0010">&lt;integer&gt;</span> } <span style="color:#960050;background-color:#1e0010">)</span>
+</span></span></code></pre></div><hr>
 <h2 id="the-features-provided-by-mongodb">The features provided by MongoDB</h2>
 <h3 id="indexing">Indexing</h3>
 <ul>
@@ -653,7 +668,8 @@
 <p>Your update should always specify a unique document, perhaps by matching on a key like <code>_id</code>.</p>
 </li>
 </ul>
-<h4 id="update-operators">Update operators</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">db.flightData.updateOne(</span>{<span style="color:#960050;background-color:#1e0010">&lt;key&gt;:&lt;value&gt;</span>}<span style="color:#960050;background-color:#1e0010">,</span> {<span style="color:#960050;background-color:#1e0010">$set:{&lt;key&gt;:&lt;value&gt;</span>}<span style="color:#960050;background-color:#1e0010">})</span>
+</span></span></code></pre></div><h4 id="update-operators">Update operators</h4>
 <ul>
 <li>
 <p>Special keys that can alter, add, or remove keys, and even manipulate arrays and embedded documents.</p>
